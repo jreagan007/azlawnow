@@ -1,0 +1,198 @@
+---
+/**
+ * FAQ — AZ Law Now
+ * Master FAQ page with 20+ questions grouped by category
+ * Includes FAQPage schema
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+import { generateFAQSchema } from '../utils/schema';
+
+const faqCategories = [
+  {
+    name: 'General',
+    faqs: [
+      { question: 'What types of cases does AZ Law Now handle?', answer: 'We handle personal injury cases including car crashes, truck crashes, motorcycle crashes, pedestrian injuries, bicycle crashes, wrongful death, slip and fall, medical negligence, elder abuse, nursing home abuse, school bus crashes, and dog bites across the West Valley and greater Phoenix area.' },
+      { question: 'Where are your offices located?', answer: 'Our headquarters is at 530 E. McDowell Rd., Suite 107-160, Buckeye, AZ 85326. We also have an office in Maricopa serving Pinal County residents. Both offices are open Monday through Friday, 8 a.m. to 6 p.m.' },
+      { question: 'Do you offer consultations in Spanish?', answer: 'Yes. Our team provides consultations in both English and Spanish. Language shouldn\'t be a barrier to getting legal help after an injury.' },
+      { question: 'How quickly can I schedule a consultation?', answer: 'Most clients get a same-day or next-day appointment. Call (602) 654-0202 and we\'ll find a time that works. If you can\'t come to our office, we offer phone and video consultations.' },
+    ],
+  },
+  {
+    name: 'Car Crashes',
+    faqs: [
+      { question: 'What should I do immediately after a car crash in Arizona?', answer: 'Call 911. Get medical attention even if you feel fine. Photograph the vehicles, road conditions, and your injuries. Exchange insurance information with the other driver. Don\'t give a recorded statement to any insurance company. Then call us.' },
+      { question: 'Should I talk to the other driver\'s insurance company?', answer: 'No. The other driver\'s insurance company works for them, not you. Anything you say in a recorded statement can be used to reduce or deny your claim. Let us handle that conversation. It\'s what we do.' },
+      { question: 'What if the other driver was uninsured?', answer: 'Arizona has a significant number of uninsured drivers. You may be able to recover through your own uninsured/underinsured motorist coverage. We\'ll review your policy and identify every source of available compensation.' },
+      { question: 'Do I need a police report to file a claim?', answer: 'A police report helps, but it\'s not required. Our investigator Brendan documents evidence independently. Police reports capture what the officer observed after arriving. Brendan captures what was there before it disappeared.' },
+    ],
+  },
+  {
+    name: 'Statute of Limitations',
+    faqs: [
+      { question: 'How long do I have to file a personal injury claim in Arizona?', answer: 'Arizona gives you two years from the date of injury for most personal injury claims. But claims against government entities may require a notice of claim within 180 days. Don\'t wait. Evidence disappears and witnesses forget. Call us as soon as possible.' },
+      { question: 'What if my injury was caused by a city bus or government vehicle?', answer: 'Claims against government entities in Arizona require filing a notice of claim within 180 days. That\'s six months, not two years. Missing this deadline can permanently destroy your right to recover compensation. Contact an attorney immediately.' },
+      { question: 'Does the statute of limitations apply differently for children?', answer: 'Yes. For minors injured in Arizona, the statute of limitations is typically tolled until they turn 18. But this doesn\'t apply to the 180-day notice requirement for government entity claims. If your child was hurt, consult an attorney right away to protect their rights.' },
+    ],
+  },
+  {
+    name: 'Insurance',
+    faqs: [
+      { question: 'How do insurance companies decide what my claim is worth?', answer: 'Insurance companies use formulas and algorithms to assign a value to your claim. They consider medical bills, lost wages, and a multiplier for pain and suffering. The problem is their multiplier is always lower than what\'s fair. Having an attorney with documented evidence changes the calculation.' },
+      { question: 'What if the insurance company offers me a settlement right away?', answer: 'Early settlement offers are almost always lowball offers. The insurance company wants to close your claim before you understand the full extent of your injuries. Don\'t accept anything without talking to an attorney first. Once you sign, it\'s over.' },
+      { question: 'Will my health insurance cover accident-related medical bills?', answer: 'Your health insurance may cover treatment upfront, but they\'ll likely seek reimbursement from your settlement through subrogation. We negotiate with health insurers to reduce what they recover, which puts more money in your pocket.' },
+    ],
+  },
+  {
+    name: 'Fees',
+    faqs: [
+      { question: 'How much does it cost to hire AZ Law Now?', answer: 'Nothing upfront. We work on contingency, which means you pay nothing unless we recover money for you. No hourly fees, no retainer, no hidden costs. If we don\'t win, you don\'t pay.' },
+      { question: 'What percentage do you take from my settlement?', answer: 'Our contingency fee is discussed during your free consultation. The exact percentage depends on the complexity of your case. We explain every detail upfront so there are no surprises. You\'ll know exactly what to expect before signing anything.' },
+      { question: 'Are there any hidden fees or costs?', answer: 'No. We cover all case costs upfront, including investigation expenses, court filing fees, and expert witness fees. These costs are reimbursed from your settlement. If we don\'t recover compensation, you don\'t owe us for those costs either.' },
+    ],
+  },
+  {
+    name: 'Process',
+    faqs: [
+      { question: 'What happens during a free consultation?', answer: 'We listen to your story, review any documents you bring, explain your legal options, and give you an honest assessment of your case. You\'ll talk to our team, not a call center. The consultation takes about 30 minutes and comes with zero obligation.' },
+      { question: 'How long does a personal injury case take?', answer: 'Every case is different. Simple cases with clear liability and straightforward injuries can resolve in a few months. Complex cases involving disputed fault, severe injuries, or multiple defendants may take a year or more. We keep you updated on timeline throughout.' },
+      { question: 'Will I have to go to court?', answer: 'Most cases settle without going to trial. But we prepare every case as if it will. That preparation is what motivates insurance companies to offer fair settlements. If trial becomes necessary, Brandon is ready to present your case to a jury.' },
+    ],
+  },
+];
+
+// Flatten all FAQs for schema
+const allFaqs = faqCategories.flatMap(cat => cat.faqs);
+const faqSchema = generateFAQSchema(allFaqs);
+---
+
+<BaseLayout
+  title="Frequently Asked Questions"
+  description="Common questions about personal injury claims in Arizona. Learn about the process, fees, timelines, and your rights. AZ Law Now."
+  canonical="/faq/"
+  schema={faqSchema}
+>
+  <!-- Hero -->
+  <section class="hero hero-centered">
+    <div class="container container-narrow">
+      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">FAQ</p>
+      <h1>Questions? We've Got Answers.</h1>
+      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
+        The most common questions we hear from injured clients across the West Valley. If your question isn't here, call us at <a href="tel:+16026540202">(602) 654-0202</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="section">
+    <div class="container container-narrow">
+      {faqCategories.map((category) => (
+        <div class="faq-category">
+          <h2 class="faq-category__heading">{category.name}</h2>
+          <div class="faq-category__list">
+            {category.faqs.map((faq) => (
+              <details class="faq-item">
+                <summary class="faq-item__question">
+                  <span>{faq.question}</span>
+                  <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </summary>
+                <div class="faq-item__answer">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Still Have Questions?</h2>
+      <p>Call us directly. We'll give you a straight answer. No obligation.</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .faq-category {
+    margin-bottom: var(--space-12);
+  }
+
+  .faq-category__heading {
+    font-size: var(--text-2xl);
+    color: var(--color-gold);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--neutral-200);
+  }
+
+  .faq-category__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--neutral-200);
+  }
+
+  .faq-item__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-black);
+    transition: color var(--transition-base);
+  }
+
+  .faq-item__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__question::marker {
+    content: '';
+  }
+
+  .faq-item__question:hover {
+    color: var(--color-gold);
+  }
+
+  .faq-item__chevron {
+    color: var(--color-gold);
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] .faq-item__chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-item__answer {
+    padding: 0 0 var(--space-6);
+  }
+
+  .faq-item__answer p {
+    color: var(--color-slate);
+    line-height: 1.7;
+  }
+</style>

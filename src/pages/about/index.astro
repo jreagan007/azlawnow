@@ -1,0 +1,125 @@
+---
+/**
+ * About AZ Law Now
+ * Editorial about page — trio model, firm story, not corporate boilerplate
+ */
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../data/site-config';
+import { getAboutPageSchema } from '../../utils/schema';
+
+const aboutSchema = getAboutPageSchema();
+---
+
+<BaseLayout
+  title="About AZ Law Now"
+  description="The firm that does the work before the case. Brendan investigates. Brandon litigates. Stephanie guides. Two West Valley offices serving Arizona."
+  canonical="/about/"
+  schema={aboutSchema}
+>
+  <!-- Hero -->
+  <section class="hero hero-centered">
+    <div class="container container-narrow">
+      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">About the Firm</p>
+      <h1>The Firm That Does the Work Before the Case</h1>
+      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
+        Most firms start with paperwork. We start with an investigation. Three people. Two offices. One approach that actually works.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="section">
+    <div class="container container-narrow">
+      <p>
+        AZ Law Now exists because of a simple observation: most injury firms don't investigate. They sign clients, assign paralegals, and wait for the insurance company to make an offer. Then they negotiate from whatever the police report says.
+      </p>
+
+      <p>
+        That's not good enough. Police reports capture what an officer saw after arriving at the scene. They don't capture surveillance footage from the gas station across the street. They don't measure skid marks before rain washes them away. They don't interview the witness who left before cops showed up.
+      </p>
+
+      <p>
+        We built a firm that captures all of it. Not as an afterthought. As the first step.
+      </p>
+
+      <h2>Three People, One Case</h2>
+
+      <p>
+        Every client gets the same team of three. Not a rotating cast of associates. Not a paralegal who handles 200 files. Three specific people with three specific jobs.
+      </p>
+
+      <div class="about-trio">
+        <div class="card card-elevated" style="margin-bottom: var(--space-6);">
+          <h3 style="color: var(--color-gold); margin-bottom: var(--space-2);">Brendan Franks</h3>
+          <p style="font-weight: 600; color: var(--color-black); margin-bottom: var(--space-3);">The Investigator</p>
+          <p>
+            Brendan goes to the crash scene the day you hire us. He photographs evidence, identifies witnesses, pulls surveillance footage, and documents everything the insurance company hopes you'll miss. By the time the other side starts building their defense, Brendan's already built ours.
+          </p>
+        </div>
+
+        <div class="card card-elevated" style="margin-bottom: var(--space-6);">
+          <h3 style="color: var(--color-gold); margin-bottom: var(--space-2);">Brandon Millam, J.D.</h3>
+          <p style="font-weight: 600; color: var(--color-black); margin-bottom: var(--space-3);">The Litigator</p>
+          <p>
+            Brandon takes Brendan's evidence file and turns it into a legal strategy. He handles negotiations, court filings, and trial preparation. Every case gets prepared as if it's going to a courtroom, because that preparation is what produces better settlement offers.
+          </p>
+        </div>
+
+        <div class="card card-elevated" style="margin-bottom: var(--space-6);">
+          <h3 style="color: var(--color-gold); margin-bottom: var(--space-2);">Stephanie Ramirez</h3>
+          <p style="font-weight: 600; color: var(--color-black); margin-bottom: var(--space-3);">The Guide</p>
+          <p>
+            Stephanie is your point of contact from day one. She keeps you updated on your case, answers your questions, and makes sure you're never left wondering what's happening. When you call, you get Stephanie. Not a voicemail. Not a receptionist.
+          </p>
+        </div>
+      </div>
+
+      <h2>Two West Valley Offices</h2>
+
+      <p>
+        Our headquarters is in <a href="/buckeye/">Buckeye</a>, right in the heart of the West Valley. We opened a second office in <a href="/maricopa/">Maricopa</a> in March 2026 to serve Pinal County residents who shouldn't have to drive to Phoenix for good representation.
+      </p>
+
+      <p>
+        Both offices serve walk-ins and scheduled appointments, Monday through Friday, 8 a.m. to 6 p.m. If you can't come to us, we'll come to you.
+      </p>
+
+      <h2>Why "AZ Law Now"</h2>
+
+      <p>
+        The name says what we believe. When you're hurt, you need answers now. Not next week. Not after three voicemails. Not after a 45-minute drive to a downtown high-rise.
+      </p>
+
+      <p>
+        You need someone who picks up the phone, explains your options, and starts working your case today. That's what we do. Every time.
+      </p>
+
+      <h2>Results That Back It Up</h2>
+
+      <p>
+        We've recovered over $3.07 million for injured clients across the West Valley. That number grows because our approach works. Investigation first. Litigation second. Communication always.
+      </p>
+
+      <p>
+        Check our <a href="/case-results/">case results</a> for specifics. Read our <a href="/reviews/">client reviews</a> for perspective. Then call <a href="tel:+16026540202">(602) 654-0202</a> and let's talk about your case.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>You Deserve Answers.</h2>
+      <p>{siteConfig.messaging.l7FormSubhead}</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

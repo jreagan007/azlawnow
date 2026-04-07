@@ -1,0 +1,1013 @@
+---
+/**
+ * Homepage — AZ Law Now
+ * Editorial-first homepage for PI firm in Buckeye/West Valley Arizona
+ * Light theme: cream bg, dark text, gold accents
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+import { authors } from '../data/authors';
+import { getSiteWideSchemas } from '../utils/schema';
+
+const siteSchemas = getSiteWideSchemas();
+
+const practiceAreas = [
+  { name: 'Car Accidents', description: 'Rear-end collisions, intersection crashes, and highway pileups across the West Valley.', url: '/car-accidents/' },
+  { name: 'Truck Accidents', description: 'Semi-truck and commercial vehicle crashes on I-10, SR-85, and local roads.', url: '/truck-accidents/' },
+  { name: 'Motorcycle Accidents', description: 'Lane-splitting injuries, left-turn collisions, and road hazard cases.', url: '/motorcycle-accidents/' },
+  { name: 'Wrongful Death', description: 'Holding negligent parties accountable when families lose someone.', url: '/wrongful-death/' },
+  { name: 'Bus Accidents', description: 'School bus negligence, public transit crashes, and passenger injury claims.', url: '/bus-accidents/' },
+  { name: 'Elder Abuse', description: 'Physical abuse, neglect, and financial exploitation of elderly residents.', url: '/elder-abuse/' },
+  { name: 'Nursing Home Abuse', description: 'Facility negligence, understaffing injuries, and wrongful restraint cases.', url: '/nursing-home-abuse/' },
+  { name: 'Pedestrian Accidents', description: 'Crosswalk collisions, parking lot injuries, and hit-and-run cases.', url: '/pedestrian-accidents/' },
+  { name: 'Bicycle Accidents', description: 'Dooring incidents, right-hook collisions, and bike lane violations.', url: '/bicycle-accidents/' },
+  { name: 'Slip and Fall', description: 'Wet floors, broken sidewalks, and hazardous property conditions.', url: '/slip-and-fall/' },
+  { name: 'Medical Negligence', description: 'Misdiagnosis, surgical errors, and delayed treatment cases.', url: '/medical-negligence/' },
+  { name: 'Dog Bite', description: 'Arizona strict liability dog bite claims and animal attack injuries.', url: '/dog-bite/' },
+];
+
+const caseResults = [
+  { amount: '$800,000', type: 'School Bus Negligence', description: 'A child suffered serious injuries when a school district bus driver failed to follow safety protocol.' },
+  { amount: '$745,000', type: 'Motor Vehicle Accident', description: 'Multi-vehicle collision on I-10 left our client with spinal injuries requiring surgery.' },
+  { amount: '$500,000', type: 'Trucking Accident', description: 'Commercial truck driver ran a red light in Goodyear, causing catastrophic injuries.' },
+  { amount: '$255,000', type: 'Rear-End Collision', description: 'Distracted driver rear-ended our client at a Buckeye intersection during rush hour.' },
+];
+
+const locations = [
+  { name: 'Buckeye', label: 'Headquarters', url: '/buckeye/' },
+  { name: 'Maricopa', label: 'New Office', url: '/maricopa/' },
+  { name: 'Goodyear', label: '', url: '/goodyear/' },
+  { name: 'Avondale', label: '', url: '/avondale/' },
+  { name: 'Phoenix', label: '', url: '/phoenix/' },
+];
+
+const brendan = authors['brendan-franks'];
+const brandon = authors['brandon-millam'];
+const stephanie = authors['stephanie-ramirez'];
+---
+
+<BaseLayout
+  title="Arizona Injury Attorneys | AZ Law Now — You Get Answers."
+  description={siteConfig.defaultDescription}
+  schema={siteSchemas}
+>
+
+  <!-- ================================ -->
+  <!-- HERO SECTION                     -->
+  <!-- ================================ -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <span class="hero-overline">Buckeye &amp; Maricopa Injury Attorneys</span>
+      <h1 class="hero-h1">You Get Answers.</h1>
+      <p class="hero-subhead">The firm that does the work before the case.</p>
+      <div class="hero-actions">
+        <a href="/contact/" class="btn btn-primary btn-lg">Get My Free Consultation &rarr;</a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="hero-phone">Or call {siteConfig.phoneFormatted}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- TRUST STRIP                      -->
+  <!-- ================================ -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <span class="trust-value">$3.07M+</span>
+          <span class="trust-label">Recovered</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-value">Your Whole Team.</span>
+          <span class="trust-label">Your Whole Case.</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-value">No Fee</span>
+          <span class="trust-label">Unless We Win</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-value">Free</span>
+          <span class="trust-label">Consultations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- FEATURED INVESTIGATION           -->
+  <!-- ================================ -->
+  <section class="section featured-section">
+    <div class="container">
+      <span class="section-label">What We're Covering</span>
+      <div class="featured-card">
+        <div class="featured-image">
+          <div class="featured-image-placeholder">
+            <span class="featured-tag">Investigation</span>
+          </div>
+        </div>
+        <div class="featured-body">
+          <span class="featured-tag-mobile">Investigation</span>
+          <h2 class="featured-headline">
+            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/">What the ADOT Data Shows About I-10 Crashes in Buckeye and Goodyear</a>
+          </h2>
+          <p class="featured-excerpt">
+            We pulled three years of ADOT crash reports for the I-10 corridor between Buckeye and Goodyear. The numbers tell a story that local coverage hasn't touched. Speed, volume, and commercial truck traffic are converging in one of Arizona's fastest-growing stretches of highway.
+          </p>
+          <div class="featured-byline">
+            <img src={brendan.photo} alt={brendan.name} class="byline-photo" width="36" height="36" loading="lazy" />
+            <div class="byline-text">
+              <span class="byline-name">{brendan.name}</span>
+              <span class="byline-date">April 2, 2026</span>
+            </div>
+            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/" class="featured-read-link">Read &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- THREE PILLARS / CONTENT HUBS     -->
+  <!-- ================================ -->
+  <section class="section pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card card card-elevated">
+          <span class="pillar-tag">Investigated.</span>
+          <h3 class="pillar-title">Resources</h3>
+          <p class="pillar-description">
+            Original reporting on West Valley crash data, public safety records, and the stories behind the numbers. {brendan.name.split(' ')[0]} runs the desk.
+          </p>
+          <a href="/resources/" class="pillar-link">Explore the data &rarr;</a>
+        </div>
+        <div class="pillar-card card card-elevated">
+          <span class="pillar-tag">Answered.</span>
+          <h3 class="pillar-title">Legal Guides</h3>
+          <p class="pillar-description">
+            Arizona injury law explained in plain language. Statutes, deadlines, and what they actually mean for your case. Reviewed by {brandon.name.split(',')[0]}.
+          </p>
+          <a href="/legal-guides/" class="pillar-link">Read the guides &rarr;</a>
+        </div>
+        <div class="pillar-card card card-elevated">
+          <span class="pillar-tag">Guided.</span>
+          <h3 class="pillar-title">Client Guides</h3>
+          <p class="pillar-description">
+            Step-by-step walkthroughs for everything after the injury. What to expect, what paperwork matters, how timelines work. {stephanie.name.split(' ')[0]} makes it clear.
+          </p>
+          <a href="/client-guides/" class="pillar-link">See what's next &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- PRACTICE AREAS GRID              -->
+  <!-- ================================ -->
+  <section class="section practice-section">
+    <div class="container">
+      <h2 class="section-heading">How We Help</h2>
+      <div class="practice-grid">
+        {practiceAreas.map((area) => (
+          <a href={area.url} class="practice-card">
+            <h3 class="practice-name">{area.name}</h3>
+            <p class="practice-desc">{area.description}</p>
+            <span class="practice-link">Read &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- LOCATIONS                        -->
+  <!-- ================================ -->
+  <section class="section locations-section">
+    <div class="container">
+      <h2 class="section-heading">Serving the West Valley</h2>
+      <p class="section-subtext">Two offices. Five core service areas. One team that knows this part of Arizona.</p>
+      <div class="locations-grid">
+        {locations.map((loc) => (
+          <a href={loc.url} class="location-card">
+            <h3 class="location-name">{loc.name}</h3>
+            {loc.label && <span class="location-label">{loc.label}</span>}
+            <span class="location-link">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- CASE RESULTS TEASER              -->
+  <!-- ================================ -->
+  <section class="section results-section">
+    <div class="container">
+      <h2 class="section-heading">Results That Matter</h2>
+      <div class="results-grid">
+        {caseResults.map((result) => (
+          <div class="result-card">
+            <span class="result-amount">{result.amount}</span>
+            <span class="result-type">{result.type}</span>
+            <p class="result-desc">{result.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="results-cta">
+        <a href="/case-results/" class="btn btn-secondary">See Our Results &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- TEAM SECTION                     -->
+  <!-- ================================ -->
+  <section class="section team-section">
+    <div class="container">
+      <h2 class="section-heading">Three People. Your Whole Case.</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo-wrapper">
+            <img src={brendan.photo} alt={brendan.name} class="team-photo" width="120" height="120" loading="lazy" />
+          </div>
+          <h3 class="team-name">{brendan.name}</h3>
+          <span class="team-title">{brendan.title}</span>
+          <p class="team-desc">Covers West Valley injury data, public safety records, and community accountability stories.</p>
+          <a href={brendan.url} class="team-link">Meet Brendan &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="team-photo-wrapper">
+            <img src={brandon.photo} alt={brandon.name} class="team-photo" width="120" height="120" loading="lazy" />
+          </div>
+          <h3 class="team-name">{brandon.name}</h3>
+          <span class="team-title">{brandon.title}</span>
+          <p class="team-desc">Reviews every legal guide for accuracy. Practices personal injury law across the West Valley.</p>
+          <a href={brandon.url} class="team-link">Meet Brandon &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="team-photo-wrapper">
+            <img src={stephanie.photo} alt={stephanie.name} class="team-photo" width="120" height="120" loading="lazy" />
+          </div>
+          <h3 class="team-name">{stephanie.name}</h3>
+          <span class="team-title">{stephanie.title}</span>
+          <p class="team-desc">Writes the guides that walk families through the process after an injury. Clear, step by step.</p>
+          <a href={stephanie.url} class="team-link">Meet Stephanie &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ -->
+  <!-- FINAL CTA                        -->
+  <!-- ================================ -->
+  <section class="final-cta section-dark">
+    <div class="container text-center">
+      <h2 class="final-cta-heading">You Deserve Answers.</h2>
+      <p class="final-cta-subtext">Tell us what happened. We'll tell you what's next.</p>
+      <div class="final-cta-actions">
+        <a href="/contact/" class="btn btn-primary btn-lg">Get My Free Consultation &rarr;</a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="final-cta-phone">Or call {siteConfig.phoneFormatted}</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ========================================
+     HERO SECTION
+     ======================================== */
+  .hero-section {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background-image: url('/images/heroes/homepage-hero.webp');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-black);
+    overflow: hidden;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(26, 26, 26, 0.92) 0%,
+      rgba(26, 26, 26, 0.75) 45%,
+      rgba(26, 26, 26, 0.3) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-20);
+  }
+
+  .hero-overline {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--color-white);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-subhead {
+    font-size: var(--text-xl);
+    color: var(--neutral-400);
+    line-height: 1.5;
+    margin-bottom: var(--space-10);
+    max-width: 520px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .hero-phone {
+    color: var(--neutral-400);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: color var(--transition-base);
+  }
+
+  .hero-phone:hover {
+    color: var(--color-gold);
+  }
+
+  /* ========================================
+     TRUST STRIP
+     ======================================== */
+  .trust-strip {
+    background-color: var(--color-black);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-8) 0;
+  }
+
+  .trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-10);
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    text-align: center;
+  }
+
+  .trust-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1.2;
+  }
+
+  .trust-label {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: var(--space-1);
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ========================================
+     SECTION SHARED
+     ======================================== */
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-8);
+  }
+
+  .section-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-4);
+  }
+
+  .section-subtext {
+    font-size: var(--text-lg);
+    color: var(--color-slate);
+    margin-bottom: var(--space-12);
+    max-width: 600px;
+  }
+
+  /* ========================================
+     FEATURED INVESTIGATION
+     ======================================== */
+  .featured-section {
+    background-color: var(--neutral-100);
+  }
+
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    background: var(--color-white);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .featured-image {
+    min-height: 320px;
+  }
+
+  .featured-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--neutral-200) 0%, var(--neutral-300) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-6);
+  }
+
+  .featured-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-white);
+    background: var(--color-red);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+  }
+
+  .featured-tag-mobile {
+    display: none;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-red);
+    margin-bottom: var(--space-3);
+  }
+
+  .featured-body {
+    padding: var(--space-8) var(--space-8) var(--space-8) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .featured-headline {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: var(--space-4);
+  }
+
+  .featured-headline a {
+    color: var(--color-black);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .featured-headline a:hover {
+    color: var(--color-gold);
+  }
+
+  .featured-excerpt {
+    font-size: var(--text-base);
+    color: var(--color-slate);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+  }
+
+  .featured-byline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .byline-photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .byline-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .byline-name {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-black);
+  }
+
+  .byline-date {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+  }
+
+  .featured-read-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  /* ========================================
+     THREE PILLARS
+     ======================================== */
+  .pillars-section {
+    background-color: var(--color-bg);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .pillar-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8);
+  }
+
+  .pillar-tag {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-gold);
+    margin-bottom: var(--space-2);
+  }
+
+  .pillar-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-4);
+  }
+
+  .pillar-description {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: var(--space-6);
+  }
+
+  .pillar-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+
+  /* ========================================
+     PRACTICE AREAS
+     ======================================== */
+  .practice-section {
+    background-color: var(--color-white);
+  }
+
+  .practice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+  }
+
+  .practice-card {
+    display: block;
+    padding: var(--space-6);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .practice-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .practice-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-2);
+    transition: color var(--transition-base);
+  }
+
+  .practice-card:hover .practice-name {
+    color: var(--color-gold);
+  }
+
+  .practice-desc {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+  }
+
+  .practice-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+
+  /* ========================================
+     LOCATIONS
+     ======================================== */
+  .locations-section {
+    background-color: var(--color-bg);
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+  }
+
+  .location-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-6) var(--space-4);
+    background: var(--color-white);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .location-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .location-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-1);
+  }
+
+  .location-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-3);
+  }
+
+  .location-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+    margin-top: auto;
+    padding-top: var(--space-2);
+  }
+
+  /* ========================================
+     CASE RESULTS
+     ======================================== */
+  .results-section {
+    background-color: var(--color-white);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .result-card {
+    text-align: center;
+    padding: var(--space-6);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+  }
+
+  .result-amount {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  .result-type {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-black);
+    margin-bottom: var(--space-3);
+  }
+
+  .result-desc {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    line-height: 1.6;
+  }
+
+  .results-cta {
+    text-align: center;
+    margin-top: var(--space-10);
+  }
+
+  /* ========================================
+     TEAM SECTION
+     ======================================== */
+  .team-section {
+    background-color: var(--color-bg);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+  }
+
+  .team-card {
+    text-align: center;
+    padding: var(--space-8);
+    background: var(--color-white);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+  }
+
+  .team-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-md);
+  }
+
+  .team-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--neutral-200);
+  }
+
+  .team-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-1);
+  }
+
+  .team-title {
+    display: block;
+    font-size: var(--text-sm);
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+  }
+
+  .team-desc {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .team-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+  }
+
+  /* ========================================
+     FINAL CTA
+     ======================================== */
+  .final-cta {
+    padding: var(--space-24) 0;
+  }
+
+  .final-cta-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--neutral-50);
+    margin-bottom: var(--space-4);
+  }
+
+  .final-cta-subtext {
+    font-size: var(--text-lg);
+    color: var(--neutral-400);
+    margin-bottom: var(--space-10);
+  }
+
+  .final-cta-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .final-cta-phone {
+    color: var(--neutral-400);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: color var(--transition-base);
+  }
+
+  .final-cta-phone:hover {
+    color: var(--color-gold);
+  }
+
+  /* ========================================
+     RESPONSIVE — TABLET
+     ======================================== */
+  @media (max-width: 1024px) {
+    .featured-card {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+      min-height: 220px;
+    }
+
+    .featured-body {
+      padding: var(--space-6);
+    }
+
+    .pillars-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .results-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .locations-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  /* ========================================
+     RESPONSIVE — MOBILE
+     ======================================== */
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 70vh;
+    }
+
+    .hero-content {
+      padding-top: var(--space-20);
+      padding-bottom: var(--space-16);
+    }
+
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 26, 26, 0.85) 0%,
+        rgba(26, 26, 26, 0.7) 100%
+      );
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .trust-items {
+      gap: var(--space-6);
+    }
+
+    .trust-divider {
+      display: none;
+    }
+
+    .trust-item {
+      flex: 1 1 40%;
+      min-width: 140px;
+    }
+
+    .featured-tag {
+      display: none;
+    }
+
+    .featured-tag-mobile {
+      display: inline-block;
+    }
+
+    .practice-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .locations-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .final-cta {
+      padding: var(--space-16) 0;
+    }
+
+    .final-cta-actions {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-h1 {
+      font-size: 2.5rem;
+    }
+
+    .trust-items {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .trust-item {
+      min-width: unset;
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .result-amount {
+      font-size: var(--text-2xl);
+    }
+  }
+</style>

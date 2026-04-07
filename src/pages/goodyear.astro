@@ -1,0 +1,115 @@
+---
+/**
+ * Goodyear Personal Injury Attorneys — Location Page
+ * West Valley core. I-10 corridor. Adjacent to Buckeye.
+ */
+
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+
+const faqs = [
+  {
+    question: 'Does AZ Law Now serve Goodyear residents?',
+    answer: 'Yes. Our Buckeye headquarters is minutes from Goodyear. We handle injury cases for Goodyear residents regularly and know the local roads, intersections, and traffic patterns that cause crashes in your community.',
+  },
+  {
+    question: 'How long do I have to file an injury claim in Goodyear?',
+    answer: 'Arizona\'s statute of limitations is two years from the date of your injury. This applies to car crashes, slip and fall incidents, and all other personal injury cases in Goodyear. Contact us as soon as possible so we can preserve evidence while it\'s still available.',
+  },
+  {
+    question: 'What are the most dangerous roads in Goodyear?',
+    answer: 'I-10 through Goodyear carries heavy commercial and commuter traffic. Litchfield Road, Estrella Parkway, and Bullard Avenue see frequent crashes at major intersections. The I-10 and Estrella Parkway interchange is a known trouble spot for merge-related collisions.',
+  },
+  {
+    question: 'What should I do after a crash at the I-10 and Litchfield Road interchange?',
+    answer: 'Get to safety and call 911. Document the scene with photos and exchange insurance information. Then call us at (602) 654-0202 before talking to any insurance company. We\'ve handled multiple cases at this interchange and know exactly what evidence to preserve.',
+  },
+  {
+    question: 'How much does a Goodyear personal injury attorney cost?',
+    answer: 'You pay nothing unless we win. We work on contingency for all personal injury cases. No hourly fees, no retainer. Your free consultation comes with zero obligation.',
+  },
+  {
+    question: 'Can you help with a pedestrian crash in Goodyear?',
+    answer: 'Absolutely. Goodyear\'s growing population means more foot traffic near shopping centers, schools, and residential areas. Pedestrian crashes often result in severe injuries. We handle these cases aggressively because the stakes are higher when someone was on foot.',
+  },
+  {
+    question: 'What if the other driver in my Goodyear crash was uninsured?',
+    answer: 'Arizona has a significant number of uninsured drivers. You may be able to recover through your own uninsured/underinsured motorist coverage. We\'ll review your policy and identify every available source of compensation during your free consultation.',
+  },
+  {
+    question: 'How fast can I meet with an attorney about my Goodyear crash?',
+    answer: 'Most Goodyear residents can get a same-day or next-day consultation at our Buckeye headquarters. We\'re just minutes away. If you can\'t travel, we\'ll arrange a phone or video consultation.',
+  },
+];
+
+const localSchema = getLocalBusinessSchema('Goodyear', 'goodyear');
+---
+
+<PracticeAreaLayout
+  title="Goodyear Personal Injury Attorneys"
+  description="Goodyear injury attorneys at AZ Law Now. I-10 corridor crash cases, pedestrian injuries, wrongful death. Free consultation. Call (602) 654-0202."
+  canonical="/goodyear/"
+  practiceArea="Goodyear Personal Injury Attorneys"
+  heroTitle="Goodyear Injury Attorneys. Minutes Away, Fully Invested."
+  heroSubtitle="West Valley injury attorneys serving Goodyear from our Buckeye headquarters. Local knowledge. Aggressive representation."
+  faqs={faqs}
+  schema={localSchema}
+>
+  <p>
+    Goodyear sits at the core of the West Valley's growth corridor, and our Buckeye headquarters is right next door. We don't serve Goodyear from a satellite office or a rented conference room. We're your neighbors.
+  </p>
+
+  <p>
+    That proximity matters when Brendan needs to investigate a crash scene on Litchfield Road before the evidence gets cleaned up. It matters when you need to meet with Brandon about your case strategy without burning half a day driving to a Phoenix firm. It matters because local means faster.
+  </p>
+
+  <h2>I-10 Through Goodyear: A Daily Hazard</h2>
+
+  <p>
+    Interstate 10 runs directly through Goodyear, carrying a mix of commuter traffic, semi-trucks, and construction vehicles. The interchanges at Litchfield Road, Estrella Parkway, and Bullard Avenue are some of the busiest in the West Valley.
+  </p>
+
+  <p>
+    Merge collisions, rear-end crashes in stop-and-go traffic, and sideswipe incidents happen daily on this stretch. Commercial truck crashes along I-10 are particularly dangerous because of the speed differential between trucks and passenger vehicles.
+  </p>
+
+  <p>
+    We've handled I-10 crash cases from the Goodyear exits to the Buckeye exits and beyond. Brendan knows where traffic cameras are positioned, which exit ramps create blind spots, and how to document the road conditions that contributed to your crash.
+  </p>
+
+  <h2>Goodyear's Growth Creates New Risks</h2>
+
+  <p>
+    Palm Valley, Estrella, Canyon Trails, and Pebblecreek have brought tens of thousands of new residents to Goodyear. Schools, shopping centers, and parks generate pedestrian and bicycle traffic on roads that were designed for less volume.
+  </p>
+
+  <p>
+    Intersection crashes at Indian School Road and Litchfield, McDowell Road and Estrella Parkway, and Yuma Road and Bullard Avenue are increasingly common. So are pedestrian incidents near the Goodyear Civic Square area and the Palm Valley shopping corridors.
+  </p>
+
+  <h2>How We Build Goodyear Injury Cases</h2>
+
+  <p>
+    Our approach starts with investigation, not paperwork. The day you hire us, Brendan heads to the crash scene. He documents road conditions, photographs sight lines, checks for surveillance cameras at nearby businesses, and identifies witnesses.
+  </p>
+
+  <p>
+    While Brendan builds the evidence file, Brandon develops the legal strategy. And Stephanie keeps you informed at every step. You'll never have to call and wonder what's happening with your case.
+  </p>
+
+  <p>
+    That three-person model is how we've recovered over $3 million for West Valley clients. The investigation comes first. Everything else follows from the evidence.
+  </p>
+
+  <h2>Maricopa County Courts</h2>
+
+  <p>
+    Goodyear injury cases fall under Maricopa County Superior Court. Our team files there regularly and knows the local procedures, judges, and timelines. We also handle matters in the Goodyear Justice Court when appropriate.
+  </p>
+
+  <h2>Talk to Us Today</h2>
+
+  <p>
+    Call <a href="tel:+16026540202">(602) 654-0202</a> for a free consultation. Most Goodyear residents meet with us the same day they call. Our Buckeye office is minutes from anywhere in Goodyear. No fee unless we win.
+  </p>
+</PracticeAreaLayout>

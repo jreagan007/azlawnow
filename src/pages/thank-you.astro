@@ -1,0 +1,107 @@
+---
+/**
+ * Thank You — AZ Law Now
+ * Post-form-submission success page. noindex.
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+---
+
+<BaseLayout
+  title="Thank You"
+  description="Your message has been received. AZ Law Now will contact you within one business day."
+  canonical="/thank-you/"
+  noindex={true}
+>
+  <section class="thank-you-page">
+    <div class="container" style="max-width: 600px;">
+      <div class="thank-you-content">
+        <div class="thank-you-check" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="30" stroke="var(--color-gold)" stroke-width="3"/>
+            <path d="M20 32L28 40L44 24" stroke="var(--color-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h1 style="font-size: var(--text-4xl); margin-bottom: var(--space-4);">We Got Your Message.</h1>
+
+        <p style="font-size: var(--text-xl); color: var(--color-slate); margin-bottom: var(--space-6); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Our team will review your information and reach out within one business day. If your matter is urgent, call us directly.
+        </p>
+
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta" style="font-size: var(--text-3xl); display: block; margin-bottom: var(--space-10);">
+          {siteConfig.phoneFormatted}
+        </a>
+
+        <h2 style="font-size: var(--text-xl); margin-bottom: var(--space-4);">What Happens Next</h2>
+
+        <div class="next-steps">
+          <div class="next-step">
+            <span class="next-step__number">1</span>
+            <p>We review your submission and assess your situation.</p>
+          </div>
+          <div class="next-step">
+            <span class="next-step__number">2</span>
+            <p>A team member contacts you to discuss your case.</p>
+          </div>
+          <div class="next-step">
+            <span class="next-step__number">3</span>
+            <p>If we can help, we schedule your free consultation.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-10);">
+          <a href="/" class="btn btn-secondary">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .thank-you-page {
+    padding: var(--space-20) 0 var(--space-24);
+    text-align: center;
+    min-height: 70vh;
+  }
+
+  .thank-you-check {
+    margin-bottom: var(--space-8);
+  }
+
+  .next-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .next-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .next-step__number {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gold);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-lg);
+    border-radius: 50%;
+  }
+
+  .next-step p {
+    color: var(--color-slate);
+    line-height: 1.5;
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+/**
+ * Breadcrumbs
+ * Simple breadcrumb navigation with structured data
+ * Last item renders as plain text (current page), others as links
+ */
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+  <ol class="breadcrumbs-list">
+    {items.map((item, index) => {
+      const isLast = index === items.length - 1;
+      return (
+        <li class="breadcrumbs-item">
+          {isLast ? (
+            <span class="breadcrumbs-current" aria-current="page">{item.name}</span>
+          ) : (
+            <>
+              <a href={item.url} class="breadcrumbs-link">{item.name}</a>
+              <span class="breadcrumbs-separator" aria-hidden="true">/</span>
+            </>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    margin-bottom: var(--space-4);
+  }
+
+  .breadcrumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  .breadcrumbs-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumbs-link {
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .breadcrumbs-link:hover {
+    color: var(--color-gold-hover);
+  }
+
+  .breadcrumbs-separator {
+    color: var(--neutral-400);
+    margin: 0 var(--space-2);
+    user-select: none;
+  }
+
+  .breadcrumbs-current {
+    color: var(--color-slate);
+  }
+</style>

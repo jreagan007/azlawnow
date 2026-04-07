@@ -1,0 +1,107 @@
+---
+/**
+ * Avondale Personal Injury Attorneys — Location Page
+ * West Valley. School bus and truck accident angles.
+ */
+
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+
+const faqs = [
+  {
+    question: 'Does AZ Law Now handle injury cases in Avondale?',
+    answer: 'Yes. We serve Avondale residents from our Buckeye headquarters, which is a short drive west. We handle car crashes, truck crashes, pedestrian injuries, school bus incidents, and every other type of personal injury case in the Avondale area.',
+  },
+  {
+    question: 'What should I do after a school bus crash in Avondale?',
+    answer: 'Get your child medical attention immediately, even if they say they feel fine. Document any visible injuries with photos. Request a copy of the crash report from the police. Then call us. School bus cases involve government entities and special rules about notice deadlines that shorten the normal timeline.',
+  },
+  {
+    question: 'Are school bus injury claims handled differently in Arizona?',
+    answer: 'Yes. When a school district operates the bus, claims against government entities require filing a notice of claim within 180 days. That\'s six months, not two years. Missing this deadline can permanently bar your claim. Contact an attorney immediately after any school bus incident.',
+  },
+  {
+    question: 'How long do I have to file an injury claim in Avondale?',
+    answer: 'For most personal injury cases, Arizona gives you two years. But claims involving government vehicles, school buses, or city property may have shorter notice deadlines. Don\'t assume you have two years without checking with an attorney first.',
+  },
+  {
+    question: 'What are the most dangerous intersections in Avondale?',
+    answer: 'Avondale Boulevard and McDowell Road, Dysart Road and Indian School Road, and the I-10 frontage road intersections near Avondale Boulevard see frequent crashes. Heavy truck traffic from the industrial areas near 107th Avenue adds commercial vehicle risks.',
+  },
+  {
+    question: 'Can you handle truck crash cases in Avondale?',
+    answer: 'We handle truck crashes throughout the West Valley. Avondale\'s industrial corridors near I-10 generate significant commercial truck traffic. These cases require investigating federal compliance records, driver logs, and maintenance histories. Brandon and Brendan work these cases together from day one.',
+  },
+];
+
+const localSchema = getLocalBusinessSchema('Avondale', 'avondale');
+---
+
+<PracticeAreaLayout
+  title="Avondale Personal Injury Attorneys"
+  description="Avondale injury attorneys at AZ Law Now. School bus crashes, truck crashes, car crashes. Free consultation. Call (602) 654-0202."
+  canonical="/avondale/"
+  practiceArea="Avondale Personal Injury Attorneys"
+  heroTitle="Avondale Injury Attorneys. Your West Valley Team."
+  heroSubtitle="Personal injury attorneys serving Avondale families from our Buckeye headquarters. School bus crashes, truck crashes, and everything in between."
+  faqs={faqs}
+  schema={localSchema}
+>
+  <p>
+    Avondale families deserve an injury firm that understands the West Valley. We're not a downtown Phoenix firm trying to serve the suburbs. Our headquarters is in Buckeye, right next to your community. When your child gets hurt on a school bus or a truck driver runs a red light on Avondale Boulevard, we're already close.
+  </p>
+
+  <p>
+    That proximity means Brendan can investigate your crash scene the same day you call. It means you can meet with Brandon about your legal options without fighting I-10 traffic into downtown. And it means Stephanie is just a short drive away when you need an in-person update on your case.
+  </p>
+
+  <h2>School Bus Crashes in Avondale</h2>
+
+  <p>
+    Avondale has multiple school districts serving thousands of children. Littleton Elementary, Avondale Elementary, and Agua Fria Union High School District all operate bus fleets across the city's growing neighborhoods.
+  </p>
+
+  <p>
+    When a child gets hurt on a school bus, the rules change. Claims against school districts and government entities carry a 180-day notice requirement. Not two years. Six months. Miss that deadline and your child's claim could be permanently barred.
+  </p>
+
+  <p>
+    We've handled school bus negligence cases before. Our $800,000 recovery against Hartford involved a school bus incident. We know the notice requirements, the government immunity exceptions, and the investigation steps that make these cases succeed.
+  </p>
+
+  <h2>Truck Traffic and Industrial Corridors</h2>
+
+  <p>
+    Avondale's industrial areas near 107th Avenue and I-10 generate heavy commercial truck traffic through residential neighborhoods. Semi-trucks, delivery vehicles, and construction haulers share roads with families heading to school, work, and appointments.
+  </p>
+
+  <p>
+    Truck crashes aren't like car crashes. Federal Motor Carrier Safety Administration regulations govern driver hours, maintenance schedules, and weight limits. When a trucking company cuts corners, people get hurt. We investigate those corners.
+  </p>
+
+  <p>
+    Brendan pulls the trucking company's compliance records. Brandon builds the legal case against the driver, the carrier, and any other responsible parties. These cases often involve multiple defendants and large commercial insurance policies.
+  </p>
+
+  <h2>Avondale's Busiest Crash Corridors</h2>
+
+  <p>
+    Avondale Boulevard runs through the heart of the community and sees crashes at nearly every major cross street. McDowell Road and Dysart Road intersections handle heavy traffic volume during commute hours. The I-10 frontage roads near Avondale create merge and turn conflicts that lead to T-bone and rear-end collisions.
+  </p>
+
+  <p>
+    We know these roads because we drive them ourselves. That local knowledge matters when reconstructing what happened at a crash scene and identifying the conditions that contributed to your injury.
+  </p>
+
+  <h2>Maricopa County Courts</h2>
+
+  <p>
+    Avondale injury cases are filed in Maricopa County Superior Court. Our team has extensive experience with Maricopa County filing procedures, judges, and litigation timelines. We handle your case from investigation through resolution.
+  </p>
+
+  <h2>Free Consultation for Avondale Residents</h2>
+
+  <p>
+    Call <a href="tel:+16026540202">(602) 654-0202</a> for a free case review. No fee unless we recover money for you. Most Avondale residents can meet with us the same day they call. Your injury matters. Let's talk about it.
+  </p>
+</PracticeAreaLayout>

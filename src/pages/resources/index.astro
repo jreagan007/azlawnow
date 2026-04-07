@@ -1,0 +1,61 @@
+---
+/**
+ * Resources Hub — AZ Law Now
+ * Brendan's investigations / news-style content
+ */
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../data/site-config';
+---
+
+<BaseLayout
+  title="Resources"
+  description="Injury resources and investigation insights from AZ Law Now. Stay informed about your rights after a crash in the West Valley."
+  canonical="/resources/"
+>
+  <!-- Hero -->
+  <section class="hero hero-centered">
+    <div class="container container-narrow">
+      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">Resources</p>
+      <h1>From the Field</h1>
+      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
+        Brendan's investigation insights, crash scene analysis, and the evidence details that matter when building an injury case in the West Valley.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Placeholder -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="hub-placeholder">
+        <p style="color: var(--color-slate); text-align: center; font-size: var(--text-lg);">
+          Articles coming soon. In the meantime, call <a href="tel:+16026540202">(602) 654-0202</a> with questions about your case.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>{siteConfig.messaging.l7FormHeadline}</h2>
+      <p>{siteConfig.messaging.l7FormSubhead}</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hub-placeholder {
+    padding: var(--space-16) 0;
+    border-top: 1px solid var(--neutral-200);
+    border-bottom: 1px solid var(--neutral-200);
+  }
+</style>

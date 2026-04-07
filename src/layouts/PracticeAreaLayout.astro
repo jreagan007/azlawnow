@@ -1,0 +1,665 @@
+---
+/**
+ * Practice Area Layout — AZ Law Now
+ * Sunset Editorial LIGHT theme
+ * Full-bleed hero with dark gradient overlay, trust stats, FAQ section, final CTA
+ */
+
+import BaseLayout from './BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+import {
+  generateServiceSchema,
+  generateFAQSchema,
+  generateBreadcrumbSchema,
+} from '../utils/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  practiceArea: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  faqs?: Array<{ question: string; answer: string }>;
+  schema?: object;
+  showMidCta?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  practiceArea,
+  heroTitle,
+  heroSubtitle,
+  heroImage,
+  heroImageAlt = `${practiceArea} attorney in the West Valley`,
+  faqs = [],
+  schema: extraSchema,
+  showMidCta = true,
+} = Astro.props;
+
+// Build breadcrumbs
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: practiceArea, url: canonical },
+];
+
+// Assemble schemas
+const serviceSchema = generateServiceSchema(practiceArea, heroImage, canonical);
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+const faqSchema = faqs.length > 0 ? generateFAQSchema(faqs) : null;
+
+const schemas = [
+  serviceSchema,
+  breadcrumbSchema,
+  ...(faqSchema ? [faqSchema] : []),
+  ...(extraSchema ? [extraSchema] : []),
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  image={heroImage}
+  schema={schemas}
+>
+  <!-- ============================================
+       HERO — Full-bleed image with dark gradient
+       ============================================ -->
+  <section class="pa-hero" aria-label={`${practiceArea} hero`}>
+    {heroImage && (
+      <img
+        src={heroImage}
+        alt={heroImageAlt}
+        class="pa-hero__bg"
+        loading="eager"
+        decoding="async"
+        width="1600"
+        height="900"
+      />
+    )}
+    <div class="pa-hero__overlay" />
+    <div class="pa-hero__content container">
+      <!-- Breadcrumbs -->
+      <nav class="pa-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          {breadcrumbs.map((crumb, i) => (
+            <li>
+              {i < breadcrumbs.length - 1 ? (
+                <a href={crumb.url}>{crumb.name}</a>
+              ) : (
+                <span aria-current="page">{crumb.name}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <!-- H1 + Subtitle -->
+      <h1 class="pa-hero__title" data-speakable="headline">{heroTitle}</h1>
+      <p class="pa-hero__subtitle" data-speakable="summary">{heroSubtitle}</p>
+
+      <!-- Trust Stats Bar -->
+      <div class="pa-trust-stats">
+        <div class="pa-trust-stat">
+          <span class="pa-trust-stat__value">{siteConfig.recoveredAmount}+</span>
+          <span class="pa-trust-stat__label">Recovered</span>
+        </div>
+        <div class="pa-trust-stat__divider" />
+        <div class="pa-trust-stat">
+          <span class="pa-trust-stat__value">Your Whole Team</span>
+          <span class="pa-trust-stat__label">Attorneys, investigators, support</span>
+        </div>
+        <div class="pa-trust-stat__divider" />
+        <div class="pa-trust-stat">
+          <span class="pa-trust-stat__value">No Fee Unless We Win</span>
+          <span class="pa-trust-stat__label">Free consultation</span>
+        </div>
+      </div>
+
+      <!-- Primary CTA -->
+      <div class="pa-hero__cta">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="btn btn-secondary btn-lg pa-hero__phone">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTENT AREA
+       ============================================ -->
+  <section class="pa-content section">
+    <div class="container container-narrow">
+      <!-- TODO: Wrap with AutoLinker once component exists -->
+      <slot />
+    </div>
+  </section>
+
+  <!-- ============================================
+       MID-CONTENT CTA
+       ============================================ -->
+  {showMidCta && (
+    <section class="pa-mid-cta" aria-label="Contact us">
+      <div class="container container-narrow">
+        <div class="pa-mid-cta__box">
+          <h2 class="pa-mid-cta__heading">Questions? Talk to our team.</h2>
+          <p class="pa-mid-cta__text">
+            {siteConfig.messaging.l7FormSubhead}
+          </p>
+          <div class="pa-mid-cta__actions">
+            <a href="/contact/" class="btn btn-primary">
+              {siteConfig.messaging.l8Primary} →
+            </a>
+            <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+              {siteConfig.phoneFormatted}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ============================================
+       FAQ SECTION
+       ============================================ -->
+  {faqs.length > 0 && (
+    <section class="pa-faq section" aria-label="Frequently asked questions">
+      <div class="container container-narrow">
+        <h2 class="pa-faq__heading">Frequently Asked Questions</h2>
+        <div class="pa-faq__list">
+          {faqs.map((faq) => (
+            <details class="pa-faq__item">
+              <summary class="pa-faq__question">
+                <span>{faq.question}</span>
+                <svg class="pa-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <div class="pa-faq__answer">
+                <p>{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ============================================
+       RELATED RESOURCES (placeholder)
+       ============================================ -->
+  <!-- TODO: Related resources component (practice area cross-links, blog posts) -->
+
+  <!-- ============================================
+       FINAL CTA — Dark section
+       ============================================ -->
+  <section class="pa-final-cta section-dark section" aria-label="Get started">
+    <div class="container text-center">
+      <h2 class="pa-final-cta__heading">{siteConfig.messaging.l7FormHeadline}</h2>
+      <p class="pa-final-cta__text">{siteConfig.messaging.l7FormSubhead}</p>
+      <div class="pa-final-cta__actions">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="pa-final-cta__phone">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ============================================
+     HERO
+     ============================================ */
+  .pa-hero {
+    position: relative;
+    min-height: 540px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .pa-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .pa-hero__overlay {
+    position: absolute;
+    inset: 0;
+    /* Dark gradient left-to-right for text readability over images */
+    background: linear-gradient(
+      to right,
+      rgba(26, 26, 26, 0.92) 0%,
+      rgba(26, 26, 26, 0.75) 40%,
+      rgba(26, 26, 26, 0.35) 70%,
+      rgba(26, 26, 26, 0) 100%
+    );
+    z-index: 1;
+  }
+
+  .pa-hero__content {
+    position: relative;
+    z-index: 2;
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-16);
+    max-width: 700px;
+  }
+
+  .pa-hero__title {
+    color: var(--neutral-50);
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+  }
+
+  .pa-hero__subtitle {
+    color: var(--neutral-300);
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+    max-width: 580px;
+  }
+
+  /* Breadcrumbs */
+  .pa-breadcrumbs {
+    margin-bottom: var(--space-6);
+  }
+
+  .pa-breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  .pa-breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+    color: var(--neutral-500);
+  }
+
+  .pa-breadcrumbs a {
+    color: var(--neutral-400);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .pa-breadcrumbs a:hover {
+    color: var(--color-gold);
+  }
+
+  .pa-breadcrumbs span[aria-current] {
+    color: var(--neutral-50);
+  }
+
+  /* Trust Stats Bar */
+  .pa-trust-stats {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .pa-trust-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .pa-trust-stat__value {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .pa-trust-stat__label {
+    font-size: var(--text-xs);
+    color: var(--neutral-400);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .pa-trust-stat__divider {
+    width: 1px;
+    height: 36px;
+    background: var(--neutral-600);
+  }
+
+  /* Hero CTA */
+  .pa-hero__cta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  .pa-hero__phone {
+    color: var(--neutral-50);
+    border-color: var(--neutral-500);
+  }
+
+  .pa-hero__phone:hover {
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+  }
+
+  /* ============================================
+     CONTENT AREA — Article-style prose
+     ============================================ */
+  .pa-content {
+    background: var(--color-bg);
+  }
+
+  .pa-content :global(h2) {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+  }
+
+  .pa-content :global(h3) {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+  }
+
+  .pa-content :global(p) {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: #4A5859;
+    line-height: 1.7;
+    margin-bottom: var(--space-5);
+  }
+
+  .pa-content :global(strong) {
+    color: #1A1A1A;
+    font-weight: 700;
+  }
+
+  .pa-content :global(a) {
+    color: #D4943A;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .pa-content :global(a:hover) {
+    color: var(--color-gold-hover);
+    text-decoration: underline;
+  }
+
+  .pa-content :global(ul),
+  .pa-content :global(ol) {
+    color: #4A5859;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+
+  .pa-content :global(li) {
+    margin-bottom: var(--space-2);
+    line-height: 1.7;
+  }
+
+  .pa-content :global(blockquote) {
+    border-left: 4px solid var(--color-gold);
+    background: var(--neutral-100);
+    padding: var(--space-6);
+    margin: var(--space-8) 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+    color: #4A5859;
+  }
+
+  /* ============================================
+     MID-CONTENT CTA
+     ============================================ */
+  .pa-mid-cta {
+    padding: var(--space-12) 0;
+    background: var(--color-bg);
+  }
+
+  .pa-mid-cta__box {
+    background: var(--neutral-50);
+    border-top: 3px solid var(--color-gold);
+    border-bottom: 3px solid var(--color-gold);
+    padding: var(--space-10) var(--space-8);
+    text-align: center;
+    border-radius: var(--radius-md);
+  }
+
+  .pa-mid-cta__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: var(--space-3);
+  }
+
+  .pa-mid-cta__text {
+    color: #4A5859;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-6);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pa-mid-cta__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  /* ============================================
+     FAQ SECTION
+     ============================================ */
+  .pa-faq {
+    background: #F5EDE0;
+  }
+
+  .pa-faq__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: var(--space-8);
+  }
+
+  .pa-faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .pa-faq__item {
+    border-bottom: 1px solid var(--neutral-300);
+  }
+
+  .pa-faq__item:first-child {
+    border-top: 1px solid var(--neutral-300);
+  }
+
+  .pa-faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: #1A1A1A;
+    transition: color var(--transition-base);
+  }
+
+  .pa-faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .pa-faq__question::marker {
+    content: '';
+  }
+
+  .pa-faq__question:hover {
+    color: #D4943A;
+  }
+
+  .pa-faq__chevron {
+    color: #D4943A;
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+  }
+
+  .pa-faq__item[open] .pa-faq__chevron {
+    transform: rotate(180deg);
+  }
+
+  .pa-faq__answer {
+    padding: 0 0 var(--space-6);
+  }
+
+  .pa-faq__answer p {
+    color: #4A5859;
+    font-size: var(--text-base);
+    line-height: 1.7;
+  }
+
+  /* ============================================
+     FINAL CTA — Dark section
+     ============================================ */
+  .pa-final-cta {
+    background: #1A1A1A;
+  }
+
+  .pa-final-cta__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--neutral-50);
+    margin-bottom: var(--space-3);
+  }
+
+  .pa-final-cta__text {
+    color: var(--neutral-400);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .pa-final-cta__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .pa-final-cta__phone {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .pa-final-cta__phone:hover {
+    color: var(--color-gold-hover);
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 768px) {
+    .pa-hero {
+      min-height: 480px;
+    }
+
+    .pa-hero__overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 26, 26, 0.5) 0%,
+        rgba(26, 26, 26, 0.9) 100%
+      );
+    }
+
+    .pa-hero__content {
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-12);
+    }
+
+    .pa-trust-stats {
+      gap: var(--space-4);
+    }
+
+    .pa-trust-stat__divider {
+      display: none;
+    }
+
+    .pa-trust-stat {
+      flex: 0 0 auto;
+    }
+
+    .pa-hero__cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .pa-mid-cta__box {
+      padding: var(--space-8) var(--space-5);
+    }
+
+    .pa-mid-cta__actions {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .pa-final-cta__actions {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pa-hero {
+      min-height: 420px;
+    }
+
+    .pa-trust-stats {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+  }
+</style>

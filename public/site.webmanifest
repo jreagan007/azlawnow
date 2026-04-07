@@ -1,0 +1,19 @@
+{
+  "name": "AZ Law Now Injury Attorneys",
+  "short_name": "AZ Law Now",
+  "icons": [
+    {
+      "src": "/favicons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1A1A1A",
+  "background_color": "#FAF5ED",
+  "display": "standalone"
+}

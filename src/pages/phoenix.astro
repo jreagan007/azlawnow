@@ -1,0 +1,121 @@
+---
+/**
+ * Phoenix Personal Injury Attorneys — Location Page
+ * Competitive zone. Broad content. Links to Buckeye + Maricopa offices.
+ */
+
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+
+const faqs = [
+  {
+    question: 'Does AZ Law Now serve Phoenix residents?',
+    answer: 'Yes. We serve the entire Phoenix metropolitan area from two offices: our headquarters in Buckeye and our new office in Maricopa. Phoenix residents can schedule a consultation at either location, or we can arrange a phone or video meeting.',
+  },
+  {
+    question: 'How is AZ Law Now different from other Phoenix injury firms?',
+    answer: 'We investigate before we litigate. Brendan Franks goes to your crash scene the same day you hire us. He documents evidence, identifies witnesses, and builds a case file before the insurance company starts building their defense. Most firms skip that step entirely.',
+  },
+  {
+    question: 'How long do I have to file a personal injury claim in Phoenix?',
+    answer: 'Arizona\'s statute of limitations is two years from the date of injury for most personal injury cases. Claims against government entities like the City of Phoenix or Valley Metro may require a notice of claim within 180 days. Don\'t wait to find out which deadline applies to you.',
+  },
+  {
+    question: 'What types of injury cases do you handle in Phoenix?',
+    answer: 'Car crashes, truck crashes, motorcycle crashes, pedestrian injuries, bicycle crashes, wrongful death, slip and fall, medical negligence, elder abuse, nursing home abuse, school bus crashes, and dog bites. If someone else\'s negligence caused your injury in Phoenix, call us.',
+  },
+  {
+    question: 'What are the most dangerous roads in Phoenix?',
+    answer: 'I-10, I-17, Loop 101, and Loop 202 see the highest crash volumes. Surface streets like Thomas Road, McDowell Road, Van Buren Street, and 35th Avenue corridors are also high-crash zones. Intersection crashes at major cross streets account for the majority of serious injuries.',
+  },
+  {
+    question: 'How much does a Phoenix personal injury attorney cost?',
+    answer: 'Nothing upfront. We work on contingency. You don\'t pay unless we recover compensation for you. No retainer, no hourly fees. Your free consultation is genuinely free.',
+  },
+  {
+    question: 'Can I still file a claim if the crash was partially my fault?',
+    answer: 'Yes. Arizona uses a comparative fault system. You can recover compensation even if you share some responsibility for the crash. Your award is reduced by your percentage of fault. A skilled attorney can present evidence to minimize your assigned fault percentage.',
+  },
+  {
+    question: 'What should I bring to my first consultation about a Phoenix crash?',
+    answer: 'Bring the police report if you have it, photos from the crash scene, medical records and bills, insurance information for all parties involved, and any correspondence from insurance companies. If you don\'t have all of this, that\'s fine. We\'ll help you gather what\'s needed.',
+  },
+];
+
+const localSchema = getLocalBusinessSchema('Phoenix', 'phoenix');
+---
+
+<PracticeAreaLayout
+  title="Phoenix Personal Injury Attorneys"
+  description="Phoenix injury attorneys at AZ Law Now. Car crashes, truck crashes, wrongful death across the metro area. Free consultation. Call (602) 654-0202."
+  canonical="/phoenix/"
+  practiceArea="Phoenix Personal Injury Attorneys"
+  heroTitle="Phoenix Injury Attorneys Who Investigate First"
+  heroSubtitle="Personal injury attorneys serving the Phoenix metro from two West Valley offices. Investigation-first approach. No fee unless we win."
+  faqs={faqs}
+  schema={localSchema}
+>
+  <p>
+    Phoenix is the fifth-largest city in the country. That means more vehicles, more intersections, more crashes, and more firms competing for your case. Most of those firms follow the same playbook: sign you up, hand your file to a paralegal, and push for a quick settlement.
+  </p>
+
+  <p>
+    We do the opposite. The day you hire us, Brendan goes to your crash scene. He photographs evidence, interviews witnesses, and documents the conditions that caused your injury. That investigation happens before the insurance company even knows we're involved.
+  </p>
+
+  <h2>Two Offices Serving the Phoenix Metro</h2>
+
+  <p>
+    Our <a href="/buckeye/">Buckeye headquarters</a> serves the West Valley and western Phoenix. Our <a href="/maricopa/">Maricopa office</a> covers the south Valley and Pinal County. Between the two locations, we're accessible to most Phoenix metro residents without a long drive downtown.
+  </p>
+
+  <p>
+    Phoenix residents who can't visit an office in person can schedule a phone or video consultation. We don't let geography stop us from helping people who need representation.
+  </p>
+
+  <h2>Phoenix's Most Dangerous Corridors</h2>
+
+  <p>
+    The numbers don't lie. I-10 through central and west Phoenix consistently ranks among the most dangerous highways in Arizona. The Stack interchange where I-10, I-17, and Loop 202 converge sees crashes daily. And surface streets like Thomas Road, Indian School Road, and McDowell Road carry volumes they weren't designed to handle.
+  </p>
+
+  <p>
+    We've handled crash cases from Loop 101 in Scottsdale to I-10 in Goodyear and everywhere in between. Brendan knows where traffic cameras are positioned, which intersections have signal timing issues, and how to document the specific road conditions that contributed to your crash.
+  </p>
+
+  <h2>Why Investigation Matters in Phoenix</h2>
+
+  <p>
+    Phoenix crashes generate police reports. But police reports don't tell the whole story. They document what the officer observed after arriving. They don't capture surveillance footage from nearby businesses, skid mark measurements, or witness statements from people who left the scene.
+  </p>
+
+  <p>
+    Brendan captures all of it. He visits the crash scene before evidence gets cleaned up, before construction changes the road, before witnesses forget what they saw. That evidence file is what separates a fair settlement from a lowball offer.
+  </p>
+
+  <p>
+    Brandon then uses that evidence to build a legal strategy. When insurance adjusters know we have documentation they weren't expecting, they negotiate differently.
+  </p>
+
+  <h2>Maricopa County Superior Court</h2>
+
+  <p>
+    Most Phoenix injury claims are filed in Maricopa County Superior Court. Our litigation team files there regularly. We know the judges, the procedural requirements, and the realistic timelines for getting cases resolved. That experience means fewer delays and better preparation for every stage of your case.
+  </p>
+
+  <h2>The Full Range of Phoenix Injury Cases</h2>
+
+  <p>
+    Car crashes are the most common, but we handle the full spectrum. Truck crashes along I-10 and I-17. Motorcycle crashes on Loop 101. Pedestrian injuries at busy Phoenix intersections. Bicycle crashes on roads without adequate bike infrastructure. Slip and fall incidents at Phoenix businesses and apartment complexes.
+  </p>
+
+  <p>
+    We also handle wrongful death, medical negligence, elder abuse, and nursing home abuse cases throughout the metro. Every case type gets the same investigation-first treatment.
+  </p>
+
+  <h2>Start Your Free Consultation</h2>
+
+  <p>
+    Call <a href="tel:+16026540202">(602) 654-0202</a> for a free consultation. You'll talk to a real person on our team, not a call center. We'll evaluate your case, explain your options, and tell you honestly whether we think we can help. No pressure. No fee unless we win.
+  </p>
+</PracticeAreaLayout>

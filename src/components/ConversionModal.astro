@@ -1,0 +1,300 @@
+---
+/**
+ * ConversionModal
+ * Lead capture modal for practice area and location pages
+ *
+ * Trigger rules:
+ *   - 12s dwell on practice area or location pages
+ *   - 50% scroll on resource/guide pages
+ *   - Mobile: click-triggered only (no auto-trigger, avoids Google interstitial penalty)
+ *   - Once per session (sessionStorage)
+ *   - 7-day cooldown (localStorage)
+ *   - Excluded paths: /free-case-review/, /contact/, /thank-you/
+ *
+ * Hidden fields: page URL, referrer, UTMs, timestamp
+ * Posts to Netlify Forms
+ */
+
+import { siteConfig } from '../data/site-config';
+---
+
+<div class="modal-overlay" id="conversion-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-content">
+    <button class="modal-close" data-close-modal aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <h2 id="modal-heading" class="modal-heading">{siteConfig.messaging.l7FormHeadline}</h2>
+    <p class="modal-subtext">{siteConfig.messaging.l7FormSubhead}</p>
+
+    <form
+      name="lead-capture"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="modal-form"
+      id="modal-form"
+    >
+      <input type="hidden" name="form-name" value="lead-capture" />
+      <p class="sr-only"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <!-- Hidden fields -->
+      <input type="hidden" name="page-url" id="field-page-url" />
+      <input type="hidden" name="referrer" id="field-referrer" />
+      <input type="hidden" name="utm-source" id="field-utm-source" />
+      <input type="hidden" name="utm-medium" id="field-utm-medium" />
+      <input type="hidden" name="utm-campaign" id="field-utm-campaign" />
+      <input type="hidden" name="utm-content" id="field-utm-content" />
+      <input type="hidden" name="utm-term" id="field-utm-term" />
+      <input type="hidden" name="timestamp" id="field-timestamp" />
+
+      <div class="form-field">
+        <label for="modal-name" class="form-label">Your Name</label>
+        <input
+          type="text"
+          id="modal-name"
+          name="name"
+          class="form-input modal-input"
+          placeholder="Full name"
+          required
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="modal-phone" class="form-label">Phone Number</label>
+        <input
+          type="tel"
+          id="modal-phone"
+          name="phone"
+          class="form-input modal-input"
+          placeholder="(555) 555-5555"
+          required
+          autocomplete="tel"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary modal-submit">
+        {siteConfig.messaging.l8Primary} &rarr;
+      </button>
+    </form>
+
+    <p class="modal-disclaimer">Submitting this form does not create an attorney-client relationship.</p>
+  </div>
+</div>
+
+<script>
+  const modalEl = document.getElementById('conversion-modal');
+  if (!modalEl) throw new Error('ConversionModal: #conversion-modal not found');
+  const modal = modalEl;
+
+  const STORAGE_KEY = 'modal_shown';
+  const COOLDOWN_KEY = 'modal_cooldown';
+  const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const excludedPaths = ['/free-case-review/', '/contact/', '/thank-you/'];
+  const path = window.location.pathname;
+
+  // Check exclusions
+  const isExcluded = excludedPaths.some((p) => path.startsWith(p));
+
+  // Check session flag
+  const shownThisSession = sessionStorage.getItem(STORAGE_KEY) === '1';
+
+  // Check 7-day cooldown
+  const cooldownRaw = localStorage.getItem(COOLDOWN_KEY);
+  const inCooldown = cooldownRaw ? Date.now() - parseInt(cooldownRaw, 10) < COOLDOWN_MS : false;
+
+  const canTrigger = !isExcluded && !shownThisSession && !inCooldown;
+
+  // Detect mobile (rough: pointer coarse or width < 768)
+  const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
+
+  // Page type detection
+  const isPracticeOrLocation =
+    /^\/(car-accidents|truck-accidents|motorcycle-accidents|bus-accidents|wrongful-death|elder-abuse|nursing-home-abuse|pedestrian-accidents|bicycle-accidents|slip-and-fall|medical-negligence|dog-bite|rideshare-accidents|premises-liability|negligent-security|daycare-negligence|child-abuse)\/?/.test(path) ||
+    /^\/(buckeye|goodyear|avondale|maricopa|phoenix|mesa|chandler|tempe|scottsdale|casa-grande|litchfield-park)\/?/.test(path);
+
+  const isResourceOrGuide = /^\/(resources|legal-guides|client-guides|blog)\/?/.test(path);
+
+  function openModal() {
+    if (!canTrigger) return;
+
+    // Populate hidden fields
+    const params = new URLSearchParams(window.location.search);
+    setField('field-page-url', window.location.href);
+    setField('field-referrer', document.referrer);
+    setField('field-utm-source', params.get('utm_source') || '');
+    setField('field-utm-medium', params.get('utm_medium') || '');
+    setField('field-utm-campaign', params.get('utm_campaign') || '');
+    setField('field-utm-content', params.get('utm_content') || '');
+    setField('field-utm-term', params.get('utm_term') || '');
+    setField('field-timestamp', new Date().toISOString());
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    sessionStorage.setItem(STORAGE_KEY, '1');
+    localStorage.setItem(COOLDOWN_KEY, String(Date.now()));
+
+    // Focus first input
+    const firstInput = modal.querySelector<HTMLInputElement>('.modal-input');
+    if (firstInput) setTimeout(() => firstInput.focus(), 100);
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  function setField(id: string, value: string) {
+    const el = document.getElementById(id) as HTMLInputElement | null;
+    if (el) el.value = value;
+  }
+
+  // Close handlers
+  modal.querySelectorAll('[data-close-modal]').forEach((el) => {
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  // Auto-trigger logic (desktop only)
+  if (canTrigger && !isMobile) {
+    if (isPracticeOrLocation) {
+      // 12-second dwell
+      setTimeout(openModal, 12000);
+    } else if (isResourceOrGuide) {
+      // 50% scroll depth
+      let triggered = false;
+      function checkScroll() {
+        if (triggered) return;
+        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+        if (scrollPercent >= 0.5) {
+          triggered = true;
+          openModal();
+          window.removeEventListener('scroll', checkScroll);
+        }
+      }
+      window.addEventListener('scroll', checkScroll, { passive: true });
+    }
+  }
+
+  // Expose open function globally for click-triggered use (mobile CTAs, etc.)
+  (window as any).__openConversionModal = openModal;
+</script>
+
+<style>
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--container-padding);
+  }
+
+  .modal-overlay[hidden] {
+    display: none;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.7);
+  }
+
+  .modal-content {
+    position: relative;
+    background: var(--color-white);
+    max-width: 480px;
+    width: 100%;
+    padding: var(--space-10);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: none;
+    border: none;
+    color: var(--neutral-500);
+    cursor: pointer;
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-base);
+  }
+
+  .modal-close:hover {
+    color: var(--color-black);
+  }
+
+  .modal-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-2);
+  }
+
+  .modal-subtext {
+    color: var(--color-slate);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-8);
+  }
+
+  .modal-form .form-field {
+    margin-bottom: var(--space-4);
+  }
+
+  .modal-input {
+    border: 1px solid var(--neutral-200);
+  }
+
+  .modal-input:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(212, 148, 58, 0.15);
+  }
+
+  .modal-submit {
+    width: 100%;
+    margin-top: var(--space-4);
+  }
+
+  .modal-disclaimer {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    text-align: center;
+    margin-top: var(--space-4);
+    line-height: 1.5;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 480px) {
+    .modal-content {
+      padding: var(--space-6);
+    }
+
+    .modal-heading {
+      font-size: var(--text-2xl);
+    }
+  }
+</style>

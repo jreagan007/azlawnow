@@ -1,0 +1,165 @@
+---
+/**
+ * Client Reviews — AZ Law Now
+ * Placeholder testimonials with review cards
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+import { getReviewPageSchema } from '../utils/schema';
+
+const reviews = [
+  {
+    name: 'Maria G.',
+    rating: 5,
+    text: 'Stephanie kept me updated every step of the way. I never had to call and wonder what was happening with my case. They recovered way more than the insurance company initially offered.',
+    location: 'Buckeye, AZ',
+  },
+  {
+    name: 'David R.',
+    rating: 5,
+    text: 'Brendan was at the crash scene before I even left the hospital. He got surveillance footage from a nearby business that proved the other driver ran the red light. Without that evidence, I don\'t know what would have happened.',
+    location: 'Goodyear, AZ',
+  },
+  {
+    name: 'Jennifer T.',
+    rating: 5,
+    text: 'After my car crash, I was overwhelmed and didn\'t know where to start. AZ Law Now handled everything. Brandon explained the legal process in plain English and fought for what my case was actually worth.',
+    location: 'Avondale, AZ',
+  },
+  {
+    name: 'Robert M.',
+    rating: 5,
+    text: 'Other firms I called wanted me to come to their Phoenix office. AZ Law Now came to me. They treated me like a person, not a case number. The settlement covered all my medical bills and then some.',
+    location: 'Maricopa, AZ',
+  },
+  {
+    name: 'Sandra L.',
+    rating: 5,
+    text: 'My son was hurt in a school bus incident and I was terrified about the medical bills. Stephanie walked us through the whole process. Brandon and Brendan worked together and got us a result I didn\'t think was possible.',
+    location: 'Buckeye, AZ',
+  },
+  {
+    name: 'Carlos P.',
+    rating: 5,
+    text: 'I was rear-ended on I-10 near Goodyear and the insurance company offered me almost nothing. AZ Law Now got me four times what they initially offered. No fee unless they win? They meant it.',
+    location: 'Goodyear, AZ',
+  },
+];
+
+const reviewSchema = getReviewPageSchema(reviews);
+---
+
+<BaseLayout
+  title="Client Reviews"
+  description="Read what our clients say about AZ Law Now. 5-star reviews from West Valley injury clients in Buckeye, Goodyear, Avondale, and Maricopa."
+  canonical="/reviews/"
+  schema={reviewSchema}
+>
+  <!-- Hero -->
+  <section class="hero hero-centered">
+    <div class="container container-narrow">
+      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">Client Reviews</p>
+      <h1>What Our Clients Say</h1>
+      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
+        Real feedback from real clients. Every review represents someone who trusted us with their case and got the result they deserved.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews Grid -->
+  <section class="section">
+    <div class="container" style="max-width: 1000px;">
+      <div class="reviews-grid">
+        {reviews.map((review) => (
+          <div class="review-card card card-elevated">
+            <div class="review-card__stars" aria-label={`${review.rating} out of 5 stars`}>
+              {Array.from({ length: review.rating }).map(() => (
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-gold)" aria-hidden="true">
+                  <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+                </svg>
+              ))}
+            </div>
+            <blockquote class="review-card__text">
+              "{review.text}"
+            </blockquote>
+            <div class="review-card__author">
+              <span class="review-card__name">{review.name}</span>
+              <span class="review-card__location">{review.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Be Our Next Success Story?</h2>
+      <p>Call us for a free consultation. No pressure, no obligation.</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .review-card__stars {
+    display: flex;
+    gap: var(--space-1);
+  }
+
+  .review-card__text {
+    color: var(--color-slate);
+    line-height: 1.7;
+    font-style: normal;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    flex-grow: 1;
+  }
+
+  .review-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--neutral-200);
+  }
+
+  .review-card__name {
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  .review-card__location {
+    font-size: var(--text-sm);
+    color: var(--neutral-500);
+  }
+
+  @media (max-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

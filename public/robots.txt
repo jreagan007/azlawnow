@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azlawnow.com/sitemap.xml
+
+# Block admin and utility pages
+Disallow: /admin/
+Disallow: /thank-you/

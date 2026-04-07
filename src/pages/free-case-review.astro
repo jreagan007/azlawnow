@@ -1,0 +1,132 @@
+---
+/**
+ * Free Case Review — AZ Law Now
+ * Dedicated conversion page. noindex. Minimal distractions.
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+---
+
+<BaseLayout
+  title="Free Case Review"
+  description="Tell us what happened. We'll tell you what's next. Free case review from AZ Law Now injury attorneys."
+  canonical="/free-case-review/"
+  noindex={true}
+  hideHeader={false}
+  hideFooter={false}
+>
+  <section class="review-page">
+    <div class="container" style="max-width: 600px;">
+      <div class="review-content">
+        <h1 style="text-align: center; margin-bottom: var(--space-4);">You Deserve Answers.</h1>
+        <p style="text-align: center; font-size: var(--text-xl); color: var(--color-slate); margin-bottom: var(--space-10); max-width: 480px; margin-left: auto; margin-right: auto;">
+          Tell us what happened. We'll tell you what's next. No fee, no obligation, no pressure.
+        </p>
+
+        <div class="card card-elevated" style="padding: var(--space-10);">
+          <form
+            name="case-review"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thank-you/"
+          >
+            <input type="hidden" name="form-name" value="case-review" />
+            <p class="sr-only">
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-field">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="Full name" />
+            </div>
+
+            <div class="form-field">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(555) 555-5555" />
+            </div>
+
+            <div class="form-field">
+              <label for="description" class="form-label">What Happened?</label>
+              <textarea id="description" name="description" class="form-textarea" rows="6" required placeholder="Brief description of your injury or incident..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              Get My Free Case Review →
+            </button>
+
+            <p style="font-size: var(--text-xs); color: var(--neutral-500); margin-top: var(--space-4); text-align: center;">
+              Your information stays confidential. We'll respond within one business day.
+            </p>
+          </form>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-8);">
+          <p style="color: var(--color-slate); margin-bottom: var(--space-2);">Prefer to talk?</p>
+          <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta" style="font-size: var(--text-3xl);">
+            {siteConfig.phoneFormatted}
+          </a>
+        </div>
+
+        <!-- Trust Signals -->
+        <div class="review-trust">
+          <div class="review-trust__item">
+            <span class="review-trust__value">$3.07M+</span>
+            <span class="review-trust__label">Recovered</span>
+          </div>
+          <div class="review-trust__item">
+            <span class="review-trust__value">No Fee</span>
+            <span class="review-trust__label">Unless We Win</span>
+          </div>
+          <div class="review-trust__item">
+            <span class="review-trust__value">Same Day</span>
+            <span class="review-trust__label">Response</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .review-page {
+    padding: var(--space-20) 0 var(--space-24);
+    min-height: 80vh;
+  }
+
+  .review-trust {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-10);
+    margin-top: var(--space-12);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--neutral-200);
+  }
+
+  .review-trust__item {
+    text-align: center;
+  }
+
+  .review-trust__value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-gold);
+  }
+
+  .review-trust__label {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 480px) {
+    .review-trust {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+</style>

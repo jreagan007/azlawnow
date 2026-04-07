@@ -1,0 +1,99 @@
+---
+/**
+ * StickyCTA
+ * Mobile-only sticky bottom bar with phone CTA
+ * Appears when the hero CTA scrolls out of view (400px threshold)
+ * Hidden on desktop (768px+)
+ */
+
+import { siteConfig } from '../data/site-config';
+---
+
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <div class="sticky-cta-inner">
+    <span class="sticky-cta-text">{siteConfig.taglineNav}</span>
+    <a
+      href={`tel:${siteConfig.phoneE164}`}
+      class="sticky-cta-phone"
+      aria-label={`Call ${siteConfig.phoneFormatted}`}
+    >
+      {siteConfig.phoneFormatted}
+    </a>
+  </div>
+</div>
+
+<script>
+  const stickyCta = document.getElementById('sticky-cta');
+  if (stickyCta) {
+    const el = stickyCta;
+    let visible = false;
+    const threshold = 400;
+
+    function toggle() {
+      const shouldShow = window.scrollY > threshold;
+      if (shouldShow !== visible) {
+        visible = shouldShow;
+        el.classList.toggle('sticky-cta--visible', visible);
+        el.setAttribute('aria-hidden', String(!visible));
+      }
+    }
+
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  }
+</script>
+
+<style>
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    background: var(--color-black);
+    transform: translateY(100%);
+    transition: transform var(--transition-slow);
+    display: none;
+  }
+
+  .sticky-cta--visible {
+    transform: translateY(0);
+  }
+
+  .sticky-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 var(--container-padding);
+  }
+
+  .sticky-cta-text {
+    font-size: var(--text-sm);
+    color: var(--neutral-400);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: var(--space-4);
+  }
+
+  .sticky-cta-phone {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-gold);
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .sticky-cta-phone:hover {
+    color: var(--color-gold-hover);
+  }
+
+  @media (max-width: 768px) {
+    .sticky-cta {
+      display: block;
+    }
+  }
+</style>

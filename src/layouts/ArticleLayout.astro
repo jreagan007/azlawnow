@@ -1,0 +1,792 @@
+---
+/**
+ * Article Layout — AZ Law Now
+ * Sunset Editorial LIGHT theme
+ * For Brendan's investigations, Brandon's legal guides, Stephanie's client guides
+ */
+
+import BaseLayout from './BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+import { authors, type Author } from '../data/authors';
+import { getArticleSchema, generateBreadcrumbSchema } from '../utils/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  author: string;
+  category: string;
+  tags?: string[];
+  publishedAt: string;
+  updatedAt?: string;
+  image?: string;
+  ogImage?: string;
+  readingTime?: string;
+  schemaType?: 'Article' | 'NewsArticle';
+}
+
+const {
+  title,
+  description,
+  author: authorId,
+  category,
+  tags = [],
+  publishedAt,
+  updatedAt,
+  image,
+  ogImage,
+  readingTime,
+  schemaType,
+} = Astro.props;
+
+// Resolve author
+const authorData: Author = authors[authorId] || authors['brendan-franks'];
+
+// Determine schema type from category if not explicitly set
+const resolvedSchemaType = schemaType
+  || (category === 'investigation' ? 'NewsArticle' : 'Article');
+
+// Map category to section info
+const categoryMeta: Record<string, { label: string; basePath: string; sectionName: string }> = {
+  'investigation': { label: 'Investigation', basePath: '/resources/', sectionName: 'Resources' },
+  'legal-guide': { label: 'Legal Guide', basePath: '/legal-guides/', sectionName: 'Legal Guides' },
+  'client-guide': { label: 'Client Guide', basePath: '/client-guides/', sectionName: 'Client Guides' },
+};
+
+const meta = categoryMeta[category] || categoryMeta['investigation'];
+
+// Build slug from URL
+const slug = Astro.url.pathname.replace(meta.basePath, '').replace(/\/$/, '');
+
+// Breadcrumbs
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: meta.sectionName, url: meta.basePath },
+  { name: title, url: Astro.url.pathname },
+];
+
+// Format dates
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Generate schemas
+const articleSchema = getArticleSchema({
+  title,
+  slug,
+  description,
+  image: ogImage || image,
+  authorName: authorData.name,
+  authorSlug: authorData.id,
+  authorTitle: authorData.title,
+  authorImage: authorData.photo,
+  publishedAt,
+  updatedAt,
+  basePath: meta.basePath,
+  schemaType: resolvedSchemaType,
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
+const schemas = [articleSchema, breadcrumbSchema];
+
+// Disclaimer text by category
+const disclaimers: Record<string, string> = {
+  'investigation': 'This article is for informational purposes only and doesn\'t constitute legal advice. If you\'ve been injured, contact a qualified attorney to discuss your specific situation.',
+  'legal-guide': 'This guide provides general legal information about Arizona law. It isn\'t a substitute for legal advice from a licensed attorney. Laws change, and every case is different. Contact us for a free consultation about your situation.',
+  'client-guide': 'This guide is designed to help you understand the process after an injury. It doesn\'t replace the advice of your attorney. If you have questions about your case, reach out to our team directly.',
+};
+
+const disclaimer = disclaimers[category] || disclaimers['investigation'];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={ogImage || image}
+  schema={schemas}
+>
+  <article class="article-layout" itemscope itemtype={`https://schema.org/${resolvedSchemaType}`}>
+    <!-- ============================================
+         ARTICLE HEADER
+         ============================================ -->
+    <header class="article-header section-sm">
+      <div class="container container-narrow">
+        <!-- Breadcrumbs -->
+        <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            {breadcrumbs.map((crumb, i) => (
+              <li>
+                {i < breadcrumbs.length - 1 ? (
+                  <a href={crumb.url}>{crumb.name}</a>
+                ) : (
+                  <span aria-current="page">{crumb.name}</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+
+        <!-- Category Badge -->
+        <span class="article-badge">{meta.label}</span>
+
+        <!-- Title -->
+        <h1 class="article-title" data-speakable="headline">{title}</h1>
+
+        <!-- Author Byline -->
+        <div class="article-byline">
+          <img
+            src={authorData.photo}
+            alt={authorData.name}
+            class="article-byline__photo"
+            width="48"
+            height="48"
+            loading="eager"
+          />
+          <div class="article-byline__info">
+            <div class="article-byline__top">
+              <a href={authorData.url} class="article-byline__name">{authorData.name}</a>
+              <span class="article-byline__role">{authorData.title}</span>
+            </div>
+            <div class="article-byline__meta">
+              <time datetime={publishedAt}>{formatDate(publishedAt)}</time>
+              {updatedAt && (
+                <span class="article-byline__updated">
+                  Updated <time datetime={updatedAt}>{formatDate(updatedAt)}</time>
+                </span>
+              )}
+              {readingTime && (
+                <span class="article-byline__reading">{readingTime}</span>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================
+         FEATURED IMAGE
+         ============================================ -->
+    {image && (
+      <div class="article-featured-image">
+        <div class="container">
+          <img
+            src={image}
+            alt={title}
+            class="article-featured-image__img"
+            width="1200"
+            height="675"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================
+         ARTICLE CONTENT
+         ============================================ -->
+    <div class="article-body section">
+      <div class="container container-narrow">
+        <!-- TODO: Wrap with AutoLinker once component exists -->
+        <div class="article-content" data-speakable="summary">
+          <slot />
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         TAGS
+         ============================================ -->
+    {tags.length > 0 && (
+      <div class="article-tags">
+        <div class="container container-narrow">
+          <div class="article-tags__list">
+            {tags.map((tag) => (
+              <span class="article-tags__tag">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    <!-- ============================================
+         AUTHOR BOX
+         ============================================ -->
+    <aside class="article-author-box section-sm" aria-label="About the author">
+      <div class="container container-narrow">
+        <div class="article-author-box__card">
+          <img
+            src={authorData.photo}
+            alt={authorData.name}
+            class="article-author-box__photo"
+            width="80"
+            height="80"
+            loading="lazy"
+          />
+          <div class="article-author-box__info">
+            <h3 class="article-author-box__name">{authorData.name}</h3>
+            <p class="article-author-box__title">{authorData.title}</p>
+            <p class="article-author-box__bio">{authorData.bio}</p>
+            <a href={authorData.url} class="article-author-box__link">
+              View Full Profile →
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============================================
+         CTA SECTION — Dark
+         ============================================ -->
+    <section class="article-cta section-dark section" aria-label="Get started">
+      <div class="container text-center">
+        <h2 class="article-cta__heading">{siteConfig.messaging.l7FormHeadline}</h2>
+        <p class="article-cta__text">{siteConfig.messaging.l7FormSubhead}</p>
+        <div class="article-cta__actions">
+          <a href="/contact/" class="btn btn-primary btn-lg">
+            {siteConfig.messaging.l8Primary} →
+          </a>
+          <a href={`tel:${siteConfig.phoneE164}`} class="article-cta__phone">
+            {siteConfig.phoneFormatted}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         DISCLAIMER
+         ============================================ -->
+    <div class="article-disclaimer">
+      <div class="container container-narrow">
+        <p class="article-disclaimer__text">{disclaimer}</p>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* ============================================
+     ARTICLE HEADER
+     ============================================ */
+  .article-header {
+    background: var(--color-bg);
+    padding-top: var(--space-10);
+  }
+
+  /* Breadcrumbs */
+  .article-breadcrumbs {
+    margin-bottom: var(--space-6);
+  }
+
+  .article-breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-sm);
+    flex-wrap: wrap;
+  }
+
+  .article-breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+    color: var(--neutral-400);
+  }
+
+  .article-breadcrumbs a {
+    color: var(--neutral-500);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .article-breadcrumbs a:hover {
+    color: var(--color-gold);
+  }
+
+  .article-breadcrumbs span[aria-current] {
+    color: var(--neutral-700);
+    font-weight: 500;
+  }
+
+  /* Category Badge */
+  .article-badge {
+    display: inline-block;
+    background: rgba(212, 148, 58, 0.15);
+    color: var(--color-gold-hover);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Title */
+  .article-title {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.15;
+    margin-bottom: var(--space-6);
+  }
+
+  /* Byline */
+  .article-byline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .article-byline__photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neutral-200);
+  }
+
+  .article-byline__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .article-byline__top {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .article-byline__name {
+    font-weight: 600;
+    color: #1A1A1A;
+    text-decoration: none;
+    font-size: var(--text-sm);
+  }
+
+  .article-byline__name:hover {
+    color: var(--color-gold);
+  }
+
+  .article-byline__role {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+  }
+
+  .article-byline__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    flex-wrap: wrap;
+  }
+
+  .article-byline__meta time {
+    color: var(--neutral-500);
+  }
+
+  .article-byline__updated::before,
+  .article-byline__reading::before {
+    content: '·';
+    margin-right: var(--space-1);
+  }
+
+  /* ============================================
+     FEATURED IMAGE
+     ============================================ */
+  .article-featured-image {
+    padding: var(--space-6) 0 0;
+    background: var(--color-bg);
+  }
+
+  .article-featured-image__img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ============================================
+     ARTICLE BODY — MDX Content Styles
+     ============================================ */
+  .article-body {
+    background: var(--color-bg);
+  }
+
+  .article-content :global(h2) {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.2;
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-4);
+  }
+
+  .article-content :global(h3) {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.25;
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+  }
+
+  .article-content :global(h4) {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  .article-content :global(p) {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: #4A5859;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content :global(a) {
+    color: #D4943A;
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .article-content :global(a:hover) {
+    color: var(--color-gold-hover);
+    text-decoration: underline;
+  }
+
+  .article-content :global(strong) {
+    color: #1A1A1A;
+    font-weight: 700;
+  }
+
+  .article-content :global(em) {
+    font-style: italic;
+  }
+
+  .article-content :global(blockquote) {
+    border-left: 4px solid #D4943A;
+    background: #F5EDE0;
+    padding: var(--space-6);
+    margin: var(--space-8) 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+  }
+
+  .article-content :global(blockquote p) {
+    color: #4A5859;
+    margin-bottom: 0;
+  }
+
+  .article-content :global(blockquote p + p) {
+    margin-top: var(--space-3);
+  }
+
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    color: #4A5859;
+    padding-left: var(--space-6);
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content :global(li) {
+    margin-bottom: var(--space-2);
+    line-height: 1.7;
+  }
+
+  .article-content :global(li::marker) {
+    color: var(--neutral-400);
+  }
+
+  .article-content :global(ol li::marker) {
+    color: var(--color-gold);
+    font-weight: 600;
+  }
+
+  /* Tables */
+  .article-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-8) 0;
+    font-size: var(--text-sm);
+  }
+
+  .article-content :global(thead) {
+    background: #F5EDE0;
+  }
+
+  .article-content :global(th) {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-weight: 700;
+    color: #1A1A1A;
+    border-bottom: 2px solid var(--neutral-300);
+    font-size: var(--text-sm);
+  }
+
+  .article-content :global(td) {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--neutral-200);
+    color: #4A5859;
+  }
+
+  .article-content :global(tr:hover td) {
+    background: rgba(212, 148, 58, 0.04);
+  }
+
+  /* Code */
+  .article-content :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: #F5EDE0;
+    padding: 0.15em 0.4em;
+    border-radius: var(--radius-sm);
+    color: #1A1A1A;
+  }
+
+  .article-content :global(pre) {
+    background: #1A1A1A;
+    color: var(--neutral-300);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: var(--space-8) 0;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  .article-content :global(pre code) {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* Images in content */
+  .article-content :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: var(--space-8) 0;
+  }
+
+  /* Horizontal rules */
+  .article-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--neutral-200);
+    margin: var(--space-10) 0;
+  }
+
+  /* First child cleanup */
+  .article-content :global(> *:first-child) {
+    margin-top: 0;
+  }
+
+  .article-content :global(> h2:first-child) {
+    margin-top: 0;
+  }
+
+  /* ============================================
+     TAGS
+     ============================================ */
+  .article-tags {
+    background: var(--color-bg);
+    padding-bottom: var(--space-8);
+  }
+
+  .article-tags__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--neutral-200);
+  }
+
+  .article-tags__tag {
+    display: inline-block;
+    background: var(--neutral-100);
+    color: var(--neutral-600);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--neutral-200);
+  }
+
+  /* ============================================
+     AUTHOR BOX
+     ============================================ */
+  .article-author-box {
+    background: var(--color-bg);
+  }
+
+  .article-author-box__card {
+    display: flex;
+    gap: var(--space-6);
+    padding: var(--space-8);
+    background: var(--color-white);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-lg);
+  }
+
+  .article-author-box__photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neutral-200);
+    flex-shrink: 0;
+  }
+
+  .article-author-box__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .article-author-box__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: var(--space-1);
+  }
+
+  .article-author-box__title {
+    font-size: var(--text-sm);
+    color: var(--color-gold);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+  }
+
+  .article-author-box__bio {
+    font-size: var(--text-sm);
+    color: #4A5859;
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+
+  .article-author-box__link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .article-author-box__link:hover {
+    color: var(--color-gold-hover);
+  }
+
+  /* ============================================
+     CTA SECTION — Dark
+     ============================================ */
+  .article-cta {
+    background: #1A1A1A;
+  }
+
+  .article-cta__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--neutral-50);
+    margin-bottom: var(--space-3);
+  }
+
+  .article-cta__text {
+    color: var(--neutral-400);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .article-cta__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .article-cta__phone {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-base);
+  }
+
+  .article-cta__phone:hover {
+    color: var(--color-gold-hover);
+  }
+
+  /* ============================================
+     DISCLAIMER
+     ============================================ */
+  .article-disclaimer {
+    background: var(--neutral-100);
+    padding: var(--space-6) 0;
+    border-top: 1px solid var(--neutral-200);
+  }
+
+  .article-disclaimer__text {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 768px) {
+    .article-header {
+      padding-top: var(--space-6);
+    }
+
+    .article-byline__top {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .article-author-box__card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-6);
+    }
+
+    .article-cta__actions {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .article-breadcrumbs span[aria-current] {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .article-title {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

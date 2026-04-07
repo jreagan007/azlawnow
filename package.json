@@ -1,0 +1,43 @@
+{
+  "name": "az-law-now",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AZ Law Now Injury Attorneys — Astro 5 website",
+  "scripts": {
+    "dev": "astro dev --port 4324",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check:quality": "npx tsx scripts/audit-quality.ts",
+    "check:images": "npx tsx scripts/check-images.ts",
+    "check:sources": "npx tsx scripts/check-sources.ts",
+    "gen:card": "npx tsx scripts/regen-single-card.ts",
+    "gen:og": "npx tsx scripts/generate-og-image.ts",
+    "gen:og:all": "npx tsx scripts/generate-all-og-images.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.3.1",
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.10.3",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "astro": "^5.16.11",
+    "astro-seo": "^0.8.4",
+    "astro-seo-schema": "^5.1.0",
+    "framer-motion": "^10.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@google/genai": "^1.38.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "dotenv": "^16.3.0",
+    "typescript": "^5.7.3"
+  }
+}

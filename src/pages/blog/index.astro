@@ -1,0 +1,75 @@
+---
+/**
+ * Blog Hub — AZ Law Now
+ * Combined feed from all content authors
+ */
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../data/site-config';
+---
+
+<BaseLayout
+  title="Blog"
+  description="AZ Law Now blog. Injury law insights, West Valley crash analysis, and practical guidance for injured clients across Arizona."
+  canonical="/blog/"
+>
+  <!-- Hero -->
+  <section class="hero hero-centered">
+    <div class="container container-narrow">
+      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">Blog</p>
+      <h1>Insights from Our Team</h1>
+      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
+        Investigation reports, legal analysis, and practical guidance from the AZ Law Now team. Written for real people with real questions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Placeholder -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="hub-placeholder">
+        <p style="color: var(--color-slate); text-align: center; font-size: var(--text-lg);">
+          Blog posts coming soon. Call <a href="tel:+16026540202">(602) 654-0202</a> with questions about your case.
+        </p>
+      </div>
+
+      <!-- Content Hub Links -->
+      <div class="hub-links">
+        <p style="text-align: center; color: var(--color-slate); margin-bottom: var(--space-6);">Browse by category:</p>
+        <div style="display: flex; justify-content: center; gap: var(--space-4); flex-wrap: wrap;">
+          <a href="/resources/" class="btn btn-secondary">Resources</a>
+          <a href="/legal-guides/" class="btn btn-secondary">Legal Guides</a>
+          <a href="/client-guides/" class="btn btn-secondary">Client Guides</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>{siteConfig.messaging.l7FormHeadline}</h2>
+      <p>{siteConfig.messaging.l7FormSubhead}</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hub-placeholder {
+    padding: var(--space-16) 0;
+    border-top: 1px solid var(--neutral-200);
+    border-bottom: 1px solid var(--neutral-200);
+  }
+
+  .hub-links {
+    margin-top: var(--space-10);
+  }
+</style>

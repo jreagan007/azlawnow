@@ -1,0 +1,128 @@
+---
+/**
+ * Case Results — AZ Law Now
+ * Notable verdicts and settlements
+ */
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../data/site-config';
+import { getResultsPageSchema } from '../../utils/schema';
+
+const results = [
+  { amount: '$800,000', type: 'School Bus Negligence', desc: 'Settlement against Hartford for injuries sustained in a school bus incident. Investigation revealed maintenance failures and driver negligence.' },
+  { amount: '$745,000', type: 'Motor Vehicle Crash', desc: 'Recovery for client with multiple injuries from a serious motor vehicle crash. Evidence from the crash scene proved the other driver\'s fault.' },
+  { amount: '$500,000', type: 'Trucking Crash', desc: 'Settlement in a commercial trucking crash case. Investigation uncovered violations of federal hours-of-service regulations.' },
+  { amount: '$255,000', type: 'Rear-End Collision', desc: 'Recovery for a client rear-ended at a Buckeye intersection. Soft tissue injuries required ongoing treatment.' },
+  { amount: '$200,000', type: 'Motorcycle Crash', desc: 'Settlement for a motorcyclist struck by a vehicle making an illegal turn. Investigation documented the other driver\'s failure to yield.' },
+  { amount: '$175,000', type: 'Pedestrian Injury', desc: 'Recovery for a pedestrian struck in a crosswalk. Surveillance footage from a nearby business confirmed the driver ran a red light.' },
+  { amount: '$150,000', type: 'Slip and Fall', desc: 'Settlement against a commercial property owner for a fall caused by unmarked wet floors. Investigation documented the hazard and lack of warning signs.' },
+  { amount: '$125,000', type: 'Car Crash', desc: 'Recovery for a client injured in a T-bone collision at a West Valley intersection. Police report initially assigned partial fault, but Brendan\'s investigation reversed that finding.' },
+  { amount: '$95,000', type: 'Dog Bite', desc: 'Settlement for a child bitten by a neighbor\'s dog. Arizona strict liability statute applied. Medical documentation showed scarring requiring future treatment.' },
+  { amount: '$85,000', type: 'Bicycle Crash', desc: 'Recovery for a cyclist struck by a vehicle on a road with no bike lane. Evidence showed the driver was distracted.' },
+];
+
+const resultsSchema = getResultsPageSchema(results);
+---
+
+<BaseLayout
+  title="Case Results"
+  description="AZ Law Now case results. Over $3.07 million recovered for injured West Valley clients. Car crashes, truck crashes, wrongful death, and more."
+  canonical="/case-results/"
+  schema={resultsSchema}
+>
+  <!-- Hero -->
+  <section class="hero hero-centered">
+    <div class="container container-narrow">
+      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">Case Results</p>
+      <h1>Results That Speak for Themselves</h1>
+      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
+        Over $3.07 million recovered for injured clients across the West Valley. Every dollar represents a real person who got the compensation they deserved.
+      </p>
+    </div>
+  </section>
+
+  <!-- Results List -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <div class="results-list">
+        {results.map((result) => (
+          <div class="result-card card">
+            <div class="result-card__amount">
+              <span class="stat-number" style="font-size: var(--text-4xl);">{result.amount}</span>
+            </div>
+            <div class="result-card__info">
+              <h2 class="result-card__type">{result.type}</h2>
+              <p class="result-card__desc">{result.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="callout callout-warning" style="margin-top: var(--space-12);">
+        <p class="callout-title">Important Disclaimer</p>
+        <p class="callout-text">
+          Prior results don't guarantee a similar outcome. Every case is different. The results listed above depended on the specific facts and circumstances of each case. Your case may result in a higher or lower recovery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>What's Your Case Worth?</h2>
+      <p>Every case starts with a free consultation. We'll evaluate your situation and give you a straight answer.</p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .results-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .result-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  .result-card__amount {
+    text-align: center;
+  }
+
+  .result-card__type {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .result-card__desc {
+    color: var(--color-slate);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .result-card {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .result-card__amount {
+      padding-bottom: var(--space-2);
+      border-bottom: 1px solid var(--neutral-200);
+    }
+  }
+</style>
