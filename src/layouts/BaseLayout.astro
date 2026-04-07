@@ -15,6 +15,16 @@ import Footer from '../components/Footer.astro';
 import ConversionModal from '../components/ConversionModal.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 
+// Self-hosted fonts via fontsource (includes WOFF2 files)
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/700.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/dm-sans/700.css';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/700.css';
+
 interface Props {
   title?: string;
   description?: string;
@@ -102,70 +112,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#1A1A1A" />
 
-    <!-- Self-hosted Fonts -->
-    <style is:inline>
-      /* Cormorant Garamond — Headings */
-      @font-face {
-        font-family: 'Cormorant Garamond';
-        src: url('/fonts/cormorant-garamond/cormorant-garamond-400.woff2') format('woff2');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'Cormorant Garamond';
-        src: url('/fonts/cormorant-garamond/cormorant-garamond-600.woff2') format('woff2');
-        font-weight: 600;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'Cormorant Garamond';
-        src: url('/fonts/cormorant-garamond/cormorant-garamond-700.woff2') format('woff2');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      /* DM Sans — Body */
-      @font-face {
-        font-family: 'DM Sans';
-        src: url('/fonts/dm-sans/dm-sans-400.woff2') format('woff2');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'DM Sans';
-        src: url('/fonts/dm-sans/dm-sans-500.woff2') format('woff2');
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'DM Sans';
-        src: url('/fonts/dm-sans/dm-sans-700.woff2') format('woff2');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      /* JetBrains Mono — Monospace/Accents */
-      @font-face {
-        font-family: 'JetBrains Mono';
-        src: url('/fonts/jetbrains-mono/jetbrains-mono-400.woff2') format('woff2');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-      }
-      @font-face {
-        font-family: 'JetBrains Mono';
-        src: url('/fonts/jetbrains-mono/jetbrains-mono-700.woff2') format('woff2');
-        font-weight: 700;
-        font-style: normal;
-        font-display: swap;
-      }
-    </style>
+    <!-- Self-hosted Fonts via fontsource -->
 
     <!-- SEO Meta Tags -->
     <SEO
