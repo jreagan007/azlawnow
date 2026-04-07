@@ -1,0 +1,81 @@
+---
+/**
+ * Quote — Pull quote for government report excerpts
+ * Sunset Editorial light theme
+ */
+
+interface Props {
+  author?: string;
+  role?: string;
+}
+
+const { author, role } = Astro.props;
+---
+
+<blockquote class="mdx-quote">
+  <span class="mdx-quote-mark" aria-hidden="true">&ldquo;</span>
+  <div class="mdx-quote-content">
+    <slot />
+  </div>
+  {(author || role) && (
+    <footer class="mdx-quote-attribution">
+      {author && <span class="mdx-quote-author">{author}</span>}
+      {author && role && <span>, </span>}
+      {role && <span class="mdx-quote-role">{role}</span>}
+    </footer>
+  )}
+</blockquote>
+
+<style>
+  .mdx-quote {
+    position: relative;
+    border-left: 4px solid #D4943A;
+    background: #FFF8F0;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .mdx-quote-mark {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: rgba(212, 148, 58, 0.3);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .mdx-quote-content {
+    position: relative;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #4A5859;
+    line-height: 1.7;
+    margin-left: 1rem;
+  }
+
+  .mdx-quote-content :global(p) {
+    margin: 0;
+  }
+
+  .mdx-quote-attribution {
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-style: normal;
+  }
+
+  .mdx-quote-author {
+    font-weight: 700;
+    color: #1A1A1A;
+  }
+
+  .mdx-quote-role {
+    color: #8C8474;
+  }
+</style>

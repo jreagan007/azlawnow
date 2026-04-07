@@ -1,0 +1,51 @@
+---
+/**
+ * StatGrid — Grid wrapper for stat blocks
+ * Sunset Editorial light theme
+ */
+
+interface Props {
+  columns?: 2 | 3 | 4;
+}
+
+const { columns = 3 } = Astro.props;
+---
+
+<div class={`stat-grid stat-grid-${columns}`}>
+  <slot />
+</div>
+
+<style>
+  .stat-grid {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .stat-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    .stat-grid-3,
+    .stat-grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stat-grid-2,
+    .stat-grid-3,
+    .stat-grid-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

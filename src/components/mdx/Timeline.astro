@@ -1,0 +1,97 @@
+---
+/**
+ * Timeline — Vertical timeline of events
+ * Sunset Editorial light theme
+ */
+---
+
+<div class="mdx-timeline">
+  <slot />
+</div>
+
+<style>
+  .mdx-timeline {
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+  }
+
+  /* Vertical line */
+  .mdx-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #D4943A;
+  }
+
+  /* Each direct child becomes a timeline item */
+  .mdx-timeline > :global(*) {
+    position: relative;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  .mdx-timeline > :global(*):last-child {
+    padding-bottom: 0;
+  }
+
+  /* Circle marker */
+  .mdx-timeline > :global(*)::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 0.35rem;
+    width: 12px;
+    height: 12px;
+    background: #FFFFFF;
+    border: 2px solid #D4943A;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* First item gets a filled circle */
+  .mdx-timeline > :global(*):first-child::before {
+    background: #D4943A;
+  }
+
+  /* Heading styles inside timeline */
+  .mdx-timeline :global(h3),
+  .mdx-timeline :global(h4) {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 0.25rem;
+  }
+
+  .mdx-timeline :global(p) {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    color: #4A5859;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .mdx-timeline :global(strong) {
+    color: #1A1A1A;
+  }
+
+  @media (max-width: 480px) {
+    .mdx-timeline {
+      padding-left: 1.5rem;
+    }
+
+    .mdx-timeline > :global(*)::before {
+      left: -1.5rem;
+      width: 10px;
+      height: 10px;
+    }
+
+    .mdx-timeline::before {
+      left: 5px;
+    }
+  }
+</style>

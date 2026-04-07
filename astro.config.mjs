@@ -4,7 +4,8 @@ import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { writeFileSync, readFileSync, unlinkSync, existsSync, readdirSync, statSync } from 'fs';
-import { join } from 'path';
+import { join, resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
 // Build lastmod map from content frontmatter dates + git commit dates
@@ -131,7 +132,7 @@ export default defineConfig({
 
   vite: {
     resolve: {
-      alias: { '@': '/src' },
+      alias: { '@': resolve(fileURLToPath(import.meta.url), '../src') },
     },
     ssr: {
       noExternal: ['@chakra-ui/react', '@emotion/react', '@emotion/styled', 'framer-motion'],

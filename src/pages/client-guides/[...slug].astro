@@ -1,0 +1,36 @@
+---
+/**
+ * Dynamic route: /client-guides/[slug]
+ * Renders MDX articles from the client-guides content collection
+ */
+
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('client-guides');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  author={entry.data.author}
+  category={entry.data.category}
+  tags={entry.data.tags}
+  publishedAt={entry.data.publishedAt}
+  updatedAt={entry.data.updatedAt}
+  image={entry.data.image}
+  ogImage={entry.data.ogImage}
+  readingTime={entry.data.readingTime}
+  schemaType={entry.data.schemaType}
+>
+  <Content />
+</ArticleLayout>

@@ -1,0 +1,66 @@
+---
+/**
+ * Stat — Individual stat card for use inside StatGrid
+ * Sunset Editorial light theme
+ */
+
+interface Props {
+  value: string;
+  label: string;
+  source?: string;
+}
+
+const { value, label, source } = Astro.props;
+---
+
+<div class="mdx-stat-card">
+  <span class="mdx-stat-value">{value}</span>
+  <span class="mdx-stat-label">{label}</span>
+  {source && <span class="mdx-stat-source">{source}</span>}
+</div>
+
+<style>
+  .mdx-stat-card {
+    background: #FFFFFF;
+    border: 1px solid #E8DFD0;
+    border-radius: var(--radius-md, 6px);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .mdx-stat-value {
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #D4943A;
+    line-height: 1;
+  }
+
+  .mdx-stat-label {
+    display: block;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.875rem;
+    color: #4A5859;
+    line-height: 1.4;
+    margin-top: 0.25rem;
+  }
+
+  .mdx-stat-source {
+    display: block;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.6875rem;
+    color: #8C8474;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 480px) {
+    .mdx-stat-value {
+      font-size: 2rem;
+    }
+  }
+</style>
