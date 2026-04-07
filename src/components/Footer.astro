@@ -1,8 +1,9 @@
 ---
 /**
  * AZ Law Now Footer Component
- * Dark footer with CTA bar — Sunset Editorial theme
- * Adapted from AEE Law footer with AZ Law Now branding
+ * LIGHT cream footer — Southwestern editorial warmth
+ * Dark CTA bar at top, then warm cream body
+ * NOT a dark authority footer like AEE Law
  */
 
 const currentYear = new Date().getFullYear();
@@ -69,144 +70,138 @@ const resourceLinks = [
 ---
 
 <footer class="footer">
-  <div class="footer-container">
-    <!-- CTA Bar -->
-    <div class="footer-cta-bar">
+  <!-- Dark CTA Bar -->
+  <div class="footer-cta-bar">
+    <div class="footer-cta-inner container">
       <div class="footer-cta-left">
         <span class="footer-cta-headline">You Deserve Answers.</span>
-        <a href="tel:602-654-0202" class="footer-phone">(602) 654-0202</a>
+        <a href="tel:+16026540202" class="footer-cta-phone">(602) 654-0202</a>
       </div>
-      <a href="/free-case-review/" class="footer-cta-btn">
+      <a href="/free-case-review/" class="btn btn-primary footer-cta-btn">
         Get My Free Consultation
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
       </a>
     </div>
+  </div>
 
-    <!-- Main Footer Grid -->
-    <div class="footer-grid">
-      <!-- Brand Column -->
-      <div class="footer-brand">
-        <a href="/" class="footer-logo" aria-label="AZ Law Now Home">
-          <img
-            src="/logos/lockup-horizontal-light.svg"
-            alt="AZ Law Now"
-            width="180"
-            height="45"
-            loading="lazy"
-          />
-        </a>
-        <address class="footer-address">
-          530 E. McDowell Rd., Suite 107-160<br />
-          Buckeye, AZ 85326
-        </address>
-        <a href="mailto:info@azlawnow.com" class="footer-email">info@azlawnow.com</a>
-        <a href="tel:602-654-0202" class="footer-phone-sm">(602) 654-0202</a>
+  <!-- Main Footer — light cream -->
+  <div class="footer-body">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="/" class="footer-logo" aria-label="AZ Law Now Home">
+            <img
+              src="/logos/lockup-horizontal-light.svg"
+              alt="AZ Law Now"
+              width="200"
+              height="48"
+              loading="lazy"
+            />
+          </a>
+          <address class="footer-address">
+            530 E. McDowell Rd., Suite 107-160<br />
+            Buckeye, AZ 85326
+          </address>
+          <a href="mailto:info@azlawnow.com" class="footer-contact">info@azlawnow.com</a>
+          <a href="tel:+16026540202" class="footer-contact">(602) 654-0202</a>
+        </div>
+
+        <!-- Practice Areas -->
+        <div class="footer-column">
+          <h4 class="footer-col-heading">Practice Areas</h4>
+          <ul class="footer-list-2col">
+            {practiceAreas.vehicleCrashes.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+            {practiceAreas.abuseNegligence.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+            {practiceAreas.otherClaims.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Locations -->
+        <div class="footer-column">
+          <h4 class="footer-col-heading">Locations</h4>
+          <ul class="footer-list-2col">
+            {locations.primary.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+            {locations.westValley.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+            {locations.metro.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Company + Resources -->
+        <div class="footer-column">
+          <h4 class="footer-col-heading">Company</h4>
+          <ul class="footer-list">
+            {companyLinks.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+          <h4 class="footer-col-heading footer-col-subhead">Resources</h4>
+          <ul class="footer-list">
+            {resourceLinks.map((link) => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <!-- Practice Areas (2 columns) -->
-      <div class="footer-column">
-        <h4>Practice Areas</h4>
-        <ul class="footer-list-compact">
-          {practiceAreas.vehicleCrashes.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-          {practiceAreas.abuseNegligence.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-          {practiceAreas.otherClaims.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-        </ul>
+      <!-- Disclaimer -->
+      <div class="footer-disclaimer">
+        <p>
+          The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.
+        </p>
       </div>
 
-      <!-- Locations (2 columns) -->
-      <div class="footer-column">
-        <h4>Locations</h4>
-        <ul class="footer-list-compact">
-          {locations.primary.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-          {locations.westValley.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-          {locations.metro.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-        </ul>
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; {currentYear} AZ Law Now Injury Attorneys. All rights reserved.
+        </p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-of-service/">Terms</a>
+          <a href="/disclaimer/">Disclaimer</a>
+          <a href="/editorial-policy/">Editorial Policy</a>
+          <span class="taqtics-credit">Design by <a href="https://taqtics.com" target="_blank" rel="noopener noreferrer">taqtics.com</a></span>
+        </nav>
       </div>
-
-      <!-- Company + Resources -->
-      <div class="footer-column">
-        <h4>Company</h4>
-        <ul class="footer-list">
-          {companyLinks.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-        </ul>
-        <h4 class="footer-subhead">Resources</h4>
-        <ul class="footer-list">
-          {resourceLinks.map((link) => (
-            <li><a href={link.href}>{link.label}</a></li>
-          ))}
-        </ul>
-      </div>
-    </div>
-
-    <!-- Disclaimer -->
-    <div class="footer-disclaimer">
-      <p>
-        The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.
-      </p>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
-      <p class="footer-copyright">
-        &copy; {currentYear} AZ Law Now Injury Attorneys. All rights reserved.
-      </p>
-      <nav class="footer-legal" aria-label="Legal">
-        <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/terms-of-service/">Terms</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="/editorial-policy/">Editorial Policy</a>
-        <span class="taqtics-credit">Design by <a href="https://taqtics.com" target="_blank" rel="noopener noreferrer">taqtics.com</a></span>
-      </nav>
     </div>
   </div>
 </footer>
 
 <style>
   /* ========================================
-     FOOTER — Dark theme (inverted)
+     FOOTER — Light cream body
      ======================================== */
   .footer {
-    background: var(--color-black, #1A1A1A);
-    color: var(--neutral-400, #B0A696);
-    padding: 0 0 1.5rem;
     margin-top: 0;
   }
 
-  .footer-container {
-    max-width: var(--container-max, 1200px);
-    margin: 0 auto;
-    padding: 0 var(--container-padding, 1.5rem);
-  }
-
   /* ========================================
-     CTA BAR
+     CTA BAR — dark band at top of footer
      ======================================== */
   .footer-cta-bar {
+    background: #1A1A1A;
+    padding: 1.5rem 0;
+  }
+
+  .footer-cta-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--color-slate, #4A5859);
-    background: linear-gradient(135deg, transparent 0%, rgba(212, 148, 58, 0.06) 100%);
-    margin: 0 calc(-1 * var(--container-padding, 1.5rem));
-    padding-left: var(--container-padding, 1.5rem);
-    padding-right: var(--container-padding, 1.5rem);
   }
 
   .footer-cta-left {
@@ -219,68 +214,45 @@ const resourceLinks = [
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--neutral-50, #FAF5ED);
+    color: #FAF5ED;
     line-height: 1;
   }
 
-  .footer-phone {
+  .footer-cta-phone {
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
     font-size: 1.375rem;
     font-weight: 700;
-    color: var(--color-gold, #D4943A);
+    color: #D4943A;
     text-decoration: none;
-    transition: color var(--transition-base, 0.2s ease);
+    transition: color 0.2s ease;
   }
 
-  .footer-phone:hover {
-    color: var(--color-gold-hover, #C2842E);
-  }
+  .footer-cta-phone:hover { color: #C2842E; }
 
+  /* Layout override — global .btn .btn-primary handles colors/font/transitions */
   .footer-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--color-gold, #D4943A);
-    color: var(--color-white, #FFFFFF);
-    font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
-    font-weight: 700;
+    flex-shrink: 0;
     font-size: 0.8125rem;
     padding: 0.75rem 1.5rem;
-    border-radius: var(--radius-md, 6px);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    transition: all var(--transition-base, 0.2s ease);
-    flex-shrink: 0;
-    box-shadow: var(--shadow-gold, 0 4px 20px rgba(212, 148, 58, 0.2));
-  }
-
-  .footer-cta-btn:hover {
-    background: var(--color-gold-hover, #C2842E);
-    color: var(--color-white, #FFFFFF);
-    transform: translateY(-2px);
-  }
-
-  .footer-cta-btn svg {
-    transition: transform 0.2s ease;
-  }
-
-  .footer-cta-btn:hover svg {
-    transform: translateX(3px);
   }
 
   /* ========================================
-     MAIN GRID
+     FOOTER BODY — warm cream
      ======================================== */
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr 1fr 1fr;
-    gap: 2.5rem;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--color-slate, #4A5859);
+  .footer-body {
+    background: #FAF5ED;
+    padding: 2.5rem 0 1.5rem;
   }
 
-  /* Brand column */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #E8DFD0;
+  }
+
+  /* Brand */
   .footer-brand {
     display: flex;
     flex-direction: column;
@@ -288,57 +260,43 @@ const resourceLinks = [
   }
 
   .footer-logo img {
-    height: 36px;
+    height: 42px;
     width: auto;
-    opacity: 0.9;
   }
 
   .footer-address {
     font-style: normal;
     font-size: 0.8125rem;
-    color: var(--neutral-400, #B0A696);
+    color: #4A5859;
     line-height: 1.6;
     margin-top: 0.5rem;
   }
 
-  .footer-email {
+  .footer-contact {
     font-size: 0.8125rem;
-    color: var(--neutral-400, #B0A696);
+    color: #4A5859;
     text-decoration: none;
-    transition: color var(--transition-base, 0.2s ease);
+    transition: color 0.2s ease;
   }
 
-  .footer-email:hover {
-    color: var(--color-gold, #D4943A);
-  }
+  .footer-contact:hover { color: #D4943A; }
 
-  .footer-phone-sm {
-    font-size: 0.8125rem;
-    color: var(--neutral-400, #B0A696);
-    text-decoration: none;
-    transition: color var(--transition-base, 0.2s ease);
-  }
-
-  .footer-phone-sm:hover {
-    color: var(--color-gold, #D4943A);
-  }
-
-  /* Link columns */
-  .footer-column h4 {
-    color: var(--neutral-50, #FAF5ED);
+  /* Columns */
+  .footer-col-heading {
+    color: #1A1A1A;
     font-family: var(--font-body, 'DM Sans', system-ui, sans-serif);
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #E8DFD0;
   }
 
-  .footer-subhead {
-    margin-top: 1.25rem;
-  }
+  .footer-col-subhead { margin-top: 1.25rem; }
 
-  .footer-list-compact {
+  .footer-list-2col {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -346,7 +304,7 @@ const resourceLinks = [
     column-gap: 1rem;
   }
 
-  .footer-list-compact li {
+  .footer-list-2col li {
     margin-bottom: 0.3rem;
     break-inside: avoid;
   }
@@ -357,41 +315,33 @@ const resourceLinks = [
     margin: 0;
   }
 
-  .footer-list li {
-    margin-bottom: 0.3rem;
-  }
+  .footer-list li { margin-bottom: 0.3rem; }
 
-  .footer-list-compact a,
+  .footer-list-2col a,
   .footer-list a {
-    color: var(--neutral-400, #B0A696);
+    color: #6B7280;
     font-size: 0.8125rem;
     text-decoration: none;
-    transition: color var(--transition-base, 0.2s ease);
+    transition: color 0.2s ease;
   }
 
-  .footer-list-compact a:hover,
-  .footer-list a:hover {
-    color: var(--color-gold, #D4943A);
-  }
+  .footer-list-2col a:hover,
+  .footer-list a:hover { color: #D4943A; }
 
-  /* ========================================
-     DISCLAIMER
-     ======================================== */
+  /* Disclaimer */
   .footer-disclaimer {
     padding: 1.25rem 0;
-    border-bottom: 1px solid var(--color-slate, #4A5859);
+    border-bottom: 1px solid #E8DFD0;
   }
 
   .footer-disclaimer p {
     font-size: 0.6875rem;
-    color: var(--neutral-500, #8C8276);
+    color: #9CA3AF;
     line-height: 1.6;
     max-width: 800px;
   }
 
-  /* ========================================
-     BOTTOM BAR
-     ======================================== */
+  /* Bottom bar */
   .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -402,7 +352,7 @@ const resourceLinks = [
 
   .footer-copyright {
     font-size: 0.6875rem;
-    color: var(--neutral-500, #8C8276);
+    color: #9CA3AF;
     line-height: 1.4;
   }
 
@@ -414,117 +364,72 @@ const resourceLinks = [
   }
 
   .footer-legal a {
-    color: var(--neutral-500, #8C8276);
+    color: #9CA3AF;
     font-size: 0.6875rem;
     text-decoration: none;
-    transition: color var(--transition-base, 0.2s ease);
+    transition: color 0.2s ease;
   }
 
-  .footer-legal a:hover {
-    color: var(--color-gold, #D4943A);
-  }
+  .footer-legal a:hover { color: #D4943A; }
 
   .taqtics-credit {
-    color: var(--neutral-500, #8C8276);
+    color: #9CA3AF;
     font-size: 0.6875rem;
   }
 
   .taqtics-credit a {
-    color: var(--neutral-500, #8C8276);
+    color: #9CA3AF;
     text-decoration: none;
-    transition: color var(--transition-base, 0.2s ease);
+    transition: color 0.2s ease;
   }
 
-  .taqtics-credit a:hover {
-    color: var(--color-gold, #D4943A);
-  }
+  .taqtics-credit a:hover { color: #D4943A; }
 
-  /* ========================================
-     FOCUS STYLES
-     ======================================== */
-  .footer-phone:focus-visible,
+  /* Focus */
+  .footer-cta-phone:focus-visible,
   .footer-cta-btn:focus-visible,
-  .footer-list-compact a:focus-visible,
+  .footer-list-2col a:focus-visible,
   .footer-list a:focus-visible,
   .footer-legal a:focus-visible,
-  .footer-email:focus-visible,
-  .footer-phone-sm:focus-visible {
-    outline: 2px solid var(--color-gold, #D4943A);
+  .footer-contact:focus-visible {
+    outline: 2px solid #D4943A;
     outline-offset: 2px;
   }
 
-  /* ========================================
-     RESPONSIVE
-     ======================================== */
+  /* Responsive */
   @media (max-width: 1024px) {
     .footer-grid {
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
-
-    .footer-brand {
-      grid-column: 1 / -1;
-    }
+    .footer-brand { grid-column: 1 / -1; }
   }
 
   @media (max-width: 768px) {
-    .footer-cta-bar {
+    .footer-cta-inner {
       flex-direction: column;
       gap: 1rem;
       text-align: center;
     }
-
     .footer-cta-left {
       flex-direction: column;
       gap: 0.5rem;
     }
-
     .footer-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-
-    .footer-brand {
-      text-align: center;
-      align-items: center;
-    }
-
-    .footer-column {
-      text-align: center;
-    }
-
-    .footer-list-compact {
-      columns: 2;
-      text-align: left;
-    }
-
-    .footer-disclaimer {
-      text-align: center;
-    }
-
-    .footer-disclaimer p {
-      max-width: none;
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .footer-legal {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    .footer-brand { text-align: center; align-items: center; }
+    .footer-column { text-align: center; }
+    .footer-list-2col { columns: 2; text-align: left; }
+    .footer-disclaimer { text-align: center; }
+    .footer-disclaimer p { max-width: none; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .footer-legal { flex-wrap: wrap; justify-content: center; }
   }
 
   @media (max-width: 480px) {
-    .footer-list-compact {
-      columns: 1;
-      text-align: center;
-    }
-
-    .footer-list {
-      text-align: center;
-    }
+    .footer-list-2col { columns: 1; text-align: center; }
+    .footer-list { text-align: center; }
   }
 </style>

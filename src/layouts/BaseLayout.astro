@@ -12,9 +12,8 @@ import { getSiteWideSchemas } from '../utils/schema';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-// TODO: Import these once components exist
-// import ConversionModal from '../components/ConversionModal.astro';
-// import Analytics from '../components/Analytics.astro';
+import ConversionModal from '../components/ConversionModal.astro';
+import StickyCTA from '../components/StickyCTA.astro';
 
 interface Props {
   title?: string;
@@ -944,10 +943,33 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       .mt-4 { margin-top: var(--space-4); }
       .mt-8 { margin-top: var(--space-8); }
 
+      /* Outline small button */
+      .btn-outline-sm {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.5rem 1rem;
+        font-family: var(--font-body);
+        font-size: var(--text-sm);
+        font-weight: 600;
+        color: var(--color-gold);
+        border: 1px solid var(--color-gold);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .btn-outline-sm:hover {
+        background: rgba(212, 148, 58, 0.08);
+        color: var(--color-gold-hover);
+      }
+
       /* Phone link styling */
       a[href^="tel:"] {
         white-space: nowrap;
       }
+
+      /* Sticky Mobile CTA styles are in StickyCTA.astro component */
     </style>
   </head>
   <body>
@@ -965,6 +987,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
 
     {!hideFooter && <Footer />}
 
-    <!-- TODO: ConversionModal component -->
+    {!hideHeader && <ConversionModal />}
+    {!hideHeader && <StickyCTA />}
   </body>
 </html>

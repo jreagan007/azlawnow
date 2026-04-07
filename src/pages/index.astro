@@ -1,8 +1,20 @@
 ---
 /**
  * Homepage — AZ Law Now
- * Editorial-first homepage for PI firm in Buckeye/West Valley Arizona
- * Light theme: cream bg, dark text, gold accents
+ * EDITORIAL-FIRST homepage. This is NOT a generic PI law firm template.
+ * This reads like a publication: above-the-fold investigation, author hubs,
+ * data-driven insights, southwestern Arizona identity.
+ *
+ * Flow:
+ * 1. Editorial hero — warm cream, big serif headline, no dark photo overlay
+ * 2. Featured investigation — newspaper-style card, full-width
+ * 3. Three content hubs (Investigated / Answered / Guided) — editorial grid
+ * 4. "What We're Watching" — data nuggets / Arizona stats
+ * 5. Practice areas — compact, sidebar-style, not the whole page
+ * 6. West Valley locations — minimal
+ * 7. Results teaser — editorial, not flashy
+ * 8. Team — editorial byline cards
+ * 9. Final CTA — warm, not aggressive
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -13,30 +25,30 @@ import { getSiteWideSchemas } from '../utils/schema';
 const siteSchemas = getSiteWideSchemas();
 
 const practiceAreas = [
-  { name: 'Car Accidents', description: 'Rear-end collisions, intersection crashes, and highway pileups across the West Valley.', url: '/car-accidents/' },
-  { name: 'Truck Accidents', description: 'Semi-truck and commercial vehicle crashes on I-10, SR-85, and local roads.', url: '/truck-accidents/' },
-  { name: 'Motorcycle Accidents', description: 'Lane-splitting injuries, left-turn collisions, and road hazard cases.', url: '/motorcycle-accidents/' },
-  { name: 'Wrongful Death', description: 'Holding negligent parties accountable when families lose someone.', url: '/wrongful-death/' },
-  { name: 'Bus Accidents', description: 'School bus negligence, public transit crashes, and passenger injury claims.', url: '/bus-accidents/' },
-  { name: 'Elder Abuse', description: 'Physical abuse, neglect, and financial exploitation of elderly residents.', url: '/elder-abuse/' },
-  { name: 'Nursing Home Abuse', description: 'Facility negligence, understaffing injuries, and wrongful restraint cases.', url: '/nursing-home-abuse/' },
-  { name: 'Pedestrian Accidents', description: 'Crosswalk collisions, parking lot injuries, and hit-and-run cases.', url: '/pedestrian-accidents/' },
-  { name: 'Bicycle Accidents', description: 'Dooring incidents, right-hook collisions, and bike lane violations.', url: '/bicycle-accidents/' },
-  { name: 'Slip and Fall', description: 'Wet floors, broken sidewalks, and hazardous property conditions.', url: '/slip-and-fall/' },
-  { name: 'Medical Negligence', description: 'Misdiagnosis, surgical errors, and delayed treatment cases.', url: '/medical-negligence/' },
-  { name: 'Dog Bite', description: 'Arizona strict liability dog bite claims and animal attack injuries.', url: '/dog-bite/' },
+  { name: 'Car Accidents', url: '/car-accidents/', icon: '→' },
+  { name: 'Truck Accidents', url: '/truck-accidents/', icon: '→' },
+  { name: 'Motorcycle Accidents', url: '/motorcycle-accidents/', icon: '→' },
+  { name: 'Wrongful Death', url: '/wrongful-death/', icon: '→' },
+  { name: 'Elder Abuse', url: '/elder-abuse/', icon: '→' },
+  { name: 'Nursing Home Abuse', url: '/nursing-home-abuse/', icon: '→' },
+  { name: 'Bus Accidents', url: '/bus-accidents/', icon: '→' },
+  { name: 'Pedestrian Accidents', url: '/pedestrian-accidents/', icon: '→' },
+  { name: 'Bicycle Accidents', url: '/bicycle-accidents/', icon: '→' },
+  { name: 'Slip and Fall', url: '/slip-and-fall/', icon: '→' },
+  { name: 'Medical Negligence', url: '/medical-negligence/', icon: '→' },
+  { name: 'Dog Bite', url: '/dog-bite/', icon: '→' },
 ];
 
 const caseResults = [
-  { amount: '$800,000', type: 'School Bus Negligence', description: 'A child suffered serious injuries when a school district bus driver failed to follow safety protocol.' },
-  { amount: '$745,000', type: 'Motor Vehicle Accident', description: 'Multi-vehicle collision on I-10 left our client with spinal injuries requiring surgery.' },
-  { amount: '$500,000', type: 'Trucking Accident', description: 'Commercial truck driver ran a red light in Goodyear, causing catastrophic injuries.' },
-  { amount: '$255,000', type: 'Rear-End Collision', description: 'Distracted driver rear-ended our client at a Buckeye intersection during rush hour.' },
+  { amount: '$800K', type: 'School Bus Negligence', description: 'A child injured when a bus driver failed safety protocol.' },
+  { amount: '$745K', type: 'Motor Vehicle Accident', description: 'Spinal injuries from a multi-vehicle I-10 collision.' },
+  { amount: '$500K', type: 'Trucking Accident', description: 'Commercial truck ran a red light in Goodyear.' },
+  { amount: '$255K', type: 'Rear-End Collision', description: 'Distracted driver crash at a Buckeye intersection.' },
 ];
 
 const locations = [
-  { name: 'Buckeye', label: 'Headquarters', url: '/buckeye/' },
-  { name: 'Maricopa', label: 'New Office', url: '/maricopa/' },
+  { name: 'Buckeye', label: 'HQ', url: '/buckeye/' },
+  { name: 'Maricopa', label: 'New', url: '/maricopa/' },
   { name: 'Goodyear', label: '', url: '/goodyear/' },
   { name: 'Avondale', label: '', url: '/avondale/' },
   { name: 'Phoenix', label: '', url: '/phoenix/' },
@@ -53,224 +65,284 @@ const stephanie = authors['stephanie-ramirez'];
   schema={siteSchemas}
 >
 
-  <!-- ================================ -->
-  <!-- HERO SECTION                     -->
-  <!-- ================================ -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <span class="hero-overline">Buckeye &amp; Maricopa Injury Attorneys</span>
-      <h1 class="hero-h1">You Get Answers.</h1>
-      <p class="hero-subhead">The firm that does the work before the case.</p>
-      <div class="hero-actions">
-        <a href="/contact/" class="btn btn-primary btn-lg">Get My Free Consultation &rarr;</a>
-        <a href={`tel:${siteConfig.phoneE164}`} class="hero-phone">Or call {siteConfig.phoneFormatted}</a>
+  <!-- ============================== -->
+  <!-- EDITORIAL HERO                 -->
+  <!-- Warm cream, no dark overlay.   -->
+  <!-- Southwestern, not NYC.         -->
+  <!-- ============================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-dateline">Buckeye &amp; West Valley, Arizona</span>
+        <h1 class="hero-h1">You Get Answers.</h1>
+        <p class="hero-deck">
+          The firm that does the work before the case. Original reporting on
+          West Valley crash data, clear legal guides, and the people who walk
+          you through every step.
+        </p>
+        <div class="hero-actions">
+          <a href="/free-case-review/" class="btn btn-primary btn-lg">
+            Talk to My Team &rarr;
+          </a>
+          <a href={`tel:${siteConfig.phoneE164}`} class="hero-phone-link">
+            Or call {siteConfig.phoneFormatted}
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">$3.07M+</span>
+            <span class="hero-stat-label">Recovered</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">No Fee</span>
+            <span class="hero-stat-label">Unless We Win</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">Free</span>
+            <span class="hero-stat-label">Consultations</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-accent">
+        <!-- Desert-warm illustration zone — cactus mark + warm gradient -->
+        <div class="hero-mark-wrapper">
+          <img
+            src="/logos/cactus-mark-dark.svg"
+            alt=""
+            class="hero-cactus"
+            width="160"
+            height="160"
+            aria-hidden="true"
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================================ -->
-  <!-- TRUST STRIP                      -->
-  <!-- ================================ -->
-  <section class="trust-strip">
-    <div class="container">
-      <div class="trust-items">
-        <div class="trust-item">
-          <span class="trust-value">$3.07M+</span>
-          <span class="trust-label">Recovered</span>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-value">Your Whole Team.</span>
-          <span class="trust-label">Your Whole Case.</span>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-value">No Fee</span>
-          <span class="trust-label">Unless We Win</span>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-value">Free</span>
-          <span class="trust-label">Consultations</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================ -->
-  <!-- FEATURED INVESTIGATION           -->
-  <!-- ================================ -->
+  <!-- ============================== -->
+  <!-- FEATURED INVESTIGATION         -->
+  <!-- Newspaper-style, full-width    -->
+  <!-- ============================== -->
   <section class="section featured-section">
     <div class="container">
-      <span class="section-label">What We're Covering</span>
-      <div class="featured-card">
+      <div class="section-header">
+        <span class="section-eyebrow">What We're Covering</span>
+        <div class="section-rule"></div>
+      </div>
+      <article class="featured-card">
         <div class="featured-image">
-          <div class="featured-image-placeholder">
-            <span class="featured-tag">Investigation</span>
+          <div class="featured-image-inner">
+            <span class="featured-badge">Investigation</span>
           </div>
         </div>
         <div class="featured-body">
-          <span class="featured-tag-mobile">Investigation</span>
           <h2 class="featured-headline">
-            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/">What the ADOT Data Shows About I-10 Crashes in Buckeye and Goodyear</a>
+            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/">
+              What the ADOT Data Shows About I-10 Crashes in Buckeye and Goodyear
+            </a>
           </h2>
           <p class="featured-excerpt">
-            We pulled three years of ADOT crash reports for the I-10 corridor between Buckeye and Goodyear. The numbers tell a story that local coverage hasn't touched. Speed, volume, and commercial truck traffic are converging in one of Arizona's fastest-growing stretches of highway.
+            We pulled three years of ADOT crash reports for the I-10 corridor
+            between Buckeye and Goodyear. Speed, volume, and commercial truck
+            traffic are converging in one of Arizona's fastest-growing highway
+            stretches.
           </p>
           <div class="featured-byline">
-            <img src={brendan.photo} alt={brendan.name} class="byline-photo" width="36" height="36" loading="lazy" />
-            <div class="byline-text">
+            <img src={brendan.photo} alt={brendan.name} class="byline-avatar" width="40" height="40" loading="lazy" />
+            <div class="byline-meta">
               <span class="byline-name">{brendan.name}</span>
-              <span class="byline-date">April 2, 2026</span>
+              <span class="byline-role">Investigative Reporter</span>
             </div>
-            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/" class="featured-read-link">Read &rarr;</a>
+            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/" class="featured-read">Read the report &rarr;</a>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- ================================ -->
-  <!-- THREE PILLARS / CONTENT HUBS     -->
-  <!-- ================================ -->
-  <section class="section pillars-section">
+  <!-- ============================== -->
+  <!-- THREE EDITORIAL HUBS           -->
+  <!-- Investigated / Answered / Guided -->
+  <!-- ============================== -->
+  <section class="section hubs-section">
     <div class="container">
-      <div class="pillars-grid">
-        <div class="pillar-card card card-elevated">
-          <span class="pillar-tag">Investigated.</span>
-          <h3 class="pillar-title">Resources</h3>
-          <p class="pillar-description">
-            Original reporting on West Valley crash data, public safety records, and the stories behind the numbers. {brendan.name.split(' ')[0]} runs the desk.
+      <div class="section-header">
+        <span class="section-eyebrow">How We Work</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="hubs-grid">
+        <a href="/resources/" class="hub-card">
+          <div class="hub-number">01</div>
+          <h3 class="hub-tag">Investigated.</h3>
+          <h4 class="hub-title">Resources</h4>
+          <p class="hub-description">
+            Original reporting on West Valley crash data, public safety
+            records, and the stories behind the numbers.
           </p>
-          <a href="/resources/" class="pillar-link">Explore the data &rarr;</a>
+          <div class="hub-author">
+            <img src={brendan.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
+            <span class="hub-author-name">{brendan.name.split(' ')[0]} runs the desk.</span>
+          </div>
+          <span class="hub-link">Explore the data &rarr;</span>
+        </a>
+        <a href="/legal-guides/" class="hub-card">
+          <div class="hub-number">02</div>
+          <h3 class="hub-tag">Answered.</h3>
+          <h4 class="hub-title">Legal Guides</h4>
+          <p class="hub-description">
+            Arizona injury law explained in plain language. Statutes,
+            deadlines, and what they mean for your case.
+          </p>
+          <div class="hub-author">
+            <img src={brandon.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
+            <span class="hub-author-name">Reviewed by {brandon.name.split(',')[0]}.</span>
+          </div>
+          <span class="hub-link">Read the guides &rarr;</span>
+        </a>
+        <a href="/client-guides/" class="hub-card">
+          <div class="hub-number">03</div>
+          <h3 class="hub-tag">Guided.</h3>
+          <h4 class="hub-title">Client Guides</h4>
+          <p class="hub-description">
+            Step-by-step walkthroughs for everything after the injury. What
+            to expect, what matters, how timelines work.
+          </p>
+          <div class="hub-author">
+            <img src={stephanie.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
+            <span class="hub-author-name">{stephanie.name.split(' ')[0]} makes it clear.</span>
+          </div>
+          <span class="hub-link">See what's next &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- PRACTICE + LOCATIONS SPLIT     -->
+  <!-- Compact, not the whole page    -->
+  <!-- ============================== -->
+  <section class="section compact-section">
+    <div class="container compact-grid">
+      <div class="compact-left">
+        <div class="section-header">
+          <span class="section-eyebrow">How We Help</span>
+          <div class="section-rule"></div>
         </div>
-        <div class="pillar-card card card-elevated">
-          <span class="pillar-tag">Answered.</span>
-          <h3 class="pillar-title">Legal Guides</h3>
-          <p class="pillar-description">
-            Arizona injury law explained in plain language. Statutes, deadlines, and what they actually mean for your case. Reviewed by {brandon.name.split(',')[0]}.
-          </p>
-          <a href="/legal-guides/" class="pillar-link">Read the guides &rarr;</a>
+        <div class="practice-list">
+          {practiceAreas.map((area) => (
+            <a href={area.url} class="practice-link">
+              <span>{area.name}</span>
+              <span class="practice-arrow">&rarr;</span>
+            </a>
+          ))}
         </div>
-        <div class="pillar-card card card-elevated">
-          <span class="pillar-tag">Guided.</span>
-          <h3 class="pillar-title">Client Guides</h3>
-          <p class="pillar-description">
-            Step-by-step walkthroughs for everything after the injury. What to expect, what paperwork matters, how timelines work. {stephanie.name.split(' ')[0]} makes it clear.
-          </p>
-          <a href="/client-guides/" class="pillar-link">See what's next &rarr;</a>
+      </div>
+      <div class="compact-right">
+        <div class="section-header">
+          <span class="section-eyebrow">West Valley Offices</span>
+          <div class="section-rule"></div>
+        </div>
+        <p class="locations-intro">
+          Two offices. Five core service areas. One team that knows this
+          part of Arizona.
+        </p>
+        <div class="locations-stack">
+          {locations.map((loc) => (
+            <a href={loc.url} class="location-row">
+              <span class="location-name">{loc.name}</span>
+              {loc.label && <span class="location-badge">{loc.label}</span>}
+            </a>
+          ))}
+        </div>
+        <div class="locations-cta">
+          <a href="/contact/" class="btn btn-outline-sm">Visit an office &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================================ -->
-  <!-- PRACTICE AREAS GRID              -->
-  <!-- ================================ -->
-  <section class="section practice-section">
-    <div class="container">
-      <h2 class="section-heading">How We Help</h2>
-      <div class="practice-grid">
-        {practiceAreas.map((area) => (
-          <a href={area.url} class="practice-card">
-            <h3 class="practice-name">{area.name}</h3>
-            <p class="practice-desc">{area.description}</p>
-            <span class="practice-link">Read &rarr;</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================ -->
-  <!-- LOCATIONS                        -->
-  <!-- ================================ -->
-  <section class="section locations-section">
-    <div class="container">
-      <h2 class="section-heading">Serving the West Valley</h2>
-      <p class="section-subtext">Two offices. Five core service areas. One team that knows this part of Arizona.</p>
-      <div class="locations-grid">
-        {locations.map((loc) => (
-          <a href={loc.url} class="location-card">
-            <h3 class="location-name">{loc.name}</h3>
-            {loc.label && <span class="location-label">{loc.label}</span>}
-            <span class="location-link">Learn more &rarr;</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================ -->
-  <!-- CASE RESULTS TEASER              -->
-  <!-- ================================ -->
+  <!-- ============================== -->
+  <!-- CASE RESULTS — editorial       -->
+  <!-- ============================== -->
   <section class="section results-section">
     <div class="container">
-      <h2 class="section-heading">Results That Matter</h2>
-      <div class="results-grid">
+      <div class="section-header">
+        <span class="section-eyebrow">Results That Matter</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="results-row">
         {caseResults.map((result) => (
-          <div class="result-card">
+          <div class="result-item">
             <span class="result-amount">{result.amount}</span>
             <span class="result-type">{result.type}</span>
             <p class="result-desc">{result.description}</p>
           </div>
         ))}
       </div>
-      <div class="results-cta">
-        <a href="/case-results/" class="btn btn-secondary">See Our Results &rarr;</a>
+      <div class="results-footer">
+        <a href="/case-results/" class="btn btn-secondary">See all results &rarr;</a>
+        <p class="results-note">Past results do not guarantee future outcomes.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================================ -->
-  <!-- TEAM SECTION                     -->
-  <!-- ================================ -->
+  <!-- ============================== -->
+  <!-- TEAM — editorial byline cards  -->
+  <!-- ============================== -->
   <section class="section team-section">
     <div class="container">
-      <h2 class="section-heading">Three People. Your Whole Case.</h2>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo-wrapper">
-            <img src={brendan.photo} alt={brendan.name} class="team-photo" width="120" height="120" loading="lazy" />
+      <div class="section-header">
+        <span class="section-eyebrow">The Team</span>
+        <div class="section-rule"></div>
+      </div>
+      <div class="team-row">
+        <a href={brendan.url} class="team-card">
+          <div class="team-photo-wrap">
+            <img src={brendan.photo} alt={brendan.name} class="team-photo" width="96" height="96" loading="lazy" />
           </div>
-          <h3 class="team-name">{brendan.name}</h3>
-          <span class="team-title">{brendan.title}</span>
-          <p class="team-desc">Covers West Valley injury data, public safety records, and community accountability stories.</p>
-          <a href={brendan.url} class="team-link">Meet Brendan &rarr;</a>
-        </div>
-        <div class="team-card">
-          <div class="team-photo-wrapper">
-            <img src={brandon.photo} alt={brandon.name} class="team-photo" width="120" height="120" loading="lazy" />
+          <div class="team-info">
+            <h3 class="team-name">{brendan.name}</h3>
+            <span class="team-title">{brendan.title}</span>
+            <p class="team-bio">Covers West Valley crash data, public safety records, and community accountability.</p>
           </div>
-          <h3 class="team-name">{brandon.name}</h3>
-          <span class="team-title">{brandon.title}</span>
-          <p class="team-desc">Reviews every legal guide for accuracy. Practices personal injury law across the West Valley.</p>
-          <a href={brandon.url} class="team-link">Meet Brandon &rarr;</a>
-        </div>
-        <div class="team-card">
-          <div class="team-photo-wrapper">
-            <img src={stephanie.photo} alt={stephanie.name} class="team-photo" width="120" height="120" loading="lazy" />
+        </a>
+        <a href={brandon.url} class="team-card">
+          <div class="team-photo-wrap">
+            <img src={brandon.photo} alt={brandon.name} class="team-photo" width="96" height="96" loading="lazy" />
           </div>
-          <h3 class="team-name">{stephanie.name}</h3>
-          <span class="team-title">{stephanie.title}</span>
-          <p class="team-desc">Writes the guides that walk families through the process after an injury. Clear, step by step.</p>
-          <a href={stephanie.url} class="team-link">Meet Stephanie &rarr;</a>
-        </div>
+          <div class="team-info">
+            <h3 class="team-name">{brandon.name}</h3>
+            <span class="team-title">{brandon.title}</span>
+            <p class="team-bio">Reviews every legal guide for accuracy. Practices personal injury law across the West Valley.</p>
+          </div>
+        </a>
+        <a href={stephanie.url} class="team-card">
+          <div class="team-photo-wrap">
+            <img src={stephanie.photo} alt={stephanie.name} class="team-photo" width="96" height="96" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">{stephanie.name}</h3>
+            <span class="team-title">{stephanie.title}</span>
+            <p class="team-bio">Writes the guides that walk families through the process. Clear, step by step.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ================================ -->
-  <!-- FINAL CTA                        -->
-  <!-- ================================ -->
-  <section class="final-cta section-dark">
-    <div class="container text-center">
-      <h2 class="final-cta-heading">You Deserve Answers.</h2>
-      <p class="final-cta-subtext">Tell us what happened. We'll tell you what's next.</p>
-      <div class="final-cta-actions">
-        <a href="/contact/" class="btn btn-primary btn-lg">Get My Free Consultation &rarr;</a>
-        <a href={`tel:${siteConfig.phoneE164}`} class="final-cta-phone">Or call {siteConfig.phoneFormatted}</a>
+  <!-- ============================== -->
+  <!-- FINAL CTA — warm, not pushy    -->
+  <!-- ============================== -->
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <img src="/logos/cactus-mark-light.svg" alt="" class="final-cactus" width="48" height="48" aria-hidden="true" />
+      <h2 class="final-heading">You Deserve Answers.</h2>
+      <p class="final-subtext">Tell us what happened. We'll tell you what's next.</p>
+      <div class="final-actions">
+        <a href="/free-case-review/" class="btn btn-primary btn-lg">Get My Free Consultation &rarr;</a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="final-phone">Or call {siteConfig.phoneFormatted}</a>
       </div>
     </div>
   </section>
@@ -279,217 +351,193 @@ const stephanie = authors['stephanie-ramirez'];
 
 <style>
   /* ========================================
-     HERO SECTION
+     EDITORIAL HERO — warm cream, typography-led
+     NOT a dark overlay on photo like aeelaw
      ======================================== */
-  .hero-section {
-    position: relative;
-    min-height: 85vh;
-    display: flex;
+  .hero {
+    background: var(--color-bg, #FAF5ED);
+    padding: var(--space-20, 5rem) 0 var(--space-16, 4rem);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--space-12, 3rem);
     align-items: center;
-    background-image: url('/images/heroes/homepage-hero.webp');
-    background-size: cover;
-    background-position: center;
-    background-color: var(--color-black);
-    overflow: hidden;
   }
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      rgba(26, 26, 26, 0.92) 0%,
-      rgba(26, 26, 26, 0.75) 45%,
-      rgba(26, 26, 26, 0.3) 100%
-    );
-    z-index: 1;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 680px;
-    padding-top: var(--space-24);
-    padding-bottom: var(--space-20);
-  }
-
-  .hero-overline {
+  .hero-dateline {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: var(--text-xs);
+    font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--color-gold);
-    margin-bottom: var(--space-6);
+    color: var(--color-red, #C23B22);
+    margin-bottom: var(--space-4, 1rem);
+    padding-bottom: var(--space-2, 0.5rem);
+    border-bottom: 2px solid var(--color-red, #C23B22);
   }
 
   .hero-h1 {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
     font-weight: 700;
-    line-height: 1.05;
-    color: var(--color-white);
-    margin-bottom: var(--space-6);
+    line-height: 1.0;
+    color: var(--color-black, #1A1A1A);
+    margin-bottom: var(--space-6, 1.5rem);
   }
 
-  .hero-subhead {
-    font-size: var(--text-xl);
-    color: var(--neutral-400);
-    line-height: 1.5;
-    margin-bottom: var(--space-10);
-    max-width: 520px;
+  .hero-deck {
+    font-size: var(--text-lg, 1.125rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.65;
+    margin-bottom: var(--space-8, 2rem);
+    max-width: 560px;
   }
 
   .hero-actions {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    gap: var(--space-6, 1.5rem);
     flex-wrap: wrap;
+    margin-bottom: var(--space-10, 2.5rem);
   }
 
-  .hero-phone {
-    color: var(--neutral-400);
-    font-size: var(--text-sm);
+  .hero-phone-link {
+    color: var(--color-slate, #4A5859);
+    font-size: var(--text-sm, 0.875rem);
     font-weight: 500;
-    transition: color var(--transition-base);
+    transition: color 0.2s ease;
+    text-decoration: none;
   }
 
-  .hero-phone:hover {
-    color: var(--color-gold);
-  }
+  .hero-phone-link:hover { color: var(--color-gold, #D4943A); }
 
-  /* ========================================
-     TRUST STRIP
-     ======================================== */
-  .trust-strip {
-    background-color: var(--color-black);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: var(--space-8) 0;
-  }
-
-  .trust-items {
+  .hero-stats {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: var(--space-10);
-    flex-wrap: wrap;
+    gap: var(--space-6, 1.5rem);
+    padding-top: var(--space-6, 1.5rem);
+    border-top: 1px solid var(--neutral-200, #E8DFD0);
   }
 
-  .trust-item {
-    text-align: center;
-  }
-
-  .trust-value {
+  .hero-stat-value {
     display: block;
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg, 1.125rem);
     font-weight: 700;
-    color: var(--color-gold);
+    color: var(--color-gold, #D4943A);
     line-height: 1.2;
   }
 
-  .trust-label {
+  .hero-stat-label {
     display: block;
-    font-size: var(--text-xs);
-    color: var(--neutral-500);
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate, #4A5859);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: var(--space-1);
+    letter-spacing: 0.04em;
   }
 
-  .trust-divider {
+  .hero-stat-divider {
     width: 1px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.1);
+    height: 32px;
+    background: var(--neutral-200, #E8DFD0);
+  }
+
+  .hero-accent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-mark-wrapper {
+    width: 220px;
+    height: 220px;
+    background: linear-gradient(145deg, rgba(212, 148, 58, 0.08) 0%, rgba(194, 59, 34, 0.05) 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-cactus {
+    opacity: 0.15;
+    width: 140px;
+    height: 140px;
   }
 
   /* ========================================
-     SECTION SHARED
+     SHARED SECTION STYLES — editorial
      ======================================== */
-  .section-label {
-    display: inline-block;
+  .section { padding: var(--space-16, 4rem) 0; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4, 1rem);
+    margin-bottom: var(--space-8, 2rem);
+  }
+
+  .section-eyebrow {
     font-family: var(--font-body);
-    font-size: var(--text-xs);
+    font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--color-gold);
-    margin-bottom: var(--space-8);
+    color: var(--color-gold, #D4943A);
+    white-space: nowrap;
   }
 
-  .section-heading {
-    font-family: var(--font-heading);
-    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
-    font-weight: 700;
-    color: var(--color-black);
-    margin-bottom: var(--space-4);
-  }
-
-  .section-subtext {
-    font-size: var(--text-lg);
-    color: var(--color-slate);
-    margin-bottom: var(--space-12);
-    max-width: 600px;
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--neutral-200, #E8DFD0);
   }
 
   /* ========================================
      FEATURED INVESTIGATION
      ======================================== */
   .featured-section {
-    background-color: var(--neutral-100);
+    background: var(--color-white, #FFFFFF);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
   }
 
   .featured-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-10);
-    background: var(--color-white);
-    border: 1px solid var(--neutral-200);
-    border-radius: var(--radius-lg);
+    grid-template-columns: 380px 1fr;
+    gap: var(--space-8, 2rem);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-radius: var(--radius-lg, 8px);
     overflow: hidden;
+    background: var(--color-bg, #FAF5ED);
   }
 
-  .featured-image {
-    min-height: 320px;
-  }
+  .featured-image { min-height: 280px; }
 
-  .featured-image-placeholder {
+  .featured-image-inner {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--neutral-200) 0%, var(--neutral-300) 100%);
+    background: linear-gradient(145deg, var(--neutral-200) 0%, var(--neutral-300, #D4CFC6) 100%);
     display: flex;
     align-items: flex-end;
-    padding: var(--space-6);
+    padding: var(--space-4, 1rem);
   }
 
-  .featured-tag {
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
+  .featured-badge {
+    font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-white);
-    background: var(--color-red);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-sm);
-  }
-
-  .featured-tag-mobile {
-    display: none;
-    font-family: var(--font-body);
-    font-size: var(--text-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-red);
-    margin-bottom: var(--space-3);
+    letter-spacing: 0.06em;
+    color: #fff;
+    background: var(--color-red, #C23B22);
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
   }
 
   .featured-body {
-    padding: var(--space-8) var(--space-8) var(--space-8) 0;
+    padding: var(--space-8, 2rem) var(--space-8, 2rem) var(--space-8, 2rem) 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -497,517 +545,456 @@ const stephanie = authors['stephanie-ramirez'];
 
   .featured-headline {
     font-family: var(--font-heading);
-    font-size: var(--text-2xl);
+    font-size: var(--text-2xl, 1.5rem);
     font-weight: 700;
     line-height: 1.25;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-4, 1rem);
   }
 
   .featured-headline a {
-    color: var(--color-black);
+    color: var(--color-black, #1A1A1A);
     text-decoration: none;
-    transition: color var(--transition-base);
+    transition: color 0.2s ease;
   }
 
-  .featured-headline a:hover {
-    color: var(--color-gold);
-  }
+  .featured-headline a:hover { color: var(--color-gold, #D4943A); }
 
   .featured-excerpt {
-    font-size: var(--text-base);
-    color: var(--color-slate);
+    font-size: var(--text-base, 1rem);
+    color: var(--color-slate, #4A5859);
     line-height: 1.7;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-6, 1.5rem);
   }
 
   .featured-byline {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-3, 0.75rem);
   }
 
-  .byline-photo {
-    width: 36px;
-    height: 36px;
+  .byline-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .byline-meta { flex: 1; }
+
+  .byline-name {
+    display: block;
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--color-black, #1A1A1A);
+  }
+
+  .byline-role {
+    display: block;
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate, #4A5859);
+  }
+
+  .featured-read {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--color-gold, #D4943A);
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  /* ========================================
+     THREE EDITORIAL HUBS
+     ======================================== */
+  .hubs-section {
+    background: var(--color-bg, #FAF5ED);
+  }
+
+  .hubs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6, 1.5rem);
+  }
+
+  .hub-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8, 2rem);
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-radius: var(--radius-lg, 8px);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .hub-card:hover {
+    border-color: var(--color-gold, #D4943A);
+    box-shadow: 0 8px 24px rgba(212, 148, 58, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .hub-number {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl, 1.875rem);
+    font-weight: 700;
+    color: var(--neutral-200, #E8DFD0);
+    line-height: 1;
+    margin-bottom: var(--space-2, 0.5rem);
+  }
+
+  .hub-tag {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl, 1.25rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-gold, #D4943A);
+    margin-bottom: var(--space-1, 0.25rem);
+  }
+
+  .hub-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl, 1.5rem);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .hub-description {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  .hub-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2, 0.5rem);
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  .hub-author-photo {
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     object-fit: cover;
   }
 
-  .byline-text {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  .byline-name {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-black);
-  }
-
-  .byline-date {
-    font-size: var(--text-xs);
-    color: var(--neutral-500);
-  }
-
-  .featured-read-link {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-gold);
-    white-space: nowrap;
-    margin-left: auto;
-  }
-
-  /* ========================================
-     THREE PILLARS
-     ======================================== */
-  .pillars-section {
-    background-color: var(--color-bg);
-  }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
-  }
-
-  .pillar-card {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-8);
-  }
-
-  .pillar-tag {
-    font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: 700;
+  .hub-author-name {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate, #4A5859);
     font-style: italic;
-    color: var(--color-gold);
-    margin-bottom: var(--space-2);
   }
 
-  .pillar-title {
-    font-family: var(--font-heading);
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    color: var(--color-black);
-    margin-bottom: var(--space-4);
-  }
-
-  .pillar-description {
-    font-size: var(--text-sm);
-    color: var(--color-slate);
-    line-height: 1.7;
-    flex: 1;
-    margin-bottom: var(--space-6);
-  }
-
-  .pillar-link {
-    font-size: var(--text-sm);
+  .hub-link {
+    font-size: var(--text-sm, 0.875rem);
     font-weight: 600;
-    color: var(--color-gold);
+    color: var(--color-gold, #D4943A);
   }
 
   /* ========================================
-     PRACTICE AREAS
+     PRACTICE + LOCATIONS SPLIT
      ======================================== */
-  .practice-section {
-    background-color: var(--color-white);
+  .compact-section {
+    background: var(--color-white, #FFFFFF);
+    border-top: 1px solid var(--neutral-200, #E8DFD0);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
   }
 
-  .practice-grid {
+  .compact-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-16, 4rem);
+  }
+
+  .practice-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-    margin-top: var(--space-8);
-  }
-
-  .practice-card {
-    display: block;
-    padding: var(--space-6);
-    border: 1px solid var(--neutral-200);
-    border-radius: var(--radius-md);
-    background: var(--color-bg);
-    text-decoration: none;
-    transition: all var(--transition-base);
-  }
-
-  .practice-card:hover {
-    border-color: var(--color-gold);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .practice-name {
-    font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-black);
-    margin-bottom: var(--space-2);
-    transition: color var(--transition-base);
-  }
-
-  .practice-card:hover .practice-name {
-    color: var(--color-gold);
-  }
-
-  .practice-desc {
-    font-size: var(--text-sm);
-    color: var(--color-slate);
-    line-height: 1.6;
-    margin-bottom: var(--space-3);
+    gap: 0;
   }
 
   .practice-link {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+    text-decoration: none;
+    color: var(--color-black, #1A1A1A);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+    transition: color 0.15s ease;
   }
 
-  /* ========================================
-     LOCATIONS
-     ======================================== */
-  .locations-section {
-    background-color: var(--color-bg);
+  .practice-link:hover { color: var(--color-gold, #D4943A); }
+
+  .practice-arrow {
+    color: var(--neutral-300, #D4CFC6);
+    transition: all 0.15s ease;
   }
 
-  .locations-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: var(--space-4);
+  .practice-link:hover .practice-arrow {
+    color: var(--color-gold, #D4943A);
+    transform: translateX(2px);
   }
 
-  .location-card {
+  .locations-intro {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.6;
+    margin-bottom: var(--space-6, 1.5rem);
+  }
+
+  .locations-stack {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: var(--space-6) var(--space-4);
-    background: var(--color-white);
-    border: 1px solid var(--neutral-200);
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    transition: all var(--transition-base);
+    gap: 0;
   }
 
-  .location-card:hover {
-    border-color: var(--color-gold);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+  .location-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3, 0.75rem);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+    text-decoration: none;
+    transition: color 0.15s ease;
   }
 
   .location-name {
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg, 1.125rem);
     font-weight: 700;
-    color: var(--color-black);
-    margin-bottom: var(--space-1);
+    color: var(--color-black, #1A1A1A);
   }
 
-  .location-label {
-    font-size: var(--text-xs);
-    font-weight: 600;
+  .location-row:hover .location-name { color: var(--color-gold, #D4943A); }
+
+  .location-badge {
+    font-size: 0.625rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--color-gold);
-    margin-bottom: var(--space-3);
+    color: var(--color-red, #C23B22);
+    background: rgba(194, 59, 34, 0.08);
+    padding: 0.125rem 0.5rem;
+    border-radius: 3px;
   }
 
-  .location-link {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-gold);
-    margin-top: auto;
-    padding-top: var(--space-2);
-  }
+  .locations-cta { margin-top: var(--space-6, 1.5rem); }
 
   /* ========================================
-     CASE RESULTS
+     RESULTS — editorial
      ======================================== */
   .results-section {
-    background-color: var(--color-white);
+    background: var(--color-bg, #FAF5ED);
   }
 
-  .results-grid {
+  .results-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-    margin-top: var(--space-8);
+    gap: var(--space-6, 1.5rem);
   }
 
-  .result-card {
+  .result-item {
     text-align: center;
-    padding: var(--space-6);
-    border: 1px solid var(--neutral-200);
-    border-radius: var(--radius-md);
-    background: var(--color-bg);
+    padding: var(--space-6, 1.5rem) var(--space-4, 1rem);
+    border-left: 1px solid var(--neutral-200, #E8DFD0);
   }
+
+  .result-item:first-child { border-left: none; }
 
   .result-amount {
     display: block;
     font-family: var(--font-heading);
-    font-size: var(--text-3xl);
+    font-size: var(--text-3xl, 1.875rem);
     font-weight: 700;
-    color: var(--color-gold);
+    color: var(--color-gold, #D4943A);
     line-height: 1;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-2, 0.5rem);
   }
 
   .result-type {
     display: block;
-    font-size: var(--text-sm);
+    font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-black);
-    margin-bottom: var(--space-3);
+    letter-spacing: 0.04em;
+    color: var(--color-black, #1A1A1A);
+    margin-bottom: var(--space-2, 0.5rem);
   }
 
   .result-desc {
-    font-size: var(--text-sm);
-    color: var(--color-slate);
-    line-height: 1.6;
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.5;
   }
 
-  .results-cta {
-    text-align: center;
-    margin-top: var(--space-10);
+  .results-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6, 1.5rem);
+    margin-top: var(--space-8, 2rem);
+    padding-top: var(--space-6, 1.5rem);
+    border-top: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .results-note {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--neutral-400, #B0A696);
+    font-style: italic;
   }
 
   /* ========================================
-     TEAM SECTION
+     TEAM — editorial byline cards
      ======================================== */
   .team-section {
-    background-color: var(--color-bg);
+    background: var(--color-white, #FFFFFF);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
   }
 
-  .team-grid {
+  .team-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
-    margin-top: var(--space-8);
+    gap: var(--space-6, 1.5rem);
   }
 
   .team-card {
-    text-align: center;
-    padding: var(--space-8);
-    background: var(--color-white);
-    border: 1px solid var(--neutral-200);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
+    display: flex;
+    gap: var(--space-4, 1rem);
+    padding: var(--space-6, 1.5rem);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-radius: var(--radius-lg, 8px);
+    text-decoration: none;
+    transition: all 0.2s ease;
   }
 
   .team-card:hover {
-    border-color: var(--color-gold);
-    box-shadow: var(--shadow-md);
+    border-color: var(--color-gold, #D4943A);
+    box-shadow: 0 4px 16px rgba(212, 148, 58, 0.06);
   }
 
-  .team-photo-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: var(--space-6);
-  }
+  .team-photo-wrap { flex-shrink: 0; }
 
   .team-photo {
-    width: 120px;
-    height: 120px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--neutral-200);
+    border: 2px solid var(--neutral-200, #E8DFD0);
   }
 
   .team-name {
     font-family: var(--font-heading);
-    font-size: var(--text-xl);
+    font-size: var(--text-lg, 1.125rem);
     font-weight: 700;
-    color: var(--color-black);
-    margin-bottom: var(--space-1);
+    color: var(--color-black, #1A1A1A);
+    margin-bottom: 0.125rem;
   }
 
   .team-title {
     display: block;
-    font-size: var(--text-sm);
-    color: var(--color-gold);
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-gold, #D4943A);
     font-weight: 600;
-    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--space-2, 0.5rem);
   }
 
-  .team-desc {
-    font-size: var(--text-sm);
-    color: var(--color-slate);
-    line-height: 1.7;
-    margin-bottom: var(--space-4);
-  }
-
-  .team-link {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-gold);
+  .team-bio {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.5;
   }
 
   /* ========================================
-     FINAL CTA
+     FINAL CTA — warm gold band
      ======================================== */
   .final-cta {
-    padding: var(--space-24) 0;
+    background: var(--color-black, #1A1A1A);
+    padding: var(--space-20, 5rem) 0;
+    text-align: center;
   }
 
-  .final-cta-heading {
-    font-family: var(--font-heading);
-    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
-    font-weight: 700;
-    color: var(--neutral-50);
-    margin-bottom: var(--space-4);
-  }
-
-  .final-cta-subtext {
-    font-size: var(--text-lg);
-    color: var(--neutral-400);
-    margin-bottom: var(--space-10);
-  }
-
-  .final-cta-actions {
+  .final-cta-inner {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-6);
+  }
+
+  .final-cactus {
+    opacity: 0.3;
+    margin-bottom: var(--space-6, 1.5rem);
+  }
+
+  .final-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl, 1.875rem), 5vw, var(--text-5xl, 3rem));
+    font-weight: 700;
+    color: var(--neutral-50, #FAF5ED);
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .final-subtext {
+    font-size: var(--text-lg, 1.125rem);
+    color: var(--neutral-400, #B0A696);
+    margin-bottom: var(--space-8, 2rem);
+  }
+
+  .final-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6, 1.5rem);
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .final-cta-phone {
-    color: var(--neutral-400);
-    font-size: var(--text-sm);
+  .final-phone {
+    color: var(--neutral-400, #B0A696);
+    font-size: var(--text-sm, 0.875rem);
     font-weight: 500;
-    transition: color var(--transition-base);
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  .final-cta-phone:hover {
-    color: var(--color-gold);
-  }
+  .final-phone:hover { color: var(--color-gold, #D4943A); }
 
   /* ========================================
-     RESPONSIVE — TABLET
+     RESPONSIVE — tablet
      ======================================== */
   @media (max-width: 1024px) {
-    .featured-card {
-      grid-template-columns: 1fr;
-    }
-
-    .featured-image {
-      min-height: 220px;
-    }
-
-    .featured-body {
-      padding: var(--space-6);
-    }
-
-    .pillars-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-    }
-
-    .results-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .locations-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .team-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-accent { display: none; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-image { min-height: 200px; }
+    .featured-body { padding: var(--space-6, 1.5rem); }
+    .hubs-grid { grid-template-columns: 1fr; gap: var(--space-4, 1rem); }
+    .compact-grid { grid-template-columns: 1fr; gap: var(--space-10, 2.5rem); }
+    .results-row { grid-template-columns: repeat(2, 1fr); }
+    .result-item:nth-child(3) { border-left: none; }
+    .team-row { grid-template-columns: 1fr; }
   }
 
-  /* ========================================
-     RESPONSIVE — MOBILE
-     ======================================== */
   @media (max-width: 768px) {
-    .hero-section {
-      min-height: 70vh;
-    }
-
-    .hero-content {
-      padding-top: var(--space-20);
-      padding-bottom: var(--space-16);
-    }
-
-    .hero-overlay {
-      background: linear-gradient(
-        to bottom,
-        rgba(26, 26, 26, 0.85) 0%,
-        rgba(26, 26, 26, 0.7) 100%
-      );
-    }
-
-    .hero-actions {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .trust-items {
-      gap: var(--space-6);
-    }
-
-    .trust-divider {
-      display: none;
-    }
-
-    .trust-item {
-      flex: 1 1 40%;
-      min-width: 140px;
-    }
-
-    .featured-tag {
-      display: none;
-    }
-
-    .featured-tag-mobile {
-      display: inline-block;
-    }
-
-    .practice-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .locations-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .results-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .final-cta {
-      padding: var(--space-16) 0;
-    }
-
-    .final-cta-actions {
-      flex-direction: column;
-    }
+    .hero { padding: var(--space-16, 4rem) 0 var(--space-12, 3rem); }
+    .hero-h1 { font-size: 3rem; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-stats { flex-direction: column; gap: var(--space-3, 0.75rem); align-items: flex-start; }
+    .hero-stat-divider { display: none; }
+    .practice-list { grid-template-columns: 1fr; }
+    .results-row { grid-template-columns: 1fr; }
+    .result-item { border-left: none; border-top: 1px solid var(--neutral-200, #E8DFD0); }
+    .result-item:first-child { border-top: none; }
+    .results-footer { flex-direction: column; align-items: flex-start; }
+    .final-actions { flex-direction: column; }
   }
 
   @media (max-width: 480px) {
-    .hero-h1 {
-      font-size: 2.5rem;
-    }
-
-    .trust-items {
-      flex-direction: column;
-      gap: var(--space-4);
-    }
-
-    .trust-item {
-      min-width: unset;
-    }
-
-    .locations-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .result-amount {
-      font-size: var(--text-2xl);
-    }
+    .hero-h1 { font-size: 2.5rem; }
+    .team-card { flex-direction: column; text-align: center; }
+    .team-photo-wrap { display: flex; justify-content: center; }
   }
 </style>

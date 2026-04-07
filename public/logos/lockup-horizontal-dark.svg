@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" fill="none">
+  <!-- Combined Lockup: Light on transparent (for dark backgrounds) -->
+  <!-- Cactus Mark -->
+  <g fill="#FAF5ED" transform="translate(0,2) scale(0.7)">
+    <rect x="35" y="18" width="10" height="48" rx="2"/>
+    <rect x="18" y="30" width="17" height="8" rx="2"/>
+    <rect x="18" y="22" width="8" height="16" rx="2"/>
+    <rect x="45" y="36" width="17" height="8" rx="2"/>
+    <rect x="54" y="28" width="8" height="16" rx="2"/>
+    <rect x="12" y="64" width="56" height="3" rx="1.5"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="68" y="28" font-family="Inter, 'DM Sans', system-ui, sans-serif" font-size="24" font-weight="800" letter-spacing="2" fill="#FAF5ED">AZLAWNOW.COM</text>
+  <rect x="68" y="33" width="216" height="3" rx="1.5" fill="#C23B22"/>
+  <text x="68" y="48" font-family="Inter, 'DM Sans', system-ui, sans-serif" font-size="7.5" font-weight="500" letter-spacing="4.5" fill="#D4943A">ANSWERS START HERE.</text>
+</svg>

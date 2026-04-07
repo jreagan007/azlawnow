@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" fill="none">
+  <!-- Wordmark: Dark text on transparent (for light backgrounds) -->
+  <!-- AZLAWNOW.COM -->
+  <text x="0" y="26" font-family="Inter, 'DM Sans', system-ui, sans-serif" font-size="26" font-weight="800" letter-spacing="2" fill="#1A1A1A">AZLAWNOW.COM</text>
+  <!-- Alert Vermillion underline bar -->
+  <rect x="0" y="31" width="234" height="3" rx="1.5" fill="#C23B22"/>
+  <!-- ANSWERS START HERE subtitle -->
+  <text x="0" y="48" font-family="Inter, 'DM Sans', system-ui, sans-serif" font-size="8" font-weight="500" letter-spacing="5" fill="#D4943A">ANSWERS START HERE.</text>
+</svg>

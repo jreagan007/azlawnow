@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <!-- Cactus Mark: Headline Black on transparent (for light backgrounds) -->
+  <g fill="#1A1A1A">
+    <!-- Main trunk -->
+    <rect x="35" y="18" width="10" height="48" rx="2"/>
+    <!-- Left arm -->
+    <rect x="18" y="30" width="17" height="8" rx="2"/>
+    <rect x="18" y="22" width="8" height="16" rx="2"/>
+    <!-- Right arm -->
+    <rect x="45" y="36" width="17" height="8" rx="2"/>
+    <rect x="54" y="28" width="8" height="16" rx="2"/>
+    <!-- Ground line -->
+    <rect x="12" y="64" width="56" height="3" rx="1.5"/>
+  </g>
+</svg>

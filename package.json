@@ -25,6 +25,7 @@
     "@chakra-ui/react": "^2.10.3",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@rollup/rollup-linux-arm64-gnu": "^4.60.1",
     "astro": "^5.16.11",
     "astro-seo": "^0.8.4",
     "astro-seo-schema": "^5.1.0",
