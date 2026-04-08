@@ -30,7 +30,7 @@ export const siteConfig = {
   },
 
   hours: 'Mo-Fr 08:00-18:00',
-  logo: '/logos/lockup-horizontal-dark.svg',
+  logo: '/logos/logo-dark-hz.png',
 
   recoveredAmount: '$3.07 Million',
   taglineNav: 'Your Answers. One Call Away.',
