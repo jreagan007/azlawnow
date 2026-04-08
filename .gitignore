@@ -20,3 +20,8 @@ Thumbs.db
 
 # Netlify
 .netlify/
+
+# Internal docs
+CLAUDE-CODE-BRIEF.md
+*.brief.md
+docs/internal/
