@@ -26,6 +26,10 @@ interface Props {
   faqs?: Array<{ question: string; answer: string }>;
   schema?: object;
   showMidCta?: boolean;
+  /** Cluster slug for breadcrumb nesting (e.g. 'vehicle-crashes') */
+  cluster?: string;
+  /** Cluster display label (e.g. 'Vehicle Crashes') */
+  clusterLabel?: string;
 }
 
 const {
@@ -40,11 +44,16 @@ const {
   faqs = [],
   schema: extraSchema,
   showMidCta = true,
+  cluster,
+  clusterLabel,
 } = Astro.props;
 
-// Build breadcrumbs
+// Build breadcrumbs — optionally nest under cluster hub
 const breadcrumbs = [
   { name: 'Home', url: '/' },
+  ...(cluster && clusterLabel
+    ? [{ name: clusterLabel, url: `/${cluster}/` }]
+    : []),
   { name: practiceArea, url: canonical },
 ];
 

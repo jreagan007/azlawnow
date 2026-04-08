@@ -425,6 +425,93 @@ Update `mainNavigation` and any other nav arrays in `src/data/site-config.ts` to
 
 ---
 
+## TASK 12: Rewrite homepage to surface the content engine
+
+Read the full content ideation strategy at `../taqticscom/clients/az-law-now/content-ideations-abuse-negligence.md` before starting this task.
+
+The current homepage has a solid skeleton but only surfaces ONE featured investigation. It needs to become the front page of a publication. Update `src/pages/index.astro`:
+
+### 12a. Featured Investigation Grid (replace single featured card)
+
+Replace the single "What We're Covering" featured card with a 1+2 grid:
+- **Main card** (left, tall): "Arizona Schools Restrained 4,200+ Students Last Year. Most Were Kids With Disabilities." — Brendan byline, abuse-investigation badge, link to /investigations/arizona-school-restraint-data/
+- **Secondary card 1** (right top): "Maricopa County Daycares With the Most DHS Violations" — Brendan byline, negligence-report badge
+- **Secondary card 2** (right bottom): "What the ADOT Data Shows About I-10 Crashes" (keep existing)
+
+Layout: `grid-template-columns: 1.5fr 1fr;` with the main card spanning both rows on the left.
+
+### 12b. "What We're Watching" — NEW data nuggets section
+
+Add after the featured grid. A dark (#1A1A1A) horizontal bar with 4 data stats:
+
+```
+4,200+           88,094          47%              $800K
+Students         Crashes         Nursing Homes    Settlement
+restrained       in Maricopa     below avg        School bus
+last year        County 2025     staffing         negligence
+— ADE Data       — ADOT          — CMS            — AZ Law Now
+```
+
+Each stat is clickable, linking to its investigation or case result. Use gold (#D4943A) for the number, cream text for labels, slate for source citation. Horizontal scroll on mobile.
+
+### 12c. Update hub card descriptions
+
+Make the "Investigated / Answered / Guided" hub descriptions reference real upcoming content:
+
+- Hub 01 (Investigated): "This month: school restraint data across Arizona districts, West Valley daycare inspection failures, and SR-347 crash corridor analysis."
+- Hub 02 (Answered): "Latest: Arizona school liability law explained, mandatory reporting requirements, daycare licensing standards for parents."
+- Hub 03 (Guided): "New: What to do if your child was restrained at school. Your daycare negligence action plan. Signs of nursing home abuse checklist."
+
+### 12d. Abuse & Negligence Spotlight — NEW section
+
+Add between the hubs and the practice area compact list. This is an editorial callout section:
+
+```html
+<section class="section spotlight-section">
+  <!-- Vermillion left border accent -->
+  <div class="container">
+    <span class="section-eyebrow" style="color: var(--color-red);">Focus Area</span>
+    <h2>Nobody Else Is Covering This.</h2>
+    <p>Arizona's systems fail vulnerable people every day — kids with disabilities restrained at school, elders neglected in understaffed facilities, daycares that haven't passed inspection. We pull the public data. We name the patterns.</p>
+    <!-- 3 cards linking to abuse-negligence cluster -->
+    <div class="spotlight-grid">
+      <!-- Card: School Abuse -->
+      <!-- Card: Daycare Negligence -->
+      <!-- Card: Elder Abuse -->
+    </div>
+  </div>
+</section>
+```
+
+Style: cream background with a subtle vermillion left border or top accent. Cards should feel different from the hub cards — more urgent, editorial. Use the vermillion (#C23B22) as the accent color instead of gold.
+
+### 12e. Group practice area links by cluster
+
+In the compact practice area list, add subheadings:
+
+```
+VEHICLE CRASHES
+  Car Accidents →
+  Truck Accidents →
+  ...
+
+ABUSE & NEGLIGENCE
+  Elder Abuse →
+  Nursing Home Abuse →
+  Child Abuse →
+  Daycare Negligence →
+  School Abuse →
+  Medical Negligence →
+
+OTHER CLAIMS
+  Slip and Fall →
+  ...
+```
+
+Use cluster subheadings styled like the footer column headings (small, uppercase, gold, with bottom border).
+
+---
+
 ## IMPORTANT RULES
 
 1. **Do NOT touch BaseLayout.astro** — the global styles and button system are finalized
@@ -440,8 +527,9 @@ Update `mainNavigation` and any other nav arrays in `src/data/site-config.ts` to
 
 ## EXECUTION ORDER
 
-Do tasks in this order: 1 → 2 → 3 → 4 → 5 → 6 → 8 → 9 → 10 → 11 → 7 → build
+Do tasks in this order: 1 → 2 → 3 → 4 → 5 → 6 → 8 → 9 → 10 → 11 → 12 → 7 → build
 
+Task 12 (homepage rewrite) should come after nav updates so all links are consistent.
 Task 7 (investigations route) is last because we have no investigation MDX files yet — just create the routing pages so they're ready.
 
 ## REFERENCE FILES

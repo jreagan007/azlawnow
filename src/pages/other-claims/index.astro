@@ -1,0 +1,302 @@
+---
+/**
+ * Cluster Hub: Other Claims
+ * Editorial section front page for additional practice areas
+ */
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '../../data/site-config';
+import { getWebPageSchema, generateBreadcrumbSchema } from '../../utils/schema';
+
+const allPracticeAreas = await getCollection('practice-areas');
+const practiceAreas = allPracticeAreas
+  .filter(pa => pa.data.cluster === 'other-claims' && !pa.data.draft)
+  .sort((a, b) => a.data.clusterOrder - b.data.clusterOrder);
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Other Claims', url: '/other-claims/' },
+];
+
+const pageSchema = getWebPageSchema({
+  name: 'Other Claims',
+  description: 'Arizona personal injury attorneys. Slip and fall, wrongful death, dog bite, and premises liability cases across the West Valley.',
+  url: '/other-claims/',
+  type: 'CollectionPage',
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+---
+
+<BaseLayout
+  title="Other Personal Injury Claims in Arizona"
+  description="Arizona personal injury attorneys. Slip and fall, wrongful death, dog bite, and premises liability cases across the West Valley."
+  canonical="/other-claims/"
+  schema={[pageSchema, breadcrumbSchema]}
+>
+  <section class="hub-hero">
+    <div class="hub-hero__accent" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="hub-breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          {breadcrumbs.map((crumb, i) => (
+            <li>
+              {i < breadcrumbs.length - 1 ? (
+                <a href={crumb.url}>{crumb.name}</a>
+              ) : (
+                <span aria-current="page">{crumb.name}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <p class="hub-dateline">SECTION &middot; LEGAL AUTHORITY</p>
+      <h1 class="hub-title">Other Claims</h1>
+      <p class="hub-intro">
+        Not every injury happens on the road. AZ Law Now handles slip and fall accidents, wrongful
+        death claims, dog bite cases, and premises liability disputes across Arizona.
+      </p>
+      <p class="hub-intro">
+        Property owners, landlords, and businesses owe you a duty of care. When they fall short
+        and someone gets hurt, our attorneys make sure they answer for it.
+      </p>
+    </div>
+  </section>
+
+  <section class="hub-grid-section section">
+    <div class="container">
+      <div class="hub-grid">
+        {practiceAreas.map((pa) => {
+          const slug = pa.id.split('/').pop() || pa.id;
+          return (
+            <a href={`/other-claims/${slug}/`} class="hub-card">
+              <div class="hub-card__body">
+                <h2 class="hub-card__name">{pa.data.practiceArea}</h2>
+                <p class="hub-card__subtitle">{pa.data.heroSubtitle}</p>
+              </div>
+              <span class="hub-card__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="hub-cta section-dark section">
+    <div class="container text-center">
+      <h2 class="hub-cta__heading">Get My Free Consultation</h2>
+      <p class="hub-cta__text">
+        Talk to our team about your injury. No obligation, no fee unless we recover for you.
+      </p>
+      <div class="hub-cta__actions">
+        <a href="/free-case-review/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} &rarr;
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="hub-cta__phone">
+          {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hub-hero {
+    background: var(--color-bg, #FAF5ED);
+    position: relative;
+  }
+
+  .hub-hero__accent {
+    height: 4px;
+    background: linear-gradient(90deg, #C23B22 0%, #D4943A 100%);
+  }
+
+  .hub-hero .container {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-12);
+  }
+
+  /* Breadcrumbs */
+  .hub-breadcrumbs {
+    margin-bottom: var(--space-6);
+  }
+
+  .hub-breadcrumbs ol {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  .hub-breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: var(--space-2);
+    color: var(--neutral-300, #D4CFC6);
+  }
+
+  .hub-breadcrumbs a {
+    color: var(--color-slate, #4A5859);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .hub-breadcrumbs a:hover {
+    color: var(--color-gold, #D4943A);
+  }
+
+  .hub-breadcrumbs span[aria-current] {
+    color: var(--color-gold, #D4943A);
+    font-weight: 600;
+  }
+
+  /* Dateline */
+  .hub-dateline {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold, #D4943A);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Title */
+  .hub-title {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+  }
+
+  /* Intro */
+  .hub-intro {
+    font-size: var(--text-lg);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.7;
+    max-width: 680px;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Card Grid */
+  .hub-grid-section {
+    background: var(--color-bg, #FAF5ED);
+  }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .hub-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DDD0);
+    border-left: 4px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md, 6px);
+    padding: var(--space-6) var(--space-8);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+  }
+
+  .hub-card:hover {
+    border-color: var(--color-gold, #D4943A);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .hub-card__body {
+    flex: 1;
+  }
+
+  .hub-card__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    margin-bottom: var(--space-2);
+  }
+
+  .hub-card__subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .hub-card__arrow {
+    font-size: var(--text-xl);
+    color: var(--color-gold, #D4943A);
+    flex-shrink: 0;
+    margin-left: var(--space-4);
+    transition: transform 0.2s ease;
+  }
+
+  .hub-card:hover .hub-card__arrow {
+    transform: translateX(4px);
+  }
+
+  /* CTA Band */
+  .hub-cta {
+    background: var(--color-black, #1A1A1A);
+  }
+
+  .hub-cta__heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--neutral-50, #FAF5ED);
+    margin-bottom: var(--space-3);
+  }
+
+  .hub-cta__text {
+    color: var(--neutral-400, #B0A698);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .hub-cta__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .hub-cta__phone {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-gold, #D4943A);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .hub-cta__phone:hover {
+    color: var(--color-gold-hover, #C2842E);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hub-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hub-cta__actions {
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+  }
+</style>

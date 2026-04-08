@@ -1,20 +1,19 @@
 ---
 /**
  * Homepage — AZ Law Now
- * EDITORIAL-FIRST homepage. This is NOT a generic PI law firm template.
- * This reads like a publication: above-the-fold investigation, author hubs,
- * data-driven insights, southwestern Arizona identity.
+ * EDITORIAL-FIRST homepage. Front page of a publication.
  *
  * Flow:
  * 1. Editorial hero — warm cream, big serif headline, no dark photo overlay
- * 2. Featured investigation — newspaper-style card, full-width
- * 3. Three content hubs (Investigated / Answered / Guided) — editorial grid
- * 4. "What We're Watching" — data nuggets / Arizona stats
- * 5. Practice areas — compact, sidebar-style, not the whole page
- * 6. West Valley locations — minimal
- * 7. Results teaser — editorial, not flashy
- * 8. Team — editorial byline cards
- * 9. Final CTA — warm, not aggressive
+ * 2. Featured investigation grid — 1+2 newspaper layout
+ * 3. "What We're Watching" — data nuggets, dark strip
+ * 4. Three content hubs (Investigated / Answered / Guided) — editorial grid
+ * 5. Abuse & Negligence Spotlight — editorial callout, vermillion accent
+ * 6. Practice areas — grouped by cluster with subheadings
+ * 7. West Valley locations — minimal
+ * 8. Results teaser — editorial, not flashy
+ * 9. Team — editorial byline cards
+ * 10. Final CTA — warm, not aggressive
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -24,19 +23,39 @@ import { getSiteWideSchemas } from '../utils/schema';
 
 const siteSchemas = getSiteWideSchemas();
 
-const practiceAreas = [
-  { name: 'Car Accidents', url: '/car-accidents/', icon: '→' },
-  { name: 'Truck Accidents', url: '/truck-accidents/', icon: '→' },
-  { name: 'Motorcycle Accidents', url: '/motorcycle-accidents/', icon: '→' },
-  { name: 'Wrongful Death', url: '/wrongful-death/', icon: '→' },
-  { name: 'Elder Abuse', url: '/elder-abuse/', icon: '→' },
-  { name: 'Nursing Home Abuse', url: '/nursing-home-abuse/', icon: '→' },
-  { name: 'Bus Accidents', url: '/bus-accidents/', icon: '→' },
-  { name: 'Pedestrian Accidents', url: '/pedestrian-accidents/', icon: '→' },
-  { name: 'Bicycle Accidents', url: '/bicycle-accidents/', icon: '→' },
-  { name: 'Slip and Fall', url: '/slip-and-fall/', icon: '→' },
-  { name: 'Medical Negligence', url: '/medical-negligence/', icon: '→' },
-  { name: 'Dog Bite', url: '/dog-bite/', icon: '→' },
+const practiceAreaClusters = [
+  {
+    label: 'Vehicle Crashes',
+    areas: [
+      { name: 'Car Accidents', url: '/vehicle-crashes/car-accidents/' },
+      { name: 'Truck Accidents', url: '/vehicle-crashes/truck-accidents/' },
+      { name: 'Motorcycle Accidents', url: '/vehicle-crashes/motorcycle-accidents/' },
+      { name: 'Pedestrian Accidents', url: '/vehicle-crashes/pedestrian-accidents/' },
+      { name: 'Bus Accidents', url: '/vehicle-crashes/bus-accidents/' },
+      { name: 'Bicycle Accidents', url: '/vehicle-crashes/bicycle-accidents/' },
+      { name: 'Rideshare Accidents', url: '/vehicle-crashes/rideshare-accidents/' },
+    ],
+  },
+  {
+    label: 'Abuse & Negligence',
+    areas: [
+      { name: 'Elder Abuse', url: '/abuse-negligence/elder-abuse/' },
+      { name: 'Nursing Home Abuse', url: '/abuse-negligence/nursing-home-abuse/' },
+      { name: 'Child Abuse', url: '/abuse-negligence/child-abuse/' },
+      { name: 'Daycare Negligence', url: '/abuse-negligence/daycare-negligence/' },
+      { name: 'School Abuse', url: '/abuse-negligence/school-abuse/' },
+      { name: 'Medical Negligence', url: '/abuse-negligence/medical-negligence/' },
+    ],
+  },
+  {
+    label: 'Other Claims',
+    areas: [
+      { name: 'Slip and Fall', url: '/other-claims/slip-and-fall/' },
+      { name: 'Wrongful Death', url: '/other-claims/wrongful-death/' },
+      { name: 'Dog Bite', url: '/other-claims/dog-bite/' },
+      { name: 'Premises Liability', url: '/other-claims/premises-liability/' },
+    ],
+  },
 ];
 
 const caseResults = [
@@ -54,6 +73,13 @@ const locations = [
   { name: 'Phoenix', label: '', url: '/phoenix/' },
 ];
 
+const dataStats = [
+  { value: '4,200+', label: 'Students restrained in AZ schools last year', source: 'ADE Data', url: '/investigations/arizona-school-restraint-data/' },
+  { value: '88,094', label: 'Crashes in Maricopa County 2024', source: 'ADOT', url: '/resources/i-10-crash-data-buckeye-goodyear/' },
+  { value: '47%', label: 'Nursing homes below average staffing', source: 'CMS', url: '/resources/arizona-nursing-home-violations/' },
+  { value: '$800K', label: 'Settlement — school bus negligence', source: 'AZ Law Now', url: '/case-results/' },
+];
+
 const brendan = authors['brendan-franks'];
 const brandon = authors['brandon-millam'];
 const stephanie = authors['stephanie-ramirez'];
@@ -67,8 +93,6 @@ const stephanie = authors['stephanie-ramirez'];
 
   <!-- ============================== -->
   <!-- EDITORIAL HERO                 -->
-  <!-- Warm cream, no dark overlay.   -->
-  <!-- Southwestern, not NYC.         -->
   <!-- ============================== -->
   <section class="hero">
     <div class="hero-bg">
@@ -118,8 +142,8 @@ const stephanie = authors['stephanie-ramirez'];
   </section>
 
   <!-- ============================== -->
-  <!-- FEATURED INVESTIGATION         -->
-  <!-- Newspaper-style, full-width    -->
+  <!-- FEATURED INVESTIGATION GRID    -->
+  <!-- 1+2 layout: main + 2 secondary -->
   <!-- ============================== -->
   <section class="section featured-section">
     <div class="container">
@@ -127,43 +151,64 @@ const stephanie = authors['stephanie-ramirez'];
         <span class="section-eyebrow">What We're Covering</span>
         <div class="section-rule"></div>
       </div>
-      <article class="featured-card">
-        <div class="featured-image">
-          <div class="featured-image-inner">
-            <img
-              src="/images/cards/i-10-crash-data-buckeye-goodyear.webp"
-              alt="I-10 crash data analysis for Buckeye and Goodyear"
-              class="featured-card-img"
-              width="380"
-              height="280"
-              loading="lazy"
-              decoding="async"
-            />
+      <div class="featured-grid">
+        <!-- Main card — spans both rows -->
+        <a href="/investigations/arizona-school-restraint-data/" class="featured-main">
+          <div class="featured-card-overlay" aria-hidden="true"></div>
+          <div class="featured-card-content">
             <span class="featured-badge">Investigation</span>
-          </div>
-        </div>
-        <div class="featured-body">
-          <h2 class="featured-headline">
-            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/">
-              What the ADOT Data Shows About I-10 Crashes in Buckeye and Goodyear
-            </a>
-          </h2>
-          <p class="featured-excerpt">
-            We pulled three years of ADOT crash reports for the I-10 corridor
-            between Buckeye and Goodyear. Speed, volume, and commercial truck
-            traffic are converging in one of Arizona's fastest-growing highway
-            stretches.
-          </p>
-          <div class="featured-byline">
-            <img src={brendan.photo} alt={brendan.name} class="byline-avatar" width="40" height="40" loading="lazy" />
-            <div class="byline-meta">
-              <span class="byline-name">{brendan.name}</span>
-              <span class="byline-role">Investigative Reporter</span>
+            <h2 class="featured-main-headline">Arizona Schools Restrained 4,200+ Students Last Year. Most Were Kids With Disabilities.</h2>
+            <div class="featured-byline-inline">
+              <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
+              <span class="byline-name-sm">{brendan.name}</span>
             </div>
-            <a href="/resources/i-10-crashes-buckeye-goodyear-adot-data/" class="featured-read">Read the report &rarr;</a>
           </div>
-        </div>
-      </article>
+        </a>
+        <!-- Secondary card 1 -->
+        <a href="/investigations/maricopa-county-daycare-violations/" class="featured-secondary">
+          <div class="featured-card-overlay" aria-hidden="true"></div>
+          <div class="featured-card-content">
+            <span class="featured-badge">Investigation</span>
+            <h3 class="featured-secondary-headline">Maricopa County Daycares With the Most DHS Violations</h3>
+            <div class="featured-byline-inline">
+              <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
+              <span class="byline-name-sm">{brendan.name}</span>
+            </div>
+          </div>
+        </a>
+        <!-- Secondary card 2 -->
+        <a href="/resources/i-10-crash-data-buckeye-goodyear/" class="featured-secondary">
+          <div class="featured-card-overlay" aria-hidden="true"></div>
+          <div class="featured-card-content">
+            <span class="featured-badge">Investigation</span>
+            <h3 class="featured-secondary-headline">What the ADOT Data Shows About I-10 Crashes</h3>
+            <div class="featured-byline-inline">
+              <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
+              <span class="byline-name-sm">{brendan.name}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- WHAT WE'RE WATCHING — data     -->
+  <!-- ============================== -->
+  <section class="watching-section">
+    <div class="container">
+      <div class="watching-header">
+        <span class="watching-eyebrow">What We're Watching</span>
+      </div>
+      <div class="watching-row">
+        {dataStats.map((stat) => (
+          <a href={stat.url} class="watching-stat">
+            <span class="watching-value">{stat.value}</span>
+            <span class="watching-label">{stat.label}</span>
+            <span class="watching-source">{stat.source}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -183,8 +228,8 @@ const stephanie = authors['stephanie-ramirez'];
           <h3 class="hub-tag">Investigated.</h3>
           <h4 class="hub-title">Resources</h4>
           <p class="hub-description">
-            Original reporting on West Valley crash data, public safety
-            records, and the stories behind the numbers.
+            This month: school restraint data across Arizona districts, West
+            Valley daycare inspection failures, and SR-347 crash corridor analysis.
           </p>
           <div class="hub-author">
             <img src={brendan.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
@@ -197,8 +242,8 @@ const stephanie = authors['stephanie-ramirez'];
           <h3 class="hub-tag">Answered.</h3>
           <h4 class="hub-title">Legal Guides</h4>
           <p class="hub-description">
-            Arizona injury law explained in plain language. Statutes,
-            deadlines, and what they mean for your case.
+            Latest: Arizona school liability law explained, mandatory reporting
+            requirements, and daycare licensing standards for parents.
           </p>
           <div class="hub-author">
             <img src={brandon.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
@@ -211,8 +256,8 @@ const stephanie = authors['stephanie-ramirez'];
           <h3 class="hub-tag">Guided.</h3>
           <h4 class="hub-title">Client Guides</h4>
           <p class="hub-description">
-            Step-by-step walkthroughs for everything after the injury. What
-            to expect, what matters, how timelines work.
+            New: What to do if your child was restrained at school. Your daycare
+            negligence action plan. Signs of nursing home abuse checklist.
           </p>
           <div class="hub-author">
             <img src={stephanie.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
@@ -225,8 +270,45 @@ const stephanie = authors['stephanie-ramirez'];
   </section>
 
   <!-- ============================== -->
-  <!-- PRACTICE + LOCATIONS SPLIT     -->
-  <!-- Compact, not the whole page    -->
+  <!-- ABUSE & NEGLIGENCE SPOTLIGHT   -->
+  <!-- ============================== -->
+  <section class="section spotlight-section">
+    <div class="container">
+      <div class="spotlight-content">
+        <span class="spotlight-eyebrow">Focus Area</span>
+        <h2 class="spotlight-heading">Nobody Else Is Covering This.</h2>
+        <p class="spotlight-intro">
+          Arizona's systems fail vulnerable people every day. Kids with
+          disabilities restrained at school. Elders neglected in understaffed
+          facilities. Daycares that haven't passed inspection.
+        </p>
+        <p class="spotlight-intro">
+          We pull the public data. We name the patterns.
+        </p>
+      </div>
+      <div class="spotlight-cards">
+        <a href="/abuse-negligence/elder-abuse/" class="spotlight-card">
+          <span class="spotlight-card-title">Elder Abuse</span>
+          <span class="spotlight-card-desc">Understaffed facilities. Missing oversight. Real data on Arizona's elder care failures.</span>
+          <span class="spotlight-card-link">Read &rarr;</span>
+        </a>
+        <a href="/abuse-negligence/school-abuse/" class="spotlight-card">
+          <span class="spotlight-card-title">School Abuse</span>
+          <span class="spotlight-card-desc">Restraint data, reporting gaps, and what Arizona districts aren't telling parents.</span>
+          <span class="spotlight-card-link">Read &rarr;</span>
+        </a>
+        <a href="/abuse-negligence/daycare-negligence/" class="spotlight-card">
+          <span class="spotlight-card-title">Daycare Negligence</span>
+          <span class="spotlight-card-desc">DHS violations, inspection records, and the daycares with the worst track records.</span>
+          <span class="spotlight-card-link">Read &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- PRACTICE AREAS + LOCATIONS     -->
+  <!-- Grouped by cluster             -->
   <!-- ============================== -->
   <section class="section compact-section">
     <div class="container compact-grid">
@@ -235,14 +317,19 @@ const stephanie = authors['stephanie-ramirez'];
           <span class="section-eyebrow">How We Help</span>
           <div class="section-rule"></div>
         </div>
-        <div class="practice-list">
-          {practiceAreas.map((area) => (
-            <a href={area.url} class="practice-link">
-              <span>{area.name}</span>
-              <span class="practice-arrow">&rarr;</span>
-            </a>
-          ))}
-        </div>
+        {practiceAreaClusters.map((cluster) => (
+          <div class="cluster-group">
+            <h3 class="cluster-label">{cluster.label}</h3>
+            <div class="practice-list">
+              {cluster.areas.map((area) => (
+                <a href={area.url} class="practice-link">
+                  <span>{area.name}</span>
+                  <span class="practice-arrow">&rarr;</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
       <div class="compact-right">
         <div class="section-header">
@@ -355,8 +442,7 @@ const stephanie = authors['stephanie-ramirez'];
 
 <style>
   /* ========================================
-     EDITORIAL HERO — warm cream, typography-led
-     NOT a dark overlay on photo like aeelaw
+     EDITORIAL HERO
      ======================================== */
   .hero {
     position: relative;
@@ -439,16 +525,6 @@ const stephanie = authors['stephanie-ramirez'];
     margin-bottom: var(--space-10, 2.5rem);
   }
 
-  .hero-phone-link {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: var(--text-sm, 0.875rem);
-    font-weight: 500;
-    transition: color 0.2s ease;
-    text-decoration: none;
-  }
-
-  .hero-phone-link:hover { color: var(--color-gold, #D4943A); }
-
   .hero-stats {
     display: flex;
     align-items: center;
@@ -481,7 +557,7 @@ const stephanie = authors['stephanie-ramirez'];
   }
 
   /* ========================================
-     SHARED SECTION STYLES — editorial
+     SHARED SECTION STYLES
      ======================================== */
   .section { padding: var(--space-16, 4rem) 0; }
 
@@ -509,46 +585,67 @@ const stephanie = authors['stephanie-ramirez'];
   }
 
   /* ========================================
-     FEATURED INVESTIGATION
+     FEATURED INVESTIGATION GRID — 1+2
      ======================================== */
   .featured-section {
     background: var(--color-white, #FFFFFF);
     border-bottom: 1px solid var(--neutral-200, #E8DFD0);
   }
 
-  .featured-card {
+  .featured-grid {
     display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: var(--space-8, 2rem);
-    border: 1px solid var(--neutral-200, #E8DFD0);
-    border-radius: var(--radius-lg, 8px);
-    overflow: hidden;
-    background: var(--color-bg, #FAF5ED);
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--space-4, 1rem);
+    min-height: 460px;
   }
 
-  .featured-image { min-height: 280px; }
-
-  .featured-image-inner {
-    width: 100%;
-    height: 100%;
+  .featured-main,
+  .featured-secondary {
     position: relative;
     display: flex;
-    align-items: flex-end;
-    padding: var(--space-4, 1rem);
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: var(--radius-lg, 8px);
+    text-decoration: none;
+    background: var(--color-black, #1A1A1A);
+    transition: transform 0.2s ease;
   }
 
-  .featured-card-img {
+  .featured-main:hover,
+  .featured-secondary:hover {
+    transform: translateY(-2px);
+  }
+
+  .featured-main {
+    grid-row: 1 / 3;
+  }
+
+  .featured-card-overlay {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+    background: linear-gradient(
+      to top,
+      rgba(26, 26, 26, 0.92) 0%,
+      rgba(26, 26, 26, 0.5) 50%,
+      rgba(26, 26, 26, 0.25) 100%
+    );
+    z-index: 1;
+  }
+
+  .featured-card-content {
+    position: relative;
+    z-index: 2;
+    padding: var(--space-6, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 0.75rem);
   }
 
   .featured-badge {
-    position: relative;
-    z-index: 1;
+    display: inline-block;
+    align-self: flex-start;
     font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
@@ -559,71 +656,104 @@ const stephanie = authors['stephanie-ramirez'];
     border-radius: 3px;
   }
 
-  .featured-body {
-    padding: var(--space-8, 2rem) var(--space-8, 2rem) var(--space-8, 2rem) 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .featured-main-headline {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl, 2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #FFFFFF;
   }
 
-  .featured-headline {
+  .featured-secondary-headline {
     font-family: var(--font-heading);
-    font-size: var(--text-2xl, 1.5rem);
+    font-size: var(--text-xl, 1.25rem);
     font-weight: 700;
     line-height: 1.25;
-    margin-bottom: var(--space-4, 1rem);
+    color: #FFFFFF;
   }
 
-  .featured-headline a {
-    color: var(--color-black, #1A1A1A);
-    text-decoration: none;
-    transition: color 0.2s ease;
+  .featured-byline-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2, 0.5rem);
   }
 
-  .featured-headline a:hover { color: var(--color-gold, #D4943A); }
+  .byline-avatar-sm {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
 
-  .featured-excerpt {
-    font-size: var(--text-base, 1rem);
-    color: var(--color-slate, #4A5859);
-    line-height: 1.7;
+  .byline-name-sm {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ========================================
+     WHAT WE'RE WATCHING — dark data strip
+     ======================================== */
+  .watching-section {
+    background: var(--color-black, #1A1A1A);
+    padding: var(--space-12, 3rem) 0;
+  }
+
+  .watching-header {
     margin-bottom: var(--space-6, 1.5rem);
   }
 
-  .featured-byline {
+  .watching-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold, #D4943A);
+  }
+
+  .watching-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6, 1.5rem);
+  }
+
+  .watching-stat {
     display: flex;
-    align-items: center;
-    gap: var(--space-3, 0.75rem);
+    flex-direction: column;
+    gap: var(--space-2, 0.5rem);
+    padding: var(--space-6, 1.5rem) var(--space-4, 1rem);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: border-color 0.2s ease;
   }
 
-  .byline-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--neutral-200, #E8DFD0);
+  .watching-stat:first-child { border-left: none; }
+
+  .watching-stat:hover {
+    border-color: var(--color-gold, #D4943A);
   }
 
-  .byline-meta { flex: 1; }
+  .watching-value {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl, 2rem), 4vw, var(--text-4xl, 2.5rem));
+    font-weight: 700;
+    color: var(--color-gold, #D4943A);
+    line-height: 1;
+  }
 
-  .byline-name {
-    display: block;
+  .watching-label {
     font-size: var(--text-sm, 0.875rem);
-    font-weight: 600;
-    color: var(--color-black, #1A1A1A);
+    color: var(--color-bg, #FAF5ED);
+    line-height: 1.4;
   }
 
-  .byline-role {
-    display: block;
+  .watching-source {
     font-size: var(--text-xs, 0.75rem);
     color: var(--color-slate, #4A5859);
-  }
-
-  .featured-read {
-    font-size: var(--text-sm, 0.875rem);
-    font-weight: 600;
-    color: var(--color-gold, #D4943A);
-    white-space: nowrap;
-    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   /* ========================================
@@ -718,7 +848,96 @@ const stephanie = authors['stephanie-ramirez'];
   }
 
   /* ========================================
-     PRACTICE + LOCATIONS SPLIT
+     ABUSE & NEGLIGENCE SPOTLIGHT
+     ======================================== */
+  .spotlight-section {
+    background: var(--color-bg, #FAF5ED);
+    border-top: 3px solid var(--color-red, #C23B22);
+  }
+
+  .spotlight-content {
+    max-width: 680px;
+    margin-bottom: var(--space-10, 2.5rem);
+  }
+
+  .spotlight-eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-red, #C23B22);
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  .spotlight-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl, 2rem), 4vw, var(--text-4xl, 2.5rem));
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    margin-bottom: var(--space-4, 1rem);
+    line-height: 1.1;
+  }
+
+  .spotlight-intro {
+    font-size: var(--text-base, 1rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.7;
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .spotlight-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6, 1.5rem);
+  }
+
+  .spotlight-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 0.75rem);
+    padding: var(--space-6, 1.5rem);
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-top: 3px solid var(--color-red, #C23B22);
+    border-radius: var(--radius-lg, 8px);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .spotlight-card:hover {
+    border-color: var(--color-red, #C23B22);
+    box-shadow: 0 8px 24px rgba(194, 59, 34, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .spotlight-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl, 1.25rem);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+  }
+
+  .spotlight-card-desc {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .spotlight-card-link {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--color-red, #C23B22);
+  }
+
+  .spotlight-card:hover .spotlight-card-link {
+    color: var(--color-red-hover, #A83220);
+  }
+
+  /* ========================================
+     PRACTICE AREAS + LOCATIONS — clustered
      ======================================== */
   .compact-section {
     background: var(--color-white, #FFFFFF);
@@ -730,6 +949,26 @@ const stephanie = authors['stephanie-ramirez'];
     display: grid;
     grid-template-columns: 1fr 340px;
     gap: var(--space-16, 4rem);
+  }
+
+  .cluster-group {
+    margin-bottom: var(--space-8, 2rem);
+  }
+
+  .cluster-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .cluster-label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold, #D4943A);
+    padding-bottom: var(--space-2, 0.5rem);
+    border-bottom: 1px solid var(--color-gold, #D4943A);
+    margin-bottom: var(--space-2, 0.5rem);
   }
 
   .practice-list {
@@ -948,11 +1187,6 @@ const stephanie = authors['stephanie-ramirez'];
     align-items: center;
   }
 
-  .final-cactus {
-    opacity: 0.3;
-    margin-bottom: var(--space-6, 1.5rem);
-  }
-
   .final-heading {
     font-family: var(--font-heading);
     font-size: clamp(var(--text-3xl, 1.875rem), 5vw, var(--text-5xl, 3rem));
@@ -990,10 +1224,21 @@ const stephanie = authors['stephanie-ramirez'];
      ======================================== */
   @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .featured-card { grid-template-columns: 1fr; }
-    .featured-image { min-height: 200px; }
-    .featured-body { padding: var(--space-6, 1.5rem); }
+    .featured-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      min-height: auto;
+    }
+    .featured-main {
+      grid-row: auto;
+      min-height: 300px;
+    }
+    .featured-secondary {
+      min-height: 200px;
+    }
+    .watching-row { grid-template-columns: repeat(2, 1fr); }
     .hubs-grid { grid-template-columns: 1fr; gap: var(--space-4, 1rem); }
+    .spotlight-cards { grid-template-columns: 1fr; gap: var(--space-4, 1rem); }
     .compact-grid { grid-template-columns: 1fr; gap: var(--space-10, 2.5rem); }
     .results-row { grid-template-columns: repeat(2, 1fr); }
     .result-item:nth-child(3) { border-left: none; }
@@ -1006,6 +1251,10 @@ const stephanie = authors['stephanie-ramirez'];
     .hero-actions { flex-direction: column; align-items: flex-start; }
     .hero-stats { flex-direction: column; gap: var(--space-3, 0.75rem); align-items: flex-start; }
     .hero-stat-divider { display: none; }
+    .watching-row { grid-template-columns: 1fr 1fr; }
+    .watching-stat { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-4, 1rem); }
+    .watching-stat:first-child,
+    .watching-stat:nth-child(2) { border-top: none; }
     .practice-list { grid-template-columns: 1fr; }
     .results-row { grid-template-columns: 1fr; }
     .result-item { border-left: none; border-top: 1px solid var(--neutral-200, #E8DFD0); }
@@ -1016,6 +1265,9 @@ const stephanie = authors['stephanie-ramirez'];
 
   @media (max-width: 480px) {
     .hero-h1 { font-size: 2.5rem; }
+    .watching-row { grid-template-columns: 1fr; }
+    .watching-stat { border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    .watching-stat:first-child { border-top: none; }
     .team-card { flex-direction: column; text-align: center; }
     .team-photo-wrap { display: flex; justify-content: center; }
   }
