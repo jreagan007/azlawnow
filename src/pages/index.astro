@@ -71,6 +71,18 @@ const stephanie = authors['stephanie-ramirez'];
   <!-- Southwestern, not NYC.         -->
   <!-- ============================== -->
   <section class="hero">
+    <div class="hero-bg">
+      <img
+        src="/images/heroes/homepage-hero.png"
+        alt="AZ Law Now office — family at reception"
+        class="hero-bg-img"
+        width="1600"
+        height="900"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
     <div class="container hero-grid">
       <div class="hero-text">
         <span class="hero-dateline">Buckeye &amp; West Valley, Arizona</span>
@@ -102,19 +114,6 @@ const stephanie = authors['stephanie-ramirez'];
           </div>
         </div>
       </div>
-      <div class="hero-accent">
-        <!-- Desert-warm illustration zone — cactus mark + warm gradient -->
-        <div class="hero-mark-wrapper">
-          <img
-            src="/logos/logo-dark.png"
-            alt=""
-            class="hero-cactus"
-            width="160"
-            height="160"
-            aria-hidden="true"
-          />
-        </div>
-      </div>
     </div>
   </section>
 
@@ -131,6 +130,15 @@ const stephanie = authors['stephanie-ramirez'];
       <article class="featured-card">
         <div class="featured-image">
           <div class="featured-image-inner">
+            <img
+              src="/images/cards/i-10-crash-data-buckeye-goodyear.webp"
+              alt="I-10 crash data analysis for Buckeye and Goodyear"
+              class="featured-card-img"
+              width="380"
+              height="280"
+              loading="lazy"
+              decoding="async"
+            />
             <span class="featured-badge">Investigation</span>
           </div>
         </div>
@@ -351,16 +359,46 @@ const stephanie = authors['stephanie-ramirez'];
      NOT a dark overlay on photo like aeelaw
      ======================================== */
   .hero {
-    background: var(--color-bg, #FAF5ED);
+    position: relative;
     padding: var(--space-20, 5rem) 0 var(--space-16, 4rem);
-    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+    overflow: hidden;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(26, 26, 26, 0.88) 0%,
+      rgba(26, 26, 26, 0.75) 50%,
+      rgba(26, 26, 26, 0.45) 100%
+    );
   }
 
   .hero-grid {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr;
     gap: var(--space-12, 3rem);
     align-items: center;
+    max-width: 680px;
   }
 
   .hero-dateline {
@@ -370,10 +408,10 @@ const stephanie = authors['stephanie-ramirez'];
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--color-red, #C23B22);
+    color: var(--color-gold, #D4943A);
     margin-bottom: var(--space-4, 1rem);
     padding-bottom: var(--space-2, 0.5rem);
-    border-bottom: 2px solid var(--color-red, #C23B22);
+    border-bottom: 2px solid var(--color-gold, #D4943A);
   }
 
   .hero-h1 {
@@ -381,13 +419,13 @@ const stephanie = authors['stephanie-ramirez'];
     font-size: clamp(3.5rem, 8vw, 5.5rem);
     font-weight: 700;
     line-height: 1.0;
-    color: var(--color-black, #1A1A1A);
+    color: #FFFFFF;
     margin-bottom: var(--space-6, 1.5rem);
   }
 
   .hero-deck {
     font-size: var(--text-lg, 1.125rem);
-    color: var(--color-slate, #4A5859);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.65;
     margin-bottom: var(--space-8, 2rem);
     max-width: 560px;
@@ -402,7 +440,7 @@ const stephanie = authors['stephanie-ramirez'];
   }
 
   .hero-phone-link {
-    color: var(--color-slate, #4A5859);
+    color: rgba(255, 255, 255, 0.7);
     font-size: var(--text-sm, 0.875rem);
     font-weight: 500;
     transition: color 0.2s ease;
@@ -416,7 +454,7 @@ const stephanie = authors['stephanie-ramirez'];
     align-items: center;
     gap: var(--space-6, 1.5rem);
     padding-top: var(--space-6, 1.5rem);
-    border-top: 1px solid var(--neutral-200, #E8DFD0);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .hero-stat-value {
@@ -431,7 +469,7 @@ const stephanie = authors['stephanie-ramirez'];
   .hero-stat-label {
     display: block;
     font-size: var(--text-xs, 0.75rem);
-    color: var(--color-slate, #4A5859);
+    color: rgba(255, 255, 255, 0.65);
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
@@ -439,29 +477,7 @@ const stephanie = authors['stephanie-ramirez'];
   .hero-stat-divider {
     width: 1px;
     height: 32px;
-    background: var(--neutral-200, #E8DFD0);
-  }
-
-  .hero-accent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-mark-wrapper {
-    width: 220px;
-    height: 220px;
-    background: linear-gradient(145deg, rgba(212, 148, 58, 0.08) 0%, rgba(194, 59, 34, 0.05) 100%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-cactus {
-    opacity: 0.15;
-    width: 140px;
-    height: 140px;
+    background: rgba(255, 255, 255, 0.15);
   }
 
   /* ========================================
@@ -515,13 +531,24 @@ const stephanie = authors['stephanie-ramirez'];
   .featured-image-inner {
     width: 100%;
     height: 100%;
-    background: linear-gradient(145deg, var(--neutral-200) 0%, var(--neutral-300, #D4CFC6) 100%);
+    position: relative;
     display: flex;
     align-items: flex-end;
     padding: var(--space-4, 1rem);
   }
 
+  .featured-card-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
   .featured-badge {
+    position: relative;
+    z-index: 1;
     font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
@@ -963,7 +990,6 @@ const stephanie = authors['stephanie-ramirez'];
      ======================================== */
   @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .hero-accent { display: none; }
     .featured-card { grid-template-columns: 1fr; }
     .featured-image { min-height: 200px; }
     .featured-body { padding: var(--space-6, 1.5rem); }
@@ -975,7 +1001,7 @@ const stephanie = authors['stephanie-ramirez'];
   }
 
   @media (max-width: 768px) {
-    .hero { padding: var(--space-16, 4rem) 0 var(--space-12, 3rem); }
+    .hero { padding: var(--space-16, 4rem) 0 var(--space-12, 3rem); min-height: 400px; }
     .hero-h1 { font-size: 3rem; }
     .hero-actions { flex-direction: column; align-items: flex-start; }
     .hero-stats { flex-direction: column; gap: var(--space-3, 0.75rem); align-items: flex-start; }

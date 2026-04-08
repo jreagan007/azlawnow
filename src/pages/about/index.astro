@@ -18,8 +18,20 @@ const aboutSchema = getAboutPageSchema();
   schema={aboutSchema}
 >
   <!-- Hero -->
-  <section class="hero hero-centered">
-    <div class="container container-narrow">
+  <section class="about-hero">
+    <div class="about-hero__bg">
+      <img
+        src="/images/heroes/about.png"
+        alt="AZ Law Now consultation room with desert view"
+        class="about-hero__img"
+        width="1600"
+        height="900"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="about-hero__overlay" aria-hidden="true"></div>
+    </div>
+    <div class="container container-narrow about-hero__content">
       <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">About the Firm</p>
       <h1>The Firm That Does the Work Before the Case</h1>
       <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
@@ -123,3 +135,52 @@ const aboutSchema = getAboutPageSchema();
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .about-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .about-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.7) 0%,
+      rgba(26, 26, 26, 0.8) 100%
+    );
+  }
+
+  .about-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-16, 4rem);
+    padding-bottom: var(--space-16, 4rem);
+  }
+
+  .about-hero__content h1 {
+    color: #FFFFFF;
+  }
+
+  .about-hero__content .hero-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+  }
+</style>
