@@ -135,7 +135,7 @@ const contactSchema = getContactPageSchema();
                 <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Brief description of your injury or incident..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <button type="submit" class="btn btn-primary btn-lg form-submit-full">
                 Send Message →
               </button>
 
@@ -198,6 +198,11 @@ const contactSchema = getContactPageSchema();
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Full-width submit button inside form context */
+  .form-submit-full {
+    width: 100%;
   }
 
   @media (max-width: 768px) {

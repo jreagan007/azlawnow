@@ -52,7 +52,7 @@ import { siteConfig } from '../data/site-config';
               <textarea id="description" name="description" class="form-textarea" rows="6" required placeholder="Brief description of your injury or incident..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            <button type="submit" class="btn btn-primary btn-lg form-submit-full">
               Get My Free Case Review →
             </button>
 
@@ -121,6 +121,11 @@ import { siteConfig } from '../data/site-config';
     color: var(--neutral-500);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  /* Full-width submit button inside form context */
+  .form-submit-full {
+    width: 100%;
   }
 
   @media (max-width: 480px) {
