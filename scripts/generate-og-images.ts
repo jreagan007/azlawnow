@@ -125,7 +125,7 @@ Object.assign(titleMap, {
   'abuse-negligence': 'Abuse & Neglect Coverage',
   'other-claims': 'Injury Claims in the West Valley',
   'investigations': 'Data-Led Investigations',
-  'resources': 'Investigated. The Data Nobody Else Pulls.',
+  'resources': 'On Record. The Data Nobody Else Pulls.',
   'legal-guides': 'Answered. Arizona Law, Explained.',
   'client-guides': 'Guided. Every Step of Your Case.',
   'buckeye': 'Buckeye Injury Attorneys',
