@@ -113,12 +113,13 @@ import { siteConfig } from '../data/site-config';
   // Detect mobile (rough: pointer coarse or width < 768)
   const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
 
-  // Page type detection
+  // Page type detection — match cluster routes and nested practice areas
   const isPracticeOrLocation =
-    /^\/(car-accidents|truck-accidents|motorcycle-accidents|bus-accidents|wrongful-death|elder-abuse|nursing-home-abuse|pedestrian-accidents|bicycle-accidents|slip-and-fall|medical-negligence|dog-bite|rideshare-accidents|premises-liability|negligent-security|daycare-negligence|child-abuse)\/?/.test(path) ||
+    /^\/(vehicle-crashes|abuse-negligence|other-claims)(\/|$)/.test(path) ||
+    /^\/(car-accidents|truck-accidents|motorcycle-accidents|bus-accidents|wrongful-death|elder-abuse|nursing-home-abuse|pedestrian-accidents|bicycle-accidents|slip-and-fall|medical-negligence|dog-bite|rideshare-accidents|premises-liability|negligent-security|daycare-negligence|child-abuse|school-abuse)\/?/.test(path) ||
     /^\/(buckeye|goodyear|avondale|maricopa|phoenix|mesa|chandler|tempe|scottsdale|casa-grande|litchfield-park)\/?/.test(path);
 
-  const isResourceOrGuide = /^\/(resources|legal-guides|client-guides|blog)\/?/.test(path);
+  const isResourceOrGuide = /^\/(resources|legal-guides|client-guides|blog|investigations)(\/|$)/.test(path);
 
   function openModal() {
     if (!canTrigger) return;
