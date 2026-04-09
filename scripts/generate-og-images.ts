@@ -115,39 +115,56 @@ for (const spec of specs) {
   // Derive a readable title from the prompt's first clause
   titleMap[spec.slug] = spec.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }
-// Override with actual page titles
+// OG headlines are UNIQUE creative hooks, NOT meta title parrots.
+// Meta titles serve search. OG headlines serve social cards, Discover, share previews.
 Object.assign(titleMap, {
+  // Core pages
   'index': 'You Get Answers.',
-  'about': 'The Firm That Does the Work Before the Case',
+  'about': 'The Firm That Does the Work Before the Case.',
   'contact': 'Your Answers. One Call Away.',
-  'case-results': 'Results That Speak for Themselves',
-  'vehicle-crashes': 'Crash Data & Investigations',
-  'abuse-negligence': 'Abuse & Neglect Coverage',
-  'other-claims': 'Injury Claims in the West Valley',
-  'investigations': 'Data-Led Investigations',
-  'resources': 'On Record. The Data Nobody Else Pulls.',
-  'legal-guides': 'Answered. Arizona Law, Explained.',
-  'client-guides': 'Guided. Every Step of Your Case.',
-  'buckeye': 'Buckeye Injury Attorneys',
-  'maricopa': 'Maricopa Injury Attorneys',
-  'goodyear': 'Goodyear Injury Attorneys',
-  'avondale': 'Avondale Injury Attorneys',
-  'phoenix': 'Phoenix Injury Attorneys',
-  'i-10-crash-data-buckeye-goodyear': 'What ADOT Data Shows About I-10 Crashes',
-  'arizona-car-accident-law': 'Arizona Car Accident Law Explained',
-  'car-accident-first-48-hours': 'Your First 48 Hours After a Crash',
-  'arizona-school-bus-seat-belts': 'Arizona School Buses Still Don\'t Require Seat Belts',
-  'suing-school-district-arizona': 'Suing a School District: The 180-Day Deadline',
-  'child-injured-at-school': 'Your Child Was Hurt at School',
-  'arizona-nursing-home-violations': 'Arizona Nursing Homes With the Most Violations',
-  'arizona-elder-abuse-law': 'Arizona Elder Abuse Law: ARS 46-451',
-  'nursing-home-abuse-signs-reporting': 'Signs of Nursing Home Abuse',
-  'west-valley-dangerous-intersections': 'The West Valley\'s Most Dangerous Intersections',
-  'arizona-pedestrian-rights': 'Arizona Pedestrian Rights and Driver Liability',
-  'hit-by-car-walking-action-plan': 'Hit by a Car While Walking: Your Action Plan',
-  'arizona-school-restraint-data': 'Arizona Schools Restrained 4,200+ Students',
-  'arizona-daycare-violations': 'Maricopa Daycares With the Most DHS Violations',
-  'sr-347-crash-corridor': 'SR-347: Maricopa\'s Most Dangerous Corridor',
+  'case-results': 'The Numbers Speak.',
+  'faq': 'Questions We Hear Every Day.',
+  'reviews': 'What Families Say.',
+
+  // Cluster hubs
+  'vehicle-crashes': 'Every Crash Leaves Data. We Pull It.',
+  'abuse-negligence': 'The Facilities Nobody\'s Watching.',
+  'other-claims': 'When Someone Else Was Responsible.',
+  'investigations': 'The Data Nobody Else Pulls.',
+  'resources': 'On Record.',
+  'legal-guides': 'Arizona Law. No Fog.',
+  'client-guides': 'Every Step. Handled.',
+  'blog': 'What We\'re Covering.',
+
+  // Locations
+  'buckeye': 'Buckeye. Our Home Turf.',
+  'maricopa': 'Maricopa. Now Open.',
+  'goodyear': 'Goodyear. We Know These Roads.',
+  'avondale': 'Avondale. Down the Street.',
+  'phoenix': 'Phoenix Metro. On Record.',
+
+  // Investigations (Brendan)
+  'i-10-crash-data-buckeye-goodyear': 'The Deadliest Road in the West Valley.',
+  'sr-347-crash-corridor': '967 Crashes. Zero Changes.',
+  'arizona-school-restraint-data': '4,200 Kids. Restrained at School.',
+  'arizona-daycare-violations': 'What DHS Found at Your Daycare.',
+
+  // Resources (Brendan)
+  'arizona-nursing-home-violations': 'The Facilities With the Most Citations.',
+  'arizona-school-bus-seat-belts': 'No Seat Belts. No Law. No Fix.',
+  'west-valley-dangerous-intersections': 'The Intersections That Keep Showing Up.',
+
+  // Legal Guides (Brandon)
+  'arizona-car-accident-law': 'Fault. Insurance. Deadlines. Arizona.',
+  'arizona-elder-abuse-law': 'ARS 46-451. Your Family\'s Rights.',
+  'arizona-pedestrian-rights': 'You Had the Right of Way.',
+  'suing-school-district-arizona': '180 Days. That\'s Your Window.',
+
+  // Client Guides (Stephanie)
+  'car-accident-first-48-hours': 'The First 48 Hours Matter Most.',
+  'child-injured-at-school': 'Your Kid Got Hurt. Now What.',
+  'nursing-home-abuse-signs-reporting': 'The Signs Most Families Miss.',
+  'hit-by-car-walking-action-plan': 'You Got Hit. Here\'s What\'s Next.',
 });
 
 async function compositeOG(imageBuffer: Buffer, slug: string): Promise<void> {
