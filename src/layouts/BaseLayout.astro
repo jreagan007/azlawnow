@@ -409,15 +409,18 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         box-shadow: var(--shadow-gold);
       }
 
-      .btn-primary:hover {
-        background: var(--color-gold-hover);
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        background: var(--color-sienna);
         color: var(--color-white);
         transform: translateY(-2px);
-        box-shadow: 0 6px 24px rgba(212, 148, 58, 0.3);
+        box-shadow: 0 6px 24px rgba(139, 69, 19, 0.3);
       }
 
       .btn-primary:active {
         transform: translateY(0);
+        background: var(--color-sienna);
+        color: var(--color-white);
       }
 
       .btn-primary svg {
@@ -435,9 +438,11 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         border: 1px solid var(--neutral-300);
       }
 
-      .btn-secondary:hover {
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
         border-color: var(--color-gold);
         color: var(--color-gold);
+        background: rgba(212, 148, 58, 0.06);
       }
 
       /* Ghost Button */
@@ -447,9 +452,10 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         padding: var(--space-3) var(--space-6);
       }
 
-      .btn-ghost:hover {
+      .btn-ghost:hover,
+      .btn-ghost:focus-visible {
         background: rgba(212, 148, 58, 0.08);
-        color: var(--color-gold-hover);
+        color: var(--color-sienna);
       }
 
       /* Red/Urgent CTA */
@@ -458,7 +464,8 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         color: var(--color-white);
       }
 
-      .btn-urgent:hover {
+      .btn-urgent:hover,
+      .btn-urgent:focus-visible {
         background: var(--color-red-hover);
         color: var(--color-white);
         transform: translateY(-2px);
@@ -466,6 +473,30 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
 
       .btn-urgent:active {
         transform: translateY(0);
+      }
+
+      /* Dark section button overrides — ensure contrast */
+      .section-dark .btn-primary {
+        box-shadow: 0 4px 20px rgba(212, 148, 58, 0.3);
+      }
+
+      .section-dark .btn-primary:hover,
+      .section-dark .btn-primary:focus-visible {
+        background: var(--color-white);
+        color: var(--color-black);
+        box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2);
+      }
+
+      .section-dark .btn-secondary {
+        color: var(--neutral-300);
+        border-color: var(--neutral-600);
+      }
+
+      .section-dark .btn-secondary:hover,
+      .section-dark .btn-secondary:focus-visible {
+        border-color: var(--color-gold);
+        color: var(--color-gold);
+        background: rgba(212, 148, 58, 0.1);
       }
 
       /* Button Sizes */
@@ -907,9 +938,11 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         transition: all 0.2s ease;
       }
 
-      .btn-outline-sm:hover {
+      .btn-outline-sm:hover,
+      .btn-outline-sm:focus-visible {
         background: rgba(212, 148, 58, 0.08);
-        color: var(--color-gold-hover);
+        color: var(--color-sienna);
+        border-color: var(--color-sienna);
       }
 
       /* Phone link styling */

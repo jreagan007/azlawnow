@@ -7,7 +7,7 @@
  * 1. Editorial hero — warm cream, big serif headline, no dark photo overlay
  * 2. Featured investigation grid — 1+2 newspaper layout
  * 3. "What We're Watching" — data nuggets, dark strip
- * 4. Three content hubs (Investigated / Answered / Guided) — editorial grid
+ * 4. Three content hubs (On Record / Answered / Guided) — editorial grid
  * 5. Abuse & Negligence Spotlight — editorial callout, vermillion accent
  * 6. Practice areas — grouped by cluster with subheadings
  * 7. West Valley locations — minimal
@@ -144,18 +144,18 @@ const stephanie = authors['stephanie-ramirez'];
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="hero-stat-value">Investigated</span>
-            <span class="hero-stat-label">We pull the data nobody else does</span>
+            <span class="hero-stat-value">On Record</span>
+            <span class="hero-stat-label">The data's pulled. The facts are clear.</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
             <span class="hero-stat-value">Answered</span>
-            <span class="hero-stat-label">Arizona law, explained in plain language</span>
+            <span class="hero-stat-label">The confusion stops here.</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
             <span class="hero-stat-value">Guided</span>
-            <span class="hero-stat-label">Every step, every form, every call</span>
+            <span class="hero-stat-label">You don't figure this out alone.</span>
           </div>
         </div>
       </div>
@@ -246,19 +246,19 @@ const stephanie = authors['stephanie-ramirez'];
         <div class="section-rule"></div>
       </div>
       <div class="hubs-grid">
-        <a href="/resources/" class="hub-card hub-card--investigated">
-          <span class="hub-tag">Investigated.</span>
-          <span class="hub-desc">Original reporting, public records, crash data.</span>
+        <a href="/resources/" class="hub-card hub-card--on-record">
+          <span class="hub-tag">On Record.</span>
+          <span class="hub-desc">The data's pulled. The facts are clear.</span>
           <span class="hub-link">Explore &rarr;</span>
         </a>
         <a href="/legal-guides/" class="hub-card hub-card--answered">
           <span class="hub-tag">Answered.</span>
-          <span class="hub-desc">Arizona law explained in plain language.</span>
+          <span class="hub-desc">The confusion stops here.</span>
           <span class="hub-link">Explore &rarr;</span>
         </a>
         <a href="/client-guides/" class="hub-card hub-card--guided">
           <span class="hub-tag">Guided.</span>
-          <span class="hub-desc">Step-by-step action plans for families.</span>
+          <span class="hub-desc">You don't figure this out alone.</span>
           <span class="hub-link">Explore &rarr;</span>
         </a>
       </div>
@@ -273,10 +273,10 @@ const stephanie = authors['stephanie-ramirez'];
       <h2 class="voices-heading">Three Voices. Your Whole Case.</h2>
       <div class="voices-grid">
 
-        <!-- INVESTIGATED — Brendan -->
-        <div class="voice-column voice-column--investigated">
+        <!-- ON RECORD — Brendan -->
+        <div class="voice-column voice-column--on-record">
           <div class="voice-accent voice-accent--red"></div>
-          <span class="voice-label voice-label--red">Investigated</span>
+          <span class="voice-label voice-label--red">On Record</span>
           <div class="voice-byline">
             <img src={brendan.photo} alt="" class="voice-avatar" width="32" height="32" loading="lazy" />
             <div class="voice-byline-text">
@@ -894,7 +894,7 @@ const stephanie = authors['stephanie-ramirez'];
     transition: all 0.2s ease;
   }
 
-  .hub-card--investigated { border-top-color: var(--color-red, #C23B22); }
+  .hub-card--on-record { border-top-color: var(--color-red, #C23B22); }
   .hub-card--answered { border-top-color: var(--color-gold, #D4943A); }
   .hub-card--guided { border-top-color: var(--color-slate, #4A5859); }
 
@@ -902,7 +902,7 @@ const stephanie = authors['stephanie-ramirez'];
     border-color: var(--color-gold, #D4943A);
     box-shadow: 0 4px 16px rgba(212, 148, 58, 0.06);
   }
-  .hub-card--investigated:hover { border-top-color: var(--color-red, #C23B22); }
+  .hub-card--on-record:hover { border-top-color: var(--color-red, #C23B22); }
   .hub-card--answered:hover { border-top-color: var(--color-gold, #D4943A); }
   .hub-card--guided:hover { border-top-color: var(--color-slate, #4A5859); }
 
