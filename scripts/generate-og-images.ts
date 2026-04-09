@@ -86,35 +86,120 @@ async function generateImage(spec: ImageSpec): Promise<Buffer> {
   return Buffer.from(image.image.imageBytes, 'base64');
 }
 
+function escapeXml(text: string): string {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function wrapTitle(title: string, maxChars = 36): string[] {
+  const words = title.split(/\s+/);
+  const lines: string[] = [];
+  let current = '';
+  for (const word of words) {
+    const test = current ? `${current} ${word}` : word;
+    if (test.length <= maxChars) { current = test; }
+    else { if (current) lines.push(current); current = word; }
+  }
+  if (current) lines.push(current);
+  if (lines.length > 2) { lines.length = 2; lines[1] = lines[1].slice(0, maxChars - 1).trim() + '…'; }
+  return lines;
+}
+
+// Lookup title for a slug
+const titleMap: Record<string, string> = {};
+for (const spec of specs) {
+  // Derive a readable title from the prompt's first clause
+  titleMap[spec.slug] = spec.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+// Override with actual page titles
+Object.assign(titleMap, {
+  'index': 'You Get Answers.',
+  'about': 'The Firm That Does the Work Before the Case',
+  'contact': 'Your Answers. One Call Away.',
+  'case-results': 'Results That Speak for Themselves',
+  'vehicle-crashes': 'Crash Data & Investigations',
+  'abuse-negligence': 'Abuse & Neglect Coverage',
+  'other-claims': 'Injury Claims in the West Valley',
+  'investigations': 'Data-Led Investigations',
+  'resources': 'Investigated. The Data Nobody Else Pulls.',
+  'legal-guides': 'Answered. Arizona Law, Explained.',
+  'client-guides': 'Guided. Every Step of Your Case.',
+  'buckeye': 'Buckeye Injury Attorneys',
+  'maricopa': 'Maricopa Injury Attorneys',
+  'goodyear': 'Goodyear Injury Attorneys',
+  'avondale': 'Avondale Injury Attorneys',
+  'phoenix': 'Phoenix Injury Attorneys',
+  'i-10-crash-data-buckeye-goodyear': 'What ADOT Data Shows About I-10 Crashes',
+  'arizona-car-accident-law': 'Arizona Car Accident Law Explained',
+  'car-accident-first-48-hours': 'Your First 48 Hours After a Crash',
+  'arizona-school-bus-seat-belts': 'Arizona School Buses Still Don\'t Require Seat Belts',
+  'suing-school-district-arizona': 'Suing a School District: The 180-Day Deadline',
+  'child-injured-at-school': 'Your Child Was Hurt at School',
+  'arizona-nursing-home-violations': 'Arizona Nursing Homes With the Most Violations',
+  'arizona-elder-abuse-law': 'Arizona Elder Abuse Law: ARS 46-451',
+  'nursing-home-abuse-signs-reporting': 'Signs of Nursing Home Abuse',
+  'west-valley-dangerous-intersections': 'The West Valley\'s Most Dangerous Intersections',
+  'arizona-pedestrian-rights': 'Arizona Pedestrian Rights and Driver Liability',
+  'hit-by-car-walking-action-plan': 'Hit by a Car While Walking: Your Action Plan',
+});
+
 async function compositeOG(imageBuffer: Buffer, slug: string): Promise<void> {
-  // Resize to OG dimensions
+  const W = 1200, H = 630, PAD = 48;
+
   const base = await sharp(imageBuffer)
-    .resize(1200, 630, { fit: 'cover', position: 'center' })
+    .resize(W, H, { fit: 'cover', position: 'center' })
     .toBuffer();
 
-  // Create gradient overlay SVG
+  // Gradient overlay — heavier at bottom for text readability
   const gradientSvg = Buffer.from(
-    `<svg width="1200" height="630">
+    `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#1A1A1A" stop-opacity="0.3"/>
-        <stop offset="0.6" stop-color="#1A1A1A" stop-opacity="0.5"/>
-        <stop offset="1" stop-color="#1A1A1A" stop-opacity="0.8"/>
+        <stop offset="0%" stop-color="#1A1A1A" stop-opacity="0.2"/>
+        <stop offset="35%" stop-color="#1A1A1A" stop-opacity="0.45"/>
+        <stop offset="65%" stop-color="#1A1A1A" stop-opacity="0.75"/>
+        <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0.92"/>
       </linearGradient></defs>
-      <rect width="1200" height="630" fill="url(#g)"/>
+      <rect width="100%" height="100%" fill="url(#g)"/>
     </svg>`
   );
 
-  // Resize logo
+  // Vermillion accent bar (left edge, brand signature)
+  const accentSvg = Buffer.from(
+    `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="5" height="${H}" fill="#C23B22"/>
+    </svg>`
+  );
+
+  // Title text overlay
+  const pageTitle = titleMap[slug] || slug.replace(/-/g, ' ');
+  const titleLines = wrapTitle(pageTitle);
+  const fontSize = titleLines.length > 1 ? 46 : 52;
+  const lineHeight = fontSize * 1.25;
+  const titleY = H * 0.42;
+
+  const tspans = titleLines.map((line, i) =>
+    `<tspan x="${PAD}" y="${titleY + i * lineHeight}">${escapeXml(line)}</tspan>`
+  ).join('');
+
+  const titleSvg = Buffer.from(
+    `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
+      <style>.t { font-family: Georgia, 'Times New Roman', serif; font-size: ${fontSize}px; font-weight: 700; }</style>
+      <text class="t" fill="#FFFFFF">${tspans}</text>
+    </svg>`
+  );
+
+  // Logo bottom-left
   const logo = await sharp('public/logos/logo-light-hz.png')
-    .resize({ width: 260, withoutEnlargement: false })
+    .resize({ width: 220, withoutEnlargement: false })
     .toBuffer();
   const logoMeta = await sharp(logo).metadata();
 
-  // Composite: base + gradient + logo bottom-left
+  // Composite all layers
   await sharp(base)
     .composite([
       { input: gradientSvg, blend: 'over' },
-      { input: logo, top: 630 - (logoMeta.height || 30) - 36, left: 48 },
+      { input: accentSvg, blend: 'over' },
+      { input: Buffer.from(titleSvg), blend: 'over' },
+      { input: logo, top: H - (logoMeta.height || 30) - 32, left: PAD },
     ])
     .webp({ quality: 88 })
     .toFile(`public/og/${slug}.webp`);

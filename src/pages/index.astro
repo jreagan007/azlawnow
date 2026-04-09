@@ -213,8 +213,7 @@ const stephanie = authors['stephanie-ramirez'];
   </section>
 
   <!-- ============================== -->
-  <!-- THREE EDITORIAL HUBS           -->
-  <!-- Investigated / Answered / Guided -->
+  <!-- THREE EDITORIAL HUBS — tabs    -->
   <!-- ============================== -->
   <section class="section hubs-section">
     <div class="container">
@@ -223,48 +222,117 @@ const stephanie = authors['stephanie-ramirez'];
         <div class="section-rule"></div>
       </div>
       <div class="hubs-grid">
-        <a href="/resources/" class="hub-card">
-          <div class="hub-number">01</div>
-          <h3 class="hub-tag">Investigated.</h3>
-          <h4 class="hub-title">Resources</h4>
-          <p class="hub-description">
-            This month: school restraint data across Arizona districts, West
-            Valley daycare inspection failures, and SR-347 crash corridor analysis.
-          </p>
-          <div class="hub-author">
-            <img src={brendan.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
-            <span class="hub-author-name">{brendan.name.split(' ')[0]} runs the desk.</span>
-          </div>
-          <span class="hub-link">Explore the data &rarr;</span>
+        <a href="/resources/" class="hub-card hub-card--investigated">
+          <span class="hub-tag">Investigated.</span>
+          <span class="hub-desc">Original reporting, public records, crash data.</span>
+          <span class="hub-link">Explore &rarr;</span>
         </a>
-        <a href="/legal-guides/" class="hub-card">
-          <div class="hub-number">02</div>
-          <h3 class="hub-tag">Answered.</h3>
-          <h4 class="hub-title">Legal Guides</h4>
-          <p class="hub-description">
-            Latest: Arizona school liability law explained, mandatory reporting
-            requirements, and daycare licensing standards for parents.
-          </p>
-          <div class="hub-author">
-            <img src={brandon.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
-            <span class="hub-author-name">Reviewed by {brandon.name.split(',')[0]}.</span>
-          </div>
-          <span class="hub-link">Read the guides &rarr;</span>
+        <a href="/legal-guides/" class="hub-card hub-card--answered">
+          <span class="hub-tag">Answered.</span>
+          <span class="hub-desc">Arizona law explained in plain language.</span>
+          <span class="hub-link">Explore &rarr;</span>
         </a>
-        <a href="/client-guides/" class="hub-card">
-          <div class="hub-number">03</div>
-          <h3 class="hub-tag">Guided.</h3>
-          <h4 class="hub-title">Client Guides</h4>
-          <p class="hub-description">
-            New: What to do if your child was restrained at school. Your daycare
-            negligence action plan. Signs of nursing home abuse checklist.
-          </p>
-          <div class="hub-author">
-            <img src={stephanie.photo} alt="" class="hub-author-photo" width="28" height="28" loading="lazy" />
-            <span class="hub-author-name">{stephanie.name.split(' ')[0]} makes it clear.</span>
-          </div>
-          <span class="hub-link">See what's next &rarr;</span>
+        <a href="/client-guides/" class="hub-card hub-card--guided">
+          <span class="hub-tag">Guided.</span>
+          <span class="hub-desc">Step-by-step action plans for families.</span>
+          <span class="hub-link">Explore &rarr;</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- THREE VOICES — section fronts  -->
+  <!-- ============================== -->
+  <section class="section voices-section">
+    <div class="container">
+      <h2 class="voices-heading">Three Voices. Your Whole Case.</h2>
+      <div class="voices-grid">
+
+        <!-- INVESTIGATED — Brendan -->
+        <div class="voice-column voice-column--investigated">
+          <div class="voice-accent voice-accent--red"></div>
+          <span class="voice-label voice-label--red">Investigated</span>
+          <div class="voice-byline">
+            <img src={brendan.photo} alt="" class="voice-avatar" width="32" height="32" loading="lazy" />
+            <div class="voice-byline-text">
+              <span class="voice-author-name">{brendan.name}</span>
+              <span class="voice-author-title">{brendan.title}</span>
+            </div>
+          </div>
+          <a href="/investigations/arizona-school-restraint-data/" class="voice-lead">
+            Arizona Schools Restrained 4,200+ Students Last Year
+          </a>
+          <div class="voice-stories">
+            <a href="/investigations/maricopa-county-daycare-violations/" class="voice-story">
+              Maricopa County Daycares With the Most DHS Violations
+            </a>
+            <a href="/investigations/sr-347-crash-corridor/" class="voice-story">
+              The SR-347 Problem: Maricopa's Most Dangerous Corridor
+            </a>
+            <a href="/resources/i-10-crash-data-buckeye-goodyear/" class="voice-story">
+              What ADOT Data Shows About I-10 Crashes
+            </a>
+          </div>
+          <a href="/resources/" class="voice-all voice-all--red">Read all investigations &rarr;</a>
+        </div>
+
+        <!-- ANSWERED — Brandon -->
+        <div class="voice-column voice-column--answered">
+          <div class="voice-accent voice-accent--gold"></div>
+          <span class="voice-label voice-label--gold">Answered</span>
+          <div class="voice-byline">
+            <img src={brandon.photo} alt="" class="voice-avatar" width="32" height="32" loading="lazy" />
+            <div class="voice-byline-text">
+              <span class="voice-author-name">{brandon.name}</span>
+              <span class="voice-author-title">{brandon.title}</span>
+            </div>
+          </div>
+          <a href="/legal-guides/arizona-car-accident-law/" class="voice-lead">
+            Arizona Car Accident Law: Fault, Insurance, and Deadlines
+          </a>
+          <div class="voice-stories">
+            <a href="/legal-guides/suing-school-district-arizona/" class="voice-story">
+              Suing a School District: The 180-Day Deadline
+            </a>
+            <a href="/legal-guides/arizona-elder-abuse-law/" class="voice-story">
+              Arizona Elder Abuse Law: ARS 46-451
+            </a>
+            <a href="/legal-guides/arizona-pedestrian-rights/" class="voice-story">
+              Arizona Pedestrian Rights and Driver Liability
+            </a>
+          </div>
+          <a href="/legal-guides/" class="voice-all voice-all--gold">Read all legal guides &rarr;</a>
+        </div>
+
+        <!-- GUIDED — Stephanie -->
+        <div class="voice-column voice-column--guided">
+          <div class="voice-accent voice-accent--slate"></div>
+          <span class="voice-label voice-label--slate">Guided</span>
+          <div class="voice-byline">
+            <img src={stephanie.photo} alt="" class="voice-avatar" width="32" height="32" loading="lazy" />
+            <div class="voice-byline-text">
+              <span class="voice-author-name">{stephanie.name}</span>
+              <span class="voice-author-title">{stephanie.title}</span>
+            </div>
+          </div>
+          <a href="/client-guides/car-accident-first-48-hours/" class="voice-lead">
+            Your Car Accident in Arizona: First 48 Hours
+          </a>
+          <div class="voice-stories">
+            <a href="/client-guides/child-injured-at-school/" class="voice-story">
+              Your Child Was Hurt at School
+            </a>
+            <a href="/client-guides/nursing-home-abuse-signs-reporting/" class="voice-story">
+              Signs of Nursing Home Abuse
+            </a>
+            <a href="/client-guides/hit-by-car-walking-action-plan/" class="voice-story">
+              Hit by a Car While Walking: Your Action Plan
+            </a>
+          </div>
+          <a href="/client-guides/" class="voice-all voice-all--slate">Read all client guides &rarr;</a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -757,88 +825,55 @@ const stephanie = authors['stephanie-ramirez'];
   }
 
   /* ========================================
-     THREE EDITORIAL HUBS
+     THREE EDITORIAL HUBS — tab strip
      ======================================== */
   .hubs-section {
     background: var(--color-bg, #FAF5ED);
+    padding-bottom: var(--space-8, 2rem);
   }
 
   .hubs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6, 1.5rem);
+    gap: var(--space-4, 1rem);
   }
 
   .hub-card {
     display: flex;
     flex-direction: column;
-    padding: var(--space-8, 2rem);
+    gap: var(--space-2, 0.5rem);
+    padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
     background: var(--color-white, #FFFFFF);
     border: 1px solid var(--neutral-200, #E8DFD0);
-    border-radius: var(--radius-lg, 8px);
+    border-top: 3px solid transparent;
     text-decoration: none;
     transition: all 0.2s ease;
-    position: relative;
   }
+
+  .hub-card--investigated { border-top-color: var(--color-red, #C23B22); }
+  .hub-card--answered { border-top-color: var(--color-gold, #D4943A); }
+  .hub-card--guided { border-top-color: var(--color-slate, #4A5859); }
 
   .hub-card:hover {
     border-color: var(--color-gold, #D4943A);
-    box-shadow: 0 8px 24px rgba(212, 148, 58, 0.08);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(212, 148, 58, 0.06);
   }
-
-  .hub-number {
-    font-family: var(--font-heading);
-    font-size: var(--text-3xl, 1.875rem);
-    font-weight: 700;
-    color: var(--neutral-200, #E8DFD0);
-    line-height: 1;
-    margin-bottom: var(--space-2, 0.5rem);
-  }
+  .hub-card--investigated:hover { border-top-color: var(--color-red, #C23B22); }
+  .hub-card--answered:hover { border-top-color: var(--color-gold, #D4943A); }
+  .hub-card--guided:hover { border-top-color: var(--color-slate, #4A5859); }
 
   .hub-tag {
     font-family: var(--font-heading);
-    font-size: var(--text-xl, 1.25rem);
+    font-size: var(--text-lg, 1.125rem);
     font-weight: 700;
     font-style: italic;
-    color: var(--color-gold, #D4943A);
-    margin-bottom: var(--space-1, 0.25rem);
-  }
-
-  .hub-title {
-    font-family: var(--font-heading);
-    font-size: var(--text-2xl, 1.5rem);
-    font-weight: 700;
     color: var(--color-black, #1A1A1A);
-    margin-bottom: var(--space-3, 0.75rem);
   }
 
-  .hub-description {
+  .hub-desc {
     font-size: var(--text-sm, 0.875rem);
     color: var(--color-slate, #4A5859);
-    line-height: 1.7;
-    flex: 1;
-    margin-bottom: var(--space-4, 1rem);
-  }
-
-  .hub-author {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2, 0.5rem);
-    margin-bottom: var(--space-4, 1rem);
-  }
-
-  .hub-author-photo {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .hub-author-name {
-    font-size: var(--text-xs, 0.75rem);
-    color: var(--color-slate, #4A5859);
-    font-style: italic;
+    line-height: 1.5;
   }
 
   .hub-link {
@@ -846,6 +881,148 @@ const stephanie = authors['stephanie-ramirez'];
     font-weight: 600;
     color: var(--color-gold, #D4943A);
   }
+
+  /* ========================================
+     THREE VOICES — section fronts
+     ======================================== */
+  .voices-section {
+    background: var(--color-bg, #FAF5ED);
+    padding-top: 0;
+    padding-bottom: var(--space-16, 4rem);
+  }
+
+  .voices-heading {
+    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-size: clamp(var(--text-2xl, 1.5rem), 3.5vw, var(--text-4xl, 2.5rem));
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    text-align: center;
+    margin-bottom: var(--space-10, 2.5rem);
+  }
+
+  .voices-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .voice-column {
+    padding: 0 var(--space-6, 1.5rem);
+    border-right: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .voice-column:first-child { padding-left: 0; }
+  .voice-column:last-child { padding-right: 0; border-right: none; }
+
+  .voice-accent {
+    height: 3px;
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  .voice-accent--red { background: var(--color-red, #C23B22); }
+  .voice-accent--gold { background: var(--color-gold, #D4943A); }
+  .voice-accent--slate { background: var(--color-slate, #4A5859); }
+
+  .voice-label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-4, 1rem);
+  }
+
+  .voice-label--red { color: var(--color-red, #C23B22); }
+  .voice-label--gold { color: var(--color-gold, #D4943A); }
+  .voice-label--slate { color: var(--color-slate, #4A5859); }
+
+  .voice-byline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3, 0.75rem);
+    margin-bottom: var(--space-5, 1.25rem);
+    padding-bottom: var(--space-4, 1rem);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .voice-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--neutral-200, #E8DFD0);
+    flex-shrink: 0;
+  }
+
+  .voice-byline-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .voice-author-name {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    color: var(--color-black, #1A1A1A);
+    line-height: 1.2;
+  }
+
+  .voice-author-title {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate, #4A5859);
+  }
+
+  .voice-lead {
+    display: block;
+    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-black, #1A1A1A);
+    text-decoration: none;
+    margin-bottom: var(--space-5, 1.25rem);
+    transition: color 0.15s ease;
+  }
+
+  .voice-lead:hover {
+    color: var(--color-gold, #D4943A);
+  }
+
+  .voice-stories {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .voice-story {
+    display: block;
+    padding: var(--space-3, 0.75rem) 0;
+    border-top: 1px solid var(--neutral-200, #E8DFD0);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--color-black, #1A1A1A);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .voice-story:hover {
+    color: var(--color-gold, #D4943A);
+  }
+
+  .voice-all {
+    display: inline-block;
+    margin-top: var(--space-5, 1.25rem);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .voice-all:hover { opacity: 0.8; }
+
+  .voice-all--red { color: var(--color-red, #C23B22); }
+  .voice-all--gold { color: var(--color-gold, #D4943A); }
+  .voice-all--slate { color: var(--color-slate, #4A5859); }
 
   /* ========================================
      ABUSE & NEGLIGENCE SPOTLIGHT
@@ -1237,7 +1414,9 @@ const stephanie = authors['stephanie-ramirez'];
       min-height: 200px;
     }
     .watching-row { grid-template-columns: repeat(2, 1fr); }
-    .hubs-grid { grid-template-columns: 1fr; gap: var(--space-4, 1rem); }
+    .hubs-grid { grid-template-columns: 1fr; gap: var(--space-3, 0.75rem); }
+    .voices-grid { grid-template-columns: 1fr; gap: var(--space-10, 2.5rem); }
+    .voice-column { padding: 0; border-right: none; }
     .spotlight-cards { grid-template-columns: 1fr; gap: var(--space-4, 1rem); }
     .compact-grid { grid-template-columns: 1fr; gap: var(--space-10, 2.5rem); }
     .results-row { grid-template-columns: repeat(2, 1fr); }
