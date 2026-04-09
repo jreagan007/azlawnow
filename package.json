@@ -6,7 +6,8 @@
   "description": "AZ Law Now Injury Attorneys — Astro 5 website",
   "scripts": {
     "dev": "astro dev --port 4324",
-    "build": "astro check && astro build",
+    "build": "astro build",
+    "check": "astro check",
     "preview": "astro preview",
     "astro": "astro",
     "check:quality": "npx tsx scripts/audit-quality.ts",

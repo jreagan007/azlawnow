@@ -31,7 +31,7 @@ const { Content } = await render(entry);
   updatedAt={entry.data.updatedAt}
   ogImage={entry.data.ogImage}
   readingTime={entry.data.readingTime}
-  schemaType={entry.data.schemaType}
+  schemaType={entry.data.schemaType as 'Article' | 'NewsArticle'}
 >
   <Content />
 </ArticleLayout>

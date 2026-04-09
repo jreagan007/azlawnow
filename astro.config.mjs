@@ -9,7 +9,9 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 
 // Build lastmod map from content frontmatter dates + git commit dates
+/** @param {string} siteUrl */
 function buildLastmodMap(siteUrl) {
+  /** @type {Record<string, Date>} */
   const map = {};
 
   const contentDirs = [
@@ -36,6 +38,7 @@ function buildLastmodMap(siteUrl) {
   // Git-based dates for Astro pages
   try {
     const pagesDir = './src/pages';
+    /** @param {string} dir @param {string} urlPrefix */
     function walkPages(dir, urlPrefix = '') {
       if (!existsSync(dir)) return;
       for (const entry of readdirSync(dir)) {
@@ -72,7 +75,7 @@ function flattenSitemap() {
   return {
     name: 'flatten-sitemap',
     hooks: {
-      'astro:build:done': ({ dir }) => {
+      'astro:build:done': (/** @type {{ dir: URL }} */ { dir }) => {
         const sitemap0 = new URL('sitemap-0.xml', dir);
         const sitemapIndex = new URL('sitemap-index.xml', dir);
         const sitemapFinal = new URL('sitemap.xml', dir);
