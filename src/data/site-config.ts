@@ -7,8 +7,8 @@ export const siteConfig = {
   siteName: 'AZ Law Now',
   legalName: 'AZ Law Now Injury Attorneys',
   siteUrl: 'https://azlawnow.com',
-  defaultTitle: 'Arizona Injury Attorneys | AZ Law Now',
-  defaultDescription: 'Arizona personal injury attorneys serving Buckeye, Goodyear, and the West Valley. Free consultation, no fee unless we win. Call (602) 654-0202.',
+  defaultTitle: 'You Get Answers | AZ Law Now Injury Attorneys',
+  defaultDescription: 'Three people work your case. An investigator pulls the facts. An attorney knows Arizona law. A guide walks you through every step. West Valley offices in Buckeye and Maricopa.',
   tagline: 'You Get Answers.',
 
   phone: '602-654-0202',
