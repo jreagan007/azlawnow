@@ -168,14 +168,9 @@ const schemas = [
           <p class="pa-mid-cta__text">
             {siteConfig.messaging.l7FormSubhead}
           </p>
-          <div class="pa-mid-cta__actions">
-            <a href="/free-case-review/" class="btn btn-primary">
-              {siteConfig.messaging.l8Primary} →
-            </a>
-            <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
-              {siteConfig.phoneFormatted}
-            </a>
-          </div>
+          <a href="/free-case-review/" class="btn btn-primary btn-lg pa-mid-cta__btn">
+            {siteConfig.messaging.l8Primary} →
+          </a>
         </div>
       </div>
     </section>
@@ -215,18 +210,14 @@ const schemas = [
   <!-- ============================================
        FINAL CTA — Dark section
        ============================================ -->
-  <section class="pa-final-cta section-dark section" aria-label="Get started">
+  <section class="pa-final-cta" aria-label="Get started">
     <div class="container text-center">
+      <span class="pa-final-cta__eyebrow">Free Consultation</span>
       <h2 class="pa-final-cta__heading">{siteConfig.messaging.l7FormHeadline}</h2>
       <p class="pa-final-cta__text">{siteConfig.messaging.l7FormSubhead}</p>
-      <div class="pa-final-cta__actions">
-        <a href="/free-case-review/" class="btn btn-primary btn-lg">
-          {siteConfig.messaging.l8Primary} →
-        </a>
-        <a href={`tel:${siteConfig.phoneE164}`} class="pa-final-cta__phone">
-          {siteConfig.phoneFormatted}
-        </a>
-      </div>
+      <a href="/free-case-review/" class="pa-final-cta__btn">
+        {siteConfig.messaging.l8Primary} →
+      </a>
     </div>
   </section>
 </BaseLayout>
@@ -454,37 +445,33 @@ const schemas = [
   }
 
   .pa-mid-cta__box {
-    background: var(--neutral-50);
-    border-top: 3px solid var(--color-gold);
-    border-bottom: 3px solid var(--color-gold);
-    padding: var(--space-10) var(--space-8);
-    text-align: center;
-    border-radius: var(--radius-md);
+    background: var(--color-white);
+    border-left: 4px solid var(--color-gold);
+    padding: var(--space-8) var(--space-8);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    box-shadow: var(--shadow-md);
   }
 
   .pa-mid-cta__heading {
     font-family: var(--font-heading);
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
     font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: var(--space-3);
+    color: var(--color-black);
+    margin-bottom: var(--space-2);
   }
 
   .pa-mid-cta__text {
-    color: #4A5859;
-    font-size: var(--text-lg);
+    color: var(--color-slate);
+    font-size: var(--text-base);
     margin-bottom: var(--space-6);
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 480px;
+    line-height: 1.6;
   }
 
-  .pa-mid-cta__actions {
-    display: flex;
+  .pa-mid-cta__btn {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-6);
-    flex-wrap: wrap;
+    gap: var(--space-2);
   }
 
   /* ============================================
@@ -567,7 +554,31 @@ const schemas = [
      FINAL CTA — Dark section
      ============================================ */
   .pa-final-cta {
-    background: #1A1A1A;
+    background: var(--color-black);
+    padding: var(--space-24) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pa-final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-red) 0%, var(--color-gold) 100%);
+  }
+
+  .pa-final-cta__eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-4);
   }
 
   .pa-final-cta__heading {
@@ -576,34 +587,52 @@ const schemas = [
     font-weight: 700;
     color: var(--neutral-50);
     margin-bottom: var(--space-3);
+    line-height: 1.1;
   }
 
   .pa-final-cta__text {
     color: var(--neutral-400);
     font-size: var(--text-lg);
-    max-width: 500px;
-    margin: 0 auto var(--space-8);
+    max-width: 460px;
+    margin: 0 auto var(--space-10);
+    line-height: 1.6;
   }
 
-  .pa-final-cta__actions {
-    display: flex;
+  .pa-final-cta__btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-6);
-    flex-wrap: wrap;
-  }
-
-  .pa-final-cta__phone {
-    font-family: var(--font-heading);
-    font-size: var(--text-2xl);
+    gap: var(--space-2);
+    padding: var(--space-5) var(--space-12);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
     font-weight: 700;
-    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-black);
+    background: var(--color-gold);
+    border: none;
+    border-radius: var(--radius-md);
     text-decoration: none;
-    transition: color var(--transition-base);
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 24px rgba(212, 148, 58, 0.3);
   }
 
-  .pa-final-cta__phone:hover {
-    color: var(--color-gold-hover);
+  .pa-final-cta__btn:hover,
+  .pa-final-cta__btn:focus-visible {
+    background: var(--color-white);
+    color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.15);
+  }
+
+  .pa-final-cta__btn:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  .pa-final-cta__btn:active {
+    transform: translateY(0);
   }
 
   /* ============================================
@@ -630,17 +659,16 @@ const schemas = [
     }
 
     .pa-mid-cta__box {
-      padding: var(--space-8) var(--space-5);
+      padding: var(--space-6) var(--space-5);
     }
 
-    .pa-mid-cta__actions {
-      flex-direction: column;
-      gap: var(--space-4);
+    .pa-final-cta {
+      padding: var(--space-16) 0;
     }
 
-    .pa-final-cta__actions {
-      flex-direction: column;
-      gap: var(--space-4);
+    .pa-final-cta__btn {
+      width: 100%;
+      max-width: 320px;
     }
   }
 
