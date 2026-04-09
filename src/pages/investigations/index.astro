@@ -58,23 +58,36 @@ const placeholderCards = [
     title: 'Maricopa County Daycares With the Most DHS Violations',
     category: 'negligence-report',
     date: 'Coming Soon',
+    image: '/images/cards/arizona-daycare-violations.webp',
   },
   {
     title: "The SR-347 Problem: Maricopa's Most Dangerous Corridor",
     category: 'crash-data',
     date: 'Coming Soon',
+    image: '/images/cards/sr-347-crash-corridor.webp',
   },
   {
     title: "88,094 Crashes: What Maricopa County's 2025 Data Tells Us",
     category: 'crash-data',
     date: 'Coming Soon',
+    image: '/images/cards/i-10-crash-data-buckeye-goodyear.webp',
   },
   {
     title: 'West Valley Elder Care Facilities Under Review',
     category: 'abuse-investigation',
     date: 'Coming Soon',
+    image: '/images/heroes/elder-abuse.png',
   },
 ];
+
+/* Map investigation slugs to card images */
+const investigationImages: Record<string, string> = {
+  'arizona-school-restraint-data': '/images/cards/arizona-school-restraint-data.webp',
+  'arizona-daycare-violations': '/images/cards/arizona-daycare-violations.webp',
+  'maricopa-county-daycare-violations': '/images/cards/arizona-daycare-violations.webp',
+  'sr-347-crash-corridor': '/images/cards/sr-347-crash-corridor.webp',
+  'i-10-crash-data': '/images/cards/i-10-crash-data-buckeye-goodyear.webp',
+};
 ---
 
 <BaseLayout
@@ -118,6 +131,13 @@ const placeholderCards = [
     <div class="container">
       {featured ? (
         <a href={`/investigations/${featured.id}/`} class="inv-featured-card">
+          <img
+            src={investigationImages[featured.id] || '/images/heroes/practice-area-default.webp'}
+            alt=""
+            class="inv-featured-bg"
+            loading="lazy"
+          />
+          <div class="inv-featured-overlay" aria-hidden="true"></div>
           <div class="inv-featured-badge">
             <span class="inv-badge">Investigation</span>
             {featured.data.readingTime && (
@@ -144,6 +164,13 @@ const placeholderCards = [
         </a>
       ) : (
         <div class="inv-featured-card inv-featured-card--placeholder">
+          <img
+            src="/images/cards/arizona-school-restraint-data.webp"
+            alt=""
+            class="inv-featured-bg"
+            loading="lazy"
+          />
+          <div class="inv-featured-overlay" aria-hidden="true"></div>
           <div class="inv-featured-badge">
             <span class="inv-badge">Investigation</span>
             <span class="inv-coming-soon">Coming Soon</span>
@@ -179,6 +206,12 @@ const placeholderCards = [
         <div class="inv-grid">
           {rest.map((entry) => (
             <a href={`/investigations/${entry.id}/`} class="inv-card">
+              <img
+                src={investigationImages[entry.id] || '/images/heroes/practice-area-default.webp'}
+                alt=""
+                class="inv-card-thumb"
+                loading="lazy"
+              />
               <span class="inv-card-badge">
                 {categoryLabels[entry.data.category] || entry.data.category}
               </span>
@@ -202,6 +235,12 @@ const placeholderCards = [
         <div class="inv-grid">
           {placeholderCards.map((card) => (
             <div class="inv-card inv-card--placeholder">
+              <img
+                src={card.image}
+                alt=""
+                class="inv-card-thumb"
+                loading="lazy"
+              />
               <span class="inv-card-badge">
                 {categoryLabels[card.category] || card.category}
               </span>
@@ -331,7 +370,7 @@ const placeholderCards = [
 
   .inv-featured-card {
     display: block;
-    background: var(--color-white);
+    background: var(--color-black);
     border: 1px solid var(--neutral-200);
     border-radius: var(--radius-lg);
     padding: var(--space-10) var(--space-8);
@@ -339,6 +378,27 @@ const placeholderCards = [
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
+  }
+
+  .inv-featured-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .inv-featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(26, 26, 26, 0.92) 0%,
+      rgba(26, 26, 26, 0.6) 50%,
+      rgba(26, 26, 26, 0.35) 100%
+    );
+    z-index: 1;
   }
 
   .inv-featured-card:not(.inv-featured-card--placeholder):hover {
@@ -357,6 +417,8 @@ const placeholderCards = [
     align-items: center;
     gap: var(--space-3);
     margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 2;
   }
 
   .inv-badge {
@@ -388,9 +450,11 @@ const placeholderCards = [
     font-family: var(--font-heading);
     font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
     font-weight: 700;
-    color: var(--color-black);
+    color: #FFFFFF;
     line-height: 1.15;
     margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 2;
   }
 
   .inv-featured-card:not(.inv-featured-card--placeholder):hover .inv-featured-title {
@@ -399,10 +463,12 @@ const placeholderCards = [
 
   .inv-featured-desc {
     font-size: var(--text-base);
-    color: var(--color-slate);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     max-width: 700px;
     margin-bottom: var(--space-6);
+    position: relative;
+    z-index: 2;
   }
 
   .inv-featured-byline {
@@ -410,7 +476,9 @@ const placeholderCards = [
     align-items: center;
     gap: var(--space-3);
     font-size: var(--text-sm);
-    color: var(--neutral-500);
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 2;
   }
 
   .inv-featured-avatar {
@@ -423,7 +491,7 @@ const placeholderCards = [
 
   .inv-featured-author {
     font-weight: 600;
-    color: var(--neutral-700);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .inv-featured-sep {
@@ -464,9 +532,32 @@ const placeholderCards = [
     background: var(--color-white);
     border: 1px solid var(--neutral-200);
     border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    padding: 0;
     text-decoration: none;
     transition: all var(--transition-base);
+    overflow: hidden;
+  }
+
+  .inv-card-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .inv-card-badge,
+  .inv-card-title,
+  .inv-card-desc,
+  .inv-card-meta {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+
+  .inv-card-badge {
+    margin-top: var(--space-4);
+  }
+
+  .inv-card-meta {
+    padding-bottom: var(--space-6);
   }
 
   a.inv-card:hover {

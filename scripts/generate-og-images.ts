@@ -64,6 +64,11 @@ const specs: ImageSpec[] = [
   { slug: 'west-valley-dangerous-intersections', type: 'card', prompt: `Wide Arizona suburban intersection at dusk, crosswalk markings fading, traffic signal overhead, no sidewalks visible, West Valley sprawl. ${STYLE_SUFFIX}` },
   { slug: 'arizona-pedestrian-rights', type: 'card', prompt: `Crosswalk signal at an Arizona intersection, pedestrian walk sign illuminated, desert boulevard in background, warm streetlight glow. ${STYLE_SUFFIX}` },
   { slug: 'hit-by-car-walking-action-plan', type: 'card', prompt: `Arizona sidewalk at night, street reflections on wet pavement after rain, pedestrian crossing ahead sign, warm amber streetlights. ${STYLE_SUFFIX}` },
+
+  // Investigation articles (Tier 1)
+  { slug: 'arizona-school-restraint-data', type: 'card', prompt: `Empty school classroom with desk chairs pushed aside, restraint mat on floor in corner, fluorescent lights, Arizona desert visible through classroom window, institutional feel. ${STYLE_SUFFIX}` },
+  { slug: 'arizona-daycare-violations', type: 'card', prompt: `Arizona daycare facility exterior at morning, colorful playground equipment behind chain-link fence, inspection clipboard on fence post, desert suburban setting. ${STYLE_SUFFIX}` },
+  { slug: 'sr-347-crash-corridor', type: 'card', prompt: `SR-347 two-lane highway stretching through flat Arizona desert toward distant city lights, dusk sky, tire marks on shoulder, rural highway with commuter volume. ${STYLE_SUFFIX}` },
 ];
 
 async function generateImage(spec: ImageSpec): Promise<Buffer> {
@@ -140,6 +145,9 @@ Object.assign(titleMap, {
   'west-valley-dangerous-intersections': 'The West Valley\'s Most Dangerous Intersections',
   'arizona-pedestrian-rights': 'Arizona Pedestrian Rights and Driver Liability',
   'hit-by-car-walking-action-plan': 'Hit by a Car While Walking: Your Action Plan',
+  'arizona-school-restraint-data': 'Arizona Schools Restrained 4,200+ Students',
+  'arizona-daycare-violations': 'Maricopa Daycares With the Most DHS Violations',
+  'sr-347-crash-corridor': 'SR-347: Maricopa\'s Most Dangerous Corridor',
 });
 
 async function compositeOG(imageBuffer: Buffer, slug: string): Promise<void> {
