@@ -241,24 +241,6 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     </aside>
 
     <!-- ============================================
-         CTA SECTION — Dark
-         ============================================ -->
-    <section class="article-cta section-dark section" aria-label="Get started">
-      <div class="container text-center">
-        <h2 class="article-cta__heading">{siteConfig.messaging.l7FormHeadline}</h2>
-        <p class="article-cta__text">{siteConfig.messaging.l7FormSubhead}</p>
-        <div class="article-cta__actions">
-          <a href="/free-case-review/" class="btn btn-primary btn-lg">
-            {siteConfig.messaging.l8Primary} →
-          </a>
-          <a href={`tel:${siteConfig.phoneE164}`} class="article-cta__phone">
-            {siteConfig.phoneFormatted}
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================
          DISCLAIMER
          ============================================ -->
     <div class="article-disclaimer">
@@ -696,49 +678,6 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   }
 
   /* ============================================
-     CTA SECTION — Dark
-     ============================================ */
-  .article-cta {
-    background: #1A1A1A;
-  }
-
-  .article-cta__heading {
-    font-family: var(--font-heading);
-    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
-    font-weight: 700;
-    color: var(--neutral-50);
-    margin-bottom: var(--space-3);
-  }
-
-  .article-cta__text {
-    color: var(--neutral-400);
-    font-size: var(--text-lg);
-    max-width: 500px;
-    margin: 0 auto var(--space-8);
-  }
-
-  .article-cta__actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-6);
-    flex-wrap: wrap;
-  }
-
-  .article-cta__phone {
-    font-family: var(--font-heading);
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    color: var(--color-gold);
-    text-decoration: none;
-    transition: color var(--transition-base);
-  }
-
-  .article-cta__phone:hover {
-    color: var(--color-gold-hover);
-  }
-
-  /* ============================================
      DISCLAIMER
      ============================================ */
   .article-disclaimer {
@@ -772,11 +711,6 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
       align-items: center;
       text-align: center;
       padding: var(--space-6);
-    }
-
-    .article-cta__actions {
-      flex-direction: column;
-      gap: var(--space-4);
     }
 
     .article-breadcrumbs span[aria-current] {
