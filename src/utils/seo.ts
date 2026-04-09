@@ -75,5 +75,5 @@ export function generateOGImageUrl(path: string): string {
   const siteUrl = (import.meta.env.SITE || siteConfig.siteUrl).replace(/\/$/, '');
   const cleanPath = path.replace(/^\/+|\/+$/g, '');
   const slug = cleanPath ? cleanPath.replace(/\//g, '-') : 'index';
-  return `${siteUrl}/og/${slug}.png`;
+  return `${siteUrl}/og/${slug}.webp`;
 }

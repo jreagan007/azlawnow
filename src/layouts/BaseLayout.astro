@@ -74,7 +74,7 @@ function generateOGImageUrl(path: string): string {
   const siteUrl = (import.meta.env.SITE || siteConfig.siteUrl).replace(/\/$/, '');
   const cleanPath = path.replace(/^\/+|\/+$/g, '');
   const slug = cleanPath ? cleanPath.replace(/\//g, '-') : 'index';
-  return `${siteUrl}/og/${slug}.png`;
+  return `${siteUrl}/og/${slug}.webp`;
 }
 
 const pageTitle = generateTitle(title);
@@ -136,7 +136,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         image: {
           width: 1200,
           height: 630,
-          type: 'image/png',
+          type: 'image/webp',
           alt: pageTitle,
         },
       }}
