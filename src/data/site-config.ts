@@ -7,8 +7,8 @@ export const siteConfig = {
   siteName: 'AZ Law Now',
   legalName: 'AZ Law Now Injury Attorneys',
   siteUrl: 'https://azlawnow.com',
-  defaultTitle: 'You Get Answers | AZ Law Now Injury Attorneys',
-  defaultDescription: 'Three people work your case. An investigator pulls the facts. An attorney knows Arizona law. A guide walks you through every step. West Valley offices in Buckeye and Maricopa.',
+  defaultTitle: 'You Get Answers | AZ Law Now',
+  defaultDescription: 'Arizona crash data, nursing home citations, school safety reports. Three editors cover what nobody else will. On record. Answered. Guided.',
   tagline: 'You Get Answers.',
 
   phone: '602-654-0202',
