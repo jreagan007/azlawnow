@@ -717,6 +717,23 @@ const schemas = [
       padding: var(--space-6) var(--space-5);
     }
 
+    /* WCAG 2.5.5 touch target — phone link needs 44px hit area */
+    .pa-hero__phone-link {
+      display: inline-block;
+      padding: 0.625rem 0;
+      min-height: 44px;
+      line-height: 1.4;
+    }
+
+    /* Breadcrumb nav links need 44px hit area on touch */
+    .pa-breadcrumbs a,
+    .pa-breadcrumbs span[aria-current] {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.625rem 0.25rem;
+      line-height: 1.4;
+    }
   }
 
   @media (max-width: 480px) {

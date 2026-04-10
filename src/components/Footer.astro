@@ -441,4 +441,54 @@ const resourceLinks = [
     .footer-list-2col { columns: 1; text-align: center; }
     .footer-list { text-align: center; }
   }
+
+  /* Mobile touch-target + readability pass (WCAG 2.5.5 + 1.4.4) */
+  @media (max-width: 768px) {
+    /* Footer practice-area + city links need a 44px hit area on touch.
+       Short-text entries (Mesa, FAQ, Tempe) need wider horizontal padding. */
+    .footer-list-2col a,
+    .footer-list a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.8125rem 0.625rem;
+      line-height: 1.4;
+    }
+    .footer-list-2col li,
+    .footer-list li { margin-bottom: 0; }
+
+    /* Email + phone contact links need a larger tap target */
+    .footer-contact {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.8125rem 0.25rem;
+      line-height: 1.4;
+    }
+
+    /* Logo is an image-only link — give it a 44px floor */
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+
+    /* Legal links — bump from 11px to 12px and add hit area */
+    .footer-legal a,
+    .footer-copyright,
+    .taqtics-credit,
+    .footer-disclaimer p {
+      font-size: 0.75rem; /* 12px */
+    }
+    .footer-legal a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.75rem 0.625rem;
+      line-height: 1.4;
+    }
+  }
 </style>

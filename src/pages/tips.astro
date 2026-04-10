@@ -295,14 +295,21 @@ import { siteConfig } from '../data/site-config';
     color: var(--color-black);
     cursor: pointer;
     line-height: 1.5;
+    /* 44px hit area via padding; the label IS the click target */
+    min-height: 44px;
+    padding: 0.625rem 0;
   }
 
   .form-check input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
     flex-shrink: 0;
     accent-color: var(--color-crimson, #C23B22);
+  }
+
+  .form-field--checkbox {
+    margin-bottom: var(--space-2);
   }
 
   .tips-submit {
@@ -380,6 +387,7 @@ import { siteConfig } from '../data/site-config';
   }
 
   .tips-phone {
+    display: inline-block;
     font-family: var(--font-heading);
     font-size: 1.625rem;
     font-weight: 700;
@@ -387,6 +395,10 @@ import { siteConfig } from '../data/site-config';
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s ease;
+    /* 44px tap target */
+    padding: 0.5rem 0;
+    min-height: 44px;
+    line-height: 1.3;
   }
 
   .tips-phone:hover {
@@ -414,6 +426,15 @@ import { siteConfig } from '../data/site-config';
   @media (max-width: 480px) {
     .tips-page {
       padding: var(--space-10) 0 var(--space-16);
+    }
+  }
+
+  /* Mobile readability — bump 12px footnotes to 13px */
+  @media (max-width: 768px) {
+    .tips-form-footer,
+    .tips-phone-note,
+    .form-help {
+      font-size: 0.8125rem; /* 13px */
     }
   }
 </style>

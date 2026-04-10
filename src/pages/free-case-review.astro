@@ -478,4 +478,25 @@ import { siteConfig } from '../data/site-config';
       text-align: center;
     }
   }
+
+  /* Mobile touch-target + readability pass */
+  @media (max-width: 768px) {
+    .trust-invest__title {
+      display: inline-block;
+      min-height: 44px;
+      padding: 0.5rem 0;
+      line-height: 1.4;
+    }
+    .trust-team__link {
+      min-height: 44px;
+      padding: 0.75rem 0;
+      line-height: 1.4;
+    }
+    /* Bump 12px body-ish text to 13px */
+    .review-form-footnote,
+    .trust-block__subhead,
+    .trust-invest__byline {
+      font-size: 0.8125rem; /* 13px */
+    }
+  }
 </style>

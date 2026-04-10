@@ -493,7 +493,12 @@ const navItems: NavItem[] = [
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    /* 44x44 min hit area per WCAG 2.5.5 */
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.625rem;
+    align-items: center;
+    justify-content: center;
     z-index: 310;
     -webkit-tap-highlight-color: rgba(212, 148, 58, 0.3);
   }

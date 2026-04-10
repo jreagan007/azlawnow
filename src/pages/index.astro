@@ -2102,4 +2102,30 @@ const topicClusters = [
     .team-card { flex-direction: column; text-align: center; }
     .team-photo-wrap { display: flex; justify-content: center; }
   }
+
+  /* Mobile touch-target + readability pass — WCAG 2.5.5 + 1.4.4 */
+  @media (max-width: 768px) {
+    .social-proof__link {
+      display: inline-block;
+      padding: 0.75rem 0.125rem;
+      min-height: 44px;
+      line-height: 1.4;
+    }
+    .voice-all {
+      padding: 0.75rem 0;
+      min-height: 44px;
+      line-height: 1.4;
+    }
+    .btn-outline-sm {
+      min-height: 44px;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    /* Bump substantive body copy from 12px to 13px on mobile */
+    .cluster-card__byline,
+    .result-desc,
+    .results-note {
+      font-size: 0.8125rem; /* 13px */
+    }
+  }
 </style>

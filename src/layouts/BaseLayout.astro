@@ -937,6 +937,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         align-items: center;
         gap: 0.25rem;
         padding: 0.5rem 1rem;
+        min-height: 40px;
         font-family: var(--font-body);
         font-size: var(--text-sm);
         font-weight: 600;
@@ -945,6 +946,17 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         border-radius: var(--radius-md);
         text-decoration: none;
         transition: all 0.2s ease;
+      }
+
+      /* Mobile touch-target pass — WCAG 2.5.5 minimum 44x44 */
+      @media (max-width: 768px) {
+        .btn-outline-sm {
+          min-height: 44px;
+          padding: 0.75rem 1rem;
+        }
+        .form-label {
+          font-size: 0.875rem; /* 14px, up from 12px */
+        }
       }
 
       .btn-outline-sm:hover,

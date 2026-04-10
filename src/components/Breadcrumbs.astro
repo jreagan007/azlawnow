@@ -76,4 +76,19 @@ const { items } = Astro.props;
   .breadcrumbs-current {
     color: var(--color-slate);
   }
+
+  /* Mobile touch-target — breadcrumb nav links deserve a 44px hit area
+     even though they sit in a visual inline row (WCAG 2.5.5). */
+  @media (max-width: 768px) {
+    .breadcrumbs-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.625rem 0.25rem;
+      line-height: 1.4;
+    }
+    .breadcrumbs-separator {
+      align-self: center;
+    }
+  }
 </style>
