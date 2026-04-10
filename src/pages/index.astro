@@ -104,6 +104,143 @@ const dataStats = [
 const brendan = authors['brendan-franks'];
 const brandon = authors['brandon-millam'];
 const stephanie = authors['stephanie-ramirez'];
+
+// Topic clusters: each topic has 3 voices (Brendan / Brandon / Stephanie)
+const topicClusters = [
+  {
+    title: 'Motor Vehicle Crashes',
+    intro: 'I-10 corridor data, Arizona crash law, and what to do in the first 48 hours.',
+    onRecord: {
+      title: 'I-10 Crash Data: Buckeye to Goodyear',
+      byline: 'Brendan Franks',
+      href: '/insights/i-10-crash-data-buckeye-goodyear/',
+    },
+    answered: {
+      title: 'Arizona Car Accident Law: Fault and Deadlines',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/arizona-car-accident-law/',
+    },
+    guided: {
+      title: 'Your First 48 Hours After an Arizona Car Crash',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/car-accident-first-48-hours/',
+    },
+  },
+  {
+    title: 'Motorcycle Safety',
+    intro: 'Arizona motorcyclists die at five times the rate of other drivers. The data, the law, the action plan.',
+    onRecord: {
+      title: "Arizona's Motorcycle Fatality Report",
+      byline: 'Brendan Franks',
+      href: '/insights/arizona-motorcycle-fatality-report/',
+    },
+    answered: {
+      title: 'Arizona Motorcycle Law: Helmet, Insurance, Fault',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/arizona-motorcycle-law/',
+    },
+    guided: {
+      title: 'After a Motorcycle Crash: Your Action Plan',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/motorcycle-crash-action-plan/',
+    },
+  },
+  {
+    title: 'Impaired Driving',
+    intro: 'Phoenix DUI patterns, dram shop liability, and what victims and families need to know.',
+    onRecord: {
+      title: 'Phoenix DUI Crashes: The Data Nobody Wants to See',
+      byline: 'Brendan Franks',
+      href: '/insights/phoenix-dui-crashes-data/',
+    },
+    answered: {
+      title: 'Arizona Dram Shop and Social Host Liability',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/arizona-dram-shop-liability/',
+    },
+    guided: {
+      title: 'Hit by a Drunk Driver in Arizona: What to Do',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/hit-by-drunk-driver/',
+    },
+  },
+  {
+    title: 'Pedestrian Safety',
+    intro: 'West Valley intersection patterns, Arizona pedestrian rights, and the action plan after a crash.',
+    onRecord: {
+      title: "West Valley's Most Dangerous Intersections",
+      byline: 'Brendan Franks',
+      href: '/insights/west-valley-dangerous-intersections/',
+    },
+    answered: {
+      title: 'Arizona Pedestrian Rights and Driver Liability',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/arizona-pedestrian-rights/',
+    },
+    guided: {
+      title: 'Hit by a Car While Walking: Your Action Plan',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/hit-by-car-walking-action-plan/',
+    },
+  },
+  {
+    title: 'Elder & Nursing Home Care',
+    intro: 'CMS facility data, ARS 46-451, and how families spot and report nursing home abuse.',
+    onRecord: {
+      title: 'Arizona Nursing Homes With the Most Federal Violations',
+      byline: 'Brendan Franks',
+      href: '/insights/arizona-nursing-home-violations/',
+    },
+    answered: {
+      title: 'Arizona Elder Abuse Law: ARS 46-451',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/arizona-elder-abuse-law/',
+    },
+    guided: {
+      title: 'Signs of Nursing Home Abuse and How to Report It',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/nursing-home-abuse-signs-reporting/',
+    },
+  },
+  {
+    title: 'School & Child Safety',
+    intro: '4,200+ students restrained in Arizona schools, the 180-day notice deadline, and what parents do next.',
+    onRecord: {
+      title: '4,200+ Students Restrained in Arizona Schools',
+      byline: 'Brendan Franks',
+      href: '/insights/arizona-school-restraint-data/',
+    },
+    answered: {
+      title: 'Suing a School District in Arizona: The Deadline',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/suing-school-district-arizona/',
+    },
+    guided: {
+      title: 'Your Child Was Hurt at School: What to Do Next',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/child-injured-at-school/',
+    },
+  },
+  {
+    title: 'Daycare Negligence',
+    intro: 'DHS violation patterns, Arizona daycare law, and how parents vet a facility before enrolling.',
+    onRecord: {
+      title: 'Maricopa County Daycares With the Most DHS Violations',
+      byline: 'Brendan Franks',
+      href: '/insights/arizona-daycare-violations/',
+    },
+    answered: {
+      title: 'Arizona Daycare Negligence Law: Liability and Duty of Care',
+      byline: 'Brandon Millam, J.D.',
+      href: '/legal-guides/arizona-daycare-negligence-law/',
+    },
+    guided: {
+      title: 'How to Vet an Arizona Daycare: Red Flags and Reports',
+      byline: 'Stephanie Ramirez',
+      href: '/client-guides/how-to-vet-arizona-daycare/',
+    },
+  },
+];
 ---
 
 <BaseLayout
@@ -442,42 +579,48 @@ const stephanie = authors['stephanie-ramirez'];
   </section>
 
   <!-- ============================== -->
-  <!-- ABUSE & NEGLIGENCE SPOTLIGHT   -->
+  <!-- TOPIC CLUSTERS                 -->
+  <!-- 3-voice grid per topic         -->
   <!-- ============================== -->
-  <section class="section spotlight-section">
+  <section class="section cluster-section">
     <div class="container">
-      <div class="spotlight-content">
-        <span class="spotlight-eyebrow">Focus Area</span>
-        <h2 class="spotlight-heading">Nobody Else Is Covering This.</h2>
-        <p class="spotlight-intro">
-          Arizona's systems fail vulnerable people every day. Kids with
-          disabilities restrained at school. Elders neglected in understaffed
-          facilities. Daycares that haven't passed inspection.
-        </p>
-        <p class="spotlight-intro">
-          We pull the public data. We name the patterns.
+      <div class="cluster-header">
+        <span class="cluster-eyebrow">Topic Clusters</span>
+        <h2 class="cluster-heading">Three Voices. Every Topic.</h2>
+        <p class="cluster-subhead">
+          Every story we cover gets three perspectives. The data goes on record.
+          The law gets explained. Someone walks you through what's next.
         </p>
       </div>
-      <div class="spotlight-cards">
-        <a href="/abuse-negligence/elder-abuse/" class="spotlight-card">
-          <img src="/images/heroes/elder-abuse.webp" alt="" class="spotlight-card-img" loading="lazy" />
-          <span class="spotlight-card-title">Elder Abuse</span>
-          <span class="spotlight-card-desc">Understaffed facilities. Missing oversight. Real data on Arizona's elder care failures.</span>
-          <span class="spotlight-card-link">Read &rarr;</span>
-        </a>
-        <a href="/abuse-negligence/school-abuse/" class="spotlight-card">
-          <img src="/images/heroes/school-abuse.webp" alt="" class="spotlight-card-img" loading="lazy" />
-          <span class="spotlight-card-title">School Abuse</span>
-          <span class="spotlight-card-desc">Restraint data, reporting gaps, and what Arizona districts aren't telling parents.</span>
-          <span class="spotlight-card-link">Read &rarr;</span>
-        </a>
-        <a href="/abuse-negligence/daycare-negligence/" class="spotlight-card">
-          <img src="/images/heroes/daycare-negligence.webp" alt="" class="spotlight-card-img" loading="lazy" />
-          <span class="spotlight-card-title">Daycare Negligence</span>
-          <span class="spotlight-card-desc">DHS violations, inspection records, and the daycares with the worst track records.</span>
-          <span class="spotlight-card-link">Read &rarr;</span>
-        </a>
-      </div>
+
+      {topicClusters.map((cluster) => (
+        <div class="cluster-row">
+          <div class="cluster-row__heading">
+            <h3 class="cluster-row__title">{cluster.title}</h3>
+            <p class="cluster-row__intro">{cluster.intro}</p>
+          </div>
+          <div class="cluster-row__grid">
+            <a href={cluster.onRecord.href} class="cluster-card">
+              <span class="cluster-card__voice voice--on-record">On Record</span>
+              <span class="cluster-card__byline">{cluster.onRecord.byline}</span>
+              <h4 class="cluster-card__title">{cluster.onRecord.title}</h4>
+              <span class="cluster-card__link">Read →</span>
+            </a>
+            <a href={cluster.answered.href} class="cluster-card">
+              <span class="cluster-card__voice voice--answered">Answered</span>
+              <span class="cluster-card__byline">{cluster.answered.byline}</span>
+              <h4 class="cluster-card__title">{cluster.answered.title}</h4>
+              <span class="cluster-card__link">Read →</span>
+            </a>
+            <a href={cluster.guided.href} class="cluster-card">
+              <span class="cluster-card__voice voice--guided">Guided</span>
+              <span class="cluster-card__byline">{cluster.guided.byline}</span>
+              <h4 class="cluster-card__title">{cluster.guided.title}</h4>
+              <span class="cluster-card__link">Read →</span>
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -1287,99 +1430,161 @@ const stephanie = authors['stephanie-ramirez'];
   .voice-all--slate { color: var(--color-slate, #4A5859); }
 
   /* ========================================
-     ABUSE & NEGLIGENCE SPOTLIGHT
+     TOPIC CLUSTERS — Three voices per topic
      ======================================== */
-  .spotlight-section {
+  .cluster-section {
     background: var(--color-bg, #FAF5ED);
     border-top: 3px solid var(--color-red, #C23B22);
   }
 
-  .spotlight-content {
-    max-width: 680px;
-    margin-bottom: var(--space-10, 2.5rem);
+  .cluster-header {
+    max-width: 720px;
+    margin: 0 auto var(--space-12, 3rem);
+    text-align: center;
   }
 
-  .spotlight-eyebrow {
+  .cluster-eyebrow {
     display: inline-block;
     font-family: var(--font-body);
     font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--color-red, #C23B22);
-    margin-bottom: var(--space-4, 1rem);
+    color: var(--color-gold, #D4943A);
+    margin-bottom: var(--space-3, 0.75rem);
   }
 
-  .spotlight-heading {
+  .cluster-heading {
     font-family: var(--font-heading);
-    font-size: clamp(var(--text-3xl, 2rem), 4vw, var(--text-4xl, 2.5rem));
+    font-size: clamp(var(--text-3xl, 2rem), 4vw, var(--text-5xl, 3rem));
     font-weight: 700;
     color: var(--color-black, #1A1A1A);
     margin-bottom: var(--space-4, 1rem);
     line-height: 1.1;
   }
 
-  .spotlight-intro {
-    font-size: var(--text-base, 1rem);
+  .cluster-subhead {
+    font-size: var(--text-lg, 1.125rem);
     color: var(--color-slate, #4A5859);
-    line-height: 1.7;
-    margin-bottom: var(--space-3, 0.75rem);
+    line-height: 1.6;
   }
 
-  .spotlight-cards {
+  .cluster-row {
+    margin-bottom: var(--space-12, 3rem);
+    padding-bottom: var(--space-12, 3rem);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .cluster-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .cluster-row__heading {
+    margin-bottom: var(--space-6, 1.5rem);
+    max-width: 720px;
+  }
+
+  .cluster-row__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl, 1.5rem);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    margin: 0 0 var(--space-2, 0.5rem);
+    line-height: 1.2;
+  }
+
+  .cluster-row__intro {
+    color: var(--color-slate, #4A5859);
+    font-size: var(--text-base, 1rem);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cluster-row__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6, 1.5rem);
+    gap: var(--space-5, 1.25rem);
   }
 
-  .spotlight-card {
+  .cluster-card {
     display: flex;
     flex-direction: column;
     gap: var(--space-3, 0.75rem);
     padding: var(--space-6, 1.5rem);
     background: var(--color-white, #FFFFFF);
     border: 1px solid var(--neutral-200, #E8DFD0);
-    border-top: 3px solid var(--color-red, #C23B22);
     border-radius: var(--radius-lg, 8px);
     text-decoration: none;
     transition: all 0.2s ease;
+    position: relative;
   }
 
-  .spotlight-card:hover {
-    border-color: var(--color-red, #C23B22);
-    box-shadow: 0 8px 24px rgba(194, 59, 34, 0.08);
+  .cluster-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-gold, #D4943A);
+    border-top-left-radius: var(--radius-lg, 8px);
+    border-top-right-radius: var(--radius-lg, 8px);
+  }
+
+  .cluster-card:hover {
+    border-color: var(--color-gold, #D4943A);
+    box-shadow: 0 8px 24px rgba(212, 148, 58, 0.12);
     transform: translateY(-2px);
   }
 
-  .spotlight-card-img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 4px;
+  .cluster-card__voice {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
-  .spotlight-card-title {
+  .voice--on-record { color: var(--color-red, #C23B22); }
+  .voice--answered { color: var(--color-sienna, #8B4513); }
+  .voice--guided { color: var(--color-gold, #D4943A); }
+
+  .cluster-card__byline {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cluster-card__title {
     font-family: var(--font-heading);
-    font-size: var(--text-xl, 1.25rem);
+    font-size: var(--text-lg, 1.125rem);
     font-weight: 700;
     color: var(--color-black, #1A1A1A);
-  }
-
-  .spotlight-card-desc {
-    font-size: var(--text-sm, 0.875rem);
-    color: var(--color-slate, #4A5859);
-    line-height: 1.6;
+    line-height: 1.3;
+    margin: 0;
     flex: 1;
   }
 
-  .spotlight-card-link {
+  .cluster-card__link {
     font-size: var(--text-sm, 0.875rem);
     font-weight: 600;
-    color: var(--color-red, #C23B22);
+    color: var(--color-gold, #D4943A);
+    margin-top: var(--space-2, 0.5rem);
   }
 
-  .spotlight-card:hover .spotlight-card-link {
-    color: var(--color-red-hover, #A83220);
+  .cluster-card:hover .cluster-card__link {
+    color: var(--color-sienna, #8B4513);
+  }
+
+  @media (max-width: 968px) {
+    .cluster-row__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4, 1rem);
+    }
   }
 
   /* ========================================
