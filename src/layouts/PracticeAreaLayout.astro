@@ -7,6 +7,7 @@
  */
 
 import BaseLayout from './BaseLayout.astro';
+import AutoLinker from '../components/AutoLinker.astro';
 import { siteConfig } from '../data/site-config';
 import {
   generateServiceSchema,
@@ -152,8 +153,9 @@ const schemas = [
        ============================================ -->
   <section class="pa-content section">
     <div class="container container-narrow">
-      <!-- TODO: Wrap with AutoLinker once component exists -->
-      <slot />
+      <AutoLinker currentPath={canonical} maxLinks={10}>
+        <slot />
+      </AutoLinker>
     </div>
   </section>
 

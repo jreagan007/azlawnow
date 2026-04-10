@@ -1,0 +1,54 @@
+---
+/**
+ * AutoLinker Component (Server-Side)
+ * Wraps content and automatically links first occurrence of key terms
+ * Links are rendered at build time for full crawlability
+ *
+ * Usage:
+ * <AutoLinker currentPath="/car-accidents/">
+ *   <Content />
+ * </AutoLinker>
+ */
+
+import { autoLinkContent } from '../utils/content-graph';
+
+interface Props {
+  /** Current page path (to avoid self-linking) */
+  currentPath?: string;
+  /** Maximum number of auto-links to add */
+  maxLinks?: number;
+  /** Disable auto-linking entirely */
+  disabled?: boolean;
+}
+
+const { currentPath = '', maxLinks = 15, disabled = false } = Astro.props;
+
+// Capture slot content as HTML string at build time
+const slotContent = await Astro.slots.render('default');
+
+// Process with server-side auto-linker (or pass through if disabled)
+const processedContent = disabled ? slotContent : autoLinkContent(slotContent, currentPath, maxLinks);
+---
+
+<Fragment set:html={processedContent} />
+
+<style is:global>
+  /* Internal link styling — Sunset Editorial theme */
+  .internal-link {
+    color: var(--color-gold, #D4943A);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-gold, #D4943A);
+    transition: all 0.2s ease;
+  }
+
+  .internal-link:hover {
+    color: var(--color-sienna, #8B4513);
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-sienna, #8B4513);
+  }
+
+  .internal-link:focus-visible {
+    outline: 2px solid var(--color-gold, #D4943A);
+    outline-offset: 2px;
+  }
+</style>

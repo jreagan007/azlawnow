@@ -6,6 +6,7 @@
  */
 
 import BaseLayout from './BaseLayout.astro';
+import AutoLinker from '../components/AutoLinker.astro';
 import { siteConfig } from '../data/site-config';
 import { authors, type Author } from '../data/authors';
 import { getArticleSchema, generateBreadcrumbSchema } from '../utils/schema';
@@ -192,9 +193,10 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
          ============================================ -->
     <div class="article-body section">
       <div class="container container-narrow">
-        <!-- TODO: Wrap with AutoLinker once component exists -->
         <div class="article-content" data-speakable="summary">
-          <slot />
+          <AutoLinker currentPath={Astro.url.pathname} maxLinks={10}>
+            <slot />
+          </AutoLinker>
         </div>
       </div>
     </div>

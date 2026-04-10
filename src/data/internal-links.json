@@ -5,93 +5,204 @@
     "auto accident": "/vehicle-crashes/car-accidents/",
     "auto accidents": "/vehicle-crashes/car-accidents/",
     "vehicle accident": "/vehicle-crashes/car-accidents/",
+    "car crash": "/vehicle-crashes/car-accidents/",
+    "car crashes": "/vehicle-crashes/car-accidents/",
+    "auto crash": "/vehicle-crashes/car-accidents/",
+
     "truck accident": "/vehicle-crashes/truck-accidents/",
     "truck accidents": "/vehicle-crashes/truck-accidents/",
     "semi-truck accident": "/vehicle-crashes/truck-accidents/",
     "18-wheeler accident": "/vehicle-crashes/truck-accidents/",
     "commercial truck accident": "/vehicle-crashes/truck-accidents/",
+    "tractor-trailer crash": "/vehicle-crashes/truck-accidents/",
+    "big rig crash": "/vehicle-crashes/truck-accidents/",
+
     "motorcycle accident": "/vehicle-crashes/motorcycle-accidents/",
     "motorcycle accidents": "/vehicle-crashes/motorcycle-accidents/",
     "motorcycle crash": "/vehicle-crashes/motorcycle-accidents/",
+    "motorcycle crashes": "/vehicle-crashes/motorcycle-accidents/",
+    "motorcyclist": "/vehicle-crashes/motorcycle-accidents/",
+
     "school bus accident": "/vehicle-crashes/bus-accidents/",
     "school bus accidents": "/vehicle-crashes/bus-accidents/",
+    "school bus crash": "/vehicle-crashes/bus-accidents/",
     "bus accident": "/vehicle-crashes/bus-accidents/",
-    "elder abuse": "/abuse-negligence/elder-abuse/",
-    "elder neglect": "/abuse-negligence/elder-abuse/",
-    "abuse of a vulnerable adult": "/abuse-negligence/elder-abuse/",
-    "nursing home abuse": "/abuse-negligence/nursing-home-abuse/",
-    "nursing home negligence": "/abuse-negligence/nursing-home-abuse/",
-    "nursing home neglect": "/abuse-negligence/nursing-home-abuse/",
-    "child abuse": "/abuse-negligence/child-abuse/",
-    "daycare negligence": "/abuse-negligence/daycare-negligence/",
-    "daycare abuse": "/abuse-negligence/daycare-negligence/",
-    "medical negligence": "/abuse-negligence/medical-negligence/",
-    "medical malpractice": "/abuse-negligence/medical-negligence/",
-    "surgical error": "/abuse-negligence/medical-negligence/",
-    "misdiagnosis": "/abuse-negligence/medical-negligence/",
-    "dog bite": "/other-claims/dog-bite/",
-    "dog bites": "/other-claims/dog-bite/",
-    "dog attack": "/other-claims/dog-bite/",
-    "animal bite": "/other-claims/dog-bite/",
-    "slip and fall": "/other-claims/slip-and-fall/",
-    "slip-and-fall": "/other-claims/slip-and-fall/",
-    "trip and fall": "/other-claims/slip-and-fall/",
-    "fall injury": "/other-claims/slip-and-fall/",
+    "bus crash": "/vehicle-crashes/bus-accidents/",
+
     "pedestrian accident": "/vehicle-crashes/pedestrian-accidents/",
     "pedestrian accidents": "/vehicle-crashes/pedestrian-accidents/",
+    "pedestrian crash": "/vehicle-crashes/pedestrian-accidents/",
     "hit by a car": "/vehicle-crashes/pedestrian-accidents/",
+    "pedestrian struck": "/vehicle-crashes/pedestrian-accidents/",
+
     "bicycle accident": "/vehicle-crashes/bicycle-accidents/",
     "bicycle accidents": "/vehicle-crashes/bicycle-accidents/",
     "bike accident": "/vehicle-crashes/bicycle-accidents/",
     "cyclist injury": "/vehicle-crashes/bicycle-accidents/",
-    "wrongful death": "/other-claims/wrongful-death/",
-    "wrongful death claim": "/other-claims/wrongful-death/",
-    "wrongful death lawsuit": "/other-claims/wrongful-death/",
-    "premises liability": "/other-claims/premises-liability/",
-    "property owner negligence": "/other-claims/premises-liability/",
-    "unsafe property": "/other-claims/premises-liability/",
-    "negligent security": "/other-claims/negligent-security/",
-    "inadequate security": "/other-claims/negligent-security/",
+    "cyclist": "/vehicle-crashes/bicycle-accidents/",
+
     "rideshare accident": "/vehicle-crashes/rideshare-accidents/",
     "rideshare accidents": "/vehicle-crashes/rideshare-accidents/",
     "Uber accident": "/vehicle-crashes/rideshare-accidents/",
     "Lyft accident": "/vehicle-crashes/rideshare-accidents/",
-    "comparative negligence": "/insights/comparative-negligence-arizona/",
-    "comparative fault": "/insights/comparative-negligence-arizona/",
-    "statute of limitations": "/insights/statute-of-limitations-arizona/",
-    "ARS 12-542": "/insights/statute-of-limitations-arizona/",
-    "ARS 46-451": "/abuse-negligence/elder-abuse/",
-    "ARS 12-821": "/insights/notice-of-claim-arizona/",
-    "notice of claim": "/insights/notice-of-claim-arizona/",
-    "mandatory reporter": "/insights/mandatory-reporting-arizona/",
-    "mandatory reporting": "/insights/mandatory-reporting-arizona/",
+    "Uber crash": "/vehicle-crashes/rideshare-accidents/",
+    "Lyft crash": "/vehicle-crashes/rideshare-accidents/",
+
+    "elder abuse": "/abuse-negligence/elder-abuse/",
+    "elder neglect": "/abuse-negligence/elder-abuse/",
+    "abuse of a vulnerable adult": "/abuse-negligence/elder-abuse/",
+    "vulnerable adult": "/abuse-negligence/elder-abuse/",
+
+    "nursing home abuse": "/abuse-negligence/nursing-home-abuse/",
+    "nursing home negligence": "/abuse-negligence/nursing-home-abuse/",
+    "nursing home neglect": "/abuse-negligence/nursing-home-abuse/",
+    "nursing home injury": "/abuse-negligence/nursing-home-abuse/",
+    "assisted living abuse": "/abuse-negligence/nursing-home-abuse/",
+
+    "child abuse": "/abuse-negligence/child-abuse/",
+    "child neglect": "/abuse-negligence/child-abuse/",
+
+    "school abuse": "/abuse-negligence/school-abuse/",
+    "school injury": "/abuse-negligence/school-abuse/",
+
+    "daycare negligence": "/abuse-negligence/daycare-negligence/",
+    "daycare abuse": "/abuse-negligence/daycare-negligence/",
+    "daycare injury": "/abuse-negligence/daycare-negligence/",
+    "childcare negligence": "/abuse-negligence/daycare-negligence/",
+
+    "medical negligence": "/abuse-negligence/medical-negligence/",
+    "medical malpractice": "/abuse-negligence/medical-negligence/",
+    "surgical error": "/abuse-negligence/medical-negligence/",
+    "misdiagnosis": "/abuse-negligence/medical-negligence/",
+
+    "dog bite": "/other-claims/dog-bite/",
+    "dog bites": "/other-claims/dog-bite/",
+    "dog attack": "/other-claims/dog-bite/",
+    "animal bite": "/other-claims/dog-bite/",
+
+    "slip and fall": "/other-claims/slip-and-fall/",
+    "slip-and-fall": "/other-claims/slip-and-fall/",
+    "trip and fall": "/other-claims/slip-and-fall/",
+    "fall injury": "/other-claims/slip-and-fall/",
+
+    "wrongful death": "/other-claims/wrongful-death/",
+    "wrongful death claim": "/other-claims/wrongful-death/",
+    "wrongful death lawsuit": "/other-claims/wrongful-death/",
+
+    "premises liability": "/other-claims/premises-liability/",
+    "property owner negligence": "/other-claims/premises-liability/",
+    "unsafe property": "/other-claims/premises-liability/",
+
+    "I-10": "/insights/i-10-crash-data-buckeye-goodyear/",
+    "Interstate 10": "/insights/i-10-crash-data-buckeye-goodyear/",
+    "I-10 crash data": "/insights/i-10-crash-data-buckeye-goodyear/",
+
+    "SR-347": "/insights/sr-347-crash-corridor/",
+    "State Route 347": "/insights/sr-347-crash-corridor/",
+    "John Wayne Parkway": "/insights/sr-347-crash-corridor/",
+
+    "school restraint": "/insights/arizona-school-restraint-data/",
+    "physical restraint": "/insights/arizona-school-restraint-data/",
+    "seclusion in schools": "/insights/arizona-school-restraint-data/",
+
+    "DHS violations": "/insights/arizona-daycare-violations/",
+    "daycare inspection": "/insights/arizona-daycare-violations/",
+    "Arizona daycare violations": "/insights/arizona-daycare-violations/",
+
+    "CMS citations": "/insights/arizona-nursing-home-violations/",
+    "nursing home violations": "/insights/arizona-nursing-home-violations/",
+    "nursing home citations": "/insights/arizona-nursing-home-violations/",
+    "facility ratings": "/insights/arizona-nursing-home-violations/",
+
+    "school bus seat belts": "/insights/arizona-school-bus-seat-belts/",
+    "seat belt law": "/insights/arizona-school-bus-seat-belts/",
+
+    "dangerous intersections": "/insights/west-valley-dangerous-intersections/",
+    "West Valley intersections": "/insights/west-valley-dangerous-intersections/",
+    "MAG crash data": "/insights/west-valley-dangerous-intersections/",
+
+    "Arizona car accident law": "/legal-guides/arizona-car-accident-law/",
+    "Arizona auto accident law": "/legal-guides/arizona-car-accident-law/",
+    "fault in Arizona": "/legal-guides/arizona-car-accident-law/",
+
+    "Arizona elder abuse law": "/legal-guides/arizona-elder-abuse-law/",
+    "ARS 46-451": "/legal-guides/arizona-elder-abuse-law/",
+    "vulnerable adult law": "/legal-guides/arizona-elder-abuse-law/",
+
+    "Arizona pedestrian rights": "/legal-guides/arizona-pedestrian-rights/",
+    "right of way": "/legal-guides/arizona-pedestrian-rights/",
+    "pedestrian rights": "/legal-guides/arizona-pedestrian-rights/",
+
+    "suing a school district": "/legal-guides/suing-school-district-arizona/",
+    "ARS 12-821": "/legal-guides/suing-school-district-arizona/",
+    "180-day notice of claim": "/legal-guides/suing-school-district-arizona/",
+    "notice of claim": "/legal-guides/suing-school-district-arizona/",
+
+    "first 48 hours after a crash": "/client-guides/car-accident-first-48-hours/",
+    "what to do after a car accident": "/client-guides/car-accident-first-48-hours/",
+    "after a car crash": "/client-guides/car-accident-first-48-hours/",
+
+    "child injured at school": "/client-guides/child-injured-at-school/",
+    "school injury action plan": "/client-guides/child-injured-at-school/",
+
+    "hit by a car action plan": "/client-guides/hit-by-car-walking-action-plan/",
+    "pedestrian action plan": "/client-guides/hit-by-car-walking-action-plan/",
+
+    "signs of nursing home abuse": "/client-guides/nursing-home-abuse-signs-reporting/",
+    "nursing home abuse signs": "/client-guides/nursing-home-abuse-signs-reporting/",
+    "report nursing home abuse": "/client-guides/nursing-home-abuse-signs-reporting/",
+
+    "comparative negligence": "/legal-guides/arizona-car-accident-law/",
+    "comparative fault": "/legal-guides/arizona-car-accident-law/",
+    "Arizona comparative fault": "/legal-guides/arizona-car-accident-law/",
+
+    "statute of limitations": "/legal-guides/arizona-car-accident-law/",
+    "ARS 12-542": "/legal-guides/arizona-car-accident-law/",
+    "two-year deadline": "/legal-guides/arizona-car-accident-law/",
+
+    "mandatory reporter": "/legal-guides/arizona-elder-abuse-law/",
+    "mandatory reporting": "/legal-guides/arizona-elder-abuse-law/",
+
     "free case review": "/free-case-review/",
     "free consultation": "/free-case-review/",
     "case review": "/free-case-review/",
+    "free legal consultation": "/free-case-review/",
+
     "case results": "/case-results/",
     "our results": "/case-results/",
+    "settlements": "/case-results/",
+
     "personal injury attorney": "/",
     "personal injury lawyer": "/",
     "injury attorney": "/",
     "injury lawyer": "/",
+    "Arizona injury attorney": "/",
+    "AZ Law Now": "/",
+
     "Buckeye": "/buckeye/",
     "Buckeye injury attorney": "/buckeye/",
+    "Buckeye Arizona": "/buckeye/",
     "Goodyear": "/goodyear/",
     "Goodyear injury attorney": "/goodyear/",
     "Avondale": "/avondale/",
     "Avondale injury attorney": "/avondale/",
     "Maricopa": "/maricopa/",
-    "Maricopa injury attorney": "/maricopa/",
+    "Maricopa Arizona": "/maricopa/",
     "Phoenix": "/phoenix/",
     "Phoenix injury attorney": "/phoenix/",
-    "Litchfield Park": "/litchfield-park/",
     "West Valley": "/buckeye/",
-    "Mesa": "/mesa/",
-    "Chandler": "/chandler/",
-    "Tempe": "/tempe/",
-    "Scottsdale": "/scottsdale/",
-    "Casa Grande": "/casa-grande/"
+    "West Valley attorney": "/buckeye/"
   },
+  "excludeSelectors": [
+    "pre",
+    "code",
+    ".references",
+    ".citations",
+    ".footnotes",
+    ".no-autolink",
+    "table",
+    "[data-no-autolink]"
+  ],
   "settings": {
     "maxLinksPerTerm": 1,
     "linkFirstOccurrence": true,
@@ -100,5 +211,39 @@
     "excludeAnchors": true,
     "excludeTables": true,
     "minDistanceBetweenLinks": 300
+  },
+  "pillars": {
+    "vehicle-crashes": {
+      "url": "/vehicle-crashes/",
+      "children": [
+        "/vehicle-crashes/car-accidents/",
+        "/vehicle-crashes/truck-accidents/",
+        "/vehicle-crashes/motorcycle-accidents/",
+        "/vehicle-crashes/pedestrian-accidents/",
+        "/vehicle-crashes/bicycle-accidents/",
+        "/vehicle-crashes/rideshare-accidents/",
+        "/vehicle-crashes/bus-accidents/"
+      ]
+    },
+    "abuse-negligence": {
+      "url": "/abuse-negligence/",
+      "children": [
+        "/abuse-negligence/elder-abuse/",
+        "/abuse-negligence/nursing-home-abuse/",
+        "/abuse-negligence/child-abuse/",
+        "/abuse-negligence/school-abuse/",
+        "/abuse-negligence/daycare-negligence/",
+        "/abuse-negligence/medical-negligence/"
+      ]
+    },
+    "other-claims": {
+      "url": "/other-claims/",
+      "children": [
+        "/other-claims/wrongful-death/",
+        "/other-claims/slip-and-fall/",
+        "/other-claims/dog-bite/",
+        "/other-claims/premises-liability/"
+      ]
+    }
   }
 }
