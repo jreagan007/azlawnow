@@ -276,7 +276,7 @@ const topicClusters = [
         </p>
         <div class="hero-actions">
           <a href="/free-case-review/" class="btn btn-primary btn-lg">
-            Get My Free Consultation &rarr;
+            Get an answer &rarr;
           </a>
         </div>
         <div class="hero-stats">
@@ -623,21 +623,21 @@ const topicClusters = [
           <div class="cluster-row__grid">
             <a href={cluster.onRecord.href} class="cluster-card">
               <span class="cluster-card__voice voice--on-record">On Record</span>
-              <span class="cluster-card__byline">{cluster.onRecord.byline}</span>
               <h4 class="cluster-card__title">{cluster.onRecord.title}</h4>
-              <span class="cluster-card__link">Read →</span>
+              <p class="cluster-card__byline">By <span class="cluster-card__author">{cluster.onRecord.byline}</span></p>
+              <span class="cluster-card__link">Read the investigation →</span>
             </a>
             <a href={cluster.answered.href} class="cluster-card">
               <span class="cluster-card__voice voice--answered">Answered</span>
-              <span class="cluster-card__byline">{cluster.answered.byline}</span>
               <h4 class="cluster-card__title">{cluster.answered.title}</h4>
-              <span class="cluster-card__link">Read →</span>
+              <p class="cluster-card__byline">By <span class="cluster-card__author">{cluster.answered.byline}</span></p>
+              <span class="cluster-card__link">Read the guide →</span>
             </a>
             <a href={cluster.guided.href} class="cluster-card">
               <span class="cluster-card__voice voice--guided">Guided</span>
-              <span class="cluster-card__byline">{cluster.guided.byline}</span>
               <h4 class="cluster-card__title">{cluster.guided.title}</h4>
-              <span class="cluster-card__link">Read →</span>
+              <p class="cluster-card__byline">By <span class="cluster-card__author">{cluster.guided.byline}</span></p>
+              <span class="cluster-card__link">Read the resource →</span>
             </a>
           </div>
         </div>
@@ -905,7 +905,7 @@ const topicClusters = [
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     white-space: nowrap;
   }
 
@@ -1286,7 +1286,7 @@ const topicClusters = [
   }
 
   .featured-secondary .featured-card-link {
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .featured-secondary:hover .featured-card-link {
@@ -1425,7 +1425,7 @@ const topicClusters = [
   .hub-link {
     font-size: var(--text-sm, 0.875rem);
     font-weight: 600;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
   }
 
   /* ========================================
@@ -1480,7 +1480,7 @@ const topicClusters = [
   }
 
   .voice-label--red { color: var(--color-red, #C23B22); }
-  .voice-label--gold { color: var(--color-gold, #D4943A); }
+  .voice-label--gold { color: var(--color-gold-text, #8B4513); }
   .voice-label--slate { color: var(--color-slate, #4A5859); }
 
   .voice-byline {
@@ -1543,7 +1543,7 @@ const topicClusters = [
   }
 
   .voice-lead-wrap:hover .voice-lead {
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .voice-stories {
@@ -1564,7 +1564,7 @@ const topicClusters = [
   }
 
   .voice-story:hover {
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .voice-all {
@@ -1579,7 +1579,7 @@ const topicClusters = [
   .voice-all:hover { opacity: 0.8; }
 
   .voice-all--red { color: var(--color-red, #C23B22); }
-  .voice-all--gold { color: var(--color-gold, #D4943A); }
+  .voice-all--gold { color: var(--color-gold-text, #8B4513); }
   .voice-all--slate { color: var(--color-slate, #4A5859); }
 
   /* ========================================
@@ -1603,7 +1603,7 @@ const topicClusters = [
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     margin-bottom: var(--space-3, 0.75rem);
   }
 
@@ -1703,14 +1703,7 @@ const topicClusters = [
 
   .voice--on-record { color: var(--color-red, #C23B22); }
   .voice--answered { color: var(--color-sienna, #8B4513); }
-  .voice--guided { color: var(--color-gold, #D4943A); }
-
-  .cluster-card__byline {
-    font-size: var(--text-xs, 0.75rem);
-    color: var(--neutral-500);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
+  .voice--guided { color: var(--color-gold-text, #8B4513); }
 
   .cluster-card__title {
     font-family: var(--font-heading);
@@ -1722,10 +1715,30 @@ const topicClusters = [
     flex: 1;
   }
 
+  .cluster-card__byline {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate, #4A5859);
+    letter-spacing: 0.01em;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .cluster-card__author {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-black, #1A1A1A);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+
+  .cluster-card:hover .cluster-card__author {
+    border-bottom-color: var(--color-gold-text, #8B4513);
+  }
+
   .cluster-card__link {
     font-size: var(--text-sm, 0.875rem);
     font-weight: 600;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     margin-top: var(--space-2, 0.5rem);
   }
 
@@ -1769,9 +1782,9 @@ const topicClusters = [
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     padding-bottom: var(--space-2, 0.5rem);
-    border-bottom: 1px solid var(--color-gold, #D4943A);
+    border-bottom: 1px solid var(--color-gold-text, #8B4513);
     margin-bottom: var(--space-2, 0.5rem);
   }
 
@@ -1806,7 +1819,7 @@ const topicClusters = [
     flex-shrink: 0;
   }
 
-  .practice-link:hover { color: var(--color-gold, #D4943A); }
+  .practice-link:hover { color: var(--color-gold-text, #8B4513); }
 
   .practice-arrow {
     color: var(--neutral-300, #D4CFC6);
@@ -1814,7 +1827,7 @@ const topicClusters = [
   }
 
   .practice-link:hover .practice-arrow {
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     transform: translateX(2px);
   }
 
@@ -1848,7 +1861,7 @@ const topicClusters = [
     color: var(--color-black, #1A1A1A);
   }
 
-  .location-row:hover .location-name { color: var(--color-gold, #D4943A); }
+  .location-row:hover .location-name { color: var(--color-gold-text, #8B4513); }
 
   .location-badge {
     font-size: 0.625rem;
@@ -1889,7 +1902,7 @@ const topicClusters = [
     font-family: var(--font-heading);
     font-size: var(--text-3xl, 1.875rem);
     font-weight: 700;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     line-height: 1;
     margin-bottom: var(--space-2, 0.5rem);
   }
@@ -1975,7 +1988,7 @@ const topicClusters = [
   .team-title {
     display: block;
     font-size: var(--text-xs, 0.75rem);
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;

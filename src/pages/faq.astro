@@ -134,7 +134,7 @@ const faqSchema = generateFAQSchema(allFaqs);
 
   .faq-category__heading {
     font-size: var(--text-2xl);
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     margin-bottom: var(--space-6);
     padding-bottom: var(--space-3);
     border-bottom: 2px solid var(--neutral-200);
@@ -174,11 +174,11 @@ const faqSchema = generateFAQSchema(allFaqs);
   }
 
   .faq-item__question:hover {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .faq-item__chevron {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     flex-shrink: 0;
     transition: transform var(--transition-base);
   }

@@ -272,7 +272,7 @@ const investigationImages: Record<string, string> = {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     margin-bottom: var(--space-4);
   }
 
@@ -325,8 +325,8 @@ const investigationImages: Record<string, string> = {
   }
 
   .inv-pill:hover {
-    border-color: var(--color-gold);
-    color: var(--color-gold);
+    border-color: var(--color-gold-text, #8B4513);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .inv-pill--active {
@@ -383,7 +383,7 @@ const investigationImages: Record<string, string> = {
   }
 
   .inv-featured-card:not(.inv-featured-card--placeholder):hover {
-    border-color: var(--color-gold);
+    border-color: var(--color-gold-text, #8B4513);
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
   }
@@ -439,7 +439,7 @@ const investigationImages: Record<string, string> = {
   }
 
   .inv-featured-card:not(.inv-featured-card--placeholder):hover .inv-featured-title {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .inv-featured-desc {
@@ -542,7 +542,7 @@ const investigationImages: Record<string, string> = {
   }
 
   a.inv-card:hover {
-    border-color: var(--color-gold);
+    border-color: var(--color-gold-text, #8B4513);
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
   }
@@ -582,7 +582,7 @@ const investigationImages: Record<string, string> = {
   }
 
   a.inv-card:hover .inv-card-title {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .inv-card-desc {
@@ -640,7 +640,7 @@ const investigationImages: Record<string, string> = {
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 700;
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     text-decoration: none;
     transition: color var(--transition-base);
   }

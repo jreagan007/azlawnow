@@ -1,0 +1,419 @@
+---
+/**
+ * Tip Line — AZ Law Now
+ * Confidential intake for whistleblowers, sources, and tipsters.
+ *
+ * Editorial positioning: this isn't a case intake form. It's a news tip line
+ * run by a firm that does the work before the case. Think ProPublica /
+ * Marshall Project, not a traditional PI contact form.
+ *
+ * Privacy-first language, no pressure, clear about what happens next.
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site-config';
+---
+
+<BaseLayout
+  title="Tip Line — Send us something"
+  description="A confidential tip line for West Valley Arizona. Share documents, patterns, or what you've seen. We read everything. Your name stays out of it unless you say otherwise."
+  canonical="/tips/"
+  noindex={false}
+  hideHeader={false}
+  hideFooter={false}
+>
+  <section class="tips-page">
+    <div class="container tips-container">
+      <header class="tips-header">
+        <span class="tips-eyebrow">Tip Line · Confidential</span>
+        <h1 class="tips-h1">Send us something.</h1>
+        <p class="tips-deck">
+          If you've seen something the public should know about — a pattern at a
+          nursing home, a school district burying a report, a fleet carrier
+          ignoring its own maintenance logs, a crash scene that doesn't add up —
+          tell us. We read every tip.
+        </p>
+      </header>
+
+      <div class="tips-grid">
+        <!-- Left column: form -->
+        <div class="tips-form-wrap">
+          <div class="card card-elevated tips-form-card">
+            <form
+              name="tip-line"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you/"
+              class="tips-form"
+            >
+              <input type="hidden" name="form-name" value="tip-line" />
+              <p class="sr-only">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <fieldset class="tips-fieldset">
+                <legend class="tips-legend">What you're telling us about</legend>
+
+                <div class="form-field">
+                  <label for="topic" class="form-label">Short summary</label>
+                  <input
+                    type="text"
+                    id="topic"
+                    name="topic"
+                    class="form-input"
+                    required
+                    placeholder="e.g., &quot;Staff assault at a Buckeye care facility&quot;"
+                    aria-describedby="topic-help"
+                  />
+                  <span id="topic-help" class="form-help">One sentence is fine. We read the full message below.</span>
+                </div>
+
+                <div class="form-field">
+                  <label for="story" class="form-label">What happened?</label>
+                  <textarea
+                    id="story"
+                    name="story"
+                    class="form-textarea"
+                    rows="10"
+                    required
+                    placeholder="Dates, places, names if you have them. Paste links. Don't worry about structure — just tell us what you know."
+                  ></textarea>
+                </div>
+
+                <div class="form-field">
+                  <label for="documents" class="form-label">Documents or links <span class="form-optional">(optional)</span></label>
+                  <textarea
+                    id="documents"
+                    name="documents"
+                    class="form-textarea"
+                    rows="3"
+                    placeholder="Paste URLs, file names, case numbers, anything."
+                  ></textarea>
+                  <span class="form-help">For larger files, include a link and we'll reach out about a secure drop.</span>
+                </div>
+              </fieldset>
+
+              <fieldset class="tips-fieldset">
+                <legend class="tips-legend">How to reach you <span class="form-optional">(optional)</span></legend>
+
+                <div class="form-field">
+                  <label for="contact" class="form-label">Contact</label>
+                  <input
+                    type="text"
+                    id="contact"
+                    name="contact"
+                    class="form-input"
+                    placeholder="Email, phone, Signal — whatever's safest for you"
+                  />
+                  <span class="form-help">
+                    You can leave this blank. We can still use what you send. If you want us
+                    to follow up, a contact helps — but it's your call.
+                  </span>
+                </div>
+
+                <div class="form-field form-field--checkbox">
+                  <label class="form-check">
+                    <input type="checkbox" name="anonymous" value="yes" />
+                    <span>Treat this as anonymous. Don't reach out.</span>
+                  </label>
+                </div>
+
+                <div class="form-field form-field--checkbox">
+                  <label class="form-check">
+                    <input type="checkbox" name="background" value="yes" />
+                    <span>You can use what I'm telling you, but don't name me.</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="btn btn-primary btn-lg tips-submit">
+                Send the tip &rarr;
+              </button>
+
+              <p class="tips-form-footer">
+                We read every tip. If there's a story or a case, someone from our team
+                will reach out — usually within a business day. If there isn't, we still
+                keep what you sent.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right column: what happens + who reads it -->
+        <aside class="tips-side">
+          <div class="tips-side-block">
+            <h2 class="tips-side-heading">What happens to your tip</h2>
+            <ol class="tips-steps">
+              <li>
+                <strong>It comes to us first, not a call center.</strong>
+                Brendan Franks and the editorial team read every submission.
+              </li>
+              <li>
+                <strong>We verify before we act.</strong>
+                Public records, document review, interviews. The work before the case.
+              </li>
+              <li>
+                <strong>We follow up only if you asked us to.</strong>
+                If you checked the background or anonymous box, we keep your name out of it.
+              </li>
+              <li>
+                <strong>We publish or refer.</strong>
+                If it's a story, we write it. If it's a case, we take it — or point you to
+                someone who can.
+              </li>
+            </ol>
+          </div>
+
+          <div class="tips-side-block tips-side-block--privacy">
+            <h2 class="tips-side-heading">On privacy</h2>
+            <p>
+              This form is not a secure drop. For stronger protection — if you're
+              worried about your employer, a government agency, or anyone else seeing
+              that you reached out — tell us in the form and we'll set up a secure
+              channel before you send the sensitive material.
+            </p>
+            <p>
+              Do not send anything from a work device or work email. Use a personal
+              phone or computer.
+            </p>
+          </div>
+
+          <div class="tips-side-block">
+            <h2 class="tips-side-heading">Prefer to call?</h2>
+            <p class="tips-phone-wrap">
+              <a href={`tel:${siteConfig.phoneE164}`} class="tips-phone">{siteConfig.phoneFormatted}</a>
+            </p>
+            <p class="tips-phone-note">
+              Ask for the editorial desk. Leave a message if it's after hours — we'll call you back.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tips-page {
+    padding: var(--space-16) 0 var(--space-24);
+    background: var(--color-bg, #FAF5ED);
+  }
+
+  .tips-container {
+    max-width: 1100px;
+  }
+
+  .tips-header {
+    text-align: left;
+    max-width: 720px;
+    margin-bottom: var(--space-12);
+  }
+
+  .tips-eyebrow {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-crimson, #C23B22);
+    margin-bottom: var(--space-3);
+  }
+
+  .tips-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    color: var(--color-black, #1A1A1A);
+    margin: 0 0 var(--space-4);
+  }
+
+  .tips-deck {
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--color-slate, #4A5859);
+    margin: 0;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .tips-form-card {
+    padding: var(--space-10);
+    background: #FFFFFF;
+    border: 1px solid #E8DFD0;
+  }
+
+  .tips-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--space-8);
+  }
+
+  .tips-fieldset + .tips-fieldset {
+    padding-top: var(--space-8);
+    border-top: 1px solid #E8DFD0;
+  }
+
+  .tips-legend {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-5);
+    padding: 0;
+  }
+
+  .form-optional {
+    font-size: 0.75em;
+    color: var(--color-slate, #4A5859);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .form-help {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    margin-top: var(--space-2);
+    line-height: 1.5;
+  }
+
+  .form-field--checkbox {
+    margin-bottom: var(--space-3);
+  }
+
+  .form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-black);
+    cursor: pointer;
+    line-height: 1.5;
+  }
+
+  .form-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--color-crimson, #C23B22);
+  }
+
+  .tips-submit {
+    width: 100%;
+    margin-top: var(--space-4);
+  }
+
+  .tips-form-footer {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.6;
+    margin-top: var(--space-5);
+    text-align: center;
+  }
+
+  /* Side */
+  .tips-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  .tips-side-block {
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid #E8DFD0;
+    border-radius: var(--radius-md, 6px);
+  }
+
+  .tips-side-block--privacy {
+    background: #FAF5ED;
+    border-left: 3px solid var(--color-crimson, #C23B22);
+  }
+
+  .tips-side-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0 0 var(--space-3);
+  }
+
+  .tips-steps {
+    list-style: decimal;
+    padding-left: var(--space-5);
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.55;
+  }
+
+  .tips-steps li {
+    margin-bottom: var(--space-3);
+  }
+
+  .tips-steps strong {
+    color: var(--color-black);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .tips-side-block--privacy p {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.6;
+    margin: 0 0 var(--space-3);
+  }
+
+  .tips-side-block--privacy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .tips-phone-wrap {
+    margin: 0 0 var(--space-2);
+  }
+
+  .tips-phone {
+    font-family: var(--font-heading);
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: var(--color-gold-text, #8B4513);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .tips-phone:hover {
+    border-bottom-color: var(--color-gold-text, #8B4513);
+  }
+
+  .tips-phone-note {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .tips-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+    }
+
+    .tips-form-card {
+      padding: var(--space-6);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tips-page {
+      padding: var(--space-10) 0 var(--space-16);
+    }
+  }
+</style>

@@ -1,7 +1,9 @@
 ---
 /**
  * Free Case Review — AZ Law Now
- * Dedicated conversion page. noindex. Minimal distractions.
+ * Editorial intake page. Two-column layout: form on the left, trust signals on the right.
+ * NOT a stripped-down conversion page — the editorial context IS the trust signal.
+ * noindex. No header/footer hidden — we want people to see where they are.
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -9,81 +11,161 @@ import { siteConfig } from '../data/site-config';
 ---
 
 <BaseLayout
-  title="Free Case Review"
-  description="Tell us what happened. We'll tell you what's next. Free case review from AZ Law Now injury attorneys."
+  title="Tell us what happened"
+  description="Tell us what happened. We'll tell you what's next. Free case review from AZ Law Now — the firm that does the work before the case."
   canonical="/free-case-review/"
   noindex={true}
   hideHeader={false}
   hideFooter={false}
 >
   <section class="review-page">
-    <div class="container" style="max-width: 600px;">
-      <div class="review-content">
-        <h1 style="text-align: center; margin-bottom: var(--space-4);">You Deserve Answers.</h1>
-        <p style="text-align: center; font-size: var(--text-xl); color: var(--color-slate); margin-bottom: var(--space-10); max-width: 480px; margin-left: auto; margin-right: auto;">
-          Tell us what happened. We'll tell you what's next. No fee, no obligation, no pressure.
+    <div class="container review-container">
+
+      <header class="review-header">
+        <span class="review-eyebrow">Free Case Review · Confidential</span>
+        <h1 class="review-h1">Tell us what happened.</h1>
+        <p class="review-deck">
+          We'll tell you what's next. No fee, no obligation, no pressure. You'll hear
+          back from a real person on our team — usually within a business day.
         </p>
+      </header>
 
-        <div class="card card-elevated" style="padding: var(--space-10);">
-          <form
-            name="case-review"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="/thank-you/"
-          >
-            <input type="hidden" name="form-name" value="case-review" />
-            <p class="sr-only">
-              <label>Don't fill this out: <input name="bot-field" /></label>
+      <div class="review-grid">
+
+        <!-- Left: the form -->
+        <div class="review-form-wrap">
+          <div class="card card-elevated review-form-card">
+            <form
+              name="case-review"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you/"
+              class="review-form"
+            >
+              <input type="hidden" name="form-name" value="case-review" />
+              <p class="sr-only">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+
+              <div class="form-field">
+                <label for="name" class="form-label">Your name</label>
+                <input type="text" id="name" name="name" class="form-input" required placeholder="Full name" />
+              </div>
+
+              <div class="form-field">
+                <label for="phone" class="form-label">Phone number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(555) 555-5555" />
+              </div>
+
+              <div class="form-field">
+                <label for="email" class="form-label">Email <span class="form-optional">(optional)</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" />
+              </div>
+
+              <div class="form-field">
+                <label for="description" class="form-label">What happened?</label>
+                <textarea
+                  id="description"
+                  name="description"
+                  class="form-textarea"
+                  rows="7"
+                  required
+                  placeholder="Where, when, who was involved, what you remember. Don't worry about structure — we'll ask follow-ups."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg review-submit">
+                Get an answer &rarr;
+              </button>
+
+              <p class="review-form-footnote">
+                Your information stays confidential. We respond within one business day.
+              </p>
+            </form>
+          </div>
+
+          <div class="review-phone-row">
+            <span class="review-phone-label">Prefer to talk?</span>
+            <a href={`tel:${siteConfig.phoneE164}`} class="review-phone">
+              {siteConfig.phoneFormatted}
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: editorial trust signals -->
+        <aside class="review-trust-col">
+
+          <!-- Block 1: What we've been looking into -->
+          <div class="trust-block">
+            <h2 class="trust-block__heading">What we're looking into</h2>
+            <p class="trust-block__subhead">The firm that does the work before the case.</p>
+            <ul class="trust-invest-list">
+              <li class="trust-invest">
+                <span class="trust-invest__voice">On Record</span>
+                <a href="/insights/arizona-school-restraint-data/" class="trust-invest__title">
+                  4,200+ Students Restrained in Arizona Schools. Most Were Kids With Disabilities.
+                </a>
+                <span class="trust-invest__byline">By Brendan Franks</span>
+              </li>
+              <li class="trust-invest">
+                <span class="trust-invest__voice voice--answered">Answered</span>
+                <a href="/legal-guides/suing-school-district-arizona/" class="trust-invest__title">
+                  Suing a School District in Arizona: The 180-Day Deadline
+                </a>
+                <span class="trust-invest__byline">By Brandon Millam, J.D.</span>
+              </li>
+              <li class="trust-invest">
+                <span class="trust-invest__voice voice--guided">Guided</span>
+                <a href="/client-guides/car-accident-first-48-hours/" class="trust-invest__title">
+                  Your Car Accident in Arizona: First 48 Hours
+                </a>
+                <span class="trust-invest__byline">By Stephanie Ramirez</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Block 2: Who you're reaching -->
+          <div class="trust-block">
+            <h2 class="trust-block__heading">Who you're reaching</h2>
+            <p class="trust-block__subhead">
+              Your message goes to our editorial team, not a call center.
             </p>
-
-            <div class="form-field">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" id="name" name="name" class="form-input" required placeholder="Full name" />
-            </div>
-
-            <div class="form-field">
-              <label for="phone" class="form-label">Phone Number</label>
-              <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(555) 555-5555" />
-            </div>
-
-            <div class="form-field">
-              <label for="description" class="form-label">What Happened?</label>
-              <textarea id="description" name="description" class="form-textarea" rows="6" required placeholder="Brief description of your injury or incident..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-lg form-submit-full">
-              Get My Free Case Review →
-            </button>
-
-            <p style="font-size: var(--text-xs); color: var(--neutral-500); margin-top: var(--space-4); text-align: center;">
-              Your information stays confidential. We'll respond within one business day.
-            </p>
-          </form>
-        </div>
-
-        <div style="text-align: center; margin-top: var(--space-8);">
-          <p style="color: var(--color-slate); margin-bottom: var(--space-2);">Prefer to talk?</p>
-          <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta" style="font-size: var(--text-3xl);">
-            {siteConfig.phoneFormatted}
-          </a>
-        </div>
-
-        <!-- Trust Signals -->
-        <div class="review-trust">
-          <div class="review-trust__item">
-            <span class="review-trust__value">$3.07M+</span>
-            <span class="review-trust__label">Recovered</span>
+            <ul class="trust-team">
+              <li class="trust-team__member">
+                <div class="trust-team__name">Brendan Franks</div>
+                <div class="trust-team__role">On Record · Editor-in-Chief</div>
+              </li>
+              <li class="trust-team__member">
+                <div class="trust-team__name">Brandon Millam, J.D.</div>
+                <div class="trust-team__role">Answered · Legal Editor</div>
+              </li>
+              <li class="trust-team__member">
+                <div class="trust-team__name">Stephanie Ramirez</div>
+                <div class="trust-team__role">Guided · Client Advocate</div>
+              </li>
+            </ul>
+            <a href="/about/team/" class="trust-team__link">Meet the full team &rarr;</a>
           </div>
-          <div class="review-trust__item">
-            <span class="review-trust__value">No Fee</span>
-            <span class="review-trust__label">Unless We Win</span>
+
+          <!-- Block 3: Numbers -->
+          <div class="trust-block trust-block--stats">
+            <div class="trust-stat">
+              <span class="trust-stat__value">$3.07M+</span>
+              <span class="trust-stat__label">Recovered for clients</span>
+            </div>
+            <div class="trust-stat">
+              <span class="trust-stat__value">No fee</span>
+              <span class="trust-stat__label">Unless we recover</span>
+            </div>
+            <div class="trust-stat">
+              <span class="trust-stat__value">Same day</span>
+              <span class="trust-stat__label">Response</span>
+            </div>
           </div>
-          <div class="review-trust__item">
-            <span class="review-trust__value">Same Day</span>
-            <span class="review-trust__label">Response</span>
-          </div>
-        </div>
+
+        </aside>
+
       </div>
     </div>
   </section>
@@ -91,47 +173,309 @@ import { siteConfig } from '../data/site-config';
 
 <style>
   .review-page {
-    padding: var(--space-20) 0 var(--space-24);
+    padding: var(--space-12) 0 var(--space-24);
+    background: var(--color-bg, #FAF5ED);
     min-height: 80vh;
   }
 
-  .review-trust {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-10);
-    margin-top: var(--space-12);
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--neutral-200);
+  .review-container {
+    max-width: 1140px;
   }
 
-  .review-trust__item {
-    text-align: center;
+  .review-header {
+    max-width: 720px;
+    margin-bottom: var(--space-10);
   }
 
-  .review-trust__value {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-gold);
-  }
-
-  .review-trust__label {
+  .review-eyebrow {
+    display: inline-block;
     font-size: var(--text-xs);
-    color: var(--neutral-500);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-crimson, #C23B22);
+    margin-bottom: var(--space-3);
+  }
+
+  .review-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    color: var(--color-black, #1A1A1A);
+    margin: 0 0 var(--space-4);
+  }
+
+  .review-deck {
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--color-slate, #4A5859);
+    margin: 0;
+  }
+
+  .review-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  /* Form column */
+  .review-form-card {
+    padding: var(--space-10);
+    background: #FFFFFF;
+    border: 1px solid #E8DFD0;
+  }
+
+  .form-optional {
+    font-size: 0.75em;
+    color: var(--color-slate, #4A5859);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .review-submit {
+    width: 100%;
+    margin-top: var(--space-4);
+  }
+
+  .review-form-footnote {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    text-align: center;
+    margin-top: var(--space-4);
+    line-height: 1.5;
+  }
+
+  .review-phone-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding: var(--space-4) var(--space-6);
+    border-top: 1px solid transparent;
+  }
+
+  .review-phone-label {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+  }
+
+  .review-phone {
+    font-family: var(--font-heading);
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-gold-text, #8B4513);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .review-phone:hover {
+    border-bottom-color: var(--color-gold-text, #8B4513);
+  }
+
+  /* Trust column */
+  .review-trust-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .trust-block {
+    padding: var(--space-6);
+    background: #FFFFFF;
+    border: 1px solid #E8DFD0;
+    border-radius: var(--radius-md, 6px);
+  }
+
+  .trust-block__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0 0 var(--space-1);
+  }
+
+  .trust-block__subhead {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    font-style: italic;
+    margin: 0 0 var(--space-5);
+    line-height: 1.5;
+  }
+
+  /* Investigation list */
+  .trust-invest-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .trust-invest {
+    padding: var(--space-4) 0;
+    border-top: 1px solid #F3EADF;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .trust-invest:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .trust-invest:last-child {
+    padding-bottom: 0;
+  }
+
+  .trust-invest__voice {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-crimson, #C23B22);
+  }
+
+  .trust-invest__voice.voice--answered {
+    color: var(--color-sienna, #8B4513);
+  }
+
+  .trust-invest__voice.voice--guided {
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .trust-invest__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    line-height: 1.35;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+
+  .trust-invest__title:hover {
+    border-bottom-color: var(--color-gold-text, #8B4513);
+  }
+
+  .trust-invest__byline {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    font-style: italic;
+  }
+
+  /* Team list */
+  .trust-team {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-4);
+  }
+
+  .trust-team__member {
+    padding: var(--space-2) 0;
+    border-top: 1px solid #F3EADF;
+  }
+
+  .trust-team__member:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .trust-team__name {
+    font-weight: 600;
+    color: var(--color-black, #1A1A1A);
+    font-size: var(--text-sm);
+  }
+
+  .trust-team__role {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    font-style: italic;
+    margin-top: 1px;
+  }
+
+  .trust-team__link {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-gold-text, #8B4513);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gold-text, #8B4513);
+    transition: color 0.15s ease;
+  }
+
+  .trust-team__link:hover {
+    color: var(--color-crimson, #C23B22);
+    border-bottom-color: var(--color-crimson, #C23B22);
+  }
+
+  /* Stats block */
+  .trust-block--stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+  }
+
+  .trust-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-3) 0;
+    border-top: 1px solid #F3EADF;
+  }
+
+  .trust-stat:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .trust-stat:last-child {
+    padding-bottom: 0;
+  }
+
+  .trust-stat__value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold-text, #8B4513);
+    line-height: 1;
+  }
+
+  .trust-stat__label {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  /* Full-width submit button inside form context */
-  .form-submit-full {
-    width: 100%;
+  /* Responsive */
+  @media (max-width: 900px) {
+    .review-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+    }
+
+    .review-form-card {
+      padding: var(--space-6);
+    }
+
+    .review-trust-col {
+      order: 2;
+    }
   }
 
   @media (max-width: 480px) {
-    .review-trust {
+    .review-page {
+      padding: var(--space-8) 0 var(--space-16);
+    }
+
+    .review-phone-row {
       flex-direction: column;
-      gap: var(--space-4);
+      gap: var(--space-1);
+      text-align: center;
     }
   }
 </style>

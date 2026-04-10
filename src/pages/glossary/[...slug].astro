@@ -105,7 +105,7 @@ const categoryLabels: Record<string, string> = {
   }
 
   .glossary-breadcrumbs a:hover {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .glossary-category-label {
@@ -114,7 +114,7 @@ const categoryLabels: Record<string, string> = {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     margin-bottom: var(--space-3);
   }
 
@@ -166,9 +166,9 @@ const categoryLabels: Record<string, string> = {
   }
 
   .glossary-body :global(a) {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     text-decoration: none;
-    border-bottom: 1px solid var(--color-gold);
+    border-bottom: 1px solid var(--color-gold-text, #8B4513);
   }
 
   .glossary-body :global(a:hover) {

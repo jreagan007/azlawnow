@@ -15,6 +15,12 @@ import {
   generateBreadcrumbSchema,
 } from '../utils/schema';
 
+interface Source {
+  label: string;
+  url: string;
+  publisher?: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -31,6 +37,12 @@ interface Props {
   cluster?: string;
   /** Cluster display label (e.g. 'Vehicle Crashes') */
   clusterLabel?: string;
+  /** Editorial byline — shown under H1. Defaults to Brandon (the "Answered" voice). */
+  editor?: { name: string; role: string; href?: string };
+  /** ISO date the page was last substantively updated. Drives dateline. */
+  updated?: string;
+  /** Sources cited on the page — rendered before FAQ. */
+  sources?: Source[];
 }
 
 const {
@@ -47,7 +59,19 @@ const {
   showMidCta = true,
   cluster,
   clusterLabel,
+  editor = { name: 'Brandon Millam, J.D.', role: 'Answered · Legal Editor', href: '/about/team/' },
+  updated,
+  sources = [],
 } = Astro.props;
+
+// Format the dateline. Falls back to build time if not specified.
+const updatedDate = updated ? new Date(updated) : new Date();
+const formattedDate = updatedDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const isoDate = updatedDate.toISOString().split('T')[0];
 
 // Build breadcrumbs — optionally nest under cluster hub
 const breadcrumbs = [
@@ -103,6 +127,23 @@ const schemas = [
       <div class="pa-hero__grid">
         <div class="pa-hero__text">
           <h1 class="pa-hero__title" data-speakable="headline">{heroTitle}</h1>
+
+          <!-- Editorial byline + dateline -->
+          <p class="pa-byline">
+            Edited by{' '}
+            {editor.href ? (
+              <a href={editor.href} class="pa-byline__author">{editor.name}</a>
+            ) : (
+              <span class="pa-byline__author">{editor.name}</span>
+            )}
+            <span class="pa-byline__sep" aria-hidden="true">·</span>
+            <span class="pa-byline__role">{editor.role}</span>
+            <span class="pa-byline__sep" aria-hidden="true">·</span>
+            <span class="pa-byline__updated">
+              Updated <time datetime={isoDate}>{formattedDate}</time>
+            </span>
+          </p>
+
           <p class="pa-hero__subtitle" data-speakable="summary">{heroSubtitle}</p>
 
           <!-- CTA -->
@@ -158,6 +199,34 @@ const schemas = [
       </AutoLinker>
     </div>
   </section>
+
+  <!-- ============================================
+       SOURCES — editorial trust block
+       ============================================ -->
+  {sources.length > 0 && (
+    <section class="pa-sources" aria-labelledby="pa-sources-heading">
+      <div class="container container-narrow">
+        <h2 id="pa-sources-heading" class="pa-sources__heading">Sources</h2>
+        <p class="pa-sources__intro">
+          What this page is built on. Statutes, public records, data releases, and
+          prior court opinions — primary material only, cited so you can check the
+          work.
+        </p>
+        <ol class="pa-sources__list">
+          {sources.map((source) => (
+            <li class="pa-sources__item">
+              <a href={source.url} class="pa-sources__link" target="_blank" rel="noopener noreferrer">
+                {source.label}
+              </a>
+              {source.publisher && (
+                <span class="pa-sources__publisher"> — {source.publisher}</span>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
 
   <!-- ============================================
        FAQ SECTION
@@ -225,7 +294,49 @@ const schemas = [
     font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Editorial byline under H1 — ProPublica / Marshall Project pattern */
+  .pa-byline {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.5;
+    margin: 0 0 var(--space-5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5ch;
+  }
+
+  .pa-byline__author {
+    color: var(--color-black, #1A1A1A);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gold-text, #8B4513);
+    transition: color 0.15s ease;
+  }
+
+  .pa-byline__author:hover {
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .pa-byline__sep {
+    color: var(--neutral-400, #B0A696);
+  }
+
+  .pa-byline__role {
+    color: var(--color-slate, #4A5859);
+    font-style: italic;
+  }
+
+  .pa-byline__updated {
+    color: var(--color-slate, #4A5859);
+  }
+
+  .pa-byline__updated time {
+    color: var(--color-black, #1A1A1A);
+    font-weight: 500;
   }
 
   .pa-hero__subtitle {
@@ -234,6 +345,64 @@ const schemas = [
     line-height: 1.6;
     margin-bottom: var(--space-8);
     max-width: 580px;
+  }
+
+  /* ============================================
+     SOURCES — editorial trust block
+     ============================================ */
+  .pa-sources {
+    padding: var(--space-12) 0;
+    background: var(--color-white, #FFFFFF);
+    border-top: 1px solid var(--neutral-200, #E8DFD0);
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .pa-sources__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    margin: 0 0 var(--space-3);
+    letter-spacing: -0.01em;
+  }
+
+  .pa-sources__intro {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.6;
+    margin: 0 0 var(--space-6);
+    max-width: 640px;
+  }
+
+  .pa-sources__list {
+    list-style: decimal;
+    padding-left: var(--space-5);
+    margin: 0;
+  }
+
+  .pa-sources__item {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.55;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-1);
+  }
+
+  .pa-sources__link {
+    color: var(--color-gold-text, #8B4513);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-gold-text, #8B4513);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .pa-sources__link:hover {
+    color: var(--color-crimson, #C23B22);
+    border-bottom-color: var(--color-crimson, #C23B22);
+  }
+
+  .pa-sources__publisher {
+    color: var(--color-slate, #4A5859);
   }
 
   /* Breadcrumbs — editorial warm */
@@ -263,10 +432,10 @@ const schemas = [
     transition: color 0.2s ease;
   }
 
-  .pa-breadcrumbs a:hover { color: var(--color-gold, #D4943A); }
+  .pa-breadcrumbs a:hover { color: var(--color-gold-text, #8B4513); }
 
   .pa-breadcrumbs span[aria-current] {
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
     font-weight: 600;
   }
 
@@ -292,7 +461,7 @@ const schemas = [
     font-family: var(--font-heading);
     font-size: var(--text-lg);
     font-weight: 700;
-    color: var(--color-gold, #D4943A);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .pa-trust-stat__label {
@@ -318,7 +487,7 @@ const schemas = [
     transition: color 0.2s ease;
   }
 
-  .pa-hero__phone-link:hover { color: var(--color-gold, #D4943A); }
+  .pa-hero__phone-link:hover { color: var(--color-gold-text, #8B4513); }
 
   /* Hero image strip — optional, below text */
   .pa-hero__image-strip {
@@ -374,7 +543,7 @@ const schemas = [
   }
 
   .pa-content :global(a) {
-    color: #D4943A;
+    color: var(--color-gold-text, #8B4513);
     text-decoration: none;
     transition: color var(--transition-base);
   }
@@ -497,11 +666,11 @@ const schemas = [
   }
 
   .pa-faq__question:hover {
-    color: #D4943A;
+    color: var(--color-gold-text, #8B4513);
   }
 
   .pa-faq__chevron {
-    color: #D4943A;
+    color: var(--color-gold-text, #8B4513);
     flex-shrink: 0;
     transition: transform var(--transition-base);
   }

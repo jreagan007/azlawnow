@@ -291,7 +291,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   }
 
   .article-breadcrumbs a:hover {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .article-breadcrumbs span[aria-current] {
@@ -359,7 +359,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   }
 
   .article-byline__name:hover {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
   }
 
   .article-byline__role {
@@ -447,7 +447,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   }
 
   .article-content :global(a) {
-    color: #D4943A;
+    color: var(--color-gold-text, #8B4513);
     text-decoration: none;
     transition: color var(--transition-base);
   }
@@ -501,7 +501,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   }
 
   .article-content :global(ol li::marker) {
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     font-weight: 600;
   }
 
@@ -655,7 +655,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
 
   .article-author-box__title {
     font-size: var(--text-sm);
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     font-weight: 600;
     margin-bottom: var(--space-3);
   }
@@ -670,7 +670,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   .article-author-box__link {
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-gold);
+    color: var(--color-gold-text, #8B4513);
     text-decoration: none;
     transition: color var(--transition-base);
   }

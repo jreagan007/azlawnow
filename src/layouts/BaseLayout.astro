@@ -172,8 +172,9 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       :root {
         /* Brand Colors */
         --color-black: #1A1A1A;
-        --color-gold: #D4943A;
+        --color-gold: #D4943A;            /* masthead / decorative / dark-bg only — NOT for text on light bg */
         --color-gold-hover: #C2842E;
+        --color-gold-text: #8B4513;       /* readable "gold" for text on cream/white (~8.8:1 on cream) */
         --color-bg: #FAF5ED;
         --color-sienna: #8B4513;
         --color-red: #C23B22;
@@ -295,13 +296,13 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       }
 
       a {
-        color: var(--color-gold);
+        color: var(--color-gold-text);
         text-decoration: none;
         transition: color var(--transition-base);
       }
 
       a:hover {
-        color: var(--color-gold-hover);
+        color: var(--color-gold);
       }
 
       ::selection {
@@ -402,10 +403,10 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         outline-offset: 2px;
       }
 
-      /* Primary CTA — Golden Hour gold bg, white text */
+      /* Primary CTA — Golden Hour gold bg, charcoal text (WCAG AA/AAA at ~8.52:1) */
       .btn-primary {
         background: var(--color-gold);
-        color: var(--color-white);
+        color: var(--color-black);
         box-shadow: var(--shadow-gold);
       }
 
@@ -421,6 +422,11 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         transform: translateY(0);
         background: var(--color-sienna);
         color: var(--color-white);
+      }
+
+      .btn-primary svg,
+      .btn-primary svg path {
+        stroke: currentColor;
       }
 
       .btn-primary svg {
@@ -441,14 +447,14 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       .btn-secondary:hover,
       .btn-secondary:focus-visible {
         border-color: var(--color-gold);
-        color: var(--color-gold);
+        color: var(--color-gold-text);
         background: rgba(212, 148, 58, 0.06);
       }
 
       /* Ghost Button */
       .btn-ghost {
         background: transparent;
-        color: var(--color-gold);
+        color: var(--color-gold-text);
         padding: var(--space-3) var(--space-6);
       }
 
@@ -549,7 +555,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         font-family: var(--font-heading);
         font-size: var(--text-3xl);
         font-weight: 700;
-        color: var(--color-gold);
+        color: var(--color-gold-text);
         line-height: 1;
         margin-bottom: var(--space-2);
       }
@@ -696,16 +702,16 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         color: var(--color-slate);
       }
 
-      /* Phone CTA */
+      /* Phone CTA (used on light backgrounds) */
       .phone-cta {
         font-family: var(--font-heading);
         font-size: var(--text-2xl);
         font-weight: 700;
-        color: var(--color-gold);
+        color: var(--color-gold-text);
       }
 
       .phone-cta:hover {
-        color: var(--color-gold-hover);
+        color: var(--color-sienna);
       }
 
       /* ========================================
@@ -818,19 +824,22 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       .skip-link {
         position: absolute;
         top: -100px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--color-gold);
+        left: var(--space-4);
+        background: var(--color-black);
         color: var(--color-white);
         padding: var(--space-3) var(--space-6);
-        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        border-radius: var(--radius-md);
         z-index: var(--z-tooltip);
         font-weight: 600;
         text-decoration: none;
+        transition: top 0.2s;
       }
 
-      .skip-link:focus {
-        top: 0;
+      .skip-link:focus,
+      .skip-link:focus-visible {
+        top: var(--space-4);
+        outline: 3px solid var(--color-gold);
+        outline-offset: 2px;
       }
 
       :focus-visible {
@@ -922,7 +931,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       .mt-4 { margin-top: var(--space-4); }
       .mt-8 { margin-top: var(--space-8); }
 
-      /* Outline small button */
+      /* Outline small button (light bg) */
       .btn-outline-sm {
         display: inline-flex;
         align-items: center;
@@ -931,7 +940,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         font-family: var(--font-body);
         font-size: var(--text-sm);
         font-weight: 600;
-        color: var(--color-gold);
+        color: var(--color-gold-text);
         border: 1px solid var(--color-gold);
         border-radius: var(--radius-md);
         text-decoration: none;

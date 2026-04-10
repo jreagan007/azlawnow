@@ -89,7 +89,7 @@ export const siteConfig = {
     l5PhoneCta: 'Talk to My Team',
     l7FormHeadline: 'You Deserve Answers.',
     l7FormSubhead: 'Tell us what happened. We\'ll tell you what\'s next.',
-    l8Primary: 'Get My Free Consultation',
+    l8Primary: 'Get an answer',
     l8Secondary: 'Talk to My Team',
     l8Tertiary: 'See What\'s Next',
     l8Soft: 'Read',
