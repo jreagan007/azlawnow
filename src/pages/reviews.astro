@@ -8,46 +8,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site-config';
 import { getReviewPageSchema } from '../utils/schema';
 
+// Real Google reviews from azlawnow.com GMB profile
+// Place ID: ChIJh-Cdb4E1K4cRtAyu8aMUr1Q
+// Total: 89 reviews, 5.0 average (verified Apr 9, 2026)
 const reviews = [
   {
-    name: 'Maria G.',
+    name: 'Jonathan Blackmore',
     rating: 5,
-    text: 'Stephanie kept me updated every step of the way. I never had to call and wonder what was happening with my case. They recovered way more than the insurance company initially offered.',
-    location: 'Buckeye, AZ',
+    text: 'Brendan is great at what he does. A+ quality service, great communication, definitely the resource you need in your corner. Thanks again Brendan.',
+    source: 'Google',
+    timeAgo: '3 months ago',
   },
   {
-    name: 'David R.',
+    name: 'Cheyanne Andrews',
     rating: 5,
-    text: 'Brendan was at the crash scene before I even left the hospital. He got surveillance footage from a nearby business that proved the other driver ran the red light. Without that evidence, I don\'t know what would have happened.',
-    location: 'Goodyear, AZ',
+    text: 'Brendan and his team have been absolutely incredible to me. Brendan is very informative and keeps you updated along the way. Also very time efficient. He was able to give me a great orthopedic surgeon referral. Truly made a horrible situation seamless and a good ending to a true nightmare.',
+    source: 'Google',
+    timeAgo: '4 months ago',
   },
   {
-    name: 'Jennifer T.',
+    name: 'A. Martin',
     rating: 5,
-    text: 'After my car crash, I was overwhelmed and didn\'t know where to start. AZ Law Now handled everything. Brandon explained the legal process in plain English and fought for what my case was actually worth.',
-    location: 'Avondale, AZ',
+    text: 'From the consult to the final check, the team at AZ Law Now Injury Attorneys was incredible. They were professional, warm, helpful, and made me feel comfortable and important. Totally awesome. 100% recommend.',
+    source: 'Google',
+    timeAgo: '5 months ago',
   },
   {
-    name: 'Robert M.',
+    name: 'Eugene Kwon',
     rating: 5,
-    text: 'Other firms I called wanted me to come to their Phoenix office. AZ Law Now came to me. They treated me like a person, not a case number. The settlement covered all my medical bills and then some.',
-    location: 'Maricopa, AZ',
+    text: 'I had a great experience with AZ Law Now Injury Attorneys. They were professional, responsive, and made the process easy. I really appreciated how they kept me updated and worked hard to get results. 10/10 recommend.',
+    source: 'Google',
+    timeAgo: '7 months ago',
   },
   {
-    name: 'Sandra L.',
+    name: 'Avalon Curtin',
     rating: 5,
-    text: 'My son was hurt in a school bus incident and I was terrified about the medical bills. Stephanie walked us through the whole process. Brandon and Brendan worked together and got us a result I didn\'t think was possible.',
-    location: 'Buckeye, AZ',
-  },
-  {
-    name: 'Carlos P.',
-    rating: 5,
-    text: 'I was rear-ended on I-10 near Goodyear and the insurance company offered me almost nothing. AZ Law Now got me four times what they initially offered. No fee unless they win? They meant it.',
-    location: 'Goodyear, AZ',
+    text: 'AZ Law Now was amazing to work with after my car accident. Brendan and the team were quick to respond, kept me informed, and made the whole process so much easier. They were personable, professional, and got me a great outcome. Highly recommend.',
+    source: 'Google',
+    timeAgo: '9 months ago',
   },
 ];
 
-const reviewSchema = getReviewPageSchema(reviews);
+// Aggregate stats from Google Business Profile
+const reviewStats = {
+  total: 89,
+  average: 5.0,
+  source: 'Google',
+};
+
+const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, average: reviewStats.average });
 ---
 
 <BaseLayout
@@ -61,6 +70,23 @@ const reviewSchema = getReviewPageSchema(reviews);
     <div class="container container-narrow">
       <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">Client Reviews</p>
       <h1>What Our Clients Say</h1>
+      <div class="reviews-stats" aria-label="Review statistics">
+        <div class="reviews-stat">
+          <span class="reviews-stat__value">{reviewStats.average.toFixed(1)}</span>
+          <div class="reviews-stat__stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="var(--color-gold)">
+                <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+              </svg>
+            ))}
+          </div>
+        </div>
+        <div class="reviews-stat-divider" aria-hidden="true"></div>
+        <div class="reviews-stat">
+          <span class="reviews-stat__value">{reviewStats.total}</span>
+          <span class="reviews-stat__label">Google Reviews</span>
+        </div>
+      </div>
       <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
         Real feedback from real clients. Every review represents someone who trusted us with their case and got the result they deserved.
       </p>
@@ -85,7 +111,7 @@ const reviewSchema = getReviewPageSchema(reviews);
             </blockquote>
             <div class="review-card__author">
               <span class="review-card__name">{review.name}</span>
-              <span class="review-card__location">{review.location}</span>
+              <span class="review-card__location">via {review.source} · {review.timeAgo}</span>
             </div>
           </div>
         ))}
@@ -155,6 +181,49 @@ const reviewSchema = getReviewPageSchema(reviews);
   .review-card__location {
     font-size: var(--text-sm);
     color: var(--neutral-500);
+  }
+
+  /* Reviews stats strip in hero */
+  .reviews-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    margin: var(--space-6) 0 var(--space-8);
+  }
+
+  .reviews-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .reviews-stat__value {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-black);
+    line-height: 1;
+  }
+
+  .reviews-stat__stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .reviews-stat__label {
+    font-size: var(--text-xs);
+    color: var(--color-slate);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .reviews-stat-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--neutral-300);
   }
 
   @media (max-width: 768px) {

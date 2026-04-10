@@ -8,17 +8,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { siteConfig } from '../../data/site-config';
 import { getResultsPageSchema } from '../../utils/schema';
 
+// Real case results from live azlawnow.com/our-results/
+// Verified Apr 9, 2026. Total: 26 cases, $3.07M+ recovered.
 const results = [
-  { amount: '$800,000', type: 'School Bus Negligence', desc: 'Settlement against Hartford for injuries sustained in a school bus incident. Investigation revealed maintenance failures and driver negligence.' },
-  { amount: '$745,000', type: 'Motor Vehicle Crash', desc: 'Recovery for client with multiple injuries from a serious motor vehicle crash. Evidence from the crash scene proved the other driver\'s fault.' },
-  { amount: '$500,000', type: 'Trucking Crash', desc: 'Settlement in a commercial trucking crash case. Investigation uncovered violations of federal hours-of-service regulations.' },
-  { amount: '$255,000', type: 'Rear-End Collision', desc: 'Recovery for a client rear-ended at a Buckeye intersection. Soft tissue injuries required ongoing treatment.' },
-  { amount: '$200,000', type: 'Motorcycle Crash', desc: 'Settlement for a motorcyclist struck by a vehicle making an illegal turn. Investigation documented the other driver\'s failure to yield.' },
-  { amount: '$175,000', type: 'Pedestrian Injury', desc: 'Recovery for a pedestrian struck in a crosswalk. Surveillance footage from a nearby business confirmed the driver ran a red light.' },
-  { amount: '$150,000', type: 'Slip and Fall', desc: 'Settlement against a commercial property owner for a fall caused by unmarked wet floors. Investigation documented the hazard and lack of warning signs.' },
-  { amount: '$125,000', type: 'Car Crash', desc: 'Recovery for a client injured in a T-bone collision at a West Valley intersection. Police report initially assigned partial fault, but Brendan\'s investigation reversed that finding.' },
-  { amount: '$95,000', type: 'Dog Bite', desc: 'Settlement for a child bitten by a neighbor\'s dog. Arizona strict liability statute applied. Medical documentation showed scarring requiring future treatment.' },
-  { amount: '$85,000', type: 'Bicycle Crash', desc: 'Recovery for a cyclist struck by a vehicle on a road with no bike lane. Evidence showed the driver was distracted.' },
+  { amount: '$800,000', insurer: 'Hartford', type: 'School Bus Negligence', desc: 'A five-year-old boy with special needs left on a school bus for six hours. Settlement secured after investigation documented the failures.' },
+  { amount: '$250,000', insurer: 'Nationwide', type: 'T-Bone Collision', desc: 'Severe T-bone collision. Secured maximum UIM limits for a fractured tibia.' },
+  { amount: '$225,000', insurer: 'Allstate', type: 'Highway Rear-End', desc: 'Rear-ended at highway speeds. Client sustained a torn rotator cuff requiring surgery.' },
+  { amount: '$200,000', insurer: 'Travelers', type: 'Underinsured Motorist', desc: 'UIM claim settled for limits due to lumbar disc herniation.' },
+  { amount: '$175,000', insurer: 'State Farm', type: 'Intersection Collision', desc: "Intersection dispute. Proved liability for client's arthroscopic knee surgery." },
+  { amount: '$150,000', insurer: 'Liberty Mutual', type: 'Slip and Fall', desc: 'Slip and fall on ice at a private residence resulting in a fractured elbow.' },
+  { amount: '$125,000', insurer: 'Mercury Insurance', type: 'Stop Sign Crash', desc: 'Driver ran a stop sign striking our client. Covered non-surgical orthopedic care.' },
+  { amount: '$115,000', insurer: 'Farmers', type: 'Side-Impact Collision', desc: 'Side-impact collision causing back pain. Client underwent epidural steroid injections.' },
+  { amount: '$100,000', insurer: 'Progressive', type: 'Pedestrian', desc: 'Pedestrian clipped by a side-mirror. Settlement for shoulder contusion and shock.' },
+  { amount: '$100,000', insurer: 'The Hartford', type: 'Bicycle Dooring', desc: 'Dooring accident involving a bicyclist requiring dental restoration.' },
+  { amount: '$95,000', insurer: 'USAA', type: 'Head-On Collision', desc: 'Head-on collision in a residential zone resulting in a hairline wrist fracture.' },
+  { amount: '$85,000', insurer: 'Allstate', type: 'High-Impact Rear-End', desc: 'High-impact rear-end collision. MRI revealed disc protrusions requiring care.' },
+  { amount: '$80,000', insurer: 'Geico', type: 'Motorcycle Crash', desc: 'Motorcyclist cut off in traffic. Settlement covered road rash and knee therapy.' },
+  { amount: '$75,000', insurer: 'State Farm', type: 'Dog Bite', desc: 'Dog bite incident resulting in puncture wounds and scarring on the calf.' },
+  { amount: '$65,000', insurer: 'Travelers', type: 'Distracted Driver', desc: 'Rear-ended by a distracted driver. Client required trigger point injections.' },
+  { amount: '$60,000', insurer: 'Nationwide', type: 'Slip and Fall', desc: 'Slip and fall on wet tile in a grocery store causing a severe ankle sprain.' },
+  { amount: '$50,000', insurer: 'AAA', type: 'T-Bone Collision', desc: 'T-bone collision causing a concussion and cervical strain.' },
+  { amount: '$50,000', insurer: 'Liberty Mutual', type: 'Cyclist Struck', desc: 'Cyclist struck by a turning vehicle. Settled for full policy limits.' },
+  { amount: '$50,000', insurer: 'Esurance', type: 'Uninsured Motorist', desc: 'UM claim settled for limits after at-fault driver fled.' },
+  { amount: '$42,000', insurer: 'Farmers', type: 'Chain-Reaction', desc: 'Rear-end accident pushing client into the car ahead. Resolved without litigation.' },
+  { amount: '$35,000', insurer: 'Mercury Insurance', type: 'Intersection Collision', desc: 'Intersection collision. Settlement covered ER visit and physical therapy.' },
+  { amount: '$30,000', insurer: 'Progressive', type: 'Highway Side-Swipe', desc: 'Side-swipe on the highway resulting in soft tissue shoulder injuries.' },
+  { amount: '$28,000', insurer: 'Allstate', type: 'Parking Lot', desc: 'Low-speed parking lot accident causing neck strain and headaches.' },
+  { amount: '$25,000', insurer: 'USAA', type: 'Failure to Yield', desc: 'Passenger in a vehicle struck by a driver failing to yield. Policy limits paid.' },
+  { amount: '$25,000', insurer: 'State Farm', type: 'Rear-End Collision', desc: 'Our client was rear-ended. Secured full bodily injury policy limits.' },
+  { amount: '$15,000', insurer: 'Geico', type: 'Red Light Rear-End', desc: 'Rear-end collision at a red light requiring chiropractic care.' },
 ];
 
 const resultsSchema = getResultsPageSchema(results);
@@ -49,6 +67,7 @@ const resultsSchema = getResultsPageSchema(results);
           <div class="result-card card">
             <div class="result-card__amount">
               <span class="stat-number" style="font-size: var(--text-4xl);">{result.amount}</span>
+              <span class="result-card__insurer">vs. {result.insurer}</span>
             </div>
             <div class="result-card__info">
               <h2 class="result-card__type">{result.type}</h2>
@@ -101,6 +120,17 @@ const resultsSchema = getResultsPageSchema(results);
 
   .result-card__amount {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .result-card__insurer {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
   }
 
   .result-card__type {

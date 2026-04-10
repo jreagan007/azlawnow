@@ -16,8 +16,9 @@ export const siteConfig = {
   phoneE164: '+16026540202',
   email: 'info@azlawnow.com',
 
+  // Primary office (legacy single-address field for backward compat)
   address: {
-    street: '530 E. McDowell Rd., Suite 107-160',
+    street: '715 E. Monroe Avenue',
     city: 'Buckeye',
     state: 'AZ',
     zip: '85326',
@@ -25,9 +26,46 @@ export const siteConfig = {
   },
 
   geo: {
-    latitude: 33.4373,
-    longitude: -112.5838,
+    latitude: 33.3702914,
+    longitude: -112.5801643,
   },
+
+  googlePlaceId: 'ChIJh-Cdb4E1K4cRtAyu8aMUr1Q',
+
+  // Multi-office structure (use this for Contact page, Footer, LocalBusiness schema)
+  offices: [
+    {
+      id: 'buckeye',
+      name: 'Buckeye HQ',
+      street: '715 E. Monroe Avenue',
+      city: 'Buckeye',
+      state: 'AZ',
+      zip: '85326',
+      country: 'US',
+      phone: '602-654-0202',
+      phoneFormatted: '(602) 654-0202',
+      phoneE164: '+16026540202',
+      geo: { latitude: 33.3702914, longitude: -112.5801643 },
+      googlePlaceId: 'ChIJh-Cdb4E1K4cRtAyu8aMUr1Q',
+      hours: 'Mo-Fr 08:00-18:00',
+      isPrimary: true,
+    },
+    {
+      id: 'maricopa',
+      name: 'Maricopa Office',
+      street: '21300 N. John Wayne Pkwy, Suite 109-B',
+      city: 'Maricopa',
+      state: 'AZ',
+      zip: '85139',
+      country: 'US',
+      phone: '602-654-0202',
+      phoneFormatted: '(602) 654-0202',
+      phoneE164: '+16026540202',
+      geo: { latitude: 33.0736004, longitude: -112.0445217 },
+      hours: 'Mo-Fr 08:00-18:00',
+      isPrimary: false,
+    },
+  ] as const,
 
   hours: 'Mo-Fr 08:00-18:00',
   logo: '/logos/logo-light-hz.png',

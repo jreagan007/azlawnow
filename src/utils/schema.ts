@@ -114,6 +114,28 @@ export function getOrganizationSchema() {
       latitude: siteConfig.geo.latitude,
       longitude: siteConfig.geo.longitude,
     },
+    location: siteConfig.offices.map((office) => ({
+      '@type': 'Place',
+      '@id': `${siteUrl}/#office-${office.id}`,
+      name: office.name,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: office.street,
+        addressLocality: office.city,
+        addressRegion: office.state,
+        postalCode: office.zip,
+        addressCountry: office.country,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: office.geo.latitude,
+        longitude: office.geo.longitude,
+      },
+      telephone: office.phoneE164,
+      hasMap: office.googlePlaceId
+        ? `https://www.google.com/maps/place/?q=place_id:${office.googlePlaceId}`
+        : undefined,
+    })),
     areaServed: WEST_VALLEY_CITIES.map((city) => ({
       '@type': 'City',
       name: `${city}, Arizona`,
@@ -296,9 +318,13 @@ export function getContactPageSchema() {
 /**
  * Review/Testimonial page with AggregateRating
  */
-export function getReviewPageSchema(reviews: Array<{ name: string; text: string; rating: number }>) {
+export function getReviewPageSchema(
+  reviews: Array<{ name: string; text: string; rating: number }>,
+  aggregate?: { total: number; average: number }
+) {
   const siteUrl = getSiteUrl();
-  const avgRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+  const avgRating = aggregate?.average ?? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+  const totalCount = aggregate?.total ?? reviews.length;
 
   return {
     '@context': 'https://schema.org',
@@ -320,8 +346,8 @@ export function getReviewPageSchema(reviews: Array<{ name: string; text: string;
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: parseFloat(avgRating.toFixed(1)),
-      reviewCount: reviews.length,
-      ratingCount: reviews.length,
+      reviewCount: totalCount,
+      ratingCount: totalCount,
       bestRating: 5,
       worstRating: 1,
     },

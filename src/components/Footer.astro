@@ -101,10 +101,18 @@ const resourceLinks = [
               loading="lazy"
             />
           </a>
-          <address class="footer-address">
-            530 E. McDowell Rd., Suite 107-160<br />
-            Buckeye, AZ 85326
-          </address>
+          <div class="footer-offices">
+            <address class="footer-address">
+              <span class="footer-office-name">Buckeye HQ</span>
+              715 E. Monroe Avenue<br />
+              Buckeye, AZ 85326
+            </address>
+            <address class="footer-address">
+              <span class="footer-office-name">Maricopa</span>
+              21300 N. John Wayne Pkwy, Suite 109-B<br />
+              Maricopa, AZ 85139
+            </address>
+          </div>
           <a href="mailto:info@azlawnow.com" class="footer-contact">info@azlawnow.com</a>
           <a href="tel:+16026540202" class="footer-contact">(602) 654-0202</a>
         </div>
@@ -264,12 +272,28 @@ const resourceLinks = [
     width: auto;
   }
 
+  .footer-offices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
   .footer-address {
     font-style: normal;
     font-size: 0.8125rem;
     color: #4A5859;
     line-height: 1.6;
-    margin-top: 0.5rem;
+  }
+
+  .footer-office-name {
+    display: block;
+    font-weight: 700;
+    color: #1A1A1A;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.6875rem;
+    margin-bottom: 0.125rem;
   }
 
   .footer-contact {
