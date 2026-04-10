@@ -163,6 +163,83 @@ const stephanie = authors['stephanie-ramirez'];
   </section>
 
   <!-- ============================== -->
+  <!-- SOCIAL PROOF                   -->
+  <!-- Stats strip + review excerpts  -->
+  <!-- ============================== -->
+  <section class="social-proof" aria-label="Trust and reviews">
+    <div class="container">
+      <div class="social-proof__stats">
+        <div class="proof-stat">
+          <span class="proof-stat__value">5.0</span>
+          <div class="proof-stat__stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="#D4943A">
+                <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+              </svg>
+            ))}
+          </div>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat__value">89</span>
+          <span class="proof-stat__label">Google Reviews</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat__value">$3.07M+</span>
+          <span class="proof-stat__label">Recovered</span>
+        </div>
+        <div class="proof-stat">
+          <span class="proof-stat__value">26</span>
+          <span class="proof-stat__label">Cases Resolved</span>
+        </div>
+      </div>
+
+      <div class="social-proof__quotes">
+        <blockquote class="proof-quote">
+          <div class="proof-quote__stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="#D4943A">
+                <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="proof-quote__text">"Brendan was at the crash scene before I even left the hospital. Quick to respond, kept me informed, made the whole process so much easier."</p>
+          <cite class="proof-quote__author">— Avalon C., via Google</cite>
+        </blockquote>
+
+        <blockquote class="proof-quote">
+          <div class="proof-quote__stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="#D4943A">
+                <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="proof-quote__text">"From the consult to the final check, the team was incredible. Professional, warm, helpful. Made me feel comfortable and important."</p>
+          <cite class="proof-quote__author">— A. Martin, via Google</cite>
+        </blockquote>
+
+        <blockquote class="proof-quote">
+          <div class="proof-quote__stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="#D4943A">
+                <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="proof-quote__text">"Truly made a horrible situation seamless. Brendan kept me updated, was time efficient, and even gave me a great orthopedic surgeon referral."</p>
+          <cite class="proof-quote__author">— Cheyanne A., via Google</cite>
+        </blockquote>
+      </div>
+
+      <div class="social-proof__cta">
+        <a href="/reviews/" class="social-proof__link">Read All 89 Reviews →</a>
+        <span class="social-proof__sep" aria-hidden="true">·</span>
+        <a href="/case-results/" class="social-proof__link">See Our Case Results →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
   <!-- FEATURED INVESTIGATION GRID    -->
   <!-- 1+2 layout: main + 2 secondary -->
   <!-- ============================== -->
@@ -685,6 +762,135 @@ const stephanie = authors['stephanie-ramirez'];
     flex: 1;
     height: 1px;
     background: var(--neutral-200, #E8DFD0);
+  }
+
+  /* ========================================
+     SOCIAL PROOF — Stats + review excerpts
+     ======================================== */
+  .social-proof {
+    background: var(--color-white, #FFFFFF);
+    padding: var(--space-12) 0;
+    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .social-proof__stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-12);
+    flex-wrap: wrap;
+    padding-bottom: var(--space-10);
+    border-bottom: 1px solid var(--neutral-100, #F5EDE0);
+    margin-bottom: var(--space-10);
+  }
+
+  .proof-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    text-align: center;
+  }
+
+  .proof-stat__value {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    line-height: 1;
+  }
+
+  .proof-stat__stars {
+    display: flex;
+    gap: 1px;
+    margin-top: var(--space-1);
+  }
+
+  .proof-stat__label {
+    font-size: var(--text-xs);
+    color: var(--color-slate, #4A5859);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .social-proof__quotes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .proof-quote {
+    background: var(--color-bg, #FAF5ED);
+    border-left: 3px solid var(--color-gold, #D4943A);
+    padding: var(--space-6);
+    margin: 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .proof-quote__stars {
+    display: flex;
+    gap: 1px;
+    margin-bottom: var(--space-3);
+  }
+
+  .proof-quote__text {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.6;
+    margin: 0 0 var(--space-3);
+    font-style: normal;
+  }
+
+  .proof-quote__author {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: normal;
+  }
+
+  .social-proof__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-10);
+    flex-wrap: wrap;
+  }
+
+  .social-proof__link {
+    color: var(--color-black, #1A1A1A);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gold, #D4943A);
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .social-proof__link:hover {
+    color: var(--color-sienna, #8B4513);
+  }
+
+  .social-proof__sep {
+    color: var(--neutral-300);
+  }
+
+  @media (max-width: 768px) {
+    .social-proof__stats {
+      gap: var(--space-6);
+    }
+
+    .social-proof__quotes {
+      grid-template-columns: 1fr;
+    }
+
+    .proof-stat__value {
+      font-size: var(--text-3xl);
+    }
   }
 
   /* ========================================
