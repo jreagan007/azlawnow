@@ -1,14 +1,14 @@
 ---
 /**
- * Dynamic route: /investigations/[slug]
- * Renders MDX articles from the investigations content collection
+ * Dynamic route: /insights/[slug]
+ * Renders MDX articles from the insights content collection (Brendan's data journalism)
  */
 
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('investigations');
+  const entries = await getCollection('insights');
   return entries
     .filter((e) => !e.data.draft)
     .map((entry) => ({

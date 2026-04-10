@@ -12,6 +12,25 @@
   status = 301
   force = true
 
+# Editorial route consolidation: /blog/, /resources/, /investigations/ → /insights/
+[[redirects]]
+  from = "/blog/*"
+  to = "/insights/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/*"
+  to = "/insights/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/investigations/*"
+  to = "/insights/:splat"
+  status = 301
+  force = true
+
 # Security headers
 [[headers]]
   for = "/*"

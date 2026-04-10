@@ -1,7 +1,7 @@
 ---
 /**
- * Investigations Hub — AZ Law Now
- * Newspaper front page layout for Brendan's data-led investigations
+ * Insights Hub — AZ Law Now
+ * Newspaper front page layout for Brendan's data-led journalism
  */
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -11,7 +11,7 @@ import { authors } from '../../data/authors';
 
 let entries: any[] = [];
 try {
-  entries = await getCollection('investigations');
+  entries = await getCollection('insights');
 } catch {
   entries = [];
 }
@@ -93,7 +93,7 @@ const investigationImages: Record<string, string> = {
 <BaseLayout
   title="Investigations"
   description="Data-led investigations into Arizona public safety, crash data, and institutional accountability. We pull the records. We name the patterns."
-  canonical="/investigations/"
+  canonical="/insights/"
 >
   <!-- ============================================
        PAGE HEADER — Editorial masthead
@@ -130,7 +130,7 @@ const investigationImages: Record<string, string> = {
   <section class="inv-featured-section">
     <div class="container">
       {featured ? (
-        <a href={`/investigations/${featured.id}/`} class="inv-featured-card">
+        <a href={`/insights/${featured.id}/`} class="inv-featured-card">
           <img
             src={investigationImages[featured.id] || '/images/heroes/practice-area-default.webp'}
             alt=""
@@ -205,7 +205,7 @@ const investigationImages: Record<string, string> = {
       {rest.length > 0 ? (
         <div class="inv-grid">
           {rest.map((entry) => (
-            <a href={`/investigations/${entry.id}/`} class="inv-card">
+            <a href={`/insights/${entry.id}/`} class="inv-card">
               <img
                 src={investigationImages[entry.id] || '/images/heroes/practice-area-default.webp'}
                 alt=""

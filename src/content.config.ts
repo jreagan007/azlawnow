@@ -2,10 +2,12 @@
  * Content Collections Config — AZ Law Now
  * Astro 5 content layer with Zod schemas
  *
- * Collections:
- *   resources     — Brendan's data investigations (NewsArticle schema)
- *   legal-guides  — Brandon's statute explainers (Article schema)
- *   client-guides — Stephanie's process guides (Article schema)
+ * Three editorial voices, each with their own collection:
+ *   insights      — Brendan Franks (data journalism, On Record)
+ *   legal-guides  — Brandon Millam, J.D. (statute explainers, Answered)
+ *   client-guides — Stephanie Ramirez (process guides, Guided)
+ *
+ * Plus practice-areas (separate, not editorial).
  */
 
 import { defineCollection, z } from 'astro:content';
@@ -23,11 +25,6 @@ const articleSchema = z.object({
   ogImage: z.string().optional(),
   readingTime: z.string().optional(),
   schemaType: z.enum(['Article', 'NewsArticle']).default('Article'),
-});
-
-const resources = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/resources' }),
-  schema: articleSchema,
 });
 
 const legalGuides = defineCollection({
@@ -82,9 +79,9 @@ const practiceAreas = defineCollection({
   schema: practiceAreaSchema,
 });
 
-/* ── Investigations ──────────────────────────────── */
+/* ── Insights (Brendan's data journalism) ────────── */
 
-const investigationSchema = z.object({
+const insightSchema = z.object({
   title: z.string(),
   description: z.string(),
   author: z.string().default('brendan-franks'),
@@ -96,6 +93,7 @@ const investigationSchema = z.object({
     'infrastructure',
     'policy',
   ]),
+  image: z.string().optional(),
   ogImage: z.string(),
   keyTakeaway: z.string().optional(),
   schemaType: z.string().default('NewsArticle'),
@@ -104,7 +102,8 @@ const investigationSchema = z.object({
   dataSources: z.array(z.string()).default([]),
   readingTime: z.string().optional(),
   relatedPracticeAreas: z.array(z.string()).default([]),
-  relatedInvestigations: z.array(z.string()).default([]),
+  relatedInsights: z.array(z.string()).default([]),
+  relatedGuides: z.array(z.string()).default([]),
   locations: z.array(z.string()).default([]),
   publishedAt: z.string(),
   updatedAt: z.string().optional(),
@@ -112,17 +111,16 @@ const investigationSchema = z.object({
   draft: z.boolean().default(false),
 });
 
-const investigations = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/investigations' }),
-  schema: investigationSchema,
+const insights = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/insights' }),
+  schema: insightSchema,
 });
 
 /* ── Export all collections ───────────────────────── */
 
 export const collections = {
-  resources,
+  insights,
   'legal-guides': legalGuides,
   'client-guides': clientGuides,
   'practice-areas': practiceAreas,
-  investigations,
 };

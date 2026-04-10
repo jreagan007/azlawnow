@@ -482,7 +482,7 @@ export interface ArticleData {
 
 export function getArticleSchema(article: ArticleData) {
   const siteUrl = getSiteUrl();
-  const basePath = article.basePath || '/blog/';
+  const basePath = article.basePath || '/insights/';
   const articleUrl = `${siteUrl}${basePath}${article.slug}/`;
   const schemaType = article.schemaType || 'Article';
   const authorUrl = article.authorSlug

@@ -133,9 +133,8 @@ export const siteConfig = {
   ],
 
   contentNav: [
-    { name: 'Resources', url: '/resources/' },
+    { name: 'Insights', url: '/insights/' },
     { name: 'Legal Guides', url: '/legal-guides/' },
     { name: 'Client Guides', url: '/client-guides/' },
-    { name: 'Blog', url: '/blog/' },
   ],
 } as const;
