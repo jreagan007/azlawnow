@@ -1,7 +1,7 @@
 ---
 /**
- * Contact — AZ Law Now
- * Phone, email, address, Netlify form, map placeholder
+ * Contact . AZ Law Now
+ * Two-office layout with branded static maps
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -13,202 +13,389 @@ const contactSchema = getContactPageSchema();
 
 <BaseLayout
   title="Contact"
-  description="Contact AZ Law Now for a free consultation. Call (602) 654-0202. Buckeye office open Mon-Fri 8am-6pm. Personal injury attorneys serving the West Valley."
+  description="Contact AZ Law Now for a free consultation. Two offices: Buckeye HQ and Maricopa. Call (602) 654-0202. Free case review."
   canonical="/contact/"
   schema={contactSchema}
 >
-  <!-- Hero -->
-  <section class="hero">
+  <section class="contact-hero">
     <div class="container container-narrow">
-      <h1>Let's Talk.</h1>
-      <p class="hero-subtitle">
-        You've got questions about your case. We've got answers. Call us, fill out the form, or walk into our Buckeye office. Free consultation, no obligation.
+      <span class="contact-eyebrow">Contact</span>
+      <h1>Two Offices. One Phone. Real Answers.</h1>
+      <p class="contact-subhead">
+        Call us, fill out the form, or stop by either office. Free consultation. No obligation.
       </p>
     </div>
   </section>
 
-  <!-- Contact Content -->
-  <section class="section">
-    <div class="container" style="max-width: 1000px;">
-      <div class="contact-grid">
-        <!-- Left: Contact Info -->
-        <div class="contact-info">
-          <div class="contact-block">
-            <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">Get in Touch</h2>
-
-            <div class="contact-item">
-              <p class="contact-label">Phone</p>
-              <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta" style="font-size: var(--text-3xl);">
-                {siteConfig.phoneFormatted}
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <p class="contact-label">Email</p>
-              <a href={`mailto:${siteConfig.email}`} style="font-size: var(--text-lg);">
-                {siteConfig.email}
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <p class="contact-label">Buckeye Office (HQ)</p>
-              <p style="color: var(--color-black); font-weight: 500;">
-                {siteConfig.address.street}<br />
-                {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.zip}
-              </p>
-            </div>
-
-            <div class="contact-item">
-              <p class="contact-label">Hours</p>
-              <p style="color: var(--color-black); font-weight: 500;">
-                Monday - Friday: 8:00 AM - 6:00 PM<br />
-                Saturday - Sunday: Closed
-              </p>
-            </div>
-          </div>
-
-          <!-- Map Placeholder -->
-          <div class="contact-map" aria-label="Map showing AZ Law Now office location">
-            <div class="contact-map__placeholder">
-              <p style="color: var(--neutral-500); font-size: var(--text-sm);">Map loading...</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Form -->
-        <div class="contact-form-wrapper">
-          <div class="card card-elevated" style="padding: var(--space-10);">
-            <h2 style="font-size: var(--text-2xl); margin-bottom: var(--space-2);">Send Us a Message</h2>
-            <p style="margin-bottom: var(--space-6); color: var(--color-slate);">
-              Tell us about your situation. We'll get back to you within one business day.
-            </p>
-
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              action="/thank-you/"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="sr-only">
-                <label>Don't fill this out: <input name="bot-field" /></label>
-              </p>
-
-              <div class="form-field">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" id="name" name="name" class="form-input" required placeholder="Full name" />
-              </div>
-
-              <div class="form-field">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(555) 555-5555" />
-              </div>
-
-              <div class="form-field">
-                <label for="email" class="form-label">Email Address</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="you@email.com" />
-              </div>
-
-              <div class="form-field">
-                <label for="case-type" class="form-label">Type of Case</label>
-                <select id="case-type" name="case-type" class="form-select">
-                  <option value="">Select a case type...</option>
-                  <option value="car-crash">Car Crash</option>
-                  <option value="truck-crash">Truck Crash</option>
-                  <option value="motorcycle-crash">Motorcycle Crash</option>
-                  <option value="pedestrian">Pedestrian Injury</option>
-                  <option value="bicycle">Bicycle Crash</option>
-                  <option value="wrongful-death">Wrongful Death</option>
-                  <option value="slip-fall">Slip and Fall</option>
-                  <option value="medical-negligence">Medical Negligence</option>
-                  <option value="school-bus">School Bus Crash</option>
-                  <option value="elder-abuse">Elder Abuse</option>
-                  <option value="nursing-home">Nursing Home Abuse</option>
-                  <option value="dog-bite">Dog Bite</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-field">
-                <label for="message" class="form-label">What Happened?</label>
-                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Brief description of your injury or incident..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-lg form-submit-full">
-                Send Message →
-              </button>
-
-              <p style="font-size: var(--text-xs); color: var(--neutral-500); margin-top: var(--space-4); text-align: center;">
-                Free consultation. No obligation. Your information stays confidential.
-              </p>
-            </form>
-          </div>
+  <!-- Quick Action Strip -->
+  <section class="quick-actions">
+    <div class="container container-narrow">
+      <div class="quick-actions__grid">
+        <a href={`tel:${siteConfig.phoneE164}`} class="quick-action">
+          <span class="quick-action__label">Call us</span>
+          <span class="quick-action__value">{siteConfig.phoneFormatted}</span>
+        </a>
+        <a href={`mailto:${siteConfig.email}`} class="quick-action">
+          <span class="quick-action__label">Email</span>
+          <span class="quick-action__value">{siteConfig.email}</span>
+        </a>
+        <div class="quick-action quick-action--static">
+          <span class="quick-action__label">Hours</span>
+          <span class="quick-action__value">Mon. Fri 8am-6pm</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
+  <!-- Two-Office Layout -->
+  <section class="offices-section section">
     <div class="container">
-      <h2>Prefer to Talk?</h2>
-      <p>Skip the form. Call us directly for an immediate conversation about your case.</p>
-      <div class="cta-buttons">
-        <a href={`tel:${siteConfig.phoneE164}`} class="btn btn-primary btn-lg">
-          Call {siteConfig.phoneFormatted} →
-        </a>
+      <div class="offices-grid">
+        {siteConfig.offices.map((office) => (
+          <div class="office-card">
+            <div class="office-card__map" aria-label={`Map of ${office.name}`}>
+              <img
+                src={`/images/maps/office-${office.id}.webp`}
+                alt={`Map showing ${office.name} location`}
+                loading="lazy"
+                width="800"
+                height="500"
+              />
+            </div>
+            <div class="office-card__body">
+              {office.isPrimary && <span class="office-card__badge">Headquarters</span>}
+              <h2 class="office-card__name">{office.name}</h2>
+              <address class="office-card__address">
+                {office.street}<br />
+                {office.city}, {office.state} {office.zip}
+              </address>
+              <div class="office-card__actions">
+                <a
+                  href={office.googlePlaceId
+                    ? `https://www.google.com/maps/place/?q=place_id:${office.googlePlaceId}`
+                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${office.street}, ${office.city}, ${office.state} ${office.zip}`)}`}
+                  target="_blank"
+                  rel="noopener"
+                  class="office-card__link"
+                >
+                  Get Directions →
+                </a>
+                <a href={`tel:${office.phoneE164}`} class="office-card__link">
+                  Call {office.phoneFormatted}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form-section section">
+    <div class="container container-narrow">
+      <div class="form-card">
+        <h2 class="form-card__heading">{siteConfig.messaging.l7FormHeadline}</h2>
+        <p class="form-card__sub">{siteConfig.messaging.l7FormSubhead}</p>
+
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you/"
+          class="contact-form"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="sr-only">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" id="name" name="name" class="form-input" required placeholder="Full name" autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(555) 555-5555" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="you@email.com" autocomplete="email" />
+          </div>
+
+          <div class="form-field">
+            <label for="case-type" class="form-label">Type of Case</label>
+            <select id="case-type" name="case-type" class="form-select">
+              <option value="">Select a case type...</option>
+              <option value="car-crash">Car Crash</option>
+              <option value="truck-crash">Truck Crash</option>
+              <option value="motorcycle-crash">Motorcycle Crash</option>
+              <option value="pedestrian">Pedestrian Injury</option>
+              <option value="bicycle">Bicycle Crash</option>
+              <option value="wrongful-death">Wrongful Death</option>
+              <option value="slip-fall">Slip and Fall</option>
+              <option value="medical-negligence">Medical Negligence</option>
+              <option value="school-bus">School Bus Crash</option>
+              <option value="elder-abuse">Elder Abuse</option>
+              <option value="nursing-home">Nursing Home Abuse</option>
+              <option value="dog-bite">Dog Bite</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="message" class="form-label">What Happened?</label>
+            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Brief description of your injury or incident..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit-full">
+            {siteConfig.messaging.l8Primary} →
+          </button>
+
+          <p class="form-disclaimer">
+            Free consultation. No obligation. Your information stays confidential. Submitting this form does not create an attorney-client relationship.
+          </p>
+        </form>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
-    align-items: start;
+  .contact-hero {
+    background: var(--color-bg);
+    padding: var(--space-16) 0 var(--space-10);
+    border-bottom: 1px solid var(--neutral-200);
   }
 
-  .contact-item {
-    margin-bottom: var(--space-6);
-  }
-
-  .contact-label {
+  .contact-eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
     font-size: var(--text-xs);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--color-gold);
-    margin-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
   }
 
-  .contact-map {
-    margin-top: var(--space-8);
+  .contact-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+
+  .contact-subhead {
+    color: var(--color-slate);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  /* Quick Actions Strip */
+  .quick-actions {
+    background: var(--color-black);
+    padding: var(--space-6) 0;
+  }
+
+  .quick-actions__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  .quick-action {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-white);
+    transition: color 0.15s ease;
+  }
+
+  .quick-action:hover {
+    color: var(--color-gold);
+  }
+
+  .quick-action--static {
+    cursor: default;
+  }
+
+  .quick-action--static:hover {
+    color: var(--color-white);
+  }
+
+  .quick-action__label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    color: var(--neutral-400);
+  }
+
+  .quick-action__value {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+  }
+
+  /* Offices Section */
+  .offices-section {
+    background: var(--color-bg);
+  }
+
+  .offices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  .office-card {
+    background: var(--color-white);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    box-shadow: var(--shadow-md);
     border: 1px solid var(--neutral-200);
   }
 
-  .contact-map__placeholder {
+  .office-card__map {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16 / 10;
     background: var(--neutral-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
   }
 
-  /* Full-width submit button inside form context */
+  .office-card__map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .office-card__body {
+    padding: var(--space-6) var(--space-8);
+  }
+
+  .office-card__badge {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-2);
+  }
+
+  .office-card__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-3);
+    line-height: 1.2;
+  }
+
+  .office-card__address {
+    font-style: normal;
+    color: var(--color-slate);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-5);
+  }
+
+  .office-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--neutral-100);
+  }
+
+  .office-card__link {
+    color: var(--color-gold);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gold);
+    transition: color 0.15s ease;
+  }
+
+  .office-card__link:hover {
+    color: var(--color-sienna);
+    border-bottom-color: var(--color-sienna);
+  }
+
+  /* Form Section */
+  .contact-form-section {
+    background: var(--color-bg);
+  }
+
+  .form-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--color-gold);
+  }
+
+  .form-card__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-2);
+  }
+
+  .form-card__sub {
+    color: var(--color-slate);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
   .form-submit-full {
     width: 100%;
+    margin-top: var(--space-4);
+  }
+
+  .form-disclaimer {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    margin-top: var(--space-4);
+    text-align: center;
+    line-height: 1.5;
   }
 
   @media (max-width: 768px) {
-    .contact-grid {
+    .quick-actions__grid {
       grid-template-columns: 1fr;
-      gap: var(--space-8);
+      gap: var(--space-4);
+    }
+
+    .offices-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .form-card {
+      padding: var(--space-6);
     }
   }
 </style>
