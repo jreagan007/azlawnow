@@ -377,53 +377,74 @@ const topicClusters = [
   </section>
 
   <!-- ============================== -->
-  <!-- FEATURED INVESTIGATION GRID    -->
-  <!-- 1+2 layout: main + 2 secondary -->
+  <!-- FEATURED CLUSTER                -->
+  <!-- 1 investigation + 2 supporting  -->
+  <!-- All three voices on same topic  -->
   <!-- ============================== -->
   <section class="section featured-section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">What We're Covering</span>
-        <div class="section-rule"></div>
+      <div class="featured-header">
+        <div>
+          <span class="section-eyebrow">What We're Covering</span>
+          <h2 class="featured-cluster-title">School &amp; Child Safety in Arizona</h2>
+          <p class="featured-cluster-intro">
+            Three voices on one story. The data investigator pulls the records.
+            The attorney explains the law. The client guide walks families through
+            what comes next. This is what editorial coverage looks like when you
+            stop pretending one voice can do the whole job.
+          </p>
+        </div>
       </div>
+
       <div class="featured-grid">
-        <!-- Main card — spans both rows -->
+        <!-- Big card: Brendan's investigation (the data-led story) -->
         <a href="/insights/arizona-school-restraint-data/" class="featured-main">
-          <img src="/images/cards/arizona-school-restraint-data.webp" alt="" class="featured-card-bg" loading="lazy" />
+          <img src="/images/heroes/dj-school-bus-route.webp" alt="" class="featured-card-bg" loading="lazy" />
           <div class="featured-card-overlay" aria-hidden="true"></div>
           <div class="featured-card-content">
-            <span class="featured-badge">Investigation</span>
-            <h2 class="featured-main-headline">Arizona Schools Restrained 4,200+ Students Last Year. Most Were Kids With Disabilities.</h2>
+            <span class="featured-badge featured-badge--on-record">On Record · Investigation</span>
+            <h3 class="featured-main-headline">4,200+ Students Restrained in Arizona Schools. Most Were Kids With Disabilities.</h3>
+            <p class="featured-main-desc">
+              Arizona schools reported over 4,200 physical restraint and seclusion incidents last year. ADE data shows West Valley districts with some of the highest rates per student.
+            </p>
             <div class="featured-byline-inline">
               <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
               <span class="byline-name-sm">{brendan.name}</span>
+              <span class="byline-role-sm">Editor-in-Chief</span>
             </div>
+            <span class="featured-card-link">Read the investigation →</span>
           </div>
         </a>
-        <!-- Secondary card 1 -->
-        <a href="/insights/maricopa-county-daycare-violations/" class="featured-secondary">
-          <img src="/images/cards/arizona-daycare-violations.webp" alt="" class="featured-card-bg" loading="lazy" />
-          <div class="featured-card-overlay" aria-hidden="true"></div>
+
+        <!-- Secondary card 1: Brandon's legal guide -->
+        <a href="/legal-guides/suing-school-district-arizona/" class="featured-secondary">
           <div class="featured-card-content">
-            <span class="featured-badge">Investigation</span>
-            <h3 class="featured-secondary-headline">Maricopa County Daycares With the Most DHS Violations</h3>
+            <span class="featured-badge featured-badge--answered">Answered · Legal Guide</span>
+            <h3 class="featured-secondary-headline">Suing a School District in Arizona: The 180-Day Deadline</h3>
+            <p class="featured-secondary-desc">
+              ARS 12-821.01 gives you 180 days to file a Notice of Claim against a public entity. Miss it and the case is barred. Brandon explains the rule.
+            </p>
             <div class="featured-byline-inline">
-              <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
-              <span class="byline-name-sm">{brendan.name}</span>
+              <img src={brandon.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
+              <span class="byline-name-sm">{brandon.name}</span>
             </div>
+            <span class="featured-card-link">Read the guide →</span>
           </div>
         </a>
-        <!-- Secondary card 2 -->
-        <a href="/insights/i-10-crash-data-buckeye-goodyear/" class="featured-secondary">
-          <img src="/images/cards/i-10-crash-data-buckeye-goodyear.webp" alt="" class="featured-card-bg" loading="lazy" />
-          <div class="featured-card-overlay" aria-hidden="true"></div>
+
+        <!-- Secondary card 2: Stephanie's client guide -->
+        <a href="/client-guides/child-injured-at-school/" class="featured-secondary">
           <div class="featured-card-content">
-            <span class="featured-badge">Investigation</span>
-            <h3 class="featured-secondary-headline">What the ADOT Data Shows About I-10 Crashes</h3>
+            <span class="featured-badge featured-badge--guided">Guided · Client Resource</span>
+            <h3 class="featured-secondary-headline">Your Child Was Hurt at School: What to Do Next</h3>
+            <p class="featured-secondary-desc">
+              First steps for parents. Documenting the incident, requesting records, filing complaints, and the timeline that protects your options.
+            </p>
             <div class="featured-byline-inline">
-              <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
-              <span class="byline-name-sm">{brendan.name}</span>
+              <img src={stephanie.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
+              <span class="byline-name-sm">{stephanie.name}</span>
             </div>
+            <span class="featured-card-link">Read the resource →</span>
           </div>
         </a>
       </div>
@@ -747,19 +768,6 @@ const topicClusters = [
     </div>
   </section>
 
-  <!-- ============================== -->
-  <!-- FINAL CTA — warm, not pushy    -->
-  <!-- ============================== -->
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <h2 class="final-heading">You Deserve Answers.</h2>
-      <p class="final-subtext">Tell us what happened. We'll tell you what's next.</p>
-      <div class="final-actions">
-        <a href="/free-case-review/" class="btn btn-primary btn-lg">Get My Free Consultation &rarr;</a>
-        <a href={`tel:${siteConfig.phoneE164}`} class="final-phone">Or call {siteConfig.phoneFormatted}</a>
-      </div>
-    </div>
-  </section>
 
 </BaseLayout>
 
@@ -1037,23 +1045,45 @@ const topicClusters = [
   }
 
   /* ========================================
-     FEATURED INVESTIGATION GRID — 1+2
+     FEATURED CLUSTER — 1 lead + 2 supporting
+     All three voices on the same topic
      ======================================== */
   .featured-section {
     background: var(--color-white, #FFFFFF);
     border-bottom: 1px solid var(--neutral-200, #E8DFD0);
   }
 
-  .featured-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: var(--space-4, 1rem);
-    min-height: 460px;
+  .featured-header {
+    margin-bottom: var(--space-10, 2.5rem);
+    max-width: 720px;
   }
 
-  .featured-main,
-  .featured-secondary {
+  .featured-cluster-title {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl, 2rem), 4vw, var(--text-5xl, 3rem));
+    font-weight: 700;
+    color: var(--color-black, #1A1A1A);
+    margin: var(--space-3, 0.75rem) 0 var(--space-3, 0.75rem);
+    line-height: 1.1;
+  }
+
+  .featured-cluster-intro {
+    color: var(--color-slate, #4A5859);
+    font-size: var(--text-lg, 1.125rem);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--space-5, 1.25rem);
+    min-height: 540px;
+  }
+
+  /* Big card: Brendan's investigation (dark, image background) */
+  .featured-main {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1062,16 +1092,12 @@ const topicClusters = [
     border-radius: var(--radius-lg, 8px);
     text-decoration: none;
     background: var(--color-black, #1A1A1A);
+    grid-row: 1 / 3;
     transition: transform 0.2s ease;
   }
 
-  .featured-main:hover,
-  .featured-secondary:hover {
+  .featured-main:hover {
     transform: translateY(-2px);
-  }
-
-  .featured-main {
-    grid-row: 1 / 3;
   }
 
   .featured-card-bg {
@@ -1088,41 +1114,96 @@ const topicClusters = [
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(26, 26, 26, 0.92) 0%,
-      rgba(26, 26, 26, 0.5) 50%,
+      rgba(26, 26, 26, 0.95) 0%,
+      rgba(26, 26, 26, 0.65) 45%,
       rgba(26, 26, 26, 0.25) 100%
     );
     z-index: 1;
   }
 
-  .featured-card-content {
+  .featured-main .featured-card-content {
     position: relative;
     z-index: 2;
-    padding: var(--space-6, 1.5rem);
+    padding: var(--space-8, 2rem);
     display: flex;
     flex-direction: column;
     gap: var(--space-3, 0.75rem);
   }
 
+  /* Secondary cards: light, voice-coded */
+  .featured-secondary {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--radius-lg, 8px);
+    text-decoration: none;
+    background: var(--color-bg, #FAF5ED);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .featured-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-gold, #D4943A);
+    border-top-left-radius: var(--radius-lg, 8px);
+    border-top-right-radius: var(--radius-lg, 8px);
+  }
+
+  .featured-secondary:hover {
+    border-color: var(--color-gold, #D4943A);
+    box-shadow: 0 8px 24px rgba(212, 148, 58, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .featured-secondary .featured-card-content {
+    padding: var(--space-6, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3, 0.75rem);
+    height: 100%;
+  }
+
+  /* Voice-coded badges */
   .featured-badge {
     display: inline-block;
     align-self: flex-start;
     font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #fff;
-    background: var(--color-red, #C23B22);
-    padding: 0.25rem 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem;
     border-radius: 3px;
   }
 
+  .featured-badge--on-record {
+    background: var(--color-red, #C23B22);
+    color: #fff;
+  }
+
+  .featured-badge--answered {
+    background: var(--color-sienna, #8B4513);
+    color: #fff;
+  }
+
+  .featured-badge--guided {
+    background: var(--color-gold, #D4943A);
+    color: var(--color-black, #1A1A1A);
+  }
+
+  /* Headlines */
   .featured-main-headline {
     font-family: var(--font-heading);
-    font-size: var(--text-3xl, 2rem);
+    font-size: clamp(var(--text-2xl, 1.5rem), 3vw, var(--text-4xl, 2.5rem));
     font-weight: 700;
     line-height: 1.15;
     color: #FFFFFF;
+    margin: 0;
   }
 
   .featured-secondary-headline {
@@ -1130,27 +1211,99 @@ const topicClusters = [
     font-size: var(--text-xl, 1.25rem);
     font-weight: 700;
     line-height: 1.25;
-    color: #FFFFFF;
+    color: var(--color-black, #1A1A1A);
+    margin: 0;
   }
 
+  /* Descriptions */
+  .featured-main-desc {
+    font-size: var(--text-base, 1rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .featured-secondary-desc {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Bylines */
   .featured-byline-inline {
     display: flex;
     align-items: center;
     gap: var(--space-2, 0.5rem);
+    margin-top: var(--space-2, 0.5rem);
   }
 
   .byline-avatar-sm {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     object-fit: cover;
+  }
+
+  .featured-main .byline-avatar-sm {
     border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .featured-secondary .byline-avatar-sm {
+    border: 2px solid var(--neutral-200);
   }
 
   .byline-name-sm {
     font-size: var(--text-sm, 0.875rem);
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+  }
+
+  .featured-main .byline-name-sm {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .featured-secondary .byline-name-sm {
+    color: var(--color-black, #1A1A1A);
+  }
+
+  .byline-role-sm {
+    font-size: var(--text-xs, 0.75rem);
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Read links */
+  .featured-card-link {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 700;
+    margin-top: var(--space-2, 0.5rem);
+  }
+
+  .featured-main .featured-card-link {
+    color: var(--color-gold, #D4943A);
+  }
+
+  .featured-secondary .featured-card-link {
+    color: var(--color-gold, #D4943A);
+  }
+
+  .featured-secondary:hover .featured-card-link {
+    color: var(--color-sienna, #8B4513);
+  }
+
+  @media (max-width: 968px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      min-height: 0;
+    }
+
+    .featured-main {
+      grid-row: auto;
+      min-height: 320px;
+    }
   }
 
   /* ========================================
