@@ -1,0 +1,225 @@
+---
+/**
+ * Dynamic route: /glossary/[slug]
+ * Renders individual glossary term pages
+ */
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('glossary');
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const allTerms = await getCollection('glossary');
+const relatedTermEntries = (entry.data.relatedTerms || [])
+  .map((slug) => allTerms.find((t) => t.id === slug))
+  .filter(Boolean);
+
+const categoryLabels: Record<string, string> = {
+  'liability': 'Liability',
+  'damages': 'Damages',
+  'procedure': 'Procedure',
+  'insurance': 'Insurance',
+  'arizona-statute': 'Arizona Statutes',
+  'practice-specific': 'Practice-Specific',
+};
+---
+
+<BaseLayout
+  title={`${entry.data.term} | Arizona Legal Glossary`}
+  description={entry.data.definition.length > 160 ? entry.data.definition.slice(0, 157) + '...' : entry.data.definition}
+  canonical={`/glossary/${entry.id}/`}
+>
+  <article class="glossary-entry">
+    <div class="container container-narrow">
+      <nav class="glossary-breadcrumbs">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/glossary/">Glossary</a>
+        <span>/</span>
+        <span>{entry.data.term}</span>
+      </nav>
+
+      <span class="glossary-category-label">{categoryLabels[entry.data.category]}</span>
+      <h1 class="glossary-h1">{entry.data.term}</h1>
+
+      {entry.data.alsoKnownAs && entry.data.alsoKnownAs.length > 0 && (
+        <p class="glossary-aka">
+          <span>Also known as:</span> {entry.data.alsoKnownAs.join(', ')}
+        </p>
+      )}
+
+      <div class="glossary-body">
+        <Content />
+      </div>
+
+      {relatedTermEntries.length > 0 && (
+        <div class="glossary-related">
+          <h3>Related Terms</h3>
+          <ul>
+            {relatedTermEntries.map((t: any) => (
+              <li><a href={`/glossary/${t.id}/`}>{t.data.term}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {entry.data.relatedPracticeAreas && entry.data.relatedPracticeAreas.length > 0 && (
+        <div class="glossary-related">
+          <h3>Related Practice Areas</h3>
+          <ul>
+            {entry.data.relatedPracticeAreas.map((slug) => (
+              <li><a href={`/${slug.includes('-') ? slug : slug + 's'}/`}>{slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .glossary-entry {
+    background: var(--color-bg);
+    padding: var(--space-12) 0 var(--space-16);
+  }
+
+  .glossary-breadcrumbs {
+    display: flex;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    margin-bottom: var(--space-6);
+  }
+
+  .glossary-breadcrumbs a {
+    color: var(--color-slate);
+    text-decoration: none;
+  }
+
+  .glossary-breadcrumbs a:hover {
+    color: var(--color-gold);
+  }
+
+  .glossary-category-label {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-3);
+  }
+
+  .glossary-h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+
+  .glossary-aka {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    margin-bottom: var(--space-6);
+    font-style: italic;
+  }
+
+  .glossary-aka span {
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .glossary-body {
+    background: var(--color-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-gold);
+    margin-bottom: var(--space-8);
+  }
+
+  .glossary-body :global(h2) {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin: var(--space-6) 0 var(--space-3);
+  }
+
+  .glossary-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .glossary-body :global(p) {
+    color: var(--color-slate);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
+  }
+
+  .glossary-body :global(a) {
+    color: var(--color-gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gold);
+  }
+
+  .glossary-body :global(a:hover) {
+    color: var(--color-sienna);
+    border-bottom-color: var(--color-sienna);
+  }
+
+  .glossary-related {
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .glossary-related h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-3);
+  }
+
+  .glossary-related ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .glossary-related li {
+    margin: 0;
+  }
+
+  .glossary-related a {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg);
+    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    color: var(--color-black);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .glossary-related a:hover {
+    background: var(--color-gold);
+    color: var(--color-white);
+    border-color: var(--color-gold);
+  }
+</style>

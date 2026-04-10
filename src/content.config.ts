@@ -116,6 +116,32 @@ const insights = defineCollection({
   schema: insightSchema,
 });
 
+/* ── Glossary (60-80 Arizona legal terms) ────────── */
+
+const glossarySchema = z.object({
+  term: z.string(),
+  category: z.enum([
+    'liability',
+    'damages',
+    'procedure',
+    'insurance',
+    'arizona-statute',
+    'practice-specific',
+  ]),
+  definition: z.string(),
+  arizonaContext: z.string().optional(),
+  alsoKnownAs: z.array(z.string()).default([]),
+  relatedTerms: z.array(z.string()).default([]),
+  relatedPracticeAreas: z.array(z.string()).default([]),
+  arsReference: z.string().optional(),
+  arsUrl: z.string().optional(),
+});
+
+const glossary = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/glossary' }),
+  schema: glossarySchema,
+});
+
 /* ── Export all collections ───────────────────────── */
 
 export const collections = {
@@ -123,4 +149,5 @@ export const collections = {
   'legal-guides': legalGuides,
   'client-guides': clientGuides,
   'practice-areas': practiceAreas,
+  glossary,
 };

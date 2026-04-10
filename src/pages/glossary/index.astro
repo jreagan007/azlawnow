@@ -1,0 +1,157 @@
+---
+/**
+ * Glossary Index — AZ Law Now
+ * 77 Arizona legal terms grouped by category
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allTerms = await getCollection('glossary');
+
+const categoryOrder = [
+  'liability',
+  'damages',
+  'procedure',
+  'insurance',
+  'arizona-statute',
+  'practice-specific',
+] as const;
+
+const categoryLabels: Record<string, string> = {
+  'liability': 'Liability',
+  'damages': 'Damages',
+  'procedure': 'Procedure',
+  'insurance': 'Insurance',
+  'arizona-statute': 'Arizona Statutes',
+  'practice-specific': 'Practice-Specific',
+};
+
+const grouped = categoryOrder.map((cat) => ({
+  category: cat,
+  label: categoryLabels[cat],
+  terms: allTerms
+    .filter((t) => t.data.category === cat)
+    .sort((a, b) => a.data.term.localeCompare(b.data.term)),
+}));
+
+const totalTerms = allTerms.length;
+---
+
+<BaseLayout
+  title="Arizona Legal Glossary"
+  description="Plain-language definitions for 77 Arizona personal injury legal terms. Statutes, liability concepts, damages, procedure, insurance terminology."
+  canonical="/glossary/"
+>
+  <section class="glossary-hero">
+    <div class="container container-narrow">
+      <span class="glossary-eyebrow">Glossary</span>
+      <h1>Arizona Legal Terms, Explained.</h1>
+      <p class="glossary-subhead">
+        {totalTerms} legal terms used in Arizona personal injury cases. Each term links to the relevant statute, related concepts, and practice areas.
+      </p>
+    </div>
+  </section>
+
+  <section class="glossary-content section">
+    <div class="container container-narrow">
+      {grouped.map((group) => (
+        <div class="glossary-group">
+          <h2 class="glossary-group__heading">{group.label}</h2>
+          <div class="glossary-list">
+            {group.terms.map((entry) => (
+              <a href={`/glossary/${entry.id}/`} class="glossary-term">
+                <span class="glossary-term__name">{entry.data.term}</span>
+                <span class="glossary-term__def">{entry.data.definition.split('.')[0]}.</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .glossary-hero {
+    background: var(--color-bg);
+    padding: var(--space-16) 0 var(--space-12);
+    border-bottom: 1px solid var(--neutral-200);
+  }
+
+  .glossary-eyebrow {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-3);
+  }
+
+  .glossary-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-4);
+    line-height: 1.15;
+  }
+
+  .glossary-subhead {
+    color: var(--color-slate);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .glossary-content {
+    background: var(--color-white);
+  }
+
+  .glossary-group {
+    margin-bottom: var(--space-12);
+  }
+
+  .glossary-group__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-gold);
+  }
+
+  .glossary-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .glossary-term {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--neutral-100);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .glossary-term:hover {
+    background-color: rgba(212, 148, 58, 0.04);
+  }
+
+  .glossary-term__name {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-black);
+  }
+
+  .glossary-term__def {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    line-height: 1.5;
+  }
+</style>
