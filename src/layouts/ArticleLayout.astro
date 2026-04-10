@@ -589,6 +589,77 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   }
 
   /* ============================================
+     REFERENCES BLOCK — AEE editorial pattern
+     Flat URLs visible, numbered, source on top
+     ============================================ */
+  .article-content :global(.references) {
+    margin-top: var(--space-12);
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-left: 3px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md);
+    padding: var(--space-6) var(--space-8);
+  }
+
+  .article-content :global(.references-label) {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-text, #8B4513);
+    margin-bottom: var(--space-4);
+  }
+
+  .article-content :global(.references ol) {
+    counter-reset: ref-counter;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .article-content :global(.references ol li) {
+    counter-increment: ref-counter;
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: #2E2E2E;
+    margin-bottom: var(--space-4);
+  }
+
+  .article-content :global(.references ol li::before) {
+    content: counter(ref-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-gold-text, #8B4513);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .article-content :global(.references ol li:last-child) {
+    margin-bottom: 0;
+  }
+
+  .article-content :global(.references a) {
+    display: block;
+    color: var(--color-gold-text, #8B4513);
+    text-decoration: none;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    word-break: break-all;
+    border-bottom: none;
+    line-height: 1.5;
+  }
+
+  .article-content :global(.references a:hover) {
+    text-decoration: underline;
+    border-bottom: none;
+  }
+
+  /* ============================================
      TAGS
      ============================================ */
   .article-tags {
