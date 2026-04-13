@@ -1,0 +1,120 @@
+---
+/**
+ * Scottsdale Personal Injury Attorneys — Location Page
+ * Loop 101 corridor. Old Town DUI zone. Alcohol-related crashes highest per capita.
+ */
+
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+
+const faqs = [
+  {
+    question: 'How many crashes happen in Scottsdale each year?',
+    answer: 'ADOT\'s 2024 data shows 4,219 crashes in Scottsdale. 15 were fatal, killing 15 people. Scottsdale\'s surface streets are relatively safe compared to the rest of the Valley, but the Loop 101 corridor and the Old Town entertainment district generate concentrated risk.',
+  },
+  {
+    question: 'What are the most dangerous intersections in Scottsdale?',
+    answer: 'MAG\'s Top 100 list includes Camelback Road and Goldwater Boulevard (73rd, in the Old Town nightlife district) and Hayden Road and Thomas Road (75th). Scottsdale has only two intersections on the list, fewer than most Valley cities.',
+  },
+  {
+    question: 'Are DUI crashes common in Scottsdale?',
+    answer: 'Scottsdale had 226 alcohol-related crashes in 2024. Six people died. That\'s the highest absolute number and the highest per-capita rate of the four East Valley cities. The Old Town entertainment district around Scottsdale Road and Camelback Road is a persistent DUI hotspot.',
+  },
+  {
+    question: 'How long do I have to file a personal injury claim in Scottsdale?',
+    answer: 'Two years from the date of the crash under ARS 12-542. For wrongful death, two years from the date of death under ARS 12-611. If alcohol was involved, investigating dram shop liability against the bar or restaurant adds complexity that takes time.',
+  },
+  {
+    question: 'What is dram shop liability?',
+    answer: 'Arizona\'s dram shop law holds bars and restaurants liable if they serve a visibly intoxicated person who then causes a crash. If the driver who hit you came from a Scottsdale bar and was overserved, the establishment may share liability for your injuries.',
+  },
+  {
+    question: 'Do you have an office in Scottsdale?',
+    answer: 'Our offices are in Buckeye and Maricopa. We handle cases across Maricopa County including Scottsdale. The Loop 101 connects the East and West Valley. We know the Scottsdale Road corridor and the freeway interchanges where crashes cluster.',
+  },
+  {
+    question: 'What does it cost to hire an injury attorney for a Scottsdale crash?',
+    answer: 'Nothing upfront. We work on contingency. You pay nothing unless we recover money for you. The consultation is free.',
+  },
+  {
+    question: 'Are motorcycle crashes common on Loop 101 in Scottsdale?',
+    answer: 'Yes. Fatal motorcycle crashes on Loop 101 through Scottsdale are a recurring pattern. A motorcyclist was killed near Via Linda Road in May 2024. Two deadly motorcycle crashes happened on Loop 202 near Scottsdale in a single week in December 2025. DPS has publicly flagged the trend.',
+  },
+];
+
+const localSchema = getLocalBusinessSchema('Scottsdale', 'scottsdale');
+---
+
+<PracticeAreaLayout
+  title="Scottsdale Personal Injury Attorneys"
+  description="Scottsdale injury attorneys at AZ Law Now. 4,219 crashes in 2024. 226 alcohol-related. Loop 101 corridor. Free consultation. Call (602) 654-0202."
+  canonical="/scottsdale/"
+  practiceArea="Scottsdale Personal Injury Attorneys"
+  heroTitle="226 Alcohol-Related Crashes in Scottsdale Last Year. We Handle What Comes After."
+  heroSubtitle="Scottsdale injury attorneys who know the Loop 101 corridor, the Old Town DUI zone, and when a bar shares the blame."
+  heroImage="/images/heroes/scottsdale.webp"
+  faqs={faqs}
+  schema={localSchema}
+>
+  <p>
+    Scottsdale's surface streets are among the safest in the Valley. Only two of MAG's 100 most dangerous intersections are here. The city's crash total, 4,219 in 2024, is lower per capita than Mesa or Tempe. Fifteen people died.
+  </p>
+
+  <p>
+    But one number stands out. 226 alcohol-related crashes. Six people killed. That's the highest per-capita alcohol crash rate of any East Valley city in ADOT's data. Scottsdale has a drinking problem on its roads, and the data shows exactly where it concentrates.
+  </p>
+
+  <h2>The Old Town Problem</h2>
+
+  <p>
+    Scottsdale's entertainment district runs along Scottsdale Road near Camelback Road. Bars, restaurants, clubs. The Camelback and Goldwater Boulevard intersection sits at the heart of it, ranked 73rd on MAG's most dangerous intersection list with 113 crashes over the study period.
+  </p>
+
+  <p>
+    The pattern is predictable. Late night. Weekend. A driver leaves a bar impaired. They get on Scottsdale Road or Camelback Road and the crash happens within a few miles. Scottsdale PD makes regular DUI arrests in this area, but enforcement can't catch everyone.
+  </p>
+
+  <p>
+    When an impaired driver causes a crash, the question isn't just about the driver. Arizona's dram shop law holds bars and restaurants liable if they serve a visibly intoxicated person who then hurts someone. If the driver came from a Scottsdale establishment and was overserved, that bar may owe you compensation.
+  </p>
+
+  <h2>Loop 101: The Freeway That Runs Through Everything</h2>
+
+  <p>
+    Loop 101, the Pima Freeway, is the primary freeway through Scottsdale. It connects to SR-51 at the southwest and runs north past Frank Lloyd Wright Boulevard and beyond. ADOT is currently running a widening project on the 101.
+  </p>
+
+  <p>
+    Fatal motorcycle crashes on Loop 101 through Scottsdale keep happening. A rider was killed near Via Linda Road in May 2024. Two deadly motorcycle crashes happened on Loop 202 near the Scottsdale border in a single week in December 2025. The DPS colonel weighed in publicly after those crashes. The pattern is speed plus exposure. Motorcyclists don't have the protection of a car, and the closing speeds on the 101 don't forgive mistakes.
+  </p>
+
+  <h2>Seasonal Population, Unfamiliar Drivers</h2>
+
+  <p>
+    Scottsdale's population is about 246,000. But the winter seasonal influx brings thousands of temporary residents from colder states who don't know the roads. Snowbirds driving unfamiliar routes, tourists navigating to resorts, and seasonal workers all add to the traffic mix from October through April.
+  </p>
+
+  <p>
+    Unfamiliar drivers make different mistakes than locals. Wrong turns, hesitation at intersections, unexpected lane changes. Those mistakes don't usually cause fatalities on their own, but in combination with high-speed arterials and impaired drivers leaving Old Town, the risk compounds.
+  </p>
+
+  <h2>Where Scottsdale Crashes Cluster</h2>
+
+  <p>
+    Beyond the Old Town zone, Hayden Road and Thomas Road ranks 75th on MAG's list with 139 crashes. The Scottsdale Road corridor from Camelback north through Indian School and Thomas carries the heaviest traffic volume in the city. Shea Boulevard and Frank Lloyd Wright Boulevard are secondary arterials with their own crash patterns.
+  </p>
+
+  <p>
+    Scottsdale has fewer dangerous intersections than most Valley cities. But when crashes do happen here, alcohol is involved at a rate that exceeds the statewide average. 5.36% of all Scottsdale crashes are alcohol-related, compared to 4.56% statewide.
+  </p>
+
+  <h2>We Handle Scottsdale Cases</h2>
+
+  <p>
+    Our offices are in Buckeye and Maricopa. We handle cases across Maricopa County including Scottsdale. When alcohol is involved, we investigate dram shop liability against the establishment that served the driver. When a truck or motorcycle crash happens on Loop 101, we pull FMCSA records and ADOT data the same day.
+  </p>
+
+  <p>
+    If you or someone in your family was in a crash in Scottsdale, call <a href="tel:+16026540202">(602) 654-0202</a> or use our contact form. The consultation is free. We don't charge unless we recover money for you.
+  </p>
+</PracticeAreaLayout>

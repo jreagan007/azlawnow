@@ -311,8 +311,22 @@
     "City of Maricopa": "/maricopa/",
     "Phoenix": "/phoenix/",
     "Phoenix injury attorney": "/phoenix/",
+    "Mesa": "/mesa/",
+    "Mesa injury attorney": "/mesa/",
+    "City of Mesa": "/mesa/",
+    "Chandler": "/chandler/",
+    "Chandler injury attorney": "/chandler/",
+    "City of Chandler": "/chandler/",
+    "Tempe": "/tempe/",
+    "Tempe injury attorney": "/tempe/",
+    "City of Tempe": "/tempe/",
+    "Scottsdale": "/scottsdale/",
+    "Scottsdale injury attorney": "/scottsdale/",
+    "City of Scottsdale": "/scottsdale/",
+    "Old Town Scottsdale": "/scottsdale/",
     "West Valley": "/buckeye/",
     "West Valley attorney": "/buckeye/",
+    "East Valley": "/mesa/",
 
 
     "ADOT Crash Facts": "/insights/i-10-crash-data-buckeye-goodyear/",
@@ -553,7 +567,11 @@
         "/goodyear/",
         "/avondale/",
         "/maricopa/",
-        "/phoenix/"
+        "/phoenix/",
+        "/mesa/",
+        "/chandler/",
+        "/tempe/",
+        "/scottsdale/"
       ]
     },
     "trust": {

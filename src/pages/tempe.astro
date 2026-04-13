@@ -1,0 +1,120 @@
+---
+/**
+ * Tempe Personal Injury Attorneys — Location Page
+ * ASU corridor. Highest crashes per capita. Vision Zero. Loop 202 milk tanker. Uber AV fatality.
+ */
+
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+
+const faqs = [
+  {
+    question: 'How many crashes happen in Tempe each year?',
+    answer: 'ADOT\'s 2024 data shows 6,637 crashes in Tempe. 29 were fatal, killing 32 people. That\'s the highest crash rate per capita of any East Valley city. Tempe\'s 190,000 residents share roads with four major freeways and the largest university in the country.',
+  },
+  {
+    question: 'What are the most dangerous intersections in Tempe?',
+    answer: 'MAG\'s Top 100 list includes Elliot Road and Kyrene Road (58th), Broadway Road and Hardy Drive (62nd), and Baseline Road near the Loop 101/202 interchange (68th, with 257 crashes). The Mill Avenue corridor near ASU is also a high-crash zone for pedestrians and cyclists.',
+  },
+  {
+    question: 'Are pedestrian and bicycle crashes common in Tempe?',
+    answer: 'Yes. Tempe\'s Vision Zero data shows 30% of serious injury or fatal crashes between 2021 and 2024 involved pedestrians, bicyclists, e-bikes, or scooters. The ASU campus area generates heavy foot and bike traffic on roads designed for cars.',
+  },
+  {
+    question: 'How long do I have to file a personal injury claim in Tempe?',
+    answer: 'Two years from the date of the crash under ARS 12-542. For wrongful death, two years from the date of death under ARS 12-611. But evidence disappears fast. Surveillance footage, skid marks, and witness memories degrade within weeks.',
+  },
+  {
+    question: 'What was the Loop 202 milk tanker crash?',
+    answer: 'On June 9, 2021, a milk tanker on Loop 202 near the Tempe border crashed into stopped traffic, killing four people and injuring eleven. The NTSB found the cause was driver fatigue. The driver had worked 83 hours one week under an agricultural hours-of-service exemption with no driving limit.',
+  },
+  {
+    question: 'Do you have an office in Tempe?',
+    answer: 'Our offices are in Buckeye and Maricopa. We handle cases across Maricopa County including Tempe. We know the Loop 202 corridor, the Mill Avenue area, and the arterials where Tempe crashes cluster.',
+  },
+  {
+    question: 'What does it cost to hire an injury attorney for a Tempe crash?',
+    answer: 'Nothing upfront. We work on contingency. You pay nothing unless we recover money for you. The consultation is free.',
+  },
+  {
+    question: 'What about e-bike and scooter crashes in Tempe?',
+    answer: 'Tempe formed a Motorized and Electric Mobility Device Safety Committee in January 2026 specifically to address e-bike and scooter crash concerns. These crashes are increasing, especially around ASU. If you were injured riding an e-bike or scooter due to someone else\'s negligence, the same personal injury laws apply.',
+  },
+];
+
+const localSchema = getLocalBusinessSchema('Tempe', 'tempe');
+---
+
+<PracticeAreaLayout
+  title="Tempe Personal Injury Attorneys"
+  description="Tempe injury attorneys at AZ Law Now. 6,637 crashes in 2024. Highest per capita in the East Valley. Loop 202, ASU corridor. Free consultation. Call (602) 654-0202."
+  canonical="/tempe/"
+  practiceArea="Tempe Personal Injury Attorneys"
+  heroTitle="6,637 Crashes in Tempe Last Year. The Highest Rate Per Capita in the East Valley."
+  heroSubtitle="Tempe injury attorneys who know the Loop 202 corridor, the Mill Avenue zone, and what happens when four freeways meet a university of 80,000."
+  heroImage="/images/heroes/tempe.webp"
+  faqs={faqs}
+  schema={localSchema}
+>
+  <p>
+    Tempe has 190,000 residents and 6,637 crashes per year. That's 3.49 crashes per 100 residents. The highest rate per capita of any East Valley city. Mesa is at 1.55. Chandler at 1.52. Scottsdale at 1.71. Tempe is more than double.
+  </p>
+
+  <p>
+    The math isn't complicated. Four freeways run through or along the city: I-10, Loop 202, Loop 101, and US-60. Arizona State University sits in the middle with 80,000 students. Mill Avenue, Rural Road, Apache Boulevard, and University Drive carry foot traffic, bike traffic, e-bike traffic, and car traffic on the same lanes. The median age in Tempe is 30. Young drivers, high density, mixed modes. The crash numbers follow.
+  </p>
+
+  <h2>30% of Serious Crashes Involve Pedestrians and Cyclists</h2>
+
+  <p>
+    Tempe was the first city in Arizona to adopt a Vision Zero plan, back in 2018. They've committed real resources. Photo enforcement cameras. Rotating safety corridors that change quarterly based on crash data. A real-time operations center launched in 2024.
+  </p>
+
+  <p>
+    The results: 388 serious injury or fatal crashes between 2021 and 2024. Thirty percent involved pedestrians, bicyclists, e-bikes, or scooters. That's not a freeway problem. That's a surface street problem. People walking and riding on roads designed for cars doing 45 mph.
+  </p>
+
+  <p>
+    The current safety corridors for 2026 tell you where the problem is right now: 48th Street between Southern and Broadway, McClintock Drive in two segments, and Baseline Road near Priest Drive. These are arterials, not freeways. The crashes happen where speeds are high and pedestrian infrastructure is thin.
+  </p>
+
+  <h2>The Loop 202 Milk Tanker Crash</h2>
+
+  <p>
+    On June 9, 2021, a milk tanker on Loop 202 near the Tempe border crashed into stopped traffic at about 10 p.m. The tanker separated from the truck, crossed the median, and burst into flames. Four people died. Eleven were injured. Eight vehicles involved.
+  </p>
+
+  <p>
+    The NTSB investigated. The cause: driver fatigue. The driver had worked 83 hours one week and 77 the next. He was paid per load under an agricultural hours-of-service exemption with no driving time limit. His employer had no fatigue management program.
+  </p>
+
+  <p>
+    That crash happened on a road that tens of thousands of Tempe residents use daily. The regulatory loophole that allowed it still exists.
+  </p>
+
+  <h2>Autonomous Vehicles and Tempe</h2>
+
+  <p>
+    Tempe is where the autonomous vehicle conversation started. In March 2018, Elaine Herzberg, 49, became the first pedestrian killed by a self-driving car when an Uber test vehicle struck her while she was crossing Mill Avenue near Curry Road at night. In September 2025, a Waymo vehicle was involved in a fatal crash involving a motorcycle. Tempe is ground zero for AV safety policy in Arizona.
+  </p>
+
+  <h2>Where Tempe Crashes Concentrate</h2>
+
+  <p>
+    MAG's Top 100 Crash-Risk Intersections list includes three Tempe locations. Elliot Road and Kyrene Road at 58th. Broadway Road and Hardy Drive at 62nd. And Baseline Road near the Loop 101/202 interchange at 68th, with 257 crashes over the study period, the highest raw count of any Tempe intersection on the list.
+  </p>
+
+  <p>
+    The Mill Avenue corridor near ASU is a different kind of danger. Nightlife, pedestrians, cyclists, rideshare pickups, and through traffic all sharing the same space. Late-night impaired driving crashes happen here regularly.
+  </p>
+
+  <h2>We Handle Tempe Cases</h2>
+
+  <p>
+    Our offices are in Buckeye and Maricopa. We handle cases across Maricopa County. Tempe's crash patterns are well-documented, and we pull the same ADOT data, MAG intersection reports, and Vision Zero corridor data that builds the case.
+  </p>
+
+  <p>
+    If you or someone in your family was in a crash in Tempe, call <a href="tel:+16026540202">(602) 654-0202</a> or use our contact form. The consultation is free. We don't charge unless we recover money for you.
+  </p>
+</PracticeAreaLayout>

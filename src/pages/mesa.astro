@@ -1,0 +1,106 @@
+---
+/**
+ * Mesa Personal Injury Attorneys — Location Page
+ * East Valley. US-60. 8,022 crashes in 2024. Motorcyclist fatalities disproportionately high.
+ */
+
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+import { getLocalBusinessSchema } from '../utils/schema';
+
+const faqs = [
+  {
+    question: 'How many crashes happen in Mesa each year?',
+    answer: 'ADOT\'s 2024 data shows 8,022 crashes in Mesa. 46 were fatal, killing 48 people. That\'s the highest crash total of any East Valley city. US-60, Loop 202, and Loop 101 all run through Mesa, concentrating high-speed traffic through the city.',
+  },
+  {
+    question: 'What are the most dangerous intersections in Mesa?',
+    answer: 'The MAG Top 100 Crash-Risk Intersections list includes Dobson Road and University Drive (ranked 86th) and 8th Avenue and Alma School Road (ranked 100th). Country Club Drive near US-60 and Mesa Drive at Broadway Road are also identified crash hotspots based on local data.',
+  },
+  {
+    question: 'How long do I have to file a personal injury claim in Mesa?',
+    answer: 'Arizona\'s statute of limitations gives you two years from the date of the crash under ARS 12-542. For wrongful death claims, the deadline is two years from the date of death under ARS 12-611. Evidence disappears fast. Skid marks fade, surveillance footage gets overwritten, and witness memories change. Starting early matters.',
+  },
+  {
+    question: 'Do you have an office in Mesa?',
+    answer: 'Our offices are in Buckeye and Maricopa, but we handle cases across Maricopa County including Mesa. We know the US-60 corridor, the Loop 202 interchanges, and the arterials where crashes cluster. Distance from our office doesn\'t affect how we handle your case.',
+  },
+  {
+    question: 'What types of cases do you handle in Mesa?',
+    answer: 'Car crashes, truck crashes, motorcycle crashes, pedestrian injuries, bicycle crashes, rideshare crashes, wrongful death, slip and fall, medical negligence, and nursing home abuse. If someone else\'s negligence caused your injury in Mesa, we want to hear about it.',
+  },
+  {
+    question: 'Why are motorcycle crashes so common in Mesa?',
+    answer: 'Motorcyclist fatalities accounted for 46% of all Mesa traffic deaths in 2024. Sixteen riders killed. The combination of year-round riding weather, high-speed arterials, and drivers who don\'t check mirrors before lane changes creates conditions that are uniquely dangerous for riders. US-60 on-ramps and off-ramps are especially risky.',
+  },
+  {
+    question: 'How much does it cost to hire an injury attorney for a Mesa crash?',
+    answer: 'Nothing upfront. We work on contingency. You don\'t pay us unless we recover money for you. No hourly fees, no retainer. The consultation is free.',
+  },
+  {
+    question: 'Can I still recover compensation if I was partially at fault?',
+    answer: 'Yes. Arizona follows a pure comparative negligence rule under ARS 12-2505. You can recover compensation even if you were partly responsible. Your award gets reduced by your percentage of fault, but it doesn\'t disappear.',
+  },
+];
+
+const localSchema = getLocalBusinessSchema('Mesa', 'mesa');
+---
+
+<PracticeAreaLayout
+  title="Mesa Personal Injury Attorneys"
+  description="Mesa injury attorneys at AZ Law Now. 8,022 crashes in Mesa in 2024. US-60, Loop 202, Loop 101 corridors. Free consultation. Call (602) 654-0202."
+  canonical="/mesa/"
+  practiceArea="Mesa Personal Injury Attorneys"
+  heroTitle="8,022 Crashes in Mesa Last Year. We Handle the Aftermath."
+  heroSubtitle="Mesa injury attorneys who know the US-60 corridor, the Loop 202 interchanges, and the arterials where crashes cluster."
+  heroImage="/images/heroes/mesa.webp"
+  faqs={faqs}
+  schema={localSchema}
+>
+  <p>
+    Mesa logged 8,022 crashes in 2024. Forty-six were fatal. Forty-eight people died. That's the highest crash total of any city in the East Valley, and it's not close.
+  </p>
+
+  <p>
+    I pull this data from ADOT's Crash Facts report every year. Mesa's numbers tell a specific story. Three major freeways run through the city. US-60, Loop 202, and Loop 101 all converge here, funneling high-speed traffic onto arterials that weren't designed for the volume they carry.
+  </p>
+
+  <h2>The US-60 Problem</h2>
+
+  <p>
+    The Superstition Freeway cuts east-west through Mesa. It's the primary commuter route between the East Valley and downtown Phoenix. It's also a persistent fatal crash corridor. Multiple fatalities on US-60 in 2024 and 2025, including multi-vehicle pileups, rollover crashes, and a motorcyclist killed near Country Club Drive.
+  </p>
+
+  <p>
+    The Country Club Drive exit is a known hotspot. Three gas stations, a Walmart, and a Home Depot sit right at the interchange, generating heavy traffic volumes where freeway speed meets surface street congestion. The geometry creates exactly the kind of speed differential that causes rear-end crashes.
+  </p>
+
+  <h2>Motorcyclists Are Dying at Twice the Rate</h2>
+
+  <p>
+    This is the number that stands out in Mesa's data. Sixteen motorcyclists were killed in 2024. That's 46% of all Mesa traffic fatalities. Nearly half. The city's own Transportation Advisory Board presentation from July 2025 flagged it: motorcyclist deaths are up from 13 in 2022 to 15 in 2023 to 16 in 2024. Three consecutive years of increases.
+  </p>
+
+  <p>
+    Mesa has year-round riding weather. That's part of it. But the crash patterns show something else. Failure to yield is the most common violation in Mesa fatal crashes, and it's the violation that kills riders. A car turns left into a rider's path. A driver changes lanes without checking the mirror. The car has a crumple zone. The motorcycle doesn't.
+  </p>
+
+  <h2>Where Mesa Crashes Concentrate</h2>
+
+  <p>
+    Over 90% of Mesa crashes happen on arterial streets, not freeways. Broadway Road, Southern Avenue, Main Street, Country Club Drive, Dobson Road, and Alma School Road carry the bulk of the volume. MAG's Top 100 Crash-Risk Intersections list puts Dobson Road and University Drive at 86th and 8th Avenue and Alma School Road at 100th.
+  </p>
+
+  <p>
+    Mesa adopted a Comprehensive Safety Action Plan with a goal to reduce fatalities and serious injuries by 30% by 2030. 175 serious injury crashes happened in 2024, up from 167 the year before. The trend is going the wrong direction.
+  </p>
+
+  <h2>We Know Mesa's Roads</h2>
+
+  <p>
+    Our offices are in Buckeye and Maricopa, but we handle cases across Maricopa County. When Brendan investigates a crash on US-60 or at Country Club and Broadway, he's not starting from scratch. We pull the same ADOT data, the same MAG intersection reports, and the same traffic camera footage that builds the case.
+  </p>
+
+  <p>
+    If you or someone in your family was in a crash in Mesa, call <a href="tel:+16026540202">(602) 654-0202</a> or use our contact form. The consultation is free. We don't charge unless we recover money for you.
+  </p>
+</PracticeAreaLayout>
