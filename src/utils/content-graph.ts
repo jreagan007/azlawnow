@@ -160,21 +160,36 @@ export function autoLinkContent(html: string, currentPath: string, maxLinks: num
       if (linkCount >= maxLinks) return match;
 
       // Check if this match is inside an excluded section
-      // Look backwards for exclusion markers
-      const before = result.substring(Math.max(0, offset - 500), offset);
+      // Look backwards from the match position for open exclusion tags
+      const before = result.substring(0, offset);
 
-      // Check for open exclusion tags without closing
-      const excludePatterns = [
-        /<div[^>]*class="[^"]*references[^"]*"[^>]*>(?![\s\S]*<\/div>)/i,
-        /<div[^>]*class="[^"]*citations[^"]*"[^>]*>(?![\s\S]*<\/div>)/i,
-        /<div[^>]*class="[^"]*footnotes[^"]*"[^>]*>(?![\s\S]*<\/div>)/i,
-        /<blockquote[^>]*class="[^"]*citation[^"]*"[^>]*>(?![\s\S]*<\/blockquote>)/i,
-        /<[^>]*data-no-autolink[^>]*>(?![\s\S]*<\/)/i,
-      ];
+      // Count open vs close tags for each excluded class to determine nesting
+      const excludedClasses = ['references', 'citations', 'footnotes', 'source-list', 'no-autolink'];
+      for (const cls of excludedClasses) {
+        const openRe = new RegExp(`<div[^>]*class="[^"]*${cls}[^"]*"[^>]*>`, 'gi');
+        const closeRe = /<\/div>/gi;
+        const opens = (before.match(openRe) || []).length;
+        // Count closing divs AFTER the last open of this class
+        const lastOpenIdx = before.lastIndexOf(cls);
+        if (lastOpenIdx > -1) {
+          const afterLastOpen = before.substring(lastOpenIdx);
+          const closesAfter = (afterLastOpen.match(closeRe) || []).length;
+          if (opens > 0 && closesAfter === 0) {
+            return match; // Inside an excluded section
+          }
+        }
+      }
 
-      for (const pattern of excludePatterns) {
-        if (pattern.test(before)) {
-          return match; // Don't link, we're inside excluded content
+      // Also check data-no-autolink attribute
+      const noAutolinkOpen = (before.match(/<[^>]*data-no-autolink[^>]*>/gi) || []).length;
+      const noAutolinkClose = (before.match(/<\/[^>]+>/gi) || []).length;
+      if (noAutolinkOpen > 0) {
+        const lastAttr = before.lastIndexOf('data-no-autolink');
+        if (lastAttr > -1) {
+          const afterAttr = before.substring(lastAttr);
+          if (!(/<\/div>|<\/section>|<\/blockquote>/i.test(afterAttr))) {
+            return match;
+          }
         }
       }
 
@@ -301,7 +316,7 @@ function formatPathAsTitle(segment: string): string {
     'vehicle-crashes': 'Vehicle Crashes',
     'abuse-negligence': 'Abuse & Negligence',
     'other-claims': 'Other Claims',
-    'free-case-review': 'Free Case Review',
+    'free-case-review': 'Editorial Intake',
     'legal-guides': 'Legal Guides',
     'client-guides': 'Client Guides',
     'case-results': 'Case Results',
