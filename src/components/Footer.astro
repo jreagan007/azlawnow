@@ -71,6 +71,31 @@ const resourceLinks = [
 ---
 
 <footer class="footer">
+  <!-- Site-wide CTA bar -->
+  <div class="footer-cta-bar">
+    <div class="footer-cta-inner container">
+      <div class="footer-cta-left">
+        <span class="footer-cta-headline">Answers start here.</span>
+        <a
+          href="tel:+16026540202"
+          class="footer-cta-phone"
+          aria-label="Call AZ Law Now at (602) 654-0202"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          (602) 654-0202
+        </a>
+      </div>
+      <a href="/free-case-review/" class="btn btn-primary footer-cta-btn">
+        Get answers on your case
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
   <!-- Main Footer — light cream -->
   <div class="footer-body">
     <div class="container">
@@ -188,19 +213,22 @@ const resourceLinks = [
      ======================================== */
   .footer-cta-bar {
     background: #1A1A1A;
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
   }
 
   .footer-cta-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
   .footer-cta-left {
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    flex-wrap: wrap;
   }
 
   .footer-cta-headline {
@@ -208,25 +236,65 @@ const resourceLinks = [
     font-size: 1.5rem;
     font-weight: 700;
     color: #FAF5ED;
-    line-height: 1;
+    line-height: 1.1;
+    margin: 0;
   }
 
   .footer-cta-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
     font-size: 1.375rem;
     font-weight: 700;
     color: #D4943A;
     text-decoration: none;
+    padding: 0.5rem 0.25rem;
+    min-height: 44px;
+    border-radius: 4px;
     transition: color 0.2s ease;
   }
 
-  .footer-cta-phone:hover { color: #C2842E; }
+  .footer-cta-phone:hover,
+  .footer-cta-phone:focus-visible {
+    color: #FAF5ED;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+
+  .footer-cta-phone:focus-visible {
+    outline: 2px solid #D4943A;
+    outline-offset: 3px;
+  }
 
   /* Layout override — global .btn .btn-primary handles colors/font/transitions */
   .footer-cta-btn {
     flex-shrink: 0;
     font-size: 0.8125rem;
     padding: 0.75rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-cta-bar {
+      padding: 1.5rem 0;
+    }
+    .footer-cta-inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+    .footer-cta-left {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .footer-cta-btn {
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+    }
   }
 
   /* ========================================
