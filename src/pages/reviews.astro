@@ -1,44 +1,39 @@
 ---
 /**
  * Client Reviews — AZ Law Now
- * Placeholder testimonials with review cards
+ * 93 Google reviews, 5.0 average
+ * Place ID: ChIJh-Cdb4E1K4cRtAyu8aMUr1Q
+ * Last verified: April 13, 2026
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site-config';
 import { getReviewPageSchema } from '../utils/schema';
 
-// Real Google reviews from azlawnow.com GMB profile
-// Place ID: ChIJh-Cdb4E1K4cRtAyu8aMUr1Q
-// Total: 89 reviews, 5.0 average (verified Apr 9, 2026)
 const reviews = [
   {
-    name: 'Jonathan Blackmore',
+    name: 'Shawna Henderson',
     rating: 5,
-    text: 'Brendan is great at what he does. A+ quality service, great communication, definitely the resource you need in your corner. Thanks again Brendan.',
+    text: 'After my car accident, I was overwhelmed and unsure of what to expect, but working with this law firm was the best decision I could have made. They were compassionate, attentive, and incredibly thorough. Every question I had was answered promptly and with care.',
     source: 'Google',
-    timeAgo: '3 months ago',
+    timeAgo: '2 months ago',
+    category: 'Car Accident',
   },
   {
     name: 'Cheyanne Andrews',
     rating: 5,
     text: 'Brendan and his team have been absolutely incredible to me. Brendan is very informative and keeps you updated along the way. Also very time efficient. He was able to give me a great orthopedic surgeon referral. Truly made a horrible situation seamless and a good ending to a true nightmare.',
     source: 'Google',
-    timeAgo: '4 months ago',
+    timeAgo: '3 months ago',
+    category: 'Personal Injury',
   },
   {
-    name: 'A. Martin',
+    name: 'Xavier Brizar',
     rating: 5,
-    text: 'From the consult to the final check, the team at AZ Law Now Injury Attorneys was incredible. They were professional, warm, helpful, and made me feel comfortable and important. Totally awesome. 100% recommend.',
+    text: 'I am writing this review to express my sincere gratitude to the team at AZ Law Now Injury Attorneys for their exceptional representation. From the initial consultation to the resolution of my case, the entire team demonstrated professionalism and genuine care.',
     source: 'Google',
-    timeAgo: '5 months ago',
-  },
-  {
-    name: 'Eugene Kwon',
-    rating: 5,
-    text: 'I had a great experience with AZ Law Now Injury Attorneys. They were professional, responsive, and made the process easy. I really appreciated how they kept me updated and worked hard to get results. 10/10 recommend.',
-    source: 'Google',
-    timeAgo: '7 months ago',
+    timeAgo: '2 months ago',
+    category: 'Personal Injury',
   },
   {
     name: 'Avalon Curtin',
@@ -46,12 +41,60 @@ const reviews = [
     text: 'AZ Law Now was amazing to work with after my car accident. Brendan and the team were quick to respond, kept me informed, and made the whole process so much easier. They were personable, professional, and got me a great outcome. Highly recommend.',
     source: 'Google',
     timeAgo: '9 months ago',
+    category: 'Car Accident',
+  },
+  {
+    name: 'Rick & Joyce Wiles',
+    rating: 5,
+    text: "After spending time with Brendan and hearing about his passions I realized he's not just trying to be the best lawyer, but the best community member. With that said, if you need an attorney make Brendan Franks at AZ Law Now your first call.",
+    source: 'Google',
+    timeAgo: '2 months ago',
+    category: 'Community',
+  },
+  {
+    name: 'Jonathan Blackmore',
+    rating: 5,
+    text: 'Brendan is great at what he does. A+ quality service, great communication, definitely the resource you need in your corner. Thanks again Brendan.',
+    source: 'Google',
+    timeAgo: '3 months ago',
+    category: 'Personal Injury',
+  },
+  {
+    name: 'A. Martin',
+    rating: 5,
+    text: 'From the consult to the final check, the team at AZ Law Now Injury Attorneys was incredible. They were professional, warm, helpful, and made me feel comfortable and important. Totally awesome. 100% recommend.',
+    source: 'Google',
+    timeAgo: '5 months ago',
+    category: 'Personal Injury',
+  },
+  {
+    name: 'Eugene Kwon',
+    rating: 5,
+    text: 'I had a great experience with AZ Law Now Injury Attorneys. They were professional, responsive, and made the process easy. I really appreciated how they kept me updated and worked hard to get results. 10/10 recommend.',
+    source: 'Google',
+    timeAgo: '7 months ago',
+    category: 'Personal Injury',
+  },
+  {
+    name: 'Allison Helm',
+    rating: 5,
+    text: "I'm really impressed with AZ Law Now Injury Attorneys and the way they give back to the community. Recently, they made a generous donation to the Buckeye VFW to support veterans right here in Buckeye. It's not every day you see a law firm step up like that.",
+    source: 'Google',
+    timeAgo: '2 months ago',
+    category: 'Community',
+  },
+  {
+    name: 'Tammy Nahrgang',
+    rating: 5,
+    text: 'I want to take a moment to express my heartfelt appreciation for a remarkable attorney who has made a significant impact in our community. His dedication to the Chamber of Commerce and local initiatives exemplifies true leadership.',
+    source: 'Google',
+    timeAgo: '1 month ago',
+    category: 'Community',
   },
 ];
 
-// Aggregate stats from Google Business Profile
 const reviewStats = {
-  total: 89,
+  total: 93,
   average: 5.0,
   source: 'Google',
 };
@@ -60,22 +103,22 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
 ---
 
 <BaseLayout
-  title="Client Reviews"
-  description="Read what our clients say about AZ Law Now. 5-star reviews from West Valley injury clients in Buckeye, Goodyear, Avondale, and Maricopa."
+  title="Client Reviews | 93 Five-Star Google Reviews"
+  description="93 five-star Google reviews. Read what real clients say about AZ Law Now Injury Attorneys in Buckeye, Goodyear, Avondale, and Maricopa."
   canonical="/reviews/"
   schema={reviewSchema}
 >
   <!-- Hero -->
-  <section class="hero hero-centered">
+  <section class="reviews-hero">
     <div class="container container-narrow">
-      <p class="uppercase text-gold-text mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em; color: var(--color-gold-text, #8B4513);">Client Reviews</p>
-      <h1>What Our Clients Say</h1>
-      <div class="reviews-stats" aria-label="Review statistics">
+      <p class="reviews-hero__label">Client Reviews</p>
+      <h1 class="reviews-hero__title">93 Families Trusted Us.<br />Here's What They Said.</h1>
+      <div class="reviews-stats" role="group" aria-label="Review statistics">
         <div class="reviews-stat">
           <span class="reviews-stat__value">{reviewStats.average.toFixed(1)}</span>
-          <div class="reviews-stat__stars" aria-hidden="true">
+          <div class="reviews-stat__stars" role="img" aria-label="5 out of 5 stars">
             {Array.from({ length: 5 }).map(() => (
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="var(--color-gold)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-gold)" aria-hidden="true">
                 <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
               </svg>
             ))}
@@ -87,48 +130,72 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
           <span class="reviews-stat__label">Google Reviews</span>
         </div>
       </div>
-      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
-        Real feedback from real clients. Every review represents someone who trusted us with their case and got the result they deserved.
+      <p class="reviews-hero__sub">
+        Every review is from a real client on Google. No filtering, no editing. These are the people who trusted us with their case.
       </p>
     </div>
   </section>
 
   <!-- Reviews Grid -->
-  <section class="section">
-    <div class="container" style="max-width: 1000px;">
+  <section class="reviews-section">
+    <div class="container" style="max-width: 1080px;">
       <div class="reviews-grid">
-        {reviews.map((review) => (
-          <div class="review-card card card-elevated">
-            <div class="review-card__stars" aria-label={`${review.rating} out of 5 stars`}>
-              {Array.from({ length: review.rating }).map(() => (
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--color-gold)" aria-hidden="true">
-                  <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
-                </svg>
-              ))}
+        {reviews.map((review, i) => (
+          <div class={`review-card card card-elevated ${i === 0 ? 'review-card--featured' : ''}`}>
+            <div class="review-card__header">
+              <div class="review-card__stars" role="img" aria-label={`${review.rating} out of 5 stars`}>
+                {Array.from({ length: review.rating }).map(() => (
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="var(--color-gold)" aria-hidden="true">
+                    <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.51.91-5.32L2.27 6.69l5.34-.78L10 1z"/>
+                  </svg>
+                ))}
+              </div>
+              {review.category && (
+                <span class="review-card__category">{review.category}</span>
+              )}
             </div>
             <blockquote class="review-card__text">
-              "{review.text}"
+              {review.text}
             </blockquote>
             <div class="review-card__author">
               <span class="review-card__name">{review.name}</span>
-              <span class="review-card__location">via {review.source} · {review.timeAgo}</span>
+              <span class="review-card__meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="flex-shrink: 0;">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                {review.timeAgo}
+              </span>
             </div>
           </div>
         ))}
+      </div>
+
+      <div class="reviews-gmb-link">
+        <a
+          href="https://www.google.com/maps/place/AZ+Law+Now+Injury+Attorneys/@33.3702914,-112.5801643,17z/data=!4m8!3m7!1s0x872b35816f9de087:0x54af14a3f1ae0cb4!8m2!3d33.3702914!4d-112.5801643!9m1!1b1!16s%2Fg%2F11wfb__gfv"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          Read All {reviewStats.total} Reviews on Google →
+        </a>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="cta-section">
-    <div class="container">
+    <div class="container container-narrow" style="text-align: center;">
       <h2>You Deserve Answers.</h2>
       <p>Tell us what happened. We'll tell you what's next.</p>
       <div class="cta-buttons">
         <a href="/free-case-review/" class="btn btn-primary btn-lg">
           Get My Free Consultation →
         </a>
-        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta">
+        <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta" aria-label={`Call ${siteConfig.phoneFormatted}`}>
           {siteConfig.phoneFormatted}
         </a>
       </div>
@@ -137,59 +204,49 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
 </BaseLayout>
 
 <style>
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
+  /* ========================================
+     REVIEWS HERO
+     ======================================== */
+  .reviews-hero {
+    padding: var(--space-20) 0 var(--space-12);
+    background: linear-gradient(180deg, var(--color-white) 0%, var(--color-bg) 100%);
+    text-align: center;
   }
 
-  .review-card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+  .reviews-hero__label {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold-text, #8B4513);
+    margin-bottom: var(--space-4);
   }
 
-  .review-card__stars {
-    display: flex;
-    gap: var(--space-1);
-  }
-
-  .review-card__text {
-    color: var(--color-slate);
-    line-height: 1.7;
-    font-style: normal;
-    border: none;
-    padding: 0;
-    margin: 0;
-    background: none;
-    flex-grow: 1;
-  }
-
-  .review-card__author {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    padding-top: var(--space-4);
-    border-top: 1px solid var(--neutral-200);
-  }
-
-  .review-card__name {
+  .reviews-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
     font-weight: 700;
     color: var(--color-black);
+    line-height: 1.1;
+    margin-bottom: 0;
   }
 
-  .review-card__location {
-    font-size: var(--text-sm);
-    color: var(--neutral-500);
+  .reviews-hero__sub {
+    color: var(--color-slate);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.7;
   }
 
-  /* Reviews stats strip in hero */
+  /* ========================================
+     STATS STRIP
+     ======================================== */
   .reviews-stats {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-8);
-    margin: var(--space-6) 0 var(--space-8);
+    margin: var(--space-8) 0;
   }
 
   .reviews-stat {
@@ -226,9 +283,120 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
     background: var(--neutral-300);
   }
 
+  /* ========================================
+     REVIEWS GRID — MASONRY-STYLE
+     ======================================== */
+  .reviews-section {
+    padding: 0 0 var(--space-16);
+    background: var(--color-bg);
+  }
+
+  .reviews-grid {
+    columns: 2;
+    column-gap: var(--space-6);
+  }
+
+  .review-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    break-inside: avoid;
+    margin-bottom: var(--space-6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .review-card--featured {
+    border-left: 3px solid var(--color-gold);
+  }
+
+  .review-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .review-card__stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .review-card__category {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-gold-text, #8B4513);
+    background: rgba(212, 148, 58, 0.1);
+    padding: 0.15rem var(--space-2);
+    border-radius: 2px;
+  }
+
+  .review-card__text {
+    color: var(--color-slate);
+    line-height: 1.7;
+    font-style: normal;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    flex-grow: 1;
+    font-size: var(--text-sm);
+  }
+
+  .review-card__author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--neutral-200);
+  }
+
+  .review-card__name {
+    font-weight: 700;
+    font-size: var(--text-sm);
+    color: var(--color-black);
+  }
+
+  .review-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+  }
+
+  /* ========================================
+     GMB LINK
+     ======================================== */
+  .reviews-gmb-link {
+    text-align: center;
+    padding: var(--space-8) 0 0;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
   @media (max-width: 768px) {
     .reviews-grid {
-      grid-template-columns: 1fr;
+      columns: 1;
+    }
+
+    .reviews-hero__title {
+      font-size: var(--text-3xl);
+    }
+
+    .reviews-hero__title br {
+      display: none;
+    }
+
+    .reviews-stats {
+      gap: var(--space-6);
     }
   }
 </style>
