@@ -1,3 +1,24 @@
 ---
-return Astro.redirect('/abuse-negligence/elder-abuse/', 301);
+import { getEntry, render } from 'astro:content';
+import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
+
+const entry = await getEntry('practice-areas', 'elder-abuse');
+if (!entry) return Astro.redirect('/404');
+const { Content } = await render(entry);
 ---
+<PracticeAreaLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical="/elder-abuse/"
+  practiceArea={entry.data.practiceArea}
+  heroTitle={entry.data.heroTitle}
+  heroSubtitle={entry.data.heroSubtitle}
+  heroImage={entry.data.heroImage}
+  faqs={entry.data.faqs}
+  cluster={entry.data.cluster}
+  clusterLabel={entry.data.clusterLabel}
+>
+  <div class="container content-section">
+    <Content />
+  </div>
+</PracticeAreaLayout>

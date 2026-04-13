@@ -710,8 +710,15 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         color: var(--color-gold-text);
       }
 
-      .phone-cta:hover {
+      .phone-cta:hover,
+      .phone-cta:focus-visible {
         color: var(--color-sienna);
+      }
+
+      .phone-cta:focus-visible {
+        outline: 2px solid var(--color-gold);
+        outline-offset: 4px;
+        border-radius: 2px;
       }
 
       /* ========================================

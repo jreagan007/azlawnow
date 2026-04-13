@@ -31,6 +31,92 @@
   status = 301
   force = true
 
+# Practice area URL flattening: nested cluster → root-level
+[[redirects]]
+  from = "/vehicle-crashes/car-accidents/*"
+  to = "/car-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/vehicle-crashes/truck-accidents/*"
+  to = "/truck-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/vehicle-crashes/motorcycle-accidents/*"
+  to = "/motorcycle-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/vehicle-crashes/pedestrian-accidents/*"
+  to = "/pedestrian-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/vehicle-crashes/bicycle-accidents/*"
+  to = "/bicycle-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/vehicle-crashes/bus-accidents/*"
+  to = "/bus-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/vehicle-crashes/rideshare-accidents/*"
+  to = "/rideshare-accidents/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/abuse-negligence/elder-abuse/*"
+  to = "/elder-abuse/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/abuse-negligence/nursing-home-abuse/*"
+  to = "/nursing-home-abuse/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/abuse-negligence/child-abuse/*"
+  to = "/child-abuse/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/abuse-negligence/daycare-negligence/*"
+  to = "/daycare-negligence/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/abuse-negligence/school-abuse/*"
+  to = "/school-abuse/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/abuse-negligence/medical-negligence/*"
+  to = "/medical-negligence/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/other-claims/slip-and-fall/*"
+  to = "/slip-and-fall/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/other-claims/dog-bite/*"
+  to = "/dog-bite/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/other-claims/premises-liability/*"
+  to = "/premises-liability/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/other-claims/wrongful-death/*"
+  to = "/wrongful-death/:splat"
+  status = 301
+
 # Security headers
 [[headers]]
   for = "/*"

@@ -1,34 +1,16 @@
 ---
-import { getCollection, render } from 'astro:content';
-import PracticeAreaLayout from '../../layouts/PracticeAreaLayout.astro';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const allPracticeAreas = await getCollection('practice-areas');
   return allPracticeAreas
     .filter(pa => pa.data.cluster === 'vehicle-crashes' && !pa.data.draft)
     .map(pa => {
-      const slug = pa.id.split('/').pop() || pa.id;
-      return { params: { slug }, props: { entry: pa } };
+      const slug = pa.id.replace(/\.mdx?$/, '');
+      return { params: { slug }, props: { slug } };
     });
 }
 
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-const slug = entry.id.split('/').pop() || entry.id;
+const { slug } = Astro.props;
+return Astro.redirect(`/${slug}/`, 301);
 ---
-<PracticeAreaLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  canonical={`/vehicle-crashes/${slug}/`}
-  practiceArea={entry.data.practiceArea}
-  heroTitle={entry.data.heroTitle}
-  heroSubtitle={entry.data.heroSubtitle}
-  heroImage={entry.data.heroImage}
-  faqs={entry.data.faqs}
-  cluster="vehicle-crashes"
-  clusterLabel="Vehicle Crashes"
->
-  <div class="container content-section">
-    <Content />
-  </div>
-</PracticeAreaLayout>
