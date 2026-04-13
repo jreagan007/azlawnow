@@ -1,9 +1,9 @@
 ---
 /**
- * Free Case Review — AZ Law Now
+ * Editorial Intake · AZ Law Now
  * Editorial intake page. Two-column layout: form on the left, trust signals on the right.
- * NOT a stripped-down conversion page — the editorial context IS the trust signal.
- * noindex. No header/footer hidden — we want people to see where they are.
+ * The editorial context IS the trust signal.
+ * noindex. Header and footer stay visible so people see where they are.
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -12,7 +12,7 @@ import { siteConfig } from '../data/site-config';
 
 <BaseLayout
   title="Tell us what happened"
-  description="Tell us what happened. We'll tell you what's next. Free case review from AZ Law Now — the firm that does the work before the case."
+  description="Tell us what happened. We will tell you what is next. Confidential intake from AZ Law Now."
   canonical="/free-case-review/"
   noindex={true}
   hideHeader={false}
@@ -22,11 +22,11 @@ import { siteConfig } from '../data/site-config';
     <div class="container review-container">
 
       <header class="review-header">
-        <span class="review-eyebrow">Free Case Review · Confidential</span>
+        <span class="review-eyebrow">Editorial Intake · Confidential</span>
         <h1 class="review-h1">Tell us what happened.</h1>
         <p class="review-deck">
-          We'll tell you what's next. No fee, no obligation, no pressure. You'll hear
-          back from a real person on our team — usually within a business day.
+          Send the basics. We read every intake ourselves and reply within one
+          business day. No obligation. Confidential.
         </p>
       </header>
 
@@ -71,16 +71,16 @@ import { siteConfig } from '../data/site-config';
                   class="form-textarea"
                   rows="7"
                   required
-                  placeholder="Where, when, who was involved, what you remember. Don't worry about structure — we'll ask follow-ups."
+                  placeholder="Where, when, who was involved, what you remember. Skip the structure. We will ask follow-ups."
                 ></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg review-submit">
-                Get My Free Consultation &rarr;
+                Get answers on your case &rarr;
               </button>
 
               <p class="review-form-footnote">
-                Your information stays confidential. We respond within one business day.
+                Confidential. Reply within one business day.
               </p>
             </form>
           </div>
@@ -98,8 +98,8 @@ import { siteConfig } from '../data/site-config';
 
           <!-- Block 1: What we've been looking into -->
           <div class="trust-block">
-            <h2 class="trust-block__heading">What we're looking into</h2>
-            <p class="trust-block__subhead">The firm that does the work before the case.</p>
+            <h2 class="trust-block__heading">What we are looking into</h2>
+            <p class="trust-block__subhead">Open files from the editors this week.</p>
             <ul class="trust-invest-list">
               <li class="trust-invest">
                 <span class="trust-invest__voice">On Record</span>
@@ -127,9 +127,9 @@ import { siteConfig } from '../data/site-config';
 
           <!-- Block 2: Who you're reaching -->
           <div class="trust-block">
-            <h2 class="trust-block__heading">Who you're reaching</h2>
+            <h2 class="trust-block__heading">Who you are reaching</h2>
             <p class="trust-block__subhead">
-              Your message goes to our editorial team, not a call center.
+              Your intake lands with the three editors below.
             </p>
             <ul class="trust-team">
               <li class="trust-team__member">
@@ -145,22 +145,22 @@ import { siteConfig } from '../data/site-config';
                 <div class="trust-team__role">Guided · Client Advocate</div>
               </li>
             </ul>
-            <a href="/about/team/" class="trust-team__link">Meet the full team &rarr;</a>
+            <a href="/about/#the-editors" class="trust-team__link">Meet the full team &rarr;</a>
           </div>
 
           <!-- Block 3: Numbers -->
           <div class="trust-block trust-block--stats">
             <div class="trust-stat">
               <span class="trust-stat__value">$3.07M+</span>
-              <span class="trust-stat__label">Recovered for clients</span>
+              <span class="trust-stat__label">Recovered for West Valley clients</span>
             </div>
             <div class="trust-stat">
-              <span class="trust-stat__value">No fee</span>
-              <span class="trust-stat__label">Unless we recover</span>
+              <span class="trust-stat__value">Contingency</span>
+              <span class="trust-stat__label">Representation</span>
             </div>
             <div class="trust-stat">
-              <span class="trust-stat__value">Same day</span>
-              <span class="trust-stat__label">Response</span>
+              <span class="trust-stat__value">1 business day</span>
+              <span class="trust-stat__label">Reply window</span>
             </div>
           </div>
 

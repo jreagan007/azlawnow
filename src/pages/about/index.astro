@@ -1,171 +1,522 @@
 ---
 /**
  * About AZ Law Now
- * Editorial about page — trio model, firm story, not corporate boilerplate
+ * Single consolidated about page — editorial identity, three voices, two offices.
+ *
+ * Editorial angle, not "firm" angle. Named authors anchor the newsroom model.
+ * Team section lives on anchors (#brendan-franks, #brandon-millam, #stephanie-ramirez)
+ * so internal links from articles, layouts, and schema.org authorUrl continue to resolve.
  */
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { siteConfig } from '../../data/site-config';
+import { authors } from '../../data/authors.ts';
 import { getAboutPageSchema } from '../../utils/schema';
 
-const aboutSchema = getAboutPageSchema();
+const siteUrl = siteConfig.siteUrl.replace(/\/$/, '');
+
+// Editorial voice pairing — which "column" each author owns on the site
+const voices = [
+  {
+    id: 'brendan-franks',
+    column: 'On Record',
+    columnDesc: 'West Valley public safety, crash data, records-driven reporting.',
+    ...authors['brendan-franks'],
+  },
+  {
+    id: 'brandon-millam',
+    column: 'Answered',
+    columnDesc: 'Legal guides reviewed line-by-line before publication.',
+    ...authors['brandon-millam'],
+  },
+  {
+    id: 'stephanie-ramirez',
+    column: 'Guided',
+    columnDesc: 'Plain-English walkthroughs for the people going through it.',
+    ...authors['stephanie-ramirez'],
+  },
+];
+
+// AboutPage schema — augmented with Person entries so each author stays indexable
+// now that /about/team/{slug}/ pages no longer exist.
+const aboutSchema = {
+  ...getAboutPageSchema(),
+  mainEntity: {
+    '@type': 'LegalService',
+    '@id': `${siteUrl}/#organization`,
+    name: siteConfig.legalName,
+    employee: voices.map((v) => ({
+      '@type': 'Person',
+      '@id': `${siteUrl}/about/#${v.id}`,
+      name: v.name,
+      jobTitle: v.title,
+      image: `${siteUrl}${v.photo}`,
+      url: `${siteUrl}/about/#${v.id}`,
+      worksFor: {
+        '@type': 'LegalService',
+        '@id': `${siteUrl}/#organization`,
+      },
+    })),
+  },
+};
 ---
 
 <BaseLayout
   title="About AZ Law Now"
-  description="The firm that does the work before the case. Brendan investigates. Brandon litigates. Stephanie guides. Two West Valley offices serving Arizona."
+  description="A West Valley injury firm built like a newsroom. Three named editors publish the data, the law, and the walkthrough — and then work your case."
   canonical="/about/"
   schema={aboutSchema}
 >
-  <!-- Hero -->
+  <!-- Hero — editorial, warm cream. Same visual language as article headers. -->
   <section class="about-hero">
-    <div class="about-hero__bg">
-      <img
-        src="/images/heroes/about.webp"
-        alt="AZ Law Now consultation room with desert view"
-        class="about-hero__img"
-        width="1600"
-        height="900"
-        loading="eager"
-        decoding="async"
-      />
-      <div class="about-hero__overlay" aria-hidden="true"></div>
-    </div>
     <div class="container container-narrow about-hero__content">
-      <p class="uppercase text-gold mb-4" style="font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.1em;">About the Firm</p>
-      <h1>The Firm That Does the Work Before the Case</h1>
-      <p class="hero-subtitle" style="margin-left: auto; margin-right: auto;">
-        Most firms start with paperwork. We start with an investigation. Three people. Two offices. One approach that actually works.
+      <p class="kicker">The Newsroom Behind the Firm</p>
+      <h1>We do the work <em>before</em> the case.</h1>
+      <p class="hero-subtitle">
+        Three named editors. Three beats. One case file. The bylines you read on this site are the same people working your case.
       </p>
+      <div class="about-hero__bylines">
+        {voices.map((v) => (
+          <a href={`#${v.id}`} class="byline-chip">
+            <img src={v.photo} alt="" width="40" height="40" loading="eager" decoding="async" />
+            <span>
+              <strong>{v.name}</strong>
+              <em>{v.column}</em>
+            </span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
-  <!-- Story Section -->
-  <section class="section">
-    <div class="container container-narrow">
-      <p>
-        AZ Law Now exists because of a simple observation: most injury firms don't investigate. They sign clients, assign paralegals, and wait for the insurance company to make an offer. Then they negotiate from whatever the police report says.
-      </p>
-
-      <p>
-        That's not good enough. Police reports capture what an officer saw after arriving at the scene. They don't capture surveillance footage from the gas station across the street. They don't measure skid marks before rain washes them away. They don't interview the witness who left before cops showed up.
-      </p>
-
-      <p>
-        We built a firm that captures all of it. Not as an afterthought. As the first step.
-      </p>
-
-      <h2>Three People, One Case</h2>
-
-      <p>
-        Every client gets the same team of three. Not a rotating cast of associates. Not a paralegal who handles 200 files. Three specific people with three specific jobs.
-      </p>
-
-      <div class="about-trio">
-        <div class="card card-elevated" style="margin-bottom: var(--space-6);">
-          <h3 style="color: var(--color-gold-text, #8B4513); margin-bottom: var(--space-2);">Brendan Franks</h3>
-          <p style="font-weight: 600; color: var(--color-black); margin-bottom: var(--space-3);">The Investigator</p>
-          <p>
-            Brendan goes to the crash scene the day you hire us. He photographs evidence, identifies witnesses, pulls surveillance footage, and documents everything the insurance company hopes you'll miss. By the time the other side starts building their defense, Brendan's already built ours.
-          </p>
-        </div>
-
-        <div class="card card-elevated" style="margin-bottom: var(--space-6);">
-          <h3 style="color: var(--color-gold-text, #8B4513); margin-bottom: var(--space-2);">Brandon Millam, J.D.</h3>
-          <p style="font-weight: 600; color: var(--color-black); margin-bottom: var(--space-3);">The Litigator</p>
-          <p>
-            Brandon takes Brendan's evidence file and turns it into a legal strategy. He handles negotiations, court filings, and trial preparation. Every case gets prepared as if it's going to a courtroom, because that preparation is what produces better settlement offers.
-          </p>
-        </div>
-
-        <div class="card card-elevated" style="margin-bottom: var(--space-6);">
-          <h3 style="color: var(--color-gold-text, #8B4513); margin-bottom: var(--space-2);">Stephanie Ramirez</h3>
-          <p style="font-weight: 600; color: var(--color-black); margin-bottom: var(--space-3);">The Guide</p>
-          <p>
-            Stephanie is your point of contact from day one. She keeps you updated on your case, answers your questions, and makes sure you're never left wondering what's happening. When you call, you get Stephanie. Not a voicemail. Not a receptionist.
-          </p>
-        </div>
+  <!-- Three voices -->
+  <section class="section section-soft" id="the-editors">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker kicker-center">The Editors</p>
+        <h2 class="h2-center">Three voices, three beats, one case file.</h2>
+        <p class="section-lede">
+          Every client gets the same team. Not a rotating cast of associates. Not a paralegal juggling 200 files. The three people who publish under our masthead are the three people on your case from day one.
+        </p>
       </div>
 
-      <h2>Two West Valley Offices</h2>
+      <div class="voices">
+        {voices.map((v) => (
+          <article class="voice-card" id={v.id}>
+            <div class="voice-card__photo">
+              <img
+                src={v.photo}
+                alt={`Portrait of ${v.name}`}
+                width="320"
+                height="400"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="voice-card__body">
+              <p class="voice-column">{v.column}</p>
+              <h3>{v.name}</h3>
+              <p class="voice-title">{v.title}</p>
+              <p class="voice-column-desc">{v.columnDesc}</p>
+              <p class="voice-bio">{v.bio}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Two offices -->
+  <section class="section">
+    <div class="container container-narrow">
+      <h2>Two West Valley offices</h2>
 
       <p>
-        Our headquarters is in <a href="/buckeye/">Buckeye</a>, right in the heart of the West Valley. We opened a second office in <a href="/maricopa/">Maricopa</a> in March 2026 to serve Pinal County residents who shouldn't have to drive to Phoenix for good representation.
+        Headquarters in <a href="/buckeye/">Buckeye</a>. A second office in <a href="/maricopa/">Maricopa</a> opened March 2026 for Pinal County clients.
       </p>
 
-      <p>
-        Both offices serve walk-ins and scheduled appointments, Monday through Friday, 8 a.m. to 6 p.m. If you can't come to us, we'll come to you.
-      </p>
+      <div class="offices">
+        {siteConfig.offices.map((office) => (
+          <div class="office-card">
+            <p class="office-label">{office.isPrimary ? 'Headquarters' : 'Satellite Office'}</p>
+            <h3 class="office-name">{office.name}</h3>
+            <address>
+              {office.street}<br />
+              {office.city}, {office.state} {office.zip}
+            </address>
+            <p class="office-hours">Monday – Friday · 8 a.m. – 6 p.m.</p>
+            <a href={`tel:${office.phoneE164}`} class="office-phone">{office.phoneFormatted}</a>
+          </div>
+        ))}
+      </div>
 
-      <h2>Why "AZ Law Now"</h2>
-
-      <p>
-        The name says what we believe. When you're hurt, you need answers now. Not next week. Not after three voicemails. Not after a 45-minute drive to a downtown high-rise.
-      </p>
-
-      <p>
-        You need someone who picks up the phone, explains your options, and starts working your case today. That's what we do. Every time.
-      </p>
-
-      <h2>Results That Back It Up</h2>
-
-      <p>
-        We've recovered over $3.07 million for injured clients across the West Valley. That number grows because our approach works. Investigation first. Litigation second. Communication always.
-      </p>
-
-      <p>
-        Check our <a href="/case-results/">case results</a> for specifics. Read our <a href="/reviews/">client reviews</a> for perspective. Then call <a href="tel:+16026540202">(602) 654-0202</a> and let's talk about your case.
+      <p class="offices-footnote">
+        Walk-ins and scheduled appointments at both offices. Home visits available if you cannot travel.
       </p>
     </div>
   </section>
 
+  <!-- Editorial standards note -->
+  <section class="section">
+    <div class="container container-narrow">
+      <h2>Editorial standards</h2>
+
+      <p>
+        Brandon Millam, J.D. reviews every legal guide before publication. Every data story cites its source. Every client walkthrough is written by the person who handles those calls. Read the full <a href="/editorial-policy/">editorial policy</a> for methodology, corrections, and how we handle records requests.
+      </p>
+
+      <p>
+        $3.07M recovered for West Valley clients. See the <a href="/case-results/">case results</a> and <a href="/reviews/">client reviews</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Fresh-load hash fixup:
+       Headshots load async and push editor cards down after the browser's
+       initial scroll attempt, so deep-linking via /about/#brendan-franks would
+       land in the wrong spot. Re-scroll once images settle + on window.load. -->
+  <script is:inline>
+    (function () {
+      function scrollToHash() {
+        if (!location.hash) return;
+        var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (el) el.scrollIntoView({ block: 'start', behavior: 'auto' });
+      }
+      window.addEventListener('load', function () { setTimeout(scrollToHash, 0); });
+      // Also cover the case where the browser scrolled partially but images
+      // shifted layout afterward — re-run after the last image resolves.
+      var imgs = document.images;
+      var pending = 0;
+      for (var i = 0; i < imgs.length; i++) {
+        if (!imgs[i].complete) {
+          pending++;
+          imgs[i].addEventListener('load', function () {
+            if (--pending === 0) setTimeout(scrollToHash, 0);
+          });
+          imgs[i].addEventListener('error', function () {
+            if (--pending === 0) setTimeout(scrollToHash, 0);
+          });
+        }
+      }
+    })();
+  </script>
+
+  <!-- Final CTA band -->
+  <section class="section section-dark final-cta">
+    <div class="container container-narrow" style="text-align: center;">
+      <h2 style="color: var(--color-white);">Same team. Same case file. Day one.</h2>
+      <p style="color: rgba(255, 255, 255, 0.85); max-width: 620px; margin: 0 auto var(--space-8);">
+        You will reach the people whose names appear on this page. Same-day callbacks. Bilingual intake. Contingency representation.
+      </p>
+      <div class="final-cta__actions">
+        <a href="/free-case-review/" class="btn btn-primary btn-lg">
+          {siteConfig.messaging.l8Primary} →
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="final-cta__phone">
+          Call {siteConfig.phoneFormatted}
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
+  /* ---------- Hero ---------- */
   .about-hero {
-    position: relative;
-    overflow: hidden;
-    min-height: 420px;
-    display: flex;
-    align-items: center;
+    padding: var(--space-16, 4rem) 0 var(--space-12, 3rem);
     text-align: center;
+    background: linear-gradient(180deg, var(--color-bg, #FAF5ED) 0%, #FFFDF8 100%);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.06);
   }
 
-  .about-hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+  .kicker {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold, #D4943A);
+    margin-bottom: var(--space-4);
   }
 
-  .about-hero__img {
-    width: 100%;
-    height: 100%;
+  .kicker-center { display: block; }
+
+  .about-hero h1 {
+    max-width: 780px;
+    margin: 0 auto var(--space-4);
+  }
+
+  .about-hero h1 em {
+    font-style: italic;
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .about-hero .hero-subtitle {
+    max-width: 720px;
+    margin: 0 auto var(--space-8);
+    color: var(--color-slate, #4A5568);
+    font-size: var(--text-lg);
+    line-height: 1.65;
+  }
+
+  .about-hero__bylines {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .byline-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-4) var(--space-2) var(--space-2);
+    background: var(--color-white, #fff);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--color-black);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(26, 26, 26, 0.04);
+  }
+
+  .byline-chip:hover,
+  .byline-chip:focus-visible {
+    border-color: var(--color-gold, #D4943A);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 148, 58, 0.2);
+  }
+
+  .byline-chip img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     object-fit: cover;
-    object-position: center;
+    background: var(--neutral-100, #f3f4f6);
   }
 
-  .about-hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(26, 26, 26, 0.7) 0%,
-      rgba(26, 26, 26, 0.8) 100%
-    );
+  .byline-chip span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    text-align: left;
   }
 
-  .about-hero__content {
-    position: relative;
-    z-index: 1;
-    padding-top: var(--space-16, 4rem);
-    padding-bottom: var(--space-16, 4rem);
+  .byline-chip strong {
+    font-size: var(--text-sm);
+    font-weight: 600;
   }
 
-  .about-hero__content h1 {
-    color: #FFFFFF;
+  .byline-chip em {
+    font-style: normal;
+    font-size: var(--text-xs);
+    color: var(--color-gold-text, #8B4513);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
-  .about-hero__content .hero-subtitle {
-    color: rgba(255, 255, 255, 0.85);
+  /* ---------- Section utilities ---------- */
+  .section-soft {
+    background: linear-gradient(180deg, #FFFDF8 0%, var(--color-bg, #FAF5ED) 100%);
+  }
+
+  .section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--space-12, 3rem);
+  }
+
+  .h2-center {
+    text-align: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .section-lede {
+    color: var(--color-slate, #4A5568);
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+
+  /* ---------- Voices (editors) ---------- */
+  .voices {
+    display: grid;
+    gap: var(--space-10, 2.5rem);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .voice-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-8, 2rem);
+    align-items: start;
+    padding: var(--space-6);
+    background: var(--color-white, #fff);
+    border: 1px solid rgba(26, 26, 26, 0.06);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 4px 24px rgba(26, 26, 26, 0.05);
+    scroll-margin-top: 100px;
+  }
+
+  .voice-card__photo img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-md, 8px);
+    background: var(--neutral-100, #f3f4f6);
+  }
+
+  .voice-column {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold-text, #8B4513);
+    padding: 4px 10px;
+    background: rgba(212, 148, 58, 0.12);
+    border-radius: 999px;
+    margin-bottom: var(--space-3);
+  }
+
+  .voice-card h3 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--text-2xl);
+  }
+
+  .voice-title {
+    color: var(--color-gold-text, #8B4513);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+  }
+
+  .voice-column-desc {
+    color: var(--color-slate, #4A5568);
+    font-style: italic;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+  }
+
+  .voice-bio {
+    color: var(--color-slate, #4A5568);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ---------- Offices ---------- */
+  .offices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-8) 0 var(--space-4);
+  }
+
+  .office-card {
+    padding: var(--space-6);
+    background: var(--color-white, #fff);
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: 0 2px 12px rgba(26, 26, 26, 0.04);
+  }
+
+  .office-label {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold, #D4943A);
+    margin-bottom: var(--space-2);
+  }
+
+  .office-name {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .office-card address {
+    font-style: normal;
+    color: var(--color-slate, #4A5568);
+    line-height: 1.5;
+    margin-bottom: var(--space-3);
+  }
+
+  .office-hours {
+    font-size: var(--text-sm);
+    color: var(--color-slate, #4A5568);
+    margin-bottom: var(--space-3);
+  }
+
+  .office-phone {
+    display: inline-block;
+    color: var(--color-gold-text, #8B4513);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .office-phone:hover,
+  .office-phone:focus-visible {
+    color: var(--color-gold, #D4943A);
+  }
+
+  .offices-footnote {
+    color: var(--color-slate, #4A5568);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta__actions {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-5);
+  }
+
+  .final-cta__phone {
+    color: var(--color-white, #fff);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+  }
+
+  .final-cta__phone:hover,
+  .final-cta__phone:focus-visible {
+    border-color: var(--color-gold, #D4943A);
+    color: var(--color-gold, #D4943A);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 768px) {
+    .voice-card {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      text-align: center;
+    }
+
+    .voice-card__photo {
+      max-width: 240px;
+      margin: 0 auto;
+    }
+
+    .voice-column-desc {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .about-hero h1 {
+      font-size: var(--text-3xl, 1.875rem);
+    }
+
+    .byline-chip span {
+      text-align: left;
+    }
   }
 </style>

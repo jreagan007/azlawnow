@@ -144,7 +144,7 @@ export function getOrganizationSchema() {
         name: 'Arizona',
       },
     })),
-    priceRange: 'Free Consultation - No Fee Unless We Win',
+    priceRange: 'Contingency representation',
     currenciesAccepted: 'USD',
     paymentAccepted: 'Contingency Fee',
     openingHoursSpecification: {
@@ -275,7 +275,7 @@ export function getAboutPageSchema() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About AZ Law Now',
-    description: 'Arizona personal injury attorneys serving Buckeye, Goodyear, and the West Valley. Free consultation, no fee unless we win.',
+    description: 'Arizona personal injury attorneys serving Buckeye, Goodyear, and the West Valley. Contingency representation. Confidential intake.',
     url: `${siteUrl}/about/`,
     mainEntity: {
       '@type': 'LegalService',
@@ -293,7 +293,7 @@ export function getContactPageSchema() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact AZ Law Now',
-    description: 'Contact AZ Law Now for a free consultation. Call (602) 654-0202.',
+    description: 'Contact AZ Law Now. Confidential intake by phone or form. Call (602) 654-0202.',
     url: `${siteUrl}/contact/`,
     mainEntity: {
       '@type': 'LegalService',
@@ -342,7 +342,7 @@ export function getReviewPageSchema(
       postalCode: siteConfig.address.zip,
       addressCountry: siteConfig.address.country,
     },
-    priceRange: 'Free Consultation',
+    priceRange: 'Contingency representation',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: parseFloat(avgRating.toFixed(1)),
@@ -390,7 +390,14 @@ export function getResultsPageSchema(results: Array<{ amount: string; type: stri
 }
 
 /**
- * Team listing page
+ * Team listing page schema
+ *
+ * As of April 2026 the standalone /about/team/ page was consolidated into
+ * /about/ (editorial identity model). Each author is rendered as an anchor
+ * section on /about/, and the AboutPage schema on that page already emits a
+ * Person entity per editor. This helper is kept for backward compatibility —
+ * it now points every Person entry at the corresponding /about/#slug anchor
+ * so any caller still invoking it stays internally consistent.
  */
 export function getTeamPageSchema(attorneys: Array<{ name: string; title: string; slug: string }>) {
   const siteUrl = getSiteUrl();
@@ -398,18 +405,18 @@ export function getTeamPageSchema(attorneys: Array<{ name: string; title: string
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Our Team',
-    description: 'Meet the attorneys at AZ Law Now.',
-    url: `${siteUrl}/about/team/`,
+    description: 'Meet the editors at AZ Law Now.',
+    url: `${siteUrl}/about/`,
     numberOfItems: attorneys.length,
     itemListElement: attorneys.map((a, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       item: {
         '@type': 'Person',
-        '@id': `${siteUrl}/about/team/${a.slug}/#person`,
+        '@id': `${siteUrl}/about/#${a.slug}`,
         name: a.name,
         jobTitle: a.title,
-        url: `${siteUrl}/about/team/${a.slug}/`,
+        url: `${siteUrl}/about/#${a.slug}`,
         worksFor: {
           '@type': 'LegalService',
           '@id': `${siteUrl}/#organization`,
@@ -430,7 +437,7 @@ export function getLocalBusinessSchema(city: string, slug: string) {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
     name: `AZ Law Now - ${city} Personal Injury Attorneys`,
-    description: `Personal injury attorneys serving ${city}, Arizona. Car accidents, truck accidents, wrongful death. Free consultation, no fee unless we win.`,
+    description: `Personal injury attorneys serving ${city}, Arizona. Car accidents, truck accidents, wrongful death. Contingency representation. Confidential intake.`,
     url: `${siteUrl}/${slug}/`,
     telephone: siteConfig.phoneE164,
     address: {
@@ -449,7 +456,7 @@ export function getLocalBusinessSchema(city: string, slug: string) {
       '@type': 'LegalService',
       '@id': `${siteUrl}/#organization`,
     },
-    priceRange: 'Free Consultation - No Fee Unless We Win',
+    priceRange: 'Contingency representation',
   };
 }
 
@@ -485,8 +492,11 @@ export function getArticleSchema(article: ArticleData) {
   const basePath = article.basePath || '/insights/';
   const articleUrl = `${siteUrl}${basePath}${article.slug}/`;
   const schemaType = article.schemaType || 'Article';
+  // Author pages are consolidated as anchors on /about/ (the team page was
+  // merged into the main about page in April 2026). Use the anchor URL so
+  // crawlers land on the same Person entity referenced in the AboutPage schema.
   const authorUrl = article.authorSlug
-    ? `${siteUrl}/about/team/${article.authorSlug}/`
+    ? `${siteUrl}/about/#${article.authorSlug}`
     : undefined;
 
   return {
@@ -570,7 +580,7 @@ export function generateServiceSchema(practiceArea: string, featuredImage?: stri
     '@type': 'Service',
     name: `${practiceArea} Attorney`,
     url: pageUrl,
-    description: `${practiceArea.toLowerCase()} legal representation in the West Valley and greater Phoenix area. Free consultation, no fee unless we win.`,
+    description: `${practiceArea.toLowerCase()} legal representation in the West Valley and greater Phoenix area. Contingency representation. Confidential intake.`,
     provider: {
       '@type': 'LegalService',
       '@id': `${siteUrl}/#organization`,

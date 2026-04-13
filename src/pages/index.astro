@@ -1,19 +1,19 @@
 ---
 /**
- * Homepage — AZ Law Now
+ * Homepage. AZ Law Now.
  * EDITORIAL-FIRST homepage. Front page of a publication.
  *
  * Flow:
- * 1. Editorial hero — warm cream, big serif headline, no dark photo overlay
- * 2. Featured investigation grid — 1+2 newspaper layout
- * 3. "What We're Watching" — data nuggets, dark strip
- * 4. Three content hubs (On Record / Answered / Guided) — editorial grid
- * 5. Abuse & Negligence Spotlight — editorial callout, vermillion accent
- * 6. Practice areas — grouped by cluster with subheadings
- * 7. West Valley locations — minimal
- * 8. Results teaser — editorial, not flashy
- * 9. Team — editorial byline cards
- * 10. Final CTA — warm, not aggressive
+ * 1. Editorial hero. Warm cream, big serif headline, no dark photo overlay.
+ * 2. Featured investigation grid. 1+2 newspaper layout.
+ * 3. "What We're Watching" data nuggets, dark strip.
+ * 4. Three content hubs (On Record / Answered / Guided) editorial grid.
+ * 5. Abuse & Negligence Spotlight. Editorial callout, vermillion accent.
+ * 6. Practice areas grouped by cluster with subheadings.
+ * 7. West Valley locations.
+ * 8. Results teaser. Editorial, not flashy.
+ * 9. Team. Editorial byline cards.
+ * 10. Final CTA. Warm, not aggressive.
  */
 
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -23,7 +23,7 @@ import { getSiteWideSchemas } from '../utils/schema';
 
 const siteSchemas = getSiteWideSchemas();
 
-/* Map slug to hero image path — handles mixed .png/.webp extensions */
+/* Map slug to hero image path. Handles mixed .png/.webp extensions. */
 const heroImageMap: Record<string, string> = {
   'car-accidents': '/images/heroes/car-accidents.webp',
   'truck-accidents': '/images/heroes/truck-accidents.webp',
@@ -105,7 +105,7 @@ const brendan = authors['brendan-franks'];
 const brandon = authors['brandon-millam'];
 const stephanie = authors['stephanie-ramirez'];
 
-// Topic clusters: each topic has 3 voices (Brendan / Brandon / Stephanie)
+// Topic clusters. Each topic has 3 voices (Brendan / Brandon / Stephanie).
 const topicClusters = [
   {
     title: 'Motor Vehicle Crashes',
@@ -276,7 +276,7 @@ const topicClusters = [
         </p>
         <div class="hero-actions">
           <a href="/free-case-review/" class="btn btn-primary btn-lg">
-            Get My Free Consultation &rarr;
+            Get answers on your case &rarr;
           </a>
         </div>
         <div class="hero-stats">
@@ -340,7 +340,7 @@ const topicClusters = [
             ))}
           </div>
           <p class="proof-quote__text">"Brendan was at the crash scene before I even left the hospital. Quick to respond, kept me informed, made the whole process so much easier."</p>
-          <cite class="proof-quote__author">— Avalon C., via Google</cite>
+          <cite class="proof-quote__author">Avalon C., via Google</cite>
         </blockquote>
 
         <blockquote class="proof-quote">
@@ -352,7 +352,7 @@ const topicClusters = [
             ))}
           </div>
           <p class="proof-quote__text">"From the consult to the final check, the team was incredible. Professional, warm, helpful. Made me feel comfortable and important."</p>
-          <cite class="proof-quote__author">— A. Martin, via Google</cite>
+          <cite class="proof-quote__author">A. Martin, via Google</cite>
         </blockquote>
 
         <blockquote class="proof-quote">
@@ -364,7 +364,7 @@ const topicClusters = [
             ))}
           </div>
           <p class="proof-quote__text">"Truly made a horrible situation seamless. Brendan kept me updated, was time efficient, and even gave me a great orthopedic surgeon referral."</p>
-          <cite class="proof-quote__author">— Cheyanne A., via Google</cite>
+          <cite class="proof-quote__author">Cheyanne A., via Google</cite>
         </blockquote>
       </div>
 

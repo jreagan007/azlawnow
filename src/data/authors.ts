@@ -22,7 +22,7 @@ export const authors: Record<string, Author> = {
     bio: 'Brendan Franks leads editorial operations at AZ Law Now. He covers West Valley injury data, public safety reporting, and community accountability stories. Before joining the firm, Brendan spent years in local media covering municipal government and public records across Maricopa County.',
     photo: '/images/team/brendan-headshot.png',
     schemaType: 'Person',
-    url: '/about/team/brendan-franks/',
+    url: '/about/#brendan-franks',
   },
   'brandon-millam': {
     id: 'brandon-millam',
@@ -33,7 +33,7 @@ export const authors: Record<string, Author> = {
     photo: '/images/team/brandon-headshot.png',
     schemaType: 'Person',
     hasCredential: true,
-    url: '/about/team/brandon-millam/',
+    url: '/about/#brandon-millam',
   },
   'stephanie-ramirez': {
     id: 'stephanie-ramirez',
@@ -42,7 +42,7 @@ export const authors: Record<string, Author> = {
     bio: 'Stephanie Ramirez manages client-facing resources at AZ Law Now. She writes the guides that walk families through the process after an injury: what to expect, what paperwork matters, how timelines work, and when to ask questions. Stephanie grew up in the West Valley and understands that most families going through this are doing it for the first time.',
     photo: '/images/team/stephanie-headshot.png',
     schemaType: 'Person',
-    url: '/about/team/stephanie-ramirez/',
+    url: '/about/#stephanie-ramirez',
   },
 };
 

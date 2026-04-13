@@ -87,9 +87,9 @@ export const siteConfig = {
     l2Identity: 'The firm that does the work before the case.',
     l4NavTrust: 'Your Answers. One Call Away.',
     l5PhoneCta: 'Talk to My Team',
-    l7FormHeadline: 'You Deserve Answers.',
-    l7FormSubhead: 'Tell us what happened. We\'ll tell you what\'s next.',
-    l8Primary: 'Get My Free Consultation',
+    l7FormHeadline: 'Answers start here.',
+    l7FormSubhead: 'Tell us what happened. The editors will tell you what\'s next.',
+    l8Primary: 'Get answers on your case',
     l8Secondary: 'Talk to My Team',
     l8Tertiary: 'See What\'s Next',
     l8Soft: 'Read',
@@ -125,7 +125,7 @@ export const siteConfig = {
 
   companyNav: [
     { name: 'About', url: '/about/' },
-    { name: 'Our Team', url: '/about/team/' },
+    { name: 'Our Team', url: '/about/#the-editors' },
     { name: 'Case Results', url: '/case-results/' },
     { name: 'Reviews', url: '/reviews/' },
     { name: 'Contact', url: '/contact/' },

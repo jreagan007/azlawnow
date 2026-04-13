@@ -73,7 +73,7 @@ const categoryLabels: Record<string, string> = {
 
       {entry.data.relatedPracticeAreas && entry.data.relatedPracticeAreas.length > 0 && (
         <div class="glossary-related">
-          <h3>Related Practice Areas</h3>
+          <h3>Related Types of Incidents</h3>
           <ul>
             {entry.data.relatedPracticeAreas.map((slug) => (
               <li><a href={`/${slug.includes('-') ? slug : slug + 's'}/`}>{slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</a></li>

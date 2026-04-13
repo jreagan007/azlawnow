@@ -22,7 +22,7 @@ const reviews = [
   {
     name: 'Cheyanne Andrews',
     rating: 5,
-    text: 'Brendan and his team have been absolutely incredible to me. Brendan is very informative and keeps you updated along the way. Also very time efficient. He was able to give me a great orthopedic surgeon referral. Truly made a horrible situation seamless and a good ending to a true nightmare.',
+    text: 'Brendan and his team have been absolutely incredible to me. Brendan is very informative and keeps you updated along the way. He was very time efficient. He was able to give me a great orthopedic surgeon referral. He truly made a horrible situation seamless. I have a good ending to what was a true nightmare.',
     source: 'Google',
     timeAgo: '3 months ago',
     category: 'Personal Injury',
@@ -46,7 +46,7 @@ const reviews = [
   {
     name: 'Rick & Joyce Wiles',
     rating: 5,
-    text: "After spending time with Brendan and hearing about his passions I realized he's not just trying to be the best lawyer, but the best community member. With that said, if you need an attorney make Brendan Franks at AZ Law Now your first call.",
+    text: "After spending time with Brendan and hearing about his passions I realized he's not just trying to be the best lawyer. He's working to be the best community member. If you need an attorney, make Brendan Franks at AZ Law Now your first call.",
     source: 'Google',
     timeAgo: '2 months ago',
     category: 'Community',
@@ -189,11 +189,11 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container container-narrow" style="text-align: center;">
-      <h2>You Deserve Answers.</h2>
-      <p>Tell us what happened. We'll tell you what's next.</p>
+      <h2>Answers start here.</h2>
+      <p>Tell us what happened. The editors will tell you what's next.</p>
       <div class="cta-buttons">
         <a href="/free-case-review/" class="btn btn-primary btn-lg">
-          Get My Free Consultation →
+          Get answers on your case →
         </a>
         <a href={`tel:${siteConfig.phoneE164}`} class="phone-cta" aria-label={`Call ${siteConfig.phoneFormatted}`}>
           {siteConfig.phoneFormatted}

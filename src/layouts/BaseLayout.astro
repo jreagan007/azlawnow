@@ -489,16 +489,33 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         transform: translateY(0);
       }
 
-      /* Dark section button overrides — ensure contrast */
+      /* Dark section button overrides
+         Keep hover IDENTICAL to the hero CTA everywhere (sienna + white + -2px).
+         The project-wide rule: every primary CTA hovers exactly like the hero.
+         Sienna #8B4513 on dark bg still has enough separation; white text on
+         sienna is 7.5:1 (AAA). */
+      /* `.section-dark a` ships gold link color at specificity (0,0,2,0), which
+         beats `.btn-primary` (0,0,1,0) and would turn CTA text invisible
+         against the gold button bg. Re-assert base button appearance here so
+         anchor buttons inside dark sections keep black text on gold. */
       .section-dark .btn-primary {
+        background: var(--color-gold);
+        color: var(--color-black);
         box-shadow: 0 4px 20px rgba(212, 148, 58, 0.3);
       }
 
       .section-dark .btn-primary:hover,
       .section-dark .btn-primary:focus-visible {
-        background: var(--color-white);
-        color: var(--color-black);
-        box-shadow: 0 6px 24px rgba(255, 255, 255, 0.2);
+        background: var(--color-sienna);
+        color: var(--color-white);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(139, 69, 19, 0.4);
+      }
+
+      .section-dark .btn-primary:active {
+        transform: translateY(0);
+        background: var(--color-sienna);
+        color: var(--color-white);
       }
 
       .section-dark .btn-secondary {

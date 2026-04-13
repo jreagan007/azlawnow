@@ -69,6 +69,7 @@ const practiceAreaSchema = z.object({
   locations: z.array(z.string()).default([]),
   primaryKeyword: z.string().optional(),
   secondaryKeywords: z.array(z.string()).default([]),
+  perplexityQuestions: z.array(z.string()).default([]),
   publishedAt: z.string(),
   updatedAt: z.string().optional(),
   draft: z.boolean().default(false),

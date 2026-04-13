@@ -12,6 +12,33 @@
   status = 301
   force = true
 
+# About page consolidation (April 2026): the standalone team page was merged
+# into the editorial /about/ page. Old /about/team/ URLs 301 to /about/.
+# Individual author bios now live as anchor sections on /about/ (see authors.ts).
+[[redirects]]
+  from = "/about/team/brendan-franks/*"
+  to = "/about/#brendan-franks"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/team/brandon-millam/*"
+  to = "/about/#brandon-millam"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/team/stephanie-ramirez/*"
+  to = "/about/#stephanie-ramirez"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/team/*"
+  to = "/about/#the-editors"
+  status = 301
+  force = true
+
 # Editorial route consolidation: /blog/, /resources/, /investigations/ → /insights/
 [[redirects]]
   from = "/blog/*"
