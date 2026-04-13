@@ -13,18 +13,43 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+/* ── Shared sub-schemas ───────────────────────────── */
+
+const faqItemSchema = z.object({
+  question: z.string(),
+  answer: z.string(),
+});
+
+/**
+ * Editorial article schema — shared by legal-guides and client-guides.
+ * Matches insightSchema's internal-linking + trust-signal surface so all
+ * three voices have template parity (keyTakeaway, faqs, dataSources,
+ * relatedInsights, relatedGuides, relatedPracticeAreas, locations,
+ * reviewedBy, featured). All new fields are optional so existing MDX
+ * frontmatter stays valid until backfill.
+ */
 const articleSchema = z.object({
   title: z.string(),
   description: z.string(),
   author: z.string(),
+  reviewedBy: z.string().optional(),
   category: z.string(),
-  tags: z.array(z.string()).optional(),
+  tags: z.array(z.string()).default([]),
   publishedAt: z.string(),
   updatedAt: z.string().optional(),
   image: z.string().optional(),
   ogImage: z.string().optional(),
   readingTime: z.string().optional(),
   schemaType: z.enum(['Article', 'NewsArticle']).default('Article'),
+  keyTakeaway: z.string().optional(),
+  faqs: z.array(faqItemSchema).default([]),
+  dataSources: z.array(z.string()).default([]),
+  relatedPracticeAreas: z.array(z.string()).default([]),
+  relatedInsights: z.array(z.string()).default([]),
+  relatedGuides: z.array(z.string()).default([]),
+  locations: z.array(z.string()).default([]),
+  featured: z.boolean().default(false),
+  draft: z.boolean().default(false),
 });
 
 const legalGuides = defineCollection({
@@ -35,13 +60,6 @@ const legalGuides = defineCollection({
 const clientGuides = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/client-guides' }),
   schema: articleSchema,
-});
-
-/* ── Shared sub-schemas ───────────────────────────── */
-
-const faqItemSchema = z.object({
-  question: z.string(),
-  answer: z.string(),
 });
 
 /* ── Practice Areas ──────────────────────────────── */
@@ -86,6 +104,7 @@ const insightSchema = z.object({
   title: z.string(),
   description: z.string(),
   author: z.string().default('brendan-franks'),
+  reviewedBy: z.string().optional(),
   category: z.enum([
     'crash-data',
     'safety-analysis',

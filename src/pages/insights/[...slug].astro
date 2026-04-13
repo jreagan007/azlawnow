@@ -25,6 +25,7 @@ const { Content } = await render(entry);
   title={entry.data.title}
   description={entry.data.description}
   author={entry.data.author}
+  reviewedBy={entry.data.reviewedBy}
   category="investigation"
   tags={entry.data.tags}
   publishedAt={entry.data.publishedAt}
@@ -33,6 +34,7 @@ const { Content } = await render(entry);
   ogImage={entry.data.ogImage}
   readingTime={entry.data.readingTime}
   schemaType={entry.data.schemaType as 'Article' | 'NewsArticle'}
+  keyTakeaway={entry.data.keyTakeaway}
 >
   <Content />
 </ArticleLayout>

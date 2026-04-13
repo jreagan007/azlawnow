@@ -3,6 +3,17 @@
  * Article Layout — AZ Law Now
  * Sunset Editorial LIGHT theme
  * For Brendan's investigations, Brandon's legal guides, Stephanie's client guides
+ *
+ * Phase 1 (2026-04): two-column template with sticky right rail.
+ *   - Reading column stays ~720px for comfortable body measure
+ *   - Right rail (lg+) carries the compact intake CTA + slots for
+ *     "On this page" ToC, related content triad, locations — wired
+ *     incrementally in later phases
+ *   - Key Takeaway callout above the article body (TL;DR pattern)
+ *   - Reviewed-by line under byline for E-E-A-T signal
+ *   - Below 1024px the rail collapses inline below the body
+ *
+ * See docs/internal/editorial-templates.md for the full spec.
  */
 
 import BaseLayout from './BaseLayout.astro';
@@ -15,6 +26,7 @@ interface Props {
   title: string;
   description: string;
   author: string;
+  reviewedBy?: string;
   category: string;
   tags?: string[];
   publishedAt: string;
@@ -23,12 +35,14 @@ interface Props {
   ogImage?: string;
   readingTime?: string;
   schemaType?: 'Article' | 'NewsArticle';
+  keyTakeaway?: string;
 }
 
 const {
   title,
   description,
   author: authorId,
+  reviewedBy: reviewerId,
   category,
   tags = [],
   publishedAt,
@@ -37,10 +51,22 @@ const {
   ogImage,
   readingTime,
   schemaType,
+  keyTakeaway,
 } = Astro.props;
 
 // Resolve author
 const authorData: Author = authors[authorId] || authors['brendan-franks'];
+
+// Resolve reviewer. If not explicitly set, default to Brandon (legal editor)
+// on legal-guide and client-guide content. No default reviewer on insights.
+const resolvedReviewerId =
+  reviewerId ??
+  (category === 'legal-guide' || category === 'client-guide'
+    ? 'brandon-millam'
+    : undefined);
+const reviewerData: Author | undefined = resolvedReviewerId
+  ? authors[resolvedReviewerId]
+  : undefined;
 
 // Determine schema type from category if not explicitly set
 const resolvedSchemaType = schemaType
@@ -150,7 +176,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
           />
           <div class="article-byline__info">
             <div class="article-byline__top">
-              <a href={authorData.url} class="article-byline__name">{authorData.name}</a>
+              <span>By <a href={authorData.url} class="article-byline__name">{authorData.name}</a></span>
               <span class="article-byline__role">{authorData.title}</span>
             </div>
             <div class="article-byline__meta">
@@ -164,6 +190,14 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
                 <span class="article-byline__reading">{readingTime}</span>
               )}
             </div>
+            {reviewerData && (
+              <div class="article-byline__reviewed">
+                Reviewed by
+                {' '}
+                <a href={reviewerData.url} class="article-byline__reviewer">{reviewerData.name}</a>
+                <span class="article-byline__reviewer-title">, {reviewerData.title}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -174,7 +208,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
          ============================================ -->
     {image && (
       <div class="article-featured-image">
-        <div class="container">
+        <div class="container container-article">
           <img
             src={image}
             alt={title}
@@ -189,32 +223,68 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     )}
 
     <!-- ============================================
-         ARTICLE CONTENT
+         ARTICLE BODY + SIDEBAR  (two-column on lg+)
          ============================================ -->
     <div class="article-body section">
-      <div class="container container-narrow">
-        <div class="article-content" data-speakable="summary">
-          <AutoLinker currentPath={Astro.url.pathname} maxLinks={15}>
-            <slot />
-          </AutoLinker>
+      <div class="container container-article">
+        <div class="article-grid">
+          <!-- ── MAIN COLUMN ── -->
+          <div class="article-main">
+            {keyTakeaway && (
+              <aside class="article-takeaway" aria-label="Key takeaway" data-speakable="summary">
+                <span class="article-takeaway__label">Key takeaway</span>
+                <p class="article-takeaway__text">{keyTakeaway}</p>
+              </aside>
+            )}
+
+            <div class="article-content" data-speakable="summary">
+              <AutoLinker currentPath={Astro.url.pathname} maxLinks={15}>
+                <slot />
+              </AutoLinker>
+            </div>
+
+            {tags.length > 0 && (
+              <div class="article-tags">
+                <div class="article-tags__list">
+                  {tags.map((tag) => (
+                    <span class="article-tags__tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <!-- ── RIGHT RAIL (sticky on lg+) ── -->
+          <aside class="article-rail" aria-label="Article tools and related content">
+            <div class="article-rail__sticky">
+              <!-- Compact intake CTA (voice-safe, matches footer bar) -->
+              <div class="rail-cta">
+                <span class="rail-cta__eyebrow">Answers start here.</span>
+                <p class="rail-cta__copy">Tell us what happened. The editors will tell you what's next.</p>
+                <a href="/free-case-review/" class="rail-cta__button">
+                  Get answers on your case
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, '')}`}
+                  class="rail-cta__phone"
+                  aria-label={`Call ${siteConfig.phone}`}
+                >
+                  <svg class="rail-cta__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  <span>{siteConfig.phone}</span>
+                </a>
+              </div>
+
+              <!-- Phase 2 slot: On this page ToC -->
+              <!-- Phase 3 slot: The other voices (cross-voice triad) -->
+              <!-- Phase 3 slot: Locations covered -->
+            </div>
+          </aside>
         </div>
       </div>
     </div>
-
-    <!-- ============================================
-         TAGS
-         ============================================ -->
-    {tags.length > 0 && (
-      <div class="article-tags">
-        <div class="container container-narrow">
-          <div class="article-tags__list">
-            {tags.map((tag) => (
-              <span class="article-tags__tag">{tag}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-    )}
 
     <!-- ============================================
          AUTHOR BOX
@@ -326,7 +396,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   /* Byline */
   .article-byline {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-4);
   }
 
@@ -336,12 +406,14 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--neutral-200);
+    flex-shrink: 0;
   }
 
   .article-byline__info {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    min-width: 0;
   }
 
   .article-byline__top {
@@ -349,13 +421,14 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     align-items: baseline;
     gap: var(--space-2);
     flex-wrap: wrap;
+    font-size: var(--text-sm);
+    color: var(--neutral-600);
   }
 
   .article-byline__name {
     font-weight: 600;
     color: #1A1A1A;
     text-decoration: none;
-    font-size: var(--text-sm);
   }
 
   .article-byline__name:hover {
@@ -386,6 +459,26 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     margin-right: var(--space-1);
   }
 
+  .article-byline__reviewed {
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--neutral-600);
+  }
+
+  .article-byline__reviewer {
+    color: #1A1A1A;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .article-byline__reviewer:hover {
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .article-byline__reviewer-title {
+    color: var(--neutral-500);
+  }
+
   /* ============================================
      FEATURED IMAGE
      ============================================ */
@@ -400,6 +493,72 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     border-radius: var(--radius-lg);
     object-fit: cover;
     aspect-ratio: 16 / 9;
+  }
+
+  /* ============================================
+     TWO-COLUMN GRID  (main + sticky right rail)
+     ============================================ */
+  .container-article {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  @media (min-width: 1024px) {
+    .article-grid {
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: var(--space-12);
+      align-items: start;
+    }
+  }
+
+  .article-main {
+    min-width: 0;
+    max-width: 720px;
+  }
+
+  @media (min-width: 1024px) {
+    .article-main {
+      max-width: none;
+    }
+  }
+
+  /* ============================================
+     KEY TAKEAWAY CALLOUT
+     ============================================ */
+  .article-takeaway {
+    background: #F5EDE0;
+    border-left: 4px solid var(--color-gold, #D4943A);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-5) var(--space-6);
+    margin: 0 0 var(--space-8);
+  }
+
+  .article-takeaway__label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-text, #8B4513);
+    margin-bottom: var(--space-2);
+  }
+
+  .article-takeaway__text {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: #1A1A1A;
+    margin: 0;
+    font-weight: 500;
   }
 
   /* ============================================
@@ -663,8 +822,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
      TAGS
      ============================================ */
   .article-tags {
-    background: var(--color-bg);
-    padding-bottom: var(--space-8);
+    margin-top: var(--space-10);
   }
 
   .article-tags__list {
@@ -684,6 +842,114 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     padding: var(--space-1) var(--space-3);
     border-radius: var(--radius-sm);
     border: 1px solid var(--neutral-200);
+  }
+
+  /* ============================================
+     RIGHT RAIL (sticky on lg+)
+     ============================================ */
+  .article-rail {
+    min-width: 0;
+  }
+
+  .article-rail__sticky {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 1024px) {
+    .article-rail__sticky {
+      position: sticky;
+      top: var(--space-6);
+    }
+  }
+
+  /* Compact intake CTA in the rail */
+  .rail-cta {
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-top: 3px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md);
+    padding: var(--space-5) var(--space-5) var(--space-4);
+    box-shadow: 0 1px 3px rgba(26, 26, 26, 0.04);
+  }
+
+  .rail-cta__eyebrow {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: var(--space-2);
+    line-height: 1.2;
+  }
+
+  .rail-cta__copy {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #4A5859;
+    margin: 0 0 var(--space-4);
+  }
+
+  .rail-cta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    background: var(--color-gold, #D4943A);
+    color: #1A1A1A;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    min-height: 44px;
+    transition: background var(--transition-base);
+  }
+
+  .rail-cta__button:hover,
+  .rail-cta__button:focus-visible {
+    background: var(--color-gold-hover, #B87A28);
+    color: #FFFFFF;
+  }
+
+  .rail-cta__button:focus-visible {
+    outline: 2px solid var(--color-gold-text, #8B4513);
+    outline-offset: 2px;
+  }
+
+  .rail-cta__phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding: 0.5rem;
+    min-height: 44px;
+    color: #1A1A1A;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-base);
+  }
+
+  .rail-cta__phone:hover {
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .rail-cta__phone:focus-visible {
+    outline: 2px solid var(--color-gold-text, #8B4513);
+    outline-offset: 2px;
+  }
+
+  .rail-cta__phone-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-gold-text, #8B4513);
+    flex-shrink: 0;
   }
 
   /* ============================================
@@ -769,6 +1035,13 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   /* ============================================
      RESPONSIVE
      ============================================ */
+  @media (max-width: 1023px) {
+    /* Rail stacks under content on tablet/mobile */
+    .article-rail__sticky {
+      margin-top: var(--space-4);
+    }
+  }
+
   @media (max-width: 768px) {
     .article-header {
       padding-top: var(--space-6);
@@ -788,6 +1061,14 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
 
     .article-breadcrumbs span[aria-current] {
       display: none;
+    }
+
+    .article-takeaway {
+      padding: var(--space-4) var(--space-5);
+    }
+
+    .article-takeaway__text {
+      font-size: 1rem;
     }
   }
 
