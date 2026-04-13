@@ -37,12 +37,71 @@ interface Props {
 const { currentPath = '' } = Astro.props;
 
 const navItems: NavItem[] = [
-  { label: 'Crash Data', href: '/vehicle-crashes/' },
-  { label: 'Abuse & Neglect', href: '/abuse-negligence/' },
-  { label: 'Insights', href: '/insights/' },
-  { label: 'Legal Guides', href: '/legal-guides/' },
-  { label: 'Client Guides', href: '/client-guides/' },
-  { label: 'Tip Line', href: '/tips/' },
+  {
+    label: 'Practice Areas',
+    href: '#',
+    groupedDropdown: [
+      {
+        heading: 'Vehicle Crashes',
+        items: [
+          { label: 'Car Accidents', href: '/car-accidents/' },
+          { label: 'Truck Accidents', href: '/truck-accidents/' },
+          { label: 'Motorcycle Accidents', href: '/motorcycle-accidents/' },
+          { label: 'Pedestrian Accidents', href: '/pedestrian-accidents/' },
+          { label: 'Bus Accidents', href: '/bus-accidents/' },
+          { label: 'Bicycle Accidents', href: '/bicycle-accidents/' },
+          { label: 'Rideshare Accidents', href: '/rideshare-accidents/' },
+        ],
+      },
+      {
+        heading: 'Abuse & Negligence',
+        items: [
+          { label: 'Elder Abuse', href: '/elder-abuse/' },
+          { label: 'Nursing Home Abuse', href: '/nursing-home-abuse/' },
+          { label: 'Child Abuse', href: '/child-abuse/' },
+          { label: 'Daycare Negligence', href: '/daycare-negligence/' },
+          { label: 'School Abuse', href: '/school-abuse/' },
+          { label: 'Medical Negligence', href: '/medical-negligence/' },
+        ],
+      },
+      {
+        heading: 'Other Claims',
+        items: [
+          { label: 'Wrongful Death', href: '/wrongful-death/' },
+          { label: 'Slip and Fall', href: '/slip-and-fall/' },
+          { label: 'Dog Bite', href: '/dog-bite/' },
+          { label: 'Premises Liability', href: '/premises-liability/' },
+        ],
+      },
+    ],
+    featured: {
+      label: 'Free Case Review',
+      href: '/free-case-review/',
+      description: 'Tell us what happened. We\'ll tell you what\'s next.',
+    },
+  },
+  {
+    label: 'Resources',
+    href: '#',
+    dropdown: [
+      { label: 'Investigations', href: '/insights/' },
+      { label: 'Legal Guides', href: '/legal-guides/' },
+      { label: 'Client Guides', href: '/client-guides/' },
+      { label: 'Glossary', href: '/glossary/' },
+      { label: 'FAQ', href: '/faq/' },
+    ],
+  },
+  {
+    label: 'About',
+    href: '#',
+    dropdown: [
+      { label: 'About the Firm', href: '/about/' },
+      { label: 'Our Team', href: '/about/team/' },
+      { label: 'Case Results', href: '/case-results/' },
+      { label: 'Client Reviews', href: '/reviews/' },
+      { label: 'Contact', href: '/contact/' },
+    ],
+  },
 ];
 ---
 
@@ -382,10 +441,12 @@ const navItems: NavItem[] = [
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
-    min-width: 680px;
+    min-width: 220px;
     padding: 1.25rem;
     z-index: 100;
   }
+
+  .dropdown-menu-grouped { min-width: 780px; }
 
   .has-dropdown:hover .dropdown-menu,
   .dropdown-trigger[aria-expanded="true"] + .dropdown-menu {
@@ -395,14 +456,20 @@ const navItems: NavItem[] = [
   }
 
   .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .dropdown-menu-grouped .dropdown-content {
     display: grid;
     grid-template-columns: 1fr 200px;
     gap: 1.5rem;
   }
 
   .dropdown-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 0.25rem;
   }
 
@@ -425,7 +492,7 @@ const navItems: NavItem[] = [
 
   .dropdown-item:hover .dropdown-item-label { color: var(--color-gold, #D4943A); }
 
-  .dropdown-menu-grouped { min-width: 720px; }
+  /* grouped min-width set above on .dropdown-menu-grouped */
 
   .dropdown-groups { display: flex; gap: 1.5rem; }
 
