@@ -38,7 +38,7 @@ const { currentPath = '' } = Astro.props;
 
 const navItems: NavItem[] = [
   {
-    label: 'Practice Areas',
+    label: 'Types of Incidents',
     href: '#',
     groupedDropdown: [
       {
@@ -75,9 +75,9 @@ const navItems: NavItem[] = [
       },
     ],
     featured: {
-      label: 'Free Case Review',
+      label: 'Get answers on your case',
       href: '/free-case-review/',
-      description: 'Tell us what happened. We\'ll tell you what\'s next.',
+      description: 'Tell us what happened. The editors will tell you what\'s next.',
     },
   },
   {
@@ -88,18 +88,34 @@ const navItems: NavItem[] = [
       { label: 'Legal Guides', href: '/legal-guides/' },
       { label: 'Client Guides', href: '/client-guides/' },
       { label: 'Glossary', href: '/glossary/' },
-      { label: 'FAQ', href: '/faq/' },
     ],
   },
   {
     label: 'About',
     href: '#',
-    dropdown: [
-      { label: 'About the Firm', href: '/about/' },
-      { label: 'Our Team', href: '/about/team/' },
-      { label: 'Case Results', href: '/case-results/' },
-      { label: 'Client Reviews', href: '/reviews/' },
-      { label: 'Contact', href: '/contact/' },
+    groupedDropdown: [
+      {
+        heading: 'The Firm',
+        items: [
+          { label: 'About AZ Law Now', href: '/about/' },
+          { label: 'The Editors', href: '/about/#the-editors' },
+          { label: 'Editorial Policy', href: '/editorial-policy/' },
+        ],
+      },
+      {
+        heading: 'Results',
+        items: [
+          { label: 'Case Results', href: '/case-results/' },
+          { label: 'Client Reviews', href: '/reviews/' },
+        ],
+      },
+      {
+        heading: 'Connect',
+        items: [
+          { label: 'Contact', href: '/contact/' },
+          { label: 'FAQ', href: '/faq/' },
+        ],
+      },
     ],
   },
 ];
@@ -115,7 +131,7 @@ const navItems: NavItem[] = [
       <a href="/" class="logo" aria-label="AZ Law Now Home">
         <img
           src="/logos/logo-light-hz.png"
-          alt="AZ Law Now — Answers Start Here"
+          alt="AZ Law Now. Answers start here."
           width="240"
           height="56"
           loading="eager"
@@ -155,7 +171,7 @@ const navItems: NavItem[] = [
                       <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </button>
-                  <div class={`dropdown-menu ${item.groupedDropdown ? 'dropdown-menu-grouped' : ''}`} data-dropdown-menu={index}>
+                  <div class={`dropdown-menu ${item.groupedDropdown ? 'dropdown-menu-grouped' : ''} ${item.groupedDropdown && !item.featured ? 'dropdown-menu-compact' : ''}`} data-dropdown-menu={index}>
                     <div class="dropdown-content">
                       {item.groupedDropdown ? (
                         <div class="dropdown-groups">
@@ -258,7 +274,7 @@ const navItems: NavItem[] = [
     ))}
     <div class="mobile-cta-wrapper">
       <a href="/free-case-review/" class="btn btn-primary mobile-cta">
-        Get My Free Consultation
+        Get answers on your case
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="tel:+16026540202" class="btn btn-secondary mobile-phone">Call (602) 654-0202</a>
@@ -447,6 +463,7 @@ const navItems: NavItem[] = [
   }
 
   .dropdown-menu-grouped { min-width: 780px; }
+  .dropdown-menu-compact { min-width: 480px; }
 
   .has-dropdown:hover .dropdown-menu,
   .dropdown-trigger[aria-expanded="true"] + .dropdown-menu {
@@ -465,6 +482,12 @@ const navItems: NavItem[] = [
     display: grid;
     grid-template-columns: 1fr 200px;
     gap: 1.5rem;
+  }
+
+  .dropdown-menu-compact .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .dropdown-links {
@@ -518,6 +541,8 @@ const navItems: NavItem[] = [
     padding-left: 1.25rem;
   }
 
+  /* Featured card CTA — matches the project-wide hero hover:
+     warm deepen to sienna + lift -2px + warm shadow. */
   .dd-featured-card {
     display: flex;
     flex-direction: column;
@@ -526,10 +551,16 @@ const navItems: NavItem[] = [
     padding: 1.25rem;
     text-decoration: none;
     height: 100%;
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(212, 148, 58, 0.2);
+    transition: all 0.2s ease;
   }
 
-  .dd-featured-card:hover { transform: translateY(-2px); }
+  .dd-featured-card:hover,
+  .dd-featured-card:focus-visible {
+    background: linear-gradient(135deg, #8B4513 0%, #6F3710 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(139, 69, 19, 0.45);
+  }
 
   .dd-featured-label {
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
@@ -706,6 +737,15 @@ const navItems: NavItem[] = [
     max-width: none;
     font-size: 0.9375rem;
     padding: 1rem 1.5rem;
+    border-color: var(--color-gold, #D4943A);
+    color: var(--color-gold, #D4943A);
+  }
+
+  /* Mobile menu lives on a dark background; override the light-bg .btn-secondary
+     hover so contrast + visual language stays consistent with the CTA above it. */
+  .mobile-phone:hover,
+  .mobile-phone:focus-visible {
+    background: rgba(212, 148, 58, 0.12);
     border-color: var(--color-gold, #D4943A);
     color: var(--color-gold, #D4943A);
   }
