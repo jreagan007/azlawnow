@@ -1,7 +1,8 @@
 ---
 /**
  * Buckeye Personal Injury Attorneys — Location Page
- * HQ office. Watson Rd & Yuma Rd intersection. Teravalis growth corridor.
+ * HQ office. 715 E Monroe Ave. I-10 corridor. Fastest-growing city in the US.
+ * ADOT data: I-10 between Loop 303 and Hassayampa logged 847 crashes in 2024.
  */
 
 import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
@@ -9,36 +10,36 @@ import { getLocalBusinessSchema } from '../utils/schema';
 
 const faqs = [
   {
-    question: 'How long do I have to file a personal injury claim in Buckeye?',
-    answer: 'Arizona\'s statute of limitations gives you two years from the date of your injury to file a personal injury lawsuit. Waiting too long means losing your right to recover compensation entirely. Talk to an attorney as soon as possible so evidence doesn\'t disappear.',
+    question: 'How dangerous is I-10 through Buckeye?',
+    answer: 'ADOT\'s 2024 data shows 847 reportable crashes on the I-10 corridor between Loop 303 and the Hassayampa River bridge. That\'s 2.3 per day. The fatality rate on this stretch is 4.4%, nearly double the countywide average. Speed limits hit 75 mph west of Estrella Parkway, and roughly 48% of traffic is commercial trucks.',
   },
   {
-    question: 'What should I do after a car crash on Watson Road or MC 85?',
-    answer: 'Call 911 first. Get medical attention even if you feel fine. Take photos of the scene, vehicle damage, and any road conditions. Exchange insurance info with the other driver. Then call our Buckeye office before giving a recorded statement to any insurance company.',
+    question: 'How long do I have to file a personal injury claim in Buckeye?',
+    answer: 'Arizona\'s statute of limitations gives you two years from the date of your injury to file a personal injury lawsuit under ARS 12-542. For wrongful death claims, two years from the date of death under ARS 12-611. Evidence disappears fast. Skid marks fade, surveillance footage gets overwritten, witness memories change. Starting early matters.',
+  },
+  {
+    question: 'What should I do after a crash on Watson Road or MC 85?',
+    answer: 'Call 911 first. Get medical attention even if you feel fine. Take photos of the scene, vehicle damage, and any road conditions. Exchange insurance info with the other driver. Then call our Buckeye office at (602) 654-0202 before giving a recorded statement to any insurance company.',
   },
   {
     question: 'Do I need a lawyer for a minor car crash in Buckeye?',
-    answer: 'Even "minor" crashes can cause injuries that show up days later. Soft tissue damage, concussions, and herniated discs don\'t always present immediately. An attorney can protect your rights while you focus on getting better. Our consultation is free, so there\'s no risk in asking.',
+    answer: 'Even "minor" crashes can cause injuries that show up days later. Soft tissue damage, concussions, and herniated discs don\'t always present immediately. An attorney can protect your rights while you focus on getting better. Our consultation is free.',
   },
   {
-    question: 'How much does it cost to hire AZ Law Now in Buckeye?',
-    answer: 'Nothing upfront. We work on contingency, which means you don\'t pay us unless we recover money for you. No hourly fees, no retainer. If we don\'t win your case, you don\'t owe us a dime.',
+    question: 'How much does it cost to hire AZ Law Now?',
+    answer: 'Nothing upfront. We work on contingency. You don\'t pay us unless we recover money for you. No hourly fees, no retainer. If we don\'t win your case, you don\'t owe us a dime.',
   },
   {
     question: 'What types of cases does your Buckeye office handle?',
-    answer: 'Car crashes, truck crashes, motorcycle crashes, pedestrian injuries, bicycle crashes, slip and fall incidents, wrongful death, elder abuse, nursing home abuse, medical negligence, school bus crashes, and dog bites. If someone else\'s negligence caused your injury in Buckeye, we want to hear about it.',
+    answer: 'Car crashes, truck crashes, motorcycle crashes, pedestrian injuries, bicycle crashes, wrongful death, elder abuse, nursing home abuse, medical negligence, school bus crashes, daycare negligence, and dog bites. If someone else\'s negligence caused your injury in Buckeye, we want to hear about it.',
   },
   {
     question: 'How much is my Buckeye injury case worth?',
-    answer: 'Every case is different. Your compensation depends on medical bills, lost wages, pain and suffering, and how the injury affects your daily life. We evaluate all of that during your free consultation and give you a straight answer about what we think your case is worth.',
-  },
-  {
-    question: 'Will my case go to trial?',
-    answer: 'Most personal injury cases settle before trial. But insurance companies need to know you\'re willing to go the distance. Our litigation team prepares every case as if it\'s going to a courtroom. That preparation is what gets better settlement offers.',
+    answer: 'Every case is different. Compensation depends on medical bills, lost wages, pain and suffering, and how the injury affects your daily life. Arizona has no cap on non-economic or punitive damages. We evaluate all of that during your free consultation.',
   },
   {
     question: 'Can I still recover compensation if I was partially at fault?',
-    answer: 'Arizona follows a comparative fault rule. You can still recover compensation even if you were partially responsible for the crash. Your award gets reduced by your percentage of fault. So if you\'re 20% at fault and your damages total $100,000, you\'d recover $80,000.',
+    answer: 'Yes. Arizona follows a pure comparative negligence rule under ARS 12-2505. You can recover compensation even if you were partially responsible. Your award gets reduced by your percentage of fault, but it doesn\'t disappear.',
   },
 ];
 
@@ -46,77 +47,89 @@ const localSchema = getLocalBusinessSchema('Buckeye', 'buckeye');
 ---
 
 <PracticeAreaLayout
-  title="Buckeye Personal Injury Attorneys"
-  description="Buckeye injury attorneys at AZ Law Now. HQ office on Watson Rd. Car crashes, truck crashes, wrongful death. Free consultation. Call (602) 654-0202."
+  title="Buckeye Personal Injury Attorneys | AZ Law Now HQ"
+  description="Buckeye injury attorneys at AZ Law Now. HQ office at 715 E Monroe Ave. I-10 corridor: 847 crashes in 2024. Free consultation. Call (602) 654-0202."
   canonical="/buckeye/"
   practiceArea="Buckeye Personal Injury Attorneys"
-  heroTitle="Buckeye Injury Attorneys Serving the West Valley's Fastest-Growing City"
-  heroSubtitle="Buckeye injury attorneys serving the West Valley's fastest-growing city. Our headquarters is here because this is home."
+  heroTitle="847 Crashes on I-10 Through Buckeye Last Year. Our Office Is Right Here."
+  heroSubtitle="Buckeye injury attorneys who built their firm on the same roads where their clients get hurt."
   heroImage="/images/heroes/buckeye.webp"
   faqs={faqs}
   schema={localSchema}
 >
   <p>
-    Buckeye isn't just where we work. It's where we built our firm. Our headquarters sits right here in the heart of the West Valley, and we've watched this city grow from a quiet agricultural town into one of the fastest-growing communities in the country.
+    I drive I-10 through Buckeye three or four times a week. Watson Road, Yuma Road, MC 85, the Verrado Way interchange. I know where the construction zones create blind spots. I know which intersections stack up at rush hour. I know where trucks compress into the right lane and passenger cars try to squeeze past at 75 mph.
   </p>
 
   <p>
-    With a population surging past 124,630 and the Teravalis master-planned community bringing thousands more families west, Buckeye's roads are busier than ever. Watson Road, Yuma Road, MC 85, and the I-10 corridor see more traffic every month. More traffic means more crashes. More crashes mean more people who need real legal help.
+    This isn't where I commute to work. It's where I built the firm. Our headquarters is at 715 E. Monroe Avenue, right here in Buckeye. When I investigate a crash scene on I-10 or at Watson and Yuma, I'm not pulling up a map for the first time.
   </p>
 
-  <h2>Why a Buckeye-Based Injury Firm Matters</h2>
+  <h2>The I-10 Corridor: 847 Crashes, 37 Fatal</h2>
 
   <p>
-    We know the Watson Road and Yuma Road intersection. We know where MC 85 narrows and where construction zones create hazards near Teravalis. We've handled crashes at Verrado Way and along the I-10 frontage roads. That local knowledge isn't something a Phoenix firm can fake.
+    ADOT's 2024 Crash Facts report shows 847 reportable crashes on the I-10 corridor between Loop 303 and the Hassayampa River bridge. That's 2.3 per day across a 30-mile stretch. Of those, 37 were fatal. A fatality rate of 4.4%, nearly double the Maricopa County average of 0.6%.
   </p>
 
   <p>
-    When Brendan investigates your crash scene, he's not pulling up a map for the first time. He already knows the roads, the traffic patterns, and the problem intersections. That head start matters when building a case.
+    The speed limit jumps to 75 mph west of Estrella Parkway. Trucks run at 65 in the right lane. That speed differential creates compression points where passenger vehicles stack up, attempt lane changes in tight windows, and rear-end collisions happen in seconds. I wrote a full investigation on the <a href="/insights/i-10-crash-data-buckeye-goodyear/">I-10 crash data for Buckeye and Goodyear</a> with the intersection-level numbers.
+  </p>
+
+  <p>
+    Long stretches west of SR-85 have no median barrier. Cross-median crashes are among the deadliest crash types on any highway, and ADOT's data shows multiple fatal cross-median events on I-10 between 2020 and 2024.
+  </p>
+
+  <h2>Buckeye Is Growing Faster Than Its Roads</h2>
+
+  <p>
+    Buckeye was the fastest-growing city in the United States by percentage from 2020 to 2024. Population surged past 124,630. The Teravalis master-planned community is approved for 300,000 residents at full buildout. Howard Hughes Holdings has infrastructure permits and water agreements signed.
+  </p>
+
+  <p>
+    More homes mean more daily trips through intersections designed for a town of 6,000. Watson Road, Yuma Road, and the MC 85 corridor weren't built for this volume. Construction zones for I-10 widening projects run through 2028. ADOT's own data shows rear-end crashes in I-10 construction zones increased 34% between 2022 and 2024.
+  </p>
+
+  <p>
+    I track this because it matters for every case I take. The <a href="/insights/west-valley-dangerous-intersections/">West Valley dangerous intersections data</a> and the <a href="/insights/arizona-pedestrian-deaths-road-design/">pedestrian deaths investigation</a> both point to the same problem: infrastructure lag in the fastest-growing corridor in Arizona.
+  </p>
+
+  <h2>Hazen Road and SR-85: The Intersection That Should Have Been Fixed</h2>
+
+  <p>
+    Between 2020 and 2024, ADOT's crash database shows five fatal collisions at or within 500 feet of the Hazen Road and SR-85 intersection. Seven people died. MAG ranked it 34th on its Top 100 Crash-Risk Intersections list despite handling a fraction of the traffic that most intersections on that list carry.
+  </p>
+
+  <p>
+    ADOT approved a safety study for the SR-85 corridor in 2023 and recommended "geometric improvements" at Hazen Road. As of April 2026, construction hasn't started. I covered this in detail in the <a href="/insights/sr-347-crash-corridor/">SR-347 crash corridor investigation</a>.
   </p>
 
   <h2>Our Buckeye Office</h2>
 
   <p>
-    Our headquarters is located at 715 E. Monroe Avenue, Buckeye, AZ 85326. We're open Monday through Friday, 8 a.m. to 6 p.m. Walk-ins are welcome, but calling ahead at <a href="tel:+16026540202">(602) 654-0202</a> helps us prepare for your visit.
+    715 E. Monroe Avenue, Buckeye, AZ 85326. Monday through Friday, 8 a.m. to 6 p.m. Walk-ins welcome, but calling ahead at <a href="tel:+16026540202">(602) 654-0202</a> helps us prepare.
   </p>
 
   <p>
-    Buckeye residents can typically get a same-day or next-day consultation. We don't make you wait weeks to find out where your case stands.
+    Three people work your case from day one. I investigate the crash scene and build the evidence file. Brandon Millam handles the legal strategy and litigation. Stephanie Ramirez keeps you updated so you're never wondering what's happening. That trio model is why we recover results other firms can't.
   </p>
 
-  <h2>The Team Behind Your Case</h2>
+  <h2>Truck Crashes on I-10</h2>
 
   <p>
-    Three people work your case from day one. Brendan Franks investigates the crash scene and builds the evidence file before the insurance company even knows what hit them. Brandon Millam handles the legal strategy and litigation. Stephanie Ramirez keeps you updated so you're never wondering what's happening with your case.
-  </p>
-
-  <p>
-    That trio model is why we recover results other firms can't. The investigation starts immediately. Not after a retainer. Not after paperwork. Immediately.
-  </p>
-
-  <h2>Buckeye's Growth Means More Danger on Local Roads</h2>
-
-  <p>
-    Teravalis alone is projected to add 300,000 residents over the next two decades. The infrastructure hasn't caught up yet. Construction zones, temporary lane changes, and unfamiliar drivers create conditions that lead to serious crashes.
+    I-10 through Buckeye carries roughly 48% truck traffic between Loop 303 and Tonopah. Nearly half the vehicles on this road are commercial. The <a href="/insights/truck-crashes-maricopa-county-data/">truck crash data for Maricopa County</a> shows 14,069 trucks involved in Arizona crashes in 2024. When a semi hits a passenger car, 97% of deaths are in the car.
   </p>
 
   <p>
-    We're already seeing the consequences. More rear-end collisions on Watson Road. More T-bone crashes at Yuma Road intersections. More commercial truck incidents along I-10 near the Buckeye exits. If you've been hurt in any of these situations, we can help.
-  </p>
-
-  <h2>Maricopa County Courthouse Access</h2>
-
-  <p>
-    Buckeye injury claims fall under Maricopa County Superior Court jurisdiction. Our litigation team files regularly in the downtown Phoenix courthouse and the Buckeye Justice Court for smaller matters. We know the local judges, the filing procedures, and the timelines. That familiarity keeps your case moving.
+    We pull FMCSA carrier records, electronic logging device data, and ADOT crash reports on every trucking case. The <a href="/insights/ghost-fleets-chameleon-carriers-i10/">chameleon carriers investigation</a> I published explains why the carrier's safety record matters, and why it might not be what it appears.
   </p>
 
   <h2>What to Do After a Crash in Buckeye</h2>
 
   <p>
-    First, get safe and call 911. Then document everything you can. Photos of the vehicles, the road, the intersection, and any visible injuries. Get the other driver's insurance information. See a doctor, even if you feel fine. Adrenaline masks pain.
+    Get safe and call 911. Document everything. Photos of the vehicles, the road, the intersection, any visible injuries. Get the other driver's insurance information and the responding officer's name and badge number. See a doctor within 24 hours, even if you feel fine. Adrenaline masks pain. Soft tissue injuries, concussions, and herniated discs don't always present at the scene.
   </p>
 
   <p>
-    Then call us. Don't give a recorded statement to the insurance company first. They'll use your words against you. Let us handle that conversation.
+    Don't give a recorded statement to the other driver's insurance company. They're not calling to help you. They're calling to get you on record saying something they can use to reduce your claim. Call us first. The consultation is free. We don't charge unless we recover money for you.
   </p>
 </PracticeAreaLayout>

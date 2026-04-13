@@ -1,7 +1,7 @@
 ---
 /**
  * Phoenix Personal Injury Attorneys — Location Page
- * Competitive zone. Broad content. Links to Buckeye + Maricopa offices.
+ * Metro anchor. 38,210 crashes. 379 killed. Competitive zone.
  */
 
 import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
@@ -9,36 +9,36 @@ import { getLocalBusinessSchema } from '../utils/schema';
 
 const faqs = [
   {
-    question: 'Does AZ Law Now serve Phoenix residents?',
-    answer: 'Yes. We serve the entire Phoenix metropolitan area from two offices: our headquarters in Buckeye and our new office in Maricopa. Phoenix residents can schedule a consultation at either location, or we can arrange a phone or video meeting.',
+    question: 'How many crashes happen in Phoenix each year?',
+    answer: 'ADOT\'s 2024 data shows 38,210 crashes in Phoenix. 299 were fatal, killing 379 people. Phoenix had the second-highest number of pedestrian fatalities of any US city in 2023 at 109. Maricopa County accounts for 73% of all crashes in Arizona.',
   },
   {
-    question: 'How is AZ Law Now different from other Phoenix injury firms?',
-    answer: 'We investigate before we litigate. Brendan Franks goes to your crash scene the same day you hire us. He documents evidence, identifies witnesses, and builds a case file before the insurance company starts building their defense. Most firms skip that step entirely.',
+    question: 'What are the most dangerous intersections in Phoenix?',
+    answer: 'MAG\'s Top 100 list is dominated by Phoenix intersections. 67th Avenue and McDowell Road ranks first. 51st Avenue and Camelback Road ranks second. 19th Avenue and Peoria Avenue ranks third. The most dangerous corridors are wide, multi-lane arterials on the west and south sides of the city.',
   },
   {
     question: 'How long do I have to file a personal injury claim in Phoenix?',
-    answer: 'Arizona\'s statute of limitations is two years from the date of injury for most personal injury cases. Claims against government entities like the City of Phoenix or Valley Metro may require a notice of claim within 180 days. Don\'t wait to find out which deadline applies to you.',
+    answer: 'Two years from the date of the crash under ARS 12-542. For wrongful death, two years from the date of death under ARS 12-611.',
   },
   {
-    question: 'What types of injury cases do you handle in Phoenix?',
-    answer: 'Car crashes, truck crashes, motorcycle crashes, pedestrian injuries, bicycle crashes, wrongful death, slip and fall, medical negligence, elder abuse, nursing home abuse, school bus crashes, and dog bites. If someone else\'s negligence caused your injury in Phoenix, call us.',
+    question: 'Do you have an office in Phoenix?',
+    answer: 'Our offices are in Buckeye and Maricopa. We handle cases across Maricopa County including Phoenix. We file in Maricopa County Superior Court regularly.',
   },
   {
-    question: 'What are the most dangerous roads in Phoenix?',
-    answer: 'I-10, I-17, Loop 101, and Loop 202 see the highest crash volumes. Surface streets like Thomas Road, McDowell Road, Van Buren Street, and 35th Avenue corridors are also high-crash zones. Intersection crashes at major cross streets account for the majority of serious injuries.',
+    question: 'What about pedestrian crashes in Phoenix?',
+    answer: 'Phoenix adopted a Vision Zero plan in 2022 and committed $10 million annually. But 200 people still die on Phoenix streets each year. The city is double the national average for pedestrian deaths.',
   },
   {
-    question: 'How much does a Phoenix personal injury attorney cost?',
-    answer: 'Nothing upfront. We work on contingency. You don\'t pay unless we recover compensation for you. No retainer, no hourly fees. Your free consultation is genuinely free.',
+    question: 'What does it cost to hire an injury attorney for a Phoenix crash?',
+    answer: 'Nothing upfront. Contingency basis. You pay nothing unless we recover money for you.',
   },
   {
-    question: 'Can I still file a claim if the crash was partially my fault?',
-    answer: 'Yes. Arizona uses a comparative fault system. You can recover compensation even if you share some responsibility for the crash. Your award is reduced by your percentage of fault. A skilled attorney can present evidence to minimize your assigned fault percentage.',
+    question: 'Can I recover compensation if I was partially at fault?',
+    answer: 'Yes. Arizona\'s pure comparative negligence rule under ARS 12-2505 reduces your recovery by your fault percentage but doesn\'t eliminate it. There\'s no damage cap in Arizona.',
   },
   {
-    question: 'What should I bring to my first consultation about a Phoenix crash?',
-    answer: 'Bring the police report if you have it, photos from the crash scene, medical records and bills, insurance information for all parties involved, and any correspondence from insurance companies. If you don\'t have all of this, that\'s fine. We\'ll help you gather what\'s needed.',
+    question: 'What about DUI crashes in Phoenix?',
+    answer: 'Maricopa County had 3,544 alcohol-related crashes in 2024, 64% of the state total. Arizona\'s dram shop law may hold the bar that served an impaired driver liable.',
   },
 ];
 
@@ -47,76 +47,74 @@ const localSchema = getLocalBusinessSchema('Phoenix', 'phoenix');
 
 <PracticeAreaLayout
   title="Phoenix Personal Injury Attorneys"
-  description="Phoenix injury attorneys at AZ Law Now. Car crashes, truck crashes, wrongful death across the metro area. Free consultation. Call (602) 654-0202."
+  description="Phoenix injury attorneys at AZ Law Now. 38,210 crashes in 2024. 379 killed. I-10, I-17, Loop 101, Loop 202 corridors. Free consultation. Call (602) 654-0202."
   canonical="/phoenix/"
   practiceArea="Phoenix Personal Injury Attorneys"
-  heroTitle="Phoenix Injury Attorneys Who Investigate First"
-  heroSubtitle="Personal injury attorneys serving the Phoenix metro from two West Valley offices. Investigation-first approach. No fee unless we win."
+  heroTitle="38,210 Crashes in Phoenix Last Year. 379 People Didn't Come Home."
+  heroSubtitle="Phoenix injury attorneys who track the data, name the intersections, and build cases on evidence the insurance company can't dismiss."
   heroImage="/images/heroes/phoenix.webp"
   faqs={faqs}
   schema={localSchema}
 >
   <p>
-    Phoenix is the fifth-largest city in the country. That means more vehicles, more intersections, more crashes, and more firms competing for your case. Most of those firms follow the same playbook: sign you up, hand your file to a paralegal, and push for a quick settlement.
+    Phoenix recorded 38,210 crashes in 2024. Two hundred ninety-nine were fatal. Three hundred seventy-nine people died. That's more than one person killed per day, every day, for a year.
   </p>
 
   <p>
-    We do the opposite. The day you hire us, Brendan goes to your crash scene. He photographs evidence, interviews witnesses, and documents the conditions that caused your injury. That investigation happens before the insurance company even knows we're involved.
+    I pull this data from ADOT's Crash Facts report annually. Phoenix is the largest city in Arizona and the fifth-largest in the country. It has more freeways, more intersections, more traffic volume, and more crashes than any other city in the state. Maricopa County accounts for 73% of all Arizona crashes. Phoenix accounts for the majority of Maricopa County.
   </p>
 
-  <h2>Two Offices Serving the Phoenix Metro</h2>
+  <h2>The Most Dangerous Intersections in the Valley</h2>
 
   <p>
-    Our <a href="/buckeye/">Buckeye headquarters</a> serves the West Valley and western Phoenix. Our <a href="/maricopa/">Maricopa office</a> covers the south Valley and Pinal County. Between the two locations, we're accessible to most Phoenix metro residents without a long drive downtown.
-  </p>
-
-  <p>
-    Phoenix residents who can't visit an office in person can schedule a phone or video consultation. We don't let geography stop us from helping people who need representation.
-  </p>
-
-  <h2>Phoenix's Most Dangerous Corridors</h2>
-
-  <p>
-    The numbers don't lie. I-10 through central and west Phoenix consistently ranks among the most dangerous highways in Arizona. The Stack interchange where I-10, I-17, and Loop 202 converge sees crashes daily. And surface streets like Thomas Road, Indian School Road, and McDowell Road carry volumes they weren't designed to handle.
+    MAG publishes a Top 100 Crash-Risk Intersections list. Phoenix dominates it. 67th Avenue and McDowell Road ranks first. 51st Avenue and Camelback Road is second. 19th Avenue and Peoria Avenue is third. The pattern is clear: wide, multi-lane arterials on the west and south sides of the city.
   </p>
 
   <p>
-    We've handled crash cases from Loop 101 in Scottsdale to I-10 in Goodyear and everywhere in between. Brendan knows where traffic cameras are positioned, which intersections have signal timing issues, and how to document the specific road conditions that contributed to your crash.
+    These aren't freeways. They're the roads people drive every day. Thomas Road, McDowell Road, Van Buren Street, 35th Avenue, Indian School Road. Seven lanes wide. Continuous turn lanes. Half-mile spacing between signals. Roads designed for throughput, not safety. I covered the data in the <a href="/insights/west-valley-dangerous-intersections/">West Valley dangerous intersections investigation</a>.
   </p>
 
-  <h2>Why Investigation Matters in Phoenix</h2>
+  <h2>200 Pedestrians Die on Phoenix Streets Every Year</h2>
 
   <p>
-    Phoenix crashes generate police reports. But police reports don't tell the whole story. They document what the officer observed after arriving. They don't capture surveillance footage from nearby businesses, skid mark measurements, or witness statements from people who left the scene.
-  </p>
-
-  <p>
-    Brendan captures all of it. He visits the crash scene before evidence gets cleaned up, before construction changes the road, before witnesses forget what they saw. That evidence file is what separates a fair settlement from a lowball offer.
+    Phoenix had the second-highest number of pedestrian fatalities of any US city in 2023 at 109. Behind only Los Angeles. The city adopted a Vision Zero Road Safety Action Plan in 2022 and committed $10 million annually. Three years in, the death count hasn't meaningfully dropped.
   </p>
 
   <p>
-    Brandon then uses that evidence to build a legal strategy. When insurance adjusters know we have documentation they weren't expecting, they negotiate differently.
+    The <a href="/insights/arizona-pedestrian-deaths-road-design/">pedestrian deaths investigation</a> I published shows that 76% of pedestrian fatalities in Arizona happen in darkness. The most dangerous hour is 6 to 7 p.m. Wide arterials, missing crosswalks, and insufficient lighting are the design factors. The AAA Foundation specifically cited Arizona's "vehicle-oriented design culture."
   </p>
 
-  <h2>Maricopa County Superior Court</h2>
+  <h2>The Freeway Network</h2>
 
   <p>
-    Most Phoenix injury claims are filed in Maricopa County Superior Court. Our litigation team files there regularly. We know the judges, the procedural requirements, and the realistic timelines for getting cases resolved. That experience means fewer delays and better preparation for every stage of your case.
-  </p>
-
-  <h2>The Full Range of Phoenix Injury Cases</h2>
-
-  <p>
-    Car crashes are the most common, but we handle the full spectrum. Truck crashes along I-10 and I-17. Motorcycle crashes on Loop 101. Pedestrian injuries at busy Phoenix intersections. Bicycle crashes on roads without adequate bike infrastructure. Slip and fall incidents at Phoenix businesses and apartment complexes.
+    I-10, I-17, Loop 101, Loop 202, SR-51, US-60. Phoenix has more freeway miles per capita than most metro areas. Each corridor has its own crash profile.
   </p>
 
   <p>
-    We also handle wrongful death, medical negligence, elder abuse, and nursing home abuse cases throughout the metro. Every case type gets the same investigation-first treatment.
+    I-10 through the West Valley carries 48% truck traffic. The <a href="/insights/truck-crashes-maricopa-county-data/">truck crash data</a> shows 47% of truck crash deaths happen during daytime business hours. The <a href="/insights/ghost-fleets-chameleon-carriers-i10/">chameleon carriers investigation</a> explains why some carriers on these freeways have safety records that don't reflect their actual history.
   </p>
 
-  <h2>Start Your Free Consultation</h2>
+  <p>
+    The <a href="/insights/wrong-way-crashes-arizona-highways/">wrong-way crashes investigation</a> shows 1,740 wrong-way driver incidents in Arizona in 2024. Two-thirds involve impaired drivers. The I-17 detection system catches 88% of wrong-way entries, but fatal crashes on the corridor haven't dropped.
+  </p>
+
+  <h2>DUI Crashes: 3,544 in Maricopa County</h2>
 
   <p>
-    Call <a href="tel:+16026540202">(602) 654-0202</a> for a free consultation. You'll talk to a real person on our team, not a call center. We'll evaluate your case, explain your options, and tell you honestly whether we think we can help. No pressure. No fee unless we win.
+    Maricopa County had 3,544 alcohol-related crashes in 2024. That's 64% of the state total. The <a href="/insights/phoenix-dui-crashes-data/">DUI crash data investigation</a> covers the patterns: late night, weekend, arterial roads. When an impaired driver causes a crash, Arizona's dram shop law may hold the bar liable. The <a href="/insights/hit-and-run-maricopa-county-data/">hit-and-run investigation</a> shows impaired drivers are the most likely to flee.
+  </p>
+
+  <h2>We Handle Phoenix Cases</h2>
+
+  <p>
+    Our offices are in Buckeye and Maricopa. Phoenix is the metro anchor. We file in Maricopa County Superior Court regularly.
+  </p>
+
+  <p>
+    The difference is our data. I track the ADOT numbers, the MAG intersection reports, the FMCSA carrier records, and the investigation data that gives every case an evidentiary foundation most firms don't build. That head start matters when the insurance company pushes back.
+  </p>
+
+  <p>
+    If you or someone in your family was in a crash in Phoenix, call <a href="tel:+16026540202">(602) 654-0202</a> or use our contact form. The consultation is free. We don't charge unless we recover money for you.
   </p>
 </PracticeAreaLayout>
