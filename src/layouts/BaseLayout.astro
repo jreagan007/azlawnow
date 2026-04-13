@@ -100,8 +100,15 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- TODO: GA4 (Google Analytics 4) -->
-    <!-- TODO: Google Tag Manager -->
+    <!-- GA4 (Google Analytics 4) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-LB238M4SV2"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LB238M4SV2');
+    </script>
+
     <!-- TODO: Meta (Facebook) Pixel -->
     <!-- TODO: CallRail tracking -->
 
@@ -999,5 +1006,115 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
 
     {!hideHeader && <ConversionModal />}
     {!hideHeader && <StickyCTA />}
+
+    <!-- GA4 Event Tracking -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Phone call clicks
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'phone_call_click', {
+              event_category: 'engagement',
+              event_label: el.textContent.trim(),
+              page_path: window.location.pathname
+            });
+          });
+        });
+
+        // CTA button clicks (primary buttons linking to /free-case-review/)
+        document.querySelectorAll('a[href*="free-case-review"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'cta_click', {
+              event_category: 'conversion',
+              event_label: el.textContent.trim(),
+              page_path: window.location.pathname
+            });
+          });
+        });
+
+        // Case review form submission
+        var caseForm = document.querySelector('form[name="case-review"]');
+        if (caseForm) {
+          caseForm.addEventListener('submit', function() {
+            gtag('event', 'form_submit', {
+              event_category: 'conversion',
+              event_label: 'case_review_form',
+              page_path: window.location.pathname
+            });
+          });
+        }
+
+        // Lead capture modal form submission
+        var modalForm = document.getElementById('modal-form');
+        if (modalForm) {
+          modalForm.addEventListener('submit', function() {
+            gtag('event', 'form_submit', {
+              event_category: 'conversion',
+              event_label: 'lead_capture_modal',
+              page_path: window.location.pathname
+            });
+          });
+        }
+
+        // Modal open event
+        var modal = document.getElementById('conversion-modal');
+        if (modal) {
+          var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(m) {
+              if (m.attributeName === 'hidden' && !modal.hidden) {
+                gtag('event', 'modal_open', {
+                  event_category: 'engagement',
+                  event_label: 'conversion_modal',
+                  page_path: window.location.pathname
+                });
+              }
+            });
+          });
+          observer.observe(modal, { attributes: true });
+        }
+
+        // Scroll depth tracking (25%, 50%, 75%, 100%)
+        var scrollMarks = { 25: false, 50: false, 75: false, 100: false };
+        window.addEventListener('scroll', function() {
+          var scrollPercent = Math.round(
+            (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+          );
+          [25, 50, 75, 100].forEach(function(mark) {
+            if (scrollPercent >= mark && !scrollMarks[mark]) {
+              scrollMarks[mark] = true;
+              gtag('event', 'scroll_depth', {
+                event_category: 'engagement',
+                event_label: mark + '%',
+                page_path: window.location.pathname,
+                value: mark
+              });
+            }
+          });
+        }, { passive: true });
+
+        // External link clicks
+        document.querySelectorAll('a[target="_blank"], a[rel*="noopener"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'outbound_click', {
+              event_category: 'engagement',
+              event_label: el.href,
+              page_path: window.location.pathname
+            });
+          });
+        });
+
+        // Internal link clicks (AutoLinker links)
+        document.querySelectorAll('.internal-link').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'internal_link_click', {
+              event_category: 'engagement',
+              event_label: el.href,
+              link_text: el.textContent.trim(),
+              page_path: window.location.pathname
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
