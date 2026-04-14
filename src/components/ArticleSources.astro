@@ -1,0 +1,147 @@
+---
+/**
+ * ArticleSources — numbered references block for editorial articles
+ * Phase 2 (2026-04): renders dataSources[] from frontmatter as a numbered
+ * citation list. AEE editorial pattern — source name + publisher on top,
+ * flat URL visible beneath.
+ *
+ * Each entry should be one of:
+ *   "Source title. Publisher (Year). https://flat.url/"
+ *   "Source title. Publisher. https://flat.url/"
+ *
+ * The component extracts the trailing URL (if any) and renders it on its
+ * own line as a visible flat-text link, matching the .references styling
+ * already defined in ArticleLayout.astro.
+ *
+ * Renders nothing when dataSources is empty.
+ */
+
+interface Props {
+  dataSources: string[];
+}
+
+const { dataSources } = Astro.props;
+if (!dataSources || dataSources.length === 0) return;
+
+/**
+ * Split each source entry into citation text + optional trailing URL.
+ * The trailing URL is detected by the last whitespace-separated http(s) token.
+ */
+function parseSource(entry: string): { text: string; url?: string } {
+  const match = entry.match(/^(.*?)(?:\s+)?(https?:\/\/\S+)\s*$/);
+  if (match) {
+    return { text: match[1].trim().replace(/[.,;]\s*$/, ''), url: match[2] };
+  }
+  return { text: entry.trim() };
+}
+
+const parsed = dataSources.map(parseSource);
+---
+
+<section
+  class="article-sources"
+  aria-labelledby="article-sources-heading"
+>
+  <h2 id="article-sources-heading" class="article-sources__heading">
+    Sources &amp; references
+  </h2>
+
+  <div class="references">
+    <span class="references-label">Sources</span>
+    <ol>
+      {parsed.map((item) => (
+        <li>
+          <span>{item.text}</span>
+          {item.url && (
+            <a href={item.url} rel="nofollow noopener" target="_blank">{item.url}</a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .article-sources {
+    margin-top: var(--space-12);
+  }
+
+  .article-sources__heading {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.2;
+    margin: 0 0 var(--space-4);
+  }
+
+  /* The actual list styling (.references) is already defined in
+     ArticleLayout.astro under the AEE editorial pattern block, scoped
+     via .article-content :global(.references). Since this component
+     lives OUTSIDE .article-content, we need local styles that mirror
+     that look. */
+
+  .article-sources :global(.references) {
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-left: 3px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md);
+    padding: var(--space-5) var(--space-6);
+  }
+
+  .article-sources :global(.references-label) {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-text, #8B4513);
+    margin-bottom: var(--space-3);
+  }
+
+  .article-sources :global(.references ol) {
+    counter-reset: ref-counter;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .article-sources :global(.references ol li) {
+    counter-increment: ref-counter;
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: #2E2E2E;
+    margin-bottom: var(--space-4);
+  }
+
+  .article-sources :global(.references ol li::before) {
+    content: counter(ref-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-gold-text, #8B4513);
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .article-sources :global(.references ol li:last-child) {
+    margin-bottom: 0;
+  }
+
+  .article-sources :global(.references a) {
+    display: block;
+    color: var(--color-gold-text, #8B4513);
+    text-decoration: none;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  .article-sources :global(.references a:hover) {
+    text-decoration: underline;
+  }
+</style>

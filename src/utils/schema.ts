@@ -549,7 +549,12 @@ export function getArticleSchema(article: ArticleData) {
     ...(article.wordCount && { wordCount: article.wordCount }),
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: ['[data-speakable="headline"]', '[data-speakable="summary"]'],
+      cssSelector: [
+        '[data-speakable="headline"]',
+        '[data-speakable="summary"]',
+        '[data-speakable="takeaway"]',
+        '[data-speakable="answer"]',
+      ],
     },
     inLanguage: 'en-US',
     isAccessibleForFree: true,

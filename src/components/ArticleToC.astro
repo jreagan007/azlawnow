@@ -1,0 +1,262 @@
+---
+/**
+ * ArticleToC — "On this page" table of contents for editorial articles
+ * Phase 2 (2026-04): renders a link list built from the MDX headings
+ * collected by Astro's render() helper. On desktop (lg+) it lives in the
+ * sticky right rail and uses IntersectionObserver-based scroll-spy to
+ * highlight the section the reader is in. On mobile it collapses to a
+ * <details> accordion.
+ *
+ * Hidden entirely when fewer than 3 H2s exist — no point showing chrome.
+ */
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+  /** Max heading depth to include. Default 2 = H2 only. */
+  maxDepth?: number;
+  /** Minimum matching headings required to render. Default 3. */
+  minHeadings?: number;
+}
+
+const { headings, maxDepth = 2, minHeadings = 3 } = Astro.props;
+
+const items = (headings || []).filter((h) => h.depth >= 2 && h.depth <= maxDepth);
+
+if (items.length < minHeadings) return;
+---
+
+<nav class="article-toc" aria-labelledby="article-toc-heading">
+  <details class="article-toc__details" open>
+    <summary class="article-toc__summary">
+      <span id="article-toc-heading" class="article-toc__label">On this page</span>
+      <svg
+        class="article-toc__chevron"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </summary>
+    <ol class="article-toc__list">
+      {items.map((h) => (
+        <li class={`article-toc__item article-toc__item--h${h.depth}`}>
+          <a class="article-toc__link" href={`#${h.slug}`} data-toc-slug={h.slug}>
+            {h.text}
+          </a>
+        </li>
+      ))}
+    </ol>
+  </details>
+</nav>
+
+<script>
+  /**
+   * Scroll-spy for the article ToC.
+   * Observes all H2s inside .article-content and flips aria-current="location"
+   * on the ToC link whose data-toc-slug matches the currently most-visible H2.
+   */
+  (() => {
+    const toc = document.querySelector<HTMLElement>('.article-toc');
+    if (!toc) return;
+
+    const links = Array.from(
+      toc.querySelectorAll<HTMLAnchorElement>('[data-toc-slug]')
+    );
+    if (links.length === 0) return;
+
+    const slugToLink = new Map<string, HTMLAnchorElement>();
+    for (const link of links) {
+      const slug = link.dataset.tocSlug;
+      if (slug) slugToLink.set(slug, link);
+    }
+
+    const targets: Element[] = [];
+    for (const slug of slugToLink.keys()) {
+      const el = document.getElementById(slug);
+      if (el) targets.push(el);
+    }
+    if (targets.length === 0) return;
+
+    const setActive = (slug: string | null) => {
+      for (const link of links) link.removeAttribute('aria-current');
+      if (!slug) return;
+      const match = slugToLink.get(slug);
+      if (match) match.setAttribute('aria-current', 'location');
+    };
+
+    // Track visible sections by slug. Active = topmost visible, or the last
+    // one we scrolled past when nothing is currently inside the observer band.
+    const visible = new Set<string>();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const id = entry.target.id;
+          if (!id) continue;
+          if (entry.isIntersecting) {
+            visible.add(id);
+          } else {
+            visible.delete(id);
+          }
+        }
+        if (visible.size > 0) {
+          // Pick whichever visible heading comes first in document order.
+          const firstVisible = targets
+            .map((t) => t.id)
+            .find((id) => visible.has(id));
+          if (firstVisible) setActive(firstVisible);
+        } else {
+          // Nothing inside the observer rootMargin band. Fall back to the
+          // last heading we scrolled past (by bounding box top above 0).
+          let lastPassed: string | null = null;
+          for (const t of targets) {
+            const rect = (t as HTMLElement).getBoundingClientRect();
+            if (rect.top < 80) lastPassed = t.id;
+          }
+          setActive(lastPassed);
+        }
+      },
+      {
+        // Activate a heading once it enters the top ~35% of the viewport
+        rootMargin: '-10% 0px -60% 0px',
+        threshold: 0,
+      }
+    );
+
+    for (const t of targets) observer.observe(t);
+
+    // Initial active state on load — handle page-load deep links (#slug)
+    if (location.hash) {
+      const initial = decodeURIComponent(location.hash.slice(1));
+      if (slugToLink.has(initial)) setActive(initial);
+    }
+  })();
+</script>
+
+<style>
+  .article-toc {
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .article-toc__details {
+    display: block;
+  }
+
+  .article-toc__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    cursor: pointer;
+    list-style: none;
+    min-height: 32px;
+  }
+
+  .article-toc__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-toc__summary::marker {
+    content: '';
+  }
+
+  .article-toc__summary:focus-visible {
+    outline: 2px solid var(--color-gold-text, #8B4513);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .article-toc__label {
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .article-toc__chevron {
+    width: 16px;
+    height: 16px;
+    color: var(--neutral-500);
+    transition: transform var(--transition-base);
+  }
+
+  .article-toc__details[open] .article-toc__chevron {
+    transform: rotate(180deg);
+  }
+
+  .article-toc__list {
+    list-style: none;
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    border-top: 1px solid var(--neutral-100);
+    padding-top: var(--space-3);
+  }
+
+  .article-toc__item {
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  .article-toc__item + .article-toc__item {
+    margin-top: var(--space-1);
+  }
+
+  .article-toc__item--h3 .article-toc__link {
+    padding-left: var(--space-5);
+    font-size: 0.8125rem;
+    color: var(--neutral-500);
+  }
+
+  .article-toc__link {
+    display: block;
+    padding: 0.375rem var(--space-2) 0.375rem var(--space-3);
+    font-size: 0.875rem;
+    color: #4A5859;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color var(--transition-base), border-color var(--transition-base), background var(--transition-base);
+    line-height: 1.35;
+  }
+
+  .article-toc__link:hover {
+    color: var(--color-gold-text, #8B4513);
+    background: rgba(212, 148, 58, 0.04);
+  }
+
+  .article-toc__link:focus-visible {
+    outline: 2px solid var(--color-gold-text, #8B4513);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .article-toc__link[aria-current='location'] {
+    color: #1A1A1A;
+    font-weight: 600;
+    border-left-color: var(--color-gold, #D4943A);
+    background: rgba(212, 148, 58, 0.06);
+  }
+
+  /* On mobile, the ToC stays collapsed by default — overrides <details open> */
+  @media (max-width: 1023px) {
+    .article-toc__details[open] .article-toc__chevron {
+      transform: rotate(180deg);
+    }
+  }
+</style>

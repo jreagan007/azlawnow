@@ -18,9 +18,27 @@
 
 import BaseLayout from './BaseLayout.astro';
 import AutoLinker from '../components/AutoLinker.astro';
+import ArticleFAQ from '../components/ArticleFAQ.astro';
+import ArticleSources from '../components/ArticleSources.astro';
+import ArticleToC from '../components/ArticleToC.astro';
 import { siteConfig } from '../data/site-config';
 import { authors, type Author } from '../data/authors';
-import { getArticleSchema, generateBreadcrumbSchema } from '../utils/schema';
+import {
+  getArticleSchema,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+} from '../utils/schema';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
 
 interface Props {
   title: string;
@@ -36,6 +54,9 @@ interface Props {
   readingTime?: string;
   schemaType?: 'Article' | 'NewsArticle';
   keyTakeaway?: string;
+  faqs?: FAQ[];
+  dataSources?: string[];
+  headings?: Heading[];
 }
 
 const {
@@ -52,6 +73,9 @@ const {
   readingTime,
   schemaType,
   keyTakeaway,
+  faqs = [],
+  dataSources = [],
+  headings = [],
 } = Astro.props;
 
 // Resolve author
@@ -119,7 +143,14 @@ const articleSchema = getArticleSchema({
 
 const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
 
-const schemas = [articleSchema, breadcrumbSchema];
+const schemas: Array<Record<string, unknown>> = [articleSchema, breadcrumbSchema];
+
+// Emit FAQPage JSON-LD only when the article actually has FAQs.
+// The ArticleFAQ component also embeds matching schema.org microdata
+// on the rendered accordion for redundant signal.
+if (faqs.length > 0) {
+  schemas.push(generateFAQSchema(faqs));
+}
 
 // Disclaimer text by category
 const disclaimers: Record<string, string> = {
@@ -231,7 +262,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
           <!-- ── MAIN COLUMN ── -->
           <div class="article-main">
             {keyTakeaway && (
-              <aside class="article-takeaway" aria-label="Key takeaway" data-speakable="summary">
+              <aside class="article-takeaway" aria-label="Key takeaway" data-speakable="takeaway">
                 <span class="article-takeaway__label">Key takeaway</span>
                 <p class="article-takeaway__text">{keyTakeaway}</p>
               </aside>
@@ -242,6 +273,9 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
                 <slot />
               </AutoLinker>
             </div>
+
+            <ArticleFAQ faqs={faqs} />
+            <ArticleSources dataSources={dataSources} />
 
             {tags.length > 0 && (
               <div class="article-tags">
@@ -257,6 +291,9 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
           <!-- ── RIGHT RAIL (sticky on lg+) ── -->
           <aside class="article-rail" aria-label="Article tools and related content">
             <div class="article-rail__sticky">
+              <!-- On this page (ToC with scroll-spy) -->
+              <ArticleToC headings={headings} />
+
               <!-- Compact intake CTA (voice-safe, matches footer bar) -->
               <div class="rail-cta">
                 <span class="rail-cta__eyebrow">Answers start here.</span>
@@ -277,7 +314,6 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
                 </a>
               </div>
 
-              <!-- Phase 2 slot: On this page ToC -->
               <!-- Phase 3 slot: The other voices (cross-voice triad) -->
               <!-- Phase 3 slot: Locations covered -->
             </div>
