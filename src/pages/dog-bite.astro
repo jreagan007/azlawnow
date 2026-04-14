@@ -4,7 +4,7 @@ import PracticeAreaLayout from '../layouts/PracticeAreaLayout.astro';
 
 const entry = await getEntry('practice-areas', 'dog-bite');
 if (!entry) return Astro.redirect('/404');
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 ---
 <PracticeAreaLayout
   title={entry.data.title}
@@ -17,8 +17,10 @@ const { Content } = await render(entry);
   faqs={entry.data.faqs}
   cluster={entry.data.cluster}
   clusterLabel={entry.data.clusterLabel}
+  keyTakeaway={entry.data.keyTakeaway}
+  dataSources={entry.data.dataSources}
+  headings={headings}
+  updated={entry.data.updatedAt}
 >
-  <div class="container content-section">
-    <Content />
-  </div>
+  <Content />
 </PracticeAreaLayout>

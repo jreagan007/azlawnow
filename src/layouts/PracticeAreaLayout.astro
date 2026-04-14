@@ -8,12 +8,16 @@
 
 import BaseLayout from './BaseLayout.astro';
 import AutoLinker from '../components/AutoLinker.astro';
+import ArticleToC from '../components/ArticleToC.astro';
+import ArticleSources from '../components/ArticleSources.astro';
+import ArticleFAQ from '../components/ArticleFAQ.astro';
 import { siteConfig } from '../data/site-config';
 import {
   generateServiceSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
 } from '../utils/schema';
+import type { MarkdownHeading } from 'astro';
 
 interface Source {
   label: string;
@@ -41,8 +45,14 @@ interface Props {
   editor?: { name: string; role: string; href?: string };
   /** ISO date the page was last substantively updated. Drives dateline. */
   updated?: string;
-  /** Sources cited on the page — rendered before FAQ. */
+  /** Legacy sources prop — prefer `dataSources` frontmatter + ArticleSources component. */
   sources?: Source[];
+  /** Optional TL;DR / key takeaway rendered as a callout above the body. */
+  keyTakeaway?: string;
+  /** Numbered references list rendered by ArticleSources component. "Publisher. Title. https://url" format. */
+  dataSources?: string[];
+  /** Astro headings array from `render(entry)` — drives the "On this page" ToC in the right rail. */
+  headings?: MarkdownHeading[];
 }
 
 const {
@@ -62,6 +72,9 @@ const {
   editor = { name: 'Brandon Millam, J.D.', role: 'Answered · Legal Editor', href: '/about/#brandon-millam' },
   updated,
   sources = [],
+  keyTakeaway,
+  dataSources = [],
+  headings = [],
 } = Astro.props;
 
 // Format the dateline. Falls back to build time if not specified.
@@ -124,135 +137,135 @@ const schemas = [
         </ol>
       </nav>
 
-      <div class="pa-hero__grid">
-        <div class="pa-hero__text">
-          <h1 class="pa-hero__title" data-speakable="headline">{heroTitle}</h1>
+      <div class="pa-hero__text">
+        <h1 class="pa-hero__title" data-speakable="headline">{heroTitle}</h1>
 
-          <!-- Editorial byline + dateline -->
-          <p class="pa-byline">
-            Edited by{' '}
-            {editor.href ? (
-              <a href={editor.href} class="pa-byline__author">{editor.name}</a>
-            ) : (
-              <span class="pa-byline__author">{editor.name}</span>
-            )}
-            <span class="pa-byline__sep" aria-hidden="true">·</span>
-            <span class="pa-byline__role">{editor.role}</span>
-            <span class="pa-byline__sep" aria-hidden="true">·</span>
-            <span class="pa-byline__updated">
-              Updated <time datetime={isoDate}>{formattedDate}</time>
-            </span>
-          </p>
+        <!-- Editorial byline + dateline -->
+        <p class="pa-byline">
+          Edited by{' '}
+          {editor.href ? (
+            <a href={editor.href} class="pa-byline__author">{editor.name}</a>
+          ) : (
+            <span class="pa-byline__author">{editor.name}</span>
+          )}
+          <span class="pa-byline__sep" aria-hidden="true">·</span>
+          <span class="pa-byline__role">{editor.role}</span>
+          <span class="pa-byline__sep" aria-hidden="true">·</span>
+          <span class="pa-byline__updated">
+            Updated <time datetime={isoDate}>{formattedDate}</time>
+          </span>
+        </p>
 
-          <p class="pa-hero__subtitle" data-speakable="summary">{heroSubtitle}</p>
+        <p class="pa-hero__subtitle" data-speakable="summary">{heroSubtitle}</p>
 
-          <!-- CTA -->
-          <div class="pa-hero__cta">
-            <a href="/free-case-review/" class="btn btn-primary btn-lg">
-              {siteConfig.messaging.l8Primary} &rarr;
-            </a>
-            <a href={`tel:${siteConfig.phoneE164}`} class="pa-hero__phone-link">
-              Or call {siteConfig.phoneFormatted}
-            </a>
+        <!-- CTA -->
+        <div class="pa-hero__cta">
+          <a href="/free-case-review/" class="btn btn-primary btn-lg">
+            {siteConfig.messaging.l8Primary} &rarr;
+          </a>
+          <a href={`tel:${siteConfig.phoneE164}`} class="pa-hero__phone-link">
+            Or call {siteConfig.phoneFormatted}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FEATURED IMAGE (editorial 16:9 like ArticleLayout)
+       ============================================ -->
+  {heroImage && (
+    <div class="pa-featured-image">
+      <div class="container container-article">
+        <img
+          src={heroImage}
+          alt={heroImageAlt}
+          class="pa-featured-image__img"
+          width="1200"
+          height="675"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </div>
+  )}
+
+  <!-- ============================================
+       BODY + RIGHT RAIL (two-column on lg+, matches ArticleLayout)
+       ============================================ -->
+  <div class="pa-body section">
+    <div class="container container-article">
+      <div class="pa-grid">
+        <!-- ── MAIN COLUMN ── -->
+        <div class="pa-main">
+          {keyTakeaway && (
+            <aside class="pa-takeaway" aria-label="Key takeaway" data-speakable="takeaway">
+              <span class="pa-takeaway__label">Key takeaway</span>
+              <p class="pa-takeaway__text">{keyTakeaway}</p>
+            </aside>
+          )}
+
+          <div class="pa-content" data-speakable="summary">
+            <AutoLinker currentPath={canonical} maxLinks={20}>
+              <slot />
+            </AutoLinker>
           </div>
+
+          <ArticleFAQ faqs={faqs} />
+
+          <ArticleSources dataSources={dataSources} />
+
+          {/* Legacy sources prop fallback — only renders if dataSources is empty and sources[] was passed */}
+          {dataSources.length === 0 && sources.length > 0 && (
+            <section class="pa-sources-legacy" aria-labelledby="pa-sources-legacy-heading">
+              <h2 id="pa-sources-legacy-heading" class="pa-sources-legacy__heading">Sources &amp; references</h2>
+              <ol class="pa-sources-legacy__list">
+                {sources.map((source) => (
+                  <li class="pa-sources-legacy__item">
+                    <a href={source.url} class="pa-sources-legacy__link" target="_blank" rel="nofollow noopener">
+                      {source.label}
+                    </a>
+                    {source.publisher && (
+                      <span class="pa-sources-legacy__publisher"> — {source.publisher}</span>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
         </div>
 
-        <!-- Trust sidebar — three voices -->
-        <aside class="pa-trust-sidebar">
-          <div class="pa-trust-stat">
-            <span class="pa-trust-stat__value">On Record</span>
-            <span class="pa-trust-stat__label">The data's pulled. The facts are clear.</span>
-          </div>
-          <div class="pa-trust-stat">
-            <span class="pa-trust-stat__value">Answered</span>
-            <span class="pa-trust-stat__label">The confusion stops here.</span>
-          </div>
-          <div class="pa-trust-stat">
-            <span class="pa-trust-stat__value">Guided</span>
-            <span class="pa-trust-stat__label">You don't figure this out alone.</span>
+        <!-- ── RIGHT RAIL (sticky on lg+) ── -->
+        <aside class="pa-rail" aria-label="Page tools and intake">
+          <div class="pa-rail__sticky">
+            <ArticleToC headings={headings} />
+
+            <!-- Compact intake CTA — voice-safe, matches editorial article rail -->
+            <div class="rail-cta">
+              <span class="rail-cta__eyebrow">Answers start here.</span>
+              <p class="rail-cta__copy">Tell us what happened. The editors will tell you what's next.</p>
+              <a href="/free-case-review/" class="rail-cta__button">
+                Get answers on your case
+                <span aria-hidden="true">→</span>
+              </a>
+              <a
+                href={`tel:${siteConfig.phoneE164}`}
+                class="rail-cta__phone"
+                aria-label={`Call ${siteConfig.phoneFormatted}`}
+              >
+                <svg class="rail-cta__phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>{siteConfig.phoneFormatted}</span>
+              </a>
+            </div>
           </div>
         </aside>
       </div>
     </div>
-    {heroImage && (
-      <div class="pa-hero__image-strip">
-        <img
-          src={heroImage}
-          alt={heroImageAlt}
-          class="pa-hero__bg"
-          loading="eager"
-          decoding="async"
-          width="1600"
-          height="280"
-        />
-      </div>
-    )}
-  </section>
+  </div>
 
-  <!-- ============================================
-       CONTENT AREA
-       ============================================ -->
-  <section class="pa-content section">
-    <div class="container container-narrow">
-      <AutoLinker currentPath={canonical} maxLinks={20}>
-        <slot />
-      </AutoLinker>
-    </div>
-  </section>
-
-  <!-- ============================================
-       SOURCES — editorial trust block
-       ============================================ -->
-  {sources.length > 0 && (
-    <section class="pa-sources" aria-labelledby="pa-sources-heading">
-      <div class="container container-narrow">
-        <h2 id="pa-sources-heading" class="pa-sources__heading">Sources</h2>
-        <p class="pa-sources__intro">
-          What this page is built on. Statutes, public records, data releases, and
-          prior court opinions — primary material only, cited so you can check the
-          work.
-        </p>
-        <ol class="pa-sources__list">
-          {sources.map((source) => (
-            <li class="pa-sources__item">
-              <a href={source.url} class="pa-sources__link" target="_blank" rel="noopener noreferrer">
-                {source.label}
-              </a>
-              {source.publisher && (
-                <span class="pa-sources__publisher"> — {source.publisher}</span>
-              )}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-  )}
-
-  <!-- ============================================
-       FAQ SECTION
-       ============================================ -->
-  {faqs.length > 0 && (
-    <section class="pa-faq section" aria-label="Frequently asked questions">
-      <div class="container container-narrow">
-        <h2 class="pa-faq__heading">Frequently Asked Questions</h2>
-        <div class="pa-faq__list">
-          {faqs.map((faq) => (
-            <details class="pa-faq__item">
-              <summary class="pa-faq__question">
-                <span>{faq.question}</span>
-                <svg class="pa-faq__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </summary>
-              <div class="pa-faq__answer">
-                <p>{faq.answer}</p>
-              </div>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+  <!-- FAQ now rendered inside .pa-main via <ArticleFAQ> — schema.org/FAQPage microdata, data-speakable="answer", gold open-state border. -->
 
   <!-- ============================================
        RELATED RESOURCES (placeholder)
@@ -278,14 +291,11 @@ const schemas = [
 
   .pa-hero__content {
     padding-top: var(--space-10);
-    padding-bottom: var(--space-12);
+    padding-bottom: var(--space-10);
   }
 
-  .pa-hero__grid {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    gap: var(--space-10);
-    align-items: start;
+  .pa-hero__text {
+    max-width: 780px;
   }
 
   .pa-hero__title {
@@ -348,60 +358,245 @@ const schemas = [
   }
 
   /* ============================================
-     SOURCES — editorial trust block
+     FEATURED IMAGE (16:9, matches ArticleLayout)
      ============================================ */
-  .pa-sources {
-    padding: var(--space-12) 0;
-    background: var(--color-white, #FFFFFF);
-    border-top: 1px solid var(--neutral-200, #E8DFD0);
-    border-bottom: 1px solid var(--neutral-200, #E8DFD0);
+  .pa-featured-image {
+    padding: var(--space-6) 0 0;
+    background: var(--color-bg);
   }
 
-  .pa-sources__heading {
+  .pa-featured-image__img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* ============================================
+     TWO-COLUMN BODY GRID (main + sticky right rail)
+     Mirrors ArticleLayout .article-grid so resource + practice-area
+     pages share a single reading experience.
+     ============================================ */
+  .container-article {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  .pa-body {
+    background: var(--color-bg);
+  }
+
+  .pa-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  @media (min-width: 1024px) {
+    .pa-grid {
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: var(--space-12);
+      align-items: start;
+    }
+  }
+
+  .pa-main {
+    min-width: 0;
+    max-width: 720px;
+  }
+
+  @media (min-width: 1024px) {
+    .pa-main {
+      max-width: none;
+    }
+  }
+
+  /* ============================================
+     KEY TAKEAWAY CALLOUT
+     ============================================ */
+  .pa-takeaway {
+    background: #F5EDE0;
+    border-left: 4px solid var(--color-gold, #D4943A);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-5) var(--space-6);
+    margin: 0 0 var(--space-8);
+  }
+
+  .pa-takeaway__label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-text, #8B4513);
+    margin-bottom: var(--space-2);
+  }
+
+  .pa-takeaway__text {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: #1A1A1A;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  /* ============================================
+     RIGHT RAIL (sticky on lg+)
+     ============================================ */
+  .pa-rail {
+    min-width: 0;
+  }
+
+  .pa-rail__sticky {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 1024px) {
+    .pa-rail__sticky {
+      position: sticky;
+      top: var(--space-6);
+    }
+  }
+
+  /* Compact intake CTA in the rail — voice-safe, matches article rail */
+  .rail-cta {
+    background: var(--color-white, #FFFFFF);
+    border: 1px solid var(--neutral-200, #E8DFD0);
+    border-top: 3px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md);
+    padding: var(--space-5) var(--space-5) var(--space-4);
+    box-shadow: 0 1px 3px rgba(26, 26, 26, 0.04);
+  }
+
+  .rail-cta__eyebrow {
+    display: block;
     font-family: var(--font-heading);
-    font-size: var(--text-2xl);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: var(--space-2);
+    line-height: 1.2;
+  }
+
+  .rail-cta__copy {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #4A5859;
+    margin: 0 0 var(--space-4);
+  }
+
+  .rail-cta__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    background: var(--color-gold, #D4943A);
+    color: #1A1A1A;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    min-height: 44px;
+    transition: background var(--transition-base);
+  }
+
+  .rail-cta__button:hover,
+  .rail-cta__button:focus-visible {
+    background: var(--color-gold-hover, #B87A28);
+    color: #FFFFFF;
+  }
+
+  .rail-cta__button:focus-visible {
+    outline: 2px solid var(--color-gold-text, #8B4513);
+    outline-offset: 2px;
+  }
+
+  .rail-cta__phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    padding: 0.5rem;
+    min-height: 44px;
+    color: #1A1A1A;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-base);
+  }
+
+  .rail-cta__phone:hover {
+    color: var(--color-gold-text, #8B4513);
+  }
+
+  .rail-cta__phone:focus-visible {
+    outline: 2px solid var(--color-gold-text, #8B4513);
+    outline-offset: 2px;
+  }
+
+  .rail-cta__phone-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-gold-text, #8B4513);
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     LEGACY SOURCES — only renders if dataSources is empty
+     ============================================ */
+  .pa-sources-legacy {
+    margin-top: var(--space-12);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--neutral-200, #E8DFD0);
+  }
+
+  .pa-sources-legacy__heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
     font-weight: 700;
     color: var(--color-black, #1A1A1A);
-    margin: 0 0 var(--space-3);
+    margin: 0 0 var(--space-4);
     letter-spacing: -0.01em;
   }
 
-  .pa-sources__intro {
-    font-size: var(--text-sm);
-    color: var(--color-slate, #4A5859);
-    line-height: 1.6;
-    margin: 0 0 var(--space-6);
-    max-width: 640px;
-  }
-
-  .pa-sources__list {
+  .pa-sources-legacy__list {
     list-style: decimal;
     padding-left: var(--space-5);
     margin: 0;
   }
 
-  .pa-sources__item {
+  .pa-sources-legacy__item {
     font-size: var(--text-sm);
     color: var(--color-slate, #4A5859);
     line-height: 1.55;
     margin-bottom: var(--space-3);
-    padding-left: var(--space-1);
   }
 
-  .pa-sources__link {
+  .pa-sources-legacy__link {
     color: var(--color-gold-text, #8B4513);
     text-decoration: none;
     font-weight: 600;
     border-bottom: 1px solid var(--color-gold-text, #8B4513);
-    transition: color 0.15s ease, border-color 0.15s ease;
   }
 
-  .pa-sources__link:hover {
+  .pa-sources-legacy__link:hover {
     color: var(--color-crimson, #C23B22);
     border-bottom-color: var(--color-crimson, #C23B22);
   }
 
-  .pa-sources__publisher {
+  .pa-sources-legacy__publisher {
     color: var(--color-slate, #4A5859);
   }
 
@@ -439,38 +634,6 @@ const schemas = [
     font-weight: 600;
   }
 
-  /* Trust sidebar */
-  .pa-trust-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-6);
-    padding: var(--space-6);
-    background: var(--color-white, #FFFFFF);
-    border: 1px solid var(--neutral-200, #E8DFD0);
-    border-radius: var(--radius-lg, 8px);
-  }
-
-  .pa-trust-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    text-align: center;
-  }
-
-  .pa-trust-stat__value {
-    font-family: var(--font-heading);
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--color-gold-text, #8B4513);
-  }
-
-  .pa-trust-stat__label {
-    font-size: var(--text-xs);
-    color: var(--color-slate, #4A5859);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
   /* Hero CTA */
   .pa-hero__cta {
     display: flex;
@@ -489,27 +652,9 @@ const schemas = [
 
   .pa-hero__phone-link:hover { color: var(--color-gold-text, #8B4513); }
 
-  /* Hero image strip — optional, below text */
-  .pa-hero__image-strip {
-    width: 100%;
-    height: 240px;
-    overflow: hidden;
-  }
-
-  .pa-hero__bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
   /* ============================================
      CONTENT AREA — Article-style prose
      ============================================ */
-  .pa-content {
-    background: var(--color-bg);
-  }
-
   .pa-content :global(h2) {
     font-family: var(--font-heading);
     font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
@@ -614,100 +759,9 @@ const schemas = [
   }
 
   /* ============================================
-     FAQ SECTION
-     ============================================ */
-  .pa-faq {
-    background: #F5EDE0;
-  }
-
-  .pa-faq__heading {
-    font-family: var(--font-heading);
-    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
-    font-weight: 700;
-    color: #1A1A1A;
-    margin-bottom: var(--space-8);
-  }
-
-  .pa-faq__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-  }
-
-  .pa-faq__item {
-    border-bottom: 1px solid var(--neutral-300);
-  }
-
-  .pa-faq__item:first-child {
-    border-top: 1px solid var(--neutral-300);
-  }
-
-  .pa-faq__question {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-    padding: var(--space-5) 0;
-    cursor: pointer;
-    list-style: none;
-    font-family: var(--font-body);
-    font-size: var(--text-lg);
-    font-weight: 600;
-    color: #1A1A1A;
-    transition: color var(--transition-base);
-  }
-
-  .pa-faq__question::-webkit-details-marker {
-    display: none;
-  }
-
-  .pa-faq__question::marker {
-    content: '';
-  }
-
-  .pa-faq__question:hover {
-    color: var(--color-gold-text, #8B4513);
-  }
-
-  .pa-faq__chevron {
-    color: var(--color-gold-text, #8B4513);
-    flex-shrink: 0;
-    transition: transform var(--transition-base);
-  }
-
-  .pa-faq__item[open] .pa-faq__chevron {
-    transform: rotate(180deg);
-  }
-
-  .pa-faq__answer {
-    padding: 0 0 var(--space-6);
-  }
-
-  .pa-faq__answer p {
-    color: #4A5859;
-    font-size: var(--text-base);
-    line-height: 1.7;
-  }
-
-
-  /* ============================================
      RESPONSIVE
      ============================================ */
   @media (max-width: 768px) {
-    .pa-hero__grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
-
-    .pa-trust-sidebar {
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    .pa-hero__image-strip {
-      height: 180px;
-    }
-
     .pa-hero__cta {
       flex-direction: column;
       align-items: flex-start;
@@ -736,9 +790,5 @@ const schemas = [
     }
   }
 
-  @media (max-width: 480px) {
-    .pa-trust-sidebar {
-      flex-direction: column;
-    }
-  }
+
 </style>
