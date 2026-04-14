@@ -144,6 +144,1378 @@
   to = "/wrongful-death/:splat"
   status = 301
 
+
+# Live-site WordPress URL preservation (227 rules + 1 410)
+# Source: docs/internal/netlify-redirects-from-live-site.toml
+# Appended: 2026-04-13
+[[redirects]]
+  from = "/single-attorney/"
+  to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/estimate-settlement/"
+  to = "/tips/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/birthing-injuries/"
+  to = "/medical-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/boating-accidents/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/delayed-emergency-response/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/abuse-in-youth-organizations/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/failure-to-prevent-or-report-abuse/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/physical-abuse/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/failure-to-report-abuse/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/negligent-hiring-or-training/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/negligent-transportation/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/abuse-during-transportation/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/failure-to-address-bullying/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/improper-use-of-restraints/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/car-accident/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/truck-accident/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/bus-accidents/"
+  to = "/bus-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/bicycle-accidents/"
+  to = "/bicycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/motorcycle-accident-lawyer-buckeye/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/wrongful-death/"
+  to = "/wrongful-death/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/rideshare-accidents/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/slip-and-fall-accident-lawyer-buckeye/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/bad-faith-insurance/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/dog-bite/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury/premises-liability/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/negligent-supervision/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/negligent-security/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/unsafe-facilities/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/hazardous-conditions/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/school-youth-sports-injuries/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability/special-needs-protocols/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/sexual-abuse/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/child-abuse/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/elder-abuse/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/school-abuse/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/special-needs-abuse/"
+  to = "/school-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/caregiver-abuse/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse/nursing-home-abuse/"
+  to = "/nursing-home-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/blogs/"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/arizona-personal-injury-law-glossary/"
+  to = "/glossary/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-results/"
+  to = "/case-results/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/team/"
+  to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/maricopa-injury-lawyer/"
+  to = "/maricopa/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/buckeye-injury-lawyer/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/llm/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/accident-attorney-az-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lyft-accident-attorney-phoenix/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-slip-fall-lawyer-guide/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rideshare-accident-attorney-guide/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/injury-lawyer-az-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slip-fall-injury-west-phoenix/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-highway-accident-lawyer/"
+  to = "/insights/sr-347-crash-corridor/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-car-wreck-attorney-guide/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pedestrian-accident-settlement-buckeye/"
+  to = "/pedestrian-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability-insurance-buckeye/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/truck-accident-attorney-help/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/emotional-abuse-caregiver-buckeye/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/elder-abuse-financial-buckeye/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/caregiver-abuse-lawyer-buckeye/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/school-abuse-attorney-buckeye-az/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sexual-abuse-lawyer-buckeye-az/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nursing-home-abuse-buckeye/"
+  to = "/nursing-home-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/school-abuse-lawyer-buckeye/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/abuse-special-needs-buckeye/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/elder-abuse-lawyer-buckeye-az/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rideshare-accident-lawyer-buckeye/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-partial-fault-accident/"
+  to = "/legal-guides/arizona-car-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-18-wheeler-accident-lawyer/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/special-needs-abuse-attorney-buckeye/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/suing-store-for-fall-guide/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/who-is-at-fault-scooter/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sue-restaurant-allergic-reaction/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daycare-negligence-lawyer/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-sue-insurance-company/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-bicycle-accident-lawyer/"
+  to = "/bicycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-bad-faith-insurance-attorney/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insurance-bad-faith-attorney/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insurance-attorneys-arizona/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/accident-injury-tucson-az/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-bus-accident-attorney-guide/"
+  to = "/bus-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sundance-car-accident-attorney-buckeye/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/restaurant-injury-lawyer-buckeye/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/crosswalk-accident-attorney-buckeye/"
+  to = "/pedestrian-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bus-accident-attorney-phoenix/"
+  to = "/bus-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-injury-claim-consultation/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-semi-truck-accident-lawyers/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/west-phoenix-accident-attorney-free/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bad-faith-lawyers-help/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/negligent-security-lawsuit-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bad-faith-attorneys-arizona/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bicycle-accident-attorney-buckeye/"
+  to = "/bicycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slip-fall-lawyer-guide/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-truck-accident-attorney-guide/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lyft-accident-attorney-west-phoenix/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-accident-claim-advice/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/car-accident-lawyer-phoenix/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hit-by-uninsured-driver/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trip-and-fall-accident-attorney/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/do-insurance-companies-go-after-uninsured-drivers/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/product-liability-attorney-guide/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daycare-negligence-settlement-amounts/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-car-accident-lawyer/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-truck-accident-lawyer-guide/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury-lawyer-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/elder-abuse-attorney-buckeye/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-truck-accident-lawyer/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/electric-scooter-accident-lawyer/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/suing-for-dog-bite/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dog-bite-settlement-calculator/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dog-bite-settlement-examples/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/minor-dog-bite-settlement/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-much-money-suing-restaurant/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/attorneys-against-insurance-companies/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/average-payout-slip-fall/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slip-and-fall-settlement-examples/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/personal-injury-lawyer-phoenix/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slip-and-fall-attorney-phoenix/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/car-accident-lawyer-phoenix-az/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insurance-claim-lawyer-cost/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/slip-fall-injury-settlement-amounts/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/injury-accident-lawyer-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/atv-accident-attorney-guide/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/truck-accident-attorney-phoenix/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/will-insurance-go-up-uninsured-driver/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/phoenix-personal-injury-attorney/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/phoenix-arizona-personal-injury-attorney/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/construction-injury-claim-guide/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/injury-lawyer-tempe-guide/"
+  to = "/tempe/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/settlement-without-a-lawyer/"
+  to = "/tips/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/phoenix-car-accident-lawyer/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/can-animal-control-take-dog/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reasons-to-sue-a-restaurant/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability-settlement-amounts/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/uber-accident-attorney-phoenix/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/car-accident-lawyers-arizona/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/defective-product-liability-attorney/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-meaning-symbolism/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/uninsured-drivers-accident/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability-case-examples/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/accident-attorney-arizona-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pain-suffering-worth-slip-fall/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daycare-lawsuit-guide/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-personal-injury-lawyer-phoenix/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sue-daycare-for-negligence/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insured-driver-hits-uninsured/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lawyers-for-insurance-issues/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/psychological-effects-car-accidents/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sue-restaurant-for-negligence/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/phoenix-accident-lawyer-guide/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/drunk-driving-victim-attorney/"
+  to = "/client-guides/hit-by-drunk-driver/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/premises-liability-vs-negligence/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-personal-injury-attorneys/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collect-money-uninsured-driver/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/suing-daycare-for-negligence/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/symptoms-car-accident-trauma/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/assisted-living-facility-abuse-lawyer/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hit-by-uninsured-driver-insured/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-injury-lawyer-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-happens-when-hit-by-uninsured-driver/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/road-accident-trauma-guide/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/parked-car-hit-by-uninsured-driver/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/injury-lawyer-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/triplegia-causes-guide/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/survivors-guilt-car-accident/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/daycare-settlement-factors/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/flashbacks-of-car-accident/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-lawyer-nursing-home-neglect/"
+  to = "/nursing-home-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prove-trip-fall-case/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-does-a-spinal-cord-injury-affect-the-brain/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/level-3-dog-bite-settlement-amounts-in-arizona-az-law-now/"
+  to = "/dog-bite/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/civil-lawyers-who-work-on-contingency/"
+  to = "/tips/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/auto-accident-attorney-phoenix/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/million-dollar-slip-fall-settlements/"
+  to = "/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/4-types-spinal-injury/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-accident-attorney-guide/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/file-wrongful-death-arizona/"
+  to = "/wrongful-death/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/can-i-sue-business-security/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/third-degree-burn-case-worth/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lawyer-to-sue-restaurant/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/child-hurt-daycare-who-pays/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/filing-civil-lawsuit-sexual-assault/"
+  to = "/child-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/spinal-cord-injury-settlement-worth/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/report-assisted-living-abuse-arizona/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-file-product-liability-claim/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/signs-elder-abuse-assisted-living/"
+  to = "/elder-abuse/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/attorney-for-fatal-accident/"
+  to = "/wrongful-death/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fire-accident-injury-attorney-arizona/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-rideshare-accident-attorney-verrado/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hit-and-run-accident-buckeye/"
+  to = "/client-guides/hit-and-run-victim-guide/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/top-car-accident-attorney-buckeye/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/a-sobering-welcome-my-first-week-in-maricopa-and-the-reality-of-sr-347/"
+  to = "/insights/sr-347-crash-corridor/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/phoenix-ridesharing-accident-attorney/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/car-accident-lawyer-buckeye-az/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-semi-truck-accident-law-firm/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/motorcycle-accident-lawyer-az-buckeye/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/west-phoenix-truck-accident-attorney/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/car-accident-whiplash-buckeye/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bicycle-accident-lawyer-buckeye/"
+  to = "/bicycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/school-bus-accident-buckeye/"
+  to = "/bus-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/quad-bike-accident-compensation/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/motorcycle-accident-compensation-buckeye/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/commercial-truck-accident-buckeye/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/your-rights-as-a-rideshare-driver-after-a-buckeye-accident/"
+  to = "/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-a-fatal-accident-lawyer-in-buckeye-does-for-you/"
+  to = "/wrongful-death/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/need-a-buckeye-store-accident-lawyer-read-this-first/"
+  to = "/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rollover-accident-lawyer-buckeye-5-things-to-know/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-firm-filed-a-lawsuit-on-behalf-of-19-families-in-who-allege-their-children-were-mistreated-at-a-local-in-home-daycare/"
+  to = "/daycare-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/verified-local-personal-injury-attorneys-in-maricopa-az/"
+  to = "/maricopa/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/recent-buckeye-semi-truck-accident-news-your-rights/"
+  to = "/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/az-law-now-injury-attorneys-to-host-official-ribbon-cutting-with-greater-maricopa-business-alliance/"
+  to = "/maricopa/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/intersection-accident-maricopa-az-a-complete-guide/"
+  to = "/insights/sr-347-crash-corridor/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/plainly-speaking-its-lawlessness-on-wheels/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/maricopa-were-officially-here/"
+  to = "/maricopa/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/watson-rd-yuma-rd-one-of-buckeyes-most-dangerous-intersections/"
+  to = "/insights/sr-347-crash-corridor/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/why-the-sr-347-and-i-10-interchange-is-one-of-the-most-dangerous-areas-for-drivers-traveling-to-and-from-maricopa/"
+  to = "/insights/sr-347-crash-corridor/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/7-steps-after-a-west-phoenix-car-accident/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/top-5-things-to-maximize-your-injury-recovery-after-a-car-accident-in-maricopa-arizona/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/a-guide-to-your-off-road-vehicle-accident-lawsuit/"
+  to = "/motorcycle-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/why-you-dont-have-to-pay-your-doctors-right-away-after-a-car-accident/"
+  to = "/car-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/why-az-law-now-injury-attorneys-is-sponsoring-paws-claws-in-maricopa-giving-back-and-investing-in-safety/"
+  to = "/maricopa/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/can-you-sue-for-verbal-abuse-or-being-yelled-at-in-arizona/"
+  to = "/tips/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ai-is-will-hunting-brilliant-and-completely-unprepared/"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/test/"
+  status = 410
+  force = true
+
+
 # Security headers
 [[headers]]
   for = "/*"
