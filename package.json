@@ -15,6 +15,7 @@
     "check:images": "npx tsx scripts/check-images.ts",
     "check:images:strict": "npx tsx scripts/check-images.ts --strict",
     "check:sources": "npx tsx scripts/check-sources.ts",
+    "check:sources:strict": "npx tsx scripts/check-sources.ts --strict",
     "gen:card": "npx tsx scripts/regen-single-card.ts",
     "gen:og": "npx tsx scripts/generate-og-image.ts",
     "gen:og:all": "npx tsx scripts/generate-all-og-images.ts"
