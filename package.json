@@ -13,6 +13,7 @@
     "check:quality": "npx tsx scripts/audit-quality.ts",
     "check:quality:strict": "npx tsx scripts/audit-quality.ts --strict",
     "check:images": "npx tsx scripts/check-images.ts",
+    "check:images:strict": "npx tsx scripts/check-images.ts --strict",
     "check:sources": "npx tsx scripts/check-sources.ts",
     "gen:card": "npx tsx scripts/regen-single-card.ts",
     "gen:og": "npx tsx scripts/generate-og-image.ts",
