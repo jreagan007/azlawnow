@@ -80,14 +80,7 @@ const placeholderCards = [
   },
 ];
 
-/* Map investigation slugs to card images */
-const investigationImages: Record<string, string> = {
-  'arizona-school-restraint-data': '/images/cards/arizona-school-restraint-data.webp',
-  'arizona-daycare-violations': '/images/cards/arizona-daycare-violations.webp',
-  'maricopa-county-daycare-violations': '/images/cards/arizona-daycare-violations.webp',
-  'sr-347-crash-corridor': '/images/cards/sr-347-crash-corridor.webp',
-  'i-10-crash-data': '/images/cards/i-10-crash-data-buckeye-goodyear.webp',
-};
+/* Use frontmatter image field directly — every article has a unique hero */
 ---
 
 <BaseLayout
@@ -132,7 +125,7 @@ const investigationImages: Record<string, string> = {
       {featured ? (
         <a href={`/insights/${featured.id}/`} class="inv-featured-card">
           <img
-            src={investigationImages[featured.id] || '/images/heroes/practice-area-default.webp'}
+            src={featured.data.image || '/images/heroes/practice-area-default.webp'}
             alt=""
             class="inv-featured-bg"
             loading="lazy"
@@ -207,7 +200,7 @@ const investigationImages: Record<string, string> = {
           {rest.map((entry) => (
             <a href={`/insights/${entry.id}/`} class="inv-card">
               <img
-                src={investigationImages[entry.id] || '/images/heroes/practice-area-default.webp'}
+                src={entry.data.image || '/images/heroes/practice-area-default.webp'}
                 alt=""
                 class="inv-card-thumb"
                 loading="lazy"
