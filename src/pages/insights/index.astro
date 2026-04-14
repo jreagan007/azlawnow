@@ -118,70 +118,91 @@ const placeholderCards = [
   </section>
 
   <!-- ============================================
-       FEATURED INVESTIGATION
+       FEATURED INVESTIGATION — Top Story split card
        ============================================ -->
   <section class="inv-featured-section">
     <div class="container">
+      <p class="inv-featured-eyebrow">Top Investigation</p>
       {featured ? (
         <a href={`/insights/${featured.id}/`} class="inv-featured-card">
-          <img
-            src={featured.data.image || '/images/heroes/practice-area-default.webp'}
-            alt=""
-            class="inv-featured-bg"
-            loading="lazy"
-          />
-          <div class="inv-featured-overlay" aria-hidden="true"></div>
-          <div class="inv-featured-badge">
-            <span class="inv-badge">Investigation</span>
-            {featured.data.readingTime && (
-              <span class="inv-reading-time">{featured.data.readingTime}</span>
-            )}
-          </div>
-          <h2 class="inv-featured-title">{featured.data.title}</h2>
-          <p class="inv-featured-desc">{featured.data.description}</p>
-          <div class="inv-featured-byline">
+          <div class="inv-featured-media">
             <img
-              src={brendan.photo}
-              alt={brendan.name}
-              class="inv-featured-avatar"
-              width="36"
-              height="36"
-              loading="lazy"
+              src={featured.data.image || '/images/heroes/practice-area-default.webp'}
+              alt=""
+              class="inv-featured-image"
+              loading="eager"
+              fetchpriority="high"
             />
-            <span class="inv-featured-author">{brendan.name}</span>
-            <span class="inv-featured-sep">/</span>
-            <time datetime={featured.data.publishedAt}>
-              {formatDate(featured.data.publishedAt)}
-            </time>
+          </div>
+          <div class="inv-featured-body">
+            <div class="inv-featured-badge">
+              <span class="inv-badge">
+                {categoryLabels[featured.data.category] || 'Investigation'}
+              </span>
+              {featured.data.readingTime && (
+                <span class="inv-reading-time">{featured.data.readingTime}</span>
+              )}
+            </div>
+            <h2 class="inv-featured-title">{featured.data.title}</h2>
+            <p class="inv-featured-desc">{featured.data.description}</p>
+            <div class="inv-featured-byline">
+              <img
+                src={brendan.photo}
+                alt={brendan.name}
+                class="inv-featured-avatar"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+              <div class="inv-featured-byline-meta">
+                <span class="inv-featured-author">{brendan.name}</span>
+                <span class="inv-featured-byline-sub">
+                  Editor-in-Chief
+                  <span class="inv-featured-sep" aria-hidden="true">·</span>
+                  <time datetime={featured.data.publishedAt}>
+                    {formatDate(featured.data.publishedAt)}
+                  </time>
+                </span>
+              </div>
+            </div>
+            <span class="inv-featured-cta" aria-hidden="true">
+              Read the investigation <span class="inv-featured-cta-arrow">&rarr;</span>
+            </span>
           </div>
         </a>
       ) : (
         <div class="inv-featured-card inv-featured-card--placeholder">
-          <img
-            src="/images/cards/arizona-school-restraint-data.webp"
-            alt=""
-            class="inv-featured-bg"
-            loading="lazy"
-          />
-          <div class="inv-featured-overlay" aria-hidden="true"></div>
-          <div class="inv-featured-badge">
-            <span class="inv-badge">Investigation</span>
-            <span class="inv-coming-soon">Coming Soon</span>
-          </div>
-          <h2 class="inv-featured-title">{placeholderFeatured.title}</h2>
-          <p class="inv-featured-desc">{placeholderFeatured.description}</p>
-          <div class="inv-featured-byline">
+          <div class="inv-featured-media">
             <img
-              src={brendan.photo}
-              alt={brendan.name}
-              class="inv-featured-avatar"
-              width="36"
-              height="36"
+              src="/images/cards/arizona-school-restraint-data.webp"
+              alt=""
+              class="inv-featured-image"
               loading="lazy"
             />
-            <span class="inv-featured-author">{brendan.name}</span>
-            <span class="inv-featured-sep">/</span>
-            <span class="inv-featured-date-placeholder">Editor-in-Chief</span>
+          </div>
+          <div class="inv-featured-body">
+            <div class="inv-featured-badge">
+              <span class="inv-badge">
+                {categoryLabels[placeholderFeatured.category] || 'Investigation'}
+              </span>
+              <span class="inv-coming-soon">Coming Soon</span>
+            </div>
+            <h2 class="inv-featured-title">{placeholderFeatured.title}</h2>
+            <p class="inv-featured-desc">{placeholderFeatured.description}</p>
+            <div class="inv-featured-byline">
+              <img
+                src={brendan.photo}
+                alt={brendan.name}
+                class="inv-featured-avatar"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+              <div class="inv-featured-byline-meta">
+                <span class="inv-featured-author">{brendan.name}</span>
+                <span class="inv-featured-byline-sub">Editor-in-Chief</span>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -335,70 +356,110 @@ const placeholderCards = [
   }
 
   /* ============================================
-     FEATURED INVESTIGATION
+     FEATURED INVESTIGATION — Top Story split card
      ============================================ */
   .inv-featured-section {
     padding: 0 0 var(--space-12);
     background: var(--color-bg);
   }
 
+  .inv-featured-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-gold-text, #8B4513);
+    margin: 0 0 var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-gold);
+    display: inline-block;
+  }
+
   .inv-featured-card {
-    display: block;
-    background: var(--color-black);
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--color-white);
     border: 1px solid var(--neutral-200);
     border-radius: var(--radius-lg);
-    padding: var(--space-10) var(--space-8);
-    text-decoration: none;
-    transition: all var(--transition-base);
-    position: relative;
     overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow var(--transition-base),
+                border-color var(--transition-base),
+                transform var(--transition-base);
   }
 
-  .inv-featured-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
-
-  .inv-featured-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(26, 26, 26, 0.92) 0%,
-      rgba(26, 26, 26, 0.6) 50%,
-      rgba(26, 26, 26, 0.35) 100%
-    );
-    z-index: 1;
+  @media (min-width: 900px) {
+    .inv-featured-card {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    }
   }
 
   .inv-featured-card:not(.inv-featured-card--placeholder):hover {
-    border-color: var(--color-gold-text, #8B4513);
+    border-color: var(--color-gold);
     box-shadow: var(--shadow-lg);
     transform: translateY(-2px);
   }
 
   .inv-featured-card--placeholder {
     cursor: default;
-    opacity: 0.85;
+    opacity: 0.92;
+  }
+
+  /* Media column */
+  .inv-featured-media {
+    position: relative;
+    overflow: hidden;
+    background: var(--neutral-100);
+    aspect-ratio: 16 / 10;
+  }
+
+  @media (min-width: 900px) {
+    .inv-featured-media {
+      aspect-ratio: auto;
+      min-height: 380px;
+    }
+  }
+
+  .inv-featured-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .inv-featured-card:not(.inv-featured-card--placeholder):hover .inv-featured-image {
+    transform: scale(1.03);
+  }
+
+  /* Body column */
+  .inv-featured-body {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-8);
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 900px) {
+    .inv-featured-body {
+      padding: var(--space-10);
+      justify-content: center;
+    }
   }
 
   .inv-featured-badge {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    margin-bottom: var(--space-4);
-    position: relative;
-    z-index: 2;
+    margin: 0;
   }
 
   .inv-badge {
     display: inline-block;
-    background: rgba(212, 148, 58, 0.15);
-    color: var(--color-gold-hover);
+    background: rgba(212, 148, 58, 0.12);
+    color: var(--color-gold-hover, #C2842E);
     font-size: var(--text-xs);
     font-weight: 700;
     text-transform: uppercase;
@@ -410,7 +471,7 @@ const placeholderCards = [
   .inv-coming-soon {
     font-size: var(--text-xs);
     font-weight: 600;
-    color: var(--neutral-400);
+    color: var(--neutral-500);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -418,17 +479,17 @@ const placeholderCards = [
   .inv-reading-time {
     font-size: var(--text-xs);
     color: var(--neutral-500);
+    font-weight: 500;
   }
 
   .inv-featured-title {
     font-family: var(--font-heading);
-    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    font-size: clamp(var(--text-2xl), 2.8vw, var(--text-4xl));
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-black);
     line-height: 1.15;
-    margin-bottom: var(--space-4);
-    position: relative;
-    z-index: 2;
+    margin: 0;
+    letter-spacing: -0.01em;
   }
 
   .inv-featured-card:not(.inv-featured-card--placeholder):hover .inv-featured-title {
@@ -437,12 +498,9 @@ const placeholderCards = [
 
   .inv-featured-desc {
     font-size: var(--text-base);
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.7;
-    max-width: 700px;
-    margin-bottom: var(--space-6);
-    position: relative;
-    z-index: 2;
+    color: var(--color-slate);
+    line-height: 1.65;
+    margin: 0;
   }
 
   .inv-featured-byline {
@@ -450,30 +508,65 @@ const placeholderCards = [
     align-items: center;
     gap: var(--space-3);
     font-size: var(--text-sm);
-    color: rgba(255, 255, 255, 0.7);
-    position: relative;
-    z-index: 2;
+    color: var(--color-slate);
+    margin-top: var(--space-2);
   }
 
   .inv-featured-avatar {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--neutral-200);
+    flex-shrink: 0;
+  }
+
+  .inv-featured-byline-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
   }
 
   .inv-featured-author {
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-black);
+    font-size: var(--text-sm);
+  }
+
+  .inv-featured-byline-sub {
+    font-size: var(--text-xs);
+    color: var(--neutral-500);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1-5, 6px);
   }
 
   .inv-featured-sep {
     color: var(--neutral-300);
   }
 
-  .inv-featured-date-placeholder {
-    color: var(--neutral-400);
+  .inv-featured-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-3);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-gold-text, #8B4513);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .inv-featured-cta-arrow {
+    transition: transform var(--transition-base);
+    display: inline-block;
+  }
+
+  .inv-featured-card:not(.inv-featured-card--placeholder):hover .inv-featured-cta-arrow {
+    transform: translateX(4px);
   }
 
   /* ============================================
