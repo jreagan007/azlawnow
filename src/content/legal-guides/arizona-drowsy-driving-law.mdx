@@ -86,31 +86,25 @@ Since December 2017, most commercial motor vehicles must carry electronic loggin
 
 An ELD connects to the vehicle's engine control module and automatically records engine hours, vehicle movement, miles driven, and the driver's duty status. The data is time-stamped and GPS-tagged. Unlike a paper log, an ELD can't easily be rewritten after the fact.
 
-### What ELDs Record
+### What the ELD Captures in a Driver's Log
 
 ELD data provides a comprehensive picture of the driver's activity.
 
-**Driving time.** The ELD records when the vehicle is in motion and for how long. This data directly maps to the 11-hour driving limit.
+| ELD data field | What it captures |
+|---|---|
+| Driving time | When the vehicle is in motion and for how long. Maps directly to the 11-hour driving limit. |
+| On-duty, not driving | Time spent loading, unloading, inspecting the vehicle, or performing other work while the vehicle is stationary. Counts against the 14-hour window. |
+| Off duty and sleeper berth | Periods when the driver is resting. Contributes to the 10-hour off-duty requirement. |
+| Location data | GPS coordinates logged at regular intervals, showing where the driver operated. Confirms the route, identifies rest stop locations, and corroborates or contradicts other evidence. |
+| Unassigned driving time | If the vehicle moves without a driver logged in, the ELD records it as unassigned. This flag can indicate someone driving under another driver's log, or the ELD being disconnected. |
 
-**On-duty, not driving.** Time spent loading, unloading, inspecting the vehicle, or performing other work while the vehicle is stationary. This counts against the 14-hour window.
-
-**Off duty and sleeper berth.** Periods when the driver is resting. These periods contribute to the 10-hour off-duty requirement.
-
-**Location data.** GPS coordinates logged at regular intervals show where the driver was operating. This data can confirm the driver's route, identify rest stop locations, and corroborate or contradict other evidence.
-
-**Unassigned driving time.** If the vehicle moves without a driver logged in, the ELD records it as unassigned. This flag can indicate someone driving under another driver's log, or the ELD being disconnected.
-
-### ELD Tampering
+### How Drivers Tamper With ELD Data
 
 Despite the technological safeguards, ELD tampering exists. Drivers and carriers have developed methods to manipulate ELD data.
 
-**Magnet tricks.** Placing a magnet on the vehicle speed sensor can make the ELD think the vehicle is stationary while it's moving. The ELD records off-duty time even though the truck is rolling down the highway.
+The oldest trick is the magnet. Placing a magnet on the vehicle speed sensor makes the ELD think the vehicle is stationary while it's moving, so the device records off-duty time even though the truck is rolling down I-10 at 70 mph. The next tier is simpler: disconnect the device from the engine's diagnostic port entirely. Some drivers unplug during driving and reconnect at rest stops. The ELD sees a clean rest window; the truck covered 300 miles.
 
-**Unplugging the ELD.** Disconnecting the device from the engine's diagnostic port stops data recording. Some drivers unplug during driving and reconnect at rest stops.
-
-**Using a second ELD profile.** Some carriers create multiple driver profiles on the same ELD. The driver logs into one profile when approaching their HOS limit and continues driving under the second profile.
-
-**Editing records after the fact.** ELDs allow drivers to annotate and edit certain entries, such as correcting duty status errors. Some drivers exploit this feature to reclassify driving time as off-duty time.
+More sophisticated carriers create multiple driver profiles on the same ELD. The driver logs into one profile when approaching their HOS limit and continues driving under the second profile. And then there's the after-the-fact edit: ELDs allow drivers to annotate and edit certain entries, such as correcting duty status errors. Some drivers exploit the feature to reclassify driving time as off-duty time. Each of these patterns leaves forensic signatures that a qualified ELD expert can identify.
 
 FMCSA regulations prohibit ELD tampering. 49 CFR 395.8(e) states that a driver or carrier must not disable, deactivate, disengage, jam, or otherwise block or degrade the device. Tampering is a separate violation that carries its own penalties.
 
@@ -118,15 +112,11 @@ FMCSA regulations prohibit ELD tampering. 49 CFR 395.8(e) states that a driver o
 When ELD data shows anomalies, such as implausibly long rest periods followed immediately by high-mileage driving, gaps in location data, or unassigned driving time, those anomalies suggest tampering. In litigation, a forensic ELD expert can analyze the raw data to identify manipulation. Proof of tampering strengthens the plaintiff's case dramatically. It shows the driver and carrier knew the HOS violation was occurring and actively concealed it.
 </Callout>
 
-### ELD Exemptions
+### Which Drivers Are Exempt From the ELD Mandate
 
 Not every commercial vehicle requires an ELD. Exemptions exist for several categories.
 
-**Short-haul drivers.** Drivers operating within a 150-air-mile radius who return to the work reporting location within 14 hours are exempt.
-
-**Vehicles manufactured before 2000.** Older vehicles that lack an engine control module compatible with ELD technology are exempt.
-
-**Driveaway-towaway operations.** Drivers delivering vehicles (not freight) are exempt.
+Short-haul drivers are the biggest exempt category. Drivers operating within a 150-air-mile radius who return to the work reporting location within 14 hours don't need an ELD. Vehicles manufactured before 2000 are also exempt because they lack an engine control module compatible with ELD technology. The third exemption covers driveaway-towaway operations, where drivers deliver vehicles rather than freight.
 
 These exemptions mean some commercial drivers on Arizona highways are still using paper logs or no logs at all. The short-haul exemption alone covers a significant portion of regional delivery and agricultural trucking.
 
@@ -134,17 +124,15 @@ These exemptions mean some commercial drivers on Arizona highways are still usin
 
 When a fatigued truck driver crashes, the carrier's liability extends well beyond respondeat superior.
 
-### Direct Negligence Claims
+### Direct Negligence Claims Against the Carrier
 
 Carriers face direct negligence liability when their own conduct contributes to driver fatigue.
 
-**Unrealistic schedules.** If dispatch records show the carrier assigned loads with delivery windows that couldn't be met within HOS limits, the carrier set the driver up for a violation. That's direct negligence.
+Unrealistic schedules are the most common pattern. If dispatch records show the carrier assigned loads with delivery windows that couldn't be met within HOS limits, the carrier set the driver up for a violation. That's direct negligence, and it's visible in the dispatch software. Communications between dispatch and driver showing encouragement, incentives, or pressure to skip rest breaks add to the case. "Just push through" texts are litigation gold because they prove the carrier knew and pushed anyway.
 
-**Pressure to drive through.** Communications between dispatch and driver showing encouragement, incentives, or pressure to skip rest breaks constitute evidence of negligent supervision. "Just push through" texts are litigation gold.
+Failure to monitor is the next layer. Carriers have access to their drivers' ELD data in real time, and most fleet management systems flag HOS violations automatically. A carrier that receives violation alerts and doesn't pull the driver off the road is negligently supervising by any reasonable definition of the term.
 
-**Failure to monitor ELD data.** Carriers have access to their drivers' ELD data in real time. Most fleet management systems flag HOS violations automatically. A carrier that receives violation alerts and doesn't pull the driver off the road is negligently supervising.
-
-**Compensation structures that encourage violations.** Drivers paid exclusively by the mile have a financial incentive to drive as many miles as possible. If the carrier's pay structure effectively punishes compliance with HOS rules (by reducing earnings), the carrier has created the conditions for fatigue-related crashes.
+The final category is compensation structure. Drivers paid exclusively by the mile have a financial incentive to drive as many miles as possible. If the carrier's pay structure effectively punishes compliance with HOS rules by reducing earnings, the carrier has created the conditions for fatigue-related crashes. Maricopa County Superior Court juries tend to respond strongly to that evidence because it reframes the case from "one tired driver" to "a system that rewards tired driving."
 
 ### Knowledge and Willful Blindness
 
@@ -158,11 +146,7 @@ The National Transportation Safety Board investigated a milk tanker crash on the
 
 The investigation found that the driver had been operating for an extended period. The NTSB's findings highlighted several systemic issues.
 
-**Insufficient rest.** The driver's sleep schedule in the days before the crash was inadequate to maintain alertness.
-
-**Carrier oversight failures.** The carrier didn't adequately monitor the driver's compliance with rest requirements.
-
-**Agricultural exemption applicability.** The agricultural nature of the load raised questions about which HOS limits applied.
+The driver's sleep schedule in the days before the crash was inadequate to maintain alertness. The carrier didn't adequately monitor the driver's compliance with rest requirements. And the agricultural nature of the load raised questions about which HOS limits even applied.
 
 NTSB investigations don't establish civil liability directly. The NTSB doesn't assign fault in the legal sense. But NTSB findings are admissible in civil litigation as evidence of causation and industry standards. A finding that fatigue was the probable cause of a crash significantly strengthens the plaintiff's case.
 
@@ -174,19 +158,16 @@ NTSB crash investigations produce detailed factual findings, probable cause dete
 
 Fatigue is harder to prove than intoxication. There's no breathalyzer for sleepiness. Building a drowsy driving case requires assembling circumstantial evidence from multiple sources.
 
-**ELD data.** The single most important piece of evidence. It shows how long the driver was on duty, how long they drove, when they rested, and whether those rest periods were long enough to allow meaningful sleep.
+ELD data is the single most important piece of evidence. It shows how long the driver was on duty, how long they drove, when they rested, and whether those rest periods were long enough to allow meaningful sleep. Dispatch records come next, because communications between the driver and dispatch reveal the delivery schedules, load assignments, and any pressure to meet unrealistic timelines. Sleep logs and motel records fill in the gaps. Motel check-in and check-out times can establish whether the driver had adequate opportunity for rest in the hours before the crash.
 
-**Dispatch records.** Communications between the driver and dispatch showing delivery schedules, load assignments, and any pressure to meet unrealistic timelines.
+Cell phone data adds another layer. Call records and usage patterns can show whether the driver was awake during periods when they should have been sleeping. A driver who was making calls at 2 a.m. before a 6 a.m. start time wasn't getting adequate rest, full stop.
 
-**Sleep logs and motel records.** Where did the driver sleep? How long? Motel check-in and check-out times can establish whether the driver had adequate opportunity for rest.
+Physical evidence from the crash itself carries weight too. Certain crash patterns are associated with drowsy driving: no pre-impact braking, departure from the lane of travel without evasive maneuvers, single-vehicle run-off-road crashes, and rear-end collisions at full speed. The absence of braking is particularly telling. An alert driver brakes. A sleeping driver doesn't.
 
-**Cell phone data.** Call records and usage patterns can show whether the driver was awake during periods when they should have been sleeping. A driver who was making calls at 2 a.m. before a 6 a.m. start time wasn't getting adequate rest.
-
-**Crash characteristics.** Certain crash patterns are associated with drowsy driving: no pre-impact braking, departure from the lane of travel without evasive maneuvers, single-vehicle run-off-road crashes, and rear-end collisions at full speed. The absence of braking is particularly telling. An alert driver brakes. A sleeping driver doesn't.
-
-**Driver statements.** The driver's own statements to law enforcement, their employer, and their insurer about their sleep and driving schedule are admissible. Inconsistencies between the driver's statements and the ELD or phone data create powerful impeachment evidence.
-
-**Medical records.** Sleep disorders, sleep apnea, and medication side effects can contribute to drowsiness. The driver's medical certification file (required by FMCSA) should include disclosure of any condition affecting alertness.
+| Evidence source | What it proves |
+|---|---|
+| Driver statements | Statements to law enforcement, employer, and insurer about sleep and driving schedule are admissible. Inconsistencies between those statements and the ELD or phone data create powerful impeachment evidence. |
+| Medical records | Sleep disorders, sleep apnea, and medication side effects can contribute to drowsiness. The driver's medical certification file (required by FMCSA) should include disclosure of any condition affecting alertness. |
 
 ## Arizona Comparative Negligence
 

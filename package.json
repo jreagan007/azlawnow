@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check:quality": "npx tsx scripts/audit-quality.ts",
+    "check:quality:strict": "npx tsx scripts/audit-quality.ts --strict",
     "check:images": "npx tsx scripts/check-images.ts",
     "check:sources": "npx tsx scripts/check-sources.ts",
     "gen:card": "npx tsx scripts/regen-single-card.ts",
