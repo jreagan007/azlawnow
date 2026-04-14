@@ -230,11 +230,11 @@
     "elder abuse statute": "/legal-guides/arizona-elder-abuse-law/",
     "Adult Protective Services": "/legal-guides/arizona-elder-abuse-law/",
 
-    "Arizona pedestrian rights": "/legal-guides/arizona-pedestrian-rights/",
-    "right of way": "/legal-guides/arizona-pedestrian-rights/",
-    "pedestrian rights": "/legal-guides/arizona-pedestrian-rights/",
-    "crosswalk law": "/legal-guides/arizona-pedestrian-rights/",
-    "pedestrian right of way": "/legal-guides/arizona-pedestrian-rights/",
+    "Arizona pedestrian rights": "/legal-guides/arizona-pedestrian-law/",
+    "right of way": "/legal-guides/arizona-pedestrian-law/",
+    "pedestrian rights": "/legal-guides/arizona-pedestrian-law/",
+    "crosswalk law": "/legal-guides/arizona-pedestrian-law/",
+    "pedestrian right of way": "/legal-guides/arizona-pedestrian-law/",
 
     "suing a school district": "/legal-guides/suing-school-district-arizona/",
     "ARS 12-821": "/legal-guides/suing-school-district-arizona/",
@@ -270,10 +270,10 @@
     "school injury action plan": "/client-guides/child-injured-at-school/",
     "child hurt at school": "/client-guides/child-injured-at-school/",
 
-    "hit by a car action plan": "/client-guides/hit-by-car-walking-action-plan/",
-    "pedestrian action plan": "/client-guides/hit-by-car-walking-action-plan/",
-    "hit while walking action plan": "/client-guides/hit-by-car-walking-action-plan/",
-    "what to do if hit by a car": "/client-guides/hit-by-car-walking-action-plan/",
+    "hit by a car action plan": "/client-guides/pedestrian-crash-action-plan/",
+    "pedestrian action plan": "/client-guides/pedestrian-crash-action-plan/",
+    "hit while walking action plan": "/client-guides/pedestrian-crash-action-plan/",
+    "what to do if hit by a car": "/client-guides/pedestrian-crash-action-plan/",
 
     "signs of nursing home abuse": "/client-guides/nursing-home-abuse-signs-reporting/",
     "nursing home abuse signs": "/client-guides/nursing-home-abuse-signs-reporting/",
@@ -541,7 +541,7 @@
       "children": [
         "/legal-guides/arizona-car-accident-law/",
         "/legal-guides/arizona-elder-abuse-law/",
-        "/legal-guides/arizona-pedestrian-rights/",
+        "/legal-guides/arizona-pedestrian-law/",
         "/legal-guides/suing-school-district-arizona/",
         "/legal-guides/arizona-daycare-negligence-law/",
         "/legal-guides/arizona-dram-shop-liability/",
@@ -553,7 +553,7 @@
       "children": [
         "/client-guides/car-accident-first-48-hours/",
         "/client-guides/child-injured-at-school/",
-        "/client-guides/hit-by-car-walking-action-plan/",
+        "/client-guides/pedestrian-crash-action-plan/",
         "/client-guides/nursing-home-abuse-signs-reporting/",
         "/client-guides/hit-by-drunk-driver/",
         "/client-guides/how-to-vet-arizona-daycare/",

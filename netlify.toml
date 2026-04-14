@@ -145,6 +145,19 @@
   status = 301
 
 
+# Duplicate content merges (T3)
+[[redirects]]
+  from = "/legal-guides/arizona-pedestrian-rights/"
+  to = "/legal-guides/arizona-pedestrian-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/client-guides/hit-by-car-walking-action-plan/"
+  to = "/client-guides/pedestrian-crash-action-plan/"
+  status = 301
+  force = true
+
 # Live-site WordPress URL preservation (227 rules + 1 410)
 # Source: docs/internal/netlify-redirects-from-live-site.toml
 # Appended: 2026-04-13
