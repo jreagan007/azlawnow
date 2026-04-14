@@ -399,7 +399,8 @@ const schemas = [
     .pa-grid {
       grid-template-columns: minmax(0, 1fr) 320px;
       gap: var(--space-12);
-      align-items: start;
+      /* Default grid stretch keeps the rail aside tall enough for
+         position: sticky on the inner rail to engage. */
     }
   }
 

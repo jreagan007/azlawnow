@@ -551,7 +551,9 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     .article-grid {
       grid-template-columns: minmax(0, 1fr) 320px;
       gap: var(--space-12);
-      align-items: start;
+      /* Do NOT use align-items: start — the rail aside must stretch to
+         the main column's height so position: sticky has room to engage.
+         Stretching is the default grid behavior. */
     }
   }
 
