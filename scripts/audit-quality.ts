@@ -191,6 +191,47 @@ function checkWordCount(body: string, minWords: number): CheckResult {
   return { severity: 'pass', message: `Word count: ${count}` };
 }
 
+// Rough syllable count. Vowel groups minus silent-e adjustments.
+function countSyllables(word: string): number {
+  const w = word.toLowerCase().replace(/[^a-z]/g, '');
+  if (w.length <= 3) return 1;
+  const groups = w.match(/[aeiouy]+/g) ?? [];
+  let count = groups.length || 1;
+  if (w.endsWith('e') && !w.endsWith('le')) count = Math.max(1, count - 1);
+  if (w.endsWith('ed') && !w.endsWith('ted') && !w.endsWith('ded')) count = Math.max(1, count - 1);
+  return Math.max(1, count);
+}
+
+function fleschScore(text: string): number | null {
+  const sentences = text.split(/[.!?]+/).map(s => s.trim()).filter(s => s.length > 0);
+  const words = text.split(/\s+/).filter(w => w.length > 0);
+  if (sentences.length === 0 || words.length === 0) return null;
+  const syllables = words.reduce((sum, w) => sum + countSyllables(w), 0);
+  const asl = words.length / sentences.length;
+  const asw = syllables / words.length;
+  return Math.round((206.835 - 1.015 * asl - 84.6 * asw) * 10) / 10;
+}
+
+// Flesch Reading Ease. Target band per voice guide is 50-60, but legal
+// content runs structurally lower because statute citations and case
+// names tank the syllable-per-word ratio. We only warn on real outliers
+// (sub-30 = academic, 70+ = childrens-book simple). The score prints on
+// every pass so authors can see direction of travel.
+function checkFlesch(body: string): CheckResult {
+  const text = stripMdxComponents(body);
+  const score = fleschScore(text);
+  if (score === null) {
+    return { severity: 'pass', message: 'Flesch: not enough text' };
+  }
+  if (score < 30) {
+    return { severity: 'warning', message: `Flesch ${score} < 30. Academic-level density. Shorten sentences, cut multi-syllable connectors.` };
+  }
+  if (score > 70) {
+    return { severity: 'warning', message: `Flesch ${score} > 70. Too simple for the CMO/CFO audience. Tighten up.` };
+  }
+  return { severity: 'pass', message: `Flesch ${score}` };
+}
+
 function checkAuthor(data: Record<string, any>): CheckResult {
   if (!data.author || data.author.trim().length === 0) {
     return { severity: 'error', message: 'Missing author field' };
@@ -476,6 +517,7 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkAiPhrases(body),
     checkStructuralTells(body),
     checkArizonaSpecificity(body, wordCount),
+    checkFlesch(body),
   ];
 
   return {
