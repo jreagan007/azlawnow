@@ -297,7 +297,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
               <!-- Compact intake CTA (voice-safe, matches footer bar) -->
               <div class="rail-cta">
                 <span class="rail-cta__eyebrow">Answers start here.</span>
-                <p class="rail-cta__copy">Tell us what happened. The editors will tell you what's next.</p>
+                <p class="rail-cta__copy">Tell us what happened. Our team will tell you what's next.</p>
                 <a href="/free-case-review/" class="rail-cta__button">
                   Get answers on your case
                   <span aria-hidden="true">→</span>
@@ -898,7 +898,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   @media (min-width: 1024px) {
     .article-rail__sticky {
       position: sticky;
-      top: var(--space-6);
+      top: calc(var(--header-offset, 83px) + var(--space-6));
     }
   }
 

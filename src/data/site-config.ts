@@ -88,7 +88,7 @@ export const siteConfig = {
     l4NavTrust: 'Your Answers. One Call Away.',
     l5PhoneCta: 'Talk to My Team',
     l7FormHeadline: 'Answers start here.',
-    l7FormSubhead: 'Tell us what happened. The editors will tell you what\'s next.',
+    l7FormSubhead: 'Tell us what happened. Our team will tell you what\'s next.',
     l8Primary: 'Get answers on your case',
     l8Secondary: 'Talk to My Team',
     l8Tertiary: 'See What\'s Next',
