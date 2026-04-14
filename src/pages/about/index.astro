@@ -63,7 +63,7 @@ const aboutSchema = {
 
 <BaseLayout
   title="About AZ Law Now"
-  description="A West Valley injury firm built like a newsroom. Three named editors publish the data, the law, and the walkthrough — and then work your case."
+  description="A West Valley injury firm built like a newsroom. Three named editors publish the data, the law, and the walkthrough, and then work your case."
   canonical="/about/"
   schema={aboutSchema}
 >
@@ -144,7 +144,7 @@ const aboutSchema = {
               {office.street}<br />
               {office.city}, {office.state} {office.zip}
             </address>
-            <p class="office-hours">Monday – Friday · 8 a.m. – 6 p.m.</p>
+            <p class="office-hours">Monday to Friday · 8 a.m. to 6 p.m.</p>
             <a href={`tel:${office.phoneE164}`} class="office-phone">{office.phoneFormatted}</a>
           </div>
         ))}

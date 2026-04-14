@@ -7,7 +7,7 @@
  *   npx tsx scripts/audit-quality.ts --strict   # CI mode (warnings fail build)
  */
 
-import { readFileSync, readdirSync, existsSync } from 'fs';
+import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
 import { join, basename } from 'path';
 
 // ── Flags ───────────────────────────────────────────────
@@ -387,6 +387,76 @@ function checkArizonaSpecificity(body: string, wordCount: number): CheckResult {
   return { severity: 'pass', message: `Specificity signals: ${signals.join(', ')}` };
 }
 
+// ── Page scan (.astro page templates) ───────────────────
+
+/**
+ * Strip non-user-facing regions from .astro source so we don't flag
+ * developer comments or stylesheet annotations as AI tells.
+ */
+function stripAstroNonVisible(content: string): string {
+  let text = content;
+  // Strip Astro frontmatter fence (---...---).
+  text = text.replace(/^---[\s\S]*?---/m, '');
+  // Strip <script>...</script> and <style>...</style> blocks.
+  text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+  text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
+  // Strip HTML comments and JS/CSS block comments.
+  text = text.replace(/<!--[\s\S]*?-->/g, '');
+  text = text.replace(/\/\*[\s\S]*?\*\//g, '');
+  // Strip single-line JS/TS/Astro comments (lines starting with //).
+  text = text.replace(/^\s*\/\/.*$/gm, '');
+  return text;
+}
+
+interface PageFinding {
+  file: string;
+  issue: string;
+}
+
+function scanPages(root: string): { findings: PageFinding[]; filesScanned: number } {
+  const findings: PageFinding[] = [];
+  const pagesDir = join(root, 'src/pages');
+  if (!existsSync(pagesDir)) {
+    return { findings, filesScanned: 0 };
+  }
+
+  const files: string[] = [];
+  function walk(dir: string) {
+    for (const entry of readdirSync(dir)) {
+      const p = join(dir, entry);
+      const s = statSync(p);
+      if (s.isDirectory()) walk(p);
+      else if (entry.endsWith('.astro')) files.push(p);
+    }
+  }
+  walk(pagesDir);
+
+  for (const filePath of files) {
+    const raw = readFileSync(filePath, 'utf-8');
+    const visible = stripAstroNonVisible(raw);
+    const rel = filePath.replace(root + '/', '');
+
+    // Em-dashes / en-dashes in user-visible text.
+    if (/\u2014/.test(visible)) {
+      findings.push({ file: rel, issue: 'Em-dash in visible page content' });
+    }
+    if (/\u2013/.test(visible)) {
+      findings.push({ file: rel, issue: 'En-dash in visible page content' });
+    }
+
+    // AI phrase tells in user-visible text.
+    for (const { pattern, reason } of AI_PHRASES) {
+      const re = new RegExp(pattern.source, pattern.flags);
+      const match = re.exec(visible);
+      if (match) {
+        findings.push({ file: rel, issue: `AI phrase "${match[0]}" — ${reason}` });
+      }
+    }
+  }
+
+  return { findings, filesScanned: files.length };
+}
+
 // ── Main ────────────────────────────────────────────────
 
 function auditArticle(filePath: string, collection: CollectionConfig): ArticleAudit {
@@ -468,9 +538,36 @@ function run() {
     }
   }
 
+  // Page scan (.astro templates — em-dashes and phrase tells only).
+  const { findings: pageFindings, filesScanned: pagesScanned } = scanPages(process.cwd());
+  if (pagesScanned > 0) {
+    console.log(`── Pages (${pagesScanned} .astro files) ──────────────────\n`);
+    if (pageFindings.length === 0) {
+      console.log('  ✓ No page-level AI tells\n');
+    } else {
+      // Group by file.
+      const byFile = new Map<string, string[]>();
+      for (const f of pageFindings) {
+        if (!byFile.has(f.file)) byFile.set(f.file, []);
+        byFile.get(f.file)!.push(f.issue);
+      }
+      for (const [file, issues] of byFile) {
+        console.log(`  ✗ FAIL  ${file}`);
+        for (const issue of issues) {
+          console.log(`           ✗ ${issue}`);
+        }
+      }
+      console.log('');
+    }
+  }
+
+  const pageErrors = pageFindings.length;
+  totalErrors += pageErrors;
+
   // Summary
   console.log('── Summary ──────────────────────────────────\n');
   console.log(`  Articles:   ${results.length}`);
+  console.log(`  Pages:      ${pagesScanned}`);
   console.log(`  Passed:     ${totalPassed}`);
   console.log(`  Warnings:   ${totalWarnings}`);
   console.log(`  Errors:     ${totalErrors}`);
