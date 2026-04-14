@@ -25,6 +25,7 @@ const checkColors: Record<Variant, string> = {
 export function KeyFacts({ children }: KeyFactsProps) {
   return (
     <div
+      className="key-facts no-autolink"
       style={{
         background: '#FFFFFF',
         borderTop: '3px solid #D4943A',
