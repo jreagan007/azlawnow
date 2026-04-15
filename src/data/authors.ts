@@ -19,12 +19,14 @@
 export interface AuthorSocialLinks {
   linkedin?: string;
   avvo?: string;
-  bar?: string;         // e.g. Arizona State Bar member profile URL (attorneys only)
+  bar?: string;         // Arizona State Bar member profile URL (attorneys only)
   justia?: string;
   superLawyers?: string;
-  muckRack?: string;    // journalists / editors
+  muckRack?: string;    // journalists / editors - strong E-E-A-T for newsroom content
+  connectively?: string; // Connectively (Cision's HARO successor) expert profile
+  helpAReporter?: string; // Legacy HARO profile if still resolves
   twitter?: string;
-  nala?: string;        // NALA Paralegal certification / profile
+  nala?: string;        // NALA Certified Paralegal profile
   naap?: string;        // National Association of Paralegal Associations
   personalSite?: string;
 }
@@ -60,9 +62,16 @@ export const authors: Record<string, Author> = {
     schemaType: 'Person',
     url: '/about/#brendan-franks',
     socialLinks: {
-      // TODO: LinkedIn — add Brendan's personal profile URL.
-      // TODO: Muck Rack — recommended for journalist E-E-A-T signal.
-      // TODO: X/Twitter — if Brendan has a bylined handle.
+      // TODO: LinkedIn - add Brendan's personal profile URL.
+      // TODO: Muck Rack - strongest E-E-A-T boost for an investigations editor.
+      //   Sign up at muckrack.com, claim the byline, list published insights.
+      //   Low-cost, high-signal for journalist Person schema.
+      // TODO: Connectively (formerly HARO by Cision) expert profile - lets Brendan
+      //   field journalist queries on AZ crash data, nursing home abuse, school
+      //   restraint reporting. Every fielded query that converts to a citation
+      //   = a fresh authoritative backlink pointing at him + AZ Law Now.
+      // TODO: X/Twitter - if Brendan has a bylined handle.
+      // TODO: Personal site / bylined archive if maintained.
     },
   },
   'brandon-millam': {
