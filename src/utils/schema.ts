@@ -4,6 +4,7 @@
  */
 
 import { siteConfig } from '../data/site-config';
+import { authors, getAuthorSameAs } from '../data/authors';
 
 // Resolve siteUrl at runtime (Astro SITE env or fallback)
 function getSiteUrl(): string {
@@ -18,17 +19,46 @@ function getSiteUrl(): string {
 // CONSTANTS
 // ============================================
 
-const WEST_VALLEY_CITIES = [
+// Statewide coverage across Maricopa, Pima, Pinal, Coconino, Yavapai, Mohave,
+// Yuma, and Cochise counties. Schema areaServed reflects actual intake reach
+// (phones + video intake + home visits) rather than just the West Valley HQ.
+const ARIZONA_CITIES = [
+  // Phoenix metro — West Valley
+  'Phoenix',
   'Buckeye',
+  'Maricopa',
   'Goodyear',
   'Avondale',
-  'Maricopa',
-  'Phoenix',
-  'Litchfield Park',
-  'Tolleson',
   'Surprise',
   'Peoria',
   'Glendale',
+  'Tolleson',
+  'Litchfield Park',
+  // Phoenix metro — East Valley
+  'Mesa',
+  'Chandler',
+  'Gilbert',
+  'Scottsdale',
+  'Tempe',
+  'Queen Creek',
+  'Apache Junction',
+  // Tucson metro
+  'Tucson',
+  'Marana',
+  'Oro Valley',
+  'Sahuarita',
+  'Vail',
+  // Northern / other
+  'Flagstaff',
+  'Sedona',
+  'Prescott',
+  'Prescott Valley',
+  'Yuma',
+  'Lake Havasu City',
+  'Bullhead City',
+  'Kingman',
+  'Sierra Vista',
+  'Casa Grande',
 ];
 
 const PRACTICE_AREAS = [
@@ -136,14 +166,17 @@ export function getOrganizationSchema() {
         ? `https://www.google.com/maps/place/?q=place_id:${office.googlePlaceId}`
         : undefined,
     })),
-    areaServed: WEST_VALLEY_CITIES.map((city) => ({
-      '@type': 'City',
-      name: `${city}, Arizona`,
-      containedInPlace: {
-        '@type': 'State',
-        name: 'Arizona',
-      },
-    })),
+    areaServed: [
+      ...ARIZONA_CITIES.map((city) => ({
+        '@type': 'City',
+        name: `${city}, Arizona`,
+        containedInPlace: {
+          '@type': 'State',
+          name: 'Arizona',
+        },
+      })),
+      { '@type': 'State', name: 'Arizona' },
+    ],
     priceRange: 'Contingency representation',
     currenciesAccepted: 'USD',
     paymentAccepted: 'Contingency Fee',
@@ -182,7 +215,7 @@ export function getOrganizationSchema() {
           itemOffered: {
             '@type': 'Service',
             name: `${area} Attorney`,
-            description: `${area.toLowerCase()} legal representation in the West Valley and greater Phoenix area.`,
+            description: `${area.toLowerCase()} legal representation across Arizona.`,
             provider: {
               '@type': 'LegalService',
               '@id': `${siteUrl}/#organization`,
@@ -275,7 +308,7 @@ export function getAboutPageSchema() {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About AZ Law Now',
-    description: 'Arizona personal injury attorneys serving Buckeye, Goodyear, and the West Valley. Contingency representation. Confidential intake.',
+    description: 'Arizona personal injury attorneys serving clients statewide, from Phoenix and Tucson to Flagstaff, Yuma, and every county in between. Contingency representation. Confidential intake.',
     url: `${siteUrl}/about/`,
     mainEntity: {
       '@type': 'LegalService',
@@ -377,7 +410,7 @@ export function getResultsPageSchema(results: Array<{ amount: string; type: stri
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Case Results',
-    description: 'Notable verdicts and settlements recovered by AZ Law Now for injured clients across the West Valley.',
+    description: 'Notable verdicts and settlements recovered by AZ Law Now for injured clients across Arizona.',
     url: `${siteUrl}/case-results/`,
     numberOfItems: results.length,
     itemListElement: results.map((r, i) => ({
@@ -448,10 +481,13 @@ export function getLocalBusinessSchema(city: string, slug: string) {
       postalCode: siteConfig.address.zip,
       addressCountry: 'US',
     },
-    areaServed: {
-      '@type': 'City',
-      name: `${city}, Arizona`,
-    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: `${city}, Arizona`,
+      },
+      { '@type': 'State', name: 'Arizona' },
+    ],
     parentOrganization: {
       '@type': 'LegalService',
       '@id': `${siteUrl}/#organization`,
@@ -520,21 +556,26 @@ export function getArticleSchema(article: ArticleData) {
       },
     }),
     description: article.description,
-    author: {
-      '@type': 'Person',
-      ...(authorUrl && { '@id': `${authorUrl}#author` }),
-      name: article.authorName || article.author || 'AZ Law Now',
-      ...(authorUrl && { url: authorUrl }),
-      ...(article.authorImage && {
-        image: `${siteUrl}${article.authorImage}`,
-      }),
-      ...(article.authorTitle && { jobTitle: article.authorTitle }),
-      worksFor: {
-        '@type': 'LegalService',
-        '@id': `${siteUrl}/#organization`,
-        name: siteConfig.legalName,
-      },
-    },
+    author: (() => {
+      const authorRecord = article.authorSlug ? authors[article.authorSlug] : undefined;
+      const sameAs = authorRecord ? getAuthorSameAs(authorRecord) : [];
+      return {
+        '@type': 'Person',
+        ...(authorUrl && { '@id': `${authorUrl}#author` }),
+        name: article.authorName || article.author || 'AZ Law Now',
+        ...(authorUrl && { url: authorUrl }),
+        ...(article.authorImage && {
+          image: `${siteUrl}${article.authorImage}`,
+        }),
+        ...(article.authorTitle && { jobTitle: article.authorTitle }),
+        worksFor: {
+          '@type': 'LegalService',
+          '@id': `${siteUrl}/#organization`,
+          name: siteConfig.legalName,
+        },
+        ...(sameAs.length > 0 && { sameAs }),
+      };
+    })(),
     publisher: {
       '@type': 'LegalService',
       '@id': `${siteUrl}/#organization`,
@@ -585,15 +626,18 @@ export function generateServiceSchema(practiceArea: string, featuredImage?: stri
     '@type': 'Service',
     name: `${practiceArea} Attorney`,
     url: pageUrl,
-    description: `${practiceArea.toLowerCase()} legal representation in the West Valley and greater Phoenix area. Contingency representation. Confidential intake.`,
+    description: `${practiceArea.toLowerCase()} legal representation across Arizona. Contingency representation. Confidential intake.`,
     provider: {
       '@type': 'LegalService',
       '@id': `${siteUrl}/#organization`,
     },
-    areaServed: WEST_VALLEY_CITIES.map((city) => ({
-      '@type': 'City',
-      name: `${city}, Arizona`,
-    })),
+    areaServed: [
+      ...ARIZONA_CITIES.map((city) => ({
+        '@type': 'City',
+        name: `${city}, Arizona`,
+      })),
+      { '@type': 'State', name: 'Arizona' },
+    ],
   };
 
   if (featuredImage) {

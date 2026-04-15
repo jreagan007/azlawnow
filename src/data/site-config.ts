@@ -7,8 +7,8 @@ export const siteConfig = {
   siteName: 'AZ Law Now',
   legalName: 'AZ Law Now Injury Attorneys',
   siteUrl: 'https://azlawnow.com',
-  defaultTitle: 'You Get Answers | AZ Law Now. Buckeye, Maricopa, Phoenix.',
-  defaultDescription: 'Crash data. Nursing home citations. School safety investigations. Three editors pull the facts, explain the law, and walk you through it. West Valley and Phoenix.',
+  defaultTitle: 'You Get Answers | AZ Law Now. Arizona Personal Injury.',
+  defaultDescription: 'Crash data. Nursing home citations. School safety investigations. Three editors pull the facts, explain the law, and walk you through it. Serving clients across Arizona.',
   tagline: 'You Get Answers.',
 
   phone: '602-654-0202',
@@ -73,12 +73,16 @@ export const siteConfig = {
   recoveredAmount: '$3.07 Million',
   taglineNav: 'Your Answers. One Call Away.',
 
+  // Social profiles feed Organization sameAs in schema.ts. Empty strings
+  // break the .filter(Boolean) path downstream (zero-length sameAs), so
+  // use `undefined` until the real handles ship. TODO: Jared to provide
+  // Facebook, LinkedIn, X/Twitter, Instagram, Google Business Profile URLs.
   social: {
-    facebook: '',
-    linkedin: '',
-    twitter: '',
-    instagram: '',
-    googleBusiness: '',
+    facebook: undefined as string | undefined,   // TODO: AZ Law Now Facebook page URL
+    linkedin: undefined as string | undefined,   // TODO: AZ Law Now LinkedIn company URL
+    twitter: undefined as string | undefined,    // TODO: AZ Law Now X/Twitter URL
+    instagram: undefined as string | undefined,  // TODO: AZ Law Now Instagram URL
+    googleBusiness: undefined as string | undefined, // TODO: AZ Law Now GMB URL
   },
 
   // L-system messaging (from copy-and-messaging.md)

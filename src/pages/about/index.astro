@@ -10,7 +10,7 @@
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { siteConfig } from '../../data/site-config';
-import { authors } from '../../data/authors.ts';
+import { authors, getAuthorSameAs } from '../../data/authors.ts';
 import { getAboutPageSchema } from '../../utils/schema';
 
 const siteUrl = siteConfig.siteUrl.replace(/\/$/, '');
@@ -45,25 +45,29 @@ const aboutSchema = {
     '@type': 'LegalService',
     '@id': `${siteUrl}/#organization`,
     name: siteConfig.legalName,
-    employee: voices.map((v) => ({
-      '@type': 'Person',
-      '@id': `${siteUrl}/about/#${v.id}`,
-      name: v.name,
-      jobTitle: v.title,
-      image: `${siteUrl}${v.photo}`,
-      url: `${siteUrl}/about/#${v.id}`,
-      worksFor: {
-        '@type': 'LegalService',
-        '@id': `${siteUrl}/#organization`,
-      },
-    })),
+    employee: voices.map((v) => {
+      const sameAs = getAuthorSameAs(authors[v.id]);
+      return {
+        '@type': 'Person',
+        '@id': `${siteUrl}/about/#${v.id}`,
+        name: v.name,
+        jobTitle: v.title,
+        image: `${siteUrl}${v.photo}`,
+        url: `${siteUrl}/about/#${v.id}`,
+        worksFor: {
+          '@type': 'LegalService',
+          '@id': `${siteUrl}/#organization`,
+        },
+        ...(sameAs.length > 0 && { sameAs }),
+      };
+    }),
   },
 };
 ---
 
 <BaseLayout
   title="About AZ Law Now"
-  description="A West Valley injury firm built like a newsroom. Three named editors publish the data, the law, and the walkthrough, and then work your case."
+  description="An Arizona personal injury firm built like a newsroom. Three named editors publish the data, the law, and the walkthrough, and then work your case."
   canonical="/about/"
   schema={aboutSchema}
 >
@@ -166,7 +170,7 @@ const aboutSchema = {
       </p>
 
       <p>
-        $3.07M recovered for West Valley clients. See the <a href="/case-results/">case results</a> and <a href="/reviews/">client reviews</a>.
+        $3.07M recovered for Arizona clients. See the <a href="/case-results/">case results</a> and <a href="/reviews/">client reviews</a>.
       </p>
     </div>
   </section>
