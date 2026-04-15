@@ -26,9 +26,9 @@ interface CollectionConfig {
 }
 
 const collections: CollectionConfig[] = [
-  { dir: './src/content/insights', label: 'Insights', minWords: 2500 },
+  { dir: './src/content/investigations', label: 'Investigations', minWords: 400 },
   { dir: './src/content/legal-guides', label: 'Legal Guides', minWords: 1800 },
-  { dir: './src/content/client-guides', label: 'Client Guides', minWords: 1800 },
+  { dir: './src/content/client-guides', label: 'Client Guides', minWords: 1000 },
   { dir: './src/content/practice-areas', label: 'Practice Areas', minWords: 1200, taxonomyField: 'primaryKeyword' },
 ];
 

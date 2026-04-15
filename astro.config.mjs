@@ -94,9 +94,6 @@ function flattenSitemap() {
   };
 }
 
-// Hardcoded canonical — Netlify's process.env.URL resolves to the netlify.app
-// subdomain unless the primary domain is configured. Always emit canonical
-// azlawnow.com URLs in sitemap + meta tags regardless of build environment.
 const siteUrl = 'https://azlawnow.com';
 const lastmodMap = buildLastmodMap(siteUrl);
 

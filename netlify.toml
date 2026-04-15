@@ -463,7 +463,7 @@
 
 [[redirects]]
   from = "/accident-attorney-az-guide/"
-  to = "/"
+  to = "/legal-guides/arizona-car-accident-law/"
   status = 301
   force = true
 
@@ -475,7 +475,7 @@
 
 [[redirects]]
   from = "/arizona-slip-fall-lawyer-guide/"
-  to = "/slip-and-fall/"
+  to = "/other-claims/slip-and-fall/"
   status = 301
   force = true
 
@@ -493,19 +493,19 @@
 
 [[redirects]]
   from = "/slip-fall-injury-west-phoenix/"
-  to = "/slip-and-fall/"
+  to = "/other-claims/slip-and-fall/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/buckeye-highway-accident-lawyer/"
-  to = "/investigations/sr-347-crash-corridor/"
+  to = "/buckeye/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/best-car-wreck-attorney-guide/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-car-accident-law/"
   status = 301
   force = true
 
@@ -517,7 +517,7 @@
 
 [[redirects]]
   from = "/premises-liability-insurance-buckeye/"
-  to = "/car-accidents/"
+  to = "/other-claims/premises-liability/"
   status = 301
   force = true
 
@@ -667,7 +667,7 @@
 
 [[redirects]]
   from = "/buckeye-bus-accident-attorney-guide/"
-  to = "/bus-accidents/"
+  to = "/vehicle-crashes/bus-accidents/"
   status = 301
   force = true
 
@@ -739,13 +739,13 @@
 
 [[redirects]]
   from = "/slip-fall-lawyer-guide/"
-  to = "/slip-and-fall/"
+  to = "/other-claims/slip-and-fall/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/arizona-truck-accident-attorney-guide/"
-  to = "/truck-accidents/"
+  to = "/legal-guides/arizona-truck-accident-law/"
   status = 301
   force = true
 
@@ -763,7 +763,7 @@
 
 [[redirects]]
   from = "/car-accident-lawyer-phoenix/"
-  to = "/car-accidents/"
+  to = "/phoenix/"
   status = 301
   force = true
 
@@ -799,13 +799,13 @@
 
 [[redirects]]
   from = "/arizona-car-accident-lawyer/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-car-accident-law/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/arizona-truck-accident-lawyer-guide/"
-  to = "/truck-accidents/"
+  to = "/legal-guides/arizona-truck-accident-law/"
   status = 301
   force = true
 
@@ -871,7 +871,7 @@
 
 [[redirects]]
   from = "/average-payout-slip-fall/"
-  to = "/slip-and-fall/"
+  to = "/other-claims/slip-and-fall/"
   status = 301
   force = true
 
@@ -925,7 +925,7 @@
 
 [[redirects]]
   from = "/truck-accident-attorney-phoenix/"
-  to = "/truck-accidents/"
+  to = "/legal-guides/arizona-truck-accident-law/"
   status = 301
   force = true
 
@@ -997,7 +997,7 @@
 
 [[redirects]]
   from = "/car-accident-lawyers-arizona/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-car-accident-law/"
   status = 301
   force = true
 
@@ -1027,13 +1027,13 @@
 
 [[redirects]]
   from = "/accident-attorney-arizona-guide/"
-  to = "/"
+  to = "/legal-guides/arizona-car-accident-law/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/pain-suffering-worth-slip-fall/"
-  to = "/slip-and-fall/"
+  to = "/other-claims/slip-and-fall/"
   status = 301
   force = true
 
@@ -1069,7 +1069,7 @@
 
 [[redirects]]
   from = "/psychological-effects-car-accidents/"
-  to = "/car-accidents/"
+  to = "/client-guides/psychological-recovery-after-arizona-crash/"
   status = 301
   force = true
 
@@ -1117,7 +1117,7 @@
 
 [[redirects]]
   from = "/symptoms-car-accident-trauma/"
-  to = "/car-accidents/"
+  to = "/client-guides/psychological-recovery-after-arizona-crash/"
   status = 301
   force = true
 
@@ -1135,7 +1135,7 @@
 
 [[redirects]]
   from = "/arizona-injury-lawyer-guide/"
-  to = "/"
+  to = "/car-accidents/"
   status = 301
   force = true
 
@@ -1147,7 +1147,7 @@
 
 [[redirects]]
   from = "/road-accident-trauma-guide/"
-  to = "/car-accidents/"
+  to = "/client-guides/psychological-recovery-after-arizona-crash/"
   status = 301
   force = true
 
@@ -1165,13 +1165,13 @@
 
 [[redirects]]
   from = "/triplegia-causes-guide/"
-  to = "/car-accidents/"
+  to = "/medical-negligence/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/survivors-guilt-car-accident/"
-  to = "/car-accidents/"
+  to = "/client-guides/survivors-guilt-after-a-crash/"
   status = 301
   force = true
 
@@ -1183,7 +1183,7 @@
 
 [[redirects]]
   from = "/flashbacks-of-car-accident/"
-  to = "/car-accidents/"
+  to = "/client-guides/flashbacks-after-arizona-car-crash/"
   status = 301
   force = true
 
@@ -1213,7 +1213,7 @@
 
 [[redirects]]
   from = "/civil-lawyers-who-work-on-contingency/"
-  to = "/tips/"
+  to = "/faq/"
   status = 301
   force = true
 
@@ -1255,7 +1255,7 @@
 
 [[redirects]]
   from = "/third-degree-burn-case-worth/"
-  to = "/premises-liability/"
+  to = "/other-claims/"
   status = 301
   force = true
 
@@ -1315,7 +1315,7 @@
 
 [[redirects]]
   from = "/buckeye-rideshare-accident-attorney-verrado/"
-  to = "/rideshare-accidents/"
+  to = "/vehicle-crashes/rideshare-accidents/"
   status = 301
   force = true
 
@@ -1375,7 +1375,7 @@
 
 [[redirects]]
   from = "/car-accident-whiplash-buckeye/"
-  to = "/car-accidents/"
+  to = "/buckeye/"
   status = 301
   force = true
 
@@ -1393,7 +1393,7 @@
 
 [[redirects]]
   from = "/quad-bike-accident-compensation/"
-  to = "/motorcycle-accidents/"
+  to = "/vehicle-crashes/"
   status = 301
   force = true
 
@@ -1459,7 +1459,7 @@
 
 [[redirects]]
   from = "/recent-buckeye-semi-truck-accident-news-your-rights/"
-  to = "/truck-accidents/"
+  to = "/vehicle-crashes/truck-accidents/"
   status = 301
   force = true
 
@@ -1573,6 +1573,7 @@
 
 [[redirects]]
   from = "/test/"
+  to = "/"
   status = 410
   force = true
 
@@ -1712,5 +1713,293 @@
 [[redirects]]
   from = "/blog/sue-restaurant-allergic-reaction/"
   to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-car-accident-lawyer/"
+  to = "/legal-guides/arizona-car-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/car-accident-lawyers-arizona/"
+  to = "/legal-guides/arizona-car-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/accident-attorney-arizona-guide/"
+  to = "/legal-guides/arizona-car-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/accident-attorney-az-guide/"
+  to = "/legal-guides/arizona-car-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/best-car-wreck-attorney-guide/"
+  to = "/legal-guides/arizona-car-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-injury-lawyer-guide/"
+  to = "/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/phoenix-personal-injury-attorney/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-truck-accident-lawyer-guide/"
+  to = "/legal-guides/arizona-truck-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-truck-accident-attorney-guide/"
+  to = "/legal-guides/arizona-truck-accident-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/average-payout-slip-fall/"
+  to = "/other-claims/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/pain-suffering-worth-slip-fall/"
+  to = "/other-claims/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/slip-fall-lawyer-guide/"
+  to = "/other-claims/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-slip-fall-lawyer-guide/"
+  to = "/other-claims/slip-and-fall/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/premises-liability-insurance-buckeye/"
+  to = "/other-claims/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lawyer-sue-fast-food/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sue-food-company-object/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/food-poisoning-lawsuit-payouts/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/quad-bike-accident-compensation/"
+  to = "/vehicle-crashes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/triplegia-causes-guide/"
+  to = "/medical-negligence/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/third-degree-burn-case-worth/"
+  to = "/other-claims/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/car-accident-whiplash-buckeye/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/road-accident-trauma-guide/"
+  to = "/client-guides/psychological-recovery-after-arizona-crash/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/flashbacks-of-car-accident/"
+  to = "/client-guides/flashbacks-after-arizona-car-crash/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/survivors-guilt-car-accident/"
+  to = "/client-guides/survivors-guilt-after-a-crash/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/symptoms-car-accident-trauma/"
+  to = "/client-guides/psychological-recovery-after-arizona-crash/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/psychological-effects-car-accidents/"
+  to = "/client-guides/psychological-recovery-after-arizona-crash/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/civil-lawyers-contingency/"
+  to = "/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-store-accident-lawyer/"
+  to = "/other-claims/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/buckeye-semi-truck-accident-news/"
+  to = "/vehicle-crashes/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fatal-accident-lawyer-buckeye/"
+  to = "/case-results/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sundance-car-accident-attorney/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-accident-claim-advice/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-bus-accident-attorney-guide/"
+  to = "/vehicle-crashes/bus-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-highway-accident-lawyer/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-rideshare-accident-attorney-verrado/"
+  to = "/vehicle-crashes/rideshare-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-meaning-symbolism/"
+  to = "/buckeye/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-store-accident-lawyer/"
+  to = "/other-claims/premises-liability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/buckeye-semi-truck-accident-news/"
+  to = "/vehicle-crashes/truck-accidents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/fatal-accident-lawyer-buckeye/"
+  to = "/case-results/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/west-phoenix-accident-attorney/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/7-steps-after-west-phoenix-car-accident/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/7-steps-after-a-west-phoenix-car-accident/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arizona-injury-lawyer-hiring-guide/"
+  to = "/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-arizona-personal-injury-attorneys/"
+  to = "/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-choose-arizona-accident-attorney/"
+  to = "/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-choose-phoenix-personal-injury-attorney/"
+  to = "/phoenix/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/find-the-best-arizona-personal-injury-attorneys/"
+  to = "/faq/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-accident-attorney-guide/"
+  to = "/legal-guides/arizona-car-accident-law/"
   status = 301
   force = true
