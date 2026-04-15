@@ -19,18 +19,28 @@
 export interface AuthorSocialLinks {
   linkedin?: string;
   avvo?: string;
-  bar?: string;
+  bar?: string;         // e.g. Arizona State Bar member profile URL (attorneys only)
   justia?: string;
   superLawyers?: string;
-  muckRack?: string;
+  muckRack?: string;    // journalists / editors
   twitter?: string;
+  nala?: string;        // NALA Paralegal certification / profile
+  naap?: string;        // National Association of Paralegal Associations
+  personalSite?: string;
 }
+
+/**
+ * Role describes the Person's real professional function — used by schema.ts
+ * to set jobTitle, knowsAbout, and (for attorneys) hasCredential scaffolding.
+ */
+export type AuthorRole = 'editor' | 'attorney' | 'paralegal';
 
 export interface Author {
   id: string;
   name: string;
-  title: string;
-  credential?: string;
+  title: string;        // display title (e.g. "Editor-in-Chief", "Legal Editor")
+  role: AuthorRole;     // real-world function — drives schema decisions
+  credential?: string;  // honorific suffix: "J.D.", "CP" (Certified Paralegal), etc.
   bio: string;
   photo: string;
   schemaType: 'Person';
@@ -44,48 +54,54 @@ export const authors: Record<string, Author> = {
     id: 'brendan-franks',
     name: 'Brendan Franks',
     title: 'Editor-in-Chief',
-    bio: 'Brendan Franks leads editorial operations at AZ Law Now. He covers West Valley injury data, public safety reporting, and community accountability stories. Before joining the firm, Brendan spent years in local media covering municipal government and public records across Maricopa County.',
+    role: 'editor',
+    bio: 'Brendan Franks leads editorial operations at AZ Law Now. Not an attorney. He covers Arizona injury data, public safety reporting, and community accountability stories, drawing on years in local media covering municipal government and public records across Maricopa County. His investigations anchor the data journalism voice of the site.',
     photo: '/images/team/brendan-headshot.png',
     schemaType: 'Person',
     url: '/about/#brendan-franks',
     socialLinks: {
-      // TODO: LinkedIn — Perplexity returned NOT FOUND on 2026-04-14.
-      // TODO: Muck Rack — Perplexity returned NOT FOUND on 2026-04-14.
-      // TODO: X/Twitter — Perplexity returned NOT FOUND on 2026-04-14.
+      // TODO: LinkedIn — add Brendan's personal profile URL.
+      // TODO: Muck Rack — recommended for journalist E-E-A-T signal.
+      // TODO: X/Twitter — if Brendan has a bylined handle.
     },
   },
   'brandon-millam': {
     id: 'brandon-millam',
     name: 'Brandon Millam, J.D.',
     title: 'Legal Editor',
+    role: 'attorney',
     credential: 'J.D.',
-    bio: 'Brandon Millam is the managing attorney at AZ Law Now and serves as legal editor across all published content. He reviews every legal guide and resource for accuracy before publication. Brandon practices personal injury law in Buckeye and Goodyear, focusing on motor vehicle crashes, school bus negligence, elder abuse, and medical malpractice cases across the West Valley.',
+    bio: 'Brandon Millam is the managing attorney at AZ Law Now and serves as legal editor across every legal guide and resource on the site. He reviews all legal content for accuracy before publication. Brandon practices personal injury law across Arizona, focusing on motor vehicle crashes, school bus negligence, elder abuse, and medical malpractice.',
     photo: '/images/team/brandon-headshot.png',
     schemaType: 'Person',
     hasCredential: true,
     url: '/about/#brandon-millam',
     socialLinks: {
-      // TODO: Arizona State Bar profile — Perplexity could not verify a
-      // member number for AZ Law Now's Brandon Millam on 2026-04-14. The
-      // Avvo/Bar hit for "Brandon D. Millam #034696" is a different
-      // attorney at Doyle Hernandez Millam (insurance defense, Phoenix).
-      // Jared: pull Brandon's AZ Bar # directly and add azbar.org URL.
-      // TODO: Avvo — NOT FOUND for this Brandon Millam.
-      // TODO: Justia — NOT FOUND.
-      // TODO: Super Lawyers — NOT FOUND.
-      // TODO: LinkedIn — NOT FOUND.
+      // TODO: Arizona State Bar profile — add Brandon's AZ Bar # + azbar.org
+      //   member-directory URL. The Avvo/Bar hit for "Brandon D. Millam #034696"
+      //   is a different attorney at Doyle Hernandez Millam (insurance defense).
+      //   This is mandatory for attorney Person schema E-E-A-T.
+      // TODO: Avvo profile (attorney directory).
+      // TODO: Justia profile.
+      // TODO: Super Lawyers profile if listed.
+      // TODO: LinkedIn.
     },
   },
   'stephanie-ramirez': {
     id: 'stephanie-ramirez',
     name: 'Stephanie Ramirez',
-    title: 'Senior Editor, Client Resources',
-    bio: 'Stephanie Ramirez manages client-facing resources at AZ Law Now. She writes the guides that walk families through the process after an injury: what to expect, what paperwork matters, how timelines work, and when to ask questions. Stephanie grew up in the West Valley and understands that most families going through this are doing it for the first time.',
+    title: 'Client Resources Editor & Paralegal',
+    role: 'paralegal',
+    credential: 'Paralegal',
+    bio: 'Stephanie Ramirez is a paralegal at AZ Law Now, responsible for client-facing resources and case support. She writes the guides that walk families through the process after an injury: what to expect, what paperwork matters, how timelines work, and when to ask questions. Stephanie grew up in Arizona and understands that most families going through this are doing it for the first time.',
     photo: '/images/team/stephanie-headshot.png',
     schemaType: 'Person',
     url: '/about/#stephanie-ramirez',
     socialLinks: {
-      // TODO: LinkedIn — Perplexity returned NOT FOUND on 2026-04-14.
+      // TODO: LinkedIn — add Stephanie's personal profile URL.
+      // TODO: NALA Certified Paralegal credential (if held) — adds E-E-A-T
+      //   for paralegal authored content.
+      // TODO: NAAP profile if applicable.
     },
   },
 };
