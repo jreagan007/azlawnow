@@ -218,7 +218,10 @@ async function compositeOG(imageBuffer: Buffer, slug: string): Promise<void> {
     .toBuffer();
   const logoMeta = await sharp(logo).metadata();
 
-  // Composite all layers
+  // Composite all layers.
+  // OG images are emitted as PNG because Slack, LinkedIn, and iMessage
+  // don't reliably unfurl WebP. Card thumbnails stay WebP because they
+  // render inside the site, not on social scrapers.
   await sharp(base)
     .composite([
       { input: gradientSvg, blend: 'over' },
@@ -226,8 +229,8 @@ async function compositeOG(imageBuffer: Buffer, slug: string): Promise<void> {
       { input: Buffer.from(titleSvg), blend: 'over' },
       { input: logo, top: H - (logoMeta.height || 30) - 32, left: PAD },
     ])
-    .webp({ quality: 88 })
-    .toFile(`public/og/${slug}.webp`);
+    .png({ compressionLevel: 9, adaptiveFiltering: true })
+    .toFile(`public/og/${slug}.png`);
 }
 
 async function processCard(imageBuffer: Buffer, slug: string): Promise<void> {
@@ -257,13 +260,13 @@ async function main() {
 
       if (spec.type === 'og') {
         await compositeOG(buffer, spec.slug);
-        console.log(`  ✓ OG: public/og/${spec.slug}.webp`);
+        console.log(`  ✓ OG: public/og/${spec.slug}.png`);
       } else if (spec.type === 'card') {
         await processCard(buffer, spec.slug);
         // Also generate an OG version for articles
         await compositeOG(buffer, spec.slug);
         console.log(`  ✓ Card: public/images/cards/${spec.slug}.webp`);
-        console.log(`  ✓ OG:   public/og/${spec.slug}.webp`);
+        console.log(`  ✓ OG:   public/og/${spec.slug}.png`);
       }
     } catch (err: any) {
       console.error(`  ✗ FAILED: ${spec.slug} — ${err.message}`);

@@ -68,13 +68,16 @@ function generateCanonical(path: string): string {
 }
 
 /**
- * Generate OG image URL from pathname
+ * Generate OG image URL from pathname.
+ * PNG, not WebP. Slack, LinkedIn, and iMessage unfurl services don't
+ * reliably render WebP. Facebook and X do, but PNG is the universal
+ * format for social link previews.
  */
 function generateOGImageUrl(path: string): string {
   const siteUrl = (import.meta.env.SITE || siteConfig.siteUrl).replace(/\/$/, '');
   const cleanPath = path.replace(/^\/+|\/+$/g, '');
   const slug = cleanPath ? cleanPath.replace(/\//g, '-') : 'index';
-  return `${siteUrl}/og/${slug}.webp`;
+  return `${siteUrl}/og/${slug}.png`;
 }
 
 const pageTitle = generateTitle(title);
@@ -144,7 +147,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         image: {
           width: 1200,
           height: 630,
-          type: 'image/webp',
+          type: 'image/png',
           alt: pageTitle,
         },
       }}
