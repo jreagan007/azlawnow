@@ -29,7 +29,7 @@ const STRICT = process.argv.includes('--strict');
 const ROOT = process.cwd();
 
 const COLLECTION_DIRS: Record<string, string> = {
-  insights: join(ROOT, 'src/content/insights'),
+  investigations: join(ROOT, 'src/content/investigations'),
   'client-guides': join(ROOT, 'src/content/client-guides'),
   'legal-guides': join(ROOT, 'src/content/legal-guides'),
   'practice-areas': join(ROOT, 'src/content/practice-areas'),

@@ -18,7 +18,7 @@ function buildLastmodMap(siteUrl) {
     { dir: './src/content/resources', prefix: '/resources/' },
     { dir: './src/content/legal-guides', prefix: '/legal-guides/' },
     { dir: './src/content/client-guides', prefix: '/client-guides/' },
-    { dir: './src/content/insights', prefix: '/insights/' },
+    { dir: './src/content/investigations', prefix: '/investigations/' },
   ];
 
   for (const { dir, prefix } of contentDirs) {

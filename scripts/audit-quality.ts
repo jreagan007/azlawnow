@@ -223,11 +223,11 @@ function checkFlesch(body: string): CheckResult {
   if (score === null) {
     return { severity: 'pass', message: 'Flesch: not enough text' };
   }
-  if (score < 30) {
-    return { severity: 'warning', message: `Flesch ${score} < 30. Academic-level density. Shorten sentences, cut multi-syllable connectors.` };
+  if (score < 25) {
+    return { severity: 'warning', message: `Flesch ${score} < 25. Academic-level density. Shorten sentences, cut multi-syllable connectors.` };
   }
-  if (score > 70) {
-    return { severity: 'warning', message: `Flesch ${score} > 70. Too simple for the CMO/CFO audience. Tighten up.` };
+  if (score > 75) {
+    return { severity: 'warning', message: `Flesch ${score} > 75. Too simple for the CMO/CFO audience. Tighten up.` };
   }
   return { severity: 'pass', message: `Flesch ${score}` };
 }
