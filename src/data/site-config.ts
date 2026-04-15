@@ -7,8 +7,8 @@ export const siteConfig = {
   siteName: 'AZ Law Now',
   legalName: 'AZ Law Now Injury Attorneys',
   siteUrl: 'https://azlawnow.com',
-  defaultTitle: 'You Get Answers | AZ Law Now. Arizona Personal Injury.',
-  defaultDescription: 'Crash data. Nursing home citations. School safety investigations. Three editors pull the facts, explain the law, and walk you through it. Serving clients across Arizona.',
+  defaultTitle: 'Arizona Injury Cases, Handled Differently | AZ Law Now',
+  defaultDescription: 'We handle Arizona injury cases differently: an investigator who pulls the data, an attorney who fights the law, a guide who walks you through every step.',
   tagline: 'You Get Answers.',
 
   phone: '602-654-0202',
@@ -78,10 +78,13 @@ export const siteConfig = {
   // use `undefined` until the real handles ship. TODO: Jared to provide
   // Facebook, LinkedIn, X/Twitter, Instagram, Google Business Profile URLs.
   social: {
-    facebook: undefined as string | undefined,   // TODO: AZ Law Now Facebook page URL
+    // Meta auto-301s the old handles after rename, so these URLs keep working
+    // post-rebrand. Update to canonical /azlawnow/ once page name + IG username
+    // are claimed (FB: Batch 3 review; IG: UI claim if `azlawnow` is free).
+    facebook: 'https://www.facebook.com/AZLawNowInjuryAttorneys/',
     linkedin: undefined as string | undefined,   // TODO: AZ Law Now LinkedIn company URL
     twitter: undefined as string | undefined,    // TODO: AZ Law Now X/Twitter URL
-    instagram: undefined as string | undefined,  // TODO: AZ Law Now Instagram URL
+    instagram: 'https://www.instagram.com/azlawnowinjuryattorneys/',
     googleBusiness: undefined as string | undefined, // TODO: AZ Law Now GMB URL
   },
 
@@ -137,7 +140,7 @@ export const siteConfig = {
   ],
 
   contentNav: [
-    { name: 'Insights', url: '/insights/' },
+    { name: 'Insights', url: '/investigations/' },
     { name: 'Legal Guides', url: '/legal-guides/' },
     { name: 'Client Guides', url: '/client-guides/' },
   ],

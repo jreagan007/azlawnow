@@ -1,15 +1,18 @@
 /**
  * Google News Sitemap
- * Emits <news:news> blocks for insights published within the past 48 hours.
+ * Emits <news:news> blocks for insights published within the news window.
  * Required for Google News Publisher Center eligibility.
  *
  * Docs: https://developers.google.com/search/docs/crawling-indexing/sitemaps/news-sitemap
+ *
+ * Window: Google's spec recommends 48h but accepts up to 7 days. We use 7 days
+ * so the publishing cadence has breathing room without losing eligibility.
  */
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../data/site-config';
 
-const NEWS_WINDOW_HOURS = 48;
+const NEWS_WINDOW_HOURS = 168; // 7 days (was 48h — too narrow for our cadence)
 
 function escapeXml(str: string): string {
   return str
@@ -27,7 +30,7 @@ function toDate(value: string | Date | undefined): Date | null {
 }
 
 export const GET: APIRoute = async () => {
-  const insights = await getCollection('insights', ({ data }) => !data.draft);
+  const insights = await getCollection('investigations', ({ data }) => !data.draft);
 
   const siteUrl = siteConfig.siteUrl.replace(/\/$/, '');
   const now = Date.now();
@@ -40,6 +43,8 @@ export const GET: APIRoute = async () => {
   const urls = recent
     .map(({ entry, published }) => {
       const slug = entry.id.replace(/\.mdx$/, '');
+      // Route consolidation Mar 2026: `/investigations/` → `/insights/` (with 301).
+      // News sitemap must advertise the canonical URL, not the redirected one.
       const loc = `${siteUrl}/insights/${slug}/`;
       const pubDate = (published as Date).toISOString();
       const title = escapeXml(entry.data.title);

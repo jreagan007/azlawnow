@@ -525,7 +525,7 @@ export interface ArticleData {
 
 export function getArticleSchema(article: ArticleData) {
   const siteUrl = getSiteUrl();
-  const basePath = article.basePath || '/insights/';
+  const basePath = article.basePath || '/investigations/';
   const articleUrl = `${siteUrl}${basePath}${article.slug}/`;
   const schemaType = article.schemaType || 'Article';
   // Author pages are consolidated as anchors on /about/ (the team page was

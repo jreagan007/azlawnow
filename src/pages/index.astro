@@ -95,9 +95,9 @@ const locations = [
 ];
 
 const dataStats = [
-  { value: '4,200+', label: 'Students restrained in AZ schools last year', source: 'ADE Data', url: '/insights/arizona-school-restraint-data/' },
-  { value: '88,094', label: 'Crashes in Maricopa County 2024', source: 'ADOT', url: '/insights/i-10-crash-data-buckeye-goodyear/' },
-  { value: '47%', label: 'Nursing homes below average staffing', source: 'CMS', url: '/insights/arizona-nursing-home-violations/' },
+  { value: '4,200+', label: 'Students restrained in AZ schools last year', source: 'ADE Data', url: '/investigations/arizona-school-restraint-data/' },
+  { value: '88,094', label: 'Crashes in Maricopa County 2024', source: 'ADOT', url: '/investigations/i-10-crash-data-buckeye-goodyear/' },
+  { value: '47%', label: 'Nursing homes below average staffing', source: 'CMS', url: '/investigations/arizona-nursing-home-violations/' },
   { value: '$800K', label: 'Settlement, school bus negligence', source: 'AZ Law Now', url: '/case-results/' },
 ];
 
@@ -113,7 +113,7 @@ const topicClusters = [
     onRecord: {
       title: 'I-10 Crash Data: Buckeye to Goodyear',
       byline: 'Brendan Franks',
-      href: '/insights/i-10-crash-data-buckeye-goodyear/',
+      href: '/investigations/i-10-crash-data-buckeye-goodyear/',
     },
     answered: {
       title: 'Arizona Car Accident Law: Fault and Deadlines',
@@ -132,7 +132,7 @@ const topicClusters = [
     onRecord: {
       title: "Arizona's Motorcycle Fatality Report",
       byline: 'Brendan Franks',
-      href: '/insights/arizona-motorcycle-fatality-report/',
+      href: '/investigations/arizona-motorcycle-fatality-report/',
     },
     answered: {
       title: 'Arizona Motorcycle Law: Helmet, Insurance, Fault',
@@ -151,7 +151,7 @@ const topicClusters = [
     onRecord: {
       title: 'Phoenix DUI Crashes: The Data Nobody Wants to See',
       byline: 'Brendan Franks',
-      href: '/insights/phoenix-dui-crashes-data/',
+      href: '/investigations/phoenix-dui-crashes-data/',
     },
     answered: {
       title: 'Arizona Dram Shop and Social Host Liability',
@@ -166,11 +166,11 @@ const topicClusters = [
   },
   {
     title: 'Pedestrian Safety',
-    intro: 'West Valley intersection patterns, Arizona pedestrian rights, and the action plan after a crash.',
+    intro: 'Arizona intersection patterns, pedestrian rights, and the action plan after a crash.',
     onRecord: {
       title: "West Valley's Most Dangerous Intersections",
       byline: 'Brendan Franks',
-      href: '/insights/west-valley-dangerous-intersections/',
+      href: '/investigations/west-valley-dangerous-intersections/',
     },
     answered: {
       title: 'Arizona Pedestrian Rights and Driver Liability',
@@ -189,7 +189,7 @@ const topicClusters = [
     onRecord: {
       title: 'Arizona Nursing Homes With the Most Federal Violations',
       byline: 'Brendan Franks',
-      href: '/insights/arizona-nursing-home-violations/',
+      href: '/investigations/arizona-nursing-home-violations/',
     },
     answered: {
       title: 'Arizona Elder Abuse Law: ARS 46-451',
@@ -208,7 +208,7 @@ const topicClusters = [
     onRecord: {
       title: '4,200+ Students Restrained in Arizona Schools',
       byline: 'Brendan Franks',
-      href: '/insights/arizona-school-restraint-data/',
+      href: '/investigations/arizona-school-restraint-data/',
     },
     answered: {
       title: 'Suing a School District in Arizona: The Deadline',
@@ -227,7 +227,7 @@ const topicClusters = [
     onRecord: {
       title: 'Maricopa County Daycares With the Most DHS Violations',
       byline: 'Brendan Franks',
-      href: '/insights/arizona-daycare-violations/',
+      href: '/investigations/arizona-daycare-violations/',
     },
     answered: {
       title: 'Arizona Daycare Negligence Law: Liability and Duty of Care',
@@ -244,7 +244,7 @@ const topicClusters = [
 ---
 
 <BaseLayout
-  title="Arizona Injury Attorneys | AZ Law Now"
+  title={siteConfig.defaultTitle}
   description={siteConfig.defaultDescription}
   schema={siteSchemas}
 >
@@ -267,11 +267,11 @@ const topicClusters = [
     </div>
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="hero-dateline">Buckeye &amp; West Valley, Arizona</span>
+        <span class="hero-dateline">Serving Arizona from Buckeye &amp; Maricopa</span>
         <h1 class="hero-h1">You Get Answers.</h1>
         <p class="hero-deck">
           The firm that does the work before the case. Original reporting on
-          West Valley crash data, clear legal guides, and the people who walk
+          Arizona crash data, clear legal guides, and the people who walk
           you through every step.
         </p>
         <div class="hero-actions">
@@ -398,14 +398,14 @@ const topicClusters = [
 
       <div class="featured-grid">
         <!-- Big card: Brendan's investigation (the data-led story) -->
-        <a href="/insights/arizona-school-restraint-data/" class="featured-main">
+        <a href="/investigations/arizona-school-restraint-data/" class="featured-main">
           <img src="/images/heroes/dj-school-bus-route.webp" alt="" class="featured-card-bg" loading="lazy" />
           <div class="featured-card-overlay" aria-hidden="true"></div>
           <div class="featured-card-content">
             <span class="featured-badge featured-badge--on-record">On Record · Investigation</span>
             <h3 class="featured-main-headline">4,200+ Students Restrained in Arizona Schools. Most Were Kids With Disabilities.</h3>
             <p class="featured-main-desc">
-              Arizona schools reported over 4,200 physical restraint and seclusion incidents last year. ADE data shows West Valley districts with some of the highest rates per student.
+              Arizona schools reported over 4,200 physical restraint and seclusion incidents last year. ADE data shows West Valley districts with some of the highest rates per student in the state.
             </p>
             <div class="featured-byline-inline">
               <img src={brendan.photo} alt="" class="byline-avatar-sm" width="28" height="28" loading="lazy" />
@@ -481,7 +481,7 @@ const topicClusters = [
         <div class="section-rule"></div>
       </div>
       <div class="hubs-grid">
-        <a href="/insights/" class="hub-card hub-card--on-record">
+        <a href="/investigations/" class="hub-card hub-card--on-record">
           <span class="hub-tag">On Record.</span>
           <span class="hub-desc">The data's pulled. The facts are clear.</span>
           <span class="hub-link">Explore &rarr;</span>
@@ -519,22 +519,22 @@ const topicClusters = [
               <span class="voice-author-title">{brendan.title}</span>
             </div>
           </div>
-          <a href="/insights/arizona-school-restraint-data/" class="voice-lead-wrap">
+          <a href="/investigations/arizona-school-restraint-data/" class="voice-lead-wrap">
             <img src="/images/cards/arizona-school-restraint-data.webp" alt="" class="voice-lead-img" loading="lazy" />
             <span class="voice-lead">Arizona Schools Restrained 4,200+ Students Last Year</span>
           </a>
           <div class="voice-stories">
-            <a href="/insights/arizona-daycare-violations/" class="voice-story">
+            <a href="/investigations/arizona-daycare-violations/" class="voice-story">
               Maricopa County Daycares With the Most DHS Violations
             </a>
-            <a href="/insights/sr-347-crash-corridor/" class="voice-story">
+            <a href="/investigations/sr-347-crash-corridor/" class="voice-story">
               The SR-347 Problem: Maricopa's Most Dangerous Corridor
             </a>
-            <a href="/insights/i-10-crash-data-buckeye-goodyear/" class="voice-story">
+            <a href="/investigations/i-10-crash-data-buckeye-goodyear/" class="voice-story">
               What ADOT Data Shows About I-10 Crashes
             </a>
           </div>
-          <a href="/insights/" class="voice-all voice-all--red">Read all investigations &rarr;</a>
+          <a href="/investigations/" class="voice-all voice-all--red">Read all investigations &rarr;</a>
         </div>
 
         <!-- ANSWERED — Brandon -->
@@ -677,12 +677,11 @@ const topicClusters = [
       </div>
       <div class="compact-right">
         <div class="section-header">
-          <span class="section-eyebrow">West Valley Offices</span>
+          <span class="section-eyebrow">Our Arizona Offices</span>
           <div class="section-rule"></div>
         </div>
         <p class="locations-intro">
-          Two offices. Five core service areas. One team that knows this
-          part of Arizona.
+          Two offices in Buckeye and Maricopa. Cases handled across Arizona — Phoenix, Tucson, and everywhere in between.
         </p>
         <div class="locations-stack">
           {locations.map((loc) => (
@@ -741,7 +740,7 @@ const topicClusters = [
           <div class="team-info">
             <h3 class="team-name">{brendan.name}</h3>
             <span class="team-title">{brendan.title}</span>
-            <p class="team-bio">Covers West Valley crash data, public safety records, and community accountability.</p>
+            <p class="team-bio">Covers Arizona crash data, public safety records, and community accountability.</p>
           </div>
         </a>
         <a href={brandon.url} class="team-card">
@@ -751,7 +750,7 @@ const topicClusters = [
           <div class="team-info">
             <h3 class="team-name">{brandon.name}</h3>
             <span class="team-title">{brandon.title}</span>
-            <p class="team-bio">Reviews every legal guide for accuracy. Practices personal injury law across the West Valley.</p>
+            <p class="team-bio">Reviews every legal guide for accuracy. Practices personal injury law across Arizona.</p>
           </div>
         </a>
         <a href={stephanie.url} class="team-card">

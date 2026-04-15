@@ -11,7 +11,7 @@ import { authors } from '../../data/authors';
 
 let entries: any[] = [];
 try {
-  entries = await getCollection('insights');
+  entries = await getCollection('investigations');
 } catch {
   entries = [];
 }
@@ -86,7 +86,7 @@ const placeholderCards = [
 <BaseLayout
   title="Investigations"
   description="Data-led investigations into Arizona public safety, crash data, and institutional accountability. We pull the records. We name the patterns."
-  canonical="/insights/"
+  canonical="/investigations/"
 >
   <!-- ============================================
        PAGE HEADER — Editorial masthead
@@ -124,7 +124,7 @@ const placeholderCards = [
     <div class="container">
       <p class="inv-featured-eyebrow">Top Investigation</p>
       {featured ? (
-        <a href={`/insights/${featured.id}/`} class="inv-featured-card">
+        <a href={`/investigations/${featured.id}/`} class="inv-featured-card">
           <div class="inv-featured-media">
             <img
               src={featured.data.image || '/images/heroes/practice-area-default.webp'}
@@ -219,7 +219,7 @@ const placeholderCards = [
       {rest.length > 0 ? (
         <div class="inv-grid">
           {rest.map((entry) => (
-            <a href={`/insights/${entry.id}/`} class="inv-card">
+            <a href={`/investigations/${entry.id}/`} class="inv-card">
               <img
                 src={entry.data.image || '/images/heroes/practice-area-default.webp'}
                 alt=""

@@ -39,22 +39,22 @@
   status = 301
   force = true
 
-# Editorial route consolidation: /blog/, /resources/, /investigations/ → /insights/
+# Editorial route consolidation: /blog/, /resources/, /insights/ → /investigations/
 [[redirects]]
   from = "/blog/*"
-  to = "/insights/:splat"
+  to = "/investigations/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights/*"
+  to = "/investigations/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "/resources/*"
-  to = "/insights/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/investigations/*"
-  to = "/insights/:splat"
+  to = "/investigations/:splat"
   status = 301
   force = true
 
@@ -199,7 +199,7 @@
 
 [[redirects]]
   from = "/resources/"
-  to = "/insights/"
+  to = "/investigations/"
   status = 301
   force = true
 
@@ -313,7 +313,7 @@
 
 [[redirects]]
   from = "/personal-injury/bad-faith-insurance/"
-  to = "/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -409,7 +409,7 @@
 
 [[redirects]]
   from = "/resources/blogs/"
-  to = "/insights/"
+  to = "/investigations/"
   status = 301
   force = true
 
@@ -457,7 +457,7 @@
 
 [[redirects]]
   from = "/blog/"
-  to = "/insights/"
+  to = "/investigations/"
   status = 301
   force = true
 
@@ -499,7 +499,7 @@
 
 [[redirects]]
   from = "/buckeye-highway-accident-lawyer/"
-  to = "/insights/sr-347-crash-corridor/"
+  to = "/investigations/sr-347-crash-corridor/"
   status = 301
   force = true
 
@@ -619,7 +619,7 @@
 
 [[redirects]]
   from = "/sue-restaurant-allergic-reaction/"
-  to = "/premises-liability/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
   status = 301
   force = true
 
@@ -643,19 +643,19 @@
 
 [[redirects]]
   from = "/arizona-bad-faith-insurance-attorney/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/insurance-bad-faith-attorney/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/insurance-attorneys-arizona/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -679,7 +679,7 @@
 
 [[redirects]]
   from = "/restaurant-injury-lawyer-buckeye/"
-  to = "/premises-liability/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
   status = 301
   force = true
 
@@ -715,7 +715,7 @@
 
 [[redirects]]
   from = "/bad-faith-lawyers-help/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -727,7 +727,7 @@
 
 [[redirects]]
   from = "/bad-faith-attorneys-arizona/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -769,7 +769,7 @@
 
 [[redirects]]
   from = "/hit-by-uninsured-driver/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -781,7 +781,7 @@
 
 [[redirects]]
   from = "/do-insurance-companies-go-after-uninsured-drivers/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -859,7 +859,7 @@
 
 [[redirects]]
   from = "/how-much-money-suing-restaurant/"
-  to = "/premises-liability/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
   status = 301
   force = true
 
@@ -931,7 +931,7 @@
 
 [[redirects]]
   from = "/will-insurance-go-up-uninsured-driver/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -979,7 +979,7 @@
 
 [[redirects]]
   from = "/reasons-to-sue-a-restaurant/"
-  to = "/premises-liability/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
   status = 301
   force = true
 
@@ -1015,7 +1015,7 @@
 
 [[redirects]]
   from = "/uninsured-drivers-accident/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -1057,7 +1057,7 @@
 
 [[redirects]]
   from = "/insured-driver-hits-uninsured/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -1075,7 +1075,7 @@
 
 [[redirects]]
   from = "/sue-restaurant-for-negligence/"
-  to = "/premises-liability/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
   status = 301
   force = true
 
@@ -1105,7 +1105,7 @@
 
 [[redirects]]
   from = "/collect-money-uninsured-driver/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -1129,7 +1129,7 @@
 
 [[redirects]]
   from = "/hit-by-uninsured-driver-insured/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -1141,7 +1141,7 @@
 
 [[redirects]]
   from = "/what-happens-when-hit-by-uninsured-driver/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -1153,7 +1153,7 @@
 
 [[redirects]]
   from = "/parked-car-hit-by-uninsured-driver/"
-  to = "/car-accidents/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
   status = 301
   force = true
 
@@ -1261,7 +1261,7 @@
 
 [[redirects]]
   from = "/lawyer-to-sue-restaurant/"
-  to = "/premises-liability/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
   status = 301
   force = true
 
@@ -1333,7 +1333,13 @@
 
 [[redirects]]
   from = "/a-sobering-welcome-my-first-week-in-maricopa-and-the-reality-of-sr-347/"
-  to = "/insights/sr-347-crash-corridor/"
+  to = "/investigations/first-week-maricopa-sr-347-dispatch/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/first-week-maricopa-sr-347/"
+  to = "/investigations/first-week-maricopa-sr-347-dispatch/"
   status = 301
   force = true
 
@@ -1429,7 +1435,19 @@
 
 [[redirects]]
   from = "/our-firm-filed-a-lawsuit-on-behalf-of-19-families-in-who-allege-their-children-were-mistreated-at-a-local-in-home-daycare/"
-  to = "/daycare-negligence/"
+  to = "/investigations/coolidge-daycare-19-families-lawsuit/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/19-families-daycare-lawsuit/"
+  to = "/investigations/coolidge-daycare-19-families-lawsuit/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/19-families-daycare-lawsuit/"
+  to = "/investigations/coolidge-daycare-19-families-lawsuit/"
   status = 301
   force = true
 
@@ -1447,13 +1465,19 @@
 
 [[redirects]]
   from = "/az-law-now-injury-attorneys-to-host-official-ribbon-cutting-with-greater-maricopa-business-alliance/"
-  to = "/maricopa/"
+  to = "/investigations/maricopa-office-opening/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/ribbon-cutting-maricopa-gmba/"
+  to = "/investigations/maricopa-office-opening/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/intersection-accident-maricopa-az-a-complete-guide/"
-  to = "/insights/sr-347-crash-corridor/"
+  to = "/investigations/sr-347-crash-corridor/"
   status = 301
   force = true
 
@@ -1465,19 +1489,37 @@
 
 [[redirects]]
   from = "/maricopa-were-officially-here/"
-  to = "/maricopa/"
+  to = "/investigations/maricopa-office-opening/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/maricopa-office-opening/"
+  to = "/investigations/maricopa-office-opening/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/watson-rd-yuma-rd-one-of-buckeyes-most-dangerous-intersections/"
-  to = "/insights/sr-347-crash-corridor/"
+  to = "/investigations/watson-yuma-buckeye-intersection/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/watson-yuma-dangerous-intersection-buckeye/"
+  to = "/investigations/watson-yuma-buckeye-intersection/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/why-the-sr-347-and-i-10-interchange-is-one-of-the-most-dangerous-areas-for-drivers-traveling-to-and-from-maricopa/"
-  to = "/insights/sr-347-crash-corridor/"
+  to = "/investigations/sr-347-i-10-interchange/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/sr-347-i-10-interchange-dangerous-maricopa/"
+  to = "/investigations/sr-347-i-10-interchange/"
   status = 301
   force = true
 
@@ -1507,7 +1549,13 @@
 
 [[redirects]]
   from = "/why-az-law-now-injury-attorneys-is-sponsoring-paws-claws-in-maricopa-giving-back-and-investing-in-safety/"
-  to = "/maricopa/"
+  to = "/investigations/paws-claws-maricopa-sponsorship/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/sponsoring-paws-claws-maricopa/"
+  to = "/investigations/paws-claws-maricopa-sponsorship/"
   status = 301
   force = true
 
@@ -1558,3 +1606,111 @@
 # Netlify Forms
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/blog/parked-car-hit-by-uninsured-driver/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/what-happens-when-hit-by-uninsured-driver/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/hit-by-uninsured-driver-insured/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/collect-money-uninsured-driver/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/uninsured-drivers-accident/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/will-insurance-go-up-uninsured-driver/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/do-insurance-companies-go-after-uninsured-drivers/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/hit-by-uninsured-driver/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/arizona-bad-faith-insurance-attorney/"
+  to = "/legal-guides/arizona-uninsured-motorist-law/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-a-lawyer-helps-sue-fast-food-restaurant/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/can-you-sue-food-company-object-in-food/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-much-money-from-suing-restaurant-for-food/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/foreign-object-in-food-settlements/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/lawyer-to-sue-restaurant/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/sue-restaurant-for-negligence/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/reasons-to-sue-a-restaurant/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/how-much-money-suing-restaurant/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/sue-restaurant-allergic-reaction/"
+  to = "/legal-guides/suing-a-restaurant-in-arizona/"
+  status = 301
+  force = true

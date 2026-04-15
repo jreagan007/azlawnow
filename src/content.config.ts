@@ -112,6 +112,8 @@ const insightSchema = z.object({
     'negligence-report',
     'infrastructure',
     'policy',
+    'firm-news',
+    'community',
   ]),
   image: z.string().optional(),
   ogImage: z.string(),
@@ -131,8 +133,8 @@ const insightSchema = z.object({
   draft: z.boolean().default(false),
 });
 
-const insights = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/insights' }),
+const investigations = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/investigations' }),
   schema: insightSchema,
 });
 
@@ -165,7 +167,7 @@ const glossary = defineCollection({
 /* ── Export all collections ───────────────────────── */
 
 export const collections = {
-  insights,
+  investigations,
   'legal-guides': legalGuides,
   'client-guides': clientGuides,
   'practice-areas': practiceAreas,
