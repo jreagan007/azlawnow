@@ -28,58 +28,58 @@ type Spec = { slug: string; headline: string; prompt: string };
 const specs: Spec[] = [
   {
     slug: 'coolidge-daycare-19-families-lawsuit',
-    headline: '19 Families. One Daycare.',
-    prompt: `Empty daycare playroom at dusk, scattered children's plastic toys on carpet, afternoon light filtering through closed blinds, small chairs arranged in a circle, warm lamp in corner, unsettling stillness. ${STYLE_SUFFIX}`,
+    headline: '19 Coolidge Families. Two Years of Complaints.',
+    prompt: `Quiet residential street in Coolidge Arizona at dusk, modest single-story home with a driveway, small front yard, front porch with a single forgotten child's stuffed animal sitting on the step, desert landscaping, warm amber light from a single porch lamp, atmosphere of something gone wrong behind a normal door. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'maricopa-office-opening',
-    headline: 'We Opened in Maricopa.',
-    prompt: `Modern southwestern office reception at golden hour, warm wood reception desk, glass entry doors, Arizona desert visible through large window, leather chairs, brass fixtures, welcoming professional atmosphere. ${STYLE_SUFFIX}`,
+    headline: '21300 N John Wayne Pkwy. Now Open.',
+    prompt: `Exterior of a modern Southwest professional office building at golden hour, Maricopa Professional Village architectural vibe, saguaro cactus landscaping, warm parking lot lights beginning to glow, clean glass entry doors, desert mountains in the distance, open for business feel. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'paws-claws-maricopa-sponsorship',
-    headline: 'Community Comes First.',
-    prompt: `Community park at dusk, wooden pavilion, string lights overhead, empty picnic tables, desert landscaping, festival tents in distance, saguaro cactus silhouette, warm evening glow. ${STYLE_SUFFIX}`,
+    headline: 'Pacana Park. Third Annual Paws & Claws.',
+    prompt: `Pacana Park in Maricopa Arizona at golden hour, empty festival pavilion setup with string lights strung overhead, rows of wooden picnic tables, event tents implied by silhouettes on the grass field, saguaro cactus on the horizon, warm evening community atmosphere. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'watson-yuma-buckeye-intersection',
-    headline: "Buckeye's Busiest Crossing.",
-    prompt: `Busy Arizona commercial intersection at blue hour, traffic signal lights glowing amber, wide asphalt lanes, commercial retail signage in background, palm trees lining the road, heat shimmer, desert sky gradient. ${STYLE_SUFFIX}`,
+    headline: 'Watson & Yuma. The Pattern Is Structural.',
+    prompt: `Busy suburban Arizona intersection at blue hour, wide four-lane crossing, traffic signal glowing amber mid-phase, Buckeye commercial strip architecture in the background, retail storefront silhouettes, palm trees, heat-shimmer atmosphere, vehicles queued at the red light. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'sr-347-i-10-interchange',
-    headline: "Maricopa's Daily Choke Point.",
-    prompt: `Highway interchange at dusk, merging lane markings converging, amber overhead highway lights, desert mountain silhouettes, commercial truck taillights in distance, slight atmospheric haze. ${STYLE_SUFFIX}`,
+    headline: '25,000 Vehicles Per Day. One Merge.',
+    prompt: `Arizona highway on-ramp merging into I-10 at dusk, bright amber overhead highway lights, converging lane lines funneling toward a narrow merge point, commercial truck taillights glowing red in the merge zone, desert mountain silhouettes, heavy rush-hour atmosphere, sky transitioning to blue hour. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'first-week-maricopa-sr-347-dispatch',
-    headline: 'A Sobering Welcome.',
-    prompt: `Arizona SR-347 at sunset, two-lane desert highway stretching to the horizon, mountains in distance, empty road, amber sky, melancholy quiet, no vehicles. ${STYLE_SUFFIX}`,
+    headline: 'Four Days In. January 15. SR-347.',
+    prompt: `SR-347 desert highway at dusk with stopped traffic ahead, red brake lights glowing in a long line into the distance, emergency vehicle amber flashing lights reflecting off the asphalt, saguaro cactus silhouettes on both sides of the road, somber melancholy mood, Arizona mountain horizon. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'arizona-uninsured-motorist-law',
     headline: 'One in Eight Drive Uninsured.',
-    prompt: `Arizona auto body shop interior at dusk, damaged front fender on a lift, scattered tools on workbench, warm work lamp casting amber light, industrial concrete floor, grease-darkened steel. ${STYLE_SUFFIX}`,
+    prompt: `Close-up of a damaged rear quarter panel of an Arizona-plated sedan inside a body shop bay, cracked tail light, amber work lamp casting light across the metal, loose insurance paperwork on a workbench in the soft background, industrial concrete floor, moody low lighting. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'suing-a-restaurant-in-arizona',
-    headline: 'Four Ways a Restaurant Can Hurt You.',
-    prompt: `Empty restaurant dining room after closing, dim warm pendant lighting, tables set with folded napkins, dark hardwood floor reflecting amber light, elegant interior, wine bottles on shelf in background. ${STYLE_SUFFIX}`,
+    headline: 'Slip. Object. Allergy. Poisoning.',
+    prompt: `Restaurant kitchen at closing time, stainless steel prep counter with a single overhead service lamp casting warm light, wet tiled floor with a yellow wet-floor caution sign, pots hanging from a rack overhead, dark quiet atmosphere, a clipboard with an inspection form on the counter edge. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'flashbacks-after-arizona-car-crash',
-    headline: "It's Not a Memory. It's a Symptom.",
-    prompt: `Bedroom at night with moonlight through venetian blinds casting striped shadows, empty unmade bed, alarm clock glowing amber on nightstand, water glass, introspective quiet atmosphere. ${STYLE_SUFFIX}`,
+    headline: '9% of Crash Survivors. One Symptom.',
+    prompt: `Dim car dashboard view at night from driver's perspective, amber instrument cluster glow, rain reflections on the windshield, distant oncoming headlights creating a bright bloom in the glass, tight composition focused on steering wheel and speedometer, sensory tension. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'survivors-guilt-after-a-crash',
-    headline: 'The Weight of Having Lived.',
-    prompt: `Empty passenger car seat at dusk, unbuckled seatbelt hanging loose, dashboard dimly glowing amber, rearview mirror, windshield showing desert road disappearing into distance, quiet intimate stillness. ${STYLE_SUFFIX}`,
+    headline: 'The 90% Carry This.',
+    prompt: `Empty front passenger seat of a car at dusk, a folded jacket left behind on the seat, unbuckled seatbelt hanging loose, amber dashboard glow, quiet intimate composition, Arizona desert road softly visible through the windshield, heavy stillness. ${STYLE_SUFFIX}`,
   },
   {
     slug: 'psychological-recovery-after-arizona-crash',
     headline: "The Crash Didn't End at the Scene.",
-    prompt: `Therapy office at golden hour, warm upholstered armchair, tissue box on small side table, potted plant in corner, soft amber light through blinds, calm healing space, wooden floor, Southwestern art on wall. ${STYLE_SUFFIX}`,
+    prompt: `Therapist's office at golden hour, warm upholstered reading chair facing a window with soft blinds letting amber light through, small side table with a tissue box and a water glass, potted plant in the corner, Southwestern abstract art on the wall, atmosphere of a calm private recovery space. ${STYLE_SUFFIX}`,
   },
 ];
 
