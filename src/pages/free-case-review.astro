@@ -48,6 +48,27 @@ import { siteConfig } from '../data/site-config';
                 <label>Don't fill this out: <input name="bot-field" /></label>
               </p>
 
+              <!-- Enrichment (auto-populated by JS) -->
+              <input type="hidden" id="field-page-url" name="page-url" />
+              <input type="hidden" id="field-referrer" name="referrer" />
+              <input type="hidden" id="field-landing-page" name="landing-page" />
+              <input type="hidden" id="field-pages-viewed" name="pages-viewed" />
+              <input type="hidden" id="field-time-on-site" name="time-on-site" />
+              <input type="hidden" id="field-device" name="device" />
+              <input type="hidden" id="field-browser" name="browser" />
+              <input type="hidden" id="field-screen-size" name="screen-size" />
+              <input type="hidden" id="field-utm-source" name="utm-source" />
+              <input type="hidden" id="field-utm-medium" name="utm-medium" />
+              <input type="hidden" id="field-utm-campaign" name="utm-campaign" />
+              <input type="hidden" id="field-utm-term" name="utm-term" />
+              <input type="hidden" id="field-utm-content" name="utm-content" />
+              <input type="hidden" id="geo-city" name="geo-city" />
+              <input type="hidden" id="geo-state" name="geo-state" />
+              <input type="hidden" id="geo-state-name" name="geo-state-name" />
+              <input type="hidden" id="geo-zip" name="geo-zip" />
+              <input type="hidden" id="geo-country" name="geo-country" />
+              <input type="hidden" id="geo-timezone" name="geo-timezone" />
+
               <div class="form-field">
                 <label for="name" class="form-label">Your name</label>
                 <input type="text" id="name" name="name" class="form-input" required placeholder="Full name" />
@@ -169,6 +190,60 @@ import { siteConfig } from '../data/site-config';
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      function setField(id, val) {
+        var el = document.getElementById(id);
+        if (el && val) el.value = String(val);
+      }
+
+      var params = new URLSearchParams(window.location.search);
+      setField('field-utm-source', params.get('utm_source'));
+      setField('field-utm-medium', params.get('utm_medium'));
+      setField('field-utm-campaign', params.get('utm_campaign'));
+      setField('field-utm-term', params.get('utm_term'));
+      setField('field-utm-content', params.get('utm_content'));
+
+      setField('field-page-url', window.location.href);
+      setField('field-referrer', document.referrer || 'direct');
+      setField('field-landing-page', sessionStorage.getItem('azln-landing-page'));
+      setField('field-pages-viewed', sessionStorage.getItem('azln-pages-viewed'));
+
+      var sessionStart = parseInt(sessionStorage.getItem('azln-session-start') || '0', 10);
+      if (sessionStart) setField('field-time-on-site', Math.round((Date.now() - sessionStart) / 1000) + 's');
+
+      var ua = navigator.userAgent;
+      var device = /Mobi|Android/i.test(ua) ? 'mobile' : /Tablet|iPad/i.test(ua) ? 'tablet' : 'desktop';
+      setField('field-device', device);
+      setField('field-screen-size', screen.width + 'x' + screen.height);
+      var browser = 'unknown';
+      if (ua.indexOf('Chrome') > -1 && ua.indexOf('Edg') === -1) browser = 'Chrome';
+      else if (ua.indexOf('Safari') > -1 && ua.indexOf('Chrome') === -1) browser = 'Safari';
+      else if (ua.indexOf('Firefox') > -1) browser = 'Firefox';
+      else if (ua.indexOf('Edg') > -1) browser = 'Edge';
+      setField('field-browser', browser);
+
+      var form = document.querySelector('form[name="case-review"]');
+      if (form) {
+        form.addEventListener('submit', function () {
+          if (sessionStart) setField('field-time-on-site', Math.round((Date.now() - sessionStart) / 1000) + 's');
+        });
+      }
+
+      fetch('https://ipapi.co/json/')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          setField('geo-city', d.city);
+          setField('geo-state', d.region_code);
+          setField('geo-state-name', d.region);
+          setField('geo-zip', d.postal);
+          setField('geo-country', d.country_name);
+          setField('geo-timezone', d.timezone);
+        })
+        .catch(function () {});
+    })();
+  </script>
 </BaseLayout>
 
 <style>

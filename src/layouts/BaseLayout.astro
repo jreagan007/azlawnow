@@ -81,7 +81,9 @@ function generateOGImageUrl(path: string): string {
 }
 
 const pageTitle = generateTitle(title);
-const canonicalUrl = canonical || generateCanonical(Astro.url.pathname);
+const canonicalUrl = canonical
+  ? (canonical.startsWith('http') ? canonical : generateCanonical(canonical))
+  : generateCanonical(Astro.url.pathname);
 
 const ogImage = image
   ? (image.startsWith('http') ? image : `${siteConfig.siteUrl}${image}`)
@@ -103,6 +105,11 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Session tracking (form enrichment) -->
+    <script is:inline>
+      (function(){var S=sessionStorage;if(!S.getItem('azln-landing-page'))S.setItem('azln-landing-page',window.location.href);var v=parseInt(S.getItem('azln-pages-viewed')||'0',10)+1;S.setItem('azln-pages-viewed',String(v));if(!S.getItem('azln-session-start'))S.setItem('azln-session-start',String(Date.now()));})();
+    </script>
+
     <!-- GA4 (Google Analytics 4) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-LB238M4SV2"></script>
     <script is:inline>
@@ -116,9 +123,13 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
     <script>
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1214324123910321');
-      fbq('track', 'PageView');
+      window.__metaPvId = (typeof crypto!=='undefined'&&crypto.randomUUID)?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2);
+      fbq('track', 'PageView', {}, {eventID: window.__metaPvId});
     </script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1214324123910321&ev=PageView&noscript=1" alt="" /></noscript>
+
+    <!-- Meta CAPI helper (server-side event relay) -->
+    <script src="/assets/js/meta-capi.js" is:inline></script>
 
     <!-- TODO: CallRail tracking -->
 
@@ -1040,6 +1051,26 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
     <!-- GA4 Event Tracking -->
     <script is:inline>
       document.addEventListener('DOMContentLoaded', function() {
+        // Server-side PageView (deduped with browser pixel via shared event_id)
+        if (window.__metaPvId) {
+          fetch('/.netlify/functions/meta-capi', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              event_name: 'PageView',
+              event_id: window.__metaPvId,
+              event_source_url: window.location.href,
+              action_source: 'website',
+              user_data: {
+                client_user_agent: navigator.userAgent,
+                fbc: (document.cookie.match(/(?:^|; )_fbc=([^;]*)/) || [])[1] || '',
+                fbp: (document.cookie.match(/(?:^|; )_fbp=([^;]*)/) || [])[1] || ''
+              }
+            }),
+            keepalive: true
+          }).catch(function() {});
+        }
+
         // Phone call clicks
         document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
           el.addEventListener('click', function() {
@@ -1071,7 +1102,15 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
               event_label: 'case_review_form',
               page_path: window.location.pathname
             });
-            if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'case_review_form' });
+            var emailEl = caseForm.querySelector('input[type="email"], input[name="email"]');
+            var phoneEl = caseForm.querySelector('input[type="tel"], input[name="phone"]');
+            if (typeof window.fireMetaEvent === 'function') {
+              window.fireMetaEvent('Lead', {
+                customData: { source: 'case_review_form' },
+                email: emailEl ? emailEl.value : '',
+                phone: phoneEl ? phoneEl.value : ''
+              });
+            }
           });
         }
 
@@ -1084,7 +1123,15 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
               event_label: 'lead_capture_modal',
               page_path: window.location.pathname
             });
-            if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'lead_capture_modal' });
+            var emailEl = modalForm.querySelector('input[type="email"], input[name="email"]');
+            var phoneEl = modalForm.querySelector('input[type="tel"], input[name="phone"]');
+            if (typeof window.fireMetaEvent === 'function') {
+              window.fireMetaEvent('Lead', {
+                customData: { source: 'lead_capture_modal' },
+                email: emailEl ? emailEl.value : '',
+                phone: phoneEl ? phoneEl.value : ''
+              });
+            }
           });
         }
 
