@@ -112,7 +112,14 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       gtag('config', 'G-LB238M4SV2');
     </script>
 
-    <!-- TODO: Meta (Facebook) Pixel -->
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1214324123910321');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1214324123910321&ev=PageView&noscript=1" alt="" /></noscript>
+
     <!-- TODO: CallRail tracking -->
 
     <!-- Favicon -->
@@ -1064,6 +1071,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
               event_label: 'case_review_form',
               page_path: window.location.pathname
             });
+            if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'case_review_form' });
           });
         }
 
@@ -1076,6 +1084,7 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
               event_label: 'lead_capture_modal',
               page_path: window.location.pathname
             });
+            if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'lead_capture_modal' });
           });
         }
 

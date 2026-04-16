@@ -105,8 +105,11 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) => {
-        const excluded = ['/admin/', '/thank-you/', '/free-case-review/'];
-        return !excluded.some(e => page.includes(e));
+        const excluded = ['/admin/', '/thank-you/', '/free-case-review/', '/about/team/'];
+        const noindexClusters = ['/vehicle-crashes/', '/abuse-negligence/', '/other-claims/'];
+        if (excluded.some(e => page.includes(e))) return false;
+        if (noindexClusters.some(c => page.includes(c))) return false;
+        return true;
       },
       changefreq: 'weekly',
       priority: 0.7,
