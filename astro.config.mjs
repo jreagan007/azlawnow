@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import remarkGfm from 'remark-gfm';
 import { writeFileSync, readFileSync, unlinkSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -102,7 +103,7 @@ export default defineConfig({
 
   integrations: [
     react(),
-    mdx(),
+    mdx({ remarkPlugins: [remarkGfm] }),
     sitemap({
       filter: (page) => {
         const excluded = ['/admin/', '/thank-you/', '/free-case-review/', '/about/team/'];

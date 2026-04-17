@@ -825,6 +825,10 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     margin-bottom: var(--space-4);
   }
 
+  .article-content :global(.references ol li p) {
+    margin: 0;
+  }
+
   .article-content :global(.references ol li::before) {
     content: counter(ref-counter) ".";
     position: absolute;
