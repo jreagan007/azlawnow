@@ -168,7 +168,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   image={ogImage || image}
   schema={schemas}
 >
-  <article class="article-layout" itemscope itemtype={`https://schema.org/${resolvedSchemaType}`}>
+  <article class="article-layout">
     <!-- ============================================
          ARTICLE HEADER
          ============================================ -->
@@ -275,7 +275,6 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
             </div>
 
             <ArticleFAQ faqs={faqs} />
-            <ArticleSources dataSources={dataSources} />
 
             {tags.length > 0 && (
               <div class="article-tags">

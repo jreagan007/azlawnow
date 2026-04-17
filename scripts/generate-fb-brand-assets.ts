@@ -16,12 +16,14 @@ import { join } from 'path';
 const OUT = join(homedir(), 'Desktop');
 const BRAND = '/Users/jaredreagan/Projects/taqticscom/clients/az-law-now/brand/images';
 const LOGOS = '/Users/jaredreagan/Projects/az-law-now/public/logos';
+const FAVICONS = '/Users/jaredreagan/Projects/az-law-now/public/favicons';
 
 // Brand colors
 const NEWSPRINT = '#FAF5ED';
 const BLACK = '#1A1A1A';
 const VERMILLION = '#C23B22';
 const GOLD = '#D4943A';
+const WHITE = '#FFFFFF';
 
 // ============== PROFILE 1024x1024 ==============
 // Newsprint background + actual brand wordmark logo centered.
@@ -136,12 +138,62 @@ async function buildCover(): Promise<void> {
   console.log(`  ✓ ${join(OUT, 'azlawnow-fb-cover.png')}`);
 }
 
+// ============== PROFILE ICON 1024x1024 ==============
+// Cactus icon (black rounded square) centered on a white circle.
+// FB crops the 1024x1024 square to a circle; the white disk sits flush
+// against that crop so the final profile reads as a clean circular badge.
+async function buildProfileIcon(): Promise<void> {
+  const SIZE = 1024;
+  const R = SIZE / 2;
+  const ICON_W = 640; // cactus badge fits with comfortable breathing room
+
+  const iconBuf = await sharp(`${FAVICONS}/favicon-source.png`)
+    .resize({ width: ICON_W, withoutEnlargement: false })
+    .png()
+    .toBuffer();
+  const iconMeta = await sharp(iconBuf).metadata();
+  const iconH = iconMeta.height ?? ICON_W;
+  const iconW = iconMeta.width ?? ICON_W;
+
+  const circleSvg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}">
+      <circle cx="${R}" cy="${R}" r="${R}" fill="${WHITE}"/>
+    </svg>
+  `;
+
+  await sharp({
+    create: {
+      width: SIZE,
+      height: SIZE,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .composite([
+      { input: Buffer.from(circleSvg), top: 0, left: 0 },
+      {
+        input: iconBuf,
+        top: Math.round((SIZE - iconH) / 2),
+        left: Math.round((SIZE - iconW) / 2),
+      },
+    ])
+    .png()
+    .toFile(join(OUT, 'azlawnow-fb-profile-icon.png'));
+
+  console.log(`  ✓ ${join(OUT, 'azlawnow-fb-profile-icon.png')}`);
+}
+
 async function main() {
   const coverOnly = process.argv.includes('--cover');
   const profileOnly = process.argv.includes('--profile');
+  const iconOnly = process.argv.includes('--icon');
   console.log('\nGenerating FB brand assets (locked relief hero + actual logo)...\n');
-  if (!coverOnly) await buildProfile();
-  if (!profileOnly) await buildCover();
+  if (iconOnly) {
+    await buildProfileIcon();
+  } else {
+    if (!coverOnly) await buildProfile();
+    if (!profileOnly) await buildCover();
+  }
   console.log('\nDone.\n');
 }
 
