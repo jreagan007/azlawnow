@@ -173,7 +173,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
          ARTICLE HEADER
          ============================================ -->
     <header class="article-header section-sm">
-      <div class="container container-narrow">
+      <div class="container container-article">
         <!-- Breadcrumbs -->
         <nav class="article-breadcrumbs" aria-label="Breadcrumb">
           <ol>
@@ -325,7 +325,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
          AUTHOR BOX
          ============================================ -->
     <aside class="article-author-box section-sm" aria-label="About the author">
-      <div class="container container-narrow">
+      <div class="container container-article">
         <div class="article-author-box__card">
           <img
             src={authorData.photo}
@@ -351,7 +351,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
          DISCLAIMER
          ============================================ -->
     <div class="article-disclaimer">
-      <div class="container container-narrow">
+      <div class="container container-article">
         <p class="article-disclaimer__text">{disclaimer}</p>
       </div>
     </div>
@@ -426,6 +426,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     color: #1A1A1A;
     line-height: 1.15;
     margin-bottom: var(--space-6);
+    max-width: 780px;
   }
 
   /* Byline */
@@ -1004,6 +1005,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     display: flex;
     gap: var(--space-6);
     padding: var(--space-8);
+    max-width: 780px;
     background: var(--color-white);
     border: 1px solid var(--neutral-200);
     border-radius: var(--radius-lg);
@@ -1070,6 +1072,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
     font-size: var(--text-xs);
     color: var(--neutral-500);
     line-height: 1.6;
+    max-width: 780px;
     font-style: italic;
   }
 
