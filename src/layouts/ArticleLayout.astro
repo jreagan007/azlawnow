@@ -276,6 +276,10 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
 
             <ArticleFAQ faqs={faqs} />
 
+            {dataSources.length > 0 && (
+              <ArticleSources dataSources={dataSources} />
+            )}
+
             {tags.length > 0 && (
               <div class="article-tags">
                 <div class="article-tags__list">
