@@ -18,7 +18,23 @@ import sqlite3, os, sys, json, subprocess, tempfile, time, random, re
 from datetime import datetime
 
 DB = os.path.expanduser("~/Projects/azlawnow/data/outreach/azlawnow-outreach.db")
-RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "re_Z4REaUq6_F8D2on78AM2hdkQ8XWffYtKS")
+
+def _load_ops_env():
+    p = os.path.expanduser("~/Projects/taqtics-ops/config/.env")
+    if not os.path.exists(p):
+        return
+    for line in open(p):
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        os.environ.setdefault(k.strip(), v.strip().strip('"'))
+_load_ops_env()
+
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+if not RESEND_API_KEY:
+    sys.stderr.write("ERROR: RESEND_API_KEY not set. Source from ~/Projects/taqtics-ops/config/.env\n")
+    sys.exit(2)
 RESEND_URL = "https://api.resend.com/emails"
 BCC = ["bf@azlawnow.com", "jared@taqtics.com"]
 
