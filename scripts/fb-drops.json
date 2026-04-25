@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "voice": "AZ Law Now — data-first, contractions, no em-dashes, peer-to-peer. Same voice rules as Brendan's investigations.",
+    "rules": "FB has no char limit but 100-300 chars + image + auto-embedded link is the sweet spot. Always include the image (don't rely on link preview alone — FB's preview cards are inconsistent). Lead with a number where possible. Link in body, not as the only content.",
+    "page": "facebook.com/azlawnow",
+    "created": "2026-04-22"
+  },
+  "posts": [
+    {
+      "id": "fb-azln-01",
+      "topic": "buckeye-durango-yuma",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/buckeye-durango-yuma-roundabout-rejected.png",
+      "text": "Buckeye's own engineering report said a roundabout would cut injury crashes 41.7% at Durango and Yuma. The City picked the cheaper signalized design. 15.4% reduction.\n\nA 26.3-point safety gap. $1.4M saved up front. Built into the next decade of crash reports.\n\nFull investigation with the CMF table, FHWA benchmarks, and the Buckeye population-growth math:\nhttps://azlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/"
+    },
+    {
+      "id": "fb-azln-02",
+      "topic": "mesa-elder-abuse-hb2228",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/grand-court-mesa-elder-abuse-hb2228.png",
+      "text": "60% of nursing home sexual abuse victims have dementia.\n80% of perpetrators are caregivers.\nOnly 30% of incidents reach law enforcement.\n\nA Mesa caregiver was arrested April 21 for alleged abuse of a wheelchair-bound dementia patient. The family caught it on video.\n\nThe case fits a national pattern. HB2228 is the AZ bill that closes the registry gap. Full piece with primary sources, statutory references, and what families can do:\nhttps://azlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/"
+    },
+    {
+      "id": "fb-azln-03",
+      "topic": "buckeye-durango-yuma",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/images/heroes/dj-buckeye-durango-yuma.webp",
+      "text": "FHWA data on signalized intersections converted to roundabouts: 46% reduction in fatal and serious-injury crashes.\n\nBuckeye had this data in front of them at Durango and Yuma. They picked the cheaper option anyway.\n\nThe math doesn't care about public unfamiliarity. Read the investigation:\nhttps://azlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/"
+    },
+    {
+      "id": "fb-azln-04",
+      "topic": "mesa-elder-abuse-hb2228",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/images/heroes/dj-grand-court-mesa-elder-abuse-hb2228.webp",
+      "text": "If your loved one is in an Arizona long-term care facility, three things matter immediately:\n\n1. Pull the AZDHS inspection record. It's public.\n2. Document anything that doesn't sit right. Photos, dates, behavior changes.\n3. APS hotline: 1-877-767-2385.\n\nThe data on what happens when families don't catch it early is the reason HB2228 exists. Full guide with statutory references and reporting paths:\nhttps://azlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/"
+    },
+    {
+      "id": "fb-azln-05",
+      "topic": "buckeye-population",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/buckeye-durango-yuma-roundabout-rejected.png",
+      "text": "Buckeye, Arizona. 2020 population: 93,741. 2024 estimate: 114,334. That's 32.95% growth in four years. Top tier of fastest-growing US cities.\n\nMore people. More AADT. Same arterial intersections. The road geometry decisions made today carry for decades.\n\nWhy the City's choice at Durango and Yuma compounds:\nhttps://azlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/"
+    },
+    {
+      "id": "fb-azln-06",
+      "topic": "tempe-asu-pavement",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/tempe-asu-pavement-180-day-claim-clock.png",
+      "text": "Arizona gives you 180 days to file a Notice of Claim against a public entity under ARS 12-821.01.\n\nTempe's own grant filings admit pavement feeding into ASU is in poor condition.\n\nAnd the Arizona Board of Regents publicly states ASU isn't authorized to accept your paperwork.\n\nThat's the jurisdictional trap. Full investigation with the statute verbatim, the Fong v. Phoenix (2024) ruling, and the ABOR service rule:\nhttps://azlawnow.com/investigations/tempe-asu-pavement-180-day-claim-clock/"
+    },
+    {
+      "id": "fb-azln-07",
+      "topic": "az-career-schools-37",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/arizona-career-schools-37-adverse-actions.png",
+      "text": "Arizona licensed 237 private career schools in FY25. 37 got hit with adverse actions. Nine more closed.\n\nThe federal rule behind the pressure: under 34 CFR 668.22, once a student passes the 60% point of a payment period, the school has earned 100% of their federal aid.\n\nNational precedent is settled. The Department of Education discharged $5.8B for Corinthian and $3.9B for ITT in 2022. Full investigation with the AZ tort theory and the Title IX and Clery gap:\nhttps://azlawnow.com/investigations/arizona-career-schools-37-adverse-actions/"
+    },
+    {
+      "id": "fb-azln-08",
+      "topic": "iaq-merv13-bypass",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/arizona-schools-merv-13-filter-bypass.png",
+      "text": "Arizona schools bought MERV 13 filters and told parents the air is hospital-grade.\n\nASHRAE 241, the post-pandemic standard, says it in plain English: air that goes around an unsealed filter doesn't get cleaned. The system performs as if a lower MERV had been installed.\n\nEPA tightened the annual PM2.5 standard to 9 micrograms per cubic meter in 2024. The peer-reviewed record links PM2.5 to higher mortality (Di et al. 2017, NEJM), 4.2 million annual global deaths (Burnett et al. 2018, PNAS), childhood cognition decline, autism risk, and IQ loss.\n\nNo Arizona school district publishes a single PM2.5 reading from inside its own buildings. The wellness claim is mechanical. The data isn't.\n\nFull investigation, with the ASHRAE primary text, the AZ tort frame, and the public records request templates parents can file:\nhttps://azlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/"
+    }
+  ]
+}

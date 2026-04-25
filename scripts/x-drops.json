@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "voice": "Brendan Franks — data-first, fragments, contractions, no em-dashes, no links in main tweet",
+    "rules": "Under 280 chars. Lead with a number where possible. Fragments for emphasis. Link in the reply only. Mentions go in a SECOND reply (third tweet) — keeps the main thread clean and doesn't spam mentions in body copy.",
+    "created": "2026-04-22"
+  },
+  "posts": [
+    {
+      "id": "azln-01",
+      "topic": "buckeye-durango-yuma",
+      "text": "Buckeye's own engineering report said a roundabout would cut injury crashes 41.7% at Durango and Yuma.\n\nThe City picked the cheaper signalized design. 15.4% reduction.\n\n26.3-point safety gap. Saved $1.4M up front. Built the difference into the next decade of crash reports.",
+      "reply": "Full investigation with the CMF table, FHWA benchmarks, and the population-growth math:\n\nazlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/",
+      "mentions": "cc @azcentral @azfamily @fox10phoenix @12News @abc15 @KJZZPhoenix — Buckeye infrastructure / West Valley desks if useful."
+    },
+    {
+      "id": "azln-02",
+      "topic": "buckeye-durango-yuma",
+      "text": "FHWA data on signalized-to-roundabout conversions:\n\n46% reduction in fatal and serious injury crashes.\n\nBuckeye had this in front of them at Durango and Yuma. Picked the cheaper option anyway.\n\nThe math doesn't care about public unfamiliarity.",
+      "reply": "We pulled the Crash Modification Factor studies, the City's evaluation matrix, and the cost line:\n\nazlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/",
+      "mentions": "cc @azcentral @AZMirror @azcapitoltimes for the local-government accountability angle."
+    },
+    {
+      "id": "azln-03",
+      "topic": "mesa-elder-abuse-hb2228",
+      "text": "60% of nursing home sexual abuse victims have dementia.\n\n80% of perpetrators are caregivers.\n\nOnly 30% of incidents reach law enforcement.\n\nA Mesa caregiver was arrested yesterday. Wheelchair-bound dementia patient. The family caught it on video.",
+      "reply": "The case fits the pattern. HB2228 is moving in the AZ Senate to close the registry gap. Full piece with primary sources:\n\nazlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/",
+      "mentions": "cc @AARPArizona @azcentral @AZMirror @azfamily @fox10phoenix @12News @abc15 @cronkitenews — elder care + AZ legislature beats."
+    },
+    {
+      "id": "azln-04",
+      "topic": "mesa-elder-abuse-hb2228",
+      "text": "1,816 sexual abuse complaints in long-term care facilities in 2024 alone.\n\n60% jump from 2017.\n\nNearly half of victims die within a year of the assault.\n\nThis isn't an edge case. It's a sector.",
+      "reply": "Yesterday's Mesa arrest is one of them. AZ HB2228 is the structural fix moving in the Senate this week:\n\nazlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/",
+      "mentions": "cc @AARP @AARPArizona @JusticeInAging @LTCCC — national + state long-term care advocacy."
+    },
+    {
+      "id": "azln-05",
+      "topic": "buckeye-population",
+      "text": "Buckeye, Arizona. 2020 population: 93,741.\n\n2024 estimate: 114,334.\n\n32.95% growth in four years. Top tier of fastest-growing US cities.\n\nMore people. More AADT. Same arterial intersections. The road geometry decisions made today carry for decades.",
+      "reply": "Why the City's choice at Durango and Yuma compounds:\n\nazlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/",
+      "mentions": "cc @azcentral @AZMirror @azcapitoltimes @ASUCronkite — fastest-growing-cities + planning beats."
+    },
+    {
+      "id": "azln-06",
+      "topic": "mesa-elder-abuse-hb2228",
+      "text": "If your loved one is in an Arizona long-term care facility:\n\n1. Pull the AZDHS inspection record.\n2. Document anything that doesn't sit right.\n3. APS hotline: 1-877-767-2385.\n\nThe data on what happens when families don't is the reason HB2228 exists.",
+      "reply": "Full investigation with the statutory references and reporting paths:\n\nazlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/",
+      "mentions": "cc @AARPArizona @AZHealthDept @AZAdultProtSvcs — facility oversight + APS reporting."
+    },
+    {
+      "id": "azln-07",
+      "topic": "tempe-asu-pavement",
+      "text": "Arizona gives you 180 days to file a Notice of Claim against a public entity.\n\nTempe admits pavement near ASU is in poor condition.\n\nAnd the Arizona Board of Regents says ASU isn't authorized to accept your paperwork.\n\nThat's the trap.",
+      "reply": "Full investigation with ARS 12-821.01 verbatim, Fong v. Phoenix (2024), the ABOR service rule, and the jurisdictional map:\n\nazlawnow.com/investigations/tempe-asu-pavement-180-day-claim-clock/",
+      "mentions": "cc @azcentral @cronkitenews @statepress @KJZZPhoenix @fox10phoenix, ASU + Tempe infrastructure beats."
+    },
+    {
+      "id": "azln-08",
+      "topic": "tempe-asu-pavement",
+      "text": "Fong v. City of Phoenix, 2024.\n\nA cyclist rode into an unbarricaded ditch in an active bike-lane excavation.\n\nArizona Court of Appeals affirmed summary judgment for the city.\n\nExpert testimony required to get past the public-entity defense on pavement cases.",
+      "reply": "What that ruling does to a scooter or bike crash near ASU, plus the 180-day Notice of Claim clock and the ABOR service rule:\n\nazlawnow.com/investigations/tempe-asu-pavement-180-day-claim-clock/",
+      "mentions": "cc @azcourts @azcentral @AZMirror @statepress, bicycle safety + municipal liability beats."
+    },
+    {
+      "id": "azln-09",
+      "topic": "az-career-schools-37",
+      "text": "Arizona licensed 237 private career schools in FY25.\n\n37 got hit with adverse actions.\n\nNine more closed.\n\nOne fiscal year. 15.6% action rate. That's not a rounding error.",
+      "reply": "Why the federal 60% rule under 34 CFR 668.22 structurally explains the pattern, with Corinthian and ITT precedent and AZ tort theories:\n\nazlawnow.com/investigations/arizona-career-schools-37-adverse-actions/",
+      "mentions": "cc @azcentral @AZMirror @cronkitenews @PhoenixNewTimes @highereddive, higher ed + consumer protection beats."
+    },
+    {
+      "id": "azln-10",
+      "topic": "az-career-schools-37",
+      "text": "Department of Education discharged $5.8B for 560,000 Corinthian borrowers.\n\n$3.9B for 208,000 ITT borrowers.\n\nBoth in 2022. Both on misrepresentation findings.\n\nArizona's Private Postsecondary Board issued 37 adverse actions of its own in FY25.",
+      "reply": "The structural frame, the federal rule that ties funding to enrollment thresholds, and the AZ tort theory under Pruitt v. Pavelin:\n\nazlawnow.com/investigations/arizona-career-schools-37-adverse-actions/",
+      "mentions": "cc @usedgov @BorrowerDefense @tCAPP @defendstudents, for-profit college accountability."
+    },
+    {
+      "id": "azln-11",
+      "topic": "iaq-merv13-bypass",
+      "text": "ASHRAE 241, the post-pandemic standard, says it in plain English:\n\nAir that goes around an unsealed filter doesn't get cleaned. The system performs as if a lower MERV had been installed.\n\nArizona schools bought hospital-grade MERV 13 filters. Most installs are drop-ins. The housings aren't sealed.",
+      "reply": "Full investigation with the ASHRAE 52.2 + 241 + 62.1 frame, EPA's 9 µg/m³ PM2.5 NAAQS, peer-reviewed PM2.5 health data, AZ tort theory, and the PRR templates parents can file:\n\nazlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/",
+      "mentions": "cc @azcentral @cronkitenews @AZMirror @ashraehq @EPA, school IAQ + ventilation accountability."
+    },
+    {
+      "id": "azln-12",
+      "topic": "iaq-merv13-bypass",
+      "text": "EPA tightened the annual PM2.5 standard to 9 µg/m³ in 2024.\n\nDi et al. 2017, NEJM: 7.3% mortality jump per µg/m³ in Medicare cohort.\n\nNo Arizona school district publishes a single PM2.5 reading from inside its own buildings.\n\nThat absence is the headline.",
+      "reply": "What the published peer-reviewed record says about PM2.5 and child cognition, plus Arizona's 180-day Notice of Claim clock for school district claims:\n\nazlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/",
+      "mentions": "cc @EPAregion9 @AZHealthDept @AZSchoolBoards @AZPTAdvocacy, school IAQ accountability."
+    }
+  ]
+}
