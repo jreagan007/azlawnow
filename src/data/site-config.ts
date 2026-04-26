@@ -82,9 +82,9 @@ export const siteConfig = {
     // post-rebrand. Update to canonical /azlawnow/ once page name + IG username
     // are claimed (FB: Batch 3 review; IG: UI claim if `azlawnow` is free).
     facebook: 'https://www.facebook.com/azlawnow/',
-    linkedin: 'https://www.linkedin.com/company/azlawnow/',
+    linkedin: 'https://www.linkedin.com/company/az-law-now/',
     twitter: 'https://x.com/azlawnow',
-    instagram: 'https://www.instagram.com/azlawnowinjuryattorneys/',
+    instagram: 'https://www.instagram.com/azlawnow/',
     googleBusiness: undefined as string | undefined, // TODO: AZ Law Now GMB URL
   },
 
