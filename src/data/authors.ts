@@ -107,8 +107,8 @@ export const authors: Record<string, Author> = {
     schemaType: 'Person',
     url: '/about/#stephanie-ramirez',
     socialLinks: {
-      // TODO: LinkedIn — add Stephanie's personal profile URL.
-      // TODO: NALA Certified Paralegal credential (if held) — adds E-E-A-T
+      linkedin: 'https://www.linkedin.com/in/stephanie-ramirez-45b748405/',
+      // TODO: NALA Certified Paralegal credential (if held), adds E-E-A-T
       //   for paralegal authored content.
       // TODO: NAAP profile if applicable.
     },
