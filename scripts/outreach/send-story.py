@@ -108,22 +108,45 @@ def gate_hook(target):
     return len(hook) >= 30
 
 
+VOICE_BANNED = {
+    "leverage", "utilize", "solutions", "synergy", "robust", "holistic",
+    "passionate", "empower", "innovative", "cutting-edge", "best-in-class", "seamless",
+}
+
+
+def _voice_check(text):
+    """Strict voice gate: no em-dashes, no banned words, no uncontracted forms in
+    common throat-clearing patterns. Returns list of issues, empty if clean."""
+    issues = []
+    if "—" in text or "–" in text:
+        issues.append("contains em-dash or en-dash")
+    low = text.lower()
+    for w in VOICE_BANNED:
+        if w in low:
+            issues.append(f"banned word: {w}")
+    for phrase in ("it is worth", "the reality is", "what the data shows", "i would like to", "i wanted to"):
+        if phrase in low:
+            issues.append(f"throat-clearing: {phrase}")
+    return issues
+
+
 def build_email(target, article):
-    name = target.get("name", "").strip()
+    name = (target.get("name") or "").strip()
     first = name.split()[0] if name else ""
     email = target["email"].lower().strip()
     is_org_email = email.split("@", 1)[0] in {
         "info", "editor", "editorial", "contact", "hello", "press", "tips",
-        "media", "office", "team", "director", "board", "staff",
+        "media", "office", "team", "director", "board", "staff", "newsroom",
+        "newstips", "publicnotices", "investigators", "investigates",
     }
-    if first and not is_org_email:
+    if first and not is_org_email and not first.isupper():
         greeting = f"Hi {first},"
     else:
         outlet = (target.get("outlet") or "").strip()
         greeting = f"Hi {outlet} team," if outlet else "Hi there,"
 
-    hook = target["personalization_hook"].strip()
-    if hook[-1] not in ".!?":
+    hook = (target.get("personalization_hook") or "").strip()
+    if hook and hook[-1] not in ".!?":
         hook += "."
 
     title = article["title"]
@@ -138,23 +161,30 @@ def build_email(target, article):
         f"&utm_term={contact_id}"
     )
 
-    stat_hook = (article.get("stat_hook") or "").strip()
-    if stat_hook and stat_hook[-1] not in ".!?":
-        stat_hook += "."
-
     subject = title
     if len(subject) > 78:
         subject = subject[:75] + "..."
 
+    # Strict voice. Tight. Less is more.
+    body_text = (
+        f"{greeting}\n\n"
+        f"{hook}\n\n"
+        f"Just published {title} at AZ Law Now. Thought it was worth flagging given your beat.\n\n"
+        f"{url}\n\n"
+        f"Records and primary sources are open if useful.\n\n"
+        f"Brendan Franks\n{FROM_TITLE}"
+    )
+
+    issues = _voice_check(body_text)
+    if issues:
+        raise RuntimeError(f"voice gate failed for {email}: {'; '.join(issues)}")
+
     html = (
         f"<p>{greeting}</p>"
         f"<p>{hook}</p>"
-        f"<p>I'm Brendan Franks at AZ Law Now Investigations. We just published a piece that I think connects to your work.</p>"
-        f"<p>{stat_hook}</p>"
-        f"<p>The full investigation is here: <a href=\"{url}\">{title}</a></p>"
-        f"<p>Happy to share the underlying records, methodology, or sources if any of this is useful for your reporting or advocacy.</p>"
-        f"<p>Brendan Franks<br>{FROM_TITLE}<br>"
-        f"<a href=\"https://azlawnow.com/investigations/?utm_source=email_brendan_azlawnow&utm_medium=email&utm_campaign=signature\">azlawnow.com/investigations</a></p>"
+        f"<p>Just published <a href=\"{url}\">{title}</a> at AZ Law Now. Thought it was worth flagging given your beat.</p>"
+        f"<p>Records and primary sources are open if useful.</p>"
+        f"<p>Brendan Franks<br>{FROM_TITLE}</p>"
     )
     return subject, html
 

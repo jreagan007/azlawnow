@@ -51,14 +51,39 @@ def parse_args():
     return slug, max_count
 
 
+import re
+
+CITATION_RE = re.compile(r"\s*\[\d+\](?:\[\d+\])*")
+SOURCE_TRAILER_RE = re.compile(r"\s*\(?(?:source|sources|reference|via|per)[^)]*\)?\s*$", re.I)
+
+
+def clean_hook(text):
+    """Strip Perplexity citation markers + verbose trailers from the hook."""
+    if not text:
+        return ""
+    text = CITATION_RE.sub("", text)
+    text = SOURCE_TRAILER_RE.sub("", text)
+    text = text.strip().strip('"').strip("'")
+    if text.endswith(",") or text.endswith(":") or text.endswith(";"):
+        text = text[:-1]
+    if text and text[-1] not in ".!?":
+        text += "."
+    return text
+
+
 def perplexity_query(prompt):
     payload = {
         "model": "sonar-pro",
         "messages": [
-            {"role": "system", "content": "You return one clean sentence about a person's recent professional work, with one specific reference (article title, program name, statute, board action, or named project). No preamble. No filler. Under 50 words. If no specific record is publicly verifiable, reply exactly: NO_RECORD."},
+            {"role": "system", "content": (
+                "You return one clean sentence about a person's recent professional work, with one "
+                "specific reference (article title, program name, statute, board action, or named project). "
+                "No preamble. No filler. No citation brackets like [1] or [2]. No trailing source notes. "
+                "Under 35 words. If no specific record is publicly verifiable, reply exactly: NO_RECORD."
+            )},
             {"role": "user", "content": prompt},
         ],
-        "max_tokens": 200,
+        "max_tokens": 300,
         "temperature": 0.2,
     }
     with open("/tmp/_pplx.json", "w") as f:
@@ -72,7 +97,10 @@ def perplexity_query(prompt):
     )
     try:
         data = json.loads(r.stdout)
-        return data["choices"][0]["message"]["content"].strip()
+        raw = data["choices"][0]["message"]["content"].strip()
+        if raw.startswith("NO_RECORD"):
+            return raw
+        return clean_hook(raw)
     except Exception as e:
         return f"NO_RECORD ({e})"
 
