@@ -165,14 +165,24 @@ def build_email(target, article):
     if len(subject) > 78:
         subject = subject[:75] + "..."
 
+    # Story-specific CTA. Falls back to a tight generic if the column isn't set.
+    cta = (article.get("cta_offer") or "").strip()
+    if not cta:
+        cta = "Records and primary sources are open if useful."
+    if cta and cta[-1] not in ".!?":
+        cta += "."
+
+    # Drop a terminal period from the title before linking so we don't get "Title. ."
+    link_title = title.rstrip(". ")
+
     # Strict voice. Tight. Less is more.
     body_text = (
         f"{greeting}\n\n"
         f"{hook}\n\n"
-        f"Just published {title} at AZ Law Now. Thought it was worth flagging given your beat.\n\n"
+        f"Just put up {link_title}.\n\n"
         f"{url}\n\n"
-        f"Records and primary sources are open if useful.\n\n"
-        f"Brendan Franks\n{FROM_TITLE}"
+        f"{cta}\n\n"
+        f"Brendan Franks\nEditor, AZ Law Now"
     )
 
     issues = _voice_check(body_text)
@@ -182,9 +192,9 @@ def build_email(target, article):
     html = (
         f"<p>{greeting}</p>"
         f"<p>{hook}</p>"
-        f"<p>Just published <a href=\"{url}\">{title}</a> at AZ Law Now. Thought it was worth flagging given your beat.</p>"
-        f"<p>Records and primary sources are open if useful.</p>"
-        f"<p>Brendan Franks<br>{FROM_TITLE}</p>"
+        f"<p>Just put up <a href=\"{url}\">{link_title}</a>.</p>"
+        f"<p>{cta}</p>"
+        f"<p>Brendan Franks<br>Editor, AZ Law Now</p>"
     )
     return subject, html
 

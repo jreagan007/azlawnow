@@ -76,10 +76,12 @@ def perplexity_query(prompt):
         "model": "sonar-pro",
         "messages": [
             {"role": "system", "content": (
-                "You return one clean sentence about a person's recent professional work, with one "
-                "specific reference (article title, program name, statute, board action, or named project). "
-                "No preamble. No filler. No citation brackets like [1] or [2]. No trailing source notes. "
-                "Under 35 words. If no specific record is publicly verifiable, reply exactly: NO_RECORD."
+                "You return one clean sentence about a person's recent professional work. The sentence "
+                "MUST contain at least one of: (a) a date, (b) a quoted article title, (c) a named "
+                "program / law / case / board action. Generic phrasing like 'your work on X' without "
+                "a specific anchor is REJECTED. No preamble. No filler. No citation brackets like [1] or [2]. "
+                "No trailing source notes. Under 35 words. If you cannot anchor the sentence to a specific "
+                "verifiable date / title / program, reply exactly: NO_RECORD."
             )},
             {"role": "user", "content": prompt},
         ],
