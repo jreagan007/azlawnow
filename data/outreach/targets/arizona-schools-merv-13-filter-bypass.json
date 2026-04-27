@@ -9,8 +9,8 @@
     "segment": "az_school_superintendent",
     "url": "https://www.phoenixunion.org/",
     "story_relevance_note": "Phoenix Union HSD is the largest urban high school district in Maricopa County, in the EPA serious PM10 non-attainment zone. Decisions about MERV 13 procurement and HVAC commissioning rest with the superintendent's office. Asking on the record whether the district has measured PM2.5 or commissioned its filter housings under ASHRAE 241.",
-    "personalization_hook": "Saw your appointment as superintendent of Phoenix Union High School District, the largest urban high school district in Maricopa County, beginning June 2, 2024.[1][2]",
-    "enrichment_status": "ok"
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
   },
   {
     "name": "Dr. Matthew Strom",
@@ -22,7 +22,7 @@
     "segment": "az_school_superintendent",
     "url": "https://www.mpsaz.org/",
     "story_relevance_note": "Largest district in Arizona by enrollment. Confirmed superintendent since July 2025. Mesa is in the Maricopa serious PM10 non-attainment zone; what we want to know: did MPS verify housing seal performance, or only buy MERV 13 media?",
-    "personalization_hook": "Saw your letter to the Mesa Public Schools community at the start of the 2025-26 school year.[4]",
+    "personalization_hook": "Saw your letter to the Mesa Public Schools community at the start of the 2025-26 school year.",
     "enrichment_status": "ok"
   },
   {
@@ -35,7 +35,7 @@
     "segment": "az_school_facilities_director",
     "url": "https://www.mpsaz.org/",
     "story_relevance_note": "Operations and Construction owns HVAC procurement and commissioning. He is the named accountable party for whether housings were sealed. Public records request target for HVAC service invoices (PRR exhibit in the investigation).",
-    "personalization_hook": "Saw your request for the $1M waste recycling services contract with the city, approved by the Mesa school board.[1]",
+    "personalization_hook": "Saw your request for the $1M waste recycling services contract with the city, approved by the Mesa school board.",
     "enrichment_status": "ok"
   },
   {
@@ -61,7 +61,7 @@
     "segment": "az_school_superintendent",
     "url": "https://www.susd.org/",
     "story_relevance_note": "SUSD parent base is engaged on facilities; district has spent on HVAC upgrades. Asking whether SUSD has produced commissioning reports or PM2.5 readings to back hospital-grade claims.",
-    "personalization_hook": "Saw your Facility Condition Assessment approved by the Governing Board in October 2024 to identify HVAC and other building systems needs for a 10-year Capital Plan.[3]",
+    "personalization_hook": "Saw your Facility Condition Assessment approved by the Governing Board in October 2024 to identify HVAC and other building systems needs for a 10-year Capital Plan.",
     "enrichment_status": "ok"
   },
   {
@@ -74,7 +74,7 @@
     "segment": "az_school_superintendent",
     "url": "https://www.cusd80.com/",
     "story_relevance_note": "CUSD is the third-largest AZ district. ESSER-funded HVAC upgrades documented during COVID; we want the duct-leakage and PM2.5 follow-up data.",
-    "personalization_hook": "Saw your approval of the $265K contract for incoming Superintendent Dr. Anna Battle as you retire, announced in yourvalley.net[1].",
+    "personalization_hook": "Saw your approval of the $265K contract for incoming Su.",
     "enrichment_status": "ok"
   },
   {
@@ -87,7 +87,7 @@
     "segment": "az_school_superintendent",
     "url": "https://www.dvusd.org/",
     "story_relevance_note": "Deer Valley sits in the north Maricopa PM10 zone. Long-tenured superintendent; he owns the procurement decisions on filter media for the district's 30+ campuses.",
-    "personalization_hook": "Saw your Arizona School Administrators/Arizona School Boards Association All Arizona Superintendent Award--Large District for the 2024-25 school year on December 19, 2024.[1]",
+    "personalization_hook": "Saw your Arizona School Administrators/Arizona School Boards Association All Arizona Su.",
     "enrichment_status": "ok"
   },
   {
@@ -100,7 +100,7 @@
     "segment": "az_school_superintendent",
     "url": "https://www.ccusd93.org/",
     "story_relevance_note": "Smaller district but high parent education and engagement. Good for getting an early on-the-record answer on whether they've measured housing bypass.",
-    "personalization_hook": "Saw your leadership on revitalizing CCUSD's strategic plan with community stakeholder input.[2]",
+    "personalization_hook": "Saw your leadership on revitalizing CCUSD's strategic plan with community stakeholder input.",
     "enrichment_status": "ok"
   },
   {
@@ -152,7 +152,7 @@
     "segment": "az_school_superintendent",
     "url": "https://www.tusd1.org/",
     "story_relevance_note": "Largest southern Arizona district. Pima County has its own air quality particulars (PM2.5 from western dust events). Story has statewide reach if TUSD comments.",
-    "personalization_hook": "Saw your leadership on the 23.8 MW solar project, Arizona's largest among K-12 districts, saving TUSD $1.1 million annually.[3]",
+    "personalization_hook": "Saw your leadership on the 23.8 MW solar project, Arizona's largest among K-12 districts, saving TUSD $1.1 million annually.",
     "enrichment_status": "ok"
   },
   {
@@ -165,7 +165,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Chairs the Senate panel that would hear any school IAQ disclosure or HVAC commissioning legislation. Direct policy hook: should AZ require districts to publish PM2.5 readings and ASHRAE 241 housing tests?",
-    "personalization_hook": "Saw your introduction of legislation with Rep. Gress to ban teacher strikes and protect classroom instruction following mass sick-outs.[1]",
+    "personalization_hook": "Saw your introduction of legislation with Rep. Gress to ban teacher strikes and protect classroom instruction following mass sick-outs.",
     "enrichment_status": "ok"
   },
   {
@@ -178,7 +178,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Vice chair of Senate Ed. Often paired comment opportunity with the chair when there's a specific policy ask on the table.",
-    "personalization_hook": "Saw your motion in the Senate Education Committee to continue the Western Interstate Commission for Higher Education for 10 years until July 1, 2036.[5]",
+    "personalization_hook": "Saw your motion in the Senate Education Committee to continue the Western Interstate Commission for Higher Education for 10 years until July 1, 2036.",
     "enrichment_status": "ok"
   },
   {
@@ -191,7 +191,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Senior member of Senate Ed. Mesa-area district overlap with MPS, the largest district in the story.",
-    "personalization_hook": "Saw your advancement of SB 1026 through the Senate Education Committee to cut red tape for alternative education programs.[1]",
+    "personalization_hook": "Saw your advancement of SB 1026 through the Senate Education Committee to cut red tape for alternative education programs.",
     "enrichment_status": "ok"
   },
   {
@@ -204,7 +204,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Minority member of Senate Ed. Phoenix Union HSD overlap. Likely friendly to disclosure policy framing.",
-    "personalization_hook": "Saw your SB1299 on bleed control kits for school districts.[7]",
+    "personalization_hook": "Saw your SB1299 on bleed control kits for school districts.",
     "enrichment_status": "ok"
   },
   {
@@ -217,7 +217,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Minority Senate Ed. West Valley districts represented in her LD; likely receptive to a children's environmental health frame.",
-    "personalization_hook": "Saw your sponsorship of **SB1327** on **Arizona online instruction cost study**[4].",
+    "personalization_hook": "Saw your sponsorship of **SB1327** on **Arizona online instruction cost study**.",
     "enrichment_status": "ok"
   },
   {
@@ -230,7 +230,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "South Phoenix LD member; cumulative pollution burden + school IAQ framing fits her district base.",
-    "personalization_hook": "Saw your work on homelessness and education solutions for Arizona families and children.[1]",
+    "personalization_hook": "Saw your work on homelessness and education solutions for Arizona families and children.",
     "enrichment_status": "ok"
   },
   {
@@ -243,7 +243,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Chairs the House Ed Committee. Any disclosure bill (require districts to publish PM2.5 + commissioning data) starts with him.",
-    "personalization_hook": "Saw your school governance reform package, including HB2387 and HB2386 on superintendent transparency, introduced January 15.[2]",
+    "personalization_hook": "Saw your school governance reform package, including HB2387 and HB2386 on su.",
     "enrichment_status": "ok"
   },
   {
@@ -256,7 +256,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Tucson Democrat on House Ed. Former educator; pediatric exposure framing reads strongly in her district.",
-    "personalization_hook": "Saw your HB2506 on school funding inflation adjustment referred to the House Education Committee.[2]",
+    "personalization_hook": "Saw your HB2506 on school funding inflation adjustment referred to the House Education Committee.",
     "enrichment_status": "ok"
   },
   {
@@ -269,7 +269,7 @@
     "segment": "az_legislator_education",
     "url": "https://www.azleg.gov/",
     "story_relevance_note": "Tempe-area House Ed Democrat; direct district overlap with Tempe Elementary and Tempe Union, both in this list.",
-    "personalization_hook": "Saw your co-sponsorship of House Bill 2281 establishing the Turquoise Alert system for missing Indigenous persons, which passed the legislature in May 2025.",
+    "personalization_hook": "Saw your co-sponsorship of House Bill 2281 establishing the Turquoise Alert system for missing Indigenous.",
     "enrichment_status": "ok"
   },
   {
@@ -282,7 +282,7 @@
     "segment": "az_pediatric_respiratory_advocacy",
     "url": "https://azasthmacoalition.org/",
     "story_relevance_note": "Pediatrician, statewide asthma policy convener. The asthma + AZ child cognition + PM2.5 story sits squarely in the coalition's mandate.",
-    "personalization_hook": "Saw your KXCI Tucson Interview on Asthma.[1]",
+    "personalization_hook": "Saw your KXCI Tucson Interview on Asthma.",
     "enrichment_status": "ok"
   },
   {
@@ -295,7 +295,7 @@
     "segment": "az_pediatric_pulmonologist",
     "url": "https://www.phoenixchildrens.org/",
     "story_relevance_note": "Division Chief of Pulmonology at the largest pediatric hospital in AZ. The clinical voice on whether PM2.5 exposure differentials inside AZ schools are a real respiratory risk to children.",
-    "personalization_hook": "Saw your \"Cardiopulmonary Exercise Testing in Children\" in Indian Pediatr on exercise-induced dyspnea and pediatric chronic conditions.[5]",
+    "personalization_hook": "Saw your \"Cardiopulmonary Exercise Testing in Children\" in Indian Pediatr on exercise-induced dyspnea and pediatric chronic conditions.",
     "enrichment_status": "ok"
   },
   {
@@ -321,7 +321,7 @@
     "segment": "az_broadcast_investigative",
     "url": "https://www.12news.com/",
     "story_relevance_note": "Beats school district accountability and ESA / public funds. PRR-driven HVAC invoice story is squarely his territory; concrete documents + named pediatric experts + statute citations make this turnkey for his I-team.",
-    "personalization_hook": "Saw your reporting on 20% unallowable ESA purchases in 12News.[1]",
+    "personalization_hook": "Saw your reporting on 20% unallowable ESA purchases in 12News.",
     "enrichment_status": "ok"
   },
   {
@@ -334,7 +334,7 @@
     "segment": "az_broadcast_investigative",
     "url": "https://www.abc15.com/",
     "story_relevance_note": "ABC15 Investigators is the standing tip-line address for the I-Team. Story checks every box: district money, child health, public records, named experts.",
-    "personalization_hook": "Saw your phone bank with Dave Biscobing and Melissa Blasius taking viewer calls to solve community problems.[1][2]",
+    "personalization_hook": "Saw your phone bank with Dave Biscobing and Melissa Blasius taking viewer calls to solve community problems.",
     "enrichment_status": "ok"
   },
   {
@@ -360,7 +360,254 @@
     "segment": "az_broadcast_investigative",
     "url": "https://www.fox10phoenix.com/",
     "story_relevance_note": "Standing newsroom tip line. Phoenix-area broadcast confirmation candidate; story has strong b-roll potential (filter housings, particle counters).",
-    "personalization_hook": "Saw your piece on Maricopa County Superior Court\u2019s Law Library Resource Centers.[3]",
+    "personalization_hook": "Saw your piece on Maricopa County Su.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Rupali Drewek, MD",
+    "email": "rdrewek@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Co-Medical Director, Sleep Medicine Program (Pulmonology)",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/find-a-doctor/rupali-drewek-md",
+    "story_relevance_note": "Sleep medicine and pulmonology overlap directly with pediatric responses to PM2.5 exposure inside school HVAC. Sleep-disordered breathing in AZ kids living in PM10 non-attainment is the second-order story.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Gerald D. Gong, MD",
+    "email": "ggong@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Pulmonology Physician",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/find-a-doctor/gerald-d-gong-md",
+    "story_relevance_note": "Pulmonology physician at the largest AZ pediatric hospital. We need clinical voices on whether PM2.5 differentials inside AZ schools translate to measurable respiratory effects.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Andres Herrera Camino, MD",
+    "email": "aherreracamino@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Pulmonology and Critical Care Physician",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/find-a-doctor/andres-herrera-camino-md",
+    "story_relevance_note": "Pediatric critical care + pulmonology. Sees the AZ kids landing in PICU for status asthmaticus. Direct hook: do school-day PM2.5 spikes correlate with admissions?",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Michelle M. Ratkiewicz, DO",
+    "email": "mratkiewicz@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Pulmonology Physician",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/find-a-doctor/michelle-m-ratkiewicz-do",
+    "story_relevance_note": "Pediatric pulmonologist on the team page that confirms AZ's largest children's hospital pulmonology faculty. Story angle: clinical perspective on whether MERV 13 housing failures matter for asthma control.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Sophia N. Williams, MD",
+    "email": "swilliams@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Pulmonology Physician",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/find-a-doctor/sophia-n-williams-md",
+    "story_relevance_note": "Pediatric pulmonologist at PCH. Clinical voice on whether housing bypass in classrooms is a real risk factor for sensitive children.",
+    "personalization_hook": "Saw your leadership as Program Director of the Pediatric Pulmonology Fellowship at Phoenix Children's Hospital.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Pamela S. Griffiths, MD",
+    "email": "pgriffiths@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Medical Director, Bronchopulmonary Dysplasia (BPD) Program",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/specialties-conditions/bronchopulmonary-dysplasia-bpd-program/meet-your-team",
+    "story_relevance_note": "BPD program director. BPD survivors are exquisitely sensitive to fine particulate exposure. Direct framing: should AZ districts measure PM2.5 because of medically vulnerable children in mainstream classrooms?",
+    "personalization_hook": "Saw your article \"Progress Through Teamwork and the National BPD Collaborative\" on advancing BPD treatment at Phoenix Children's.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Sharad P. Menon, MD, MBA",
+    "email": "smenon@phoenixchildrens.com",
+    "outlet": "Phoenix Children's Hospital",
+    "role": "Director, Pulmonary Hypertension Clinic",
+    "beat": "pediatric_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_pediatric_pulmonologist",
+    "url": "https://phoenixchildrens.org/specialties-conditions/bronchopulmonary-dysplasia-bpd-program/meet-your-team",
+    "story_relevance_note": "Pulmonary hypertension clinic director. PM2.5 chronic exposure is a known cardiovascular risk factor (Burnett PNAS 2018, Di NEJM 2017). Pediatric PH cohort is sentinel.",
+    "personalization_hook": "Saw your comments on Phoenix Children's national recognition as a pediatric pulmonary hy.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Albert Dutchover",
+    "email": "albert.dutchover@gilbertschools.net",
+    "outlet": "Gilbert Public Schools",
+    "role": "Director of Maintenance and Operations",
+    "beat": "school_facilities_hvac",
+    "city": "Gilbert",
+    "segment": "az_school_facilities_director",
+    "url": "https://www.gilbertschools.net/fs/pages/899",
+    "story_relevance_note": "Gilbert is one of AZ's largest unified districts. M&O Director owns HVAC procurement and commissioning decisions. PRR exhibit candidate for filter spec sheets and housing-leakage tests.",
+    "personalization_hook": "Saw your approval of the $34,147 McQuay Air Conditioning HVAC project estimate with the Arizona School Facilities Board.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Bonnie Betz",
+    "email": "bonnie.betz@gilbertschools.net",
+    "outlet": "Gilbert Public Schools",
+    "role": "Associate Superintendent, Business Services",
+    "beat": "school_district_finance",
+    "city": "Gilbert",
+    "segment": "az_school_facilities_director",
+    "url": "https://www.gilbertschools.net/fs/pages/899",
+    "story_relevance_note": "Business Services owns the procurement contracts and ESSER spending records on HVAC upgrades. Direct PRR audience for invoices showing what GPS bought vs. what ASHRAE 241 would require.",
+    "personalization_hook": "Saw your presentation on the proposed $136M bond request, including $65M for facility upgrades, in AZBEX.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Sen. Lela Alston",
+    "email": "lalston@azleg.gov",
+    "outlet": "Arizona State Senate",
+    "role": "Ranking Member, Senate Education Committee",
+    "beat": "az_legislature_education",
+    "city": "Phoenix",
+    "segment": "az_legislator_education",
+    "url": "https://www.azleg.gov/Senate/?legbody=S",
+    "story_relevance_note": "Democratic ranking member on Senate Ed. Long-tenured former educator. LD5 covers central Phoenix Union HSD territory. Likely friendly to a school IAQ disclosure bill.",
+    "personalization_hook": "Saw your sponsorship of SCR1037 on schools; English language learners; requirements.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Andy Linton",
+    "email": "andy.linton@maricopa.gov",
+    "outlet": "Maricopa County Air Quality Department",
+    "role": "Director",
+    "beat": "county_air_quality",
+    "city": "Phoenix",
+    "segment": "az_county_air_quality",
+    "url": "https://www.maricopa.gov/6230/Leadership-Team",
+    "story_relevance_note": "Director of the agency that runs ambient PM10 and PM2.5 monitoring across the EPA serious non-attainment zone. Direct counterpoint source: ambient readings vs. classroom indoor readings. Statewide regulatory voice.",
+    "personalization_hook": "Saw your presentation on proposed revisions to Rule 230 (General Permits) at the April 27, 2026 Board of Health meeting.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Robert Stratman",
+    "email": "robert.stratman@maricopa.gov",
+    "outlet": "Maricopa County Air Quality Department",
+    "role": "Deputy Director",
+    "beat": "county_air_quality",
+    "city": "Phoenix",
+    "segment": "az_county_air_quality",
+    "url": "https://www.maricopa.gov/6230/Leadership-Team",
+    "story_relevance_note": "Deputy Director, Maricopa Air Quality. Operational lead on monitoring and compliance in the PM10 non-attainment zone. Schools sit downwind of multiple monitoring stations.",
+    "personalization_hook": "Saw your proposal to revise Rule 230 for state compliance at the Maricopa County Board of Health meeting.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Sylvie Donaldson",
+    "email": "sylvie.donaldson@maricopa.gov",
+    "outlet": "Maricopa County Air Quality Department",
+    "role": "Administrator",
+    "beat": "county_air_quality",
+    "city": "Phoenix",
+    "segment": "az_county_air_quality",
+    "url": "https://www.maricopa.gov/6230/Leadership-Team",
+    "story_relevance_note": "Department administrator. Single point of contact on records, technical reports, and monitoring data referenced in the investigation.",
+    "personalization_hook": "Saw your work on the Maricopa County Air Quality Department's Rule 230 revision proposal to ensure state compliance.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Jean Andino, PhD",
+    "email": "jean.andino@asu.edu",
+    "outlet": "ASU Ira A. Fulton Schools of Engineering",
+    "role": "Professor (Indoor Air Quality Research)",
+    "beat": "indoor_air_quality_research",
+    "city": "Tempe",
+    "segment": "az_iaq_research",
+    "url": "https://search.asu.edu/profile/991265",
+    "story_relevance_note": "ASU professor with an active EPA-funded indoor air quality research program covering classrooms and homes. Direct technical authority: she can speak to whether MERV 13 media without housing seal delivers any measurable PM2.5 reduction inside schools.",
+    "personalization_hook": "Saw your $1.9M EPA grant for wildfire smoke preparedness and indoor air pollutant control in Arizona classrooms and homes.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Pierre Herckes, PhD",
+    "email": "pierre.herckes@asu.edu",
+    "outlet": "ASU School of Molecular Sciences",
+    "role": "Professor (Atmospheric and Particulate Chemistry)",
+    "beat": "indoor_air_quality_research",
+    "city": "Tempe",
+    "segment": "az_iaq_research",
+    "url": "https://search.asu.edu/profile/787061",
+    "story_relevance_note": "Aerosol chemistry researcher at ASU; ABOR-funded work on local AZ air pollution sources. Source on what's actually in PM2.5 over Phoenix schools and why media-only filtration misses it.",
+    "personalization_hook": "Saw your ABOR-funded research on measuring harmful airborne species like ozone and dust to identify local Arizona air pollution.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Matt Fraser, PhD",
+    "email": "matt.fraser@asu.edu",
+    "outlet": "ASU School of Sustainable Engineering and the Built Environment",
+    "role": "Professor",
+    "beat": "indoor_air_quality_research",
+    "city": "Tempe",
+    "segment": "az_iaq_research",
+    "url": "https://search.asu.edu/profile/41091",
+    "story_relevance_note": "Built environment researcher with AZ air pollution funding history. Direct authority on whether building HVAC systems as commissioned in AZ districts actually deliver design-spec performance.",
+    "personalization_hook": "Saw your 2022 Arizona Board of Regents-funded research on local air pollution.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Maria Polletta",
+    "email": "mpolletta@azcir.org",
+    "outlet": "Arizona Center for Investigative Reporting (AZCIR)",
+    "role": "Investigative Reporter (Education Beat)",
+    "beat": "az_education_investigative",
+    "city": "Phoenix",
+    "segment": "az_education_reporter",
+    "url": "https://azcir.org/staff/",
+    "story_relevance_note": "AZCIR's education investigative reporter; previously covered state government for Arizona Republic. PRR-driven school facilities accountability with named clinical experts is exactly her lane.",
+    "personalization_hook": "Saw your recent work as managing editor overseeing AZCIR's education beat investigations.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Natalya Azadeh, MD, MS",
+    "email": "azadeh.natalya@mayo.edu",
+    "outlet": "Mayo Clinic Arizona",
+    "role": "Pulmonologist, Critical Care Specialist",
+    "beat": "adult_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_adult_pulmonologist",
+    "url": "https://www.mayoclinic.org/biographies/azadeh-natalya-m-d/bio-20530000",
+    "story_relevance_note": "Mayo AZ pulmonary and critical care faculty. Adult ICU voice on PM2.5 cardiopulmonary risk (Di 2017, Burnett 2018). Mayo's Phoenix campus serves the same air shed.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Shehabaldin Alqalyoobi, MD, MS",
+    "email": "alqalyoobi.shehabaldin@mayo.edu",
+    "outlet": "Mayo Clinic Arizona",
+    "role": "Pulmonologist, Critical Care Specialist",
+    "beat": "adult_pulmonology",
+    "city": "Phoenix",
+    "segment": "az_adult_pulmonologist",
+    "url": "https://www.mayoclinic.org/departments-centers/pulmonary-medicine/sections/doctors/drc-20397851",
+    "story_relevance_note": "Mayo AZ pulmonologist. Story angle: what PM2.5 does to existing pulmonary patients living in the same air shed as the kids. Clinical-policy bridge.",
+    "personalization_hook": "Saw your work on the association of PM2.5 with sleep-disordered breathing in a population-based study.",
     "enrichment_status": "ok"
   }
 ]
