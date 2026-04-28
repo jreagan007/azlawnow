@@ -278,6 +278,23 @@ function checkDescription(data: Record<string, any>): CheckResult {
   return { severity: 'pass', message: `Description: ${len} chars` };
 }
 
+function checkTitle(data: Record<string, any>): CheckResult {
+  if (!data.title) {
+    return { severity: 'error', message: 'Missing title' };
+  }
+  const title = String(data.title).trim();
+  const len = title.length;
+  // Strip leading number / colon, trailing punctuation for word count
+  const wordCount = title.replace(/[.,;:!?]/g, '').split(/\s+/).filter(Boolean).length;
+  if (len > 130) {
+    return { severity: 'error', message: `Title too long: ${len} chars (max 130). Headline rule is action-focused, under 14 words.` };
+  }
+  if (wordCount > 18) {
+    return { severity: 'warn', message: `Title is ${wordCount} words. Headlines lean tighter (target 8 to 14 words).` };
+  }
+  return { severity: 'pass', message: `Title: ${len} chars, ${wordCount} words` };
+}
+
 // AI phrase tells.
 function checkAiPhrases(body: string): CheckResult {
   const text = stripMdxComponents(body);
@@ -510,6 +527,7 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkAuthor(data),
     checkPublishedAt(data),
     checkTags(data, collection),
+    checkTitle(data),
     checkDescription(data),
     checkWordCount(body, collection.minWords),
     checkEmDashes(body),
