@@ -125,6 +125,13 @@ def build_hook_prompt(target, story_essence):
 
 
 STORY_ESSENCE = {
+    "arizona-mayes-ice-surprise-detention-lawsuit": (
+        "Arizona AG Mayes filed State of Arizona v. Mullin on April 24, 2026, suing DHS and ICE "
+        "to block a 1,500-bed detention facility in Surprise. Across the street: Rinchem stores "
+        "chlorine, hydrofluoric acid, and fluorine. Rinchem RMP filed Jan 1, 2026, three weeks "
+        "before the federal warehouse purchase. NEPA + INA + Clean Air Act claims. Maryland TRO "
+        "won March 11. Arizona is the fourth state on this fact pattern."
+    ),
     "tempe-asu-pavement-180-day-claim-clock": (
         "Tempe pavement near ASU is failing per the city's own grant filings. "
         "Arizona's 180-day Notice of Claim clock under ARS 12-821.01 hits injured riders. "

@@ -294,7 +294,13 @@ def main():
             print(f"  ⛔ no hook: {email}")
             continue
 
-        subject, html = build_email(t, article)
+        try:
+            subject, html = build_email(t, article)
+        except RuntimeError as e:
+            print(f"  ⛔ voice: {email} {e}")
+            counts.setdefault("voice_fail", 0)
+            counts["voice_fail"] += 1
+            continue
         if dry_run:
             print(f"  📝 DRY: {email} | {subject[:60]}")
             counts["send_ok"] += 1

@@ -1,0 +1,47 @@
+[
+  {
+    "name": "ABC15 Operation Safe Roads tipline",
+    "email": "roads@abc15.com",
+    "outlet": "ABC15 Arizona / KNXV",
+    "role": "Operation Safe Roads investigations desk",
+    "beat": "AZ traffic safety, dangerous intersections, road infrastructure",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "segment": "az_broadcast_safe_roads",
+    "story_target": "buckeye-durango-yuma-roundabout-rejected",
+    "evidence_url": "https://www.abc15.com/operation-safe-roads",
+    "story_relevance_note": "ABC15's dedicated traffic-safety investigations inbox, masthead-published. Buckeye Durango/Yuma intersection rejection of FHWA proven safety countermeasure is the exact dangerous-intersection story this desk covers daily.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "MAG (Maricopa Association of Governments)",
+    "email": "mag@azmag.gov",
+    "outlet": "Maricopa Association of Governments (MAG)",
+    "role": "General inquiries inbox / Communications routing",
+    "beat": "regional transportation planning, MPO, Prop 479 implementation",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "segment": "az_transportation_planning",
+    "story_target": "buckeye-durango-yuma-roundabout-rejected",
+    "evidence_url": "https://www.azmag.gov/About-Us/Contact-Us",
+    "story_relevance_note": "MAG is the federally-designated MPO for the Maricopa region including Buckeye. Public Contact-Us page lists exec director Audra Koester Thomas, transportation deputy directors Tom Remes / Patrick Stone, communications director Laurie King. Buckeye's roundabout-rejection vote affects MAG-funded arterial planning.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Allie Seligman",
+    "email": "adenny@asu.edu",
+    "outlet": "Cronkite News / ASU PBS",
+    "role": "Reporter, Phoenix News Bureau",
+    "beat": "Phoenix-metro public affairs reporting",
+    "city": "Phoenix",
+    "state": "Arizona",
+    "segment": "az_journalist",
+    "story_target": "buckeye-durango-yuma-roundabout-rejected",
+    "evidence_url": "https://cronkitenews.azpbs.org/about/",
+    "story_relevance_note": "Cronkite News Phoenix bureau reporter (mailto verified on staff page). West Valley council overriding ADOT-aligned engineering recommendation is reportable Cronkite News public-policy material.",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  }
+]
