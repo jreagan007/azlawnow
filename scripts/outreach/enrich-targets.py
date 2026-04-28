@@ -135,11 +135,55 @@ STORY_ESSENCE = {
         "creates structural pressure to keep students past the aid waterline. Corinthian and ITT "
         "discharges set the national precedent."
     ),
+    "arizona-325-educator-discipline-2024": (
+        "The Arizona State Board of Education adjudicated 325 educator disciplinary actions in 2024, "
+        "a 491% increase from 2012. Sexual misconduct is the largest cumulative category at 36% of "
+        "1,876 cases since 2012. Maricopa County drove 55.6% of cases Jan 2023 to Dec 2024. Voluntary "
+        "surrender is the dominant outcome at 39%. The piece walks the ARS 12-514 12-year SOL and "
+        "ARS 12-821.01 180-day Notice of Claim clocks, plus six theories of district recovery."
+    ),
     "arizona-schools-merv-13-filter-bypass": (
         "Arizona school districts bought MERV 13 filters and called the air hospital-grade. "
         "ASHRAE 52.2 tests the filter media in a sealed apparatus, not the housing seal in the field. "
         "ASHRAE 241-2023 says air bypassing an unsealed filter performs as a lower MERV. "
         "EPA tightened PM2.5 NAAQS to 9 micrograms in 2024. Maricopa is in serious PM10 non-attainment."
+    ),
+    "buckeye-durango-yuma-roundabout-rejected": (
+        "Buckeye's own engineering report projected a roundabout would cut serious-injury crashes 41.7% "
+        "at Durango and Yuma. The City picked a signalized design that cuts them 15.4%. The construction "
+        "savings was $1.4 million. FHWA Proven Safety Countermeasures show 46% fatal-and-serious-injury "
+        "reductions when signalized intersections convert to roundabouts."
+    ),
+    "grand-court-mesa-elder-abuse-hb2228": (
+        "A Mesa Grand Court Senior Living staff member was arrested April 21, 2026 for alleged sexual "
+        "abuse of a wheelchair-bound dementia patient after the family caught it on video. HB2228 is "
+        "advancing in the Arizona Senate to strengthen the state's elder abuse central registry and "
+        "mandatory reporting. National data: 60% of nursing-home sexual-abuse victims have dementia, "
+        "80% of perpetrators are caregivers, only 30% of incidents reach law enforcement."
+    ),
+    "arizona-school-restraint-data": (
+        "Arizona school districts restrained students 4,200+ times in a single school year. Disability "
+        "Rights Arizona's data shows the practice concentrates on students with IEPs and 504 plans. "
+        "ARS 15-105 governs restraint and seclusion in AZ schools. The federal IDEA private right of "
+        "action applies. The discipline data is publicly reported but rarely covered."
+    ),
+    "arizona-daycare-violations": (
+        "Maricopa County daycares racked up the most AZDHS Bureau of Child Care Licensing violations "
+        "in the state. The piece names the worst-violator facilities by count of substantiated "
+        "complaints and tracks repeat offenders. Parents have public access to the AZDHS facility "
+        "search but most don't know it exists."
+    ),
+    "arizona-school-bus-seat-belts": (
+        "Arizona school districts continue to operate bus fleets without lap-and-shoulder seat belts "
+        "even though NHTSA recommends them. ADE Pupil Transportation oversight is thin. The piece "
+        "covers the federal-to-state standard gap, the per-district fleet ages, and what families can "
+        "ask their school board to fix."
+    ),
+    "arizona-pedestrian-deaths-road-design": (
+        "Arizona's pedestrian fatality rate runs nearly twice the national average. The piece maps "
+        "the worst corridors against ADOT and MAG road-design decisions. Vision Zero adoption across "
+        "AZ municipalities is uneven. The federal FHWA Proven Safety Countermeasures menu shows what "
+        "redesigns work, and which AZ cities have or haven't picked them up."
     ),
 }
 
