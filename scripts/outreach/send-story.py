@@ -91,13 +91,25 @@ def gate_locality(target):
 
 
 def gate_beat_content(target, article):
-    """Reject if article keywords don't appear in target's beat or relevance note."""
-    beat = (target.get("beat") or "").lower()
-    note = (target.get("story_relevance_note") or "").lower()
-    article_text = (article.get("title", "") + " " + article.get("description", "") + " " + article.get("beats", "")).lower()
-    article_keywords = [k for k in article.get("beats", "").split(",") if k.strip()]
+    """Reject if article keywords don't appear in target's beat / category / segment /
+    story_relevance_note / story_target / outlet / role / hook. Normalizes underscores
+    and dashes so 'school_district' matches 'school-district-az'."""
+    def norm(s):
+        return (s or "").lower().replace("-", "_")
+    fields = [
+        target.get("beat"),
+        target.get("category"),
+        target.get("segment"),
+        target.get("story_relevance_note"),
+        target.get("story_target"),
+        target.get("outlet"),
+        target.get("role"),
+        target.get("personalization_hook"),
+    ]
+    haystack = " ".join(norm(f) for f in fields if f)
+    article_keywords = [norm(k.strip()) for k in (article.get("beats") or "").split(",") if k.strip()]
     for kw in article_keywords:
-        if kw.strip() in beat or kw.strip() in note:
+        if kw and kw in haystack:
             return True
     return False
 

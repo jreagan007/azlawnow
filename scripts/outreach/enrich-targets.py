@@ -55,13 +55,15 @@ import re
 
 CITATION_RE = re.compile(r"\s*\[\d+\](?:\[\d+\])*")
 SOURCE_TRAILER_RE = re.compile(r"\s*\(?(?:source|sources|reference|via|per)[^)]*\)?\s*$", re.I)
+EM_DASH_RE = re.compile(r"\s*[—–]\s*")
 
 
 def clean_hook(text):
-    """Strip Perplexity citation markers + verbose trailers from the hook."""
+    """Strip Perplexity citation markers, em-dashes, verbose trailers from the hook."""
     if not text:
         return ""
     text = CITATION_RE.sub("", text)
+    text = EM_DASH_RE.sub(", ", text)
     text = SOURCE_TRAILER_RE.sub("", text)
     text = text.strip().strip('"').strip("'")
     if text.endswith(",") or text.endswith(":") or text.endswith(";"):
