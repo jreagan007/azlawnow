@@ -31,6 +31,7 @@
 [16] WAIT FOR SHIP     inbox check                     -> ship / hold / drop X@
 [17] SEND              send-story.py                   -> Resend, BCC, per-send commit
 [18] ENGAGEMENT        engagement-report.py --days 1   -> clicks + auto-DNC bounces
+[18b] WARM FOLLOWUP    warm-followup.py --days 7       -> Slack click-report + Phase 2 preview
 [19] LINKEDIN OUTBOX   linkedin-outbox.py              -> daily worklist
 [20] X FOLLOWS         x-follow-targets.py             -> recommended-follow list
 ```
@@ -229,6 +230,33 @@ python3 scripts/outreach/engagement-report.py --days 1
 Iterates send_log.resend_id (per memory: never list endpoint, last_event is one-state-per-email, roll up clicks > opens > delivered). Auto-DNC anything bounced. Surface clickers as warm leads.
 
 Per memory `feedback_resend-tracking-policy.md`: opens are intentionally OFF (Apple MPP distortion). Clicks are the signal.
+
+### [18b] Warm-followup, warm-followup.py
+
+```
+python3 scripts/outreach/warm-followup.py --days 7
+```
+
+Scans send_log + Resend last_event for confirmed clicks in the window. Filters
+out scanner-pattern intake addresses (info@, press@, newsroom@, tips@, etc),
+DNC, and recipients who already received a Phase 2 follow-up.
+
+**First action:** posts a `warm-lead board` to the Slack channel listing each
+clicker (name, outlet, the article they clicked) so the team has the report
+before any send.
+
+**Second action:** drafts a per-recipient Phase 2 email. Subject is `Re: <original>`
+so it threads naturally with the first email. Body opens with peer acknowledgment
+("Saw you took a look at the X piece earlier this week"), offers a concrete
+next-step resource per article (per-county breakdown, public records request
+templates, primary-source pulls), and signs off as Brendan.
+
+**Third action:** renders the full preview to jared@taqtics.com. Reply `ship` /
+`ship N` / `hold`. Add `--send-live` flag to fire after sign-off.
+
+Per-article offers live in the `PHASE2_OFFER` dict in the script, keyed by
+content_assets slug. New investigations should add their offer to the dict at
+ship time.
 
 ### [19] LinkedIn outbox, linkedin-outbox.py
 
