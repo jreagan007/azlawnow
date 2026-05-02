@@ -2398,5 +2398,599 @@
     "note": "Zack Kopplin, Government Accountability Project",
     "source": "curated",
     "verified_at": "2026-05-02T13:21:49.279744"
+  },
+  "curated:propublicail|propublica illinois": {
+    "status": "candidate",
+    "handle": "ProPublicaIL",
+    "user_id": "806633757134454784",
+    "display_name": "ProPublica Illinois",
+    "note": "ProPublica Illinois",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:28.584523"
+  },
+  "curated:revealnews|reveal from the center for investigative reporting": {
+    "status": "candidate",
+    "handle": "RevealNews",
+    "user_id": "539379353",
+    "display_name": "Reveal News",
+    "note": "Reveal from The Center for Investigative Reporting",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:30.841943"
+  },
+  "curated:thenation|the nation": {
+    "status": "candidate",
+    "handle": "thenation",
+    "user_id": "1947301",
+    "display_name": "The Nation",
+    "note": "The Nation",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:34.016792"
+  },
+  "curated:theintercept|the intercept": {
+    "status": "candidate",
+    "handle": "theintercept",
+    "user_id": "2329066872",
+    "display_name": "The Intercept",
+    "note": "The Intercept",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:34.958261"
+  },
+  "curated:groundtruth|groundtruth project": {
+    "status": "candidate",
+    "handle": "GroundTruth",
+    "user_id": "2010737201697669120",
+    "display_name": "Report Local",
+    "note": "GroundTruth Project",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:35.905869"
+  },
+  "curated:pen_america|pen america press freedom": {
+    "status": "candidate",
+    "handle": "pen_america",
+    "user_id": "829703184033525760",
+    "display_name": "America Gonzales Pe\u00f1",
+    "note": "PEN America press freedom",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:36.834254"
+  },
+  "curated:wsj|wall street journal": {
+    "status": "candidate",
+    "handle": "WSJ",
+    "user_id": "3108351",
+    "display_name": "The Wall Street Journal",
+    "note": "Wall Street Journal",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:38.723738"
+  },
+  "curated:axios|axios": {
+    "status": "candidate",
+    "handle": "axios",
+    "user_id": "800707492346925056",
+    "display_name": "Axios",
+    "note": "Axios",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:40.903366"
+  },
+  "curated:breakingnews|breaking news": {
+    "status": "candidate",
+    "handle": "BreakingNews",
+    "user_id": "6017542",
+    "display_name": "Breaking News",
+    "note": "Breaking News",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:41.896009"
+  },
+  "curated:bbcnews|bbc news (uk)": {
+    "status": "candidate",
+    "handle": "BBCNews",
+    "user_id": "612473",
+    "display_name": "BBC News (UK)",
+    "note": "BBC News (UK)",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:43.033697"
+  },
+  "curated:guardian|the guardian": {
+    "status": "candidate",
+    "handle": "guardian",
+    "user_id": "87818409",
+    "display_name": "The Guardian",
+    "note": "The Guardian",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:44.093122"
+  },
+  "curated:politico|politico": {
+    "status": "candidate",
+    "handle": "politico",
+    "user_id": "9300262",
+    "display_name": "POLITICO",
+    "note": "Politico",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:45.071224"
+  },
+  "curated:politicopro|politico pro": {
+    "status": "candidate",
+    "handle": "POLITICOPro",
+    "user_id": "207660339",
+    "display_name": "POLITICO Pro",
+    "note": "Politico Pro",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:47.147739"
+  },
+  "curated:ydanis|yamiche alcindor (nbc, accountability)": {
+    "status": "candidate",
+    "handle": "ydanis",
+    "user_id": "66858922",
+    "display_name": "Ydanis Rodriguez",
+    "note": "Yamiche Alcindor (NBC, accountability)",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:48.280736"
+  },
+  "curated:katebennett_dc|kate bennett (politics)": {
+    "status": "candidate",
+    "handle": "KateBennett_DC",
+    "user_id": "55369810",
+    "display_name": "Kate Bennett",
+    "note": "Kate Bennett (politics)",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:49.370923"
+  },
+  "curated:kasie|kasie hunt (cnn politics)": {
+    "status": "candidate",
+    "handle": "kasie",
+    "user_id": "12354832",
+    "display_name": "Kasie Hunt",
+    "note": "Kasie Hunt (CNN politics)",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:50.335368"
+  },
+  "curated:michaelsteele|michael steele political analyst": {
+    "status": "candidate",
+    "handle": "MichaelSteele",
+    "user_id": "50317463",
+    "display_name": "Michael Steele",
+    "note": "Michael Steele political analyst",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:51.592448"
+  },
+  "curated:agrobbonta|california ag rob bonta": {
+    "status": "candidate",
+    "handle": "AGRobBonta",
+    "user_id": "1004065528871247872",
+    "display_name": "Rob Bonta",
+    "note": "California AG Rob Bonta",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:52.638697"
+  },
+  "curated:newyorkstateag|ny ag letitia james (official)": {
+    "status": "candidate",
+    "handle": "NewYorkStateAG",
+    "user_id": "132496568",
+    "display_name": "NY AG James",
+    "note": "NY AG Letitia James (official)",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:53.636951"
+  },
+  "curated:tishjames|ny ag personal": {
+    "status": "candidate",
+    "handle": "TishJames",
+    "user_id": "28502793",
+    "display_name": "Tish James",
+    "note": "NY AG personal",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:54.642877"
+  },
+  "curated:agellison|minnesota ag keith ellison": {
+    "status": "candidate",
+    "handle": "AGEllison",
+    "user_id": "1095089718264512514",
+    "display_name": "Attorney General Keith Ellison",
+    "note": "Minnesota AG Keith Ellison",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:56.560040"
+  },
+  "curated:dananessel|michigan ag dana nessel": {
+    "status": "candidate",
+    "handle": "dananessel",
+    "user_id": "2961639518",
+    "display_name": "Dana Nessel",
+    "note": "Michigan AG Dana Nessel",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:57.635857"
+  },
+  "curated:mattplatkin|nj ag matt platkin": {
+    "status": "candidate",
+    "handle": "mattplatkin",
+    "user_id": "3238782819",
+    "display_name": "Matt Platkin",
+    "note": "NJ AG Matt Platkin",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:50:58.763683"
+  },
+  "curated:philipweiser|colorado ag phil weiser": {
+    "status": "candidate",
+    "handle": "PhilipWeiser",
+    "user_id": "249137878",
+    "display_name": "Philip Weiser",
+    "note": "Colorado AG Phil Weiser",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:05.162536"
+  },
+  "curated:thejusticedept|u.s. doj": {
+    "status": "candidate",
+    "handle": "TheJusticeDept",
+    "user_id": "73181712",
+    "display_name": "U.S. Department of Justice",
+    "note": "U.S. DOJ",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:08.657100"
+  },
+  "curated:usdol|u.s. department of labor": {
+    "status": "candidate",
+    "handle": "USDOL",
+    "user_id": "20179628",
+    "display_name": "U.S. Department of Labor",
+    "note": "U.S. Department of Labor",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:09.715536"
+  },
+  "curated:osha_dol|osha": {
+    "status": "candidate",
+    "handle": "OSHA_DOL",
+    "user_id": "771076568114425856",
+    "display_name": "OSHA_DOL",
+    "note": "OSHA",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:10.823957"
+  },
+  "curated:usdot|u.s. department of transportation": {
+    "status": "candidate",
+    "handle": "USDOT",
+    "user_id": "393562221",
+    "display_name": "U.S. Department of Transportation",
+    "note": "U.S. Department of Transportation",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:12.071781"
+  },
+  "curated:usdotfhwa|federal highway administration": {
+    "status": "candidate",
+    "handle": "USDOTFHWA",
+    "user_id": "512174178",
+    "display_name": "Federal Highway Admn",
+    "note": "Federal Highway Administration",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:13.098917"
+  },
+  "curated:fmcsa|federal motor carrier safety admin": {
+    "status": "candidate",
+    "handle": "FMCSA",
+    "user_id": "3418461995",
+    "display_name": "FMCSA",
+    "note": "Federal Motor Carrier Safety Admin",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:14.162488"
+  },
+  "curated:cmsgov|cms": {
+    "status": "candidate",
+    "handle": "CMSGov",
+    "user_id": "70837868",
+    "display_name": "CMSGov",
+    "note": "CMS",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:15.405624"
+  },
+  "curated:usepa|epa": {
+    "status": "candidate",
+    "handle": "USEPA",
+    "user_id": "299406208",
+    "display_name": "Duke Chism",
+    "note": "EPA",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:16.422478"
+  },
+  "curated:usda|usda": {
+    "status": "candidate",
+    "handle": "USDA",
+    "user_id": "61853389",
+    "display_name": "Dept. of Agriculture",
+    "note": "USDA",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:17.488487"
+  },
+  "curated:fcc|fcc": {
+    "status": "candidate",
+    "handle": "FCC",
+    "user_id": "66369206",
+    "display_name": "FCC",
+    "note": "FCC",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:19.699123"
+  },
+  "curated:ftc|federal trade commission": {
+    "status": "candidate",
+    "handle": "FTC",
+    "user_id": "187993109",
+    "display_name": "FTC",
+    "note": "Federal Trade Commission",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:20.742540"
+  },
+  "curated:hudgov|hud": {
+    "status": "candidate",
+    "handle": "HUDgov",
+    "user_id": "19948202",
+    "display_name": "Department of Housing and Urban Development",
+    "note": "HUD",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:23.398804"
+  },
+  "curated:usattorneys|executive office for u.s. attorneys": {
+    "status": "candidate",
+    "handle": "USAttorneys",
+    "user_id": "3438084023",
+    "display_name": "U.S. Attorneys",
+    "note": "Executive Office for U.S. Attorneys",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:24.358317"
+  },
+  "curated:fdarecalls|fda recalls": {
+    "status": "candidate",
+    "handle": "FDArecalls",
+    "user_id": "18058609",
+    "display_name": "U.S. FDA Recalls",
+    "note": "FDA recalls",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:25.337578"
+  },
+  "curated:fda_drug_info|fda drug info": {
+    "status": "candidate",
+    "handle": "FDA_Drug_Info",
+    "user_id": "53039176",
+    "display_name": "FDA Drug Information",
+    "note": "FDA drug info",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:26.335095"
+  },
+  "curated:fbilosangeles|fbi los angeles": {
+    "status": "candidate",
+    "handle": "FBILosAngeles",
+    "user_id": "349137313",
+    "display_name": "FBI Los Angeles",
+    "note": "FBI Los Angeles",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:27.317619"
+  },
+  "curated:fbiwfo|fbi washington field office": {
+    "status": "candidate",
+    "handle": "FBIWFO",
+    "user_id": "343452680",
+    "display_name": "FBI Washington Field",
+    "note": "FBI Washington Field Office",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:29.270942"
+  },
+  "curated:naacp|naacp": {
+    "status": "candidate",
+    "handle": "NAACP",
+    "user_id": "44988185",
+    "display_name": "NAACP",
+    "note": "NAACP",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:30.210088"
+  },
+  "curated:aclu|aclu": {
+    "status": "candidate",
+    "handle": "ACLU",
+    "user_id": "13393052",
+    "display_name": "ACLU",
+    "note": "ACLU",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:31.476929"
+  },
+  "curated:splcenter|southern poverty law center": {
+    "status": "candidate",
+    "handle": "splcenter",
+    "user_id": "65698096",
+    "display_name": "Southern Poverty Law Center",
+    "note": "Southern Poverty Law Center",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:33.938650"
+  },
+  "curated:commoncause|common cause": {
+    "status": "candidate",
+    "handle": "CommonCause",
+    "user_id": "14133964",
+    "display_name": "Common Cause",
+    "note": "Common Cause",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:34.898367"
+  },
+  "curated:lwv|league of women voters": {
+    "status": "candidate",
+    "handle": "LWV",
+    "user_id": "185684821",
+    "display_name": "League of Women Voters of the US",
+    "note": "League of Women Voters",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:35.987168"
+  },
+  "curated:brennancenter|brennan center for justice": {
+    "status": "candidate",
+    "handle": "BrennanCenter",
+    "user_id": "20707070",
+    "display_name": "Brennan Center",
+    "note": "Brennan Center for Justice",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:36.993063"
+  },
+  "curated:democracydocket|democracy docket": {
+    "status": "candidate",
+    "handle": "DemocracyDocket",
+    "user_id": "841489249157468161",
+    "display_name": "Democracy Docket",
+    "note": "Democracy Docket",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:38.048587"
+  },
+  "curated:nidanews|nida": {
+    "status": "candidate",
+    "handle": "NIDAnews",
+    "user_id": "102234123",
+    "display_name": "NIDAnews",
+    "note": "NIDA",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:39.005067"
+  },
+  "curated:nacotweets|national association of counties": {
+    "status": "candidate",
+    "handle": "NACoTweets",
+    "user_id": "1993334611250720768",
+    "display_name": "NACo Digital Team",
+    "note": "National Association of Counties",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:41.081257"
+  },
+  "curated:edweek|education week": {
+    "status": "candidate",
+    "handle": "EDweek",
+    "user_id": "1118820881978011648",
+    "display_name": "_.EmanDweek._",
+    "note": "Education Week",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:42.981635"
+  },
+  "curated:the74|the 74 education news": {
+    "status": "candidate",
+    "handle": "The74",
+    "user_id": "3301029022",
+    "display_name": "The 74",
+    "note": "The 74 education news",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:44.272932"
+  },
+  "curated:edsource|edsource (ca but national reach)": {
+    "status": "candidate",
+    "handle": "EdSource",
+    "user_id": "26752156",
+    "display_name": "EdSource",
+    "note": "EdSource (CA but national reach)",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:46.548527"
+  },
+  "curated:aera_edresearch|american educational research association": {
+    "status": "candidate",
+    "handle": "AERA_EdResearch",
+    "user_id": "76682760",
+    "display_name": "AERA",
+    "note": "American Educational Research Association",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:47.846526"
+  },
+  "curated:aapd|american association of people with disabilities": {
+    "status": "candidate",
+    "handle": "AAPD",
+    "user_id": "16026940",
+    "display_name": "AAPD",
+    "note": "American Association of People with Disabilities",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:48.922889"
+  },
+  "curated:ncldorg|national center for learning disabilities": {
+    "status": "candidate",
+    "handle": "ncldorg",
+    "user_id": "3038574548",
+    "display_name": "NCLD",
+    "note": "National Center for Learning Disabilities",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:49.991993"
+  },
+  "curated:ndrn|national disability rights network": {
+    "status": "candidate",
+    "handle": "ndrn",
+    "user_id": "57901416",
+    "display_name": "Nuno",
+    "note": "National Disability Rights Network",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:51.251651"
+  },
+  "curated:aarp|aarp national": {
+    "status": "candidate",
+    "handle": "AARP",
+    "user_id": "80628196",
+    "display_name": "AARP",
+    "note": "AARP national",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:52.211737"
+  },
+  "curated:leadingage|leadingage": {
+    "status": "candidate",
+    "handle": "LeadingAge",
+    "user_id": "26623392",
+    "display_name": "LeadingAge",
+    "note": "LeadingAge",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:55.588885"
+  },
+  "curated:visionzeronet|vision zero network alt": {
+    "status": "candidate",
+    "handle": "Visionzeronet",
+    "user_id": "3133020584",
+    "display_name": "Vision Zero Network",
+    "note": "Vision Zero Network alt",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:56.589491"
+  },
+  "curated:smartgrowthusa|smart growth america": {
+    "status": "candidate",
+    "handle": "SmartGrowthUSA",
+    "user_id": "52818466",
+    "display_name": "Smart Growth America",
+    "note": "Smart Growth America",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:51:57.601018"
+  },
+  "curated:nacto|national association of city transportation officials": {
+    "status": "candidate",
+    "handle": "NACTO",
+    "user_id": "366690534",
+    "display_name": "NACTO",
+    "note": "National Association of City Transportation Officials",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:52:01.183012"
+  },
+  "curated:transalt|transportation alternatives ny": {
+    "status": "candidate",
+    "handle": "TransAlt",
+    "user_id": "14928734",
+    "display_name": "Transportation Alternatives",
+    "note": "Transportation Alternatives NY",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:52:02.278797"
+  },
+  "curated:bikeleague|league of american bicyclists": {
+    "status": "candidate",
+    "handle": "BikeLeague",
+    "user_id": "25085215",
+    "display_name": "League of American Bicyclists",
+    "note": "League of American Bicyclists",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:52:03.227285"
+  },
+  "curated:aashtospeaks|american association of state highway and transportation officials": {
+    "status": "candidate",
+    "handle": "aashtospeaks",
+    "user_id": "117118928",
+    "display_name": "AASHTO",
+    "note": "American Association of State Highway and Transportation Officials",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:52:04.336584"
+  },
+  "curated:ailanational|american immigration lawyers association": {
+    "status": "candidate",
+    "handle": "AILANational",
+    "user_id": "18802261",
+    "display_name": "AILA",
+    "note": "American Immigration Lawyers Association",
+    "source": "curated",
+    "verified_at": "2026-05-02T14:52:05.528182"
   }
 }

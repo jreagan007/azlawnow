@@ -413,6 +413,192 @@ SEED = [
     # Charter accountability bonus
     ("CarolBurris1", "Carol Burris, Network for Public Education"),
     ("ZackKopplin", "Zack Kopplin, Government Accountability Project"),
+
+    # ========================================================
+    # EXPANSION SEED 2026-05-02 #2: Top-tier amplifier accounts
+    # National investigative, federal agencies, AGs across states,
+    # high-follower accountability journalists, beat-specific orgs.
+    # These rarely follow back but they're SIGNALS to the algorithm
+    # and SOURCES we can quote-tweet / reply to.
+    # ========================================================
+
+    # National investigative powerhouses
+    ("propublica", "ProPublica"),
+    ("ProPublicaIL", "ProPublica Illinois"),
+    ("ProPublicaTX", "ProPublica Texas"),
+    ("RevealNews", "Reveal from The Center for Investigative Reporting"),
+    ("TheMarshallProject", "The Marshall Project criminal justice"),
+    ("ICIJorg_News", "ICIJ international consortium"),
+    ("KFFHealthNews", "KFF Health News (formerly KHN)"),
+    ("MotherJones", "Mother Jones"),
+    ("TheNation", "The Nation"),
+    ("theintercept", "The Intercept"),
+    ("InsideClimate", "Inside Climate News"),
+    ("groundtruth", "GroundTruth Project"),
+    ("PEN_America", "PEN America press freedom"),
+    ("CIRonline", "Center for Investigative Reporting"),
+
+    # Major dailies + national wires
+    ("nytimes", "NYT"),
+    ("washingtonpost", "Washington Post"),
+    ("WSJ", "Wall Street Journal"),
+    ("AP", "Associated Press"),
+    ("Reuters", "Reuters"),
+    ("AxiosLocal", "Axios Local network"),
+    ("axios", "Axios"),
+    ("BreakingNews", "Breaking News"),
+    ("BBCNews", "BBC News (UK)"),
+    ("guardian", "The Guardian"),
+
+    # Politico
+    ("politico", "Politico"),
+    ("PoliticoStates", "Politico States"),
+    ("PoliticoPro", "Politico Pro"),
+
+    # National political journalists with state-level coverage
+    ("ydanis", "Yamiche Alcindor (NBC, accountability)"),
+    ("KateBennett_DC", "Kate Bennett (politics)"),
+    ("kasie", "Kasie Hunt (CNN politics)"),
+    ("MichaelSteele", "Michael Steele political analyst"),
+
+    # State AGs nationwide (cross-pollination, follow-back odds higher than journos)
+    ("AGRobBonta", "California AG Rob Bonta"),
+    ("NewYorkStateAG", "NY AG Letitia James (official)"),
+    ("TishJames", "NY AG personal"),
+    ("AGEllison", "Minnesota AG Keith Ellison"),
+    ("DanaNessel", "Michigan AG Dana Nessel"),
+    ("MattPlatkin", "NJ AG Matt Platkin"),
+    ("AGKaulWI", "Wisconsin AG Josh Kaul"),
+    ("AGAndreaCampbell", "Massachusetts AG Andrea Campbell"),
+    ("AntoniaForCO", "Colorado AG Phil Weiser candidate Antonia"),
+    ("MDAttnyGenl", "Maryland AG official"),
+    ("PhilipWeiser", "Colorado AG Phil Weiser"),
+    ("Letita_James", "Letitia James alt"),
+    ("AGGwenForOR", "Oregon AG"),
+
+    # Federal agencies (regulators relevant to our beats)
+    ("TheJusticeDept", "U.S. DOJ"),
+    ("USDOL", "U.S. Department of Labor"),
+    ("OSHA_DOL", "OSHA"),
+    ("USDOT", "U.S. Department of Transportation"),
+    ("NHTSAgov", "NHTSA"),
+    ("USDOTFHWA", "Federal Highway Administration"),
+    ("FMCSA", "Federal Motor Carrier Safety Admin"),
+    ("CDCgov", "CDC"),
+    ("HHSGov", "HHS"),
+    ("CMSGov", "CMS"),
+    ("USEPA", "EPA"),
+    ("EPAregion9", "EPA Region 9 (covers AZ)"),
+    ("USDA", "USDA"),
+    ("USDOEd", "U.S. Department of Education"),
+    ("FCC", "FCC"),
+    ("FTC", "Federal Trade Commission"),
+    ("CFPB", "Consumer Financial Protection Bureau"),
+    ("HUDgov", "HUD"),
+    ("USAttorneys", "Executive Office for U.S. Attorneys"),
+    ("FDArecalls", "FDA recalls"),
+    ("FDA_Drug_Info", "FDA drug info"),
+
+    # FBI field offices around southwest
+    ("FBI", "FBI HQ"),
+    ("FBILosAngeles", "FBI Los Angeles"),
+    ("FBI_SanDiego", "FBI San Diego"),
+    ("FBIWFO", "FBI Washington Field Office"),
+
+    # National advocacy / civil rights
+    ("NAACP", "NAACP"),
+    ("ACLU", "ACLU"),
+    ("aclu_immigrants", "ACLU immigration rights"),
+    ("SPLCenter", "Southern Poverty Law Center"),
+    ("CommonCause", "Common Cause"),
+    ("LWV", "League of Women Voters"),
+    ("BrennanCenter", "Brennan Center for Justice"),
+    ("DemocracyDocket", "Democracy Docket"),
+
+    # Health / opioid / harm reduction national
+    ("ShatterproofHQ", "Shatterproof"),
+    ("NIDAnews", "NIDA"),
+    ("AmerCollEmgPhys", "American College of Emergency Physicians"),
+    ("NACoTweets", "National Association of Counties"),
+
+    # Education accountability national
+    ("NPEaction", "Network for Public Education"),
+    ("EdWeek", "Education Week"),
+    ("the74", "The 74 education news"),
+    ("ChalkbeatNews", "Chalkbeat education"),
+    ("EdSource", "EdSource (CA but national reach)"),
+    ("AERA_EdResearch", "American Educational Research Association"),
+    ("DianeRavitch", "Diane Ravitch"),
+
+    # Disability / IDEA / ADA
+    ("AAPD", "American Association of People with Disabilities"),
+    ("NCLDorg", "National Center for Learning Disabilities"),
+    ("ndrn", "National Disability Rights Network"),
+
+    # Elder care
+    ("AARP", "AARP national"),
+    ("ConsumerVoiceLT", "National Consumer Voice for Quality LTC"),
+    ("LeadingAge", "LeadingAge"),
+
+    # Transportation / pedestrian / road safety
+    ("StreetsblogUSA", "Streetsblog National"),
+    ("StrongTowns", "Strong Towns"),
+    ("VisionZeroNet", "Vision Zero Network alt"),
+    ("smartgrowthusa", "Smart Growth America"),
+    ("NACTO", "National Association of City Transportation Officials"),
+    ("TransAlt", "Transportation Alternatives NY"),
+    ("BikeLeague", "League of American Bicyclists"),
+    ("AASHTOspeaks", "American Association of State Highway and Transportation Officials"),
+
+    # Immigration / detention national
+    ("UnitedWeDream", "United We Dream"),
+    ("ailanational", "American Immigration Lawyers Association"),
+    ("AmerIPC", "American Immigration Council"),
+    ("HRW", "Human Rights Watch"),
+
+    # Press freedom / accountability ecosystem
+    ("FreePress", "Free Press"),
+    ("PressFreedom", "U.S. Press Freedom Tracker"),
+    ("RCFP", "Reporters Committee for Freedom of the Press"),
+    ("CPJ", "Committee to Protect Journalists"),
+
+    # Sister Taqtics properties (network effect)
+    ("aeelaw", "AEE Law (Taqtics)"),
+    ("mesowatch", "MesoWatch (Taqtics)"),
+    ("lexgro", "LexGro (Taqtics)"),
+
+    # AZ specialty + adjacent
+    ("AZWaterDept", "Arizona Department of Water Resources"),
+    ("AZCommerce", "Arizona Commerce Authority"),
+    ("AZDeptVetSvcs", "Arizona Department of Veterans Services"),
+    ("AZCivAir", "AZ Civil Air Patrol"),
+
+    # Influential individual journalists national
+    ("KaraSwisher", "Kara Swisher"),
+    ("davidfahrenthold", "David Fahrenthold (NYT, formerly WaPo accountability)"),
+    ("EricLiptonNYT", "Eric Lipton NYT investigative"),
+    ("waltbogdanich", "Walt Bogdanich NYT"),
+    ("JaneMayerNYer", "Jane Mayer New Yorker"),
+
+    # Public radio nationals
+    ("NPR", "NPR"),
+    ("NPRpolitics", "NPR Politics"),
+    ("npratc", "NPR All Things Considered"),
+    ("MorningEdition", "NPR Morning Edition"),
+
+    # Trucking / commercial vehicle (matches our truck stories)
+    ("FreightWaves", "FreightWaves"),
+    ("LandLineMag", "Land Line Magazine OOIDA"),
+    ("OOIDAFightsForU", "Owner-Operator Independent Drivers Association"),
+
+    # Opioid + pharmacy beat national
+    ("NABP_official", "National Association of Boards of Pharmacy"),
+    ("DEAHQ", "DEA HQ"),
+
+    # Charter / school accountability national
+    ("npe_action", "Network for Public Education action"),
+    ("publicschoolsfd", "Public Schools First"),
+    ("Cosmin_Gagiu", "Charter accountability research"),
 ]
 
 
