@@ -2192,5 +2192,37 @@
     "personalization_hook": "AZ PPSE just hit 37 of 237 licensees with adverse actions and 9 closures; happy to share the dataset.",
     "evidence_url": "https://www.ppsl.org/team",
     "enrichment_status": "ok"
+  },
+  {
+    "name": "Shannon Conner",
+    "email": "sconner@azluminaria.org",
+    "outlet": "AZ Luminaria",
+    "role": "Reporter, Education Solutions",
+    "beat": "education,charter,solutions journalism",
+    "city": "Tucson",
+    "state": "AZ",
+    "segment": "az_journalist",
+    "story_target": "arizona-career-schools-37-adverse-actions",
+    "evidence_url": "https://azluminaria.org/our-team/",
+    "story_relevance_note": "Education solutions beat. Top match for ASU Prep related-party lease, AZ 325 educator discipline, school restraint data, schools MERV-13 IAQ filter bypass, career schools 37 adverse actions.",
+    "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
+    "personalization_hook": "",
+    "enrichment_status": "pending_manual_enrichment"
+  },
+  {
+    "name": "Yana Kunichoff",
+    "email": "ykunichoff@azluminaria.org",
+    "outlet": "AZ Luminaria",
+    "role": "Reporter, Report For America corps member",
+    "beat": "criminal justice,education",
+    "city": "Tucson",
+    "state": "AZ",
+    "segment": "az_journalist",
+    "story_target": "arizona-career-schools-37-adverse-actions",
+    "evidence_url": "https://azluminaria.org/our-team/",
+    "story_relevance_note": "RFA corps, criminal justice + education. Strong match for AZ educator discipline, school restraint data (use of force on students), career schools adverse actions, daycare violations (childcare oversight).",
+    "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
+    "personalization_hook": "",
+    "enrichment_status": "pending_manual_enrichment"
   }
 ]
