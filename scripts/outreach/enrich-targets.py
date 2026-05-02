@@ -194,6 +194,21 @@ STORY_ESSENCE = {
         "AZ municipalities is uneven. The federal FHWA Proven Safety Countermeasures menu shows what "
         "redesigns work, and which AZ cities have or haven't picked them up."
     ),
+    "asu-prep-related-party-lease": (
+        "ASU Preparatory Academy's FY24 IRS Form 990 reports a $5.46M operating loss on $82.4M revenue. "
+        "Its FY21 audited consolidated financial statements (filed at ade.az.gov) disclose a related-party "
+        "operating lease on a school-site building, $11.5M ROU asset, agreement through September 2032. "
+        "Note 9 of the audit names the counterparty (next pull). FY21 audit had zero findings. "
+        "ALA / Glenn Way is the AZ precedent on charter-network real-estate self-dealing."
+    ),
+    "walgreens-350m-arizona-opioid-stores": (
+        "DOJ-EDNY announced a federal settlement with Walgreens valued at up to $350M in April 2025 "
+        "(Controlled Substances Act + False Claims Act, covered conduct Aug 2012 through Mar 2023). "
+        "Arizona's most recent provisional 12-month opioid overdose death count is 1,659. The store-by-store "
+        "enumeration of covered Arizona Walgreens locations isn't in publicly retrievable secondary press; "
+        "it sits in the EDNY federal docket exhibits. AZ regulator chain: AZ State Board of Pharmacy + "
+        "DEA Phoenix Field Division. Person-first framing required throughout."
+    ),
 }
 
 

@@ -1,0 +1,56 @@
+{
+  "story_target": "walgreens-350m-arizona-opioid-stores",
+  "harvest_date": "2026-05-01",
+  "partial": false,
+  "contact_count": 25,
+  "distinct_domains": 4,
+  "domain_breakdown": {
+    "azcir.org": 5,
+    "kjzz.org": 10,
+    "azleg.gov": 9,
+    "azmirror.com": 0
+  },
+  "segment_breakdown": {
+    "az_journalist": 16,
+    "az_legislator_health_committee": 9,
+    "harm_reduction_org": 0,
+    "az_official": 0,
+    "az_academic": 0
+  },
+  "sites_403_404": [
+    "https://www.azcentral.com/staff/ (403 Cloudflare)",
+    "https://azmirror.com/about/ (403 Cloudflare bot challenge)",
+    "https://azmirror.com/contact/ (403 Cloudflare)",
+    "https://www.tucsonsentinel.com/section/staff (403 Cloudflare)",
+    "https://www.tucsonweekly.com/ contact pages (no individual emails published)",
+    "https://www.phoenixnewtimes.com/about/contact (only departmental aliases published)",
+    "https://www.azpm.org/about/staff (404)",
+    "https://news.azpm.org/staff/ (404)",
+    "https://cronkitenews.azpbs.org/staff/ (only generic cronkitenews@asu.edu published)",
+    "https://pharmacy.az.gov/board-staff (403)",
+    "https://www.dea.gov/divisions/phoenix (403)",
+    "https://pharmacy.arizona.edu/people/faculty (DNS / 000)",
+    "https://chiir.asu.edu/team (DNS / 000)"
+  ],
+  "patterns_observed": {
+    "high_yield_publishers": [
+      "Public-radio newsrooms (KJZZ) publish complete staff directories with per-person contact via Cloudflare-encoded mailto. Decoded data-cfemail attributes give clean named-contact pairs.",
+      "Independent investigative nonprofits (AZCIR) publish full staff list with role-tagged emails on /about/.",
+      "Government masthead pages (azleg.gov MemberRoster) publish all legislators' email column directly in the roster table — explicit and verifiable, not pattern-derived because the column header itself reads 'Email @azleg.gov' and the prefix is literal."
+    ],
+    "low_yield_or_blocked": [
+      "Cloudflare bot challenge blocks legacy Gannett/Lee/Voice Media outlets (azcentral, tucson.com, tucsonsentinel, phoenixnewtimes, tucsonweekly) from any verifiable extraction. Their staff pages exist but require a real browser session to view.",
+      "Local TV station bio pages (ABC15, 12News, AZ Family) do not publish reporter emails — only generic newsroom intake addresses.",
+      "Government regulator pages (AZ Board of Pharmacy, DEA Phoenix, AZ AG Consumer Protection) do not publish individual staff emails — they route press through generic webforms or aginfo@azag.gov-style aliases. Skipped per generic-intake rule.",
+      "Academic pharmacy schools (UA Coit, Midwestern, ASU) have faculty pages behind directory search rather than scrapeable email-listed mastheads.",
+      "Sonoran Prevention Works lists individual contact-form-routing emails (jpatrick@, hcoles@, jwitowski@, tcarrasco@) in the form action attribute, but their /our-team/ roster shows different staff names (Greenwood as CEO, Fox as Comms Manager, etc.). The form-action emails couldn't be confidently mapped to specific named people on the same page, so SPW staff omitted to avoid the pattern-derived violation."
+    ]
+  },
+  "person_first_language_reminder": "All outreach copy to these contacts must use 'people who experience opioid use disorder,' 'families who lost a loved one,' 'people in recovery' — never 'addicts' or 'victims.'",
+  "next_harvest_recommendations": [
+    "AZ Mirror staff emails are publicly listed but blocked by Cloudflare for headless fetch. Use a real browser session (Chrome MCP) to capture: Caitlin Sievers (health/accountability), Gloria Rebecca Gomez (politics/policy), Jerod MacDonald-Evoy (investigative), Jim Small (editor).",
+    "Tucson Sentinel masthead similarly blocked. Worth a Chrome MCP pass for Dylan Smith, Paul Ingram, Bennito L. Kelty.",
+    "AZCentral staff pages locked behind Cloudflare + login. Best path is bylines on past AZ opioid stories captured via SimilarWeb or article-page scraping rather than masthead.",
+    "Sonoran Prevention Works: phone the press line documented at spwaz.org/contact/ to request a named press contact, then enrich and add."
+  ]
+}

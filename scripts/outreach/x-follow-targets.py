@@ -106,8 +106,14 @@ def main():
     contacts = []
     for f in sorted(TARGETS_DIR.glob("*.json")):
         slug = f.stem
+        if slug.startswith("_meta"):
+            continue
         targets = json.loads(f.read_text())
+        if not isinstance(targets, list):
+            continue
         for t in targets:
+            if not isinstance(t, dict):
+                continue
             name = t.get("name", "")
             if not name or "@" in name:  # skip generic intake addresses
                 continue
