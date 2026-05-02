@@ -96,8 +96,8 @@
     "story_target": "arizona-325-educator-discipline-2024",
     "evidence_url": "https://azcir.org/about/",
     "story_relevance_note": "AZCIR's public newsroom contact for tips. The AZ State Board of Education's 325 disciplinary actions in a single calendar year, plus the multi-year Maricopa County concentration, is a tippable accountability data set.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your \"Education Suspended\" investigation on student suspensions for missing class.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -130,8 +130,8 @@
     "story_target": "arizona-325-educator-discipline-2024",
     "evidence_url": "https://www.azcentral.com/contact/staff/",
     "story_relevance_note": "Henry is on the Republic's AZ news staff masthead. Survivor-first framing of educator misconduct cases tied to the AZ State Board's 2024 discipline numbers fits her general AZ reporting posture.",
-    "personalization_hook": "Saw your \"Cop.",
-    "enrichment_status": "ok",
+    "personalization_hook": "",
+    "enrichment_status": "no_record",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -249,8 +249,8 @@
     "story_target": "arizona-325-educator-discipline-2024",
     "evidence_url": "https://www.azed.gov/communications",
     "story_relevance_note": "ADE's official press office. Direct route for Tom Horne response on the AZ State Board's 2024 discipline volume and the multi-year Maricopa County concentration of educator misconduct cases.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your April 27, 2026 statement from Su.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -300,8 +300,8 @@
     "story_target": "arizona-325-educator-discipline-2024",
     "evidence_url": "https://www.acesdv.org/contact/",
     "story_relevance_note": "ACESDV is the AZ statewide coalition serving sexual violence survivors. The 36% sexual misconduct share of decade educator discipline cases tracks survivor populations they serve, including K-12 student survivors navigating Arizona's 12-year ARS 12-514 SOL and 180-day ARS 12-821.01 Notice of Claim windows.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your July 11, 2024 press release responding to the Supreme Court\u2019s City of Grants Pass v. Johnson decision.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -318,8 +318,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Investigative editor with indigenous/borderlands focus. Top routing target for ICE detention lawsuit, school restraint data (tribal-school overlap), pedestrian deaths on tribal land, Walgreens opioid (Navajo/Hopi corridor stores).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your Indigenous-led investigative project with IWMF and Din\u00e9 journalist Chelsea Curtis at Arizona Luminaria on Missing and Murdered Indigenous Women, Girls, Two-Spirit and Transgender people.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Shannon Conner",
@@ -335,7 +335,7 @@
     "story_relevance_note": "Education solutions beat. Top match for ASU Prep related-party lease, AZ 325 educator discipline, school restraint data, schools MERV-13 IAQ filter bypass, career schools 37 adverse actions.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Chelsea Curtis",
@@ -350,8 +350,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "MMIP/tribal beat. Match for stories with tribal-jurisdiction angles: AZ 325 educator discipline (BIE schools), school restraint (tribal schools), pedestrian deaths on Navajo/Hopi reservation roads, Walgreens opioid stores in border-tribal corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your database launch tracking Missing and Murdered Indigenous Women, Girls, Two-Spirit and Transgender people in Arizona through nearly 100 public record requests.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Yana Kunichoff",
@@ -366,8 +366,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "RFA corps, criminal justice + education. Strong match for AZ educator discipline, school restraint data (use of force on students), career schools adverse actions, daycare violations (childcare oversight).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"The Last Affordable Housing\" documentary in AZ Luminaria on aging mobile homes.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Zach Buchanan",
@@ -382,8 +382,8 @@
     "evidence_url": "https://www.phoenixnewtimes.com/about/staff",
     "story_relevance_note": "News editor. Direct routing for hard-news investigative pieces: AZ educator discipline, ASU Prep, Mesa HB2228, Mayes ICE, Walgreens 350M opioid.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your coverage of Arizona schools chief Tom Horne barring Phoenix New Times campaign emails.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Sara Crocker",
@@ -399,7 +399,7 @@
     "story_relevance_note": "GA writer. Match for any active Phoenix-metro investigation: Mesa HB2228 elder abuse, ASU Prep, daycare violations, AZ educator discipline, Walgreens opioid.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Brandon Bowers",
@@ -415,7 +415,7 @@
     "story_relevance_note": "Mohave County coverage. Match for any West/Northwest AZ angle: Buckeye-Durango-Yuma roundabout (regional traffic safety), Walgreens opioid stores in Mohave/Lake Havasu, school bus seat belts in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Pam Ashley",
@@ -431,7 +431,7 @@
     "story_relevance_note": "Features. Strong match for grand court Mesa elder abuse (human-interest victim angle), daycare violations, school restraint stories with named-family angle.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Christina Calloway",
@@ -447,7 +447,7 @@
     "story_relevance_note": "Mohave County GA reporter. Match for all rural-AZ-impact investigations: educator discipline, opioid Walgreens, IAQ filter bypass in rural schools.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Tim Wiederaenders",
@@ -462,8 +462,8 @@
     "evidence_url": "https://www.dcourier.com/staff/",
     "story_relevance_note": "Yavapai County editor. Match for Yavapai/Prescott-impact investigations: rural school IAQ, school bus seat belts, opioid Walgreens stores in Yavapai, AZ educator discipline (Prescott Unified).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your 2021 column in the Daily Courier chastising Prescott for an alleged executive session leak.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Warren Adams-Ockrassa",
@@ -479,7 +479,7 @@
     "story_relevance_note": "White Mountain region editor. Match for Navajo/Apache county investigations: AZ 325 educator discipline (rural districts), school restraint data, pedestrian deaths (rural road design), opioid Walgreens stores in Show Low/Pinetop, IAQ MERV-13 in mountain schools.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Toni Gibbons",
@@ -494,8 +494,8 @@
     "evidence_url": "https://www.wmicentral.com/site/contact.html",
     "story_relevance_note": "Navajo County beat. Strong match for all Navajo-county-impact investigations: educator discipline in Heber-Overgaard / Show Low / Snowflake schools, opioid stores along I-40 corridor, school bus safety in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your coverage of the Feb. 10 Navajo County Board of Su.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Jenn Moreira",
@@ -511,7 +511,7 @@
     "story_relevance_note": "Apache County beat. Strong match for all Apache-county-impact: tribal-school overlap (educator discipline, restraint), border-of-Navajo-Nation public safety, opioid Walgreens (limited corridor).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Alexis Bechman",
@@ -527,7 +527,7 @@
     "story_relevance_note": "Gila County / Rim Country editor. Match for Gila-county angles: educator discipline (Payson Unified), opioid Walgreens (Payson store), pedestrian/road safety on SR-87.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Peter Aleshire",
@@ -542,8 +542,8 @@
     "evidence_url": "https://www.paysonroundup.com/site/contact.html",
     "story_relevance_note": "Veteran AZ reporter (longtime AZ journalism). Strong byline. Match for environmental/IAQ schools angle, road safety, opioid harm-reduction stories.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your piece on wolf deaths and introductions spawning controversy in the Payson Roundup.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Guy Roginson",
@@ -559,7 +559,7 @@
     "story_relevance_note": "Yavapai/Prescott Valley regional editor. Match for Yavapai-county-impact investigations: educator discipline, opioid Walgreens stores, school bus safety, IAQ in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Tony Tedford",
@@ -575,6 +575,6 @@
     "story_relevance_note": "Multimedia producer. Useful for video-friendly stories: pedestrian deaths at named crash sites, school bus safety, IAQ filter swap-out demos.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   }
 ]
