@@ -266,8 +266,8 @@
     "story_target": "arizona-mayes-ice-surprise-detention-lawsuit",
     "evidence_url": "https://firrp.org/contact/",
     "story_relevance_note": "Direct staff contact published on FIRRP's contact page. Worth a direct outreach offering the federal-records analysis behind the Mayes complaint, since FIRRP's case load gives them standing to comment on conditions of confinement at any new AZ facility.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your FOIA lawsuits forcing release of records on medical neglect and abuse in ICE custody, detailed in the 2024 Annual Report.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Steve Jess",
@@ -283,7 +283,7 @@
     "story_relevance_note": "Tucson NPR newsroom. Strong fit for AZ Mayes ICE detention lawsuit (border/immigration angle reaches Tucson audience), Walgreens opioid stores (Pima County impact), pavement/road design stories with Tucson scope.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Tony Perkins",
@@ -299,7 +299,7 @@
     "story_relevance_note": "Tucson NPR newsroom. Same fit profile as Steve Jess: borderlands, ICE, opioid stores, public-health stories with Pima County hook.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Irene McKisson",
@@ -314,8 +314,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "AZ Luminaria runs deep investigative work in Pima/border. Route any major investigation here (charter, opioid Walgreens 350M, daycare violations, ICE detention).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"Stadium-bright border lights threaten ecosystems and dark sky status in Organ Pipe Monument\" in AZ Luminaria on June 6, 2023.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Dianna M. Nanez",
@@ -330,8 +330,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Investigative editor with indigenous/borderlands focus. Top routing target for ICE detention lawsuit, school restraint data (tribal-school overlap), pedestrian deaths on tribal land, Walgreens opioid (Navajo/Hopi corridor stores).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your announcement of the Indigenous-led project with IWMF and Din\u00e9 journalist Chelsea Curtis on Missing and Murdered Indigenous Women, Girls, Two-Spirit and Transgender People at AZ Luminaria.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Rafael Carranza",
@@ -346,8 +346,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "ProPublica-backed border/immigration. Direct match for AZ Mayes ICE surprise detention lawsuit. High priority routing.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Caught your \"We Will Fight Back\": Aid Workers Fear Closing a Camp on the Arizona Border Will Endanger Migrants\" in ProPublica on February 3, 2025.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Carolina Cuellar",
@@ -362,8 +362,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Border/immigration. Match for ICE detention lawsuit, any immigration-courts angle.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"Aid group says Border Patrol entered Southern Arizona camp without warrant, arresting three\" in AZ Luminaria on December 1, 2025.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Chelsea Curtis",
@@ -378,8 +378,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "MMIP/tribal beat. Match for stories with tribal-jurisdiction angles: AZ 325 educator discipline (BIE schools), school restraint (tribal schools), pedestrian deaths on Navajo/Hopi reservation roads, Walgreens opioid stores in border-tribal corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your Q&A on creating Arizona's first MMIWGTT database in Native News Online.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Yana Kunichoff",
@@ -394,8 +394,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "RFA corps, criminal justice + education. Strong match for AZ educator discipline, school restraint data (use of force on students), career schools adverse actions, daycare violations (childcare oversight).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"How 3 new Pima County and Tucson programs are addressing addiction, training police\" in AZ Luminaria on March 4, 2026.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Beatriz Limon",
@@ -410,8 +410,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Bilingual reporter/translator. Use for stories with Spanish-speaking impact populations: ICE detention, daycare violations in Latino communities, opioid harm in border Walgreens corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your April 20 piece \"3 authors, 3.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Sam Eifling",
@@ -427,7 +427,7 @@
     "story_relevance_note": "EIC. Top-of-funnel for any major investigation into Phoenix-area corruption: ASU Prep related-party lease, Walgreens opioid stores (Phoenix metro), Mesa elder abuse HB2228, AZ Mayes ICE lawsuit.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Zach Buchanan",
@@ -442,8 +442,8 @@
     "evidence_url": "https://www.phoenixnewtimes.com/about/staff",
     "story_relevance_note": "News editor. Direct routing for hard-news investigative pieces: AZ educator discipline, ASU Prep, Mesa HB2228, Mayes ICE, Walgreens 350M opioid.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Zach Buchanan has been the news editor for the Phoenix New Times since April 2024.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Hava Herzog",
@@ -459,7 +459,7 @@
     "story_relevance_note": "Police/fire/public safety beat. Top match for AZ Mayes ICE detention lawsuit (law enforcement angle), grand court Mesa HB2228 (elder abuse criminal investigation), pedestrian deaths road design (PD crash data).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Jenn Moreira",
@@ -475,6 +475,6 @@
     "story_relevance_note": "Apache County beat. Strong match for all Apache-county-impact: tribal-school overlap (educator discipline, restraint), border-of-Navajo-Nation public safety, opioid Walgreens (limited corridor).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   }
 ]
