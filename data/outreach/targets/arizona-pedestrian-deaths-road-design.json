@@ -178,8 +178,8 @@
     "evidence_url": "https://www.mesaaz.gov/Resident-Resources/Streets-Transportation",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Department inbox routed through Mesa's senior transportation staff. Investigation tags Mesa specifically in the East Valley pedestrian data.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your recommendation to abandon US Route 60 right of way to the City of Mesa.",
+    "enrichment_status": "ok"
   },
   {
     "email": "transportationinfo@glendaleaz.com",
@@ -306,8 +306,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Investigative editor with indigenous/borderlands focus. Top routing target for ICE detention lawsuit, school restraint data (tribal-school overlap), pedestrian deaths on tribal land, Walgreens opioid (Navajo/Hopi corridor stores).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \u201cA Border Tribe, and the Wall that will Divide It\u201d in USA Today on the Tigua tribe's border wall opposition.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Chelsea Curtis",
@@ -322,8 +322,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "MMIP/tribal beat. Match for stories with tribal-jurisdiction angles: AZ 325 educator discipline (BIE schools), school restraint (tribal schools), pedestrian deaths on Navajo/Hopi reservation roads, Walgreens opioid stores in border-tribal corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"Too long without answers: Shining a light on missing and murdered Indigenous women, girls, two-spirit and transgender people\" in AZ Luminaria on the MMIWG2T crisis.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Itzia Crespo",
@@ -339,7 +339,7 @@
     "story_relevance_note": "Social. Useful when investigation has shareable visuals or video (pedestrian deaths road redesign, IAQ filter bypass schematics).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Hava Herzog",
@@ -355,7 +355,7 @@
     "story_relevance_note": "Police/fire/public safety beat. Top match for AZ Mayes ICE detention lawsuit (law enforcement angle), grand court Mesa HB2228 (elder abuse criminal investigation), pedestrian deaths road design (PD crash data).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Warren Adams-Ockrassa",
@@ -371,7 +371,7 @@
     "story_relevance_note": "White Mountain region editor. Match for Navajo/Apache county investigations: AZ 325 educator discipline (rural districts), school restraint data, pedestrian deaths (rural road design), opioid Walgreens stores in Show Low/Pinetop, IAQ MERV-13 in mountain schools.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Alexis Bechman",
@@ -387,7 +387,7 @@
     "story_relevance_note": "Gila County / Rim Country editor. Match for Gila-county angles: educator discipline (Payson Unified), opioid Walgreens (Payson store), pedestrian/road safety on SR-87.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Peter Aleshire",
@@ -402,8 +402,8 @@
     "evidence_url": "https://www.paysonroundup.com/site/contact.html",
     "story_relevance_note": "Veteran AZ reporter (longtime AZ journalism). Strong byline. Match for environmental/IAQ schools angle, road safety, opioid harm-reduction stories.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your article on the U.S. Bureau of Reclamation's environmental impact report for critical water shortages in the two giant reservoirs.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Tony Tedford",
@@ -419,6 +419,6 @@
     "story_relevance_note": "Multimedia producer. Useful for video-friendly stories: pedestrian deaths at named crash sites, school bus safety, IAQ filter swap-out demos.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   }
 ]
