@@ -984,8 +984,8 @@
     "segment": "az_journalist",
     "url": "https://cronkitenews.azpbs.org/about/",
     "story_relevance_note": "Cronkite News covers AZ state government, higher ed and consumer protection beats relevant to PPSE story.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your coverage of ASU's McCain Institute and Cronkite School launching the task force on \"Defeating Disinformation Attacks on U.S. Democracy.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Alex Medina",
@@ -1075,8 +1075,8 @@
     "segment": "az_journalist",
     "url": "https://cronkitenews.azpbs.org/about/",
     "story_relevance_note": "Cronkite News covers AZ state government, higher ed and consumer protection beats relevant to PPSE story.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your \"How Cronkite is Preparing Students for a Changing Industry\" in April 2026 on adapting journalism amid declining media trust.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Natalie Ogami",
@@ -1296,8 +1296,8 @@
     "segment": "az_journalist",
     "url": "https://cronkitenews.azpbs.org/about/",
     "story_relevance_note": "Cronkite News covers AZ state government, higher ed and consumer protection beats relevant to PPSE story.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your internship as a sports reporter with **The Arizona Republic**.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Jonah Simkin",
@@ -2224,5 +2224,69 @@
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "Saw your \"In Cochise County, a mobile team brings help and connection\" in AZ Luminaria on March 24, 2026.",
     "enrichment_status": "ok"
+  },
+  {
+    "name": "Dianna Hunt",
+    "email": "dianna@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "National Editor",
+    "beat": "tribal,national,investigations,health,education",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "tribal_press",
+    "story_target": "arizona-career-schools-37-adverse-actions",
+    "evidence_url": "https://ictnews.org/about-us/",
+    "story_relevance_note": "ICT Southwest HQ is in Phoenix; would route ICE detention, IAQ-on-rez schools, and educator discipline stories that touch tribal members.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "Saw your October 10, 2024 piece on federal officials reaching out to the Miccosukee Tribe ahead of the massive storm.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Jourdan Bennett-Begaye",
+    "email": "jourdan@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "Managing Editor",
+    "beat": "tribal,health,education,politics",
+    "city": "Washington DC",
+    "state": "DC",
+    "segment": "tribal_press",
+    "story_target": "arizona-career-schools-37-adverse-actions",
+    "evidence_url": "https://ictnews.org/wps-members/jourdan-bennett-begaye/",
+    "story_relevance_note": "Din\u00e9 managing editor at ICT, would route Mayes ICE detention investigation and any Navajo Nation impact angles on AZ stories.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "pending_manual_enrichment"
+  },
+  {
+    "name": "Tim Eigo",
+    "email": "Tim.Eigo@staff.azbar.org",
+    "outlet": "Arizona Attorney Magazine (State Bar of Arizona)",
+    "role": "Senior Editor / Chief Communications Officer",
+    "beat": "legal,bar,civil-justice,arizona",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "legal_industry",
+    "story_target": "arizona-career-schools-37-adverse-actions",
+    "evidence_url": "https://www.azbar.org/for-legal-professionals/communities/advisory-groups/arizona-attorney-editorial-board",
+    "story_relevance_note": "AZ Attorney senior editor and AZ Bar CCO; route AG Mayes ICE lawsuit, opioid restitution distribution, and Grand Court Mesa elder-abuse HB2228 stories.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "pending_manual_enrichment"
+  },
+  {
+    "name": "Lily Altavena",
+    "email": "laltavena@chalkbeat.org",
+    "outlet": "Chalkbeat",
+    "role": "Reporter, Chalkbeat National",
+    "beat": "education,national,policy,arizona",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "az_journalist",
+    "story_target": "arizona-career-schools-37-adverse-actions",
+    "evidence_url": "https://www.chalkbeat.org/pages/our-staff/",
+    "story_relevance_note": "Former AZ Republic education reporter now covering national education for Chalkbeat; would route AZ ESA/voucher fraud, ASU Prep related-party lease, IAQ MERV-13 story, and 325-educator-discipline data.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "pending_manual_enrichment"
   }
 ]

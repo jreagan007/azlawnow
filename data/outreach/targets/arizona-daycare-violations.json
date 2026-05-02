@@ -467,5 +467,21 @@
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
     "enrichment_status": "no_record"
+  },
+  {
+    "name": "Kalle Benallie",
+    "email": "kalle@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "Multimedia Journalist, Southwest Bureau",
+    "beat": "tribal,southwest,arizona",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "tribal_press",
+    "story_target": "arizona-daycare-violations",
+    "evidence_url": "https://ictnews.org/author/kalle-benallie/",
+    "story_relevance_note": "Navajo journalist based out of ICT Southwest Bureau in Phoenix; primary AZ-tribal contact for Mayes ICE detention, daycare violations on rez, and IAQ stories.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "pending_manual_enrichment"
   }
 ]

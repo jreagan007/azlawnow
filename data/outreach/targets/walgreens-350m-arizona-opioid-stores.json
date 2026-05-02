@@ -11,8 +11,8 @@
     "story_target": "walgreens-350m-arizona-opioid-stores",
     "evidence_url": "https://azcir.org/about/",
     "story_relevance_note": "AZCIR's executive editor: $350M opioid settlement with Arizona-store enumeration sitting in EDNY docket exhibits is exactly the kind of public-records-driven investigation his shop publishes.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your coverage of **Jake's Law** enabling Arizona youth mental health access in the Tucson Sentinel.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Maria Polletta",
@@ -387,8 +387,8 @@
     "evidence_url": "https://www.azpm.org/staff/",
     "story_relevance_note": "Tucson NPR newsroom. Strong fit for AZ Mayes ICE detention lawsuit (border/immigration angle reaches Tucson audience), Walgreens opioid stores (Pima County impact), pavement/road design stories with Tucson scope.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your reporting on questions about an ICE facility's price tag for Arizona taxpayers at a city council meeting.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Tony Perkins",
@@ -403,8 +403,8 @@
     "evidence_url": "https://www.azpm.org/staff/",
     "story_relevance_note": "Tucson NPR newsroom. Same fit profile as Steve Jess: borderlands, ICE, opioid stores, public-health stories with Pima County hook.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your hosting of *The Press Room* on AZPM featuring ex.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Irene McKisson",
@@ -467,7 +467,7 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Bilingual reporter/translator. Use for stories with Spanish-speaking impact populations: ICE detention, daycare violations in Latino communities, opioid harm in border Walgreens corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "Saw your \"3 authors, 3.",
+    "personalization_hook": "Saw your April 20, 2026 piece \"3 authors, 3.",
     "enrichment_status": "ok"
   },
   {
@@ -499,8 +499,8 @@
     "evidence_url": "https://www.phoenixnewtimes.com/about/staff",
     "story_relevance_note": "News editor. Direct routing for hard-news investigative pieces: AZ educator discipline, ASU Prep, Mesa HB2228, Mayes ICE, Walgreens 350M opioid.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your coverage of Phoenix Police interim chief Michael Sullivan's resignation since 2022 in Phoenix New Times.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Sara Crocker",
@@ -531,8 +531,8 @@
     "evidence_url": "https://www.havasunews.com/site/contact.html",
     "story_relevance_note": "Mohave County coverage. Match for any West/Northwest AZ angle: Buckeye-Durango-Yuma roundabout (regional traffic safety), Walgreens opioid stores in Mohave/Lake Havasu, school bus seat belts in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your editorial \"After years of waiting, it's 'full steam ahead' for Riviera\" in Today's News-Herald on March 20, 2019.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Christina Calloway",
@@ -595,8 +595,8 @@
     "evidence_url": "https://www.wmicentral.com/site/contact.html",
     "story_relevance_note": "Navajo County beat. Strong match for all Navajo-county-impact investigations: educator discipline in Heber-Overgaard / Show Low / Snowflake schools, opioid stores along I-40 corridor, school bus safety in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your coverage of the growing fentanyl crisis at the Feb. 10 Navajo County Board of Su.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Jenn Moreira",
@@ -675,6 +675,166 @@
     "evidence_url": "https://www.signalsaz.com/our-team/",
     "story_relevance_note": "Yavapai/Prescott Valley regional editor. Match for Yavapai-county-impact investigations: educator discipline, opioid Walgreens stores, school bus safety, IAQ in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Dianna Hunt",
+    "email": "dianna@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "National Editor",
+    "beat": "tribal,national,investigations,health,education",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://ictnews.org/about-us/",
+    "story_relevance_note": "ICT Southwest HQ is in Phoenix; would route ICE detention, IAQ-on-rez schools, and educator discipline stories that touch tribal members.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Jourdan Bennett-Begaye",
+    "email": "jourdan@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "Managing Editor",
+    "beat": "tribal,health,education,politics",
+    "city": "Washington DC",
+    "state": "DC",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://ictnews.org/wps-members/jourdan-bennett-begaye/",
+    "story_relevance_note": "Din\u00e9 managing editor at ICT, would route Mayes ICE detention investigation and any Navajo Nation impact angles on AZ stories.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Kevin Abourezk",
+    "email": "kevin@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "Deputy Managing Editor / National Correspondent",
+    "beat": "tribal,national,policy",
+    "city": "Lincoln",
+    "state": "NE",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://ictnews.org/wps-members/kevin-abourezk/",
+    "story_relevance_note": "Award-winning Sicangu Lakota journalist, would route AG Mayes ICE detention surprise lawsuit (national tribal interest).",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "Saw your April 30, 2026 piece on the Dakota Access Pipeline legal fight in Indian Country Today.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Mary Annette Pember",
+    "email": "mapember@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "National Correspondent",
+    "beat": "tribal,boarding-schools,MMIW,health",
+    "city": "Cincinnati",
+    "state": "OH",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://ictnews.org/wps-members/mary-annette-pember/",
+    "story_relevance_note": "Author of Medicine River; would route educator discipline / restraint data stories where Native students are disproportionately impacted.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "Saw your \"Medicine River: A Story of Survival and the Legacy of Indian Boarding Schools\" on the lasting trauma of Indian boarding schools.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Pauly Denetclaw",
+    "email": "pauly@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "Climate Correspondent",
+    "beat": "tribal,climate,environment,water",
+    "city": "Missoula",
+    "state": "MT",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://ictnews.org/wps-members/pauly-denetclaw/",
+    "story_relevance_note": "Din\u00e9 climate correspondent; would route MERV-13 IAQ school filter bypass story for tribal-area schools and Hopi/Navajo school facilities angle.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Kalle Benallie",
+    "email": "kalle@ictnews.org",
+    "outlet": "ICT (Indian Country Today)",
+    "role": "Multimedia Journalist, Southwest Bureau",
+    "beat": "tribal,southwest,arizona",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://ictnews.org/author/kalle-benallie/",
+    "story_relevance_note": "Navajo journalist based out of ICT Southwest Bureau in Phoenix; primary AZ-tribal contact for Mayes ICE detention, daycare violations on rez, and IAQ stories.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "Saw your \"PEOPLE LOST IN 2025: Their impacts 'felt for generations'\" in ICT News.",
+    "enrichment_status": "ok"
+  },
+  {
+    "name": "Romalita Laban",
+    "email": "rlaban@hopi.nsn.us",
+    "outlet": "Hopi Tutuveni",
+    "role": "Managing Editor",
+    "beat": "tribal,hopi,community",
+    "city": "Kykotsmovi",
+    "state": "AZ",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://www.hopi-nsn.gov/news/hopi-tutuveni/",
+    "story_relevance_note": "Hopi Tribe official newspaper editor; would route any AZ stories impacting Hopi members (IAQ schools on rez, ICE detention of tribal members, road safety on US-264).",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Carl Onsae",
+    "email": "COnsae@hopi.nsn.us",
+    "outlet": "Hopi Tutuveni",
+    "role": "Assistant Editor",
+    "beat": "tribal,hopi,community",
+    "city": "Kykotsmovi",
+    "state": "AZ",
+    "segment": "tribal_press",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://www.hopi-nsn.gov/news/hopi-tutuveni/",
+    "story_relevance_note": "Hopi Tutuveni assistant editor; would route AZ stories with Hopi community impact.",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Kyle Patton",
+    "email": "Kyle.Patton@staff.azbar.org",
+    "outlet": "Arizona Attorney Magazine (State Bar of Arizona)",
+    "role": "Editor",
+    "beat": "legal,bar,civil-justice,arizona",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "legal_industry",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://www.azbar.org/for-legal-professionals/communities/advisory-groups/arizona-attorney-editorial-board",
+    "story_relevance_note": "AZ Attorney editor; could pitch features on Walgreens $350M opioid restitution, AG Mayes ICE detention lawsuit, or career-school adverse-action enforcement (legal-industry-of-record interest).",
+    "routing_source": "_pool_niche-az-2026-05-02",
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
+  },
+  {
+    "name": "Tim Eigo",
+    "email": "Tim.Eigo@staff.azbar.org",
+    "outlet": "Arizona Attorney Magazine (State Bar of Arizona)",
+    "role": "Senior Editor / Chief Communications Officer",
+    "beat": "legal,bar,civil-justice,arizona",
+    "city": "Phoenix",
+    "state": "AZ",
+    "segment": "legal_industry",
+    "story_target": "walgreens-350m-arizona-opioid-stores",
+    "evidence_url": "https://www.azbar.org/for-legal-professionals/communities/advisory-groups/arizona-attorney-editorial-board",
+    "story_relevance_note": "AZ Attorney senior editor and AZ Bar CCO; route AG Mayes ICE lawsuit, opioid restitution distribution, and Grand Court Mesa elder-abuse HB2228 stories.",
+    "routing_source": "_pool_niche-az-2026-05-02",
     "personalization_hook": "",
     "enrichment_status": "no_record"
   }
