@@ -494,139 +494,169 @@
     "followed_at": "2026-05-01T21:11:22.611400"
   },
   "curated:cronkitenews|asu cronkite news service": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "cronkitenews",
     "user_id": "15446773",
     "display_name": "Cronkite News",
     "note": "ASU Cronkite News service",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:36.773890"
+    "verified_at": "2026-05-01T21:06:36.773890",
+    "target_id": "15446773",
+    "followed_at": "2026-05-01T21:11:58.280699"
   },
   "curated:azpbs|arizona pbs": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "azpbs",
     "user_id": "19942929",
     "display_name": "Eight/KAET-TV",
     "note": "Arizona PBS",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:37.940874"
+    "verified_at": "2026-05-01T21:06:37.940874",
+    "target_id": "19942929",
+    "followed_at": "2026-05-01T21:12:34.126577"
   },
   "curated:phoenixnewtimes|phoenix new times": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "phoenixnewtimes",
     "user_id": "44439772",
     "display_name": "Phoenix New Times",
     "note": "Phoenix New Times",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:38.923844"
+    "verified_at": "2026-05-01T21:06:38.923844",
+    "target_id": "44439772",
+    "followed_at": "2026-05-01T21:13:09.658578"
   },
   "curated:tucsonsentinel|tucson sentinel nonprofit": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "TucsonSentinel",
     "user_id": "68928118",
     "display_name": "Tucson Sentinel",
     "note": "Tucson Sentinel nonprofit",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:39.870139"
+    "verified_at": "2026-05-01T21:06:39.870139",
+    "target_id": "68928118",
+    "followed_at": "2026-05-01T21:13:45.523999"
   },
   "curated:tucsonstar|arizona daily star (tucson)": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "TucsonStar",
     "user_id": "3952661",
     "display_name": "Arizona Daily Star",
     "note": "Arizona Daily Star (Tucson)",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:40.876064"
+    "verified_at": "2026-05-01T21:06:40.876064",
+    "target_id": "3952661",
+    "followed_at": "2026-05-01T21:14:21.002488"
   },
   "curated:tucsonweekly|tucson weekly": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "tucsonweekly",
     "user_id": "17435612",
     "display_name": "Tucson Weekly",
     "note": "Tucson Weekly",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:42.427965"
+    "verified_at": "2026-05-01T21:06:42.427965",
+    "target_id": "17435612",
+    "followed_at": "2026-05-01T21:14:56.718153"
   },
   "curated:azfamily|azfamily / 3tv / cbs5 phoenix": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "azfamily",
     "user_id": "10025982",
     "display_name": "azfamily 3TV CBS 5",
     "note": "azfamily / 3TV / CBS5 Phoenix",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:43.530492"
+    "verified_at": "2026-05-01T21:06:43.530492",
+    "target_id": "10025982",
+    "followed_at": "2026-05-01T21:15:32.618269"
   },
   "curated:12news|12 news phoenix": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "12News",
     "user_id": "17187236",
     "display_name": "12 News",
     "note": "12 News Phoenix",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:44.591603"
+    "verified_at": "2026-05-01T21:06:44.591603",
+    "target_id": "17187236",
+    "followed_at": "2026-05-01T21:16:08.240896"
   },
   "curated:abc15|abc15 phoenix": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "abc15",
     "user_id": "9721292",
     "display_name": "ABC15 Arizona",
     "note": "ABC15 Phoenix",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:45.665067"
+    "verified_at": "2026-05-01T21:06:45.665067",
+    "target_id": "9721292",
+    "followed_at": "2026-05-01T21:16:43.880481"
   },
   "curated:fox10phoenix|fox10 phoenix": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "FOX10Phoenix",
     "user_id": "18999261",
     "display_name": "FOX 10 Phoenix",
     "note": "FOX10 Phoenix",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:46.668857"
+    "verified_at": "2026-05-01T21:06:46.668857",
+    "target_id": "18999261",
+    "followed_at": "2026-05-01T21:17:19.357566"
   },
   "curated:kvoa|kvoa tucson": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "KVOA",
     "user_id": "17525510",
     "display_name": "KVOA News 4 Tucson",
     "note": "KVOA Tucson",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:47.713923"
+    "verified_at": "2026-05-01T21:06:47.713923",
+    "target_id": "17525510",
+    "followed_at": "2026-05-01T21:17:54.947007"
   },
   "curated:koldnews|kold news 13 tucson": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "KOLDNews",
     "user_id": "17641427",
     "display_name": "KOLDNews",
     "note": "KOLD News 13 Tucson",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:49.026760"
+    "verified_at": "2026-05-01T21:06:49.026760",
+    "target_id": "17641427",
+    "followed_at": "2026-05-01T21:18:30.625115"
   },
   "curated:azluminaria|az luminaria nonprofit tucson": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "AZLuminaria",
     "user_id": "1440711726765199365",
     "display_name": "AZLuminaria",
     "note": "AZ Luminaria nonprofit Tucson",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:50.005677"
+    "verified_at": "2026-05-01T21:06:50.005677",
+    "target_id": "1440711726765199365",
+    "followed_at": "2026-05-01T21:19:06.228361"
   },
   "curated:rhondabodfield|rhonda bodfield, az politics": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "RhondaBodfield",
     "user_id": "821820163",
     "display_name": "Rhonda Bodfield",
     "note": "Rhonda Bodfield, AZ politics",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:52.939712"
+    "verified_at": "2026-05-01T21:06:52.939712",
+    "target_id": "821820163",
+    "followed_at": "2026-05-01T21:19:41.887447"
   },
   "curated:howardfischer|howard fischer, capitol media services": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "HowardFischer",
     "user_id": "122791312",
     "display_name": "Howard B Fischer",
     "note": "Howard Fischer, Capitol Media Services",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:53.969763"
+    "verified_at": "2026-05-01T21:06:53.969763",
+    "target_id": "122791312",
+    "followed_at": "2026-05-01T21:20:17.491841"
   },
   "curated:camsanchez|camryn sanchez, kjzz capitol": {
     "status": "skip_wrong_match",
@@ -639,76 +669,92 @@
     "qc_note": "wrong person (Camilo not Camryn)"
   },
   "curated:jenfifield|jen fifield, votebeat / az government": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "JenFifield",
     "user_id": "379805927",
     "display_name": "Jennifer Fifield",
     "note": "Jen Fifield, Votebeat / AZ government",
     "source": "curated",
-    "verified_at": "2026-05-01T21:06:57.166436"
+    "verified_at": "2026-05-01T21:06:57.166436",
+    "target_id": "379805927",
+    "followed_at": "2026-05-01T21:20:53.227011"
   },
   "curated:azagmayes|az ag kris mayes (official)": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "AZAGMayes",
     "user_id": "1611469394093436928",
     "display_name": "AZ Attorney General Kris Mayes",
     "note": "AZ AG Kris Mayes (official)",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:01.118413"
+    "verified_at": "2026-05-01T21:07:01.118413",
+    "target_id": "1611469394093436928",
+    "followed_at": "2026-05-01T21:21:28.727864"
   },
   "curated:azsecretary|az secretary of state": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "AZSecretary",
     "user_id": "1609936945140092929",
     "display_name": "Arizona Secretary of State",
     "note": "AZ Secretary of State",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:03.259246"
+    "verified_at": "2026-05-01T21:07:03.259246",
+    "target_id": "1609936945140092929",
+    "followed_at": "2026-05-01T21:22:04.393192"
   },
   "curated:katiehobbs|gov katie hobbs": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "katiehobbs",
     "user_id": "26659619",
     "display_name": "Katie Hobbs",
     "note": "Gov Katie Hobbs",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:04.256891"
+    "verified_at": "2026-05-01T21:07:04.256891",
+    "target_id": "26659619",
+    "followed_at": "2026-05-01T21:22:39.973024"
   },
   "curated:azgovernor|az governor's office": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "azgovernor",
     "user_id": "18598781",
     "display_name": "azgovernor",
     "note": "AZ Governor's office",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:05.167037"
+    "verified_at": "2026-05-01T21:07:05.167037",
+    "target_id": "18598781",
+    "followed_at": "2026-05-01T21:23:15.475438"
   },
   "curated:markkelly|sen mark kelly": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "markkelly",
     "user_id": "5942322",
     "display_name": "Mark Kelly",
     "note": "Sen Mark Kelly",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:06.355590"
+    "verified_at": "2026-05-01T21:07:06.355590",
+    "target_id": "5942322",
+    "followed_at": "2026-05-01T21:23:51.076539"
   },
   "curated:senmarkkelly|sen mark kelly (official)": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "SenMarkKelly",
     "user_id": "1324926274888888320",
     "display_name": "Senator Mark Kelly",
     "note": "Sen Mark Kelly (official)",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:07.401523"
+    "verified_at": "2026-05-01T21:07:07.401523",
+    "target_id": "1324926274888888320",
+    "followed_at": "2026-05-01T21:24:26.577158"
   },
   "curated:rubengallego|sen ruben gallego": {
-    "status": "candidate",
+    "status": "followed",
     "handle": "RubenGallego",
     "user_id": "49217025",
     "display_name": "Ruben Gallego",
     "note": "Sen Ruben Gallego",
     "source": "curated",
-    "verified_at": "2026-05-01T21:07:08.522445"
+    "verified_at": "2026-05-01T21:07:08.522445",
+    "target_id": "49217025",
+    "followed_at": "2026-05-01T21:25:02.191350"
   },
   "curated:azhousedems|az house democrats": {
     "status": "candidate",
@@ -1044,5 +1090,665 @@
     "note": "KJZZ Capitol reporter (correct handle)",
     "source": "curated",
     "verified_at": "2026-05-01T21:10:09.943439"
+  },
+  "x-search:energymomaz|tweet_author": {
+    "status": "review_required",
+    "handle": "EnergyMomAZ",
+    "user_id": "717144417102995456",
+    "display_name": "Energy Mom AZ",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:09.776878",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:lpeeko|tweet_author": {
+    "status": "review_required",
+    "handle": "lpeeko",
+    "user_id": "134712224",
+    "display_name": "lpeeko\u2122 (Slava Ukraini)",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:10.742051",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:j3669|tweet_author": {
+    "status": "review_required",
+    "handle": "j3669",
+    "user_id": "46232531",
+    "display_name": "Jennifer Asper",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:11.755470",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:bigzeke777|tweet_author": {
+    "status": "review_required",
+    "handle": "BigZeke777",
+    "user_id": "1806673160089325568",
+    "display_name": "Big Zeke \ud83c\uddfa\ud83c\uddf8\ud83c\udf35",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:12.743193",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:bellaro36233586|tweet_author": {
+    "status": "review_required",
+    "handle": "BellaRo36233586",
+    "user_id": "1541221481798987776",
+    "display_name": "Bella Ross",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:13.727128",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:blehmlawaz|tweet_author": {
+    "status": "review_required",
+    "handle": "BlehmLawAZ",
+    "user_id": "1472303378638118912",
+    "display_name": "Bryan James Blehm",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:14.767404",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:kgun9|tweet_author": {
+    "status": "review_required",
+    "handle": "kgun9",
+    "user_id": "20205271",
+    "display_name": "KGUN 9",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:15.845719",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:rwhisk1|tweet_author": {
+    "status": "review_required",
+    "handle": "RWhisk1",
+    "user_id": "1408860566",
+    "display_name": "Rawhisk",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:16.871013",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:ktar923|mention": {
+    "status": "review_required",
+    "handle": "KTAR923",
+    "user_id": "18563796",
+    "display_name": "KTAR News 92.3",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:17.903047",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:jaguarroper|tweet_author": {
+    "status": "review_required",
+    "handle": "JaguarRoper",
+    "user_id": "336160087",
+    "display_name": "Jaguar Roper",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:19.003364",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:matt_hollowayaz|tweet_author": {
+    "status": "review_required",
+    "handle": "Matt_HollowayAZ",
+    "user_id": "874844502",
+    "display_name": "MattHolloway\ud83c\udf99",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:20.198682",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:californiaglobe|mention": {
+    "status": "review_required",
+    "handle": "CaliforniaGlobe",
+    "user_id": "1006268732560289792",
+    "display_name": "California Globe",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:21.145853",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:votewarren|mention": {
+    "status": "review_required",
+    "handle": "votewarren",
+    "user_id": "411024392",
+    "display_name": "Warren Petersen",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:22.124440",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:judicialwatch|mention": {
+    "status": "review_required",
+    "handle": "JudicialWatch",
+    "user_id": "18247062",
+    "display_name": "Judicial Watch \u2696\ufe0f",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:23.160144",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:badlandsmedia_|tweet_author": {
+    "status": "review_required",
+    "handle": "BadlandsMedia_",
+    "user_id": "1585667220591345674",
+    "display_name": "Badlands Media",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:24.195261",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:lara11154roger|tweet_author": {
+    "status": "review_required",
+    "handle": "Lara11154Roger",
+    "user_id": "1656157259490295809",
+    "display_name": "Roger Lara",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:25.260982",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:rickisback_on_x|tweet_author": {
+    "status": "review_required",
+    "handle": "Rickisback_ON_X",
+    "user_id": "1868358561623056384",
+    "display_name": "John Reese - Person of Interest",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:26.298013",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:kcjw33|tweet_author": {
+    "status": "review_required",
+    "handle": "kcjw33",
+    "user_id": "22778877",
+    "display_name": "Keith Westbrook",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:27.462924",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:lovelyrita1022|tweet_author": {
+    "status": "review_required",
+    "handle": "LovelyRita1022",
+    "user_id": "2371069376",
+    "display_name": "Lovely Rita \ud83c\uddfa\ud83c\uddf8\ud83d\udc95\ud83c\uddfa\ud83c\udde6\ud83c\udf3b\ud83d\udcaa",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:28.466942",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:actblue|mention": {
+    "status": "review_required",
+    "handle": "actblue",
+    "user_id": "8223542",
+    "display_name": "ActBlue",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:29.465815",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:lancedude|tweet_author": {
+    "status": "review_required",
+    "handle": "Lancedude",
+    "user_id": "1851881648",
+    "display_name": "Lance Dude \ud83c\udf4a\u2627",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:30.521420",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:nicho88140|tweet_author": {
+    "status": "review_required",
+    "handle": "nicho88140",
+    "user_id": "1651807585216102400",
+    "display_name": "Highland Ladybug",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:31.598689",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:mrosazza|mention": {
+    "status": "review_required",
+    "handle": "mrosazza",
+    "user_id": "19561291",
+    "display_name": "Denver Fail",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:32.626731",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:rodneyglassman|tweet_author": {
+    "status": "review_required",
+    "handle": "rodneyglassman",
+    "user_id": "21230289",
+    "display_name": "Rodney Glassman",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:33.643575",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:karen6420|tweet_author": {
+    "status": "review_required",
+    "handle": "Karen6420",
+    "user_id": "1002687066633728001",
+    "display_name": "AZMimsy",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:34.693056",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:jankrygier1|tweet_author": {
+    "status": "review_required",
+    "handle": "JanKrygier1",
+    "user_id": "980187391733334017",
+    "display_name": "Jan Krygier",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:35.738643",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:ivotearizona|tweet_author": {
+    "status": "review_required",
+    "handle": "iVoteArizona",
+    "user_id": "997182427993817088",
+    "display_name": "iVoteArizona\u2122",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:36.817219",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:sedonaduck|tweet_author": {
+    "status": "review_required",
+    "handle": "SedonaDuck",
+    "user_id": "1518672236093210624",
+    "display_name": "SedonaDuck",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:37.852970",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:jcdaley|tweet_author": {
+    "status": "review_required",
+    "handle": "jcdaley",
+    "user_id": "34135329",
+    "display_name": "Joanne Daley",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:38.902341",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:mattrealest8|tweet_author": {
+    "status": "review_required",
+    "handle": "MattRealest8",
+    "user_id": "1185963899759349762",
+    "display_name": "Matt Greer",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:39.971173",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:azfec|mention": {
+    "status": "review_required",
+    "handle": "azfec",
+    "user_id": "18952278",
+    "display_name": "Arizona Free Enterprise Club",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:41.034629",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:consrevativdork|tweet_author": {
+    "status": "review_required",
+    "handle": "consrevativdork",
+    "user_id": "1922597487917109248",
+    "display_name": "conservativedork",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:42.111560",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:we80864771|tweet_author": {
+    "status": "review_required",
+    "handle": "we80864771",
+    "user_id": "1417277597004701703",
+    "display_name": "Act ur Age",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:43.134770",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:azbriananderson|tweet_author": {
+    "status": "review_required",
+    "handle": "AZBrianAnderson",
+    "user_id": "754178733922193408",
+    "display_name": "Brian Anderson",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:44.166796",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:azcapmedia|mention": {
+    "status": "review_required",
+    "handle": "azcapmedia",
+    "user_id": "30476431",
+    "display_name": "Capitol Media Services \ud83d\udce2 Telling it like it is",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:45.188273",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:cactus_politics|tweet_author": {
+    "status": "review_required",
+    "handle": "cactus_politics",
+    "user_id": "776920205180010498",
+    "display_name": "Cactus Politics",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:46.305973",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:tavisgail3721|tweet_author": {
+    "status": "review_required",
+    "handle": "TavisGail3721",
+    "user_id": "1895637741314195459",
+    "display_name": "4CryinOutLoud",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:47.274193",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:stevev35b|tweet_author": {
+    "status": "review_required",
+    "handle": "SteveV35B",
+    "user_id": "1230544826019434496",
+    "display_name": "Steve A",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:48.356563",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:johnbasham|tweet_author": {
+    "status": "review_required",
+    "handle": "JohnBasham",
+    "user_id": "65159946",
+    "display_name": "John Basham",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:49.388533",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:raiseemrightaz|tweet_author": {
+    "status": "review_required",
+    "handle": "RaiseEmRightAz",
+    "user_id": "1706101152956469248",
+    "display_name": "Mr raise em right",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:50.461558",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:tylerbowyer|tweet_author": {
+    "status": "review_required",
+    "handle": "tylerbowyer",
+    "user_id": "98906083",
+    "display_name": "Tyler Bowyer",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:51.478841",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:aef2o22|tweet_author": {
+    "status": "review_required",
+    "handle": "aef2o22",
+    "user_id": "1588956630057484289",
+    "display_name": "aef",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:52.504501",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:epochtimes|mention": {
+    "status": "review_required",
+    "handle": "EpochTimes",
+    "user_id": "29097819",
+    "display_name": "The Epoch Times",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:53.580208",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:arnaudmercier|tweet_author": {
+    "status": "review_required",
+    "handle": "arnaudmercier",
+    "user_id": "27454144",
+    "display_name": "Arnaud Mercier - #Entrepreneur",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:54.625658",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:jenlove1010|tweet_author": {
+    "status": "review_required",
+    "handle": "JenLove1010",
+    "user_id": "2026128292487831552",
+    "display_name": "Jennajackrabbit",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:55.682769",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:fbi|mention": {
+    "status": "review_required",
+    "handle": "FBI",
+    "user_id": "17629860",
+    "display_name": "FBI",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:56.813329",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:fbidirectorkash|mention": {
+    "status": "review_required",
+    "handle": "FBIDirectorKash",
+    "user_id": "1892594777075417088",
+    "display_name": "FBI Director Kash Patel",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:57.773270",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:potus|mention": {
+    "status": "review_required",
+    "handle": "POTUS",
+    "user_id": "1879650942410481666",
+    "display_name": "President Donald J. Trump",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:58.852204",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:vp|mention": {
+    "status": "review_required",
+    "handle": "VP",
+    "user_id": "1879652428490149888",
+    "display_name": "Vice President JD Vance",
+    "discovery": "mention",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:26:59.846373",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:thewatchdogco|tweet_author": {
+    "status": "review_required",
+    "handle": "TheWatchdogCo",
+    "user_id": "1902017920454017024",
+    "display_name": "The Watchdog Coalition",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:00.902512",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:funder|tweet_author": {
+    "status": "review_required",
+    "handle": "funder",
+    "user_id": "14247236",
+    "display_name": "Scott Dworkin",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:01.921670",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:dk_forcongress|tweet_author": {
+    "status": "review_required",
+    "handle": "DK_ForCongress",
+    "user_id": "2287425222",
+    "display_name": "Daniel Keenan",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:02.961884",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:guszilla|tweet_author": {
+    "status": "review_required",
+    "handle": "Guszilla",
+    "user_id": "14324200",
+    "display_name": "Guszilla\ud83c\udf35Loves the USA \ud83c\uddfa\ud83c\uddf8",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:04.047301",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:wendyrogersaz|tweet_author": {
+    "status": "review_required",
+    "handle": "WendyRogersAZ",
+    "user_id": "96502351",
+    "display_name": "Wendy Rogers",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:05.082644",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:rach_ic|tweet_author": {
+    "status": "review_required",
+    "handle": "Rach_IC",
+    "user_id": "15702490",
+    "display_name": "Rachel Alexander",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:06.176329",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:theepochtimesaz|tweet_author": {
+    "status": "review_required",
+    "handle": "TheEpochTimesAZ",
+    "user_id": "1770526097102540800",
+    "display_name": "The Epoch Times Arizona",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:07.292466",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:darla4freedom|tweet_author": {
+    "status": "review_required",
+    "handle": "Darla4freedom",
+    "user_id": "1514986391226109954",
+    "display_name": "Darla Gonzalez",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:08.274588",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:arwomen|tweet_author": {
+    "status": "review_required",
+    "handle": "ARWomen",
+    "user_id": "132234491",
+    "display_name": "AhwatukeeGOPWomen",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:10.316094",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:stopthewokeaz|tweet_author": {
+    "status": "review_required",
+    "handle": "StopTheWokeAZ",
+    "user_id": "358176989",
+    "display_name": "Chelsea in AZ \ud83c\uddfa\ud83c\uddf8\ud83c\udf35\ud83e\udd0e",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:11.397351",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
+  },
+  "x-search:vietthanhsports|tweet_author": {
+    "status": "review_required",
+    "handle": "vietthanhsports",
+    "user_id": "1269149246",
+    "display_name": "SAVE AMERICA",
+    "discovery": "tweet_author",
+    "source_query": "(\"Kris Mayes\" OR \"AG Mayes\" OR \"Arizona Attorney General\") -is:retweet -is:reply",
+    "source": "x_search",
+    "verified_at": "2026-05-01T21:27:12.453665",
+    "qc_note": "Auto-demoted: x_search recent-search pulled random political accounts mixed with real AZ figures. Manual triage required before follow."
   }
 }
