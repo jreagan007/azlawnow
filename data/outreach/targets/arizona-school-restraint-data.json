@@ -62,8 +62,8 @@
     "story_target": "arizona-school-restraint-data",
     "evidence_url": "https://www.azed.gov/specialeducation/contact-us",
     "story_relevance_note": "Friend coordinates the intersection of behavior intervention and student mental health at ADE. Restraint events overwhelmingly happen to students with documented disabilities and trauma histories. She is the staffer who can speak to the pipeline from missed mental health support to physical restraint in AZ schools.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your coordination of the **FY 2026 AWARE-II Year 5** continuation grant emphasizing sustainability in school mental health programming.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -113,8 +113,8 @@
     "story_target": "arizona-school-restraint-data",
     "evidence_url": "https://www.azed.gov/specialeducation/contact-us",
     "story_relevance_note": "Barnette is ADE's Lead Complaint Investigator. She's the staffer who actually opens files when a parent alleges illegal restraint or seclusion. A statewide restraint dataset gives her a frame for every individual case she takes in, and shows which districts cluster.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your State Complaint Investigative Report and Corrective Action on a May 22, 2024 special education records request.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -198,8 +198,8 @@
     "story_target": "arizona-school-restraint-data",
     "evidence_url": "https://www.azed.gov/specialeducation/contact-us",
     "story_relevance_note": "Klein directs ADE Special Projects from the Tucson office, which gives him the southern AZ lens on restraint and seclusion patterns. His portfolio spans assistive technology and secondary transition, both areas where restraint events disrupt students' IEPs and post-school outcomes.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your contact info on the \"2019 Arizona PSO Results\" report as Secondary Transition Specialist.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -351,8 +351,8 @@
     "story_target": "arizona-school-restraint-data",
     "evidence_url": "https://www.azed.gov/specialeducation/contact-us",
     "story_relevance_note": "Chapman is the Associate Superintendent above ADE Special Ed. Restraint and seclusion patterns are one of the highest-political-risk topics in the agency, and a public AZ dataset reaches her for sign-off on response, especially around districts that draw repeat federal attention.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your comments on premature graduation of students with disabilities in the October 2, 2025 Arizona Capitol Times article.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -387,7 +387,7 @@
     "story_relevance_note": "Investigative editor with indigenous/borderlands focus. Top routing target for ICE detention lawsuit, school restraint data (tribal-school overlap), pedestrian deaths on tribal land, Walgreens opioid (Navajo/Hopi corridor stores).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Shannon Conner",
@@ -402,8 +402,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Education solutions beat. Top match for ASU Prep related-party lease, AZ 325 educator discipline, school restraint data, schools MERV-13 IAQ filter bypass, career schools 37 adverse actions.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your announcement joining Arizona Luminaria as education solutions reporter in April 2025.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Chelsea Curtis",
@@ -418,8 +418,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "MMIP/tribal beat. Match for stories with tribal-jurisdiction angles: AZ 325 educator discipline (BIE schools), school restraint (tribal schools), pedestrian deaths on Navajo/Hopi reservation roads, Walgreens opioid stores in border-tribal corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"Too long without answers: Shining a light on Missing and Murdered Indigenous Women, Girls, Two-Spirit and Transgender People\" in Arizona Luminaria.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Yana Kunichoff",
@@ -434,8 +434,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "RFA corps, criminal justice + education. Strong match for AZ educator discipline, school restraint data (use of force on students), career schools adverse actions, daycare violations (childcare oversight).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your \"In Cochise County, a mobile team brings help and connection\" in AZ Luminaria on March 24, 2026.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Brandon Bowers",
@@ -451,7 +451,7 @@
     "story_relevance_note": "Mohave County coverage. Match for any West/Northwest AZ angle: Buckeye-Durango-Yuma roundabout (regional traffic safety), Walgreens opioid stores in Mohave/Lake Havasu, school bus seat belts in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Pam Ashley",
@@ -467,7 +467,7 @@
     "story_relevance_note": "Features. Strong match for grand court Mesa elder abuse (human-interest victim angle), daycare violations, school restraint stories with named-family angle.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Christina Calloway",
@@ -483,7 +483,7 @@
     "story_relevance_note": "Mohave County GA reporter. Match for all rural-AZ-impact investigations: educator discipline, opioid Walgreens, IAQ filter bypass in rural schools.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Tim Wiederaenders",
@@ -499,7 +499,7 @@
     "story_relevance_note": "Yavapai County editor. Match for Yavapai/Prescott-impact investigations: rural school IAQ, school bus seat belts, opioid Walgreens stores in Yavapai, AZ educator discipline (Prescott Unified).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Warren Adams-Ockrassa",
@@ -515,7 +515,7 @@
     "story_relevance_note": "White Mountain region editor. Match for Navajo/Apache county investigations: AZ 325 educator discipline (rural districts), school restraint data, pedestrian deaths (rural road design), opioid Walgreens stores in Show Low/Pinetop, IAQ MERV-13 in mountain schools.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Toni Gibbons",
@@ -531,7 +531,7 @@
     "story_relevance_note": "Navajo County beat. Strong match for all Navajo-county-impact investigations: educator discipline in Heber-Overgaard / Show Low / Snowflake schools, opioid stores along I-40 corridor, school bus safety in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Jenn Moreira",
@@ -547,7 +547,7 @@
     "story_relevance_note": "Apache County beat. Strong match for all Apache-county-impact: tribal-school overlap (educator discipline, restraint), border-of-Navajo-Nation public safety, opioid Walgreens (limited corridor).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Peter Aleshire",
@@ -562,8 +562,8 @@
     "evidence_url": "https://www.paysonroundup.com/site/contact.html",
     "story_relevance_note": "Veteran AZ reporter (longtime AZ journalism). Strong byline. Match for environmental/IAQ schools angle, road safety, opioid harm-reduction stories.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your piece \"In the News: Wolf deaths, introductions, spawn controversy\" on the Mexican Gray Wolf reintroduction program.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Guy Roginson",
@@ -579,7 +579,7 @@
     "story_relevance_note": "Yavapai/Prescott Valley regional editor. Match for Yavapai-county-impact investigations: educator discipline, opioid Walgreens stores, school bus safety, IAQ in rural districts.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Tony Tedford",
@@ -595,6 +595,6 @@
     "story_relevance_note": "Multimedia producer. Useful for video-friendly stories: pedestrian deaths at named crash sites, school bus safety, IAQ filter swap-out demos.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   }
 ]

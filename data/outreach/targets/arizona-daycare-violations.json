@@ -181,8 +181,8 @@
     "story_target": "arizona-daycare-violations",
     "evidence_url": "https://www.qualityfirstaz.com/contact/",
     "story_relevance_note": "Gonzalez is the named media contact for Quality First, Arizona's child care quality rating and improvement system. Quality First scores intersect directly with AZDHS licensing actions, making her a critical voice on whether quality ratings flagged the violating facilities.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your \"Newly awarded grant opens more access to Quality First\" on expanding Rating Only participation in February 2026.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -334,8 +334,8 @@
     "story_target": "arizona-daycare-violations",
     "evidence_url": "https://www.azed.gov/agency-directory",
     "story_relevance_note": "Foster-care-involved children are statistically more likely to be in subsidized child care settings. ADE's foster care unit fields cross-system inquiries on child safety.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your \"Foster Care Education: Basics\" one-pager dated August 15, 2024, on school stability for foster youth.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -369,8 +369,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "AZ Luminaria runs deep investigative work in Pima/border. Route any major investigation here (charter, opioid Walgreens 350M, daycare violations, ICE detention).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your coverage of Pima County Sheriff's Department violating its own policy tracking calls to Border Patrol.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Yana Kunichoff",
@@ -385,8 +385,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "RFA corps, criminal justice + education. Strong match for AZ educator discipline, school restraint data (use of force on students), career schools adverse actions, daycare violations (childcare oversight).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your March 24, 2026 piece \"In Cochise County, a mobile team brings help and connection\" in AZ Luminaria on community health outreach.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Beatriz Limon",
@@ -401,8 +401,8 @@
     "evidence_url": "https://azluminaria.org/our-team/",
     "story_relevance_note": "Bilingual reporter/translator. Use for stories with Spanish-speaking impact populations: ICE detention, daycare violations in Latino communities, opioid harm in border Walgreens corridor.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your April 20, 2026 piece \"3 authors, 3.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Jennifer Goldberg",
@@ -417,8 +417,8 @@
     "evidence_url": "https://www.phoenixnewtimes.com/about/staff",
     "story_relevance_note": "Culture. Lower priority for hard-news investigations but useful when stories have local Phoenix-life cultural angle (e.g., daycare violations in specific Phoenix neighborhoods).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw you oversee the \"Best of Phoenix\u00ae\" roundup that hit newsstands around the Valley.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Tirion Boan",
@@ -433,8 +433,8 @@
     "evidence_url": "https://www.phoenixnewtimes.com/about/staff",
     "story_relevance_note": "Food beat. Skip routing for hard investigations unless food-safety angle (e.g., daycare meal safety).",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your coverage of restaurant openings and closings as Food Editor since May 2022.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Sara Crocker",
@@ -450,7 +450,7 @@
     "story_relevance_note": "GA writer. Match for any active Phoenix-metro investigation: Mesa HB2228 elder abuse, ASU Prep, daycare violations, AZ educator discipline, Walgreens opioid.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Pam Ashley",
@@ -466,6 +466,6 @@
     "story_relevance_note": "Features. Strong match for grand court Mesa elder abuse (human-interest victim angle), daycare violations, school restraint stories with named-family angle.",
     "routing_source": "_pool_az-cloudflare-harvest-2026-05-01",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   }
 ]

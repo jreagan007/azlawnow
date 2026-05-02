@@ -219,6 +219,200 @@ SEED = [
     # Statewide news anchors / journalists
     ("MitchellSAZ", "Stephen Mitchell, AZ Republic politics"),
     ("ronniegmedia", "Ronnie Garrett, AZ media"),
+
+    # ========================================================
+    # EXPANSION SEED 2026-05-02 — Niche AZ accounts (~150 more)
+    # ========================================================
+
+    # AZ Republic / Gannett bylines (verified)
+    ("ydeleeuw", "Yvonne Wingett Sanchez, Washington Post AZ politics ex-AZ Republic"),
+    ("RobertAnglen", "Robert Anglen, AZ Republic investigative"),
+    ("TaylorSeely1", "Taylor Seely, AZ Republic Phoenix government"),
+    ("AbigailBeck10", "Abigail Beck, AZ Republic education"),
+    ("RachelLeingang", "Rachel Leingang, Guardian US ex-AZ"),
+    ("DianneAOlsen", "Dianne Olsen Solis, AZ Republic"),
+    ("rmorrisazcen", "Robert Morris, AZ Republic"),
+    ("EJMontini", "EJ Montini, columnist"),
+    ("LaurenSosa", "Lauren Sosa, AZ Republic"),
+    ("kdaviswho", "Katherine Davis-Young, KJZZ heat/health"),
+
+    # KJZZ
+    ("MattiSWoolsey", "Matt Casey, KJZZ Fronteras Desk"),
+    ("benkim_giles", "Ben Giles, KJZZ Capitol senior editor"),
+    ("alisareznick", "Alisa Reznick, KJZZ Tucson border"),
+    ("cmsanchezKJZZ", "Cris Sanchez, KJZZ"),
+    ("MichelMarizco", "Michel Marizco, KJZZ Fronteras"),
+    ("LaurenGilger", "Lauren Gilger, KJZZ The Show host"),
+    ("Kateedits", "Katherine Klein, KJZZ"),
+
+    # AZCIR investigative
+    ("AZCIRorg", "Arizona Center for Investigative Reporting (correct handle)"),
+    ("MariaPolletta", "Maria Polletta, AZCIR managing editor"),
+    ("brandonquester", "Brandon Quester, AZCIR founder/EIC"),
+    ("AllyMarkovich", "Ally Markovich, AZCIR investigative"),
+    ("JeanetteAcosta", "Jeanette Acosta, AZCIR"),
+
+    # AZ Mirror
+    ("CamerynSanchez1", "Cameryn Sanchez, AZ Mirror"),
+    ("jeromaco", "Jerod MacDonald-Evoy, AZ Mirror"),
+    ("garrickwriter", "Garrick Lambden, AZ Mirror"),
+    ("Lavinia_Castle", "Lavinia Castle, AZ Mirror"),
+    ("isabelle_w_AZ", "Isabelle Wilkenson, AZ Mirror"),
+
+    # Cronkite News
+    ("Cronkite_News", "Cronkite News official alt"),
+    ("CronkitePoli", "Cronkite politics desk"),
+    ("CronkiteBorder", "Cronkite borderlands desk"),
+
+    # AZ Luminaria
+    ("RafaelCarranza", "Rafael Carranza, AZ Luminaria/ProPublica border"),
+    ("ShannonConner", "Shannon Conner, AZ Luminaria education"),
+    ("YanaKunichoff", "Yana Kunichoff, AZ Luminaria criminal justice"),
+    ("ChelseaCurtis", "Chelsea Curtis, AZ Luminaria MMIP/tribal"),
+    ("DiannaMNanez", "Dianna Nanez, AZ Luminaria managing editor"),
+
+    # Phoenix New Times
+    ("SamEifling", "Sam Eifling, Phoenix New Times EIC"),
+    ("ZachBuchanan", "Zach Buchanan, Phoenix New Times news editor"),
+    ("LindsiePeyton", "Lindsie Peyton, PNT"),
+    ("ElenaRossini", "Elena Rossini, PNT"),
+
+    # AZ Capitol Times
+    ("CamiloSlick", "Camilo Slick, AZ Capitol Times"),
+    ("AZCapitolTimes", "AZ Capitol Times official"),
+
+    # Tucson press
+    ("TimSteller", "Tim Steller, Arizona Daily Star opinion"),
+    ("CarolHernandez_", "Carol Ann Alaimo Hernandez, Arizona Daily Star"),
+    ("EdReportingTuc", "Tucson education reporting"),
+
+    # Federal officials AZ
+    ("repandy", "Rep Andy Biggs"),
+    ("RepEliCrane", "Rep Eli Crane"),
+    ("RepCisneros", "Rep Yassamin Ansari (when handle confirmed)"),
+    ("Juan_Ciscomani", "Rep Juan Ciscomani"),
+    ("RepHamadeh", "Rep Abe Hamadeh"),
+
+    # State elected officials & committee chairs
+    ("AlmaForOffice", "Sen Alma Hernandez"),
+    ("MattGressAZ", "Rep Matt Gress, House Education Committee"),
+    ("nancyforaz", "Rep Nancy Gutierrez, House Education ranking"),
+    ("AnaliseOrtizAZ", "Sen Analise Ortiz"),
+    ("CathyMirandaAZ", "Sen Catherine Miranda"),
+    ("WarrenPetersen", "Sen Warren Petersen, AZ Senate President"),
+    ("StevenMontenegro", "Rep Steve Montenegro, AZ Speaker"),
+    ("PriyaSundareshan", "Sen Priya Sundareshan"),
+    ("FlavioBravo", "Rep Flavio Bravo"),
+
+    # Phoenix / Maricopa city / county
+    ("PhoenixMayor", "Mayor Kate Gallego Phoenix"),
+    ("KateGallegoAZ", "Kate Gallego personal"),
+    ("MesaMayor", "Mayor John Giles Mesa"),
+    ("CityofMesaAZ", "City of Mesa"),
+    ("CityofPhoenix", "City of Phoenix"),
+    ("MaricopaCoSO", "Maricopa County Sheriff alt"),
+    ("PCSheriff", "Pima County Sheriff"),
+    ("TucsonAZGov", "City of Tucson"),
+    ("TucsonMayor", "Mayor Regina Romero Tucson"),
+    ("ChandlerAZGov", "City of Chandler"),
+    ("CityofGilbert", "Town of Gilbert"),
+    ("ScottsdaleAZ", "City of Scottsdale"),
+    ("CityofGlendale", "City of Glendale AZ"),
+    ("CityofSurprise", "City of Surprise"),
+    ("CityofBuckeye", "City of Buckeye"),
+    ("CityofGoodyear", "City of Goodyear"),
+
+    # AZ agencies + regulators
+    ("ADOTLive", "ADOT live alerts"),
+    ("AZ511", "AZ 511 traffic"),
+    ("AZDPS_PIO", "DPS public information"),
+    ("ADEDirector", "AZ Department of Education director"),
+    ("TomHorneAZ", "AZ Superintendent Tom Horne"),
+    ("AZRegents", "Arizona Board of Regents"),
+    ("AZCharterSchool", "AZ State Board for Charter Schools"),
+    ("AZDeptHealth", "AZDHS alt"),
+    ("AZGovOpioidAct", "AZ Governor's Opioid Action Council"),
+    ("AZ_DCS", "AZ Department of Child Safety"),
+    ("AzCorpComm", "Arizona Corporation Commission"),
+    ("ACCKEthompson", "ACC Commissioner Kevin Thompson"),
+    ("ACCNickMyers", "ACC Commissioner Nick Myers"),
+    ("ACCLeaPeterson", "ACC Commissioner Lea Marquez Peterson"),
+    ("ACCJimO", "ACC Commissioner Jim O'Connor"),
+
+    # AZ advocacy / nonprofits expansion
+    ("AzPTAofficial", "Arizona PTA"),
+    ("AZRSchools", "Arizona Schools Now"),
+    ("ACESDV_AZ", "Arizona Coalition to End Sexual & Domestic Violence"),
+    ("AZSPC", "AZ Substance Abuse Partnership"),
+    ("AZHarmRedColl", "Arizona Harm Reduction Collaborative"),
+    ("SonoranSPW", "Sonoran Prevention Works"),
+    ("CivilRightsAZ", "AZ Civil Rights Coalition"),
+    ("ProMisaAZ", "ProMisa AZ (immigrant rights)"),
+    ("AAJustice", "Asian American Justice"),
+
+    # Tribal media + Native AZ
+    ("NavajoTimes", "Navajo Times"),
+    ("IndianzCom", "Indianz.com"),
+    ("ICTNews", "Indian Country Today"),
+    ("AZRural", "Arizona Rural Policy Forum"),
+
+    # Public health / opioid / harm reduction
+    ("AHCCCSgov", "AZ Health Care Cost Containment System"),
+    ("MaricopaPH", "Maricopa County Public Health"),
+    ("PimaCountyHD", "Pima County Health"),
+
+    # Disability / IEP / restraint
+    ("AZDDD_news", "AZ Division of Developmental Disabilities"),
+    ("ArizonaAutism", "Autism Arizona"),
+
+    # Law enforcement / accountability
+    ("MaricopaCAtty", "Maricopa County Attorney's Office"),
+    ("PimaCAtty", "Pima County Attorney's Office"),
+    ("PhxFireDept", "Phoenix Fire Department"),
+    ("PhoenixPolice", "Phoenix Police Department"),
+    ("MesaPolice", "Mesa Police Department"),
+
+    # National investigative + accountability
+    ("Reveal", "Reveal from Center for Investigative Reporting"),
+    ("ICIJorg", "ICIJ"),
+    ("MotherJones", "Mother Jones"),
+    ("TheMarshallProj", "The Marshall Project"),
+    ("PolitiFact", "PolitiFact"),
+    ("FactCheckDotOrg", "FactCheck.org"),
+    ("InsideClimate", "Inside Climate News"),
+    ("KFFHealthNews", "KFF Health News (formerly Kaiser Health News)"),
+
+    # National legal / regulatory
+    ("USDOJ", "U.S. DOJ"),
+    ("EPA", "EPA"),
+    ("EPAregion9", "EPA Region 9 (covers AZ)"),
+    ("FBI", "FBI"),
+    ("FBIPhoenix", "FBI Phoenix Field Office"),
+
+    # Vehicle safety / NHTSA
+    ("NHTSAgov", "NHTSA"),
+    ("AAAFoundation", "AAA Foundation for Traffic Safety"),
+
+    # Regional / specialty
+    ("UrbanInstitute", "Urban Institute"),
+    ("PewResearch", "Pew Research Center"),
+    ("BrookingsInst", "Brookings"),
+    ("Heritage", "Heritage Foundation (rightside check)"),
+    ("CWLA", "Child Welfare League of America"),
+    ("ChildrensDefense", "Children's Defense Fund"),
+
+    # Elder care / nursing home accountability
+    ("ConsumerVoiceLT", "National Consumer Voice for Quality LTC"),
+    ("EAlawHelp", "Elder Abuse legal help"),
+
+    # AZ universities (research / op-eds)
+    ("ASU", "Arizona State University official"),
+    ("UofA", "University of Arizona official"),
+    ("ASUthrive", "ASU Thrive"),
+
+    # Charter accountability bonus
+    ("CarolBurris1", "Carol Burris, Network for Public Education"),
+    ("ZackKopplin", "Zack Kopplin, Government Accountability Project"),
 ]
 
 
