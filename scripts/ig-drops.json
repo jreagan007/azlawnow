@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "voice": "AZ Law Now \u2014 data-first, contractions, no em-dashes, peer-to-peer.",
+    "rules": "Caption: lead with the strongest hook in first 125 chars (truncate point). Body up to 2200 chars but tight is better. NO clickable links in caption (IG strips them) \u2014 say 'link in profile' or 'full investigation in our profile bio link'. Hashtags go in the FIRST COMMENT, not the caption (cleaner look + same algorithmic effect).",
+    "ig_account": "@azlawnow",
+    "created": "2026-04-22"
+  },
+  "posts": [
+    {
+      "id": "ig-azln-01",
+      "topic": "buckeye-durango-yuma",
+      "image_url": "https://azlawnow.com/ig/ig-buckeye-durango-yuma.jpg",
+      "caption": "Buckeye's own engineering report said a roundabout would cut injury crashes 41.7% at Durango and Yuma. The City picked the cheaper signalized design. 15.4% reduction.\n\nA 26.3-point safety gap. $1.4M saved up front. Built into the next decade of crash reports.\n\nFull investigation with the CMF table, FHWA benchmarks, and Buckeye's 33% population growth math: link in our profile bio.",
+      "first_comment": "#BuckeyeAZ #ArizonaPolitics #RoadSafety #IntersectionDesign #FHWA #PhoenixMetro #WestValley #AZLawNow #PersonalInjury #DataJournalism"
+    },
+    {
+      "id": "ig-azln-02",
+      "topic": "mesa-elder-abuse-hb2228",
+      "image_url": "https://azlawnow.com/ig/ig-mesa-elder-abuse-hb2228.jpg",
+      "caption": "60% of nursing home sexual abuse victims have dementia.\n80% of perpetrators are caregivers.\nOnly 30% of incidents reach law enforcement.\n\nA Mesa caregiver was arrested April 21 for alleged abuse of a wheelchair-bound dementia patient. The family caught it on video.\n\nThe case fits a national pattern. HB2228 is the AZ bill that closes the registry gap \u2014 currently in the Senate.\n\nFull investigation with primary sources, statutory references, and what families can do: link in our profile bio.",
+      "first_comment": "#MesaAZ #ArizonaLegislature #HB2228 #ElderAbuse #NursingHomeAbuse #VulnerableAdults #AARPArizona #AZHealthDept #AZLawNow #ElderJustice"
+    },
+    {
+      "id": "ig-azln-03",
+      "topic": "buckeye-durango-yuma-fhwa",
+      "image_url": "https://azlawnow.com/ig/ig-fhwa-roundabout-data.jpg",
+      "caption": "FHWA data on signalized intersections converted to roundabouts: 46% reduction in fatal and serious-injury crashes.\n\nBuckeye had this data in front of them at Durango and Yuma. Picked the cheaper option anyway.\n\nThe math doesn't care about public unfamiliarity. Read the investigation: link in our profile bio.",
+      "first_comment": "#BuckeyeAZ #FHWA #Roundabouts #IntersectionSafety #TrafficEngineering #PhoenixMetro #ArizonaInfrastructure #AZLawNow #DataJournalism #RoadDesign"
+    },
+    {
+      "id": "ig-azln-04",
+      "topic": "buckeye-population",
+      "image_url": "https://azlawnow.com/ig/ig-buckeye-population.jpg",
+      "caption": "Buckeye, Arizona. 2020 population: 93,741. 2024 estimate: 114,334.\n\n32.95% growth in four years. Top tier of fastest-growing US cities.\n\nMore people. More AADT. Same arterial intersections. The road geometry decisions made today carry for decades.\n\nWhy the City's choice at Durango and Yuma compounds: link in our profile bio.",
+      "first_comment": "#BuckeyeAZ #Maricopa #PhoenixMetro #WestValley #ArizonaGrowth #UrbanPlanning #ArizonaInfrastructure #AZLawNow #PopulationGrowth #DataJournalism"
+    },
+    {
+      "id": "ig-azln-05",
+      "topic": "mesa-elder-abuse-aps",
+      "image_url": "https://azlawnow.com/ig/ig-aps-hotline.jpg",
+      "caption": "If your loved one is in an Arizona long-term care facility, three things matter immediately:\n\n1. Pull the AZDHS inspection record. It's public.\n2. Document anything that doesn't sit right. Photos, dates, behavior changes.\n3. APS hotline: 1-877-767-2385.\n\nThe data on what happens when families don't catch it early is the reason HB2228 exists.\n\nFull guide with statutory references and reporting paths: link in our profile bio.",
+      "first_comment": "#ElderCare #NursingHomeAbuse #ArizonaSeniors #AdultProtectiveServices #ElderJustice #AZHealthDept #VulnerableAdults #AARPArizona #AZLawNow #FamilyResources"
+    },
+    {
+      "id": "ig-azln-06",
+      "topic": "asu-prep-related-party-lease",
+      "image_url": "https://azlawnow.com/og/asu-prep-related-party-lease.png",
+      "caption": "Arizona's largest university-affiliated charter network is also a separate Arizona nonprofit corporation. Its FY24 IRS 990 reports a $5.46M operating loss on $82.4M revenue.\n\nThe FY21 audit, filed at ade.az.gov, discloses a related-party operating lease on a school-site building. $11.5M right-of-use asset. Agreement runs through September 2032.\n\nNote 9 names the counterparty. That's the next pull.\n\nFull investigation with the audit text, federal-funds schedule, and the public-records path under A.R.S. 39-121: link in our profile bio.",
+      "first_comment": "#ArizonaEducation #CharterSchools #PublicRecords #Tempe #ASU #NonprofitFinance #AZLawNow"
+    },
+    {
+      "id": "ig-azln-07",
+      "topic": "walgreens-350m-arizona-opioid-stores",
+      "image_url": "https://azlawnow.com/og/walgreens-350m-arizona-opioid-stores.png",
+      "caption": "The federal Walgreens opioid settlement was announced in April 2025. Up to $350 million. Covered conduct from August 2012 through March 2023.\n\nArizona lost 1,659 people in the most recent 12-month surveillance window. 2,846 in 2021.\n\nWhich Arizona Walgreens stores filled the prescriptions covered by the settlement? The list is in the Eastern District of New York federal docket.\n\nThree records close the Arizona accountability gap: the consent decree exhibits, the DEA Phoenix Federal Register decisions, and the Arizona State Board of Pharmacy meeting minutes. All three are public.\n\nFull investigation: link in our profile bio.",
+      "first_comment": "#OpioidCrisis #ArizonaHealth #PublicRecords #Pharmacy #ConsumerProtection #AZLawNow"
+    }
+  ]
+}

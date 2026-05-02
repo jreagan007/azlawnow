@@ -1,7 +1,7 @@
 {
   "meta": {
-    "voice": "AZ Law Now — data-first, contractions, no em-dashes, peer-to-peer. Same voice rules as Brendan's investigations.",
-    "rules": "FB has no char limit but 100-300 chars + image + auto-embedded link is the sweet spot. Always include the image (don't rely on link preview alone — FB's preview cards are inconsistent). Lead with a number where possible. Link in body, not as the only content.",
+    "voice": "AZ Law Now \u2014 data-first, contractions, no em-dashes, peer-to-peer. Same voice rules as Brendan's investigations.",
+    "rules": "FB has no char limit but 100-300 chars + image + auto-embedded link is the sweet spot. Always include the image (don't rely on link preview alone \u2014 FB's preview cards are inconsistent). Lead with a number where possible. Link in body, not as the only content.",
     "page": "facebook.com/azlawnow",
     "created": "2026-04-22"
   },
@@ -65,6 +65,18 @@
       "topic": "az-mayes-ice-surprise",
       "image": "/Users/taqticlaw/Projects/azlawnow/public/og/arizona-mayes-ice-surprise-detention-lawsuit.png",
       "text": "Arizona Attorney General Kris Mayes sued the federal government Friday to block a 1,500-bed federal detention facility in Surprise.\n\nThe single fact that makes this lawsuit different from a partisan press release is the address across the street.\n\nDirectly across from the proposed facility, Rinchem Company stores chlorine, hydrofluoric acid, and fluorine. Rinchem's most recent EPA Risk Management Plan was filed January 1, 2026, three weeks before the federal warehouse purchase on January 23. The AG complaint quotes that the RMP \"does not consider the potential hazards incurred by the presence of a mass detention facility next door.\"\n\nThree sister-state AGs filed materially similar NEPA suits earlier in 2026. Maryland won a TRO on March 11. Arizona is the fourth state on this fact pattern.\n\nFull investigation, with the Rinchem chemical-zone frame, the NEPA + INA + Clean Air Act claims, and what comes next:\nhttps://azlawnow.com/investigations/arizona-mayes-ice-surprise-detention-lawsuit/"
+    },
+    {
+      "id": "fb-azln-11",
+      "topic": "asu-prep-related-party-lease",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/asu-prep-related-party-lease.png",
+      "text": "ASU Preparatory Academy is Arizona's largest university-affiliated charter network. Its most recent IRS Form 990 (fiscal year ending June 2024) reports $82.4M in revenue against $87.9M in expenses. That's a $5.46M operating loss.\n\nThe network's FY21 audited consolidated financial statements, filed with the Arizona Department of Education, disclose something else. Note 6 of that audit reads: \"ASU Prep leases a building used for a school site from a related party (see Note 9) under an agreement expiring September 2032.\" Aggregate operating-lease right-of-use asset: $11,543,739.\n\nThe FY21 audit had zero findings. Auditor issued a clean opinion. Related-party transactions are legal in nonprofit finance when properly disclosed, board-approved, and at fair-market terms. Note 9 is where the counterparty's name lives.\n\nWe pulled the audit text, mapped the federal-funds flow, and laid out the public-records path under A.R.S. 39-121.\n\nFull investigation: https://azlawnow.com/investigations/asu-prep-related-party-lease/"
+    },
+    {
+      "id": "fb-azln-12",
+      "topic": "walgreens-350m-arizona-opioid-stores",
+      "image": "/Users/taqticlaw/Projects/azlawnow/public/og/walgreens-350m-arizona-opioid-stores.png",
+      "text": "In April 2025, the U.S. Attorney's Office for the Eastern District of New York announced a federal settlement with Walgreens valued at up to $350 million. The allegation: Walgreens pharmacists knowingly filled millions of unlawful opioid prescriptions and Walgreens then submitted false claims for those prescriptions to federal health programs. Covered conduct: August 2012 through March 2023.\n\nArizona's most recent provisional 12-month opioid overdose death count, per AZDHS, is 1,659 (as of November 2024). The 2021 full-year figure was 2,846.\n\nWhich Arizona Walgreens stores filled the prescriptions covered by the settlement? The DOJ press release describes the conduct as nationwide. The store-by-store list, if it exists in the consent decree exhibits, sits in the federal docket in the Eastern District of New York. That's a PACER pull or a FOIA request.\n\nWe mapped the federal frame, the Arizona death toll, the state regulator architecture (Board of Pharmacy, DEA Phoenix), and the statutory frame (A.R.S. 32-1901, 13-3408, 36-2606).\n\nFull investigation: https://azlawnow.com/investigations/walgreens-350m-arizona-opioid-stores/"
     }
   ]
 }

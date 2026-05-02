@@ -1,7 +1,7 @@
 {
   "meta": {
-    "voice": "Brendan Franks — data-first, fragments, contractions, no em-dashes, no links in main tweet",
-    "rules": "Under 280 chars. Lead with a number where possible. Fragments for emphasis. Link in the reply only. Mentions go in a SECOND reply (third tweet) — keeps the main thread clean and doesn't spam mentions in body copy.",
+    "voice": "Brendan Franks \u2014 data-first, fragments, contractions, no em-dashes, no links in main tweet",
+    "rules": "Under 280 chars. Lead with a number where possible. Fragments for emphasis. Link in the reply only. Mentions go in a SECOND reply (third tweet) \u2014 keeps the main thread clean and doesn't spam mentions in body copy.",
     "created": "2026-04-22"
   },
   "posts": [
@@ -10,7 +10,7 @@
       "topic": "buckeye-durango-yuma",
       "text": "Buckeye's own engineering report said a roundabout would cut injury crashes 41.7% at Durango and Yuma.\n\nThe City picked the cheaper signalized design. 15.4% reduction.\n\n26.3-point safety gap. Saved $1.4M up front. Built the difference into the next decade of crash reports.",
       "reply": "Full investigation with the CMF table, FHWA benchmarks, and the population-growth math:\n\nazlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/",
-      "mentions": "cc @azcentral @azfamily @fox10phoenix @12News @abc15 @KJZZPhoenix — Buckeye infrastructure / West Valley desks if useful."
+      "mentions": "cc @azcentral @azfamily @fox10phoenix @12News @abc15 @KJZZPhoenix \u2014 Buckeye infrastructure / West Valley desks if useful."
     },
     {
       "id": "azln-02",
@@ -24,28 +24,28 @@
       "topic": "mesa-elder-abuse-hb2228",
       "text": "60% of nursing home sexual abuse victims have dementia.\n\n80% of perpetrators are caregivers.\n\nOnly 30% of incidents reach law enforcement.\n\nA Mesa caregiver was arrested yesterday. Wheelchair-bound dementia patient. The family caught it on video.",
       "reply": "The case fits the pattern. HB2228 is moving in the AZ Senate to close the registry gap. Full piece with primary sources:\n\nazlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/",
-      "mentions": "cc @AARPArizona @azcentral @AZMirror @azfamily @fox10phoenix @12News @abc15 @cronkitenews — elder care + AZ legislature beats."
+      "mentions": "cc @AARPArizona @azcentral @AZMirror @azfamily @fox10phoenix @12News @abc15 @cronkitenews \u2014 elder care + AZ legislature beats."
     },
     {
       "id": "azln-04",
       "topic": "mesa-elder-abuse-hb2228",
       "text": "1,816 sexual abuse complaints in long-term care facilities in 2024 alone.\n\n60% jump from 2017.\n\nNearly half of victims die within a year of the assault.\n\nThis isn't an edge case. It's a sector.",
       "reply": "Yesterday's Mesa arrest is one of them. AZ HB2228 is the structural fix moving in the Senate this week:\n\nazlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/",
-      "mentions": "cc @AARP @AARPArizona @JusticeInAging @LTCCC — national + state long-term care advocacy."
+      "mentions": "cc @AARP @AARPArizona @JusticeInAging @LTCCC \u2014 national + state long-term care advocacy."
     },
     {
       "id": "azln-05",
       "topic": "buckeye-population",
       "text": "Buckeye, Arizona. 2020 population: 93,741.\n\n2024 estimate: 114,334.\n\n32.95% growth in four years. Top tier of fastest-growing US cities.\n\nMore people. More AADT. Same arterial intersections. The road geometry decisions made today carry for decades.",
       "reply": "Why the City's choice at Durango and Yuma compounds:\n\nazlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/",
-      "mentions": "cc @azcentral @AZMirror @azcapitoltimes @ASUCronkite — fastest-growing-cities + planning beats."
+      "mentions": "cc @azcentral @AZMirror @azcapitoltimes @ASUCronkite \u2014 fastest-growing-cities + planning beats."
     },
     {
       "id": "azln-06",
       "topic": "mesa-elder-abuse-hb2228",
       "text": "If your loved one is in an Arizona long-term care facility:\n\n1. Pull the AZDHS inspection record.\n2. Document anything that doesn't sit right.\n3. APS hotline: 1-877-767-2385.\n\nThe data on what happens when families don't is the reason HB2228 exists.",
       "reply": "Full investigation with the statutory references and reporting paths:\n\nazlawnow.com/investigations/grand-court-mesa-elder-abuse-hb2228/",
-      "mentions": "cc @AARPArizona @AZHealthDept @AZAdultProtSvcs — facility oversight + APS reporting."
+      "mentions": "cc @AARPArizona @AZHealthDept @AZAdultProtSvcs \u2014 facility oversight + APS reporting."
     },
     {
       "id": "azln-07",
@@ -79,13 +79,13 @@
       "id": "azln-11",
       "topic": "iaq-merv13-bypass",
       "text": "ASHRAE 241, the post-pandemic standard, says it in plain English:\n\nAir that goes around an unsealed filter doesn't get cleaned. The system performs as if a lower MERV had been installed.\n\nArizona schools bought hospital-grade MERV 13 filters. Most installs are drop-ins. The housings aren't sealed.",
-      "reply": "Full investigation with the ASHRAE 52.2 + 241 + 62.1 frame, EPA's 9 µg/m³ PM2.5 NAAQS, peer-reviewed PM2.5 health data, AZ tort theory, and the PRR templates parents can file:\n\nazlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/",
+      "reply": "Full investigation with the ASHRAE 52.2 + 241 + 62.1 frame, EPA's 9 \u00b5g/m\u00b3 PM2.5 NAAQS, peer-reviewed PM2.5 health data, AZ tort theory, and the PRR templates parents can file:\n\nazlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/",
       "mentions": "cc @azcentral @cronkitenews @AZMirror @ashraehq @EPA, school IAQ + ventilation accountability."
     },
     {
       "id": "azln-12",
       "topic": "iaq-merv13-bypass",
-      "text": "EPA tightened the annual PM2.5 standard to 9 µg/m³ in 2024.\n\nDi et al. 2017, NEJM: 7.3% mortality jump per µg/m³ in Medicare cohort.\n\nNo Arizona school district publishes a single PM2.5 reading from inside its own buildings.\n\nThat absence is the headline.",
+      "text": "EPA tightened the annual PM2.5 standard to 9 \u00b5g/m\u00b3 in 2024.\n\nDi et al. 2017, NEJM: 7.3% mortality jump per \u00b5g/m\u00b3 in Medicare cohort.\n\nNo Arizona school district publishes a single PM2.5 reading from inside its own buildings.\n\nThat absence is the headline.",
       "reply": "What the published peer-reviewed record says about PM2.5 and child cognition, plus Arizona's 180-day Notice of Claim clock for school district claims:\n\nazlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/",
       "mentions": "cc @EPAregion9 @AZHealthDept @AZSchoolBoards @AZPTAdvocacy, school IAQ accountability."
     },
@@ -116,6 +116,34 @@
       "text": "Three sister-state AGs already filed materially similar NEPA suits in 2026:\n\nMaryland March 19 (TRO won March 11).\nNew Jersey March 20.\nMichigan March 24.\n\nArizona made it four on April 24. The procedural argument has worked.",
       "reply": "The Eleventh Circuit's 'more than minimal federal funding and control' test post-Florida, Arizona's $70M federal purchase + $300M operations contracts, and what comes next:\n\nazlawnow.com/investigations/arizona-mayes-ice-surprise-detention-lawsuit/",
       "mentions": "cc @ag_mayes @StateImpactCenter @CenterForBioDiv, NEPA + state-AG-coordination beats."
+    },
+    {
+      "id": "azln-17",
+      "topic": "asu-prep-related-party-lease",
+      "text": "ASU Preparatory Academy posted a $5.46M operating loss on $82.4M revenue last fiscal year.\n\nIts FY21 audit discloses a related-party lease on a school-site building. $11.5M right-of-use asset. Agreement runs through September 2032.\n\nThe named counterparty is in Note 9. We're pulling it.",
+      "reply": "Full breakdown: the audit text, the federal-funds schedule, the ALA precedent, and the public-records path under ARS 39-121:\n\nazlawnow.com/investigations/asu-prep-related-party-lease/",
+      "mentions": "cc @azcentral @AZMirror @azcapitoltimes @CronkiteNews \u2014 charter accountability / education finance desks if useful."
+    },
+    {
+      "id": "azln-18",
+      "topic": "asu-prep-related-party-lease",
+      "text": "Arizona's largest university-affiliated charter network leases its school building from a related party.\n\nThe FY21 audit's Note 6 says it. Note 9 names the party. The lease runs to 2032.\n\nThis is on the public record at ade.az.gov. Anyone can pull it.",
+      "reply": "We mapped the structure, the federal pandemic-relief flow, and the comparable Arizona precedent (American Leadership Academy):\n\nazlawnow.com/investigations/asu-prep-related-party-lease/",
+      "mentions": "cc @SOSArizona @AZEdNews \u2014 charter governance research."
+    },
+    {
+      "id": "azln-19",
+      "topic": "walgreens-350m-arizona-opioid-stores",
+      "text": "Walgreens settled with the federal government for up to $350 million in April 2025.\n\nThe allegation: knowingly filling unlawful opioid prescriptions, August 2012 through March 2023.\n\nArizona Walgreens stores aren't enumerated in publicly retrievable secondary press.\n\nThey are in the consent decree exhibits.",
+      "reply": "Full reporting: the DOJ-EDNY frame, the AZ death toll (1,659 in the latest 12-month window), and the regulator chain in Arizona:\n\nazlawnow.com/investigations/walgreens-350m-arizona-opioid-stores/",
+      "mentions": "cc @AZAGMayes @azcentral @AZMirror @KJZZPhoenix \u2014 public health / consumer protection desks."
+    },
+    {
+      "id": "azln-20",
+      "topic": "walgreens-350m-arizona-opioid-stores",
+      "text": "Arizona lost 1,659 people to opioids in the most recent 12-month surveillance window. 2,846 in 2021.\n\nWalgreens settled $350M federally for filling unlawful opioid prescriptions through March 2023.\n\nWhich Arizona Walgreens stores filled them? The list is in the EDNY federal docket.",
+      "reply": "We laid out the AZ regulator architecture (Board of Pharmacy, DEA Phoenix), the statutory frame (ARS 32-1901, 13-3408, 36-2606), and the records that close the gap:\n\nazlawnow.com/investigations/walgreens-350m-arizona-opioid-stores/",
+      "mentions": "cc @ShatterproofHQ \u2014 patient advocacy frame on Arizona-specific accountability."
     }
   ]
 }
