@@ -2254,8 +2254,8 @@
     "evidence_url": "https://ictnews.org/wps-members/jourdan-bennett-begaye/",
     "story_relevance_note": "Din\u00e9 managing editor at ICT, would route Mayes ICE detention investigation and any Navajo Nation impact angles on AZ stories.",
     "routing_source": "_pool_niche-az-2026-05-02",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your April 23, 2026 piece on the Food Network's Indigenous episode that showcased Native imagination and culinary storytelling.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Tim Eigo",
@@ -2271,7 +2271,7 @@
     "story_relevance_note": "AZ Attorney senior editor and AZ Bar CCO; route AG Mayes ICE lawsuit, opioid restitution distribution, and Grand Court Mesa elder-abuse HB2228 stories.",
     "routing_source": "_pool_niche-az-2026-05-02",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Lily Altavena",
@@ -2286,7 +2286,7 @@
     "evidence_url": "https://www.chalkbeat.org/pages/our-staff/",
     "story_relevance_note": "Former AZ Republic education reporter now covering national education for Chalkbeat; would route AZ ESA/voucher fraud, ASU Prep related-party lease, IAQ MERV-13 story, and 325-educator-discipline data.",
     "routing_source": "_pool_niche-az-2026-05-02",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your March 10 piece in Chalkbeat on Arizona's ESA school vouchers facing a ballot initiative with income limits.",
+    "enrichment_status": "ok"
   }
 ]

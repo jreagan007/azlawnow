@@ -96,8 +96,8 @@
     "story_target": "arizona-daycare-violations",
     "evidence_url": "https://www.firstthingsfirst.org/about-us/leadership/angela-rabago/",
     "story_relevance_note": "As FTF's Chief External Affairs Officer, Rabago leads government and policy engagement on early childhood quality. She is the relevant counterpart for Arizona child care licensing reform conversations and a likely amplifier of investigative findings.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record",
+    "personalization_hook": "Saw your update on \"First investment in child care assistance for working families in 15 years\" at The Preschool Promise in September 2024.",
+    "enrichment_status": "ok",
     "linkedin_url": null,
     "linkedin_status": "no_record"
   },
@@ -481,7 +481,7 @@
     "evidence_url": "https://ictnews.org/author/kalle-benallie/",
     "story_relevance_note": "Navajo journalist based out of ICT Southwest Bureau in Phoenix; primary AZ-tribal contact for Mayes ICE detention, daycare violations on rez, and IAQ stories.",
     "routing_source": "_pool_niche-az-2026-05-02",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your coverage earning a 2022 National Native Media Award alongside Mary Annette Pember and others.",
+    "enrichment_status": "ok"
   }
 ]

@@ -71,8 +71,8 @@
     "story_target": "grand-court-mesa-elder-abuse-hb2228",
     "evidence_url": "https://aging.arizona.edu/people",
     "story_relevance_note": "AZ Center on Aging public faculty. AZ-based academic voice on how aging bodies respond to environmental stressors.",
-    "personalization_hook": "Saw your 2017 pa.",
-    "enrichment_status": "ok"
+    "personalization_hook": "",
+    "enrichment_status": "no_record"
   },
   {
     "name": "Kirsten Limesand, PhD",
@@ -331,8 +331,8 @@
     "evidence_url": "https://ictnews.org/wps-members/jourdan-bennett-begaye/",
     "story_relevance_note": "Din\u00e9 managing editor at ICT, would route Mayes ICE detention investigation and any Navajo Nation impact angles on AZ stories.",
     "routing_source": "_pool_niche-az-2026-05-02",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your April 23, 2026 article on the Food Network\u2019s special Indigenous episode winner in ICT.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Kevin Abourezk",
@@ -347,8 +347,8 @@
     "evidence_url": "https://ictnews.org/wps-members/kevin-abourezk/",
     "story_relevance_note": "Award-winning Sicangu Lakota journalist, would route AG Mayes ICE detention surprise lawsuit (national tribal interest).",
     "routing_source": "_pool_niche-az-2026-05-02",
-    "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "personalization_hook": "Saw your April 30, 2026 piece on the Dakota Access Pipeline court fight with Amelia Schafer in ICT.",
+    "enrichment_status": "ok"
   },
   {
     "name": "Romalita Laban",
@@ -364,7 +364,7 @@
     "story_relevance_note": "Hopi Tribe official newspaper editor; would route any AZ stories impacting Hopi members (IAQ schools on rez, ICE detention of tribal members, road safety on US-264).",
     "routing_source": "_pool_niche-az-2026-05-02",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   },
   {
     "name": "Tim Eigo",
@@ -380,6 +380,6 @@
     "story_relevance_note": "AZ Attorney senior editor and AZ Bar CCO; route AG Mayes ICE lawsuit, opioid restitution distribution, and Grand Court Mesa elder-abuse HB2228 stories.",
     "routing_source": "_pool_niche-az-2026-05-02",
     "personalization_hook": "",
-    "enrichment_status": "pending_manual_enrichment"
+    "enrichment_status": "no_record"
   }
 ]
