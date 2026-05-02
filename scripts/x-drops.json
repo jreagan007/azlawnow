@@ -144,6 +144,36 @@
       "text": "Arizona lost 1,659 people to opioids in the most recent 12-month surveillance window. 2,846 in 2021.\n\nWalgreens settled $350M federally for filling unlawful opioid prescriptions through March 2023.\n\nWhich Arizona Walgreens stores filled them? The list is in the EDNY federal docket.",
       "reply": "We laid out the AZ regulator architecture (Board of Pharmacy, DEA Phoenix), the statutory frame (ARS 32-1901, 13-3408, 36-2606), and the records that close the gap:\n\nazlawnow.com/investigations/walgreens-350m-arizona-opioid-stores/",
       "mentions": "cc @ShatterproofHQ \u2014 patient advocacy frame on Arizona-specific accountability."
+    },
+    {
+      "id": "ment-azln-01",
+      "topic": "asu-prep-related-party-lease",
+      "text": "@AZAGMayes \u2014 ASU Preparatory Academy's FY24 IRS 990 reports a $5.46M operating loss on $82.4M revenue. The FY21 audit (filed at ade.az.gov) discloses an $11.5M related-party school-building lease through 2032. Note 9 names the counterparty.",
+      "reply": "Full write-up with the audit text, federal-funds schedule, and ARS 39-121 public-records path:\n\nazlawnow.com/investigations/asu-prep-related-party-lease/"
+    },
+    {
+      "id": "ment-azln-02",
+      "topic": "asu-prep-related-party-lease",
+      "text": "@SOSArizona \u2014 quick read on Arizona's largest university-affiliated charter network. ASU Prep posted a $5.46M loss FY24. Its FY21 audit discloses a related-party operating lease on a school building. $11.5M ROU asset. Through September 2032.",
+      "reply": "We mapped it against the American Leadership Academy precedent and the public-records path:\n\nazlawnow.com/investigations/asu-prep-related-party-lease/"
+    },
+    {
+      "id": "ment-azln-03",
+      "topic": "walgreens-350m-arizona-opioid-stores",
+      "text": "@AZAGMayes \u2014 DOJ-EDNY announced the $350M Walgreens opioid settlement in April 2025. Covered conduct: August 2012 through March 2023. Arizona lost 1,659 people in the latest 12-month surveillance window. The AZ store-by-store enumeration sits in the EDNY federal docket.",
+      "reply": "Full write-up with the regulator chain (Board of Pharmacy + DEA Phoenix), the statutory frame (ARS 32-1901, 13-3408, 36-2606), and the records that close the gap:\n\nazlawnow.com/investigations/walgreens-350m-arizona-opioid-stores/"
+    },
+    {
+      "id": "ment-azln-04",
+      "topic": "walgreens-350m-arizona-opioid-stores",
+      "text": "@ShatterproofHQ \u2014 the federal Walgreens opioid settlement announced in April 2025 covers conduct from 2012 through 2023. Arizona's most recent 12-month overdose count is 1,659. The store-level enumeration of covered AZ Walgreens locations isn't in publicly retrievable secondary press.",
+      "reply": "Person-first reporting on the AZ-specific accountability gap and the records that close it:\n\nazlawnow.com/investigations/walgreens-350m-arizona-opioid-stores/"
+    },
+    {
+      "id": "ment-azln-05",
+      "topic": "arizona-mayes-ice-surprise-detention-lawsuit",
+      "text": "@AZMirror \u2014 quick read for the State of Arizona v. Mullin coverage. Across the street from the proposed 1,500-bed Surprise federal detention facility: Rinchem stores chlorine, hydrofluoric acid, and fluorine. The EPA Risk Management Plan was filed three weeks before the federal warehouse purchase.",
+      "reply": "We mapped the NEPA pleading, the Maryland TRO precedent, and the Eleventh Circuit Friends of the Everglades opinion:\n\nazlawnow.com/investigations/arizona-mayes-ice-surprise-detention-lawsuit/"
     }
   ]
 }
