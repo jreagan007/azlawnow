@@ -10,8 +10,8 @@
     "evidence_url": "https://www.tempe.gov/government/transportation-and-sustainability",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Tempe's stated transportation mission centers safer pedestrian and bike movement. The AZ Law Now investigation puts crash data alongside the engineering choices that shape it, and Tempe's record on road redesign is one of the cleaner ones to point to.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your Tempe Podcast episode on Transportation Plan 2050 and the next-generation vision for Tempe streets.",
+    "enrichment_status": "manual"
   },
   {
     "email": "shelly_seyler@tempe.gov",
@@ -38,8 +38,8 @@
     "evidence_url": "https://www.tempe.gov/government/public-works/meet-the-staff",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Public Works owns the actual paving, signal, and crossing decisions in Tempe. Investigation breaks down where AZ road design fails pedestrians and Tara's department is the operational counterpart to Tempe's transportation policy office.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your Public Works role in Tempe's 2025 water-rate proposal coverage and the city's pavement-quality-index push to get every street above 82 by 2028.",
+    "enrichment_status": "manual"
   },
   {
     "email": "jodie_inman@tempe.gov",
@@ -52,8 +52,8 @@
     "evidence_url": "https://www.tempe.gov/government/public-works/meet-the-staff",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Engineering deputy. Investigation identifies engineered road choices as the proximate driver of AZ pedestrian deaths, and an engineering deputy reading it sees the lane-width, speed, and crossing geometry callouts directly.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your Engineering Division leadership at Tempe Public Works covering the city's capital project pipeline.",
+    "enrichment_status": "manual"
   },
   {
     "email": "heather.murphy@phoenix.gov",
@@ -80,8 +80,8 @@
     "evidence_url": "https://www.phoenix.gov/administration/departments/streets/contact-us/media-inquiries.html",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Senior PIO for the agency that runs the Phoenix Road Safety Action Plan. Investigation gives a third-party data view of where that plan's miles, designs, and crashes intersect.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your March 2026 Phoenix Streets communications on the city's road-safety work as the senior PIO speaking for the department.",
+    "enrichment_status": "manual"
   },
   {
     "email": "lauren.evans@phoenix.gov",
@@ -98,20 +98,6 @@
     "enrichment_status": "no_record"
   },
   {
-    "email": "rj.zeder@mesaaz.gov",
-    "name": "RJ Zeder",
-    "title": "Transportation Director",
-    "org": "City of Mesa",
-    "city": "Mesa",
-    "state": "AZ",
-    "category": "city-transportation-senior",
-    "evidence_url": "https://apps.mesaaz.gov/meetingarchive/ArchiveDocuments/Documents/%7BDDA57377-5AB6-4E2A-BF5A-D121E7E8F448%7D_0.pdf",
-    "story_target": "arizona-pedestrian-deaths-road-design",
-    "hook": "Mesa's top transportation official. Investigation maps AZ pedestrian fatality density across the East Valley and Mesa figures heavily. Zeder's division writes the cap-and-gown plans that determine whether crossings get rebuilt.",
-    "personalization_hook": "Saw your coverage of HB2211 requiring lap belts on Arizona school buses.",
-    "enrichment_status": "ok"
-  },
-  {
     "email": "erik.guderian@mesaaz.gov",
     "name": "Erik Guderian",
     "title": "Deputy Transportation Director",
@@ -122,8 +108,8 @@
     "evidence_url": "https://apps.mesaaz.gov/meetingarchive/ArchiveDocuments/Documents/%7BDDA57377-5AB6-4E2A-BF5A-D121E7E8F448%7D_0.pdf",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Mesa's deputy transportation director. The investigation's geometric call-outs (intersection design, signal timing, crosswalk placement) are exactly his deputy-level scope.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your December 2, 2025 promotion to Mesa Transportation Director after serving as Interim since RJ Zeder's passing.",
+    "enrichment_status": "manual"
   },
   {
     "email": "sabine.ellis@mesaaz.gov",
@@ -136,8 +122,8 @@
     "evidence_url": "https://apps.mesaaz.gov/meetingarchive/ArchiveDocuments/Documents/%7BDDA57377-5AB6-4E2A-BF5A-D121E7E8F448%7D_0.pdf",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Mesa's city traffic engineer signs off on signal timing and lane geometry. Investigation calls out engineered road choices as upstream causes of AZ pedestrian deaths, and the traffic engineer is exactly who owns that lever.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your Transportation Advisory Board presentations on speed cushion installations and Mesa traffic safety measures.",
+    "enrichment_status": "manual"
   },
   {
     "email": "beth.huning@mesaaz.gov",
@@ -150,8 +136,8 @@
     "evidence_url": "https://apps.mesaaz.gov/meetingarchive/ArchiveDocuments/Documents/%7BDDA57377-5AB6-4E2A-BF5A-D121E7E8F448%7D_0.pdf",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Mesa City Engineer owns capital project specs. Investigation's engineering frame puts capital project standards squarely in scope.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your APWA Top Ten Public Works Leader of the Year recognition and your work leading Mesa's capital infrastructure portfolio.",
+    "enrichment_status": "manual"
   },
   {
     "email": "ewalsh@scottsdaleaz.gov",
@@ -164,8 +150,8 @@
     "evidence_url": "https://www.scottsdaleaz.gov/scottsdale-news/media-contacts",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Scottsdale's transportation comms lead. The Scottsdale corridor (Scottsdale Road, Shea, Pima) shows up in any AZ pedestrian death dataset. Walsh briefs Scottsdale press on every transportation story that hits.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your Pima Road expansion communications keeping Scottsdale residents looped in on the construction running through 2025 and 2026.",
+    "enrichment_status": "manual"
   },
   {
     "email": "clenko@scottsdaleaz.gov",
@@ -276,8 +262,8 @@
     "evidence_url": "https://muckrack.com/ejmontini/articles",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Long-running AZ Republic columnist. Pedestrian death data with a road-design frame fits his column's policy-failure beat.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your May 19, 2025 KJZZ segment with Elvia Diaz on AI-generated testimony having no place in Arizona courtrooms.",
+    "enrichment_status": "manual"
   },
   {
     "email": "mcarlisle@iniusa.org",
@@ -290,8 +276,8 @@
     "evidence_url": "https://www.yourvalley.net/stories/phoenix-explores-safer-ways-for-pedestrians-to-cross-the-street,404694",
     "story_target": "arizona-pedestrian-deaths-road-design",
     "hook": "Already on the Phoenix pedestrian crossing beat. His 2023 piece on Phoenix exploring safer crossings overlaps directly with the AZ Law Now investigation's frame.",
-    "personalization_hook": "",
-    "enrichment_status": "no_record"
+    "personalization_hook": "Saw your Daily Independent reporting on the Moreland affordable housing groundbreaking and the Bell Road Denny's-to-McDonald's swap.",
+    "enrichment_status": "manual"
   },
   {
     "email": "azopinions@iniusa.org",
