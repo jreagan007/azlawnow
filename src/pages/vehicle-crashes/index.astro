@@ -73,7 +73,7 @@ const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
           const imgPath = pa.data.heroImage || `/images/heroes/${slug}.webp`;
           return (
             <a href={`/vehicle-crashes/${slug}/`} class="hub-card">
-              <img src={imgPath} alt="" class="hub-card__thumb" loading="lazy" />
+              <img src={imgPath} alt={pa.data.practiceArea} class="hub-card__thumb" loading="lazy" />
               <div class="hub-card__body">
                 <h2 class="hub-card__name">{pa.data.practiceArea}</h2>
                 <p class="hub-card__subtitle">{pa.data.heroSubtitle}</p>

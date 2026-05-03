@@ -107,9 +107,13 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const excluded = ['/admin/', '/thank-you/', '/free-case-review/', '/about/team/'];
-        const noindexClusters = ['/vehicle-crashes/', '/abuse-negligence/', '/other-claims/'];
         if (excluded.some(e => page.includes(e))) return false;
-        if (noindexClusters.some(c => page.includes(c))) return false;
+        // Cluster CHILD pages are noindex (e.g. /vehicle-crashes/car-accidents/),
+        // but the cluster INDEX pages (e.g. /vehicle-crashes/) are indexable
+        // hubs that need to live in the sitemap. Match a trailing slug after
+        // the cluster name to exclude only the children.
+        const noindexClusters = ['/vehicle-crashes/', '/abuse-negligence/', '/other-claims/'];
+        if (noindexClusters.some(c => page.includes(c) && !page.endsWith(c))) return false;
         return true;
       },
       changefreq: 'weekly',

@@ -128,7 +128,7 @@ const placeholderCards = [
           <div class="inv-featured-media">
             <img
               src={featured.data.image || '/images/heroes/practice-area-default.webp'}
-              alt=""
+              alt={featured.data.title}
               class="inv-featured-image"
               loading="eager"
               fetchpriority="high"
@@ -175,7 +175,7 @@ const placeholderCards = [
           <div class="inv-featured-media">
             <img
               src="/images/cards/arizona-school-restraint-data.webp"
-              alt=""
+              alt={placeholderFeatured.title}
               class="inv-featured-image"
               loading="lazy"
             />
@@ -222,7 +222,7 @@ const placeholderCards = [
             <a href={`/investigations/${entry.id}/`} class="inv-card">
               <img
                 src={entry.data.image || '/images/heroes/practice-area-default.webp'}
-                alt=""
+                alt={entry.data.title}
                 class="inv-card-thumb"
                 loading="lazy"
               />
@@ -251,7 +251,7 @@ const placeholderCards = [
             <div class="inv-card inv-card--placeholder">
               <img
                 src={card.image}
-                alt=""
+                alt={card.title}
                 class="inv-card-thumb"
                 loading="lazy"
               />
