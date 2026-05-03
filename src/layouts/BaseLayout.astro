@@ -194,9 +194,9 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
       }}
     />
 
-    <!-- JSON-LD Schema (via astro-seo-schema) -->
+    <!-- JSON-LD Schema (raw, escape only '<' to keep apostrophes intact for FAQ validity) -->
     {allSchemas.map((schemaItem) => (
-      <Schema item={schemaItem} />
+      <script type="application/ld+json" set:html={JSON.stringify(schemaItem).replace(/</g, '\\u003c')} />
     ))}
 
     <!-- Global Design System -->
