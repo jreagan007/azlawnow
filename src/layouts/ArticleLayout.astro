@@ -264,7 +264,9 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
             {keyTakeaway && (
               <aside class="article-takeaway" aria-label="Key takeaway" data-speakable="takeaway">
                 <span class="article-takeaway__label">Key takeaway</span>
-                <p class="article-takeaway__text">{keyTakeaway}</p>
+                {keyTakeaway.split(/\n\n+/).map((para) => (
+                  <p class="article-takeaway__text">{para.trim()}</p>
+                ))}
               </aside>
             )}
 
