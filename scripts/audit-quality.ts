@@ -278,6 +278,57 @@ function checkDescription(data: Record<string, any>): CheckResult {
   return { severity: 'pass', message: `Description: ${len} chars` };
 }
 
+// keyTakeaway wall-of-text gate.
+// The ArticleLayout splits keyTakeaway on \n\n to render multi-paragraph blocks.
+// A single-paragraph takeaway over 600 chars renders as wall-of-text. Force a break.
+function checkKeyTakeaway(data: Record<string, any>): CheckResult {
+  const raw = data.keyTakeaway;
+  if (!raw) return { severity: 'pass', message: 'No keyTakeaway (optional)' };
+  const text = String(raw);
+  // Frontmatter parser may have already converted '\\n' escape sequences to real newlines,
+  // or kept them as literal backslash-n. Detect both.
+  const paragraphCount = Math.max(
+    text.split(/\n\n+/).length,
+    text.split(/\\n\\n+/).length,
+  );
+  const len = text.length;
+  if (len > 600 && paragraphCount === 1) {
+    return {
+      severity: 'error',
+      message: `keyTakeaway is ${len} chars in 1 paragraph. Renders as wall-of-text. Add \\n\\n breaks (target 3 to 5 paragraphs of 2 to 4 sentences each).`,
+    };
+  }
+  if (len > 1500) {
+    return {
+      severity: 'warn',
+      message: `keyTakeaway is ${len} chars across ${paragraphCount} paragraphs. Tighten if possible (target under 1200).`,
+    };
+  }
+  return { severity: 'pass', message: `keyTakeaway: ${len} chars, ${paragraphCount} paragraphs` };
+}
+
+// Body-paragraph wall-of-text gate.
+// Look at MDX body paragraphs (text blocks separated by blank lines, after MDX
+// component stripping). Flag any paragraph >500 chars or >5 sentences.
+function checkBodyWalls(body: string): CheckResult {
+  const text = stripMdxComponents(body);
+  const paragraphs = text.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
+  const walls: string[] = [];
+  for (const p of paragraphs) {
+    const sentences = p.split(/[.!?]+\s+(?=[A-Z])/).filter(s => s.length > 0);
+    if (p.length > 500 && sentences.length > 5) {
+      walls.push(`${p.length}c/${sentences.length}s "${p.slice(0, 60)}..."`);
+    }
+  }
+  if (walls.length > 0) {
+    return {
+      severity: 'warn',
+      message: `${walls.length} body paragraphs over 500 chars + 5 sentences. Break them up. Examples: ${walls.slice(0, 2).join(' | ')}`,
+    };
+  }
+  return { severity: 'pass', message: `Body paragraph density OK (${paragraphs.length} paragraphs)` };
+}
+
 function checkTitle(data: Record<string, any>): CheckResult {
   if (!data.title) {
     return { severity: 'error', message: 'Missing title' };
@@ -529,6 +580,8 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkTags(data, collection),
     checkTitle(data),
     checkDescription(data),
+    checkKeyTakeaway(data),
+    checkBodyWalls(body),
     checkWordCount(body, collection.minWords),
     checkEmDashes(body),
     checkContractions(body),
