@@ -30,6 +30,7 @@ const faqItemSchema = z.object({
  */
 const articleSchema = z.object({
   title: z.string(),
+  headline: z.string().optional(),
   description: z.string(),
   author: z.string(),
   reviewedBy: z.string().optional(),
@@ -101,7 +102,13 @@ const practiceAreas = defineCollection({
 /* ── Insights (Brendan's data journalism) ────────── */
 
 const insightSchema = z.object({
+  // SEO <title> tag, target ~50-60 chars (Google SERP truncation point).
+  // Used by BaseLayout for the actual <title> + Open Graph + meta.
   title: z.string(),
+  // Optional editorial H1 headline. If present, the article H1 uses this
+  // (long, Brendan voice). If absent, H1 falls back to title. Lets us run
+  // 100-char Brendan headlines on the page while keeping a 60-char SERP title.
+  headline: z.string().optional(),
   description: z.string(),
   author: z.string().default('brendan-franks'),
   reviewedBy: z.string().optional(),

@@ -50,19 +50,18 @@ const {
 } = Astro.props;
 
 /**
- * Generate page title with site name appended.
+ * Generate page title with brand suffix appended.
  *
- * Editorial headlines (investigations, long-form guides) often run 80 to 130
- * chars and the " | AZ Law Now" suffix pushes the <title> well past Google's
- * ~60 char SERP truncation. When the page title is already 50+ chars we drop
- * the brand suffix. Google still infers the brand from URL + organization
- * schema, and the SERP shows the full headline instead of getting clipped.
- * Short utility titles (Privacy Policy, Contact, etc.) keep the brand suffix.
+ * Pattern matches AEELAW (BRAND_SUFFIX = ' | AEE Law', max rendered 60) and
+ * MesoWatch (metaTitle max 60 with brand). The page title field is now
+ * authored as a 47-char SEO target so suffix stays clean.
+ *
+ * Long editorial Brendan headlines live in the optional `headline` frontmatter
+ * field, used by ArticleLayout for the H1 only. Falls back to title if absent.
  */
 function generateTitle(pageTitle?: string): string {
   if (!pageTitle) return siteConfig.defaultTitle;
   if (pageTitle.includes('AZ Law Now')) return pageTitle;
-  if (pageTitle.length >= 50) return pageTitle;
   return `${pageTitle} | AZ Law Now`;
 }
 

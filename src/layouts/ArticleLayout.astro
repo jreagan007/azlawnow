@@ -42,6 +42,7 @@ interface Heading {
 
 interface Props {
   title: string;
+  headline?: string;
   description: string;
   author: string;
   reviewedBy?: string;
@@ -61,6 +62,7 @@ interface Props {
 
 const {
   title,
+  headline,
   description,
   author: authorId,
   reviewedBy: reviewerId,
@@ -193,7 +195,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
         <span class="article-badge">{meta.label}</span>
 
         <!-- Title -->
-        <h1 class="article-title" data-speakable="headline">{title}</h1>
+        <h1 class="article-title" data-speakable="headline">{headline || title}</h1>
 
         <!-- Author Byline -->
         <div class="article-byline">
