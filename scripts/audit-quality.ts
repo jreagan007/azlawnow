@@ -329,17 +329,19 @@ function checkBodyWalls(body: string): CheckResult {
   return { severity: 'pass', message: `Body paragraph density OK (${paragraphs.length} paragraphs)` };
 }
 
-// SEO title rule. Aligned with AEELAW (60-char rendered cap) and MesoWatch
-// (60-char metaTitle). The brand suffix " | AZ Law Now" is 13 chars, so the
-// raw title field gets a 47-char target, 60-char hard ceiling.
+// SEO title + headline limits, aligned exactly with MesoWatch CHAR_LIMITS:
+//   metaTitle:  min 30, max 60, optimal 55
+//   headline:   min 30, max 70, optimal 60
 //
-// For long Brendan editorial headlines, MDX should set the optional `headline`
-// frontmatter field. ArticleLayout uses headline for the H1 and title for
-// the <title> tag.
+// `title` field is the SEO <title> tag (with brand suffix appended).
+// `headline` field (optional) is the H1 used by ArticleLayout when set.
+// If headline is absent, the H1 falls back to title.
+const SEO_TITLE_MIN = 30;
+const SEO_TITLE_TARGET = 55;
 const SEO_TITLE_HARD_MAX = 60;
-const SEO_TITLE_TARGET = 47;
-const HEADLINE_TARGET = 100;
-const HEADLINE_HARD_MAX = 140;
+const HEADLINE_MIN = 30;
+const HEADLINE_TARGET = 60;
+const HEADLINE_HARD_MAX = 70;
 
 function checkTitle(data: Record<string, any>): CheckResult {
   if (!data.title) {
@@ -347,16 +349,22 @@ function checkTitle(data: Record<string, any>): CheckResult {
   }
   const title = String(data.title).trim();
   const len = title.length;
+  if (len < SEO_TITLE_MIN) {
+    return {
+      severity: 'warn',
+      message: `Title too short: ${len} chars (min ${SEO_TITLE_MIN}, target ${SEO_TITLE_TARGET}). Leaving SERP space on the table.`,
+    };
+  }
   if (len > SEO_TITLE_HARD_MAX) {
     return {
       severity: 'error',
-      message: `Title too long: ${len} chars (max ${SEO_TITLE_HARD_MAX}). SEO <title> tag clips at ~60 in SERP. Move long editorial copy to optional 'headline' field for the H1.`,
+      message: `Title too long: ${len} chars (max ${SEO_TITLE_HARD_MAX}). SEO <title> clips at ~60 in SERP. Move editorial copy to 'headline' field.`,
     };
   }
-  if (len > SEO_TITLE_TARGET) {
+  if (len < SEO_TITLE_TARGET - 8) {
     return {
       severity: 'warn',
-      message: `Title is ${len} chars (target ${SEO_TITLE_TARGET}, max ${SEO_TITLE_HARD_MAX}). With brand suffix it may clip in SERP.`,
+      message: `Title is ${len} chars (target ${SEO_TITLE_TARGET}). Could expand for better SERP CTR.`,
     };
   }
   return { severity: 'pass', message: `Title: ${len} chars` };
@@ -366,16 +374,16 @@ function checkHeadline(data: Record<string, any>): CheckResult {
   const h = data.headline;
   if (!h) return { severity: 'pass', message: 'No headline (optional)' };
   const len = String(h).trim().length;
+  if (len < HEADLINE_MIN) {
+    return {
+      severity: 'warn',
+      message: `Headline too short: ${len} chars (min ${HEADLINE_MIN}, target ${HEADLINE_TARGET}).`,
+    };
+  }
   if (len > HEADLINE_HARD_MAX) {
     return {
       severity: 'error',
-      message: `Headline too long: ${len} chars (max ${HEADLINE_HARD_MAX}). H1 should fit on a card without wrap blowout.`,
-    };
-  }
-  if (len > HEADLINE_TARGET) {
-    return {
-      severity: 'warn',
-      message: `Headline is ${len} chars (target ${HEADLINE_TARGET}, max ${HEADLINE_HARD_MAX}).`,
+      message: `Headline too long: ${len} chars (max ${HEADLINE_HARD_MAX}). H1 wraps and hurts visual hierarchy.`,
     };
   }
   return { severity: 'pass', message: `Headline: ${len} chars` };
