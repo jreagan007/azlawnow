@@ -4,9 +4,10 @@
 > Read top to bottom before any autonomous run. Every step has a tool, an
 > input, an output, and a failure mode.
 
-**Last updated:** 2026-04-27
+**Last updated:** 2026-05-05
 **Maintainer:** Brendan Franks editorial desk (autonomous plus Jared oversight)
 **Voice memory:** `~/.claude/projects/-Users-taqticlaw/memory/reference_outreach-playbook.md`
+**Latest session log:** `docs/sessions/2026-05-05-embed-bait-visual-program.md`
 
 ---
 
@@ -34,9 +35,16 @@
 [18b] WARM FOLLOWUP    warm-followup.py --days 7       -> Slack click-report + Phase 2 preview
 [19] LINKEDIN OUTBOX   linkedin-outbox.py              -> daily worklist
 [20] X FOLLOWS         x-follow-targets.py             -> recommended-follow list
+
+[21] ELIGIBILITY SCORE score-investigation-eligibility.py -> data/research/<date>.json
+[22] CHART BUILD       gen-<slug>-chart.ts             -> public/embeds/<slug>-master + variants
+[23] EMBED LOCKUP      EmbedAsset.astro in MDX         -> #chart anchor + Copy embed code
+[24] CHART SOCIAL      post-x + post-fb + post-ig with chart -> 3 platform posts with the asset
+[25] CHART FOLLOWUP    embed-pitch.py (per-recipient)  -> obligate-grade pitch with embed code
 ```
 
 Stages 1 through 9 produce a publishable investigation. Stages 10 through 20 produce engaged outreach.
+Stages 21 through 25 produce embed-bait charts that earn backlinks (Tynski-applied doctrine).
 
 ---
 
@@ -338,6 +346,128 @@ The loop runs autonomously through stages [1] through [16]. Stage [17] requires 
 | Citation strip | inline in `enrich-targets.py` | per Perplexity response |
 | Auto-DNC | inline in `engagement-report.py` | per bounce |
 | Domain-cap (3/day) | inline in `send-story.py` | per send batch |
+
+---
+
+## Embed-bait visual program (Stages 21-25)
+
+**Doctrine source:** `taqticscom/docs/research/clients/azlawnow/TYNSKI-APPLIED.md`
+**Memo for sister properties:** `taqticscom/docs/research/clients/aeelaw/AZLAWNOW-APPROACH-MEMO.md`
+**Locked palette:** `src/styles/theme.ts` Sunset Editorial (cream, ink, vermillion, slate, gold)
+**Chart token system:** `scripts/lib/azlawnow-chart-tokens.ts`
+
+### [21] Eligibility scoring
+
+```bash
+python3 scripts/score-investigation-eligibility.py
+```
+
+Scores all published investigations on three axes (1 to 10 each):
+- **bomb_stat:** quotable stat in MDX or dossier
+- **chart_data:** tabular data, breakdowns, comparisons that map to the 3 approved chart types
+- **closing_thesis:** candidate one-sentence thesis (under 15 words, comparison framing)
+
+Output: `data/research/investigation-eligibility-scored-<date>.json` ranked Tier S/A/B/C. Tier S+A get the 3-chart treatment first.
+
+### [22] Chart build
+
+For each high-eligibility story, build a chart generator script in the existing pattern. Reference: `scripts/gen-buckeye-roundabout-chart.ts`.
+
+```bash
+npx tsx scripts/gen-<slug>-chart.ts
+```
+
+Renders 4 native variants per chart (no auto-cropping):
+- `master-1200x675` for in-article embed plus LinkedIn plus X
+- `fb-feed-1200x630` for Facebook feed
+- `ig-square-1080` for Instagram grid
+- `ig-portrait-1080x1350` for Instagram feed (max-reach format)
+
+Chart types limited to three (per Tynski doctrine):
+- horizontal bar (sorted)
+- scatter quadrant (2-axis)
+- comparison table
+
+Style discipline: cream `#FAF5ED` background, vermillion `#C23B22` reserved for the bomb stat or highlighted bar, slate `#4A5859` for muted secondaries. Hairline grid `#D4C9B8`. Top and bottom hairlines on the chart only, no boxes. Eyebrow in vermillion small caps. Kebab-case caption plus italic source line plus reporting byline. NYT Upshot, The Pudding, FiveThirtyEight references.
+
+### [23] Embed lockup in MDX
+
+Drop the chart into the MDX after the StatBlock using the `EmbedAsset` component:
+
+```mdx
+import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
+
+<EmbedAsset
+  src="/embeds/<slug>-master-1200x675.png"
+  alt="<descriptive alt with the bomb stat>"
+  storyUrl="https://azlawnow.com/investigations/<slug>/"
+  caption="<kebab-case-caption>"
+  source="<primary source citation>"
+  width={1200}
+  height={675}
+/>
+```
+
+The component renders:
+- White inner card with 1px hairline border plus soft drop shadow (lifts cream chart off cream page)
+- `id="chart"` anchor for direct linking via `/<slug>/#chart`
+- `scroll-margin-top: 6rem` so the anchor jump clears the sticky header
+- "Copy embed code" button that puts pre-formatted HTML on the journalist's clipboard, including a do-follow link back to the investigation
+
+### [24] Chart social fire
+
+After publication and Cloudflare deploy, post the chart to all three platforms.
+
+```bash
+# X: text-only thread (X poster does not yet support media upload, story link previews the OG card)
+npx tsx scripts/post-x-azlaw.ts --id <next-azln-id>
+
+# FB: chart image plus text (uses public/fb/fb-<slug>.png as binary upload)
+npx tsx scripts/post-fb-azlaw.ts --id <next-fb-id>
+
+# IG: chart image plus caption plus first comment (Meta fetches public URL at public/ig/ig-<slug>.jpg)
+npx tsx scripts/post-ig-azlaw.ts --id <next-ig-id>
+```
+
+**Important:** IG image must be at a public HTTPS URL Meta can fetch. If Meta returns "media could not be fetched" right after deploy, the URL is cache-busted with `?v=<n>` (Meta caches 404s from pre-deploy attempts).
+
+Per-platform image organization (mirrors mesowatchorg pattern):
+- `public/embeds/<slug>-master-1200x675.png` and other variants for in-article use
+- `public/fb/fb-<slug>-<date>.png` for FB feed binary upload
+- `public/ig/ig-<slug>-<date>.jpg` for IG public-URL fetch (must be JPEG, 1080x1350 portrait recommended)
+
+### [25] Chart follow-up
+
+Pitch the chart to journalists, bloggers, and advocates with the embed code and the deep-link to `#chart`. Pattern (under construction):
+
+```bash
+python3 scripts/outreach/embed-pitch.py <slug> --limit N
+```
+
+The pitch:
+- Subject is stat-lede (never agency-name-led). Examples: "$2.3M in AZ nursing home billing recoveries, and the audits keep finding more"
+- Open with the recipient's specific past coverage angle (LedeTime-style personalization)
+- Include the ready-to-paste embed code in the email body
+- Editorial-freedom note (do not push anchor text, per Tynski's load-bearing rule)
+- Sign off with "this is yours to use" framing. No asks, no CTA, no "let us know what you think"
+- BCC bf@azlawnow.com plus jared@taqtics.com
+
+The reciprocity hook: "I built the chart for [their angle]. Embed code below, takes 5 seconds. Source line links back to the investigation. Use it however you want."
+
+---
+
+## Token chain for FB and IG posting
+
+Both posters use the same Meta token chain. Saved keys in `~/Projects/taqtics-ops/config/.env`:
+- `AZLAW_FB_PAGE_TOKEN` is the long-lived page access token (verify expiry monthly)
+- `AZLAW_FB_PAGE_ID` is `395622053639601`
+- `AZLAW_IG_TOKEN` is the same as the page token
+- `AZLAW_IG_USER_ID` is `17841447928878292` (the IG Business Account linked to the AZ Law Now Page)
+- `AZLAW_IG_BUSINESS_ID` is an alias of the above
+
+To refresh: get a new short-lived user token from Meta Business Suite, save to `/tmp/az-fb-token-<date>.txt`, run `python3 /tmp/exchange-az-page-token.py` (or the equivalent script). The script exchanges the user token for a long-lived page token and updates ops/.env in place without echoing the token to transcript.
+
+For a permanently-non-expiring page token, generate via Business Suite, System Users, AZ Law Now System User, Generate Token, select page plus scopes (`pages_show_list, pages_read_engagement, pages_manage_posts, instagram_basic, instagram_content_publish`), expiry: Never.
 
 ---
 
