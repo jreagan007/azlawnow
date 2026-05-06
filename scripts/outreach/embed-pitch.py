@@ -257,7 +257,9 @@ def main():
             counts["send_ok"] += 1
             sent += 1
             domain_count[domain] = domain_count.get(domain, 0) + 1
-            time.sleep(1.2)
+            # Human-pace pause between sends so the drain looks like a person typing,
+            # not a blast. 30s gives roughly 2 sends per minute, ~120 per hour ceiling.
+            time.sleep(30)
         except Exception as e:
             print(f"  ❌ {email}: {e}")
             counts["send_err"] += 1
