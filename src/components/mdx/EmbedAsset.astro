@@ -1,0 +1,212 @@
+---
+/**
+ * EmbedAsset — Embed-bait chart with copy-paste embed code button.
+ *
+ * Renders the chart inline + a "Copy embed code" button. Click copies a
+ * pre-formatted HTML snippet to the clipboard so any journalist or blogger
+ * can paste it into their CMS and get the image inline + a do-follow link
+ * back to the AZ Law Now investigation.
+ *
+ * Usage in MDX:
+ *   <EmbedAsset
+ *     src="/embeds/buckeye-roundabout-master-1200x675.png"
+ *     alt="Buckeye intersection: roundabout 41.7% vs signalized 15.4% injury reduction"
+ *     storyUrl="https://azlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/"
+ *     caption="buckeye-durango-yuma-injury-crash-reduction-by-design-alternative"
+ *     source="City of Buckeye Traffic Engineering Report ENGCIP-25-0004 (2025), CMF analysis."
+ *     width={1200}
+ *     height={675}
+ *   />
+ */
+interface Props {
+  src: string;
+  alt: string;
+  storyUrl: string;
+  caption?: string;
+  source?: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  storyUrl,
+  caption,
+  source,
+  width = 1200,
+  height = 675,
+} = Astro.props;
+
+// Build absolute URL for the image (CDN path) — strip trailing slash from origin
+const imageAbsoluteUrl = src.startsWith("http")
+  ? src
+  : `https://azlawnow.com${src}`;
+
+// Pre-format the embed code that will go to the clipboard
+const embedCode = `<a href="${storyUrl}" rel="dofollow"><img src="${imageAbsoluteUrl}" alt="${alt}" width="${width}" height="${height}" loading="lazy" /></a>
+<p><small>Source: <a href="${storyUrl}" rel="dofollow">AZ Law Now investigation</a>.</small></p>`;
+---
+
+<figure class="embed-asset">
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading="lazy"
+    class="embed-asset__image"
+  />
+
+  {caption && (
+    <figcaption class="embed-asset__caption">{caption}</figcaption>
+  )}
+  {source && (
+    <p class="embed-asset__source">Source: {source}</p>
+  )}
+
+  <div class="embed-asset__cta-row">
+    <button
+      type="button"
+      class="embed-asset__copy-btn"
+      data-embed-code={embedCode}
+    >
+      <span class="embed-asset__copy-label">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        Copy embed code
+      </span>
+      <span class="embed-asset__copy-success">Copied. Paste into your CMS.</span>
+    </button>
+    <span class="embed-asset__cta-note">
+      Free for editorial reuse. Embed includes a do-follow link to the source story.
+    </span>
+  </div>
+</figure>
+
+<style>
+  .embed-asset {
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .embed-asset__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border: none;
+  }
+
+  .embed-asset__caption {
+    margin: 0.5rem 0 0;
+    font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    color: #4A5859;
+  }
+
+  .embed-asset__source {
+    margin: 0.25rem 0 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: #4A5859;
+    line-height: 1.5;
+  }
+
+  .embed-asset__cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.875rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #E8DFD0;
+  }
+
+  .embed-asset__copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.875rem;
+    background: #1A1A1A;
+    color: #FAF5ED;
+    border: 1px solid #1A1A1A;
+    border-radius: 4px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease;
+    position: relative;
+  }
+
+  .embed-asset__copy-btn:hover,
+  .embed-asset__copy-btn:focus-visible {
+    background: #C23B22;
+    border-color: #C23B22;
+    color: #FAF5ED;
+  }
+
+  .embed-asset__copy-success {
+    display: none;
+  }
+
+  .embed-asset__copy-btn[data-copied="true"] .embed-asset__copy-label {
+    display: none;
+  }
+
+  .embed-asset__copy-btn[data-copied="true"] .embed-asset__copy-success {
+    display: inline;
+  }
+
+  .embed-asset__cta-note {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.75rem;
+    color: #8C8474;
+    line-height: 1.4;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.embed-asset__copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const code = btn.dataset.embedCode || '';
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        // Fallback for older browsers / non-secure contexts
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+        } catch {
+          /* swallow */
+        }
+        document.body.removeChild(ta);
+      }
+      btn.dataset.copied = 'true';
+      setTimeout(() => {
+        delete btn.dataset.copied;
+      }, 2200);
+    });
+  });
+</script>

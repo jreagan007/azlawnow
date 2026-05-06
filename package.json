@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "AZ Law Now Injury Attorneys \u2014 Astro 5 website",
+  "description": "AZ Law Now Injury Attorneys — Astro 5 website",
   "scripts": {
     "dev": "astro dev --port 4324",
     "build": "astro build",
@@ -36,10 +36,13 @@
     "astro": "^5.16.11",
     "astro-seo": "^0.8.4",
     "astro-seo-schema": "^5.1.0",
+    "d3-geo": "^3.1.1",
     "framer-motion": "^10.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "topojson-client": "^3.1.0",
+    "us-atlas": "^3.0.1"
   },
   "devDependencies": {
     "@google/genai": "^1.38.0",

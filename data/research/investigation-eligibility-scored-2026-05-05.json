@@ -1,0 +1,911 @@
+[
+  {
+    "slug": "buckeye-durango-yuma-roundabout-rejected",
+    "title": "Buckeye Picked Cheaper Intersection at Durango",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 8,
+      "closing_thesis": 10,
+      "total": 26
+    },
+    "tier": "S",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $1",
+        "big-num: 1,406,940",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "3 chart-data hints",
+        "10 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "7 punchy short sentences in closing",
+        "\u26a0\ufe0f existing CTA to remove",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "hit-and-run-maricopa-county-data",
+    "title": "Hit-and-Run in Maricopa County: 16,000 Crashes, 90% Unsolved",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 6,
+      "chart_data": 10,
+      "closing_thesis": 8,
+      "total": 24
+    },
+    "tier": "S",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 16,136",
+        "ratio: 1 in 4",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "8 chart-data hints",
+        "3 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "9 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-325-educator-discipline-2024",
+    "title": "Arizona Disciplined 325 Educators in 2024 (Up 491%)",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 7,
+      "chart_data": 6,
+      "closing_thesis": 10,
+      "total": 23
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 1,876",
+        "ratio: 734 of 1",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "1 chart-data hint"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "4 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-school-bus-seat-belts",
+    "title": "Arizona School Buses Still Have No Seat Belts",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 7,
+      "closing_thesis": 8,
+      "total": 23
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $800",
+        "big-num: 800,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "1 chart-data hint",
+        "10 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "15 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-workers-comp-heat-denials",
+    "title": "AZ Heat Workers Comp: Denial Rate Isn't Public",
+    "has_dossier": true,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 6,
+      "closing_thesis": 8,
+      "total": 22
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $500 ",
+        "big-num: 1,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "6 chart-data hints",
+        "9 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "2 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "picacho-eloy-154-percent-pe-rate-hike",
+    "title": "ACC Approved 154% Sewer Hike for Robson Ranch",
+    "has_dossier": true,
+    "scores": {
+      "bomb_stat": 10,
+      "chart_data": 4,
+      "closing_thesis": 6,
+      "total": 20
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $76.63 ",
+        "big-num: 1,900",
+        "ratio: 3 to 2",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "3 chart-data hints",
+        "3 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "3 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-daycare-violations",
+    "title": "Maricopa County Daycares With the Most DHS Violations",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 5,
+      "chart_data": 9,
+      "closing_thesis": 5,
+      "total": 19
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 3,400",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "4 chart-data hints"
+      ],
+      "closing_thesis": [
+        "17 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "esa-fake-children-600k-grand-jury-indictment",
+    "title": "AZ ESA Fraud: 22% Unallowable, $600K Indictment",
+    "has_dossier": true,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 4,
+      "closing_thesis": 7,
+      "total": 19
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $1.2 m",
+        "big-num: 385,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "2 chart-data hints",
+        "4 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "4 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "west-valley-dangerous-intersections",
+    "title": "West Valley's Most Dangerous Intersections",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 7,
+      "chart_data": 7,
+      "closing_thesis": 5,
+      "total": 19
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 100,000",
+        "ratio: 45 to 55",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "3 chart-data hints"
+      ],
+      "closing_thesis": [
+        "19 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-career-schools-37-adverse-actions",
+    "title": "Arizona Licensed 237 Private Career Schools",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 3,
+      "closing_thesis": 7,
+      "total": 18
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $5.8 b",
+        "big-num: 560,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "1 chart-data hint",
+        "5 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "1 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-nursing-home-violations",
+    "title": "Arizona Nursing Homes With the Most Federal Violations",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 3,
+      "chart_data": 10,
+      "closing_thesis": 5,
+      "total": 18
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "5 chart-data hints",
+        "3 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "16 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "truck-crashes-maricopa-county-data",
+    "title": "Maricopa Truck Crash Data Nobody Publishes",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 4,
+      "chart_data": 6,
+      "closing_thesis": 8,
+      "total": 18
+    },
+    "tier": "A",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 14,069",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "7 chart-data hints",
+        "6 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "13 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-mayes-ice-surprise-detention-lawsuit",
+    "title": "AZ Sued the Surprise ICE Detention Plan",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 2,
+      "closing_thesis": 7,
+      "total": 17
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $70 m",
+        "big-num: 1,500",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "9 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "4 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-school-restraint-data",
+    "title": "4,200+ Students Restrained in Arizona Schools",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 5,
+      "chart_data": 7,
+      "closing_thesis": 5,
+      "total": 17
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 4,200",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "markdown table",
+        "2 chart-data hints"
+      ],
+      "closing_thesis": [
+        "17 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-schools-merv-13-filter-bypass",
+    "title": "AZ Schools Bought MERV 13. They Don't Work",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 3,
+      "chart_data": 5,
+      "closing_thesis": 9,
+      "total": 17
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "5 chart-data hints"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "3 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "asu-prep-related-party-lease",
+    "title": "ASU Prep Lost $5.4M on $82M. Related-Party Lease",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 2,
+      "closing_thesis": 7,
+      "total": 17
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $82",
+        "big-num: 82,416,980",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "20 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "4 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "tempe-asu-pavement-180-day-claim-clock",
+    "title": "Tempe Pavement Failing Near ASU: 180-Day Clock",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 3,
+      "chart_data": 4,
+      "closing_thesis": 10,
+      "total": 17
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "2 chart-data hints",
+        "9 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "5 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "aps-korman-heat-disconnect-7m-settlement",
+    "title": "APS $7M Heat-Disconnect Settlement: Korman Case",
+    "has_dossier": true,
+    "scores": {
+      "bomb_stat": 6,
+      "chart_data": 3,
+      "closing_thesis": 7,
+      "total": 16
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $7 m",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "1 chart-data hint",
+        "9 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "5 punchy short sentences in closing",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-motorcycle-fatality-report",
+    "title": "Arizona's Motorcycle Fatality Report",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 5,
+      "chart_data": 6,
+      "closing_thesis": 5,
+      "total": 16
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 2,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "4 chart-data hints",
+        "12 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "18 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-pedestrian-deaths-road-design",
+    "title": "Arizona Pedestrian Deaths: 2x National Average",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 6,
+      "chart_data": 5,
+      "closing_thesis": 5,
+      "total": 16
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 100,000",
+        "ratio: 6 per 100",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "4 chart-data hints"
+      ],
+      "closing_thesis": [
+        "10 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "wrong-way-crashes-arizona-highways",
+    "title": "AZ Wrong-Way Crashes: $4M in Tech, Same Deaths",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 7,
+      "chart_data": 4,
+      "closing_thesis": 5,
+      "total": 16
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $4 m",
+        "big-num: 1,740",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "3 chart-data hints",
+        "8 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "9 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "ghost-fleets-chameleon-carriers-i10",
+    "title": "Ghost Fleets on I-10: Chameleon Carriers AZ",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 4,
+      "chart_data": 6,
+      "closing_thesis": 5,
+      "total": 15
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 700,000",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "5 chart-data hints",
+        "5 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "6 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "i-10-crash-data-buckeye-goodyear",
+    "title": "I-10 Crash Data: Buckeye to Goodyear",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 6,
+      "chart_data": 4,
+      "closing_thesis": 5,
+      "total": 15
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 88,094",
+        "ratio: 1 in 15",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "3 chart-data hints",
+        "3 dollar figures (series candidate)"
+      ],
+      "closing_thesis": [
+        "14 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "sr-347-crash-corridor",
+    "title": "SR-347: 967 Crashes on Maricopa's Deadliest Road",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 5,
+      "chart_data": 5,
+      "closing_thesis": 5,
+      "total": 15
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 65,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "5 chart-data hints"
+      ],
+      "closing_thesis": [
+        "18 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "fatigued-truckers-arizona-hos-data",
+    "title": "AZ Fatigued Truckers: HOS Data Tells the Story",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 4,
+      "chart_data": 5,
+      "closing_thesis": 5,
+      "total": 14
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "ratio: 1 in 5",
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "4 chart-data hints"
+      ],
+      "closing_thesis": [
+        "5 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "grand-court-mesa-elder-abuse-hb2228",
+    "title": "Mesa Grand Court Elder Abuse + Arizona HB2228",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 3,
+      "chart_data": 1,
+      "closing_thesis": 10,
+      "total": 14
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "7 punchy short sentences in closing",
+        "\u26a0\ufe0f existing CTA to remove",
+        "Callout closing block (existing pattern)"
+      ]
+    }
+  },
+  {
+    "slug": "arizona-nursing-homes-billing-fraud-and-abuse",
+    "title": "AZ Nursing Homes: Billing Audit Is Also a Care Audit",
+    "has_dossier": true,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 4,
+      "closing_thesis": 1,
+      "total": 13
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $74M",
+        "ratio: 29 to 33",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "3 chart-data hints",
+        "5 dollar figures (series candidate)"
+      ],
+      "closing_thesis": []
+    }
+  },
+  {
+    "slug": "coolidge-daycare-19-families-lawsuit",
+    "title": "19 Families Sue 1 Coolidge In-Home Daycare",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 4,
+      "chart_data": 1,
+      "closing_thesis": 8,
+      "total": 13
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 14,000",
+        "KeyFacts component"
+      ],
+      "chart_data": [],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "12 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "phoenix-dui-crashes-data",
+    "title": "Phoenix DUI Crashes: The Data Nobody Wants to See",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 5,
+      "chart_data": 2,
+      "closing_thesis": 5,
+      "total": 12
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 1,228",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "1 chart-data hint"
+      ],
+      "closing_thesis": [
+        "15 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "sr-347-i-10-interchange",
+    "title": "SR-347 + I-10 Interchange: Maricopa Choke",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 5,
+      "chart_data": 2,
+      "closing_thesis": 5,
+      "total": 12
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "big-num: 25,000",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "1 chart-data hint"
+      ],
+      "closing_thesis": [
+        "14 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "walgreens-350m-arizona-opioid-stores",
+    "title": "Walgreens $350M Opioid Settlement: Which AZ Stores?",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 8,
+      "chart_data": 3,
+      "closing_thesis": 1,
+      "total": 12
+    },
+    "tier": "B",
+    "findings": {
+      "bomb_stat": [
+        "$-figure: $350 m",
+        "big-num: 1,659",
+        "KeyFacts component",
+        "StatBlock component"
+      ],
+      "chart_data": [
+        "1 chart-data hint",
+        "4 dollar figures (series candidate)"
+      ],
+      "closing_thesis": []
+    }
+  },
+  {
+    "slug": "maricopa-office-opening",
+    "title": "We Opened in Maricopa. Here's Why.",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 2,
+      "chart_data": 1,
+      "closing_thesis": 8,
+      "total": 11
+    },
+    "tier": "C",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component"
+      ],
+      "chart_data": [],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "4 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "paws-claws-maricopa-sponsorship",
+    "title": "Why We Sponsored Paws & Claws in Maricopa",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 2,
+      "chart_data": 1,
+      "closing_thesis": 8,
+      "total": 11
+    },
+    "tier": "C",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component"
+      ],
+      "chart_data": [],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "4 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "first-week-maricopa-sr-347-dispatch",
+    "title": "A Sobering Welcome: My First Week in Maricopa and SR-347",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 1,
+      "chart_data": 1,
+      "closing_thesis": 8,
+      "total": 10
+    },
+    "tier": "C",
+    "findings": {
+      "bomb_stat": [],
+      "chart_data": [],
+      "closing_thesis": [
+        "comparison phrasing in closing",
+        "11 punchy short sentences in closing"
+      ]
+    }
+  },
+  {
+    "slug": "watson-yuma-buckeye-intersection",
+    "title": "Watson Road & Yuma Road: Buckeye's Busiest Crossing",
+    "has_dossier": false,
+    "scores": {
+      "bomb_stat": 2,
+      "chart_data": 2,
+      "closing_thesis": 5,
+      "total": 9
+    },
+    "tier": "C",
+    "findings": {
+      "bomb_stat": [
+        "KeyFacts component"
+      ],
+      "chart_data": [
+        "1 chart-data hint"
+      ],
+      "closing_thesis": [
+        "13 punchy short sentences in closing"
+      ]
+    }
+  }
+]

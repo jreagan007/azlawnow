@@ -43,6 +43,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
 
 
 <KeyFacts>
@@ -64,6 +65,16 @@ The City chose the signalized LILO.
   stat="26.3 points"
   label="The injury-crash reduction gap between Alternative 1 (roundabout) and Alternative 2 (signalized LILO) per Buckeye's own Traffic Engineering Report"
   source="ENGCIP-25-0004 Crash Modification Factor Analysis, City of Buckeye"
+/>
+
+<EmbedAsset
+  src="/embeds/buckeye-roundabout-master-1200x675.png"
+  alt="Buckeye Durango and Yuma intersection: roundabout would have reduced injury crashes 41.7%, signalized design chosen reduces them 15.4%"
+  storyUrl="https://azlawnow.com/investigations/buckeye-durango-yuma-roundabout-rejected/"
+  caption="buckeye-durango-yuma-injury-crash-reduction-by-design-alternative"
+  source="City of Buckeye Traffic Engineering Report ENGCIP-25-0004 (2025), Crash Modification Factor analysis."
+  width={1200}
+  height={675}
 />
 
 ## What the Report Said
