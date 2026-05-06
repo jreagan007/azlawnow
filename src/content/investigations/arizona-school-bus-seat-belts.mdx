@@ -23,6 +23,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
 
 
 <KeyFacts>
@@ -44,6 +45,16 @@ But that framing hides what the numbers actually show.
 Between 2014 and 2023, NHTSA recorded 971 fatal crashes involving school transportation vehicles across the United States. That's roughly two per week. The agency tracks these through the Fatality Analysis Reporting System, which captures every crash on a US public road that results in at least one death within 30 days.
 
 <StatBlock stat="971" label="School-transportation-related fatal crashes, 2014-2023" source="NHTSA FARS" sourceUrl="https://www.nhtsa.gov/road-safety/school-bus-safety" />
+
+<EmbedAsset
+  src="/embeds/school-bus-seat-belts-master-1200x675.png"
+  alt="8 states require seat belts on new school buses; 42 states including Arizona don't, against a backdrop of 971 school-transportation-related fatal crashes nationally 2014-2023"
+  storyUrl="https://azlawnow.com/investigations/arizona-school-bus-seat-belts/"
+  caption="us-states-requiring-seat-belts-on-new-school-buses-2025"
+  source="NHTSA School Bus Safety, FARS data 2014-2023, plus state-by-state legislative review."
+  width={1200}
+  height={675}
+/>
 
 The breakdown matters more than the headline number.
 

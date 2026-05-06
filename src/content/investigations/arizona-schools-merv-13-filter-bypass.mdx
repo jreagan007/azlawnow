@@ -61,6 +61,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
 
 
 <KeyFacts>
@@ -80,6 +81,16 @@ The science isn't in dispute. The contractors aren't hiding the answer. ASHRAE w
   stat="9 µg/m³"
   label="EPA's revised annual PM2.5 National Ambient Air Quality Standard, finalized February 2024. The World Health Organization's 2021 guideline is 5 µg/m³. Maricopa County is in serious non-attainment for PM10 under the Clean Air Act."
   source="EPA Final Reconsideration of NAAQS for Particulate Matter; WHO Global Air Quality Guidelines 2021"
+/>
+
+<EmbedAsset
+  src="/embeds/merv-13-master-1200x675.png"
+  alt="EPA tightened the annual PM2.5 standard to 9 micrograms per cubic meter in February 2024; the World Health Organization's 2021 guideline is 5"
+  storyUrl="https://azlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/"
+  caption="pm2-5-air-quality-standards-epa-vs-who-2024"
+  source="EPA NAAQS revision (Feb 2024); WHO global air quality guidelines (2021); ASHRAE 52.2-2017, 241-2023."
+  width={1200}
+  height={675}
 />
 
 ## What MERV Actually Measures

@@ -61,6 +61,27 @@ STORIES = {
         "alt": "51 Maricopa County daycare facilities cited 3 or more times across Buckeye, Goodyear, Avondale, and Surprise, 2023 to 2025",
         "topic_tag": "AZ child safety / daycare regulation",
     },
+    "arizona-school-bus-seat-belts": {
+        "subject_stat": "8 states require seat belts on new school buses, AZ is one of 42 that don't",
+        "lede": "8 states require seat belts on new school buses. Arizona is one of 42 that don't. NHTSA recorded 971 school-transportation-related fatal crashes between 2014 and 2023.",
+        "embed_image": "https://azlawnow.com/embeds/school-bus-seat-belts-master-1200x675.png",
+        "alt": "8 states require seat belts on new school buses; 42 states including Arizona don't, against a backdrop of 971 school-transportation-related fatal crashes nationally 2014-2023",
+        "topic_tag": "AZ child safety / school transportation",
+    },
+    "arizona-school-restraint-data": {
+        "subject_stat": "4,217 AZ students restrained at school last year, 77% had IEPs or 504 plans",
+        "lede": "Arizona schools reported 4,217 restraint and seclusion incidents in the 2024-2025 school year. 77% of those incidents involved students with IEPs or 504 plans. Many parents say they were never told.",
+        "embed_image": "https://azlawnow.com/embeds/school-restraint-master-1200x675.png",
+        "alt": "4,217 Arizona students restrained in school 2024-25, with 77% of incidents involving students with IEPs or 504 plans",
+        "topic_tag": "AZ disability rights / student safety",
+    },
+    "arizona-schools-merv-13-filter-bypass": {
+        "subject_stat": "AZ schools tout MERV 13. ASHRAE 241 says bypass air equals lower MERV.",
+        "lede": "EPA tightened the annual PM2.5 standard to 9 micrograms per cubic meter in February 2024. The WHO has been at 5 since 2021. Arizona schools tout MERV 13 filtration but ASHRAE 241 (2023) confirms unsealed housings let air bypass the filter, equivalent to a lower MERV.",
+        "embed_image": "https://azlawnow.com/embeds/merv-13-master-1200x675.png",
+        "alt": "EPA tightened the annual PM2.5 standard to 9 micrograms per cubic meter in February 2024; the World Health Organization's 2021 guideline is 5",
+        "topic_tag": "AZ indoor air quality / school facilities",
+    },
 }
 
 

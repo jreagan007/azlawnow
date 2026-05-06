@@ -423,6 +423,27 @@
       "text": "51 Maricopa County daycare facilities cited 3+ times across Buckeye, Goodyear, Avondale, and Surprise from 2023 to 2025.\n\nStaff-ratio violations are 40% of all West Valley citations.\n\nRepeat violators can operate for years before AZ DHS escalates.",
       "reply": "Full investigation with city-by-city facility lists, AZ DHS CareCheck data, the corrective-action timeline, and what the law says about ratio violations under Arizona Administrative Code R9-5:\n\nhttps://azlawnow.com/investigations/arizona-daycare-violations/\n\nChart is free to embed.",
       "mentions": "Source: AZ DHS CareCheck records 2023-2025, plus public records requests for inspection reports not yet uploaded to the database."
+    },
+    {
+      "id": "azln-30",
+      "topic": "school-bus-seat-belts-CHART",
+      "text": "8 states require seat belts on new school buses.\n\nArizona is one of 42 that don't.\n\nNHTSA recorded 971 school-transportation-related fatal crashes between 2014 and 2023.",
+      "reply": "Full investigation with the federal data, the eight states that did codify it, FARS 2014-2023, and what families should know:\n\nhttps://azlawnow.com/investigations/arizona-school-bus-seat-belts/\n\nChart is free to embed.",
+      "mentions": "Source: NHTSA School Bus Safety, FARS data 2014-2023, state-by-state legislative review."
+    },
+    {
+      "id": "azln-31",
+      "topic": "school-restraint-CHART",
+      "text": "4,217 Arizona students were physically restrained at school last year.\n\n77% of those incidents involved students with IEPs or 504 plans.\n\nMany parents say they were never told.",
+      "reply": "Full investigation with district-by-district data, ARS 15-105 reporting framework, and three consecutive years of increases:\n\nhttps://azlawnow.com/investigations/arizona-school-restraint-data/\n\nChart is free to embed.",
+      "mentions": "Source: Arizona Department of Education restraint and seclusion incident reports, 2024-2025 school year."
+    },
+    {
+      "id": "azln-32",
+      "topic": "merv-13-CHART",
+      "text": "EPA tightened the annual PM2.5 standard to 9 \u00b5g/m\u00b3 in February 2024.\n\nThe WHO has been at 5 since 2021.\n\nArizona schools tout MERV 13. ASHRAE 241 says bypass air equals lower MERV.",
+      "reply": "Full investigation with the ASHRAE 52.2 lab test, the ASHRAE 241 bypass-air rule, and what schools haven't published about their installations:\n\nhttps://azlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/\n\nChart is free to embed.",
+      "mentions": "Source: EPA NAAQS revision (Feb 2024); WHO Global Air Quality Guidelines (2021); ASHRAE 52.2-2017, 241-2023."
     }
   ]
 }

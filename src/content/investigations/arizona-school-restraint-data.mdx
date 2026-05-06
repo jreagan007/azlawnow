@@ -39,6 +39,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
 
 
 <KeyFacts>
@@ -67,6 +68,16 @@ In the 2024-2025 school year, Arizona schools reported 4,217 total incidents of 
   label="Restraint and seclusion incidents reported in Arizona schools, 2024-2025"
   source="Arizona Department of Education"
   trend="up"
+/>
+
+<EmbedAsset
+  src="/embeds/school-restraint-master-1200x675.png"
+  alt="4,217 Arizona students restrained in school 2024-25, with 77% of incidents involving students with IEPs or 504 plans"
+  storyUrl="https://azlawnow.com/investigations/arizona-school-restraint-data/"
+  caption="arizona-public-school-restraint-incidents-by-disability-status-2024-25"
+  source="Arizona Department of Education restraint and seclusion incident reports, 2024-25 school year."
+  width={1200}
+  height={675}
 />
 
 The numbers aren't evenly distributed. Maricopa County accounts for roughly 60% of statewide incidents, which tracks with population. But within Maricopa County, certain districts report at rates that are wildly out of proportion with their enrollment.
