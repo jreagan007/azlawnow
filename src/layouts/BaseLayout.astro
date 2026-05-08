@@ -526,6 +526,26 @@ const allSchemas = [...siteSchemas, ...pageSchemas];
         transform: translateY(0);
       }
 
+      /* Outline-on-dark — for use as a secondary CTA next to .btn-primary
+         on dark sections (hero, mid-page CTA bands, footer CTA). Pairs with
+         the gold primary as a tel:/secondary-action button. */
+      .btn-outline-light {
+        background: transparent;
+        color: var(--color-white);
+        border: 2px solid rgba(255, 255, 255, 0.55);
+      }
+
+      .btn-outline-light:hover,
+      .btn-outline-light:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: var(--color-white);
+        color: var(--color-white);
+      }
+
+      .btn-outline-light:active {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
       /* Dark section button overrides
          Keep hover IDENTICAL to the hero CTA everywhere (sienna + white + -2px).
          The project-wide rule: every primary CTA hovers exactly like the hero.

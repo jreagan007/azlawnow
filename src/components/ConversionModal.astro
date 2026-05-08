@@ -1,15 +1,19 @@
 ---
 /**
  * ConversionModal
- * Lead capture modal for practice area and location pages
+ * Lead capture modal — COMMERCIAL PAGES ONLY.
  *
  * Trigger rules:
- *   - 12s dwell on practice area or location pages
- *   - 50% scroll on resource/guide pages
+ *   - 12s dwell on practice area, vehicle-crashes/abuse-negligence/other-claims hubs,
+ *     or city/location pages (commercial intent)
+ *   - NEVER auto-triggers on journalism content (investigations, legal-guides,
+ *     client-guides, glossary, blog, news, tips, faq) — those rely on inline
+ *     contextual CTAs and the sticky bar instead. Modal is for commercial intent
+ *     traffic (search → service page) where we are confident the visitor is in-market.
  *   - Mobile: click-triggered only (no auto-trigger, avoids Google interstitial penalty)
  *   - Once per session (sessionStorage)
  *   - 7-day cooldown (localStorage)
- *   - Excluded paths: /free-case-review/, /contact/, /thank-you/
+ *   - Globally excluded paths: /free-case-review/, /contact/, /thank-you/
  *
  * Hidden fields: page URL, referrer, UTMs, timestamp
  * Posts to Netlify Forms
@@ -95,7 +99,10 @@ import { siteConfig } from '../data/site-config';
   const COOLDOWN_KEY = 'modal_cooldown';
   const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-  const excludedPaths = ['/free-case-review/', '/contact/', '/thank-you/', '/investigations/', '/legal-guides/', '/client-guides/'];
+  // Globally excluded paths — never trigger here, including manual triggers
+  // Journalism / editorial paths are NOT in this list because we still allow
+  // a CTA-button click to open the modal there; we just don't auto-trigger.
+  const excludedPaths = ['/free-case-review/', '/contact/', '/thank-you/'];
   const path = window.location.pathname;
 
   // Check exclusions
@@ -113,13 +120,19 @@ import { siteConfig } from '../data/site-config';
   // Detect mobile (rough: pointer coarse or width < 768)
   const isMobile = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768;
 
-  // Page type detection — match cluster routes and nested practice areas
-  const isPracticeOrLocation =
+  // COMMERCIAL pages — practice area clusters, individual practice areas, city pages.
+  // These have commercial intent (someone looking for an attorney) so the modal
+  // is appropriate after a dwell.
+  const isCommercial =
     /^\/(vehicle-crashes|abuse-negligence|other-claims)(\/|$)/.test(path) ||
-    /^\/(car-accidents|truck-accidents|motorcycle-accidents|bus-accidents|wrongful-death|elder-abuse|nursing-home-abuse|pedestrian-accidents|bicycle-accidents|slip-and-fall|medical-negligence|dog-bite|rideshare-accidents|premises-liability|negligent-security|daycare-negligence|child-abuse|school-abuse)\/?/.test(path) ||
-    /^\/(buckeye|goodyear|avondale|maricopa|phoenix|mesa|chandler|tempe|scottsdale|casa-grande|litchfield-park)\/?/.test(path);
+    /^\/(car-accidents|truck-accidents|motorcycle-accidents|bus-accidents|wrongful-death|elder-abuse|nursing-home-abuse|pedestrian-accidents|bicycle-accidents|slip-and-fall|medical-negligence|dog-bite|rideshare-accidents|premises-liability|negligent-security|daycare-negligence|child-abuse|school-abuse)(\/|$)/.test(path) ||
+    /^\/(buckeye|goodyear|avondale|maricopa|phoenix|mesa|chandler|tempe|scottsdale|casa-grande|litchfield-park)(\/|$)/.test(path);
 
-  const isResourceOrGuide = /^\/(resources|legal-guides|client-guides|blog|investigations)(\/|$)/.test(path);
+  // EDITORIAL / journalism pages — we never auto-trigger here. The persistent
+  // modal undermines the journalism credibility play and makes outreach harder
+  // (HARO / source pitches read these). Inline contextual CTAs do the work.
+  // Listed for clarity — no behavior depends on this variable.
+  // const isEditorial = /^\/(investigations|legal-guides|client-guides|glossary|tips|faq|news|blog|resources)(\/|$)/.test(path);
 
   function openModal() {
     if (!canTrigger) return;
@@ -164,25 +177,12 @@ import { siteConfig } from '../data/site-config';
     if (e.key === 'Escape' && !modal.hidden) closeModal();
   });
 
-  // Auto-trigger logic (desktop only)
-  if (canTrigger && !isMobile) {
-    if (isPracticeOrLocation) {
-      // 12-second dwell
-      setTimeout(openModal, 12000);
-    } else if (isResourceOrGuide) {
-      // 50% scroll depth
-      let triggered = false;
-      function checkScroll() {
-        if (triggered) return;
-        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-        if (scrollPercent >= 0.5) {
-          triggered = true;
-          openModal();
-          window.removeEventListener('scroll', checkScroll);
-        }
-      }
-      window.addEventListener('scroll', checkScroll, { passive: true });
-    }
+  // Auto-trigger logic — COMMERCIAL pages only, desktop only.
+  // Journalism / editorial pages get NO auto-trigger. The button-click path
+  // (window.__openConversionModal) is still available there for any explicit
+  // CTA, but a hurt-person on an investigation page should not be ambushed.
+  if (canTrigger && !isMobile && isCommercial) {
+    setTimeout(openModal, 12000);
   }
 
   // Expose open function globally for click-triggered use (mobile CTAs, etc.)
