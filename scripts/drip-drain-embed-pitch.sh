@@ -21,6 +21,7 @@ STORIES=(
   arizona-school-bus-seat-belts
   arizona-school-restraint-data
   arizona-schools-merv-13-filter-bypass
+  27th-ave-thomas-rd-bnsf-crossing
 )
 
 PER_RUN_LIMIT=5

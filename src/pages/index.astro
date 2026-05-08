@@ -559,7 +559,12 @@ const topicClusters = [
   <!-- ============================== -->
   <section class="section voices-section">
     <div class="container">
-      <h2 class="voices-heading">Three Voices. Your Whole Case.</h2>
+      <span class="voices-eyebrow">Meet the editorial team</span>
+      <h2 class="voices-heading">Three voices. Your whole case.</h2>
+      <p class="voices-deck">
+        An investigator. An attorney. A client guide. Each one writes their part
+        of every Arizona case so you understand the data, the law, and the steps.
+      </p>
       <div class="voices-grid">
 
         <!-- ON RECORD — Brendan -->
@@ -573,17 +578,12 @@ const topicClusters = [
               <span class="voice-author-title">{brendan.title}</span>
             </div>
           </div>
+          <p class="voice-role">Pulls public records, settlement data, and crash filings before the case is built.</p>
           <a href={`/investigations/${headlineStory.id}/`} class="voice-lead-wrap">
             <img src={headlineStory.data.image || '/images/cards/arizona-school-restraint-data.webp'} alt={headlineStory.data.title} class="voice-lead-img" loading="lazy" />
+            <span class="voice-lead-eyebrow">Latest Investigation</span>
             <span class="voice-lead">{headlineStory.data.title}</span>
           </a>
-          <div class="voice-stories">
-            {voicesLatestThree.map((story) => (
-              <a href={`/investigations/${story.id}/`} class="voice-story">
-                {story.data.title}
-              </a>
-            ))}
-          </div>
           <a href="/investigations/" class="voice-all voice-all--red">Read all investigations &rarr;</a>
         </div>
 
@@ -598,21 +598,12 @@ const topicClusters = [
               <span class="voice-author-title">{brandon.title}</span>
             </div>
           </div>
+          <p class="voice-role">Bar-licensed Arizona attorney. Translates statutes and case law into plain English.</p>
           <a href="/legal-guides/arizona-car-accident-law/" class="voice-lead-wrap">
             <img src="/images/cards/arizona-car-accident-law.webp" alt="Arizona car accident law guide" class="voice-lead-img" loading="lazy" />
+            <span class="voice-lead-eyebrow">Featured Legal Guide</span>
             <span class="voice-lead">Arizona Car Accident Law: Fault, Insurance, and Deadlines</span>
           </a>
-          <div class="voice-stories">
-            <a href="/legal-guides/suing-school-district-arizona/" class="voice-story">
-              Suing a School District: The 180-Day Deadline
-            </a>
-            <a href="/legal-guides/arizona-elder-abuse-law/" class="voice-story">
-              Arizona Elder Abuse Law: ARS 46-451
-            </a>
-            <a href="/legal-guides/arizona-pedestrian-law/" class="voice-story">
-              Arizona Pedestrian Rights and Driver Liability
-            </a>
-          </div>
           <a href="/legal-guides/" class="voice-all voice-all--gold">Read all legal guides &rarr;</a>
         </div>
 
@@ -627,21 +618,12 @@ const topicClusters = [
               <span class="voice-author-title">{stephanie.title}</span>
             </div>
           </div>
+          <p class="voice-role">Writes the playbooks. Walks families through the timeline, paperwork, and decisions.</p>
           <a href="/client-guides/car-accident-first-48-hours/" class="voice-lead-wrap">
             <img src="/images/cards/car-accident-first-48-hours.webp" alt="First 48 hours after a car crash guide" class="voice-lead-img" loading="lazy" />
+            <span class="voice-lead-eyebrow">Featured Client Guide</span>
             <span class="voice-lead">Your Car Accident in Arizona: First 48 Hours</span>
           </a>
-          <div class="voice-stories">
-            <a href="/client-guides/child-injured-at-school/" class="voice-story">
-              Your Child Was Hurt at School
-            </a>
-            <a href="/client-guides/nursing-home-abuse-signs-reporting/" class="voice-story">
-              Signs of Nursing Home Abuse
-            </a>
-            <a href="/client-guides/pedestrian-crash-action-plan/" class="voice-story">
-              Hit by a Car While Walking: Your Action Plan
-            </a>
-          </div>
           <a href="/client-guides/" class="voice-all voice-all--slate">Read all client guides &rarr;</a>
         </div>
 
@@ -1870,13 +1852,52 @@ const topicClusters = [
     padding-bottom: var(--space-16, 4rem);
   }
 
+  .voices-eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-gold-text, #8B4513);
+    text-align: center;
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
   .voices-heading {
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
     font-size: clamp(var(--text-2xl, 1.5rem), 3.5vw, var(--text-4xl, 2.5rem));
     font-weight: 700;
     color: var(--color-black, #1A1A1A);
     text-align: center;
-    margin-bottom: var(--space-10, 2.5rem);
+    margin: 0 0 var(--space-3, 0.75rem);
+  }
+
+  .voices-deck {
+    text-align: center;
+    color: var(--color-slate, #4A5859);
+    font-size: var(--text-base, 1rem);
+    line-height: 1.6;
+    max-width: 56ch;
+    margin: 0 auto var(--space-12, 3rem);
+  }
+
+  .voice-role {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--color-slate, #4A5859);
+    line-height: 1.55;
+    margin: 0 0 var(--space-5, 1.25rem);
+  }
+
+  .voice-lead-eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-slate, #4A5859);
+    margin: 0 0 4px;
   }
 
   .voices-grid {

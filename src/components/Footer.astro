@@ -63,14 +63,24 @@ const companyLinks = [
 ---
 
 <footer class="footer">
-  <!-- CTA Bar -->
+  <!-- CTA Bar — site-wide conversion fallback. Mirrors the hero / mid-page
+       / sticky pattern: gold primary form CTA + outline-on-dark phone CTA
+       with phone icon + microcopy. -->
   <div class="footer-cta-bar">
     <div class="container footer-cta-inner">
       <div class="footer-cta-text">
-        <span class="footer-cta-label">Free Case Review</span>
-        <a href="tel:+16026540202" class="footer-phone" aria-label="Call AZ Law Now at (602) 654-0202">(602) 654-0202</a>
+        <span class="footer-cta-label">Hurt in Arizona? Get answers today.</span>
+        <span class="footer-cta-microcopy">Free, no obligation. Available 24/7. No fee unless we win.</span>
       </div>
-      <a href="/free-case-review/" class="footer-cta">Get Answers on Your Case</a>
+      <div class="footer-cta-actions">
+        <a href="/free-case-review/" class="footer-cta" data-event="footer-form-cta">Get my free case review &rarr;</a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="footer-phone" data-event="footer-call-cta" aria-label={`Call AZ Law Now at ${siteConfig.phoneFormatted}`}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>{siteConfig.phoneFormatted}</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -214,60 +224,93 @@ const companyLinks = [
      ======================================== */
   .footer-cta-bar {
     background: #1A1A1A;
-    padding: 1.25rem 0;
+    padding: 1.5rem 0;
+    border-top: 3px solid #D4943A;
   }
 
   .footer-cta-inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .footer-cta-text {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .footer-cta-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(250, 245, 237, 0.6);
-  }
-
-  .footer-phone {
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
     font-size: 1.5rem;
     font-weight: 700;
-    color: #D4943A;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
+    color: #FFFFFF;
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: 0;
   }
 
-  .footer-phone:hover { color: #FAF5ED; }
+  .footer-cta-microcopy {
+    font-size: 0.875rem;
+    color: rgba(250, 245, 237, 0.7);
+    line-height: 1.5;
+  }
+
+  .footer-cta-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
 
   .footer-cta {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     background: #D4943A;
-    color: #FAF5ED;
-    font-weight: 600;
-    font-size: 0.8rem;
-    padding: 0.75rem 1.25rem;
+    color: #1A1A1A;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 2px;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
     min-height: 44px;
-    transition: background 0.2s;
+    transition: background 0.2s ease, color 0.2s ease;
   }
 
-  .footer-cta:hover { background: #c08432; }
+  .footer-cta:hover,
+  .footer-cta:focus-visible {
+    background: #C0822E;
+    color: #1A1A1A;
+  }
+
+  .footer-phone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 2px;
+    text-decoration: none;
+    min-height: 44px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .footer-phone:hover,
+  .footer-phone:focus-visible {
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+  }
 
   /* ========================================
      FOOTER BODY — warm cream
@@ -478,20 +521,30 @@ const companyLinks = [
      ======================================== */
   @media (max-width: 767px) {
     .footer-cta-inner {
-      flex-direction: column;
-      gap: 0.75rem;
+      grid-template-columns: 1fr;
+      gap: 1rem;
       text-align: center;
     }
 
     .footer-cta-text {
-      flex-direction: column;
-      gap: 0.25rem;
+      align-items: center;
     }
 
-    .footer-cta {
+    .footer-cta-label {
+      font-size: 1.25rem;
+    }
+
+    .footer-cta-actions {
+      flex-direction: column;
       width: 100%;
-      max-width: 320px;
-      justify-content: center;
+      align-items: stretch;
+    }
+
+    .footer-cta,
+    .footer-phone {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
     }
 
     .footer-grid {

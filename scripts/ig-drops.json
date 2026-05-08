@@ -79,7 +79,7 @@
     {
       "id": "ig-azln-11",
       "topic": "school-bus-seat-belts-CHART",
-      "image_url": "https://azlawnow.com/ig/ig-school-bus-seat-belts-chart-2026-05.jpg?v=1",
+      "image_url": "https://azlawnow.com/ig/ig-school-bus-seat-belts-chart-2026-05.jpg?v=2",
       "caption": "8 states require seat belts on new school buses. Arizona is one of 42 that don't.\n\n971 school-transportation-related fatal crashes nationally between 2014 and 2023.\n\nFull investigation, link in bio.\n\n#Arizona #ChildSafety #SchoolBusSafety #SeatBelts #DataJournalism #AZLawNow",
       "first_comment": "Methodology: NHTSA School Bus Safety, Fatality Analysis Reporting System data 2014-2023, plus state-by-state legislative review of seat belt requirements on full-size school buses. Reporting by Brendan Franks. Read the full investigation at azlawnow.com/investigations/arizona-school-bus-seat-belts/"
     },
@@ -96,6 +96,13 @@
       "image_url": "https://azlawnow.com/ig/ig-merv-13-chart-2026-05.jpg?v=1",
       "caption": "EPA tightened the PM2.5 standard to 9 \u00b5g/m\u00b3 in February 2024. The WHO has been at 5 since 2021.\n\nArizona schools tout MERV 13 filtration. ASHRAE 241 says bypass air equals lower MERV.\n\nFull investigation, link in bio.\n\n#Arizona #IndoorAirQuality #SchoolFacilities #ASHRAE #PublicHealth #DataJournalism #AZLawNow",
       "first_comment": "Methodology: EPA Final Reconsideration of NAAQS for Particulate Matter (Feb 2024), WHO Global Air Quality Guidelines 2021, ASHRAE 52.2-2017 testing standard, ASHRAE 241-2023 control of infectious aerosols. Reporting by Brendan Franks. Read the full investigation at azlawnow.com/investigations/arizona-schools-merv-13-filter-bypass/"
+    },
+    {
+      "id": "ig-azln-14",
+      "topic": "27th-thomas-bnsf-CHART",
+      "image_url": "https://azlawnow.com/ig/ig-27th-thomas-bnsf-crossing-2026-05.jpg?v=1",
+      "caption": "BNSF installed gates at 27th and Thomas in June 2024.\n\nSonja Celius was struck at the same crossing 22 months later. Both legs amputated.\n\nTwin BNSF crossings 50 feet apart. Combined AADT 70,000+. Neither in a quiet zone.\n\nFull investigation, link in bio.\n\n#Arizona #Phoenix #RailSafety #PedestrianSafety #FRA #DataJournalism #AZLawNow",
+      "first_comment": "Methodology: FRA Highway-Rail Grade Crossing Inventory and FRA Office of Safety Analysis per-crossing accident reports for DOT IDs 025430G (27th Avenue) and 025617C (Thomas Road), BNSF Phoenix Subdivision MP 189.580-189.615. Plus AZ Family reporting on Sonja Celius (Mikayla, May 7, 2026). Reporting by Brendan Franks. Read the full investigation at azlawnow.com/investigations/27th-ave-thomas-rd-bnsf-crossing/"
     }
   ]
 }

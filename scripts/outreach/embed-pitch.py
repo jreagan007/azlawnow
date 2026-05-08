@@ -82,6 +82,13 @@ STORIES = {
         "alt": "EPA tightened the annual PM2.5 standard to 9 micrograms per cubic meter in February 2024; the World Health Organization's 2021 guideline is 5",
         "topic_tag": "AZ indoor air quality / school facilities",
     },
+    "27th-ave-thomas-rd-bnsf-crossing": {
+        "subject_stat": "BNSF installed gates at 27th and Thomas. Sonja Celius was struck 22 months later.",
+        "lede": "BNSF installed active warning gates at the twin BNSF crossings at 27th Avenue and Thomas Road in west Phoenix in June 2024 after roughly 50 years of passive crossbucks. Sonja Celius was struck at the 27th Avenue crossing on April 25, 2026, 22 months after the retrofit. Both legs amputated. Twin crossings 50 feet apart need channelizing medians, not just gates.",
+        "embed_image": "https://azlawnow.com/embeds/27th-thomas-bnsf-crossing-master-1200x675.png",
+        "alt": "Timeline of pedestrian fatalities and serious injuries at FRA grade crossings 025430G and 025617C, 27th Avenue and Thomas Road, west Phoenix, 2021 to 2026, with BNSF gate installation in June 2024 marked",
+        "topic_tag": "AZ rail safety / pedestrian crossings",
+    },
 }
 
 
