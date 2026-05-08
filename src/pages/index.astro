@@ -385,6 +385,39 @@ const topicClusters = [
   </section>
 
   <!-- ============================== -->
+  <!-- WHAT WE'RE WATCHING — data     -->
+  <!-- Promoted to second screen. The -->
+  <!-- firm's strongest unique asset  -->
+  <!-- is the Arizona injury data we  -->
+  <!-- track. Each stat links into an -->
+  <!-- investigation for deep dwell.  -->
+  <!-- ============================== -->
+  <section class="watching-section">
+    <div class="container">
+      <div class="watching-header">
+        <span class="watching-eyebrow">What We&rsquo;re Watching in Arizona</span>
+        <h2 class="watching-headline">The data behind the cases.</h2>
+        <p class="watching-deck">
+          Real Arizona injury patterns from public records and state filings. Every
+          number links to the full investigation.
+        </p>
+      </div>
+      <div class="watching-row">
+        {dataStats.map((stat) => (
+          <a href={stat.url} class="watching-stat">
+            <span class="watching-value">{stat.value}</span>
+            <span class="watching-label">{stat.label}</span>
+            <span class="watching-source">{stat.source}</span>
+          </a>
+        ))}
+      </div>
+      <div class="watching-cta">
+        <a href="/investigations/" class="watching-cta-link">Read every investigation &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
   <!-- FEATURED CLUSTER                -->
   <!-- 1 investigation + 2 supporting  -->
   <!-- All three voices on same topic  -->
@@ -487,24 +520,10 @@ const topicClusters = [
   </section>
 
   <!-- ============================== -->
-  <!-- WHAT WE'RE WATCHING — data     -->
-  <!-- ============================== -->
-  <section class="watching-section">
-    <div class="container">
-      <div class="watching-header">
-        <span class="watching-eyebrow">What We're Watching</span>
-      </div>
-      <div class="watching-row">
-        {dataStats.map((stat) => (
-          <a href={stat.url} class="watching-stat">
-            <span class="watching-value">{stat.value}</span>
-            <span class="watching-label">{stat.label}</span>
-            <span class="watching-source">{stat.source}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- WHAT WE'RE WATCHING moved up to second screen.                        -->
+  <!-- The data we're tracking is the firm's strongest unique asset and earns -->
+  <!-- the highest-attention real estate after the hero + testimonials.       -->
+  <!-- See section right below social-proof (above Featured Cluster).         -->
 
   <!-- ============================== -->
   <!-- THREE EDITORIAL HUBS — tabs    -->
@@ -1680,20 +1699,65 @@ const topicClusters = [
      ======================================== */
   .watching-section {
     background: var(--color-black, #1A1A1A);
-    padding: var(--space-12, 3rem) 0;
+    padding: var(--space-16, 4rem) 0 var(--space-12, 3rem);
+    border-top: 3px solid var(--color-gold, #D4943A);
   }
 
   .watching-header {
-    margin-bottom: var(--space-6, 1.5rem);
+    margin-bottom: var(--space-10, 2.5rem);
+    max-width: 720px;
   }
 
   .watching-eyebrow {
+    display: inline-block;
     font-family: var(--font-body);
     font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--color-gold, #D4943A);
+    letter-spacing: 0.14em;
+    color: #FFD27A;
+    margin-bottom: var(--space-3, 0.75rem);
+  }
+
+  .watching-headline {
+    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+    margin: 0 0 var(--space-3, 0.75rem);
+  }
+
+  .watching-deck {
+    font-size: var(--text-base, 1rem);
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  .watching-cta {
+    margin-top: var(--space-8, 2rem);
+    text-align: left;
+  }
+  .watching-cta-link {
+    display: inline-block;
+    color: #FFD27A;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: var(--text-sm, 0.875rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-bottom: 2px solid #FFD27A;
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    min-height: 44px;
+  }
+  .watching-cta-link:hover,
+  .watching-cta-link:focus-visible {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
   }
 
   .watching-row {
@@ -1734,9 +1798,9 @@ const topicClusters = [
 
   .watching-source {
     font-size: var(--text-xs, 0.75rem);
-    color: var(--color-slate, #4A5859);
+    color: rgba(255, 255, 255, 0.55);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
   }
 
   /* ========================================
