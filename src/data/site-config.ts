@@ -8,7 +8,11 @@ export const siteConfig = {
   legalName: 'AZ Law Now Injury Attorneys',
   siteUrl: 'https://azlawnow.com',
   defaultTitle: 'Arizona Injury Cases, Handled Differently | AZ Law Now',
-  defaultDescription: 'We handle Arizona injury cases differently: an investigator who pulls the data, an attorney who fights the law, a guide who walks you through every step.',
+  // Description tuned for SERP CTR: leads with the commercial keyword,
+  // names cities for local intent, packs the contingency promise + free
+  // consultation feature, ends on the brand differentiator (Three Voices).
+  // 158 chars, well under Google's 160-char desktop snippet ceiling.
+  defaultDescription: 'Arizona personal injury attorneys serving Phoenix, Buckeye, and Maricopa. $3.07M+ recovered. Free 24/7 case review. No fee unless we win. Three voices, one case.',
   tagline: 'You Get Answers.',
 
   phone: '602-654-0202',

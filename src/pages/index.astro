@@ -290,35 +290,49 @@ const topicClusters = [
     </div>
     <div class="container hero-grid">
       <div class="hero-text">
-        <span class="hero-dateline">Serving Arizona from Buckeye &amp; Maricopa</span>
+        <span class="hero-dateline">Hurt in Arizona? Free. 24/7. Talk to us today.</span>
         <h1 class="hero-h1">You Get Answers.</h1>
         <p class="hero-deck">
-          Arizona injury cases, handled differently. An investigator who pulls
-          the data. An attorney who fights the law. A guide who walks you
-          through every step.
+          $3.07M+ recovered. 5.0 stars from 89 Arizona families. No fee unless we win.
+          Speak with our team in minutes, not days.
         </p>
         <div class="hero-actions">
-          <a href="/free-case-review/" class="btn btn-primary btn-lg">
-            Get answers on your case &rarr;
+          <a href="/free-case-review/" class="btn btn-primary btn-lg" data-event="hero-form-cta">
+            Get my free case review &rarr;
+          </a>
+          <a href={`tel:${siteConfig.phoneE164}`} class="btn btn-outline-light btn-lg hero-call" data-event="hero-call-cta" aria-label={`Call AZ Law Now at ${siteConfig.phoneFormatted}`}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right:8px;flex-shrink:0;">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Call {siteConfig.phoneFormatted}
           </a>
         </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-value">On Record</span>
-            <span class="hero-stat-label">The data's pulled. The facts are clear.</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <span class="hero-stat-value">Answered</span>
-            <span class="hero-stat-label">The confusion stops here.</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <span class="hero-stat-value">Guided</span>
-            <span class="hero-stat-label">You don't figure this out alone.</span>
-          </div>
-        </div>
+        <p class="hero-microcopy">
+          Free, no obligation. Available 24/7. We come to you.
+        </p>
       </div>
+      <aside class="hero-trust" aria-label="Why families choose AZ Law Now">
+        <div class="hero-trust__stat">
+          <span class="hero-trust__value">$3.07M+</span>
+          <span class="hero-trust__label">Recovered for Arizona families</span>
+        </div>
+        <div class="hero-trust__stat">
+          <span class="hero-trust__value">
+            <span class="hero-trust__rating">5.0</span>
+            <span class="hero-trust__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </span>
+          <span class="hero-trust__label">89 verified Google reviews</span>
+        </div>
+        <div class="hero-trust__stat">
+          <span class="hero-trust__value">No Fee</span>
+          <span class="hero-trust__label">Unless we win your case</span>
+        </div>
+        <blockquote class="hero-trust__quote">
+          <span class="hero-trust__quote-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;Brendan was at the crash scene before I even left the hospital.&rdquo;</p>
+          <cite>Avalon C., Google review</cite>
+        </blockquote>
+      </aside>
     </div>
   </section>
 
@@ -529,7 +543,7 @@ const topicClusters = [
   <section class="section hubs-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">How We Work</span>
+        <h2 class="section-eyebrow">How We Cover Every Case</h2>
         <div class="section-rule"></div>
       </div>
       <div class="hubs-grid">
@@ -694,6 +708,37 @@ const topicClusters = [
   </section>
 
   <!-- ============================== -->
+  <!-- MID-PAGE CTA BAND              -->
+  <!-- Conversion break between the   -->
+  <!-- editorial wall and practice    -->
+  <!-- areas. Reaches users who would -->
+  <!-- otherwise have to scroll the   -->
+  <!-- full page to find a CTA.       -->
+  <!-- ============================== -->
+  <section class="cta-band" aria-label="Free case review">
+    <div class="container cta-band__inner">
+      <div class="cta-band__copy">
+        <h2 class="cta-band__heading">Hurt in Arizona? Get answers today.</h2>
+        <p class="cta-band__deck">
+          Tell us what happened. We&rsquo;ll tell you what comes next.
+          Free, no obligation, available 24/7. No fee unless we win.
+        </p>
+      </div>
+      <div class="cta-band__actions">
+        <a href="/free-case-review/" class="btn btn-primary btn-lg" data-event="midpage-form-cta">
+          Get my free case review &rarr;
+        </a>
+        <a href={`tel:${siteConfig.phoneE164}`} class="cta-band__call" data-event="midpage-call-cta" aria-label={`Call AZ Law Now at ${siteConfig.phoneFormatted}`}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>or call {siteConfig.phoneFormatted}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
   <!-- PRACTICE AREAS + LOCATIONS     -->
   <!-- Grouped by cluster             -->
   <!-- ============================== -->
@@ -701,7 +746,7 @@ const topicClusters = [
     <div class="container compact-grid">
       <div class="compact-left">
         <div class="section-header">
-          <span class="section-eyebrow">How We Help</span>
+          <h2 class="section-eyebrow">Practice Areas</h2>
           <div class="section-rule"></div>
         </div>
         {practiceAreaClusters.map((cluster) => (
@@ -713,7 +758,7 @@ const topicClusters = [
                 const imgPath = heroImageMap[slug] || `/images/heroes/practice-area-default.webp`;
                 return (
                   <a href={area.url} class="practice-link">
-                    <img src={imgPath} alt="Practice area" class="pa-link-thumb" loading="lazy" />
+                    <img src={imgPath} alt="" class="pa-link-thumb" loading="lazy" />
                     <span>{area.name}</span>
                     <span class="practice-arrow">&rarr;</span>
                   </a>
@@ -725,7 +770,7 @@ const topicClusters = [
       </div>
       <div class="compact-right">
         <div class="section-header">
-          <span class="section-eyebrow">Our Arizona Offices</span>
+          <h2 class="section-eyebrow">Arizona Offices</h2>
           <div class="section-rule"></div>
         </div>
         <p class="locations-intro">
@@ -752,7 +797,7 @@ const topicClusters = [
   <section class="section results-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">Results That Matter</span>
+        <h2 class="section-eyebrow">Recent Case Results</h2>
         <div class="section-rule"></div>
       </div>
       <div class="results-row">
@@ -777,7 +822,7 @@ const topicClusters = [
   <section class="section team-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow">The Team</span>
+        <h2 class="section-eyebrow">The Team</h2>
         <div class="section-rule"></div>
       </div>
       <div class="team-row">
@@ -847,91 +892,179 @@ const topicClusters = [
   .hero-overlay {
     position: absolute;
     inset: 0;
+    /* Heavier left, lighter right so the photo still reads behind the right
+       panel without stealing contrast from the headline / eyebrow. */
     background: linear-gradient(
       to right,
-      rgba(26, 26, 26, 0.88) 0%,
-      rgba(26, 26, 26, 0.75) 50%,
-      rgba(26, 26, 26, 0.45) 100%
+      rgba(15, 15, 15, 0.92) 0%,
+      rgba(15, 15, 15, 0.82) 55%,
+      rgba(15, 15, 15, 0.65) 100%
     );
+  }
+
+  .hero {
+    padding: var(--space-16, 4rem) 0 var(--space-20, 5rem);
+    min-height: 600px;
   }
 
   .hero-grid {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
     gap: var(--space-12, 3rem);
     align-items: center;
-    max-width: 680px;
+    max-width: 1160px;
+  }
+
+  .hero-text {
+    min-width: 0;
   }
 
   .hero-dateline {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: var(--text-xs, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--color-gold, #D4943A);
-    margin-bottom: var(--space-4, 1rem);
+    letter-spacing: 0.12em;
+    color: #FFD27A; /* brighter gold for legibility on photo bg */
+    margin-bottom: var(--space-5, 1.25rem);
     padding-bottom: var(--space-2, 0.5rem);
-    border-bottom: 2px solid var(--color-gold, #D4943A);
+    border-bottom: 2px solid #FFD27A;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
   }
 
   .hero-h1 {
     font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
-    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-size: clamp(3.25rem, 7vw, 5rem);
     font-weight: 700;
-    line-height: 1.0;
+    line-height: 1.02;
     color: #FFFFFF;
-    margin-bottom: var(--space-6, 1.5rem);
+    margin: 0 0 var(--space-5, 1.25rem);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   }
 
   .hero-deck {
     font-size: var(--text-lg, 1.125rem);
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.65;
-    margin-bottom: var(--space-8, 2rem);
-    max-width: 560px;
+    color: #F2EBDD;
+    line-height: 1.6;
+    margin: 0 0 var(--space-7, 1.75rem);
+    max-width: 56ch;
   }
 
   .hero-actions {
     display: flex;
     align-items: center;
-    gap: var(--space-6, 1.5rem);
+    gap: var(--space-3, 0.75rem);
     flex-wrap: wrap;
-    margin-bottom: var(--space-10, 2.5rem);
+    margin-bottom: var(--space-4, 1rem);
   }
 
-  .hero-stats {
-    display: flex;
+  .hero-call {
+    display: inline-flex;
     align-items: center;
-    gap: var(--space-6, 1.5rem);
-    padding-top: var(--space-6, 1.5rem);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.55) !important;
+    background: transparent;
+  }
+  .hero-call:hover,
+  .hero-call:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFFFFF !important;
   }
 
-  .hero-stat-value {
-    display: block;
+  .hero-microcopy {
+    font-size: var(--text-sm, 0.875rem);
+    color: #E8DDC9;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  /* ========================================
+     HERO TRUST PANEL (right column)
+     ======================================== */
+  .hero-trust {
+    position: relative;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 210, 122, 0.28);
+    padding: var(--space-7, 1.75rem) var(--space-7, 1.75rem) var(--space-6, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5, 1.25rem);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-trust__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: var(--space-4, 1rem);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .hero-trust__stat:last-of-type {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-trust__value {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
     font-family: var(--font-heading);
-    font-size: var(--text-lg, 1.125rem);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 700;
-    color: var(--color-gold, #D4943A);
-    line-height: 1.2;
+    color: #FFD27A;
+    line-height: 1.1;
   }
 
-  .hero-stat-label {
+  .hero-trust__rating {
+    /* Just the number — the stars sit next to it */
+  }
+
+  .hero-trust__stars {
+    color: #FFD27A;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  .hero-trust__label {
+    font-size: var(--text-sm, 0.875rem);
+    color: #F2EBDD;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-trust__quote {
+    margin: 0;
+    padding-top: var(--space-4, 1rem);
+    border-top: 1px solid rgba(255, 210, 122, 0.25);
+  }
+  .hero-trust__quote-stars {
     display: block;
-    font-size: var(--text-xs, 0.75rem);
-    color: rgba(255, 255, 255, 0.65);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    color: #FFD27A;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
   }
-
-  .hero-stat-divider {
-    width: 1px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.15);
+  .hero-trust__quote p {
+    margin: 0 0 6px;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: var(--text-base, 1rem);
+    font-style: italic;
+    line-height: 1.45;
+  }
+  .hero-trust__quote cite {
+    display: block;
+    font-style: normal;
+    font-size: var(--text-xs, 0.75rem);
+    color: #C9BFAA;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   /* ========================================
@@ -947,6 +1080,9 @@ const topicClusters = [
   }
 
   .section-eyebrow {
+    /* Reset for cases where this class is applied to <h2> for semantic outline */
+    margin: 0;
+    line-height: 1.2;
     font-family: var(--font-body);
     font-size: var(--text-xs, 0.75rem);
     font-weight: 700;
@@ -960,6 +1096,80 @@ const topicClusters = [
     flex: 1;
     height: 1px;
     background: var(--neutral-200, #E8DFD0);
+  }
+
+  /* ========================================
+     MID-PAGE CTA BAND
+     Conversion break between editorial wall
+     and practice-area grid.
+     ======================================== */
+  .cta-band {
+    background: var(--color-black, #1A1A1A);
+    color: #FFFFFF;
+    padding: var(--space-12, 3rem) 0;
+    border-top: 3px solid var(--color-gold, #D4943A);
+  }
+
+  .cta-band__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--space-8, 2rem);
+  }
+
+  .cta-band__heading {
+    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin: 0 0 var(--space-3, 0.75rem) 0;
+  }
+
+  .cta-band__deck {
+    font-size: var(--text-base, 1rem);
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  .cta-band__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3, 0.75rem);
+    min-width: 240px;
+  }
+
+  .cta-band__call {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--text-sm, 0.875rem);
+    letter-spacing: 0.02em;
+    padding: 8px 0;
+    min-height: 44px;
+    transition: color var(--transition-base, 0.15s ease);
+  }
+  .cta-band__call:hover,
+  .cta-band__call:focus-visible {
+    color: var(--color-gold, #D4943A);
+  }
+
+  @media (max-width: 768px) {
+    .cta-band__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-6, 1.5rem);
+    }
+    .cta-band__actions {
+      min-width: 0;
+    }
   }
 
   /* ========================================
@@ -2194,7 +2404,8 @@ const topicClusters = [
      RESPONSIVE — tablet
      ======================================== */
   @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; }
+    .hero-grid { grid-template-columns: 1fr; max-width: 720px; }
+    .hero-trust { margin-top: var(--space-4, 1rem); }
     .featured-grid {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto;
@@ -2221,9 +2432,10 @@ const topicClusters = [
   @media (max-width: 768px) {
     .hero { padding: var(--space-16, 4rem) 0 var(--space-12, 3rem); min-height: 400px; }
     .hero-h1 { font-size: 3rem; }
-    .hero-actions { flex-direction: column; align-items: flex-start; }
-    .hero-stats { flex-direction: column; gap: var(--space-3, 0.75rem); align-items: flex-start; }
-    .hero-stat-divider { display: none; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions .btn { width: 100%; }
+    .hero-trust { padding: var(--space-5, 1.25rem); gap: var(--space-4, 1rem); }
+    .hero-trust__value { font-size: 1.625rem; }
     .watching-row { grid-template-columns: 1fr 1fr; }
     .watching-stat { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-4, 1rem); }
     .watching-stat:first-child,
