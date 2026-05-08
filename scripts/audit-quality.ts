@@ -389,6 +389,31 @@ function checkHeadline(data: Record<string, any>): CheckResult {
   return { severity: 'pass', message: `Headline: ${len} chars` };
 }
 
+// Asset existence: any frontmatter path pointing into /public/ must resolve
+// to a file on disk. Catches the "MDX references a hero or OG that was never
+// generated" failure mode that produces a 404 + Cloudflare-cached 404 in prod.
+const PUBLIC_DIR = './public';
+const ASSET_FIELDS = ['image', 'ogImage', 'heroImage', 'cardImage'] as const;
+function checkAssets(data: Record<string, any>): CheckResult {
+  const missing: string[] = [];
+  for (const field of ASSET_FIELDS) {
+    const val = data[field];
+    if (!val || typeof val !== 'string') continue;
+    if (!val.startsWith('/')) continue; // skip absolute http(s) urls
+    const diskPath = join(PUBLIC_DIR, val);
+    if (!existsSync(diskPath)) {
+      missing.push(`${field}: ${val}`);
+    }
+  }
+  if (missing.length > 0) {
+    return {
+      severity: 'error',
+      message: `Frontmatter assets missing on disk: ${missing.join('; ')}. Generate them BEFORE push or Cloudflare will cache 404s.`,
+    };
+  }
+  return { severity: 'pass', message: 'Frontmatter asset paths resolve' };
+}
+
 // AI phrase tells.
 function checkAiPhrases(body: string): CheckResult {
   const text = stripMdxComponents(body);
@@ -623,6 +648,7 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkTags(data, collection),
     checkTitle(data),
     checkHeadline(data),
+    checkAssets(data),
     checkDescription(data),
     checkKeyTakeaway(data),
     checkBodyWalls(body),
