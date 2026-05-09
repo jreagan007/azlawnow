@@ -93,9 +93,13 @@ const reviews = [
   },
 ];
 
+// Pulled from siteConfig.trustStats — single source of truth.
+// When the actual review count changes, update siteConfig.trustStats and
+// every rating surface (homepage hero, free-case-review trust trio,
+// practice-area hero, this page) updates automatically.
 const reviewStats = {
-  total: 93,
-  average: 5.0,
+  total: siteConfig.trustStats.googleReviewCount,
+  average: siteConfig.trustStats.googleRating,
   source: 'Google',
 };
 
@@ -103,8 +107,8 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
 ---
 
 <BaseLayout
-  title="Client Reviews | 93 Five-Star Google Reviews"
-  description="93 five-star Google reviews. Read what real clients say about AZ Law Now Injury Attorneys in Buckeye, Goodyear, Avondale, and Maricopa."
+  title={`Client Reviews | ${reviewStats.total} Five-Star Google Reviews`}
+  description={`${reviewStats.total} five-star Google reviews. Read what real clients say about AZ Law Now Injury Attorneys in Buckeye, Goodyear, Avondale, and Maricopa.`}
   canonical="/reviews/"
   schema={reviewSchema}
 >
@@ -112,7 +116,7 @@ const reviewSchema = getReviewPageSchema(reviews, { total: reviewStats.total, av
   <section class="reviews-hero">
     <div class="container container-narrow">
       <p class="reviews-hero__label">Client Reviews</p>
-      <h1 class="reviews-hero__title">93 Families Trusted Us.<br />Here's What They Said.</h1>
+      <h1 class="reviews-hero__title">{reviewStats.total} Families Trusted Us.<br />Here&rsquo;s What They Said.</h1>
       <div class="reviews-stats" role="group" aria-label="Review statistics">
         <div class="reviews-stat">
           <span class="reviews-stat__value">{reviewStats.average.toFixed(1)}</span>

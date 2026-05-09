@@ -36,6 +36,15 @@ export const siteConfig = {
 
   googlePlaceId: 'ChIJh-Cdb4E1K4cRtAyu8aMUr1Q',
 
+  // Aggregate trust stats — single source of truth.
+  // Update these in one place when reviews / recoveries / cases change.
+  trustStats: {
+    googleReviewCount: 93,
+    googleRating: 5.0,
+    totalRecovered: '$3.07M+',
+    casesResolved: 26,
+  },
+
   // Multi-office structure (use this for Contact page, Footer, LocalBusiness schema)
   offices: [
     {

@@ -176,12 +176,12 @@ const schemas = [
         <!-- Trust trio — stats lift conversion at the top of the page -->
         <ul class="pa-hero__trust" aria-label="Trust signals">
           <li class="pa-hero__trust-item">
-            <span class="pa-hero__trust-value">$3.07M+</span>
+            <span class="pa-hero__trust-value">{siteConfig.trustStats.totalRecovered}</span>
             <span class="pa-hero__trust-label">Recovered for Arizona families</span>
           </li>
           <li class="pa-hero__trust-item">
-            <span class="pa-hero__trust-value">5.0 &#9733;</span>
-            <span class="pa-hero__trust-label">89 verified Google reviews</span>
+            <span class="pa-hero__trust-value">{siteConfig.trustStats.googleRating.toFixed(1)} &#9733;</span>
+            <span class="pa-hero__trust-label">{siteConfig.trustStats.googleReviewCount} verified Google reviews</span>
           </li>
           <li class="pa-hero__trust-item">
             <span class="pa-hero__trust-value">No Fee</span>

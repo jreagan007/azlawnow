@@ -314,15 +314,15 @@ const topicClusters = [
       </div>
       <aside class="hero-trust" aria-label="Why families choose AZ Law Now">
         <div class="hero-trust__stat">
-          <span class="hero-trust__value">$3.07M+</span>
+          <span class="hero-trust__value">{siteConfig.trustStats.totalRecovered}</span>
           <span class="hero-trust__label">Recovered for Arizona families</span>
         </div>
         <div class="hero-trust__stat">
           <span class="hero-trust__value">
-            <span class="hero-trust__rating">5.0</span>
+            <span class="hero-trust__rating">{siteConfig.trustStats.googleRating.toFixed(1)}</span>
             <span class="hero-trust__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           </span>
-          <span class="hero-trust__label">89 verified Google reviews</span>
+          <span class="hero-trust__label">{siteConfig.trustStats.googleReviewCount} verified Google reviews</span>
         </div>
         <div class="hero-trust__stat">
           <span class="hero-trust__value">No Fee</span>
@@ -377,7 +377,7 @@ const topicClusters = [
       </div>
 
       <div class="social-proof__cta">
-        <a href="/reviews/" class="social-proof__link">Read All 89 Reviews &rarr;</a>
+        <a href="/reviews/" class="social-proof__link">Read all {siteConfig.trustStats.googleReviewCount} reviews &rarr;</a>
         <span class="social-proof__sep" aria-hidden="true">&middot;</span>
         <a href="/case-results/" class="social-proof__link">See Our Case Results &rarr;</a>
       </div>

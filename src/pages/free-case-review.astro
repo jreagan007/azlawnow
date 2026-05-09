@@ -30,12 +30,12 @@ import { siteConfig } from '../data/site-config';
         </p>
         <ul class="review-trust-row" aria-label="Why families choose AZ Law Now">
           <li>
-            <span class="review-trust-row__value">$3.07M+</span>
+            <span class="review-trust-row__value">{siteConfig.trustStats.totalRecovered}</span>
             <span class="review-trust-row__label">Recovered for Arizona families</span>
           </li>
           <li>
-            <span class="review-trust-row__value">5.0 &#9733;</span>
-            <span class="review-trust-row__label">89 verified Google reviews</span>
+            <span class="review-trust-row__value">{siteConfig.trustStats.googleRating.toFixed(1)} &#9733;</span>
+            <span class="review-trust-row__label">{siteConfig.trustStats.googleReviewCount} verified Google reviews</span>
           </li>
           <li>
             <span class="review-trust-row__value">2 Years</span>
