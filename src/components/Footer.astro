@@ -176,11 +176,6 @@ const companyLinks = [
         The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. This information is not intended to create, and receipt or viewing does not constitute, an attorney-client relationship.
       </p>
 
-      <!-- Founder credit + partners conversion line -->
-      <p class="footer-founder-credit">
-        Built by Jared Reagan, founder of <a href="https://taqtics.com" target="_blank" rel="noopener noreferrer">taqtics.com</a>. We track legal media across all 210 U.S. designated market areas, plus clinical trials, exposure sites, treatment centers, and primary-source civic data across the editorial network. See what getting on the site and signing more cases looks like at <a href="https://mesowatch.org/partners" target="_blank" rel="noopener noreferrer">mesowatch.org/partners</a>.
-      </p>
-
       <!-- Bottom Bar -->
       <div class="footer-bottom">
         <p class="footer-copyright">
@@ -191,7 +186,7 @@ const companyLinks = [
           <a href="/terms-of-service/">Terms</a>
           <a href="/disclaimer/">Disclaimer</a>
           <a href="/editorial-policy/">Editorial Policy</a>
-          <span class="partners-credit"><a href="https://mesowatch.org/partners" target="_blank" rel="noopener noreferrer">Partners</a></span>
+          <span class="taqtics-credit">Design by <a href="https://taqtics.com" target="_blank" rel="noopener noreferrer">taqtics.com</a></span>
         </nav>
       </div>
     </div>
@@ -463,32 +458,6 @@ const companyLinks = [
     margin: 0;
   }
 
-  /* Founder credit + partners conversion line, sits above the bottom bar */
-  .footer-founder-credit {
-    margin: 1.5rem 0 0;
-    padding-top: 1.25rem;
-    border-top: 1px solid #E8DFD0;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 0.875rem;
-    font-style: italic;
-    line-height: 1.55;
-    color: #4A5859;
-    max-width: 920px;
-  }
-
-  .footer-founder-credit a {
-    color: #1A1A1A;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(194, 59, 34, 0.4);
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .footer-founder-credit a:hover,
-  .footer-founder-credit a:focus-visible {
-    color: #C23B22;
-    border-color: #C23B22;
-  }
-
   /* Bottom bar */
   .footer-bottom {
     display: flex;
@@ -523,18 +492,18 @@ const companyLinks = [
 
   .footer-legal a:hover { color: var(--color-gold-text, #8B4513); }
 
-  .partners-credit {
+  .taqtics-credit {
     color: #4A5859;
     font-size: 0.6875rem;
   }
 
-  .partners-credit a {
+  .taqtics-credit a {
     color: #4A5859;
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .partners-credit a:hover { color: var(--color-gold-text, #8B4513); }
+  .taqtics-credit a:hover { color: var(--color-gold-text, #8B4513); }
 
   /* Focus */
   .footer-phone:focus-visible,
