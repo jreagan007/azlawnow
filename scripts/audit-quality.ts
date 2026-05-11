@@ -117,7 +117,20 @@ function getBody(content: string): string {
 
 function stripMdxComponents(body: string): string {
   let text = body.replace(/^import\s+.*$/gm, '');
-  text = text.replace(/<[A-Z][^>]*\/>/g, '');
+
+  // Self-closing components carry their content in props (DataTable rows,
+  // StatGrid stats, Quote attribution, etc). Replace each with the
+  // concatenation of its quoted string literals so the words inside count
+  // toward the body's word count.
+  text = text.replace(/<[A-Z][^>]*\/>/g, (match) => {
+    const strings: string[] = [];
+    const re = /"((?:\\.|[^"\\])*)"|'((?:\\.|[^'\\])*)'/g;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(match)) !== null) {
+      strings.push(m[1] ?? m[2] ?? '');
+    }
+    return ' ' + strings.join(' ') + ' ';
+  });
 
   let prev = '';
   while (prev !== text) {
