@@ -20,9 +20,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../data/site-config';
 import { authors } from '../data/authors';
-import { getSiteWideSchemas } from '../utils/schema';
-
-const siteSchemas = getSiteWideSchemas();
+// Homepage gets site-wide schemas via BaseLayout automatically.
+// Don't double-inject here (caused 6 JSON-LD blocks instead of 3).
 
 // Pull all investigations sorted by publishedAt descending. Use for both the
 // featured-cluster headline and the new "Latest Investigations" strip below.
@@ -269,7 +268,6 @@ const topicClusters = [
 <BaseLayout
   title={siteConfig.defaultTitle}
   description={siteConfig.defaultDescription}
-  schema={siteSchemas}
 >
 
   <!-- ============================== -->

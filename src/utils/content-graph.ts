@@ -187,7 +187,7 @@ export function autoLinkContent(html: string, currentPath: string, maxLinks: num
         const lastAttr = before.lastIndexOf('data-no-autolink');
         if (lastAttr > -1) {
           const afterAttr = before.substring(lastAttr);
-          if (!(/<\/div>|<\/section>|<\/blockquote>/i.test(afterAttr))) {
+          if (!(/<\/(?:div|section|blockquote|details|article|aside|nav|figure)>/i.test(afterAttr))) {
             return match;
           }
         }
@@ -211,6 +211,22 @@ export function autoLinkContent(html: string, currentPath: string, maxLinks: num
         return match;
       }
 
+      // Skip if inside a <details> or <summary> (FAQ accordions, expandable
+      // editorial blocks). Auto-linking inside FAQ question text or answer
+      // bodies pollutes schema.org Question/Answer content with internal nav
+      // links and reads as machine-generated.
+      if (/<(?:details|summary)[^>]*>[^<]*$/.test(before) &&
+          !/<\/(?:details|summary)>[^<]*$/.test(before)) {
+        return match;
+      }
+
+      // Skip if inside figcaption / blockquote / cite / aside (editorial
+      // attribution and pull-quote regions where injected nav links read wrong).
+      if (/<(?:figcaption|blockquote|cite|aside)[^>]*>[^<]*$/.test(before) &&
+          !/<\/(?:figcaption|blockquote|cite|aside)>[^<]*$/.test(before)) {
+        return match;
+      }
+
       // Only link first occurrence
       if (settings.linkFirstOccurrence && replaced) {
         return match;
@@ -221,7 +237,7 @@ export function autoLinkContent(html: string, currentPath: string, maxLinks: num
       linkedUrls.add(url);
       linkCount++;
 
-      return `<a href="${url}" class="internal-link">${captured}</a>`;
+      return `<a href="${url}" class="internal-link" rel="nofollow">${captured}</a>`;
     });
   }
 

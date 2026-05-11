@@ -28,9 +28,9 @@ interface CollectionConfig {
 const collections: CollectionConfig[] = [
   { dir: './src/content/investigations', label: 'Investigations', minWords: 400 },
   // legal + practice-area minWords lowered after deduping artificial body
-  // sources blocks that had been inflating word counts. Numbers reflect
-  // actual narrative content floor on the existing library.
-  { dir: './src/content/legal-guides', label: 'Legal Guides', minWords: 1700 },
+  // sources + FAQ blocks that had been inflating word counts. Numbers
+  // reflect actual narrative content floor on the existing library.
+  { dir: './src/content/legal-guides', label: 'Legal Guides', minWords: 1500 },
   { dir: './src/content/client-guides', label: 'Client Guides', minWords: 1000 },
   { dir: './src/content/practice-areas', label: 'Practice Areas', minWords: 1100, taxonomyField: 'primaryKeyword' },
 ];
@@ -392,6 +392,63 @@ function checkHeadline(data: Record<string, any>): CheckResult {
   return { severity: 'pass', message: `Headline: ${len} chars` };
 }
 
+// Hand-written FAQ block in the body. Layout auto-renders frontmatter
+// `faqs[]` via ArticleFAQ.astro. A `<FAQ>` or `<Question>` component in
+// the MDX body renders a SECOND FAQ accordion. Block at audit time.
+// Resolution: scripts/dedupe-faq-blocks.py merges + strips.
+function checkBodyFaqBlock(body: string): CheckResult {
+  if (/<FAQ\b|<Question\b/.test(body)) {
+    return {
+      severity: 'error',
+      message: 'Body contains <FAQ> or <Question> component. FAQs must live in frontmatter faqs[] only (layout auto-renders). Run scripts/dedupe-faq-blocks.py to fix.',
+    };
+  }
+  return { severity: 'pass', message: 'No duplicate FAQ block in body' };
+}
+
+// Off-brand string leakage: agency-name leaks, placeholder copy, staging URLs.
+function checkOffBrandStrings(body: string): CheckResult {
+  const text = stripMdxComponents(body);
+  const patterns: Array<{ p: RegExp; reason: string }> = [
+    { p: /\btaqtics\.com\b/i, reason: 'agency brand leak (use mesowatch.org/partners or skip)' },
+    { p: /\blorem ipsum\b/i, reason: 'placeholder copy' },
+    { p: /\b(TODO|FIXME|TKTK|TK\b)\b/, reason: 'unfinished placeholder marker' },
+    { p: /\bstaging\.[a-z0-9-]+\b|\.local\b|\blocalhost\b/i, reason: 'staging or local URL' },
+  ];
+  const hits: string[] = [];
+  for (const { p, reason } of patterns) {
+    const m = text.match(p);
+    if (m) hits.push(`"${m[0]}" (${reason})`);
+  }
+  if (hits.length > 0) {
+    return { severity: 'error', message: `Off-brand strings: ${hits.join('; ')}` };
+  }
+  return { severity: 'pass', message: 'No off-brand strings' };
+}
+
+// draft: true MDX shipping to production.
+function checkDraft(data: Record<string, any>): CheckResult {
+  if (data.draft === true || data.draft === 'true') {
+    return { severity: 'error', message: 'draft: true is set. Remove flag before push.' };
+  }
+  return { severity: 'pass', message: 'Not a draft' };
+}
+
+// publishedAt: future-dated or pre-launch flagged.
+function checkPublishedAtSanity(data: Record<string, any>): CheckResult {
+  const d = data.publishedAt;
+  if (!d) return { severity: 'pass', message: 'No publishedAt (handled elsewhere)' };
+  const today = new Date().toISOString().slice(0, 10);
+  const LAUNCH_FLOOR = '2024-01-01';
+  if (String(d) > today) {
+    return { severity: 'error', message: `publishedAt ${d} is in the future` };
+  }
+  if (String(d) < LAUNCH_FLOOR) {
+    return { severity: 'warning', message: `publishedAt ${d} pre-dates launch (${LAUNCH_FLOOR})` };
+  }
+  return { severity: 'pass', message: `publishedAt OK: ${d}` };
+}
+
 // Hand-written sources block in the body. The layout auto-renders the
 // frontmatter `dataSources` field via ArticleSources.astro. A second
 // `<div class="references">` block in the body causes the live page to
@@ -548,12 +605,16 @@ function checkStructuralTells(body: string): CheckResult {
 }
 
 // Arizona-specificity gate on long-form content.
-function checkArizonaSpecificity(body: string, wordCount: number): CheckResult {
+function checkArizonaSpecificity(body: string, wordCount: number, rawContent: string): CheckResult {
   if (wordCount < SPECIFICITY_WORD_FLOOR) {
     return { severity: 'pass', message: `Specificity gate skipped (${wordCount} < ${SPECIFICITY_WORD_FLOOR} words)` };
   }
 
-  const text = stripMdxComponents(body);
+  // Scan the entire raw file (frontmatter + body). The simple parseFrontmatter
+  // doesn't handle nested faqs[] YAML, so any AZ-specificity signal living in
+  // a FAQ answer or dataSources entry would be invisible. Raw scan catches
+  // everything that's actually on the page.
+  const text = stripMdxComponents(rawContent);
   const signals: string[] = [];
 
   // Dollar figure tied to a case / outcome ($X,000 or $X million).
@@ -675,6 +736,10 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkHeadline(data),
     checkAssets(data),
     checkBodySourcesBlock(body),
+    checkBodyFaqBlock(body),
+    checkOffBrandStrings(body),
+    checkDraft(data),
+    checkPublishedAtSanity(data),
     checkDescription(data),
     checkKeyTakeaway(data),
     checkBodyWalls(body),
@@ -683,7 +748,7 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkContractions(body),
     checkAiPhrases(body),
     checkStructuralTells(body),
-    checkArizonaSpecificity(body, wordCount),
+    checkArizonaSpecificity(body, wordCount, content),
     checkFlesch(body),
   ];
 
