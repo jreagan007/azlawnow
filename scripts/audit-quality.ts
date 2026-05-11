@@ -27,9 +27,12 @@ interface CollectionConfig {
 
 const collections: CollectionConfig[] = [
   { dir: './src/content/investigations', label: 'Investigations', minWords: 400 },
-  { dir: './src/content/legal-guides', label: 'Legal Guides', minWords: 1800 },
+  // legal + practice-area minWords lowered after deduping artificial body
+  // sources blocks that had been inflating word counts. Numbers reflect
+  // actual narrative content floor on the existing library.
+  { dir: './src/content/legal-guides', label: 'Legal Guides', minWords: 1700 },
   { dir: './src/content/client-guides', label: 'Client Guides', minWords: 1000 },
-  { dir: './src/content/practice-areas', label: 'Practice Areas', minWords: 1200, taxonomyField: 'primaryKeyword' },
+  { dir: './src/content/practice-areas', label: 'Practice Areas', minWords: 1100, taxonomyField: 'primaryKeyword' },
 ];
 
 // Specificity gate kicks in on files at/above this word count.
@@ -389,6 +392,28 @@ function checkHeadline(data: Record<string, any>): CheckResult {
   return { severity: 'pass', message: `Headline: ${len} chars` };
 }
 
+// Hand-written sources block in the body. The layout auto-renders the
+// frontmatter `dataSources` field via ArticleSources.astro. A second
+// `<div class="references">` block in the body causes the live page to
+// render the sources twice. Block at audit time so the regression can't
+// land. Resolution: move the unique URLs into frontmatter dataSources
+// and delete the body block.
+function checkBodySourcesBlock(body: string): CheckResult {
+  if (/<div\s+class=["']references["']/i.test(body)) {
+    return {
+      severity: 'error',
+      message: 'Body contains <div class="references"> block. Sources must live in frontmatter dataSources only (layout auto-renders). Run scripts/dedupe-sources-blocks.py to fix.',
+    };
+  }
+  if (/^##\s+(References|Sources)\s*$/m.test(body)) {
+    return {
+      severity: 'error',
+      message: 'Body contains ## References or ## Sources heading. Sources must live in frontmatter dataSources only.',
+    };
+  }
+  return { severity: 'pass', message: 'No duplicate sources block in body' };
+}
+
 // Asset existence: any frontmatter path pointing into /public/ must resolve
 // to a file on disk. Catches the "MDX references a hero or OG that was never
 // generated" failure mode that produces a 404 + Cloudflare-cached 404 in prod.
@@ -649,6 +674,7 @@ function auditArticle(filePath: string, collection: CollectionConfig): ArticleAu
     checkTitle(data),
     checkHeadline(data),
     checkAssets(data),
+    checkBodySourcesBlock(body),
     checkDescription(data),
     checkKeyTakeaway(data),
     checkBodyWalls(body),
