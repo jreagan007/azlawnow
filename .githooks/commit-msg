@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Block any commit message that contains the Claude attribution string.
+# Per Jared's standing rule in ~/.claude/CLAUDE.md.
+MSG_FILE="$1"
+if grep -qE "Co-Authored-By:[[:space:]]*Claude|noreply@anthropic\.com|Generated with .*Claude Code|🤖 Generated with" "$MSG_FILE"; then
+  echo ""
+  echo "✋  COMMIT BLOCKED: Claude attribution string detected."
+  echo ""
+  echo "The following lines violate the no-Claude-attribution rule:"
+  grep -nE "Co-Authored-By:[[:space:]]*Claude|noreply@anthropic\.com|Generated with .*Claude Code|🤖 Generated with" "$MSG_FILE"
+  echo ""
+  echo "Strip those lines and try again."
+  exit 1
+fi
+exit 0
