@@ -236,22 +236,9 @@ def send_resend(to_email, subject, html):
         os.unlink(p)
 
 
-def commit_per_send(slug, to_email, resend_id):
-    """Per-send commit on the targets file as a tracking artifact."""
-    try:
-        subprocess.run(
-            ["git", "-C", os.path.expanduser("~/Projects/azlawnow"),
-             "add", f"data/outreach/targets/{slug}.json"],
-            check=False, capture_output=True,
-        )
-        subprocess.run(
-            ["git", "-C", os.path.expanduser("~/Projects/azlawnow"),
-             "commit", "-m", f"send: {slug} -> {to_email} ({resend_id[:8]})",
-             "--allow-empty"],
-            check=False, capture_output=True,
-        )
-    except Exception:
-        pass
+# Per-send git commits were removed 2026-05-11. The send_log SQLite table is
+# the source of truth; duplicating it into git history polluted main with
+# hundreds of empty commits. Reach for the DB if you need the audit trail.
 
 
 def main():
@@ -313,7 +300,6 @@ def main():
                 (email, FROM_EMAIL, "brendan", subject, rid, slug),
             )
             conn.commit()
-            commit_per_send(slug, email, rid)
             print(f"  ✅ {email:<42}| {rid}")
             counts["send_ok"] += 1
             sent += 1

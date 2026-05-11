@@ -186,15 +186,12 @@ def send_resend(to_email, subject, text, html):
         os.unlink(p)
 
 
-def commit_per_send(slug, to_email, resend_id):
-    try:
-        subprocess.run(
-            ["git", "-C", os.path.expanduser("~/Projects/azlawnow"),
-             "commit", "--allow-empty", "-m", f"embed-pitch: {slug} -> {to_email} ({resend_id[:8]})"],
-            check=False, capture_output=True,
-        )
-    except Exception:
-        pass
+# Per-send git commits were removed 2026-05-11. Every send is already logged to
+# `send_log` in the SQLite DB two lines above each call site; duplicating that
+# into git history polluted `main` with hundreds of empty commits and forced
+# painful rebases for anyone working on the repo in parallel. Reach for the DB
+# (sqlite3 <DB> "SELECT * FROM send_log WHERE article_slug=…") if you need the
+# audit trail.
 
 
 def main():
@@ -259,7 +256,6 @@ def main():
                 (email, "brendan@insights.azlawnow.com", SUFFIX, subject, rid, slug),
             )
             conn.commit()
-            commit_per_send(slug, email, rid)
             print(f"  ✅ {email:<42}| {rid}")
             counts["send_ok"] += 1
             sent += 1
