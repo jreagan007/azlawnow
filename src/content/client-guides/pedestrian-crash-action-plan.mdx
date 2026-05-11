@@ -3,7 +3,7 @@ title: "Pedestrian Crash in Arizona: Your Complete Action Plan"
 description: "What to do in the first 48 hours after being hit while walking. TBI screening, road design defects, UM claims, and the 180-day government entity deadline."
 author: "stephanie-ramirez"
 publishedAt: "2026-04-12"
-updatedAt: "2026-04-13"
+updatedAt: "2026-05-11"
 category: "client-guide"
 tags: ["pedestrian-accidents", "action-plan", "road-design", "government-claims", "tbi"]
 image: "/images/heroes/cg-pedestrian-crash-action.webp"
@@ -33,6 +33,7 @@ faqs:
 
 import { Callout } from '@/components/mdx/Callout';
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
+import { DataTable } from '@/components/mdx/DataTable';
 
 <KeyFacts>
   <Fact>Arizona's pedestrian fatality rate is nearly twice the national average. The roads were designed that way.</Fact>
@@ -110,10 +111,13 @@ Speed design is the next category. Wide, straight roads encourage high speeds ev
 
 Missing sidewalks force the same outcome. In parts of the West Valley, major roads lack continuous sidewalks, and pedestrians are forced into travel lanes because the infrastructure doesn't provide an alternative.
 
-| Design factor | What to look for |
-|---|---|
-| Signal timing | Pedestrian signal phases at some intersections don't give enough time for a person to cross safely. If the walk signal changed to "don't walk" before you could reasonably finish crossing, the signal timing may be defective. |
-| Sight obstructions | Overgrown vegetation, parked vehicles, utility boxes, or road design features that blocked the driver's view of you can be contributing factors. |
+<DataTable
+  headers={["Design factor", "What to look for"]}
+  rows={[
+    ["Signal timing", "Pedestrian signal phases at some intersections don't give enough time for a person to cross safely. If the walk signal changed to \"don't walk\" before you could reasonably finish crossing, the signal timing may be defective."],
+    ["Sight obstructions", "Overgrown vegetation, parked vehicles, utility boxes, or road design features that blocked the driver's view of you can be contributing factors."],
+  ]}
+/>
 
 <Callout type="important" title="Photograph the road, not just the crash">
 Most people photograph their injuries and the vehicle damage. Few photograph the road conditions. Take wide shots of the intersection, the crosswalk (or lack of one), the street lighting, the sidewalk conditions, the speed limit signs, and any sight obstructions. These photos become the foundation of a road design claim.
@@ -151,10 +155,13 @@ Uninsured motorist (UM) coverage on your auto policy applies when you're struck 
 
 You don't have to own the car that insures you. If you live with a family member who has an auto policy with UM coverage, that policy may extend to you as a household member under most Arizona policies. Check the declarations page and the definition of "insured" to confirm.
 
-| Additional coverage | How it works |
-|---|---|
-| MedPay coverage | On your auto policy, MedPay pays medical bills regardless of fault. Typically $1,000 to $10,000 and processes quickly. |
-| Health insurance | Covers your treatment like any other injury. If you later recover a settlement, your health insurer may have subrogation rights to recoup what they paid. Your attorney negotiates this to minimize what you owe back. |
+<DataTable
+  headers={["Additional coverage", "How it works"]}
+  rows={[
+    ["MedPay coverage", "On your auto policy, MedPay pays medical bills regardless of fault. Typically $1,000 to $10,000 and processes quickly."],
+    ["Health insurance", "Covers your treatment like any other injury. If you later recover a settlement, your health insurer may have subrogation rights to recoup what they paid. Your attorney negotiates this to minimize what you owe back."],
+  ]}
+/>
 
 In our experience, insurance companies sometimes treat UM claims as less urgent because you're filing against your own policy. Don't let them. You paid for this coverage. You're entitled to its full value. If your insurer offers less than your damages justify, your attorney can pursue the claim through negotiation or litigation.
 
@@ -166,10 +173,13 @@ The driver is usually the primary liability factor. Were they speeding? Distract
 
 The road is the second factor. Were the conditions safe for pedestrians? Were crosswalks, sidewalks, lighting, and signals adequate? If not, the government entity responsible for the road may share liability.
 
-| Additional defendant | When it applies |
-|---|---|
-| The vehicle | In rare cases, a vehicle malfunction (brake failure, accelerator malfunction) contributed to the crash. Your attorney can request the vehicle's maintenance records and event data recorder. |
-| Third parties | Was the driver working? On a delivery? Driving a rideshare? If so, the employer or platform may carry additional liability and insurance. |
+<DataTable
+  headers={["Additional defendant", "When it applies"]}
+  rows={[
+    ["The vehicle", "In rare cases, a vehicle malfunction (brake failure, accelerator malfunction) contributed to the crash. Your attorney can request the vehicle's maintenance records and event data recorder."],
+    ["Third parties", "Was the driver working? On a delivery? Driving a rideshare? If so, the employer or platform may carry additional liability and insurance."],
+  ]}
+/>
 
 Each additional liable party means additional insurance coverage. In severe pedestrian injury cases, pursuing every responsible party is how your attorney ensures the compensation matches the actual damages.
 

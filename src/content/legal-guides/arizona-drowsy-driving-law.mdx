@@ -39,6 +39,7 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Drowsy driving kills roughly 800 people per year according to federal crash statistics. The AAA Foundation for Traffic Safety estimates the real number is closer to 6,400, about 18% of all traffic deaths. Official reports dramatically undercount fatigue because there's no blood test for sleepiness. A dead driver can't tell you they fell asleep.
 
@@ -114,13 +115,16 @@ An ELD connects to the vehicle's engine control module and automatically records
 
 ELD data provides a comprehensive picture of the driver's activity.
 
-| ELD data field | What it captures |
-|---|---|
-| Driving time | When the vehicle is in motion and for how long. Maps directly to the 11-hour driving limit. |
-| On-duty, not driving | Time spent loading, unloading, inspecting the vehicle, or performing other work while the vehicle is stationary. Counts against the 14-hour window. |
-| Off duty and sleeper berth | Periods when the driver is resting. Contributes to the 10-hour off-duty requirement. |
-| Location data | GPS coordinates logged at regular intervals, showing where the driver operated. Confirms the route, identifies rest stop locations, and corroborates or contradicts other evidence. |
-| Unassigned driving time | If the vehicle moves without a driver logged in, the ELD records it as unassigned. This flag can indicate someone driving under another driver's log, or the ELD being disconnected. |
+<DataTable
+  headers={["ELD data field", "What it captures"]}
+  rows={[
+    ["Driving time", "When the vehicle is in motion and for how long. Maps directly to the 11-hour driving limit."],
+    ["On-duty, not driving", "Time spent loading, unloading, inspecting the vehicle, or performing other work while the vehicle is stationary. Counts against the 14-hour window."],
+    ["Off duty and sleeper berth", "Periods when the driver is resting. Contributes to the 10-hour off-duty requirement."],
+    ["Location data", "GPS coordinates logged at regular intervals, showing where the driver operated. Confirms the route, identifies rest stop locations, and corroborates or contradicts other evidence."],
+    ["Unassigned driving time", "If the vehicle moves without a driver logged in, the ELD records it as unassigned. This flag can indicate someone driving under another driver's log, or the ELD being disconnected."]
+  ]}
+/>
 
 ### How Drivers Tamper With ELD Data
 
@@ -198,10 +202,13 @@ Cell phone data adds another layer. Call records and usage patterns can show whe
 
 Physical evidence from the crash itself carries weight too. Certain crash patterns are associated with drowsy driving: no pre-impact braking, departure from the lane of travel without evasive maneuvers, single-vehicle run-off-road crashes, and rear-end collisions at full speed. The absence of braking is particularly telling. An alert driver brakes. A sleeping driver doesn't.
 
-| Evidence source | What it proves |
-|---|---|
-| Driver statements | Statements to law enforcement, employer, and insurer about sleep and driving schedule are admissible. Inconsistencies between those statements and the ELD or phone data create powerful impeachment evidence. |
-| Medical records | Sleep disorders, sleep apnea, and medication side effects can contribute to drowsiness. The driver's medical certification file (required by FMCSA) should include disclosure of any condition affecting alertness. |
+<DataTable
+  headers={["Evidence source", "What it proves"]}
+  rows={[
+    ["Driver statements", "Statements to law enforcement, employer, and insurer about sleep and driving schedule are admissible. Inconsistencies between those statements and the ELD or phone data create powerful impeachment evidence."],
+    ["Medical records", "Sleep disorders, sleep apnea, and medication side effects can contribute to drowsiness. The driver's medical certification file (required by FMCSA) should include disclosure of any condition affecting alertness."]
+  ]}
+/>
 
 ## Arizona Comparative Negligence
 

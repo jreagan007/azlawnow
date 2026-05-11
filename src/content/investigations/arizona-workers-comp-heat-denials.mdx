@@ -10,7 +10,7 @@ keyTakeaway: "Arizona has no codified, enforceable workplace heat-illness standa
 schemaType: "NewsArticle"
 tags: ["workers-comp", "heat-illness", "occupational-safety", "adosh", "industrial-commission", "ars-23-930", "arizona-osha", "copperpoint", "maricopa-county"]
 publishedAt: "2026-05-05"
-updatedAt: "2026-05-05"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: []
 relatedInsights: ["aps-korman-heat-disconnect-7m-settlement", "arizona-pedestrian-deaths-road-design", "fatigued-truckers-arizona-hos-data"]
@@ -52,6 +52,8 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import StatGrid from '@/components/mdx/StatGrid.astro';
+import Stat from '@/components/mdx/Stat.astro';
 
 <KeyFacts>
   <Fact variant="warning">Arizona has no codified, enforceable workplace heat-illness standard. The April 9, 2026 ICA Heat Guidelines are guidance, not rule. ADOSH still cites under the federal General Duty Clause.</Fact>
@@ -110,7 +112,16 @@ ARS 23-1061(M) sets a 21-day denial clock that binds carriers only where the wor
 
 ## The Six Heat Decedents on Public Record
 
-KJZZ's heatbeat coverage 2023 through 2024 has named six people who died from occupational heat exposure in Arizona, with their families' or employers' knowledge: Perez, Nelson, Boni, Treatch, Mendoza, and Holt.
+KJZZ's heatbeat coverage 2023 through 2024 has named six people who died from occupational heat exposure in Arizona, with their families' or employers' knowledge:
+
+<StatGrid columns={3}>
+  <Stat value="Perez" label="Confirmed occupational heat death, named in KJZZ heatbeat reporting" source="KJZZ / county ME" />
+  <Stat value="Nelson" label="Confirmed occupational heat death, named in KJZZ heatbeat reporting" source="KJZZ / county ME" />
+  <Stat value="Boni" label="Confirmed occupational heat death, named in KJZZ heatbeat reporting" source="KJZZ / county ME" />
+  <Stat value="Treatch" label="Confirmed occupational heat death, named in KJZZ heatbeat reporting" source="KJZZ / county ME" />
+  <Stat value="Mendoza" label="Confirmed occupational heat death, named in KJZZ heatbeat reporting" source="KJZZ / county ME" />
+  <Stat value="Holt" label="Confirmed occupational heat death, named in KJZZ heatbeat reporting" source="KJZZ / county ME" />
+</StatGrid>
 
 Each name reached public record through KJZZ, ABC15, or county medical-examiner reporting. Each death is documented separately. The cumulative pattern (named decedents, employer industries, ADOSH citations or absence of them, workers compensation outcomes) sits in the underlying agency files but isn't published as an aggregate.
 

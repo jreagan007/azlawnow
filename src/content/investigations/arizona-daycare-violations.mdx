@@ -9,6 +9,7 @@ keyTakeaway: "Arizona DHS inspection data shows repeated violations at West Vall
 schemaType: "NewsArticle"
 tags: ["daycare-negligence", "dhs-violations", "child-safety", "west-valley"]
 publishedAt: "2026-04-09"
+updatedAt: "2026-05-11"
 featured: false
 relatedPracticeAreas: ["daycare-negligence", "child-abuse"]
 locations: ["buckeye", "goodyear", "avondale", "surprise"]
@@ -44,6 +45,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
 import { StatBlock } from '@/components/mdx/StatBlock';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -95,12 +97,15 @@ Here's what the three-year data shows for the four West Valley cities I focused 
 
 Across the four cities, the pattern looks like this.
 
-| City | Licensed facilities | One or more findings | Three or more findings | Enforcement actions |
-|---|---|---|---|---|
-| Buckeye | 38 | 22 | 9 | 2 enrollment suspensions |
-| Goodyear | 54 | 31 | 14 | 1 probationary license |
-| Avondale | 41 | 26 | 11 | None |
-| Surprise | 67 | 39 | 17 | 1 revocation (facility closed first) |
+<DataTable
+  headers={["City", "Licensed facilities", "One or more findings", "Three or more findings", "Enforcement actions"]}
+  rows={[
+    ["Buckeye", "38", "22", "9", "2 enrollment suspensions"],
+    ["Goodyear", "54", "31", "14", "1 probationary license"],
+    ["Avondale", "41", "26", "11", "None"],
+    ["Surprise", "67", "39", "17", "1 revocation (facility closed first)"],
+  ]}
+/>
 
 Goodyear carries the highest count of repeat offenders in absolute terms. Surprise has the highest rate of first-year facilities receiving findings, which tracks with how fast the city's added capacity. Avondale is the cleanest of the four on paper, but it also has the fewest complaint-based inspections, so some of that may be underreporting rather than better operation.
 
@@ -231,14 +236,17 @@ Ask the director about staff turnover. If three teachers left the infant room in
 
 DHS uses a coding system for deficiency findings that isn't intuitive for parents. Here's a plain-language translation of the most common codes I found in the West Valley data.
 
-| Code | Area | What it means |
-|---|---|---|
-| R9-5-403 | Staff-to-child ratios | The facility didn't have enough staff for the number of children present in a specific room or age group. Most consequential finding because ratios are the primary safeguard for individual supervision. |
-| R9-5-517 | Supervision | Children weren't adequately supervised by sight and sound. Ranges from a child briefly unseen during a transition to a child found in an unsupervised area. |
-| R9-5-302 | Personnel qualifications | A staff member didn't meet the qualification requirements. Includes missing background checks, expired certifications, or insufficient training hours. |
-| R9-5-501 | Health and safety | Catch-all for physical environment issues: unsecured cleaning supplies, broken playground equipment, tripping hazards, temperature violations, unsanitary conditions. |
-| R9-5-516 | Incident reporting | The facility failed to report a required incident to DHS within the mandated timeframe. |
-| R9-5-202 | Enrollment capacity | The facility exceeded its licensed capacity. More children on site than the license allows based on square footage and staffing. |
+<DataTable
+  headers={["Code", "Area", "What it means"]}
+  rows={[
+    ["R9-5-403", "Staff-to-child ratios", "The facility didn't have enough staff for the number of children present in a specific room or age group. Most consequential finding because ratios are the primary safeguard for individual supervision."],
+    ["R9-5-517", "Supervision", "Children weren't adequately supervised by sight and sound. Ranges from a child briefly unseen during a transition to a child found in an unsupervised area."],
+    ["R9-5-302", "Personnel qualifications", "A staff member didn't meet the qualification requirements. Includes missing background checks, expired certifications, or insufficient training hours."],
+    ["R9-5-501", "Health and safety", "Catch-all for physical environment issues: unsecured cleaning supplies, broken playground equipment, tripping hazards, temperature violations, unsanitary conditions."],
+    ["R9-5-516", "Incident reporting", "The facility failed to report a required incident to DHS within the mandated timeframe."],
+    ["R9-5-202", "Enrollment capacity", "The facility exceeded its licensed capacity. More children on site than the license allows based on square footage and staffing."],
+  ]}
+/>
 
 Not all findings are equal. A one-time R9-5-501 finding for a cleaning supply stored in a reachable cabinet is different from a recurring R9-5-403 finding in the infant room. Context matters. Frequency matters. What the facility did after the finding matters.
 

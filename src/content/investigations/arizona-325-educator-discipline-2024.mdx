@@ -10,7 +10,7 @@ keyTakeaway: "The Arizona State Board of Education adjudicated 325 educator disc
 schemaType: "NewsArticle"
 tags: ["education", "educator-misconduct", "sexual-abuse", "school-safety", "arizona-state-board", "title-ix", "maricopa-county", "ars-12-514", "ars-12-821-01", "negligent-supervision"]
 publishedAt: "2026-04-27"
-updatedAt: "2026-04-27"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: ["abuse-negligence"]
 relatedInsights: ["arizona-school-restraint-data", "arizona-schools-merv-13-filter-bypass", "arizona-career-schools-37-adverse-actions"]
@@ -54,6 +54,9 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import { DataTable } from '@/components/mdx/DataTable';
+import StatGrid from '@/components/mdx/StatGrid.astro';
+import Stat from '@/components/mdx/Stat.astro';
 
 
 <KeyFacts>
@@ -79,13 +82,16 @@ The Board's CY2024 report breaks the 325 cases into categories. The category mix
 
 The cumulative picture is more stable. Here is the 13-year breakdown, taken from Exhibit 11 of the Board's report:
 
-| Category | Cumulative share, 2012-2024 | Approximate count |
-|---|---|---|
-| Sexual misconduct | **36%** | 671 |
-| Assault, non-sexual | 26% | 486 |
-| Substance-related | 20% | 380 |
-| Fraud and theft | 11% | 199 |
-| Breach of contract | 7% | 140 |
+<DataTable
+  headers={["Category", "Cumulative share, 2012-2024", "Approximate count"]}
+  rows={[
+    ["Sexual misconduct", "36%", "671"],
+    ["Assault, non-sexual", "26%", "486"],
+    ["Substance-related", "20%", "380"],
+    ["Fraud and theft", "11%", "199"],
+    ["Breach of contract", "7%", "140"],
+  ]}
+/>
 
 For 2024 alone, the order shifts. Non-sexual assault was 45% of the 325 cases (about 146 cases). Sexual misconduct was second at 29% (about 94 cases). That 94 isn't a small number for a single year. It's also not the only year-on-year shift the data shows.
 
@@ -95,9 +101,15 @@ What the cumulative figure tells a survivor or a survivor family is something sp
 
 If you map the 597 educators disciplined between January 2023 and December 2024 by the county where each one was last employed, the geographic concentration is striking.
 
-Maricopa County: 332 cases, 55.6% of the total.
-Pima County: 63 cases, second.
-Pinal: 27. Yuma: 18. Yavapai: 17. Coconino: 15. Cochise: 14.
+<StatGrid columns={4}>
+  <Stat value="332" label="Maricopa County — 55.6% of all cases" source="2024 EA Report Exhibit 14" />
+  <Stat value="63" label="Pima County" source="2024 EA Report Exhibit 14" />
+  <Stat value="27" label="Pinal County" source="2024 EA Report Exhibit 14" />
+  <Stat value="18" label="Yuma County" source="2024 EA Report Exhibit 14" />
+  <Stat value="17" label="Yavapai County" source="2024 EA Report Exhibit 14" />
+  <Stat value="15" label="Coconino County" source="2024 EA Report Exhibit 14" />
+  <Stat value="14" label="Cochise County" source="2024 EA Report Exhibit 14" />
+</StatGrid>
 
 Maricopa's count is more than every other Arizona county combined. That tracks with Maricopa's share of Arizona's K-12 enrollment and the absolute number of certified educators in the Phoenix metro. It also means that for survivor-side civil cases against Arizona school districts, the practical case volume sits in Maricopa Superior Court. Source: 2024 Enforcement Action Report Exhibit 14, page 20.
 

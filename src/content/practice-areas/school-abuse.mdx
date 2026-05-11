@@ -43,6 +43,7 @@ dataSources:
 ---
 
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 School districts are public entities. That single fact changes everything about how abuse and negligence claims work. The deadlines are shorter. The immunity framework creates additional barriers. Punitive damages are off the table. And the notice requirements are strict enough to kill a claim before it ever reaches a courtroom.
 
@@ -106,11 +107,14 @@ Physical abuse by staff is the most direct claim. Teachers, coaches, and other s
 
 Sexual misconduct produces the most complex claims. Sexual abuse by teachers, coaches, or staff members produces claims against both the individual abuser and the district. The district is liable for negligent hiring (failing to screen for prior offenses), negligent supervision (failing to monitor staff-student interactions), and failure to report (mandatory reporting under ARS 13-3620).
 
-| Claim type | Legal theories |
-|---|---|
-| Excessive restraint and seclusion | Physical restraint and isolated seclusion of students, particularly students with disabilities, creates claims under state tort law, the ADA, Section 504 of the Rehabilitation Act, and potentially 42 USC 1983 for constitutional violations. |
-| Bullying and failure to protect | Schools that know about persistent bullying and fail to intervene can be liable when the bullying causes physical injury or severe emotional harm. |
-| Negligent hiring | Districts that fail to conduct background checks, or that hire staff with disqualifying histories, are liable when those staff members harm students. |
+<DataTable
+  headers={["Claim type", "Legal theories"]}
+  rows={[
+    ["Excessive restraint and seclusion", "Physical restraint and isolated seclusion of students, particularly students with disabilities, creates claims under state tort law, the ADA, Section 504 of the Rehabilitation Act, and potentially 42 USC 1983 for constitutional violations."],
+    ["Bullying and failure to protect", "Schools that know about persistent bullying and fail to intervene can be liable when the bullying causes physical injury or severe emotional harm."],
+    ["Negligent hiring", "Districts that fail to conduct background checks, or that hire staff with disqualifying histories, are liable when those staff members harm students."],
+  ]}
+/>
 
 ## Damages in School Abuse Cases
 

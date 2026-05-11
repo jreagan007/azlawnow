@@ -45,6 +45,7 @@ faqs:
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -180,10 +181,13 @@ Common scenarios include the following.
 
 Theft by staff is the most direct pattern. Nursing home employees who steal cash, jewelry, or personal items from residents face both criminal theft charges and exploitation liability under the vulnerable adult statute. A step removed, unauthorized financial transactions come from anyone with access to the resident's accounts: a caregiver, a family member, a "new friend" who makes unauthorized withdrawals, transfers, or purchases.
 
-| Exploitation type | How it works |
-|---|---|
-| Undue influence over estate planning | Pressuring a vulnerable adult to change their will, trust, beneficiary designations, or power of attorney. Arizona courts can set aside documents executed under undue influence, but the burden of proof falls on the party challenging the document. |
-| Fraudulent schemes | Scammers who target elderly individuals through phone calls, emails, or in-person contact. While these often originate outside the care facility, residents with cognitive impairment are particularly vulnerable. |
+<DataTable
+  headers={["Exploitation type", "How it works"]}
+  rows={[
+    ["Undue influence over estate planning", "Pressuring a vulnerable adult to change their will, trust, beneficiary designations, or power of attorney. Arizona courts can set aside documents executed under undue influence, but the burden of proof falls on the party challenging the document."],
+    ["Fraudulent schemes", "Scammers who target elderly individuals through phone calls, emails, or in-person contact. While these often originate outside the care facility, residents with cognitive impairment are particularly vulnerable."]
+  ]}
+/>
 
 APS investigates financial exploitation reports. Law enforcement can pursue criminal charges. And the family can bring a civil action for conversion, unjust enrichment, breach of fiduciary duty, and damages under the vulnerable adult statutes.
 
@@ -229,7 +233,10 @@ Medical expenses are the baseline: the cost of treating injuries caused by the a
 
 In cases involving dementia patients, evidence of pain and suffering can come from behavioral changes, documented vital sign shifts, and expert testimony from a geriatric specialist. Loss of enjoyment of life measures the impact on the resident's quality of life, daily activities, and relationships with family and friends.
 
-| Damage category | What it covers |
-|---|---|
-| Punitive damages | Arizona permits punitive damages when the defendant's conduct is egregious. In elder abuse cases, punitive damages can be awarded when the facility acted with an "evil mind" or with conscious disregard for the safety of residents. Staffing a facility at dangerously low levels to maximize profit, while knowing residents would be harmed, can support a punitive damage claim. |
-| Wrongful death damages | If the resident dies as a result of abuse or neglect, the statutory beneficiaries can recover damages for loss of consortium, emotional distress, and the decedent's pre-death pain and suffering through a survival action. |
+<DataTable
+  headers={["Damage category", "What it covers"]}
+  rows={[
+    ["Punitive damages", "Arizona permits punitive damages when the defendant's conduct is egregious. In elder abuse cases, punitive damages can be awarded when the facility acted with an \"evil mind\" or with conscious disregard for the safety of residents. Staffing a facility at dangerously low levels to maximize profit, while knowing residents would be harmed, can support a punitive damage claim."],
+    ["Wrongful death damages", "If the resident dies as a result of abuse or neglect, the statutory beneficiaries can recover damages for loss of consortium, emotional distress, and the decedent's pre-death pain and suffering through a survival action."]
+  ]}
+/>

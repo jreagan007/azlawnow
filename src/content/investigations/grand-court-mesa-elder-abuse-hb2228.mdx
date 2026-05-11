@@ -10,7 +10,7 @@ keyTakeaway: "On April 21, Mesa police arrested a Grand Court of Mesa Senior Liv
 schemaType: "NewsArticle"
 tags: ["elder-care", "nursing-home", "abuse", "mesa", "maricopa-county", "arizona-legislature", "hb2228", "vulnerable-adults"]
 publishedAt: "2026-04-22"
-updatedAt: "2026-04-22"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: ["abuse-negligence"]
 relatedInsights: ["arizona-nursing-home-violations", "coolidge-daycare-19-families-lawsuit"]
@@ -46,6 +46,8 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import StatGrid from '@/components/mdx/StatGrid.astro';
+import Stat from '@/components/mdx/Stat.astro';
 
 
 <KeyFacts>
@@ -81,15 +83,17 @@ The bill is specifically the kind of structural reform that addresses the data p
 
 The numbers on facility sexual abuse are unambiguous and they've been getting worse, not better.
 
-- More than **16,000 complaints** of sexual abuse in nursing homes and assisted living facilities were reported to the Administration for Community Living over a recent three-year period.
-- The National Ombudsman Reporting System logged **1,816 complaints in 2024 alone**, a **60% increase from 2017**.
-- The World Health Organization estimates only **1.9% of residents** (or their guardians) ever report sexual abuse.
-- Only about **30% of elder sexual assaults reach law enforcement**.
-- **60% of victims** in long-term care sexual abuse cases have dementia or another cognitive impairment.
-- **75% of all female rape victims over age 60** were assaulted in a nursing home.
-- **80% of perpetrators are caregivers** to the elder.
-- A peer-reviewed study in *The Gerontologist* found nearly **50% of nursing home sexual abuse victims die within one year** of the assault.
-- In 2010, at least **700 registered sex offenders were living as residents** in US nursing homes.
+<StatGrid columns={3}>
+  <Stat value="16,000+" label="Complaints of sexual abuse in nursing homes and assisted living over a recent three-year period" source="Administration for Community Living" />
+  <Stat value="1,816" label="Ombudsman complaints in 2024 alone — a 60% increase from 2017" source="National Ombudsman Reporting System" />
+  <Stat value="1.9%" label="Estimated share of residents (or guardians) who ever report sexual abuse" source="World Health Organization" />
+  <Stat value="30%" label="Share of elder sexual assaults that reach law enforcement" source="Research consensus" />
+  <Stat value="60%" label="Victims in long-term care sexual abuse cases with dementia or cognitive impairment" source="National data" />
+  <Stat value="75%" label="Female rape victims over age 60 who were assaulted in a nursing home" source="National data" />
+  <Stat value="80%" label="Perpetrators who are caregivers to the elder" source="Advocate Magazine, 2020" />
+  <Stat value="~50%" label="Nursing home sexual abuse victims who die within one year of the assault" source="The Gerontologist peer-reviewed study" />
+  <Stat value="700+" label="Registered sex offenders living as residents in US nursing homes (2010 count)" source="National data" />
+</StatGrid>
 
 These aren't edge cases. They're a documented pattern. The reported number is a fraction of the actual number, by every methodology that has tried to measure it.
 

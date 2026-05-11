@@ -4,7 +4,7 @@ headline: "Wrong-Way Crash in Arizona: Survivors and Families Guide."
 description: "What to do after a wrong-way crash in Arizona. Evidence preservation, dram shop investigation, insurance claims, and support for families who lost someone."
 author: "stephanie-ramirez"
 publishedAt: "2026-04-08"
-updatedAt: "2026-04-13"
+updatedAt: "2026-05-11"
 category: "client-guide"
 tags: ["wrong-way-crash", "dui", "dram-shop", "family-guide", "evidence"]
 image: "/images/heroes/cg-wrong-way-crash-family.webp"
@@ -32,6 +32,7 @@ faqs:
 
 import { Callout } from '@/components/mdx/Callout';
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
+import { DataTable } from '@/components/mdx/DataTable';
 
 <KeyFacts>
   <Fact>The majority of wrong-way crashes in Arizona involve an impaired driver. Alcohol is the leading factor.</Fact>
@@ -67,10 +68,13 @@ Request an autopsy report. The medical examiner's office performs autopsies in a
 
 Obtain certified copies of the death certificate at the same time. You'll need five to ten copies. Your funeral director can help you order them through the Arizona Department of Health Services or the county vital records office.
 
-| Next step | Why |
-|---|---|
-| Contact a wrongful death attorney | This is the step that protects everything else. Your attorney preserves evidence, communicates with insurance, and begins investigating all potentially responsible parties. Most wrongful death consultations are free, including ours. |
-| Don't talk to any insurance company | The wrong-way driver's insurer will contact you. They may sound compassionate. Their job is to settle cheaply and close the file. Decline to discuss details and tell them your attorney will be in touch. |
+<DataTable
+  headers={["Next step", "Why"]}
+  rows={[
+    ["Contact a wrongful death attorney", "This is the step that protects everything else. Your attorney preserves evidence, communicates with insurance, and begins investigating all potentially responsible parties. Most wrongful death consultations are free, including ours."],
+    ["Don't talk to any insurance company", "The wrong-way driver's insurer will contact you. They may sound compassionate. Their job is to settle cheaply and close the file. Decline to discuss details and tell them your attorney will be in touch."],
+  ]}
+/>
 
 <Callout type="warning" title="The one-year dram shop deadline">
 If the wrong-way driver was drinking at a bar, restaurant, or licensed establishment before the crash, Arizona's dram shop law (ARS 4-312) lets you bring a claim against that business. But the statute of limitations is just one year. Not two. One. If your attorney doesn't investigate the driver's drinking location immediately, this claim can expire before anyone realizes it exists.
@@ -92,10 +96,13 @@ Bar receipts and surveillance footage close the loop. Once the establishment is 
 
 Security camera footage often answers these questions directly, and Maricopa County Superior Court expects to see that footage in evidence.
 
-| Additional evidence | What it proves |
-|---|---|
-| Witness interviews | Bartenders, servers, other patrons. Did anyone notice the driver was intoxicated before they left? Did the staff attempt to cut them off? Did anyone try to stop them from driving? |
-| Rideshare and phone records | Did the driver attempt to call a rideshare and cancel? Did someone offer them a ride? Phone records can establish the driver's state of mind and the establishment's opportunity to intervene. |
+<DataTable
+  headers={["Additional evidence", "What it proves"]}
+  rows={[
+    ["Witness interviews", "Bartenders, servers, other patrons. Did anyone notice the driver was intoxicated before they left? Did the staff attempt to cut them off? Did anyone try to stop them from driving?"],
+    ["Rideshare and phone records", "Did the driver attempt to call a rideshare and cancel? Did someone offer them a ride? Phone records can establish the driver's state of mind and the establishment's opportunity to intervene."],
+  ]}
+/>
 
 Dram shop claims matter because bar and restaurant insurance policies often have higher limits than the individual driver's auto policy. In cases with catastrophic injuries or wrongful death, the driver's auto insurance may not come close to covering the damages. The dram shop claim fills that gap.
 
@@ -111,10 +118,13 @@ Your own UM/UIM coverage fills the gap when the at-fault driver can't cover your
 
 The dram shop establishment's insurance opens a second major source of coverage. If dram shop liability is established under ARS 4-311, the bar or restaurant's commercial liability policy typically carries limits much larger than personal auto policies, often $1 million or more.
 
-| Additional source | How it works |
-|---|---|
-| Punitive damages | Arizona allows punitive damages in cases involving willful misconduct or gross negligence. A driver who chose to drink excessively and then drove the wrong way on a highway may meet that standard. Punitive damages aren't covered by insurance. They come from the defendant personally, and they're most relevant in dram shop cases or cases involving repeat DUI offenders with assets. |
-| MedPay on your own policy | If you carry Medical Payments coverage, it pays your medical bills quickly regardless of fault. Typically $1,000 to $10,000 and doesn't require proving who was at fault. |
+<DataTable
+  headers={["Additional source", "How it works"]}
+  rows={[
+    ["Punitive damages", "Arizona allows punitive damages in cases involving willful misconduct or gross negligence. A driver who chose to drink excessively and then drove the wrong way on a highway may meet that standard. Punitive damages aren't covered by insurance. They come from the defendant personally, and they're most relevant in dram shop cases or cases involving repeat DUI offenders with assets."],
+    ["MedPay on your own policy", "If you carry Medical Payments coverage, it pays your medical bills quickly regardless of fault. Typically $1,000 to $10,000 and doesn't require proving who was at fault."],
+  ]}
+/>
 
 ## Preserving Evidence
 
@@ -126,11 +136,14 @@ Bar and restaurant records are the next evidence layer. Receipts, credit card tr
 
 Dashcam footage can capture the incident from multiple angles. Footage from the wrong-way driver's vehicle (if equipped) and from any vehicles that witnessed the crash. Some commercial vehicles on the highway may have captured the wrong-way driver traveling against traffic.
 
-| Infrastructure and background evidence | Why it matters |
-|---|---|
-| Highway camera footage | ADOT operates cameras and wrong-way detection systems on certain highway segments. Your attorney can request footage and detection system logs showing when the wrong-way driver entered the highway and how far they traveled before the collision. |
-| The driver's phone | Phone records show whether the driver was using the phone before the crash. They also show call history, text messages, and rideshare app activity that might be relevant to the dram shop investigation. |
-| The wrong-way driver's criminal record | Prior DUI convictions matter. A repeat offender faces enhanced criminal penalties and may support a punitive damages claim in the civil case. |
+<DataTable
+  headers={["Infrastructure and background evidence", "Why it matters"]}
+  rows={[
+    ["Highway camera footage", "ADOT operates cameras and wrong-way detection systems on certain highway segments. Your attorney can request footage and detection system logs showing when the wrong-way driver entered the highway and how far they traveled before the collision."],
+    ["The driver's phone", "Phone records show whether the driver was using the phone before the crash. They also show call history, text messages, and rideshare app activity that might be relevant to the dram shop investigation."],
+    ["The wrong-way driver's criminal record", "Prior DUI convictions matter. A repeat offender faces enhanced criminal penalties and may support a punitive damages claim in the civil case."],
+  ]}
+/>
 
 <Callout type="important" title="Your attorney should send preservation letters within 24 hours">
 Bars overwrite surveillance footage on short loops. Credit card records can be purged. Even law enforcement evidence can become harder to access if not formally preserved early. The preservation letter puts every potentially responsible party on legal notice that they must save all relevant records. Destroying evidence after receiving a preservation letter exposes them to court sanctions.
@@ -162,9 +175,12 @@ Call (602) 654-0202 or fill out the [contact form](/contact/). AZ Law Now handle
 
 ## Key Deadlines
 
-| Claim type | Deadline | Statute |
-|---|---|---|
-| Personal injury | Two years from the crash date | ARS 12-542 |
-| Wrongful death | Two years from the date of death (not from the crash date if the injured person survived a period) | ARS 12-611 |
-| Dram shop claim against a bar or restaurant | One year from the date of the crash | ARS 4-312 |
-| Government entity notice of claim | 180 days from the date of the crash | ARS 12-821.01 |
+<DataTable
+  headers={["Claim type", "Deadline", "Statute"]}
+  rows={[
+    ["Personal injury", "Two years from the crash date", "ARS 12-542"],
+    ["Wrongful death", "Two years from the date of death (not from the crash date if the injured person survived a period)", "ARS 12-611"],
+    ["Dram shop claim against a bar or restaurant", "One year from the date of the crash", "ARS 4-312"],
+    ["Government entity notice of claim", "180 days from the date of the crash", "ARS 12-821.01"],
+  ]}
+/>

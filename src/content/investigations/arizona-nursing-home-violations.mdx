@@ -5,7 +5,7 @@ author: "brendan-franks"
 category: "negligence-report"
 tags: ["elder-abuse", "nursing-home-abuse", "cms-data", "violations"]
 publishedAt: "2026-04-10"
-updatedAt: "2026-04-10"
+updatedAt: "2026-05-11"
 image: "/images/heroes/dj-nursing-citations.webp"
 ogImage: "/og/arizona-nursing-home-violations.png"
 readingTime: "11 min"
@@ -40,6 +40,7 @@ faqs:
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -145,13 +146,16 @@ Go to the site and select "Nursing homes" as the provider type. Enter the city, 
 
 Click on a facility name to see the full profile. The profile pulls together five data sets in one place.
 
-| Section | What it shows |
-|---|---|
-| Health inspection details | Every deficiency citation from the last three standard surveys plus complaint investigations. Each citation lists scope, severity, date, and a description of what the surveyor found. |
-| Penalty history | A table of every federal penalty imposed on the facility, including the amount, the date, and the type (CMP or payment denial). |
-| Staffing data | RN hours, total nursing hours, weekend staffing, and staff turnover rates, compared against Arizona and national averages. |
-| Quality measures | Clinical outcome data (falls, pressure ulcers, UTIs, antipsychotic use) benchmarked against state and national medians. |
-| Ownership history | Who owns the facility, who operates it, and when ownership has changed. |
+<DataTable
+  headers={["Section", "What it shows"]}
+  rows={[
+    ["Health inspection details", "Every deficiency citation from the last three standard surveys plus complaint investigations. Each citation lists scope, severity, date, and a description of what the surveyor found."],
+    ["Penalty history", "A table of every federal penalty imposed on the facility, including the amount, the date, and the type (CMP or payment denial)."],
+    ["Staffing data", "RN hours, total nursing hours, weekend staffing, and staff turnover rates, compared against Arizona and national averages."],
+    ["Quality measures", "Clinical outcome data (falls, pressure ulcers, UTIs, antipsychotic use) benchmarked against state and national medians."],
+    ["Ownership history", "Who owns the facility, who operates it, and when ownership has changed."],
+  ]}
+/>
 
 Ownership changes are the line most people skip, and it's the line that matters most. Some companies acquire one and two-star facilities, rebrand them under a new name, and continue running the same staffing pattern that generated the low rating in the first place. The star rating resets on the surface. The underlying operation doesn't.
 

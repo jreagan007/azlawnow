@@ -9,6 +9,7 @@ keyTakeaway: "Arizona schools restrained over 4,200 students last year. Most wer
 schemaType: "NewsArticle"
 tags: ["school-abuse", "special-needs", "restraint-data", "ade-data", "disabilities"]
 publishedAt: "2026-04-08"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: ["school-abuse", "child-abuse"]
 locations: ["buckeye", "goodyear", "avondale"]
@@ -42,6 +43,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -136,16 +138,19 @@ I normalized the ADE data by enrollment to get restraint rates per 1,000 student
 
 Here are the West Valley districts with the highest restraint rates in Maricopa County for 2024-2025.
 
-| District | Enrollment | Incidents | Rate per 1,000 |
-|---|---|---|---|
-| Buckeye Elementary SD | 9,400 | 187 | 19.9 |
-| Litchfield Elementary SD | 8,200 | 143 | 17.4 |
-| Nadaburg Unified SD | 1,100 | 18 | 16.4 |
-| Agua Fria Union HSD | 11,500 | 112 | 9.7 |
-| Liberty Elementary SD | 4,800 | 44 | 9.2 |
-| Avondale Elementary SD | 5,600 | 41 | 7.3 |
-| Littleton Elementary SD | 5,100 | 35 | 6.9 |
-| Tolleson Union HSD | 10,800 | 62 | 5.7 |
+<DataTable
+  headers={["District", "Enrollment", "Incidents", "Rate per 1,000"]}
+  rows={[
+    ["Buckeye Elementary SD", "9,400", "187", "19.9"],
+    ["Litchfield Elementary SD", "8,200", "143", "17.4"],
+    ["Nadaburg Unified SD", "1,100", "18", "16.4"],
+    ["Agua Fria Union HSD", "11,500", "112", "9.7"],
+    ["Liberty Elementary SD", "4,800", "44", "9.2"],
+    ["Avondale Elementary SD", "5,600", "41", "7.3"],
+    ["Littleton Elementary SD", "5,100", "35", "6.9"],
+    ["Tolleson Union HSD", "10,800", "62", "5.7"],
+  ]}
+/>
 
 The county average is approximately 3.1 incidents per 1,000 students. Buckeye Elementary runs at more than six times that rate. Litchfield Elementary is more than five times.
 

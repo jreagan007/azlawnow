@@ -5,7 +5,7 @@ author: "brendan-franks"
 category: "safety-analysis"
 tags: ["school-bus-accidents", "child-safety", "nhtsa", "seat-belts"]
 publishedAt: "2026-04-09"
-updatedAt: "2026-04-09"
+updatedAt: "2026-05-11"
 image: "/images/heroes/dj-school-bus-route.webp"
 ogImage: "/og/arizona-school-bus-seat-belts.png"
 readingTime: "10 min"
@@ -42,6 +42,7 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -176,16 +177,19 @@ Eight states haven't waited for Washington to act. California passed its seat be
 
 Here's the current landscape.
 
-| State | Requirement | Year Enacted |
-|-------|-------------|-------------|
-| California | Lap-shoulder belts on new large school buses | 2005 |
-| Florida | Lap-shoulder belts on new large school buses | 2023 |
-| Louisiana | Lap-shoulder belts on new large school buses | 2003 |
-| Nevada | Lap-shoulder belts on new large school buses | 2019 |
-| New Jersey | Lap-shoulder belts on new large school buses | 2002 |
-| New York | Lap-shoulder belts on all school buses | 2019 |
-| Texas | Lap-shoulder belts on new large school buses | 2017 |
-| Arkansas | Lap belts on new large school buses | 2007 |
+<DataTable
+  headers={["State", "Requirement", "Year Enacted"]}
+  rows={[
+    ["California", "Lap-shoulder belts on new large school buses", "2005"],
+    ["Florida", "Lap-shoulder belts on new large school buses", "2023"],
+    ["Louisiana", "Lap-shoulder belts on new large school buses", "2003"],
+    ["Nevada", "Lap-shoulder belts on new large school buses", "2019"],
+    ["New Jersey", "Lap-shoulder belts on new large school buses", "2002"],
+    ["New York", "Lap-shoulder belts on all school buses", "2019"],
+    ["Texas", "Lap-shoulder belts on new large school buses", "2017"],
+    ["Arkansas", "Lap belts on new large school buses", "2007"],
+  ]}
+/>
 
 None of these states reported a significant disruption to school bus operations after implementation. The belts add roughly $7,000 to $10,000 to the purchase price of a new bus, but new buses are purchased on replacement cycles anyway. The incremental cost gets absorbed into the normal capital budget over 10 to 15 years.
 

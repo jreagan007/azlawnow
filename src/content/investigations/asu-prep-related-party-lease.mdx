@@ -10,7 +10,7 @@ keyTakeaway: "ASU Preparatory Academy is Arizona's largest university-affiliated
 schemaType: "NewsArticle"
 tags: ["charter-schools", "asu-prep", "education-finance", "related-party-transactions", "esser", "990", "tempe", "maricopa-county", "transparency"]
 publishedAt: "2026-05-01"
-updatedAt: "2026-05-01"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: []
 relatedInsights: ["arizona-325-educator-discipline-2024", "arizona-career-schools-37-adverse-actions", "arizona-schools-merv-13-filter-bypass"]
@@ -52,6 +52,8 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import StatGrid from '@/components/mdx/StatGrid.astro';
+import Stat from '@/components/mdx/Stat.astro';
 
 <KeyFacts>
   <Fact variant="warning">ASU Preparatory Academy reported $82,416,980 in FY2024 revenue against $87,879,355 in expenses. Net operating loss: $5,462,375.</Fact>
@@ -86,9 +88,11 @@ ASU Prep's FY2021 Schedule of Expenditures of Federal Awards puts numbers on eve
 
 The pandemic-relief lines:
 
-- ESSER (Office of AZ Governor pass-through), CFDA 84.425C: $500,000.
-- ESSER (AZ Department of Education pass-through), CFDA 84.425D: $494,691.
-- COVID-19 Coronavirus Relief Fund (US Treasury), CFDA 21.019: $1,584,899.
+<StatGrid columns={3}>
+  <Stat value="$500,000" label="ESSER — Office of AZ Governor pass-through (CFDA 84.425C)" source="FY2021 Schedule of Federal Awards" />
+  <Stat value="$494,691" label="ESSER — AZ Dept. of Education pass-through (CFDA 84.425D)" source="FY2021 Schedule of Federal Awards" />
+  <Stat value="$1,584,899" label="COVID-19 Coronavirus Relief Fund — US Treasury (CFDA 21.019)" source="FY2021 Schedule of Federal Awards" />
+</StatGrid>
 
 Combined federal pandemic-relief expended FY2021: $2,579,590.
 

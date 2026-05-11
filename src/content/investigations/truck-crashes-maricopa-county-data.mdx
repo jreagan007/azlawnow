@@ -6,7 +6,7 @@ author: "brendan-franks"
 category: "crash-data"
 tags: ["truck-accidents", "i-10", "adot-data", "maricopa-county", "commercial-vehicles"]
 publishedAt: "2026-04-13"
-updatedAt: "2026-04-13"
+updatedAt: "2026-05-11"
 image: "/images/heroes/dj-truck-crashes-maricopa-county-data.webp"
 ogImage: "/og/truck-crashes-maricopa-county-data.png"
 readingTime: "12 min"
@@ -40,6 +40,9 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import StatGrid from '@/components/mdx/StatGrid.astro';
+import Stat from '@/components/mdx/Stat.astro';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -87,9 +90,14 @@ Not all corridors carry the same freight load. And ADOT's public reports don't b
 
 The Maricopa Association of Governments published a Regional Freight Transportation Plan that includes truck traffic counts by corridor. The numbers explain why the West Valley sees what it sees.
 
-I-10 between Loop 303 and Tonopah carries roughly 48% truck traffic as a share of total average daily vehicles. Almost half the vehicles on that stretch are commercial. That's the highest truck percentage of any major corridor in Maricopa County.
+<StatGrid columns={4}>
+  <Stat value="48%" label="I-10 (Loop 303 to Tonopah) — highest truck share in Maricopa County" source="MAG Regional Freight Transportation Plan" />
+  <Stat value="25%" label="I-17 truck traffic share" source="MAG Regional Freight Transportation Plan" />
+  <Stat value="15%" label="Loop 101 truck traffic share" source="MAG Regional Freight Transportation Plan" />
+  <Stat value="10%" label="Loop 202 truck traffic share" source="MAG Regional Freight Transportation Plan" />
+</StatGrid>
 
-For comparison: I-17 runs about 25% trucks. Loop 101 is around 15%. Loop 202 is roughly 10%.
+I-10 between Loop 303 and Tonopah carries roughly 48% truck traffic as a share of total average daily vehicles. Almost half the vehicles on that stretch are commercial. That's the highest truck percentage of any major corridor in Maricopa County.
 
 That 48% figure means something specific on the road. If you're driving I-10 west of Goodyear, nearly every other vehicle around you is a semi, a tanker, a flatbed, or a box truck. The speed limit is 75 mph. The trucks run at 65. That differential creates compression, lane changes, and closing-speed collisions that don't happen on corridors with 10% truck traffic.
 
@@ -127,9 +135,27 @@ The vehicle out-of-service rate was 23%. Nearly one in four trucks inspected was
 
 The driver out-of-service rate was 4.8%. Roughly one in twenty drivers was pulled off the road for violations.
 
-The top vehicle violations: defective brakes (26.5% of all violations), bad tires (22.1%), other brake problems (16.4%), defective lights (12%), and cargo securement issues (8.8%).
+<DataTable
+  headers={["Top Vehicle Violations", "Share of all violations"]}
+  rows={[
+    ["Defective brakes", "26.5%"],
+    ["Bad tires", "22.1%"],
+    ["Other brake problems", "16.4%"],
+    ["Defective lights", "12.0%"],
+    ["Cargo securement issues", "8.8%"],
+  ]}
+/>
 
-The top driver violations: hours-of-service violations (32.3%), no commercial driver's license (25.9%), no medical card (11.6%), false logs (10.8%), and suspended license (5.3%).
+<DataTable
+  headers={["Top Driver Violations", "Share of all violations"]}
+  rows={[
+    ["Hours-of-service violations", "32.3%"],
+    ["No commercial driver's license", "25.9%"],
+    ["No medical card", "11.6%"],
+    ["False logs", "10.8%"],
+    ["Suspended license", "5.3%"],
+  ]}
+/>
 
 <Callout type="important" title="One in four trucks fails inspection">
 A 23% vehicle OOS rate means that on any given day, roughly one in four commercial trucks on the road would be pulled off if inspected. These aren't paperwork violations. Defective brakes and bad tires are mechanical failures that directly cause crashes. The inspection only catches what's running past a checkpoint. Most trucks never see a checkpoint.
@@ -143,7 +169,18 @@ Those were the trucks they caught at a checkpoint that's open four days a week.
 
 I pulled the IIHS FARS data for Arizona and every comparable Sun Belt state. Arizona's fatality rate per 100 million vehicle miles traveled is the worst of the group.
 
-Arizona: 1.73 per 100 million VMT. South Carolina: 1.72. New Mexico: 1.55. Texas: 1.43. Florida: 1.42. Nevada: 1.40. Georgia: 1.28.
+<DataTable
+  headers={["State", "Fatalities per 100M VMT"]}
+  rows={[
+    ["Arizona", "1.73"],
+    ["South Carolina", "1.72"],
+    ["New Mexico", "1.55"],
+    ["Texas", "1.43"],
+    ["Florida", "1.42"],
+    ["Nevada", "1.40"],
+    ["Georgia", "1.28"],
+  ]}
+/>
 
 Arizona's per-capita rate is 17.5 deaths per 100,000 residents. Only New Mexico (20.7) and South Carolina (19.5) are worse. The national average is lower by a significant margin.
 
