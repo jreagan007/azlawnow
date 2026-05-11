@@ -40,6 +40,7 @@ dataSources:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -79,10 +80,13 @@ Physical evidence fills in the rest of the picture. Skid marks, vehicle damage p
 
 Witness testimony layers on top. Passengers, other drivers, and pedestrians who saw the crash can testify about what they observed, and consistent statements given shortly after the crash are more persuasive than memories reconstructed months later.
 
-| Evidence type | What it shows |
-|---|---|
-| Electronic data (EDR / "black box") | Speed, braking, steering input, and seatbelt status in the seconds before and during a collision. Some vehicles also have dashcam or onboard camera footage. |
-| Cell phone records | Whether a driver was texting, calling, or using an app at the time of the crash. Arizona's hands-free law (ARS 28-914) makes using a handheld device while driving a primary offense. |
+<DataTable
+  headers={["Evidence type", "What it shows"]}
+  rows={[
+    ["Electronic data (EDR / \"black box\")", "Speed, braking, steering input, and seatbelt status in the seconds before and during a collision. Some vehicles also have dashcam or onboard camera footage."],
+    ["Cell phone records", "Whether a driver was texting, calling, or using an app at the time of the crash. Arizona's hands-free law (ARS 28-914) makes using a handheld device while driving a primary offense."]
+  ]}
+/>
 
 Both sides will present evidence supporting their fault allocation. The jury weighs all of it and assigns percentages. Those percentages directly control the dollar amount of the verdict.
 
@@ -166,10 +170,13 @@ Unreasonable delay is the pattern we see most often. Taking months to investigat
 
 Lowball offers fall into the same category. Offering an amount the insurer knows is well below the claim's reasonable value, hoping the claimant will accept out of financial desperation, is a recognized bad faith practice under Arizona law.
 
-| Bad faith conduct | What it looks like |
-|---|---|
-| Failure to investigate | Denying a claim without reviewing medical records, talking to witnesses, or examining the evidence. The insurer has a duty to conduct a reasonable investigation before issuing a denial. |
-| Misrepresenting policy terms | Telling a claimant their policy doesn't cover something when it does, or misstating the policy limits. |
+<DataTable
+  headers={["Bad faith conduct", "What it looks like"]}
+  rows={[
+    ["Failure to investigate", "Denying a claim without reviewing medical records, talking to witnesses, or examining the evidence. The insurer has a duty to conduct a reasonable investigation before issuing a denial."],
+    ["Misrepresenting policy terms", "Telling a claimant their policy doesn't cover something when it does, or misstating the policy limits."]
+  ]}
+/>
 
 The remedy for bad faith can exceed the original claim amount. Arizona allows consequential damages (financial harm caused by the bad faith conduct itself) and, in egregious cases, punitive damages. A $50,000 injury claim that's handled in bad faith can produce a verdict in the hundreds of thousands.
 
@@ -205,10 +212,13 @@ The next category is non-economic: loss of companionship, guidance, and consorti
 
 There's no statutory cap. Arizona voters rejected damages caps constitutionally, and Maricopa County Superior Court judges won't reduce a jury award for this category unless it clearly exceeds the evidence.
 
-| Damage category | What's covered |
-|---|---|
-| Pre-death pain and suffering | If the person survived for any period after the crash, even minutes, the estate can recover damages for the pain and suffering endured during that time. Technically a survival claim under ARS 14-3110, typically pursued alongside the wrongful death claim. |
-| Funeral and burial expenses | Recoverable as economic damages, usually $8,000 to $15,000 depending on services. |
+<DataTable
+  headers={["Damage category", "What's covered"]}
+  rows={[
+    ["Pre-death pain and suffering", "If the person survived for any period after the crash, even minutes, the estate can recover damages for the pain and suffering endured during that time. Technically a survival claim under ARS 14-3110, typically pursued alongside the wrongful death claim."],
+    ["Funeral and burial expenses", "Recoverable as economic damages, usually $8,000 to $15,000 depending on services."]
+  ]}
+/>
 
 The statute of limitations for wrongful death is two years from the date of death under ARS 12-611. If the injured person survived for weeks or months after the crash before dying, the wrongful death clock starts at the date of death, not the date of the crash. But the personal injury statute of limitations for the survival claim may still run from the crash date. This timing distinction can be critical.
 

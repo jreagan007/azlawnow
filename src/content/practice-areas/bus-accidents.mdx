@@ -43,6 +43,7 @@ dataSources:
 ---
 
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 A five-year-old autistic, non-verbal boy was left on a school bus for six hours. No one noticed. No one checked the bus after the route ended. No one counted heads. His mother contacted 22 law firms before Brendan Franks took the case. AZ Law Now recovered $800,000 from Hartford Insurance based entirely on emotional trauma. No physical injuries.
 
@@ -110,10 +111,13 @@ Supervision failures are the category unique to school and youth transport: chil
 
 Maintenance failures cover brake failures, tire blowouts, and mechanical defects. Bus operators have a duty to maintain vehicles in safe operating condition under both federal motor carrier rules and Arizona's negligence standards.
 
-| Other claim types | How they work |
-|---|---|
-| Third-party driver crashes | When another vehicle causes the crash, the at-fault driver's insurance is primary. Claims against the bus operator may also exist if driver positioning, speed, or evasive actions contributed to injuries. |
-| Dangerous conditions | Poorly designed bus stops, missing crosswalks, inadequate signage around school zones. These claims often involve government entities and trigger the 180-day notice requirement under ARS 12-821.01. |
+<DataTable
+  headers={["Other claim types", "How they work"]}
+  rows={[
+    ["Third-party driver crashes", "When another vehicle causes the crash, the at-fault driver's insurance is primary. Claims against the bus operator may also exist if driver positioning, speed, or evasive actions contributed to injuries."],
+    ["Dangerous conditions", "Poorly designed bus stops, missing crosswalks, inadequate signage around school zones. These claims often involve government entities and trigger the 180-day notice requirement under ARS 12-821.01."],
+  ]}
+/>
 
 ## Comparative Negligence in Bus Crashes
 

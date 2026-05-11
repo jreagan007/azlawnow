@@ -5,7 +5,7 @@ author: "stephanie-ramirez"
 category: "client-guide"
 tags: ["elder-abuse", "nursing-home-abuse", "reporting", "signs-of-abuse"]
 publishedAt: "2026-04-10"
-updatedAt: "2026-04-10"
+updatedAt: "2026-05-11"
 image: "/images/heroes/cg-nursing-home-abuse-signs.webp"
 ogImage: "/og/nursing-home-abuse-signs-reporting.png"
 readingTime: "9 min"
@@ -35,6 +35,7 @@ faqs:
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -59,10 +60,13 @@ Cuts and burns are the next tier. Small cuts and scratches happen from daily act
 
 Fractures and sprains point to the same pattern. Unexplained broken bones, especially in residents who aren't mobile enough to have fallen, suggest physical abuse. Multiple fractures over time are a pattern, not a coincidence, and Maricopa County Superior Court expects that pattern in the records when a facility is sued.
 
-| Medical sign | What it means |
-|---|---|
-| Pressure ulcers (bed sores) | A stage III or stage IV pressure ulcer means the facility failed to turn and reposition your loved one regularly. These ulcers are largely preventable with proper care. They develop over days and weeks, which means staff had time to intervene and didn't. |
-| Dehydration and malnutrition | Dry, cracked lips. Sunken eyes. Rapid weight loss. If your loved one is losing weight without a medical explanation, they may not be getting enough food or fluids. Ask the nursing staff about their intake records. |
+<DataTable
+  headers={["Medical sign", "What it means"]}
+  rows={[
+    ["Pressure ulcers (bed sores)", "A stage III or stage IV pressure ulcer means the facility failed to turn and reposition your loved one regularly. These ulcers are largely preventable with proper care. They develop over days and weeks, which means staff had time to intervene and didn't."],
+    ["Dehydration and malnutrition", "Dry, cracked lips. Sunken eyes. Rapid weight loss. If your loved one is losing weight without a medical explanation, they may not be getting enough food or fluids. Ask the nursing staff about their intake records."],
+  ]}
+/>
 
 <Callout type="warning" title="Pressure Ulcers Don't Just Happen">
 Stage III and IV pressure ulcers are almost always the result of neglect. They mean a resident wasn't being repositioned, their skin wasn't being checked, and warning signs were ignored. If your family member develops a serious pressure ulcer, it's a strong indicator that the facility isn't providing adequate care.
@@ -80,11 +84,14 @@ Fear around specific staff is the most telling sign. Watch how your loved one re
 
 A resident who was previously calm and becomes aggressive, restless, or easily upset may be responding to abuse they can't articulate. This pattern is especially common in residents with dementia.
 
-| Behavioral sign | What to watch for |
-|---|---|
-| Reluctance to speak | If your loved one seems hesitant to talk when staff are present but opens up when you're alone, that's a signal. Abusers often intimidate residents into silence. |
-| Changes in sleep patterns | Nightmares, insomnia, or excessive sleeping can indicate emotional trauma. These patterns are easy to miss if you only visit during daytime hours. |
-| Sexual abuse indicators | Unexplained genital infections, torn or stained undergarments, bruising around the inner thighs or genitals, and sudden fearfulness about being bathed or changed. Sexual abuse of elderly residents is underreported and devastating. Any of these signs warrants immediate reporting. |
+<DataTable
+  headers={["Behavioral sign", "What to watch for"]}
+  rows={[
+    ["Reluctance to speak", "If your loved one seems hesitant to talk when staff are present but opens up when you're alone, that's a signal. Abusers often intimidate residents into silence."],
+    ["Changes in sleep patterns", "Nightmares, insomnia, or excessive sleeping can indicate emotional trauma. These patterns are easy to miss if you only visit during daytime hours."],
+    ["Sexual abuse indicators", "Unexplained genital infections, torn or stained undergarments, bruising around the inner thighs or genitals, and sudden fearfulness about being bathed or changed. Sexual abuse of elderly residents is underreported and devastating. Any of these signs warrants immediate reporting."],
+  ]}
+/>
 
 ## Environmental Signs of Neglect
 

@@ -37,6 +37,7 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Arizona recorded 16,136 hit-and-run crashes in 2024. Eighty-six people died. Roughly 90% of hit-and-run cases nationally are never solved. Those numbers define the problem that Arizona's hit-and-run statutes attempt to address, and they explain why the criminal penalties are among the most severe in the state's traffic code.
 
@@ -176,10 +177,13 @@ Vehicle debris left at the scene tells its own story: paint transfer, broken hea
 
 Human sources fill the next layer. Bystanders, other drivers, and nearby residents may have seen the vehicle or recorded information. Cell phone records from the suspected driver, obtained through subpoena, can produce GPS data and cell tower pings that place them at the scene.
 
-| Investigation source | What it captures |
-|---|---|
-| Vehicle damage reports | Body shops may report vehicles brought in with damage consistent with the crash. Law enforcement databases track these reports across Arizona. |
-| Traffic camera networks | ADOT and municipal traffic cameras may capture the vehicle before or after the crash. Automatic license plate readers (ALPRs) deployed in some jurisdictions create a searchable record of plates. |
+<DataTable
+  headers={["Investigation source", "What it captures"]}
+  rows={[
+    ["Vehicle damage reports", "Body shops may report vehicles brought in with damage consistent with the crash. Law enforcement databases track these reports across Arizona."],
+    ["Traffic camera networks", "ADOT and municipal traffic cameras may capture the vehicle before or after the crash. Automatic license plate readers (ALPRs) deployed in some jurisdictions create a searchable record of plates."]
+  ]}
+/>
 
 Time is the enemy in every hit-and-run investigation. Surveillance footage overwrites. Witnesses forget. Vehicle damage gets repaired. An attorney or investigator should be involved within hours, not days.
 

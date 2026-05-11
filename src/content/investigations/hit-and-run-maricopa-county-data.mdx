@@ -5,7 +5,7 @@ author: "brendan-franks"
 category: "crash-data"
 tags: ["hit-and-run", "maricopa-county", "pedestrian-accidents", "phoenix", "adot-data"]
 publishedAt: "2026-04-13"
-updatedAt: "2026-04-13"
+updatedAt: "2026-05-11"
 image: "/images/heroes/dj-hit-and-run-maricopa-county-data.webp"
 ogImage: "/og/hit-and-run-maricopa-county-data.png"
 readingTime: "13 min"
@@ -39,6 +39,7 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -138,12 +139,15 @@ A police lieutenant's son, Jacob Moore, 20, struck and killed Lisa Mancuso, 43, 
 
 Arizona treats hit-and-run crashes on a sliding scale based on severity. The statute that controls is ARS 28-661, and Maricopa County Superior Court handles the felony cases.
 
-| Crash severity | Charge | Prison range | License impact |
-|---|---|---|---|
-| Fatal or serious injury, driver caused the crash | Class 2 felony | 3 to 12.5 years | 10-year revocation (after incarceration) |
-| Fatal or serious injury, driver didn't cause the crash | Class 3 felony | 2 to 8.75 years | 5-year revocation |
-| Non-serious injury | Class 5 felony | 9 months to 2 years | Varies |
-| Property damage only | Class 1 misdemeanor | Up to 6 months | 1-year suspension |
+<DataTable
+  headers={["Crash severity", "Charge", "Prison range", "License impact"]}
+  rows={[
+    ["Fatal or serious injury, driver caused the crash", "Class 2 felony", "3 to 12.5 years", "10-year revocation (after incarceration)"],
+    ["Fatal or serious injury, driver didn't cause the crash", "Class 3 felony", "2 to 8.75 years", "5-year revocation"],
+    ["Non-serious injury", "Class 5 felony", "9 months to 2 years", "Varies"],
+    ["Property damage only", "Class 1 misdemeanor", "Up to 6 months", "1-year suspension"],
+  ]}
+/>
 
 Under ARS 28-663, drivers are required to provide name, address, and vehicle registration after any crash, and to render reasonable assistance to injured people. Failure to render assistance is a Class 6 felony.
 

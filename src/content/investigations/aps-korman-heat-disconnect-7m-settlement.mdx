@@ -10,7 +10,7 @@ keyTakeaway: "On April 15, 2026, AG Kris Mayes secured a $7 million settlement w
 schemaType: "NewsArticle"
 tags: ["aps", "kris-mayes", "consumer-fraud-act", "heat-deaths", "utility-disconnects", "sun-city-west", "maricopa-county", "ars-44-1521", "katherine-korman", "ratepayer-protection"]
 publishedAt: "2026-05-02"
-updatedAt: "2026-05-02"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: ["abuse-negligence"]
 relatedInsights: ["walgreens-350m-arizona-opioid-stores", "asu-prep-related-party-lease", "arizona-mayes-ice-surprise-detention-lawsuit"]
@@ -50,6 +50,8 @@ import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
+import StatGrid from '@/components/mdx/StatGrid.astro';
+import Stat from '@/components/mdx/Stat.astro';
 
 <KeyFacts>
   <Fact variant="warning">APS discontinued its voluntary 95-degree heat hold approximately three days before disconnecting Katherine Korman's electricity on May 13, 2024. Temperature that day: approximately 99 degrees. Maximum temperature over the next five days: 102.</Fact>
@@ -72,10 +74,12 @@ The single fact that makes this settlement different from a press-release win is
 
 The settlement structure is precise. Total: $7 million. Allocations:
 
-- $2.75 million to the Arizona Consumer Protection Consumer Fraud Revolving Fund.
-- Up to $250,000 for AG attorneys' fees.
-- $1 million to the Arizona Consumer Assistance and Education Program. A minimum of $800,000 is required to flow as direct bill credits to APS customers with outstanding balances by September 1, 2026.
-- $3.4 million for APS programmatic improvements and consumer outreach.
+<StatGrid columns={2}>
+  <Stat value="$2.75M" label="Consumer Fraud Revolving Fund" source="AG settlement, April 15, 2026" />
+  <Stat value="$1M" label="Consumer Assistance Program (min. $800K as direct bill credits by Sept. 1, 2026)" source="AG settlement, April 15, 2026" />
+  <Stat value="$3.4M" label="APS programmatic improvements and consumer outreach" source="AG settlement, April 15, 2026" />
+  <Stat value="≤$250K" label="AG attorneys' fees" source="AG settlement, April 15, 2026" />
+</StatGrid>
 
 The reinstated and new APS obligations are the structural change. APS now has to maintain the 95-degree heat hold on residential disconnections outside the existing June 1 to October 15 moratorium window. Disconnections are temperature-triggered, not calendar-triggered alone. APS also has to maintain a 32-degree cold-weather hold, add text-message alerts for past-due notices and disconnection notices, enhance the APS Safety Net Program for medically vulnerable and at-risk customers, send annual letters comparing the Saver Choice Plus rate plan against alternatives, and encourage other Arizona utilities to adopt similar extreme-weather practices.
 

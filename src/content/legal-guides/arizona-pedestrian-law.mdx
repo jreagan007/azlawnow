@@ -47,6 +47,7 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Arizona's pedestrian fatality rate is 3.6 per 100,000 residents. That's nearly twice the national average. In 2024, 263 pedestrians died on Arizona roads. Seventy-six percent of those deaths happened in darkness, mostly on wide arterials designed for vehicle throughput, not pedestrian safety.
 
@@ -194,10 +195,13 @@ Layer traffic studies on top. Government entities conduct traffic studies that s
 
 Design standards give the case its spine. AASHTO and the Manual on Uniform Traffic Control Devices (MUTCD) publish design standards for roads, crosswalks, signals, and pedestrian infrastructure. Deviations from those standards can support negligence claims directly, because they establish what a reasonably prudent agency would have done.
 
-| Additional evidence type | Why it matters |
-|---|---|
-| Speed data | Posted speed limits that are too high for the pedestrian environment create systemic risk. A 45 mph limit through a commercial corridor with bus stops and apartment complexes exposes pedestrians to lethal impact speeds. A vehicle at 40 mph has an 85% probability of killing a pedestrian it strikes. At 20 mph, the fatality probability drops to roughly 5%. |
-| Lighting conditions | Inadequate street lighting contributes to nighttime pedestrian crashes. Seventy-six percent of Arizona pedestrian fatalities happen in darkness. If the lighting at the crash location was below applicable standards, the government entity responsible for lighting may share liability. |
+<DataTable
+  headers={["Additional evidence type", "Why it matters"]}
+  rows={[
+    ["Speed data", "Posted speed limits that are too high for the pedestrian environment create systemic risk. A 45 mph limit through a commercial corridor with bus stops and apartment complexes exposes pedestrians to lethal impact speeds. A vehicle at 40 mph has an 85% probability of killing a pedestrian it strikes. At 20 mph, the fatality probability drops to roughly 5%."],
+    ["Lighting conditions", "Inadequate street lighting contributes to nighttime pedestrian crashes. Seventy-six percent of Arizona pedestrian fatalities happen in darkness. If the lighting at the crash location was below applicable standards, the government entity responsible for lighting may share liability."]
+  ]}
+/>
 
 ## Hit-and-Run Pedestrian Claims
 
@@ -233,10 +237,13 @@ The second layer is the pedestrian's own auto policy. UM/UIM coverage on that po
 
 Arizona insurers must offer UM/UIM coverage under ARS 20-259.01, and many pedestrians don't realize their own policy covers them when they're walking.
 
-| Coverage layer | How it works |
-|---|---|
-| Med-pay coverage | Some auto policies include medical payments coverage that pays medical bills regardless of fault. This coverage can apply to the policyholder when they're injured as a pedestrian. |
-| Health insurance | The pedestrian's health insurance covers medical treatment regardless of fault. When a third-party liability claim is resolved, the health insurer may have a subrogation right to recover what it paid from the settlement or verdict. |
+<DataTable
+  headers={["Coverage layer", "How it works"]}
+  rows={[
+    ["Med-pay coverage", "Some auto policies include medical payments coverage that pays medical bills regardless of fault. This coverage can apply to the policyholder when they're injured as a pedestrian."],
+    ["Health insurance", "The pedestrian's health insurance covers medical treatment regardless of fault. When a third-party liability claim is resolved, the health insurer may have a subrogation right to recover what it paid from the settlement or verdict."]
+  ]}
+/>
 
 For pedestrians who don't own a car and don't carry auto insurance, the coverage options are severely limited. No UM/UIM policy exists. The only source of compensation is the at-fault driver's liability insurance and the driver's personal assets. If the driver has minimum coverage and no assets, the pedestrian absorbs the uncompensated loss.
 

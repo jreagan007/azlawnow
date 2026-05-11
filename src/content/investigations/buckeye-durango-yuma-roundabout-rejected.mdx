@@ -10,7 +10,7 @@ keyTakeaway: "The City of Buckeye received a Traffic Engineering Report (ENGCIP-
 schemaType: "NewsArticle"
 tags: ["car-accidents", "infrastructure", "buckeye", "maricopa-county", "intersection-safety", "roundabouts", "fhwa-data"]
 publishedAt: "2026-04-22"
-updatedAt: "2026-04-22"
+updatedAt: "2026-05-11"
 featured: true
 relatedPracticeAreas: ["car-accidents"]
 relatedInsights: ["sr-347-i-10-interchange", "sr-347-crash-corridor", "i-10-crash-data-buckeye-goodyear"]
@@ -44,6 +44,7 @@ import { Callout } from '@/components/mdx/Callout';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { FAQ, Question } from '@/components/mdx/FAQ';
 import EmbedAsset from '@/components/mdx/EmbedAsset.astro';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 <KeyFacts>
@@ -83,10 +84,13 @@ Buckeye's Traffic Engineering Report for ENGCIP-25-0004 ran a Crash Modification
 
 The CMF results in the report are unambiguous.
 
-| Crash Type & Severity | Roundabout (Alternative 1) | Signalized LILO (Alternative 2) |
-|---|---|---|
-| Serious, minor, or suspected injury | **41.7% reduction** | 15.4% reduction |
-| All crash types (any severity) | 34.6% increase | 4.2% reduction |
+<DataTable
+  headers={["Crash Type & Severity", "Roundabout (Alternative 1)", "Signalized LILO (Alternative 2)"]}
+  rows={[
+    ["Serious, minor, or suspected injury", "41.7% reduction", "15.4% reduction"],
+    ["All crash types (any severity)", "34.6% increase", "4.2% reduction"],
+  ]}
+/>
 
 The "all crash types" line is where the conversation usually goes sideways. Roundabouts produce more low-severity crashes (think slow-speed sideswipes during the merge). They produce dramatically fewer high-severity crashes (the right-angle T-bones and high-speed rear-ends that put people in the ICU). Public works engineers know this. The Federal Highway Administration's Proven Safety Countermeasures program is built around it.
 

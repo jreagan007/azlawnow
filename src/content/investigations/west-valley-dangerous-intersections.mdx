@@ -5,7 +5,7 @@ author: "brendan-franks"
 category: "safety-analysis"
 tags: ["pedestrian-accidents", "dangerous-intersections", "adot-data", "west-valley"]
 publishedAt: "2026-04-11"
-updatedAt: "2026-04-11"
+updatedAt: "2026-05-11"
 image: "/images/heroes/inv-west-valley-intersections.webp"
 ogImage: "/og/west-valley-dangerous-intersections.png"
 readingTime: "11 min"
@@ -42,6 +42,7 @@ faqs:
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { StatBlock } from '@/components/mdx/StatBlock';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 
 I've walked most of these intersections. Not as a pedestrian trying to get somewhere. As someone trying to understand why so many people keep getting hit by cars in the West Valley.
@@ -155,13 +156,16 @@ The truck traffic component makes this corridor especially lethal. A pedestrian 
 
 Here's what the five intersections share and where they differ.
 
-| Intersection | Speed Limit | Lanes | Crosswalk | Lighting | Pedestrian Signal |
-|---|---|---|---|---|---|
-| McDowell and Litchfield | 45 mph | 6 | Marked, faded | Overhead only | Yes, short timing |
-| Indian School and Dysart | 45 mph | 4+turn | Partial marking | Sparse | Missing on south leg |
-| Van Buren and Avondale Blvd | 45 mph | 4 | Faded | Overhead only | Yes |
-| Yuma and Watson | 40 mph | 4 | Faded markings | Inadequate south side | No dedicated phase |
-| MC 85 / SR-85 area | 50-55 mph | 4-6 | None nearby | Minimal | None |
+<DataTable
+  headers={["Intersection", "Speed Limit", "Lanes", "Crosswalk", "Lighting", "Pedestrian Signal"]}
+  rows={[
+    ["McDowell and Litchfield", "45 mph", "6", "Marked, faded", "Overhead only", "Yes, short timing"],
+    ["Indian School and Dysart", "45 mph", "4+turn", "Partial marking", "Sparse", "Missing on south leg"],
+    ["Van Buren and Avondale Blvd", "45 mph", "4", "Faded", "Overhead only", "Yes"],
+    ["Yuma and Watson", "40 mph", "4", "Faded markings", "Inadequate south side", "No dedicated phase"],
+    ["MC 85 / SR-85 area", "50-55 mph", "4-6", "None nearby", "Minimal", "None"],
+  ]}
+/>
 
 Every single one has a speed limit of 40 mph or higher. Every single one has some form of pedestrian infrastructure deficiency. The pattern isn't subtle.
 
@@ -225,13 +229,16 @@ MAG's regional transportation plan acknowledges the problem. Federal Highway Adm
 
 I'm not an engineer. But I've read the research, and the interventions that work aren't mysterious.
 
-| Intervention | Impact |
-|---|---|
-| Reduce speed limits near schools and commercial areas from 45 to 35 mph | Cuts pedestrian fatality risk in half. That's physics, not opinion. |
-| Add pedestrian refuge islands | A concrete island in the middle of a wide road lets people cross in two stages instead of one sprint. Cost is minimal compared to lives saved. |
-| Install rectangular rapid flashing beacons at mid-block crossings | Yellow flashing lights activate when a pedestrian presses a button. Studies show they increase driver yielding from around 20% to over 80%. |
-| Complete the sidewalk network | Every gap in a sidewalk is an invitation to walk in the road. Fill the gaps. |
-| Upgrade lighting to pedestrian scale | Light the crosswalk and the road edge, not just the travel lanes. |
+<DataTable
+  headers={["Intervention", "Impact"]}
+  rows={[
+    ["Reduce speed limits near schools and commercial areas from 45 to 35 mph", "Cuts pedestrian fatality risk in half. That's physics, not opinion."],
+    ["Add pedestrian refuge islands", "A concrete island in the middle of a wide road lets people cross in two stages instead of one sprint. Cost is minimal compared to lives saved."],
+    ["Install rectangular rapid flashing beacons at mid-block crossings", "Yellow flashing lights activate when a pedestrian presses a button. Studies show they increase driver yielding from around 20% to over 80%."],
+    ["Complete the sidewalk network", "Every gap in a sidewalk is an invitation to walk in the road. Fill the gaps."],
+    ["Upgrade lighting to pedestrian scale", "Light the crosswalk and the road edge, not just the travel lanes."],
+  ]}
+/>
 
 None of this is new technology. None of it's expensive relative to road widening projects. It's a question of priority.
 

@@ -39,6 +39,7 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Truck crash cases don't follow the same rules as car accident cases. A second layer of law applies. Federal regulations govern the trucking industry through the Federal Motor Carrier Safety Administration, and those regulations create duties that don't exist in ordinary car crashes. When a truck driver or carrier violates those duties, the violation itself can establish negligence.
 
@@ -61,12 +62,15 @@ These aren't suggestions. They're binding federal law. Violations constitute *ne
 
 Hours-of-service rules exist for one reason: tired drivers kill people. The FMCSA's HOS regulations cap how long a truck driver can operate before resting.
 
-| Rule | Requirement |
-|---|---|
-| 11-hour driving limit | A driver can't drive more than 11 hours after 10 consecutive hours off duty. Once the 11 hours are up, the driver must stop. |
-| 14-hour on-duty window | A driver can't drive beyond the 14th consecutive hour after coming on duty, following 10 consecutive hours off. The clock runs whether the driver is driving or not. Loading, unloading, fueling, inspecting the vehicle, all of it counts. |
-| 30-minute break rule | A driver must take a 30-minute break after eight cumulative hours of driving without at least a 30-minute interruption. |
-| 60/70-hour limit | A driver can't drive after being on duty 60 hours in seven consecutive days or 70 hours in eight consecutive days. The clock resets after a 34-hour restart period that includes two periods between 1 a.m. and 5 a.m. |
+<DataTable
+  headers={["Rule", "Requirement"]}
+  rows={[
+    ["11-hour driving limit", "A driver can't drive more than 11 hours after 10 consecutive hours off duty. Once the 11 hours are up, the driver must stop."],
+    ["14-hour on-duty window", "A driver can't drive beyond the 14th consecutive hour after coming on duty, following 10 consecutive hours off. The clock runs whether the driver is driving or not. Loading, unloading, fueling, inspecting the vehicle, all of it counts."],
+    ["30-minute break rule", "A driver must take a 30-minute break after eight cumulative hours of driving without at least a 30-minute interruption."],
+    ["60/70-hour limit", "A driver can't drive after being on duty 60 hours in seven consecutive days or 70 hours in eight consecutive days. The clock resets after a 34-hour restart period that includes two periods between 1 a.m. and 5 a.m."]
+  ]}
+/>
 
 When a truck driver crashes and the ELD data shows an HOS violation, the case gets significantly stronger. The carrier knew or should have known the driver was operating beyond legal limits. For more on how fatigue data plays out on Arizona highways, our investigation into [fatigued truckers and HOS violations](/investigations/fatigued-truckers-arizona-hos-data/) documents the enforcement gaps in detail.
 
@@ -146,12 +150,15 @@ Federal regulations establish minimum insurance requirements that far exceed Ari
 
 49 CFR Part 387 sets the following minimums based on cargo type.
 
-| Cargo type | Minimum coverage |
-|---|---|
-| Non-hazardous freight, vehicles under 10,001 lbs | $300,000 |
-| Non-hazardous freight, vehicles 10,001 lbs and over | $750,000 |
-| Hazardous materials (general) | $1,000,000 |
-| Hazardous materials (certain types) and tank vehicles | $5,000,000 |
+<DataTable
+  headers={["Cargo type", "Minimum coverage"]}
+  rows={[
+    ["Non-hazardous freight, vehicles under 10,001 lbs", "$300,000"],
+    ["Non-hazardous freight, vehicles 10,001 lbs and over", "$750,000"],
+    ["Hazardous materials (general)", "$1,000,000"],
+    ["Hazardous materials (certain types) and tank vehicles", "$5,000,000"]
+  ]}
+/>
 
 These are minimums. Many carriers carry higher limits, and excess policies are common in the industry. A major trucking company may carry $5 million or more in primary coverage plus umbrella policies.
 
@@ -179,12 +186,15 @@ Dispatch and communication records reveal the operational pressure behind the wh
 
 That evidence reframes a single-driver negligence case as a systemic carrier negligence case.
 
-| Evidence category | What it contains |
-|---|---|
-| Maintenance records | The carrier's maintenance files for the specific vehicle, including DVIRs, repair orders, and inspection records. |
-| Driver qualification file | The driver's employment file, including background check results, drug and alcohol test records, training records, and prior accident history. |
-| Dashcam and onboard camera footage | Many modern trucks have forward-facing cameras and sometimes driver-facing cameras. Footage is stored on a loop that overwrites after a set period. |
-| Freight and load records | Bills of lading, weight tickets, and loading records. Overweight trucks and improperly secured loads contribute to crashes. |
+<DataTable
+  headers={["Evidence category", "What it contains"]}
+  rows={[
+    ["Maintenance records", "The carrier's maintenance files for the specific vehicle, including DVIRs, repair orders, and inspection records."],
+    ["Driver qualification file", "The driver's employment file, including background check results, drug and alcohol test records, training records, and prior accident history."],
+    ["Dashcam and onboard camera footage", "Many modern trucks have forward-facing cameras and sometimes driver-facing cameras. Footage is stored on a loop that overwrites after a set period."],
+    ["Freight and load records", "Bills of lading, weight tickets, and loading records. Overweight trucks and improperly secured loads contribute to crashes."]
+  ]}
+/>
 
 <Callout type="important" title="Send the spoliation letter on day one">
 A spoliation letter is a formal written demand to the carrier and its insurer directing them to preserve all evidence related to the crash. Arizona courts can impose sanctions, including adverse inference instructions, against parties that destroy evidence after receiving a preservation demand. The letter should identify every category of evidence listed above and be sent by certified mail and email within 24 to 48 hours of the crash.
@@ -196,14 +206,17 @@ If the carrier destroys evidence after receiving a spoliation letter, or if it d
 
 Truck crash litigation typically involves more defendants than a standard car crash case.
 
-| Defendant | Basis for liability |
-|---|---|
-| The driver | Personally liable for their own negligence. |
-| The carrier | Liable under respondeat superior and potentially for direct negligence in hiring, retention, supervision, and entrustment. |
-| The vehicle or parts manufacturer | If a defective component (brakes, tires, steering) contributed to the crash, a product liability claim may apply. |
-| The maintenance provider | If a third-party shop performed maintenance and did it negligently, that shop can be a defendant. |
-| The shipper or loader | If the cargo was improperly loaded or overweight, the entity responsible for loading can share liability. |
-| The broker | Freight brokers that hire carriers with poor safety records may face negligent selection claims. An evolving area of Arizona law. |
+<DataTable
+  headers={["Defendant", "Basis for liability"]}
+  rows={[
+    ["The driver", "Personally liable for their own negligence."],
+    ["The carrier", "Liable under respondeat superior and potentially for direct negligence in hiring, retention, supervision, and entrustment."],
+    ["The vehicle or parts manufacturer", "If a defective component (brakes, tires, steering) contributed to the crash, a product liability claim may apply."],
+    ["The maintenance provider", "If a third-party shop performed maintenance and did it negligently, that shop can be a defendant."],
+    ["The shipper or loader", "If the cargo was improperly loaded or overweight, the entity responsible for loading can share liability."],
+    ["The broker", "Freight brokers that hire carriers with poor safety records may face negligent selection claims. An evolving area of Arizona law."]
+  ]}
+/>
 
 Each defendant brings its own insurance policy. A case with four defendants and four separate policies creates a substantially larger pool of available coverage than a case against a single driver with minimum insurance.
 

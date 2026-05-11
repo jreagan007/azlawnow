@@ -37,6 +37,7 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 When someone dies because of another person's negligence in Arizona, two separate legal actions exist. The wrongful death claim belongs to the surviving family. The survival action belongs to the deceased person's estate. They're governed by different statutes, provide different categories of damages, and follow different rules. Confusing the two is a common and costly mistake.
 
@@ -134,10 +135,13 @@ That projection is then reduced to present value. A 35-year-old earning $80,000 
 
 Loss of household services comes next. The deceased's contributions to the household, including childcare, home maintenance, cooking, transportation, and financial management, have economic value. When a parent dies, the surviving spouse must replace those services, often at significant cost.
 
-| Economic damage category | What it covers |
-|---|---|
-| Medical expenses | Medical bills incurred between the injury and the death are recoverable, though these typically fall under the survival action rather than the wrongful death claim. |
-| Funeral and burial expenses | Directly recoverable as wrongful death damages. Average funeral costs in Arizona range from $7,000 to $15,000, though costs can exceed that depending on the services selected. |
+<DataTable
+  headers={["Economic damage category", "What it covers"]}
+  rows={[
+    ["Medical expenses", "Medical bills incurred between the injury and the death are recoverable, though these typically fall under the survival action rather than the wrongful death claim."],
+    ["Funeral and burial expenses", "Directly recoverable as wrongful death damages. Average funeral costs in Arizona range from $7,000 to $15,000, though costs can exceed that depending on the services selected."]
+  ]}
+/>
 
 ### Non-Economic Damages for the Loss of Relationship
 
@@ -201,10 +205,13 @@ Truck crashes bring an additional layer: federal regulations apply, and FMCSA re
 
 Medical malpractice wrongful death cases require expert testimony establishing the standard of care and how it was breached. Arizona requires a preliminary expert affidavit before the case can proceed, which is a procedural hurdle unique to medical negligence claims.
 
-| Claim type | Key elements |
-|---|---|
-| Premises liability | Deaths from falls, drownings, fires, or other hazards on someone else's property. The property owner's duty of care depends on the visitor's status (invitee, licensee, or trespasser). |
-| Product liability | Deaths caused by defective products. Arizona follows strict liability for manufacturing defects, meaning the plaintiff doesn't have to prove negligence, only that the product was defective and the defect caused the death. |
+<DataTable
+  headers={["Claim type", "Key elements"]}
+  rows={[
+    ["Premises liability", "Deaths from falls, drownings, fires, or other hazards on someone else's property. The property owner's duty of care depends on the visitor's status (invitee, licensee, or trespasser)."],
+    ["Product liability", "Deaths caused by defective products. Arizona follows strict liability for manufacturing defects, meaning the plaintiff doesn't have to prove negligence, only that the product was defective and the defect caused the death."]
+  ]}
+/>
 
 ## Practical Considerations
 
@@ -214,10 +221,13 @@ Evidence preservation is the first practical issue. Physical evidence degrades. 
 
 Probate requirements are the second. If the personal representative needs to be appointed, either for the survival action or when no first- or second-priority beneficiaries exist, probate proceedings must be initiated in the county where the deceased resided. In Maricopa County, that's Maricopa County Superior Court's probate division. The process takes time and adds a procedural step to the wrongful death timeline.
 
-| Practical issue | What it means for the family |
-|---|---|
-| Multiple beneficiaries | When multiple family members are beneficiaries, their interests may conflict. Allocation of the recovery among beneficiaries is a sensitive issue that can create disputes within the family. |
-| Liens and subrogation | Health insurers, government benefit programs (Medicaid, Medicare), and other entities may have liens against the wrongful death recovery for benefits they paid. These liens must be resolved before the net recovery is distributed. |
-| Funeral and burial timing | Families often make funeral arrangements before consulting an attorney. Funeral expenses are recoverable, but documentation is essential. Keep all receipts and contracts. |
+<DataTable
+  headers={["Practical issue", "What it means for the family"]}
+  rows={[
+    ["Multiple beneficiaries", "When multiple family members are beneficiaries, their interests may conflict. Allocation of the recovery among beneficiaries is a sensitive issue that can create disputes within the family."],
+    ["Liens and subrogation", "Health insurers, government benefit programs (Medicaid, Medicare), and other entities may have liens against the wrongful death recovery for benefits they paid. These liens must be resolved before the net recovery is distributed."],
+    ["Funeral and burial timing", "Families often make funeral arrangements before consulting an attorney. Funeral expenses are recoverable, but documentation is essential. Keep all receipts and contracts."]
+  ]}
+/>
 
 ## Frequently Asked Questions

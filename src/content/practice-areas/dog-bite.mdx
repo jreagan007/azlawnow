@@ -42,6 +42,7 @@ dataSources:
 ---
 
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 US insurers paid $1.57 billion in dog-related injury claims in 2024. The average cost per claim was $69,272, up from $58,545 the year before. The USPS reported 6,088 postal employees attacked by dogs in 2024, a seven-year high. Dog bite claims are getting more frequent and more expensive.
 
@@ -83,11 +84,14 @@ Nationally, the 2024 data from the Insurance Information Institute and State Far
 
 Arizona's strict liability statute isn't absolute. Three defenses exist.
 
-| Exception | How it works |
-|---|---|
-| Provocation | If the person provoked the dog, the owner may have a defense. The burden of proving provocation falls on the owner. Provocation means conduct that would reasonably cause a dog to attack. Simply approaching a dog, reaching toward it, or being near it doesn't constitute provocation. Kicking, hitting, teasing, or cornering a dog may qualify. |
-| Trespassing | If the person was on private property without permission and without a legal duty (like delivering mail), the strict liability statute doesn't apply. The person may still have a negligence claim, but the automatic liability under ARS 11-1025 requires lawful presence. |
-| Military and police dogs | Dogs working in an official government capacity are exempt when acting in their official role. |
+<DataTable
+  headers={["Exception", "How it works"]}
+  rows={[
+    ["Provocation", "If the person provoked the dog, the owner may have a defense. The burden of proving provocation falls on the owner. Provocation means conduct that would reasonably cause a dog to attack. Simply approaching a dog, reaching toward it, or being near it doesn't constitute provocation. Kicking, hitting, teasing, or cornering a dog may qualify."],
+    ["Trespassing", "If the person was on private property without permission and without a legal duty (like delivering mail), the strict liability statute doesn't apply. The person may still have a negligence claim, but the automatic liability under ARS 11-1025 requires lawful presence."],
+    ["Military and police dogs", "Dogs working in an official government capacity are exempt when acting in their official role."],
+  ]}
+/>
 
 Insurance companies use comparative negligence under ARS 12-2505 to reduce awards. They'll argue the injured person was partly at fault for approaching the dog, not supervising a child, or being in an area where the dog was contained. Arizona's pure comparative negligence system reduces the award by the person's fault percentage but doesn't eliminate it.
 
@@ -101,10 +105,13 @@ Facial injuries are the most costly category in terms of long-term damages. Part
 
 Crush injuries occur when large dogs generate enough bite force to fracture bones in the hand, wrist, and forearm. These often require surgical repair and extended rehabilitation. Infections add a separate medical track. Dog bites introduce bacteria deep into tissue. Pasteurella, Capnocytophaga, and MRSA infections can lead to hospitalization, IV antibiotics, and in severe cases, sepsis.
 
-| Injury type | Long-term impact |
-|---|---|
-| Nerve and tendon damage | Bites to the hand and forearm can sever tendons and damage nerves, causing permanent loss of function. |
-| Psychological trauma | People bitten by dogs, especially children, frequently develop post-traumatic stress, anxiety around animals, and fear responses that persist long after the physical wounds heal. |
+<DataTable
+  headers={["Injury type", "Long-term impact"]}
+  rows={[
+    ["Nerve and tendon damage", "Bites to the hand and forearm can sever tendons and damage nerves, causing permanent loss of function."],
+    ["Psychological trauma", "People bitten by dogs, especially children, frequently develop post-traumatic stress, anxiety around animals, and fear responses that persist long after the physical wounds heal."],
+  ]}
+/>
 
 ## Landlord Liability
 
@@ -118,11 +125,14 @@ Landlords who include breed restrictions in their leases but fail to enforce the
 
 Settlement values depend on the severity of injuries and the available insurance.
 
-| Severity tier | Typical range | What drives the value |
-|---|---|---|
-| Minor bites without scarring | $15,000 to $50,000 | Puncture wounds that heal without surgical intervention, limited time off work. |
-| Moderate bites with scarring or infection | $50,000 to $150,000 | Surgical repair, scar revision, infection treatment, and extended recovery drive the value higher. |
-| Severe bites requiring reconstructive surgery | $150,000 to $500,000+ | Facial reconstruction, permanent disfigurement, nerve damage, and long-term psychological treatment push these cases into the highest range. |
+<DataTable
+  headers={["Severity tier", "Typical range", "What drives the value"]}
+  rows={[
+    ["Minor bites without scarring", "$15,000 to $50,000", "Puncture wounds that heal without surgical intervention, limited time off work."],
+    ["Moderate bites with scarring or infection", "$50,000 to $150,000", "Surgical repair, scar revision, infection treatment, and extended recovery drive the value higher."],
+    ["Severe bites requiring reconstructive surgery", "$150,000 to $500,000+", "Facial reconstruction, permanent disfigurement, nerve damage, and long-term psychological treatment push these cases into the highest range."],
+  ]}
+/>
 
 AZ Law Now recovered $75,000 from State Farm for a dog bite case involving puncture wounds and scarring on the calf.
 

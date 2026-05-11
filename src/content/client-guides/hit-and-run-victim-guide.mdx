@@ -3,7 +3,7 @@ title: "Hit-and-Run in Arizona: A Guide for Victims"
 description: "What to do when the driver flees after a crash in Arizona. Document the vehicle, find cameras, file a police report, and start your insurance claim."
 author: "stephanie-ramirez"
 publishedAt: "2026-04-06"
-updatedAt: "2026-04-13"
+updatedAt: "2026-05-11"
 category: "client-guide"
 tags: ["hit-and-run", "uninsured-motorist", "victim-guide", "evidence"]
 image: "/images/heroes/cg-hit-and-run-victim.webp"
@@ -32,6 +32,8 @@ faqs:
 
 import { Callout } from '@/components/mdx/Callout';
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
+import Timeline from '@/components/mdx/Timeline.astro';
+import { DataTable } from '@/components/mdx/DataTable';
 
 <KeyFacts>
   <Fact>Maricopa County sees roughly 16,000 hit-and-run crashes per year. About 90% go unsolved.</Fact>
@@ -71,10 +73,13 @@ Vehicle color matters almost as much. Was it red, dark red, or maroon? Silver, g
 
 Make, model, and year range help narrow further. If you know cars, name the model. If you don't, describe the shape and size. "Small four-door sedan" or "large pickup truck with a crew cab" gives investigators something to work with.
 
-| Additional detail | Why it matters |
-|---|---|
-| Damage to the fleeing vehicle | Your crash left marks on their vehicle too. A broken headlight, cracked bumper, dented fender, or missing mirror on the fleeing vehicle helps identify it later. Body shops, insurance claims, and even automated license plate readers can connect to a vehicle with fresh damage. |
-| Direction of travel | Which way did they go? Did they turn? Get on the highway? Knowing the escape route helps officers search camera feeds along that path. |
+<DataTable
+  headers={["Additional detail", "Why it matters"]}
+  rows={[
+    ["Damage to the fleeing vehicle", "Your crash left marks on their vehicle too. A broken headlight, cracked bumper, dented fender, or missing mirror on the fleeing vehicle helps identify it later. Body shops, insurance claims, and even automated license plate readers can connect to a vehicle with fresh damage."],
+    ["Direction of travel", "Which way did they go? Did they turn? Get on the highway? Knowing the escape route helps officers search camera feeds along that path."],
+  ]}
+/>
 
 ## Finding Surveillance Cameras
 
@@ -114,11 +119,14 @@ This is where your own auto insurance becomes your lifeline.
 
 In Arizona, insurance companies are required to offer UM coverage when you purchase a policy. Many drivers carry it without realizing it. Check your declarations page or call your insurance agent.
 
-| Coverage type | How it helps in a hit-and-run |
-|---|---|
-| Underinsured motorist (UIM) | If the driver is eventually found but doesn't have enough insurance to cover your damages, your UIM coverage fills the gap. |
-| Medical payments (MedPay) | If you carry MedPay on your policy, it covers your medical bills regardless of fault and regardless of whether the other driver is identified. Limits are typically $1,000 to $10,000, but it pays quickly with minimal paperwork. |
-| Collision coverage | If you have collision coverage, it pays for repairs to your vehicle (minus your deductible). You shouldn't have to pay for damage someone else caused, but collision coverage gets your car fixed while the investigation continues. |
+<DataTable
+  headers={["Coverage type", "How it helps in a hit-and-run"]}
+  rows={[
+    ["Underinsured motorist (UIM)", "If the driver is eventually found but doesn't have enough insurance to cover your damages, your UIM coverage fills the gap."],
+    ["Medical payments (MedPay)", "If you carry MedPay on your policy, it covers your medical bills regardless of fault and regardless of whether the other driver is identified. Limits are typically $1,000 to $10,000, but it pays quickly with minimal paperwork."],
+    ["Collision coverage", "If you have collision coverage, it pays for repairs to your vehicle (minus your deductible). You shouldn't have to pay for damage someone else caused, but collision coverage gets your car fixed while the investigation continues."],
+  ]}
+/>
 
 <Callout type="important" title="Don't let your insurer lowball you">
 Some insurance companies treat UM claims like they're doing you a favor. They're not. You paid for this coverage. You're entitled to the full benefits under your policy. If your insurer offers a quick settlement that doesn't cover your medical bills and lost wages, don't accept it. Your attorney can negotiate with your own insurer on your behalf.
@@ -146,16 +154,27 @@ The criminal case and your civil claim run on separate tracks. The driver may fa
 
 ## Your First-Week Checklist
 
-1. Call 911 at the scene. Report the hit-and-run and describe the vehicle.
-2. Document everything you remember about the other vehicle. Voice memo or written notes.
-3. Photograph the crash scene, your vehicle damage, your injuries, and nearby cameras.
-4. Get emergency medical treatment. Don't wait.
-5. File a police report the same day.
-6. Contact your auto insurance company to report the crash.
-7. Call a personal injury attorney. Hit-and-run cases need fast action on camera preservation.
-8. Start a daily injury journal. Three to five sentences per day.
-9. Follow every medical referral. Don't skip appointments.
-10. Don't post about the crash on social media.
+<Timeline>
+<h3>Call 911 at the scene</h3><p>Report the hit-and-run and describe the vehicle: color, make, model, direction of travel, and any partial plate.</p>
+
+<h3>Document everything you remember about the other vehicle</h3><p>Voice memo or written notes while your recollection is freshest.</p>
+
+<h3>Photograph the crash scene</h3><p>Your vehicle damage, your injuries, and the location of any nearby cameras.</p>
+
+<h3>Get emergency medical treatment</h3><p>Don't wait. Adrenaline masks pain. Internal injuries may not present symptoms for hours.</p>
+
+<h3>File a police report the same day</h3><p>Not tomorrow. Today. The report creates the official record and the case number you'll need for your insurance claim.</p>
+
+<h3>Contact your auto insurance company to report the crash</h3><p>Check your policy for UM coverage and report promptly per your policy's requirements.</p>
+
+<h3>Call a personal injury attorney</h3><p>Hit-and-run cases need fast action on camera preservation. Footage overwrites within 48 to 72 hours.</p>
+
+<h3>Start a daily injury journal</h3><p>Three to five sentences per day documenting pain, limitations, and how the injury affects your daily life.</p>
+
+<h3>Follow every medical referral</h3><p>Don't skip appointments. Gaps in treatment become the insurance company's exhibit A.</p>
+
+<h3>Don't post about the crash on social media</h3><p>Nothing. Insurance adjusters monitor social media and will use anything out of context.</p>
+</Timeline>
 
 <Callout type="info" title="Confidential intake">
 Call (602) 654-0202 or fill out the [contact form](/contact/). AZ Law Now handles hit-and-run cases across Buckeye, Goodyear, Avondale, and the entire West Valley. Intake is confidential. Representation is on contingency.
@@ -163,8 +182,11 @@ Call (602) 654-0202 or fill out the [contact form](/contact/). AZ Law Now handle
 
 ## Arizona Deadlines
 
-| Deadline | Details | Statute |
-|---|---|---|
-| Two-year statute of limitations | You have two years from the crash date to file a personal injury lawsuit. If the crash caused a death, the family has two years from the date of death to file a wrongful death claim. | ARS 12-542 / ARS 12-611 |
-| 180-day government entity deadline | If road design, missing signage, or a government-maintained intersection contributed to the crash, you must file a notice of claim within 180 days. | ARS 12-821.01 |
-| UM claim deadlines | Your own insurance policy may have its own deadlines for reporting a claim and filing suit. Check your policy or ask your attorney. | Policy-specific |
+<DataTable
+  headers={["Deadline", "Details", "Statute"]}
+  rows={[
+    ["Two-year statute of limitations", "You have two years from the crash date to file a personal injury lawsuit. If the crash caused a death, the family has two years from the date of death to file a wrongful death claim.", "ARS 12-542 / ARS 12-611"],
+    ["180-day government entity deadline", "If road design, missing signage, or a government-maintained intersection contributed to the crash, you must file a notice of claim within 180 days.", "ARS 12-821.01"],
+    ["UM claim deadlines", "Your own insurance policy may have its own deadlines for reporting a claim and filing suit. Check your policy or ask your attorney.", "Policy-specific"],
+  ]}
+/>

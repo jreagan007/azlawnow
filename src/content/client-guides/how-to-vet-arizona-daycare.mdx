@@ -5,7 +5,7 @@ author: "stephanie-ramirez"
 category: "process-guides"
 tags: ["daycare-negligence", "child-safety", "az-carecheck", "vetting", "complaints"]
 publishedAt: "2026-04-09"
-updatedAt: "2026-04-09"
+updatedAt: "2026-05-11"
 image: "/images/heroes/cg-how-to-vet-daycare.webp"
 ogImage: "/og/arizona-daycare-violations.png"
 readingTime: "8 min"
@@ -31,6 +31,8 @@ faqs:
 
 import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
 import { Callout } from '@/components/mdx/Callout';
+import Timeline from '@/components/mdx/Timeline.astro';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Choosing a daycare is one of the most important decisions a family makes. The marketing materials all look the same. The tour gives you a polished version. The actual track record is harder to find but it's public, and you should look at it before you enroll.
 
@@ -84,13 +86,16 @@ This is the same step a personal injury attorney would take if a child was injur
 
 The tour the daycare director gives is a marketing event. The real facility looks different. Visit at multiple times of day:
 
-| Visit window | What to watch for |
-|---|---|
-| Morning drop-off (7:30 to 9:00 AM) | How the staff handles arrivals. Are children greeted by name? Is the sign-in process organized? Are parents allowed all the way into the classrooms or pushed back at the door? |
-| Mid-morning programming (10:00 AM) | The actual structured activity time. Are children engaged? Is staff actively interacting or just supervising from a distance? What's the noise level? (Too quiet can be as concerning as chaotic.) |
-| Lunch and nap (11:30 AM to 1:30 PM) | Ratio violations often occur in this window. Watch how staff coverage works during nap time. Are sleeping infants being checked? Is one staff member alone with too many children? |
-| Afternoon transition (3:00 to 4:00 PM) | Children get tired, irritable, and harder to manage. How does the staff handle conflicts? Are children getting individual attention? |
-| Pick-up (5:00 to 6:00 PM) | Watch the parent-staff interaction during pickup. Do staff give specific, positive reports about each child's day, or is everyone just rushing to leave? |
+<DataTable
+  headers={["Visit window", "What to watch for"]}
+  rows={[
+    ["Morning drop-off (7:30 to 9:00 AM)", "How the staff handles arrivals. Are children greeted by name? Is the sign-in process organized? Are parents allowed all the way into the classrooms or pushed back at the door?"],
+    ["Mid-morning programming (10:00 AM)", "The actual structured activity time. Are children engaged? Is staff actively interacting or just supervising from a distance? What's the noise level? (Too quiet can be as concerning as chaotic.)"],
+    ["Lunch and nap (11:30 AM to 1:30 PM)", "Ratio violations often occur in this window. Watch how staff coverage works during nap time. Are sleeping infants being checked? Is one staff member alone with too many children?"],
+    ["Afternoon transition (3:00 to 4:00 PM)", "Children get tired, irritable, and harder to manage. How does the staff handle conflicts? Are children getting individual attention?"],
+    ["Pick-up (5:00 to 6:00 PM)", "Watch the parent-staff interaction during pickup. Do staff give specific, positive reports about each child's day, or is everyone just rushing to leave?"],
+  ]}
+/>
 
 What you're looking for: warm, attentive, present staff who know each child by name and engage with them as individuals. What you're avoiding: rotating staff, screen time as supervision, exhausted-looking workers, and any sense that children are being managed rather than cared for.
 
@@ -111,25 +116,27 @@ What you're looking for: warm, attentive, present staff who know each child by n
 
 Most parents ask about hours, cost, and whether snacks are provided. Those are fine questions, but they don't tell you about safety. Ask:
 
-1. **What's your staff-to-child ratio in each room, right now?** Compare to required minimums. Get specific numbers.
+<Timeline>
+<h3>What's your staff-to-child ratio in each room, right now?</h3><p>Compare to required minimums. Get specific numbers.</p>
 
-2. **What's your staff turnover rate?** A facility with 30%+ annual turnover has structural problems. The best facilities have lead teachers who've been there for years.
+<h3>What's your staff turnover rate?</h3><p>A facility with 30%+ annual turnover has structural problems. The best facilities have lead teachers who've been there for years.</p>
 
-3. **What's your background check process?** They should describe DHS-required state and federal background checks, fingerprinting, and ongoing rechecks. If they're vague, that's a problem.
+<h3>What's your background check process?</h3><p>They should describe DHS-required state and federal background checks, fingerprinting, and ongoing rechecks. If they're vague, that's a problem.</p>
 
-4. **How do you handle medication?** Specifically, ask about how staff document, store, and administer prescription medications.
+<h3>How do you handle medication?</h3><p>Specifically, ask about how staff document, store, and administer prescription medications.</p>
 
-5. **What's your incident reporting process?** A good facility has a written incident report form, parent notification protocol, and DHS notification protocol for serious incidents.
+<h3>What's your incident reporting process?</h3><p>A good facility has a written incident report form, parent notification protocol, and DHS notification protocol for serious incidents.</p>
 
-6. **Can I see your most recent inspection report?** Licensed facilities are required to make these available. Refusal is a red flag.
+<h3>Can I see your most recent inspection report?</h3><p>Licensed facilities are required to make these available. Refusal is a red flag.</p>
 
-7. **What's your policy on parent visits?** A facility with nothing to hide welcomes unannounced parent visits any time. A facility with restrictions or appointment requirements has something they don't want you to see.
+<h3>What's your policy on parent visits?</h3><p>A facility with nothing to hide welcomes unannounced parent visits any time. A facility with restrictions or appointment requirements has something they don't want you to see.</p>
 
-8. **How do you handle naps and supervision during them?** Sleeping infants have died from improper sleep position, suffocation, and SIDS at understaffed daycares. Sleep supervision should be active, not just monitored from outside the room.
+<h3>How do you handle naps and supervision during them?</h3><p>Sleeping infants have died from improper sleep position, suffocation, and SIDS at understaffed daycares. Sleep supervision should be active, not just monitored from outside the room.</p>
 
-9. **What's your emergency plan?** For medical emergencies, fire, lockdown, severe weather. They should have written plans and conduct drills.
+<h3>What's your emergency plan?</h3><p>For medical emergencies, fire, lockdown, severe weather. They should have written plans and conduct drills.</p>
 
-10. **Who is your DHS licensing surveyor and how often do they visit?** A good facility knows this and will tell you. Surveyors typically visit annually for licensed centers.
+<h3>Who is your DHS licensing surveyor and how often do they visit?</h3><p>A good facility knows this and will tell you. Surveyors typically visit annually for licensed centers.</p>
+</Timeline>
 
 ## Step 5: Talk to Other Parents
 
@@ -147,28 +154,33 @@ Online reviews are useful but unreliable. In-person conversations with parents w
 
 If your child is injured at a daycare:
 
-**1. Get medical attention immediately.** Document everything.
+<Timeline>
+<h3>Get medical attention immediately</h3><p>Document everything.</p>
 
-**2. Get the incident report from the daycare.** They're required to document injuries. If they refuse, that's a red flag.
+<h3>Get the incident report from the daycare</h3><p>They're required to document injuries. If they refuse, that's a red flag.</p>
 
-**3. Photograph the injuries** and any visible evidence of how the injury happened.
+<h3>Photograph the injuries</h3><p>Photograph any visible evidence of how the injury happened.</p>
 
-**4. File a formal complaint with ADHS.** [facility-licensing.azdhs.gov/s/childcare-facility-complaints](https://facility-licensing.azdhs.gov/s/childcare-facility-complaints). The complaint can be anonymous if you want. ADHS will investigate.
+<h3>File a formal complaint with ADHS</h3><p><a href="https://facility-licensing.azdhs.gov/s/childcare-facility-complaints">facility-licensing.azdhs.gov/s/childcare-facility-complaints</a>. The complaint can be anonymous if you want. ADHS will investigate.</p>
 
-**5. Submit a public records request** for the facility's full file at [recordsrequest.azdhs.gov](https://recordsrequest.azdhs.gov). You'll get inspection history, prior complaints, and any correspondence.
+<h3>Submit a public records request</h3><p>Request the facility's full file at <a href="https://recordsrequest.azdhs.gov">recordsrequest.azdhs.gov</a>. You'll get inspection history, prior complaints, and any correspondence.</p>
 
-**6. Call us if the injury is serious.** (602) 654-0202. Intake is confidential. Representation is on contingency. Daycare negligence cases involve evidence preservation that needs to start within days. See [Arizona daycare negligence law](/legal-guides/arizona-daycare-negligence-law/) for the legal framework.
+<h3>Call us if the injury is serious</h3><p>(602) 654-0202. Intake is confidential. Representation is on contingency. Daycare negligence cases involve evidence preservation that needs to start within days. See <a href="/legal-guides/arizona-daycare-negligence-law/">Arizona daycare negligence law</a> for the legal framework.</p>
+</Timeline>
 
 ## How to File a Complaint
 
 Filing a complaint with ADHS is free and straightforward:
 
-1. Go to [facility-licensing.azdhs.gov/s/childcare-facility-complaints](https://facility-licensing.azdhs.gov/s/childcare-facility-complaints)
-2. Fill out the online complaint form
-3. Include: facility name, address, date and time of incident, description of what happened, witnesses if any, and your contact info (or anonymous)
-4. Submit
+<Timeline>
+<h3>Go to the ADHS complaint portal</h3><p><a href="https://facility-licensing.azdhs.gov/s/childcare-facility-complaints">facility-licensing.azdhs.gov/s/childcare-facility-complaints</a></p>
 
-ADHS will investigate. Investigations typically take 30 to 60 days. If the complaint is substantiated, it appears on the facility's AZ CareCheck record and can result in fines, plans of correction, or license restrictions.
+<h3>Fill out the online complaint form</h3><p>Complete all fields accurately.</p>
+
+<h3>Include all relevant details</h3><p>Facility name, address, date and time of incident, description of what happened, witnesses if any, and your contact info (or anonymous).</p>
+
+<h3>Submit</h3><p>ADHS will investigate. Investigations typically take 30 to 60 days. If the complaint is substantiated, it appears on the facility's AZ CareCheck record and can result in fines, plans of correction, or license restrictions.</p>
+</Timeline>
 
 You can also call the Surveyor on Duty at (602) 364-2539 during business hours for urgent concerns.
 

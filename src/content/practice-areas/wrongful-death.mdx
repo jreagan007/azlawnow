@@ -40,6 +40,7 @@ dataSources:
 ---
 
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Arizona's wrongful death statute, ARS 12-611 through 12-613, gives surviving families the right to file a claim when someone dies due to another person's negligence, recklessness, or intentional conduct. The statute is specific about who can file, what damages are available, and how the two-year clock works.
 
@@ -61,11 +62,14 @@ These are two separate claims that often arise from the same incident. The wrong
 
 Arizona wrongful death damages fall into three categories, and none are capped.
 
-| Damage category | What's covered |
-|---|---|
-| Economic damages | Medical costs incurred before death. Funeral and burial expenses. Lost future earnings over the deceased's expected life span, including benefits, retirement contributions, and earning capacity growth. |
-| Non-economic damages | Loss of consortium (for the spouse). Loss of companionship, guidance, and moral support (for children and parents). Grief and emotional pain of the survivors. |
-| Punitive damages | Available when the conduct that caused the death was malicious, fraudulent, or egregiously reckless. Drunk driving fatalities, trucking companies that knowingly violated safety regulations, nursing homes that ignored repeated deficiency citations. Punishes the defendant and deters similar conduct. |
+<DataTable
+  headers={["Damage category", "What's covered"]}
+  rows={[
+    ["Economic damages", "Medical costs incurred before death. Funeral and burial expenses. Lost future earnings over the deceased's expected life span, including benefits, retirement contributions, and earning capacity growth."],
+    ["Non-economic damages", "Loss of consortium (for the spouse). Loss of companionship, guidance, and moral support (for children and parents). Grief and emotional pain of the survivors."],
+    ["Punitive damages", "Available when the conduct that caused the death was malicious, fraudulent, or egregiously reckless. Drunk driving fatalities, trucking companies that knowingly violated safety regulations, nursing homes that ignored repeated deficiency citations. Punishes the defendant and deters similar conduct."],
+  ]}
+/>
 
 The Arizona Constitution (Article 2, Section 31) prohibits legislative caps on personal injury and wrongful death damages. There's no artificial ceiling. The recovery should reflect the actual loss.
 
@@ -89,11 +93,14 @@ Motor vehicle crashes are the most common category. Arizona had 1,228 traffic fa
 
 Truck crashes are the next tier. The [truck crash data](/investigations/truck-crashes-maricopa-county-data/) shows 143 people killed in commercial vehicle crashes in Arizona in 2024, and 97% of deaths in truck-vs-car crashes are in the passenger vehicle. Federal FMCSA regulations create additional liability pathways against the carrier.
 
-| Case type | Key data and law |
-|---|---|
-| Pedestrian deaths | The [pedestrian deaths investigation](/investigations/arizona-pedestrian-deaths-road-design/) shows 263 pedestrians killed in 2024, with Arizona's rate nearly twice the national average. Road design defects may create government entity liability under ARS 12-820. |
-| Medical negligence | When a patient dies due to a hospital's failure to meet the standard of care. Arizona's expert affidavit requirement under ARS 12-2603 applies. |
-| Nursing home neglect | When a facility's understaffing, medication errors, or failure to prevent falls causes a death. The [nursing home violations investigation](/investigations/arizona-nursing-home-violations/) covers CMS deficiency data for Arizona facilities. |
+<DataTable
+  headers={["Case type", "Key data and law"]}
+  rows={[
+    ["Pedestrian deaths", "The pedestrian deaths investigation shows 263 pedestrians killed in 2024, with Arizona's rate nearly twice the national average. Road design defects may create government entity liability under ARS 12-820."],
+    ["Medical negligence", "When a patient dies due to a hospital's failure to meet the standard of care. Arizona's expert affidavit requirement under ARS 12-2603 applies."],
+    ["Nursing home neglect", "When a facility's understaffing, medication errors, or failure to prevent falls causes a death. The nursing home violations investigation covers CMS deficiency data for Arizona facilities."],
+  ]}
+/>
 
 ## What to Do After a Family Member's Death
 

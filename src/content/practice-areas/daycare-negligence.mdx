@@ -42,6 +42,7 @@ dataSources:
 ---
 
 import { Callout } from '@/components/mdx/Callout';
+import { DataTable } from '@/components/mdx/DataTable';
 
 Arizona allows one adult to supervise 15 four-year-olds. The national recommendation from early childhood organizations is one adult per eight to 10 children of that age. For infants, Arizona permits ratios of 1:5, while national standards call for 1:3 to 1:4. For school-age children, Arizona allows 1:20.
 
@@ -53,15 +54,18 @@ The Arizona Department of Health Services (ADHS) regulates child care centers. T
 
 Arizona Administrative Code R9-5 contains the licensing requirements for child care centers. R9-5-404 sets the staff-to-child ratios that every licensed facility must meet.
 
-| Age Group | Arizona Ratio | National Recommended |
-|-----------|--------------|---------------------|
-| Infants (0-1) | 1:5 | 1:3 to 1:4 |
-| 1-year-olds | 1:6 | 1:3 to 1:4 |
-| 2-year-olds | 1:8 | 1:4 to 1:6 |
-| 3-year-olds | 1:13 | 1:7 to 1:9 |
-| 4-year-olds | 1:15 | 1:8 to 1:10 |
-| 5-year-olds | 1:20 | 1:8 to 1:10 |
-| School-age | 1:20 | 1:10 to 1:12 |
+<DataTable
+  headers={["Age Group", "Arizona Ratio", "National Recommended"]}
+  rows={[
+    ["Infants (0-1)", "1:5", "1:3 to 1:4"],
+    ["1-year-olds", "1:6", "1:3 to 1:4"],
+    ["2-year-olds", "1:8", "1:4 to 1:6"],
+    ["3-year-olds", "1:13", "1:7 to 1:9"],
+    ["4-year-olds", "1:15", "1:8 to 1:10"],
+    ["5-year-olds", "1:20", "1:8 to 1:10"],
+    ["School-age", "1:20", "1:10 to 1:12"],
+  ]}
+/>
 
 Arizona's ratios are among the weakest in the country. A 2024 report from the Governor's Office on child care infrastructure acknowledged the gap between state requirements and national standards.
 
@@ -73,13 +77,16 @@ AZ CareCheck (azcarecheck.azdhs.gov) is the public database for every ADHS-licen
 
 ADHS inspection reports and complaint investigations reveal consistent patterns across Arizona facilities.
 
-| Violation | Pattern |
-|---|---|
-| Supervision failures | Staff not actively monitoring children, leaving children unattended in classrooms or outdoor areas, failing to maintain visual and auditory supervision. The most common precursor to serious injuries. |
-| Ratio violations | Operating with fewer staff than the required ratio. Happens during shift transitions, lunch breaks, and early morning or late afternoon hours when enrollment is lighter. A facility that drops below ratio for even 15 minutes creates liability. |
-| Unreported incidents | Arizona requires facilities to notify parents and ADHS of injuries, accidents, and abuse allegations. Facilities that delay or fail to report violate licensing standards and create civil liability. |
-| Background check failures | Arizona requires fingerprint clearance cards for all employees who have direct contact with children. Facilities that hire staff without clearance cards, or fail to check for disqualifying offenses, create a foreseeable risk. |
-| Environmental hazards | Unsafe playground equipment, choking hazards accessible to young children, unsecured cleaning supplies and chemicals, broken fencing, and inadequate pool barriers. Our [investigation into daycare violations](/investigations/arizona-daycare-violations/) documents facility-level data across Arizona. |
+<DataTable
+  headers={["Violation", "Pattern"]}
+  rows={[
+    ["Supervision failures", "Staff not actively monitoring children, leaving children unattended in classrooms or outdoor areas, failing to maintain visual and auditory supervision. The most common precursor to serious injuries."],
+    ["Ratio violations", "Operating with fewer staff than the required ratio. Happens during shift transitions, lunch breaks, and early morning or late afternoon hours when enrollment is lighter. A facility that drops below ratio for even 15 minutes creates liability."],
+    ["Unreported incidents", "Arizona requires facilities to notify parents and ADHS of injuries, accidents, and abuse allegations. Facilities that delay or fail to report violate licensing standards and create civil liability."],
+    ["Background check failures", "Arizona requires fingerprint clearance cards for all employees who have direct contact with children. Facilities that hire staff without clearance cards, or fail to check for disqualifying offenses, create a foreseeable risk."],
+    ["Environmental hazards", "Unsafe playground equipment, choking hazards accessible to young children, unsecured cleaning supplies and chemicals, broken fencing, and inadequate pool barriers. Our investigation into daycare violations documents facility-level data across Arizona."],
+  ]}
+/>
 
 ## When Ratio Violations Cause Injuries
 
@@ -97,11 +104,14 @@ Falls from playground equipment produce the most common injuries: broken bones, 
 
 Choking incidents are the next category. Young children explore the world by putting objects in their mouths, and age-inappropriate toys, unsecured small objects, and food items that are choking hazards create foreseeable risks. Staff must be trained in CPR and emergency response under Arizona licensing requirements.
 
-| Injury type | Facility duty |
-|---|---|
-| Burns and scalds | Hot water, cooking equipment, and chemical exposure. Facilities are required to maintain water temperature controls and keep hazardous materials locked and inaccessible. |
-| Vehicle-related injuries | Van accidents during field trips or transportation, children struck in parking lots, loading and unloading incidents. |
-| Abuse by staff | Physical abuse, sexual abuse, and emotional abuse by caregivers. Facilities are liable for negligent hiring (failing to conduct background checks) and negligent supervision (failing to monitor staff behavior). |
+<DataTable
+  headers={["Injury type", "Facility duty"]}
+  rows={[
+    ["Burns and scalds", "Hot water, cooking equipment, and chemical exposure. Facilities are required to maintain water temperature controls and keep hazardous materials locked and inaccessible."],
+    ["Vehicle-related injuries", "Van accidents during field trips or transportation, children struck in parking lots, loading and unloading incidents."],
+    ["Abuse by staff", "Physical abuse, sexual abuse, and emotional abuse by caregivers. Facilities are liable for negligent hiring (failing to conduct background checks) and negligent supervision (failing to monitor staff behavior)."],
+  ]}
+/>
 
 ## Claims Against Government-Run Programs
 
