@@ -25,3 +25,8 @@ Thumbs.db
 CLAUDE-CODE-BRIEF.md
 *.brief.md
 docs/internal/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
