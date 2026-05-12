@@ -1,0 +1,350 @@
+---
+/**
+ * DonutChart, SVG donut chart with right-rail legend for editorial pages.
+ *
+ * Ported from mesowatchorg, retuned to the AZ Law Now Sunset Editorial
+ * palette (Newsprint background, Headline Black titles, Golden Hour and
+ * Alert Vermillion accents, Cormorant Garamond headings, DM Sans body
+ * copy). Self-contained Astro single-file component, scoped styles only.
+ *
+ * Segment colors are caller-supplied. Suggested defaults map to
+ * Golden Hour / Burnt Sienna / Alert Vermillion / Dusk Slate so the donut
+ * reads on either light or dark theme.
+ */
+
+interface Segment {
+  label: string;
+  value: number;
+  color: string;
+}
+
+interface Props {
+  data: Segment[];
+  title: string;
+  subtitle?: string;
+  source?: string;
+  sourceUrl: string;
+  theme?: 'light' | 'dark';
+  width?: number;
+  height?: number;
+  embedSlug?: string;
+  embedChartId?: string;
+}
+
+const {
+  data,
+  title,
+  subtitle,
+  source,
+  sourceUrl,
+  theme = 'light',
+  width = 800,
+  height = 500,
+  embedSlug,
+  embedChartId,
+} = Astro.props;
+
+const themes = {
+  light: {
+    bg: '#FAF5ED',
+    title: '#1A1A1A',
+    subtitle: '#6B6259',
+    label: '#4A5859',
+    value: '#1A1A1A',
+    source: '#8C8276',
+    centerNumber: '#1A1A1A',
+    centerLabel: '#6B6259',
+    brand: '#8B4513',
+  },
+  dark: {
+    bg: '#1A1A1A',
+    title: '#FAF5ED',
+    subtitle: '#B0A698',
+    label: '#FAF5ED',
+    value: '#FAF5ED',
+    source: '#B0A698',
+    centerNumber: '#FAF5ED',
+    centerLabel: '#B0A698',
+    brand: '#D4943A',
+  },
+};
+
+const colors = themes[theme];
+
+const centerX = 200;
+const centerY = 250;
+const outerRadius = 130;
+const innerRadius = 78;
+const legendX = 410;
+const legendStartY = 170;
+
+const total = data.reduce((sum, d) => sum + d.value, 0);
+
+function polarToCartesian(cx: number, cy: number, radius: number, angleInDegrees: number) {
+  const angleInRadians = (angleInDegrees - 90) * Math.PI / 180;
+  return { x: cx + radius * Math.cos(angleInRadians), y: cy + radius * Math.sin(angleInRadians) };
+}
+
+function describeArc(cx: number, cy: number, outerR: number, innerR: number, startAngle: number, endAngle: number) {
+  const start = polarToCartesian(cx, cy, outerR, endAngle);
+  const end = polarToCartesian(cx, cy, outerR, startAngle);
+  const innerStart = polarToCartesian(cx, cy, innerR, endAngle);
+  const innerEnd = polarToCartesian(cx, cy, innerR, startAngle);
+  const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+  return [
+    "M", start.x, start.y,
+    "A", outerR, outerR, 0, largeArcFlag, 0, end.x, end.y,
+    "L", innerEnd.x, innerEnd.y,
+    "A", innerR, innerR, 0, largeArcFlag, 1, innerStart.x, innerStart.y,
+    "Z"
+  ].join(" ");
+}
+
+let cumulativeAngle = 0;
+const segments = data.map(d => {
+  const percentage = total > 0 ? (d.value / total) * 100 : 0;
+  const angle = (d.value / total) * 360;
+  const startAngle = cumulativeAngle;
+  const endAngle = cumulativeAngle + angle;
+  cumulativeAngle = endAngle;
+  return { ...d, percentage, startAngle, endAngle };
+});
+
+const safeTitle = title.replace(/"/g, '&quot;');
+const embedSrc = (embedSlug && embedChartId)
+  ? `https://azlawnow.com/embed/${embedSlug}/${embedChartId}/`
+  : (sourceUrl || 'https://azlawnow.com');
+const embedCode = `<iframe src="${embedSrc}" width="100%" height="500" frameborder="0" title="${safeTitle}"></iframe>`;
+
+function formatLegendValue(v: number): string {
+  if (v >= 1000) return v.toLocaleString();
+  return v.toString();
+}
+---
+
+<figure class="azln-chart-fig">
+  <svg
+    viewBox={`0 0 ${width} ${height}`}
+    preserveAspectRatio="xMidYMid meet"
+    class="azln-chart-svg"
+    role="img"
+    aria-label={`${title} chart, AZ Law Now, azlawnow.com`}
+  >
+    <rect width={width} height={height} fill={colors.bg} rx="12"/>
+
+    <text
+      x="40"
+      y="40"
+      fill={colors.title}
+      font-family="'Cormorant Garamond', Georgia, serif"
+      font-size="22"
+      font-weight="600"
+    >
+      {title}
+    </text>
+
+    {subtitle && (
+      <text
+        x="40"
+        y="64"
+        fill={colors.subtitle}
+        font-family="'DM Sans', system-ui, sans-serif"
+        font-size="14"
+      >
+        {subtitle}
+      </text>
+    )}
+
+    {segments.map(seg => (
+      seg.endAngle > seg.startAngle && (
+        <path
+          d={describeArc(centerX, centerY, outerRadius, innerRadius, seg.startAngle, seg.endAngle)}
+          fill={seg.color}
+        />
+      )
+    ))}
+
+    <text
+      x={centerX}
+      y={centerY - 6}
+      text-anchor="middle"
+      fill={colors.centerNumber}
+      font-family="'Cormorant Garamond', Georgia, serif"
+      font-size="32"
+      font-weight="600"
+    >
+      {total.toLocaleString()}
+    </text>
+    <text
+      x={centerX}
+      y={centerY + 18}
+      text-anchor="middle"
+      fill={colors.centerLabel}
+      font-family="'DM Sans', system-ui, sans-serif"
+      font-size="12"
+      letter-spacing="1"
+    >
+      TOTAL
+    </text>
+
+    {segments.map((seg, i) => {
+      const y = legendStartY + i * 36;
+      return (
+        <g>
+          <rect x={legendX} y={y - 12} width={16} height={16} fill={seg.color} rx="2" />
+          <text
+            x={legendX + 26}
+            y={y - 1}
+            fill={colors.label}
+            font-family="'DM Sans', system-ui, sans-serif"
+            font-size="14"
+            font-weight="600"
+          >
+            {seg.label}
+          </text>
+          <text
+            x={legendX + 26}
+            y={y + 16}
+            fill={colors.subtitle}
+            font-family="'DM Sans', system-ui, sans-serif"
+            font-size="12"
+          >
+            {formatLegendValue(seg.value)} • {seg.percentage.toFixed(1)}%
+          </text>
+        </g>
+      );
+    })}
+
+    {source && (
+      <text
+        x="40"
+        y={height - 22}
+        fill={colors.source}
+        font-family="'DM Sans', system-ui, sans-serif"
+        font-size="11"
+      >
+        Source: {source}
+      </text>
+    )}
+
+    <text
+      x={width - 24}
+      y={height - 22}
+      text-anchor="end"
+      fill={colors.brand}
+      font-family="'Cormorant Garamond', Georgia, serif"
+      font-size="13"
+      font-weight="600"
+      letter-spacing="0.04em"
+    >
+      AZLAWNOW.COM
+    </text>
+  </svg>
+
+  <div class="azln-chart-caption">
+    {sourceUrl && (
+      <a class="azln-chart-source-link" href={sourceUrl} target="_blank" rel="noopener noreferrer">
+        View source data &rarr;
+      </a>
+    )}
+    {(
+      <button
+        class="azln-chart-embed-btn"
+        type="button"
+        data-embed-code={embedCode}
+        aria-label="Copy embed code for this chart"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>
+        <span>Copy embed code</span>
+      </button>
+    )}
+  </div>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.azln-chart-embed-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.dataset.embedCode || '';
+      const label = btn.querySelector('span');
+      const original = label?.textContent || 'Copy embed code';
+      try {
+        await navigator.clipboard.writeText(code);
+        if (label) label.textContent = 'Copied';
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); if (label) label.textContent = 'Copied'; } catch {}
+        document.body.removeChild(ta);
+      }
+      setTimeout(() => { if (label) label.textContent = original; }, 2000);
+    });
+  });
+</script>
+
+<style>
+  .azln-chart-fig {
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .azln-chart-svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg, 8px);
+    border: 1px solid var(--neutral-200, #E8DDD0);
+    box-shadow: var(--shadow-sm, 0 2px 4px rgba(26, 26, 26, 0.06));
+  }
+
+  .azln-chart-caption {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .azln-chart-source-link {
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+    color: var(--color-gold, #D4943A);
+    text-decoration: none;
+  }
+
+  .azln-chart-source-link:hover { text-decoration: underline; }
+
+  .azln-chart-embed-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    background: var(--color-white, #FFFFFF);
+    color: var(--color-gold-text, #8B4513);
+    border: 1px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md, 6px);
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .azln-chart-embed-btn:hover {
+    background: var(--color-gold, #D4943A);
+    color: var(--color-black, #1A1A1A);
+  }
+
+  @media (max-width: 600px) {
+    .azln-chart-caption { justify-content: flex-start; }
+  }
+</style>

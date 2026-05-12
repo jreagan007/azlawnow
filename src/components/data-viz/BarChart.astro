@@ -1,0 +1,325 @@
+---
+/**
+ * BarChart, SVG horizontal bar chart for editorial pages.
+ *
+ * Ported from mesowatchorg, retuned to the AZ Law Now Sunset Editorial
+ * palette (Golden Hour bars on Newsprint background, Alert Vermillion for
+ * highlights, Burnt Sienna as warm secondary, Cormorant Garamond headings,
+ * DM Sans body copy). Self-contained Astro single-file component, scoped
+ * styles, no shared assets required.
+ *
+ * Source line bottom-left, AZ Law Now attribution bottom-right, separate
+ * zones to avoid overlap. Embed button copies an iframe snippet to clipboard
+ * so journalists can drop the chart into their own story.
+ */
+
+interface BarData {
+  label: string;
+  value: number;
+  highlight?: boolean;
+}
+
+interface Props {
+  data: BarData[];
+  title: string;
+  subtitle?: string;
+  source?: string;
+  sourceUrl?: string;
+  valueLabel?: string;
+  theme?: 'light' | 'dark';
+  width?: number;
+  height?: number;
+  embedSlug?: string;
+  embedChartId?: string;
+}
+
+const {
+  data,
+  title,
+  subtitle,
+  source,
+  sourceUrl,
+  valueLabel = '',
+  theme = 'light',
+  width = 900,
+  height = 560,
+  embedSlug,
+  embedChartId,
+} = Astro.props;
+
+const themes = {
+  light: {
+    bg: '#FAF5ED',
+    title: '#1A1A1A',
+    subtitle: '#6B6259',
+    label: '#4A5859',
+    value: '#1A1A1A',
+    bar: '#D4943A',
+    barHighlight: '#C23B22',
+    gridLine: '#E8DDD0',
+    source: '#8C8276',
+    brand: '#8B4513',
+  },
+  dark: {
+    bg: '#1A1A1A',
+    title: '#FAF5ED',
+    subtitle: '#B0A698',
+    label: '#FAF5ED',
+    value: '#FAF5ED',
+    bar: '#D4943A',
+    barHighlight: '#C23B22',
+    gridLine: '#4A5859',
+    source: '#B0A698',
+    brand: '#D4943A',
+  },
+};
+
+const colors = themes[theme];
+
+const margin = { top: 90, right: 90, bottom: 80, left: 220 };
+const chartHeight = height - margin.top - margin.bottom;
+const chartWidth = width - margin.left - margin.right;
+
+const maxValue = Math.max(...data.map(d => d.value));
+const barHeight = Math.max(20, Math.min(40, chartHeight / data.length - 12));
+const barSpacing = (chartHeight - data.length * barHeight) / Math.max(1, data.length - 1) + barHeight;
+
+function xScale(value: number): number {
+  return (value / maxValue) * chartWidth;
+}
+
+function formatValue(value: number): string {
+  if (value >= 1000000) return (value / 1000000).toFixed(1) + 'M';
+  if (value >= 1000) return (value / 1000).toFixed(1) + 'k';
+  return value.toLocaleString();
+}
+
+function truncateLabel(label: string, max = 28): string {
+  if (label.length <= max) return label;
+  return label.slice(0, max - 1).trimEnd() + '…';
+}
+
+const safeTitle = title.replace(/"/g, '&quot;');
+const embedSrc = (embedSlug && embedChartId)
+  ? `https://azlawnow.com/embed/${embedSlug}/${embedChartId}/`
+  : (sourceUrl || 'https://azlawnow.com');
+const embedCode = `<iframe src="${embedSrc}" width="100%" height="560" frameborder="0" title="${safeTitle}"></iframe>`;
+---
+
+<figure class="azln-chart-fig">
+  <svg
+    viewBox={`0 0 ${width} ${height}`}
+    preserveAspectRatio="xMidYMid meet"
+    class="azln-chart-svg"
+    role="img"
+    aria-label={`${title} chart, AZ Law Now, azlawnow.com`}
+  >
+    <rect width={width} height={height} fill={colors.bg} rx="12"/>
+
+    <text
+      x={margin.left}
+      y="36"
+      fill={colors.title}
+      font-family="'Cormorant Garamond', Georgia, serif"
+      font-size="22"
+      font-weight="600"
+    >
+      {title}
+    </text>
+
+    {subtitle && (
+      <text
+        x={margin.left}
+        y="60"
+        fill={colors.subtitle}
+        font-family="'DM Sans', system-ui, sans-serif"
+        font-size="14"
+      >
+        {subtitle}
+      </text>
+    )}
+
+    {data.map((d, i) => {
+      const y = margin.top + i * barSpacing;
+      const barW = xScale(d.value);
+      const isHighlight = d.highlight;
+      return (
+        <g>
+          <text
+            x={margin.left - 14}
+            y={y + barHeight / 2 + 4}
+            text-anchor="end"
+            fill={colors.label}
+            font-family="'DM Sans', system-ui, sans-serif"
+            font-size="13"
+            font-weight="500"
+          >
+            {truncateLabel(d.label)}
+          </text>
+
+          <rect
+            x={margin.left}
+            y={y}
+            width={chartWidth}
+            height={barHeight}
+            fill={colors.gridLine}
+            rx="3"
+          />
+
+          <rect
+            x={margin.left}
+            y={y}
+            width={barW}
+            height={barHeight}
+            fill={isHighlight ? colors.barHighlight : colors.bar}
+            rx="3"
+          />
+
+          <text
+            x={margin.left + barW + 8}
+            y={y + barHeight / 2 + 4}
+            text-anchor="start"
+            fill={colors.value}
+            font-family="'DM Sans', system-ui, sans-serif"
+            font-size="13"
+            font-weight="600"
+          >
+            {formatValue(d.value)}{valueLabel ? ` ${valueLabel}` : ''}
+          </text>
+        </g>
+      );
+    })}
+
+    {source && (
+      <text
+        x={margin.left}
+        y={height - 22}
+        fill={colors.source}
+        font-family="'DM Sans', system-ui, sans-serif"
+        font-size="11"
+      >
+        Source: {source}
+      </text>
+    )}
+
+    <text
+      x={width - 24}
+      y={height - 22}
+      text-anchor="end"
+      fill={colors.brand}
+      font-family="'Cormorant Garamond', Georgia, serif"
+      font-size="13"
+      font-weight="600"
+      letter-spacing="0.04em"
+    >
+      AZLAWNOW.COM
+    </text>
+  </svg>
+
+  <div class="azln-chart-caption">
+    {sourceUrl && (
+      <a class="azln-chart-source-link" href={sourceUrl} target="_blank" rel="noopener noreferrer">
+        View source data &rarr;
+      </a>
+    )}
+    {(
+      <button
+        class="azln-chart-embed-btn"
+        type="button"
+        data-embed-code={embedCode}
+        aria-label="Copy embed code for this chart"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>
+        <span>Copy embed code</span>
+      </button>
+    )}
+  </div>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.azln-chart-embed-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const code = btn.dataset.embedCode || '';
+      const label = btn.querySelector('span');
+      const original = label?.textContent || 'Copy embed code';
+      try {
+        await navigator.clipboard.writeText(code);
+        if (label) label.textContent = 'Copied';
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = code;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); if (label) label.textContent = 'Copied'; } catch {}
+        document.body.removeChild(ta);
+      }
+      setTimeout(() => { if (label) label.textContent = original; }, 2000);
+    });
+  });
+</script>
+
+<style>
+  .azln-chart-fig {
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .azln-chart-svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg, 8px);
+    border: 1px solid var(--neutral-200, #E8DDD0);
+    box-shadow: var(--shadow-sm, 0 2px 4px rgba(26, 26, 26, 0.06));
+  }
+
+  .azln-chart-caption {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .azln-chart-source-link {
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 500;
+    color: var(--color-gold, #D4943A);
+    text-decoration: none;
+  }
+
+  .azln-chart-source-link:hover { text-decoration: underline; }
+
+  .azln-chart-embed-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    background: var(--color-white, #FFFFFF);
+    color: var(--color-gold-text, #8B4513);
+    border: 1px solid var(--color-gold, #D4943A);
+    border-radius: var(--radius-md, 6px);
+    font-family: var(--font-body, 'DM Sans', sans-serif);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .azln-chart-embed-btn:hover {
+    background: var(--color-gold, #D4943A);
+    color: var(--color-black, #1A1A1A);
+  }
+
+  @media (max-width: 600px) {
+    .azln-chart-caption { justify-content: flex-start; }
+  }
+</style>
