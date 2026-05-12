@@ -133,11 +133,37 @@ const insightSchema = z.object({
   relatedPracticeAreas: z.array(z.string()).default([]),
   relatedInsights: z.array(z.string()).default([]),
   relatedGuides: z.array(z.string()).default([]),
+  relatedInvestigations: z.array(z.string()).default([]),
   locations: z.array(z.string()).default([]),
   publishedAt: z.string(),
   updatedAt: z.string().optional(),
   featured: z.boolean().default(false),
   draft: z.boolean().default(false),
+
+  // Methodology snapshot (renders in InvestigationOutreachBlock)
+  methodology: z.object({
+    dataSources: z.array(z.string()).optional(),
+    processing: z.string().optional(),
+    limitations: z.array(z.string()).optional(),
+    peerReview: z.string().optional(),
+    lastUpdated: z.string().optional(),
+  }).optional(),
+
+  // Embeddable charts registry (renders in InvestigationOutreachBlock embed section)
+  embeddableCharts: z.array(z.object({
+    id: z.string(),
+    title: z.string(),
+    imageUrl: z.string().optional(),
+    width: z.number().optional(),
+    height: z.number().optional(),
+  })).default([]),
+
+  // Dataset access
+  datasetUrl: z.string().optional(),
+  hasDataset: z.boolean().default(false),
+
+  // Status (ongoing vs published)
+  status: z.enum(['ongoing', 'published']).default('published'),
 });
 
 const investigations = defineCollection({

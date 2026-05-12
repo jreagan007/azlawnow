@@ -2,6 +2,7 @@
 title: "Arizona Nursing Homes With the Most Federal Violations"
 description: "CMS data shows which Arizona nursing homes have the most federal violations. Staffing shortages, abuse citations, and penalty data for West Valley facilities."
 author: "brendan-franks"
+reviewedBy: "brendan-franks"
 category: "negligence-report"
 tags: ["elder-abuse", "nursing-home-abuse", "cms-data", "violations"]
 publishedAt: "2026-04-10"
@@ -10,6 +11,25 @@ image: "/images/heroes/dj-nursing-citations.webp"
 ogImage: "/og/arizona-nursing-home-violations.png"
 readingTime: "11 min"
 schemaType: "NewsArticle"
+status: "published"
+hasDataset: false
+# TODO: render chart asset for this investigation
+embeddableCharts: []
+methodology:
+  dataSources:
+    - "CMS Care Compare nursing home directory, accessed April 9, 2026"
+    - "CMS Health Deficiency Citations dataset (data.cms.gov r5ix-sfxw)"
+    - "CMS Nursing Home Penalties dataset (data.cms.gov g6vv-u9sr)"
+    - "CMS Payroll-Based Journal daily nurse staffing, 2026 release"
+    - "AZ CareCheck licensed facility search, ADHS, April 9, 2026"
+    - "Arizona DES Adult Protective Services Year in Review, 2024"
+  processing: "Sample frame: every Medicare-certified nursing home in Maricopa County listed on CMS Care Compare as of April 9, 2026 (N ≈ 130 facilities). Time window: rolling 36-month deficiency window per CMS standard reporting, with penalty totals current through Q1 2026. Excluded: assisted living facilities (regulated by ADHS only, no CMS oversight), and facilities serving residents under age 18. Primary source agency: CMS Quality, Safety & Oversight, cross-referenced against ADHS licensing actions on AZ CareCheck."
+  limitations:
+    - "Care Compare excludes assisted living and memory care facilities not certified for Medicare or Medicaid"
+    - "Self-reported PBJ staffing data is not independently audited and may overstate front-line hours"
+    - "ADES Adult Protective Services case totals exclude reports closed at intake or screened out before investigation"
+  peerReview: "Reviewed against CMS Care Compare, ADHS AZ CareCheck, and ADES APS primary sources. Internal review by Brendan Franks."
+  lastUpdated: "2026-05-11"
 keyTakeaway: "CMS health deficiency and penalty data identifies Arizona nursing homes with repeated federal violations. The pattern: staffing failures plus enforcement actions. The data is public. Most families never see it before placing a loved one."
 dataSources:
   - "Centers for Medicare & Medicaid Services. (2026). Care Compare: Find a Nursing Home. Retrieved April 9, 2026, from https://www.medicare.gov/care-compare/?providerType=NursingHome"

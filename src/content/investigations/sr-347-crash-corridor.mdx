@@ -2,6 +2,7 @@
 title: "SR-347: 967 Crashes on Maricopa's Deadliest Road"
 description: "SR-347 between Maricopa and I-10 is a two-lane highway carrying commuter traffic designed for rural volumes. Three years of crash data tell the story."
 author: "brendan-franks"
+reviewedBy: "brendan-franks"
 category: "crash-data"
 ogImage: "/og/sr-347-crash-corridor.png"
 image: "/images/heroes/dj-sr347.webp"
@@ -9,10 +10,30 @@ keyTakeaway: "SR-347 between Maricopa City and I-10 carries commuter volumes on 
 schemaType: "NewsArticle"
 tags: ["car-accidents", "sr-347", "maricopa", "adot-data", "dangerous-roads"]
 publishedAt: "2026-04-10"
+updatedAt: "2026-05-11"
 featured: false
 relatedPracticeAreas: ["car-accidents", "truck-accidents"]
 relatedInvestigations: ["i-10-crash-data-buckeye-goodyear"]
 locations: ["maricopa"]
+status: "published"
+hasDataset: false
+# TODO: render chart asset for this investigation
+embeddableCharts: []
+methodology:
+  dataSources:
+    - "ADOT 2024 Arizona Motor Vehicle Crash Facts (statewide totals)"
+    - "ADOT Crash Data Hub corridor-level pulls, April 2026"
+    - "ADOT SR-347 Corridor Study, 2023 (design context and traffic projections)"
+    - "FMCSA Analysis and Information Online carrier safety data"
+    - "U.S. Census Bureau ACS 5-Year Estimates Table S0801 (commuting flows)"
+    - "Pinal County 5-Year Plan corridor notice, 2025"
+  processing: "N = approximately 381 reportable crashes on SR-347 between Maricopa City and the I-10 interchange across calendar years 2022-2024 (3-year window), drawn from ADOT corridor-level Crash Data Hub pulls. Average works out to 127 per year. Time window: 2022-2024. Primary source agency: ADOT, with truck-mix percentages cross-checked against FMCSA carrier data. Excluded: incidents on connecting local streets outside the milepost limits and incidents recorded only by Pinal County Sheriff that did not flow into the ADOT crash database."
+  limitations:
+    - "ADOT corridor pulls may misclassify crashes that occur within the I-10 interchange merge area"
+    - "Truck-mix percentages depend on FMCSA self-reporting that lags real-world fleet changes"
+    - "Three-year averaging smooths year-over-year volatility tied to construction zone shifts on the corridor"
+  peerReview: "Reviewed against ADOT, FMCSA, Census Bureau ACS, and Pinal County primary sources. Internal review by Brendan Franks."
+  lastUpdated: "2026-05-11"
 faqs:
   - question: "How many crashes happen on SR-347 each year?"
     answer: "ADOT crash data shows an average of 127 reportable crashes per year on SR-347 between Maricopa City and I-10 over the past three years. That's roughly one every three days on a 20-mile stretch of two-lane highway."
