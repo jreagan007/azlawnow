@@ -1,0 +1,30 @@
+{
+  "queued_at": "2026-05-12T01:35:01Z",
+  "campaign": "az-q2-2026-summer-data-push",
+  "send_window": {
+    "open": "2026-05-13",
+    "close": "2026-06-13",
+    "rationale": "30-day Arizona summer-data window. Pedestrian-deaths-road-design and Korman-heat assets peg to the start of Phoenix heat season (May 15 first 100-degree day forecast). SR-347 crash corridor pegs to Memorial Day travel coverage. Nursing-home and hit-and-run assets are evergreen Arizona accountability anchors."
+  },
+  "total_rows": 300,
+  "by_asset_segment": {
+    "arizona-pedestrian-deaths-road-design/az-news": 40,
+    "arizona-pedestrian-deaths-road-design/public-health": 10,
+    "arizona-pedestrian-deaths-road-design/family-blog": 6,
+    "arizona-pedestrian-deaths-road-design/civic-advocacy": 4,
+    "aps-korman-heat-disconnect-7m-settlement/elder-care": 12,
+    "aps-korman-heat-disconnect-7m-settlement/az-news": 34,
+    "aps-korman-heat-disconnect-7m-settlement/public-health": 10,
+    "aps-korman-heat-disconnect-7m-settlement/civic-advocacy": 4,
+    "arizona-nursing-home-violations/elder-care": 12,
+    "arizona-nursing-home-violations/az-news": 33,
+    "arizona-nursing-home-violations/public-health": 10,
+    "arizona-nursing-home-violations/disability-advocacy": 5,
+    "hit-and-run-maricopa-county-data/labor-safety": 14,
+    "hit-and-run-maricopa-county-data/az-news": 42,
+    "hit-and-run-maricopa-county-data/civic-advocacy": 4,
+    "sr-347-crash-corridor/az-news": 54,
+    "sr-347-crash-corridor/civic-advocacy": 6
+  },
+  "next_step": "Pass the master CSV through scripts/outreach/generate-pitches.py once VOYAGE_API_KEY is provisioned. Until then, ready_to_send remains 'no'."
+}

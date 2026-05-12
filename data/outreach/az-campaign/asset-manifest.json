@@ -1,0 +1,68 @@
+{
+  "_doc": "AZ Law Now Q2 2026 outreach manifest. Five Tier S investigations queued for LedeTime per-prospect personalization. Used by queue-az-pitches.py and the warm-followup heartbeat.",
+  "campaign": "az-q2-2026-summer-data-push",
+  "send_window": {
+    "open": "2026-05-13",
+    "close": "2026-06-13",
+    "rationale": "30-day Arizona summer-data window. Pedestrian-deaths-road-design and Korman-heat assets peg to the start of Phoenix heat season (May 15 first 100-degree day forecast). SR-347 crash corridor pegs to Memorial Day travel coverage. Nursing-home and hit-and-run assets are evergreen Arizona accountability anchors."
+  },
+  "assets": [
+    {
+      "slug": "arizona-pedestrian-deaths-road-design",
+      "url": "https://azlawnow.com/investigations/arizona-pedestrian-deaths-road-design/",
+      "bomb_stat": "Arizona's pedestrian fatality rate is 3.6 per 100,000 residents, nearly twice the national average; 76 percent of pedestrian deaths happen in darkness on wide arterials designed for vehicle speed, not pedestrian safety",
+      "stat_one_line": "263 pedestrians killed in Arizona in 2024, second-highest rate in the country",
+      "vertical": "az-pedestrian-safety",
+      "primary_segment": ["az-news", "civic-advocacy", "public-health", "family-blog"],
+      "chart_id": "arizona-pedestrian-deaths"
+    },
+    {
+      "slug": "aps-korman-heat-disconnect-7m-settlement",
+      "url": "https://azlawnow.com/investigations/aps-korman-heat-disconnect-7m-settlement/",
+      "bomb_stat": "Arizona AG secured a $7 million APS settlement over the May 2024 heat-related death of Katherine Korman, age 82, in Sun City West after APS ended its voluntary 95-degree heat hold three days before disconnecting her power",
+      "stat_one_line": "Settlement reinstates the 95-degree heat hold as a binding APS obligation, adds a 32-degree cold hold, mandates text alerts",
+      "vertical": "az-utility-accountability",
+      "primary_segment": ["az-news", "elder-care", "public-health", "civic-advocacy"],
+      "chart_id": "aps-heat-disconnects"
+    },
+    {
+      "slug": "arizona-nursing-home-violations",
+      "url": "https://azlawnow.com/investigations/arizona-nursing-home-violations/",
+      "bomb_stat": "CMS health deficiency and penalty data identifies Arizona nursing homes with repeated federal violations; the pattern is staffing failures plus enforcement actions and the data is public, but most families never see it before placing a loved one",
+      "stat_one_line": "Searchable Arizona nursing home enforcement data with named facilities and federal violation history",
+      "vertical": "az-elder-care",
+      "primary_segment": ["elder-care", "az-news", "disability-advocacy", "public-health"],
+      "chart_id": "arizona-nursing-home-violations"
+    },
+    {
+      "slug": "hit-and-run-maricopa-county-data",
+      "url": "https://azlawnow.com/investigations/hit-and-run-maricopa-county-data/",
+      "bomb_stat": "Arizona recorded 16,136 hit-and-run crashes in 2024 killing 86 people; one in eight crashes involves a driver who flees and roughly 90 percent of hit-and-run cases go unsolved",
+      "stat_one_line": "40 percent of identified hit-and-run drivers in fatal Arizona crashes had no valid license",
+      "vertical": "az-crash-corridors",
+      "primary_segment": ["az-news", "civic-advocacy", "labor-safety"],
+      "chart_id": "hit-and-run-maricopa"
+    },
+    {
+      "slug": "sr-347-crash-corridor",
+      "url": "https://azlawnow.com/investigations/sr-347-crash-corridor/",
+      "bomb_stat": "SR-347 between Maricopa City and I-10 carries commuter volumes on a two-lane highway with fatality rates well above the county average for similar corridors",
+      "stat_one_line": "Maricopa to I-10 corridor crash data with intersection-level breakdown",
+      "vertical": "az-crash-corridors",
+      "primary_segment": ["az-news", "civic-advocacy"],
+      "chart_id": "sr-347-corridor"
+    }
+  ],
+  "sender": {
+    "name": "Brendan Franks",
+    "title": "On Record, AZ Law Now",
+    "email": "brendan@azlawnow.com",
+    "signature_blurb": "Press inquiries answered within one business day. Methodology, charts, and dataset access at the investigation URL."
+  },
+  "send_cadence": {
+    "day_0_template": "journalist-study-finds-letime.j2",
+    "day_5_followup": "journalist-followup-1.j2",
+    "day_12_followup": "journalist-followup-2.j2",
+    "max_touches": 3
+  }
+}
