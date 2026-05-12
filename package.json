@@ -19,7 +19,9 @@
     "gen:card": "npx tsx scripts/regen-single-card.ts",
     "gen:og": "npx tsx scripts/generate-og-image.ts",
     "gen:og:all": "npx tsx scripts/generate-all-og-images.ts",
-    "check:og": "npx tsx scripts/og-guardrail.ts"
+    "check:og": "npx tsx scripts/og-guardrail.ts",
+    "outreach:enrich": "python3 scripts/outreach/enrich-journalists.py",
+    "outreach:generate-pitches": "python3 scripts/outreach/generate-pitches.py"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
