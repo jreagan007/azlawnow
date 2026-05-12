@@ -170,6 +170,20 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   image={ogImage || image}
   schema={schemas}
 >
+  <!-- ============================================
+       READING PROGRESS BAR — pinned to viewport top
+       ============================================ -->
+  <div
+    class="article-progress"
+    role="progressbar"
+    aria-label="Reading progress"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+  >
+    <div class="article-progress__fill" id="article-progress-fill"></div>
+  </div>
+
   <article class="article-layout">
     <!-- ============================================
          ARTICLE HEADER
@@ -1133,4 +1147,68 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
       font-size: var(--text-3xl);
     }
   }
+
+  /* ============================================
+     READING PROGRESS BAR
+     Sticky at viewport top, 3px Alert Vermillion fill.
+     Pinned via fixed positioning so it survives nested
+     stacking contexts in BaseLayout.
+     ============================================ */
+  .article-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  .article-progress__fill {
+    height: 100%;
+    width: 0%;
+    background: #C23B22;
+    transition: width 80ms linear;
+    will-change: width;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-progress__fill {
+      transition: none;
+    }
+  }
 </style>
+
+<script>
+  /**
+   * Reading progress bar — fills as the reader scrolls through the article.
+   * Uses requestAnimationFrame throttling so the scroll handler stays cheap.
+   */
+  (() => {
+    const fill = document.getElementById('article-progress-fill');
+    const bar = fill?.parentElement;
+    if (!fill || !bar) return;
+
+    let ticking = false;
+    const update = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+      const pct = Math.max(0, Math.min(1, ratio)) * 100;
+      fill.style.width = pct.toFixed(2) + '%';
+      bar.setAttribute('aria-valuenow', String(Math.round(pct)));
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  })();
+</script>
