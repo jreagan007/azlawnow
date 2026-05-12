@@ -6,6 +6,7 @@
 
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import InvestigationOutreachBlock from '../../components/investigations/InvestigationOutreachBlock.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('investigations');
@@ -41,4 +42,14 @@ const { Content, headings } = await render(entry);
   headings={headings}
 >
   <Content />
+  <InvestigationOutreachBlock
+    slug={entry.id}
+    title={entry.data.title}
+    publishedAt={entry.data.publishedAt}
+    authorName="Brendan Franks"
+    datasetUrl={(entry.data as any).datasetUrl}
+    hasDataset={(entry.data as any).hasDataset}
+    methodology={(entry.data as any).methodology}
+    embeddableCharts={(entry.data as any).embeddableCharts}
+  />
 </ArticleLayout>
