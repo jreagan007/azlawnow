@@ -38,9 +38,9 @@ The follow-on for your byline:
 - A statewide comparison of two-quadrant retrofits at twin adjacent AZ crossings, when the additional records-request set returns
 - The composite long-scroll graphic when it lands (free to embed with credit; the dataset travels with the link)
 
-A note on full transparency: AZ Law Now signed Sonja Celius's case on May 12. I am the Editor-in-Chief, not counsel; the legal side runs through Brandon Millam, J.D., Legal Editor. The records work is dual-purpose and the editorial is independent. I am writing as the data desk, not as plaintiff press. Link to whatever page is most useful for your readers.
+A note on full transparency. Brandon Millam, J.D. and the AZ Law Now legal team accepted Sonja Celius's case on May 12. The Editor-in-Chief desk operates separately from the legal team and the editorial reporting is built from public records. We published a short editor's note at azlawnow.com about the representation and the editorial-vs-litigation separation. If a follow-on KPHO segment would benefit from naming Sonja's counsel and how they plan to approach the case, Brandon is available for an on-record interview Tuesday through Thursday at brandon@azlawnow.com. He speaks to the federal framework, the public-records framework, and the firm's approach to grade-crossing safety, not to the merits of the underlying case.
 
-Worth a fifteen-minute walkthrough?
+Link to whatever page is most useful for your readers. Worth a fifteen-minute walkthrough on the data, an interview with Brandon, or both?
 
 Brendan Franks
 Editor-in-Chief, AZ Law Now

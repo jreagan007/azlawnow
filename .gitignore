@@ -30,3 +30,6 @@ docs/internal/
 __pycache__/
 *.pyc
 *.pyo
+
+# AZ Law Now operations workspace (mirrors meso ops pattern, local-only)
+az-law-operations/

@@ -38,9 +38,9 @@ For a People follow-on, the angle the data supports:
 - A pedestrian was struck 131 days after the third filing.
 - The City of Phoenix project page describes the scope; the federal record documents what was not in that scope.
 
-A note for full transparency: AZ Law Now signed Sonja Celius's case on May 12. I am the Editor-in-Chief, not counsel. The records work is dual-purpose and the editorial is independent. I am writing as the data desk, not as plaintiff press.
+A note for full transparency. Brandon Millam, J.D. and the AZ Law Now legal team accepted Sonja Celius's case on May 12. The Editor-in-Chief desk operates separately from the legal team and the editorial reporting is built from public records. We published a short editor's note announcing the representation and the editorial-vs-litigation wall. If a People follow-on would benefit from naming Sonja's counsel and how Brandon's team plans to approach the case, Brandon is available for an on-record interview Tuesday through Thursday at brandon@azlawnow.com. He speaks to the federal framework, the public-records framework, and the firm's approach to grade-crossing safety. He does not speak to the merits of the underlying case.
 
-The federal records cited above are public. Free to use with credit. Happy to send the dataset, the BNSF narrative PDFs, or a fifteen-minute walkthrough if useful for a People follow-on.
+The federal records cited above are public. Free to use with credit. Happy to send the dataset, the BNSF narrative PDFs, a fifteen-minute walkthrough on the data, or an interview with Brandon if useful for a People follow-on.
 
 Brendan Franks
 Editor-in-Chief, AZ Law Now

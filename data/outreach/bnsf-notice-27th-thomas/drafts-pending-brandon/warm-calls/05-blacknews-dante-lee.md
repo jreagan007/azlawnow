@@ -35,7 +35,7 @@ For a BlackNews follow-on, the data supports:
 - The AZ pedestrian-fatality equity numbers
 - The structural-defect framing in BNSF's own words
 
-A note for full transparency: AZ Law Now signed Sonja Celius's case on May 12. I am the Editor-in-Chief, not counsel. The records gather is dual-purpose and the editorial is independent. The federal records are public. Free to use with credit. Cite whatever serves your readership.
+A note for full transparency. Brandon Millam, J.D. and the AZ Law Now legal team accepted Sonja Celius's case on May 12. We published a short editor's note announcing the representation and the editorial-vs-litigation wall. If a BlackNews follow-on would benefit from naming Sonja's counsel and how Brandon's team plans to approach the case, Brandon is available for an on-record interview Tuesday through Thursday at brandon@azlawnow.com. He speaks to the federal framework, the equity questions in AZ pedestrian-rail data, and the firm's approach. He does not speak to the merits of the underlying case. The federal records are public. Free to use with credit. Cite whatever serves your readership.
 
 Brendan Franks
 Editor-in-Chief, AZ Law Now

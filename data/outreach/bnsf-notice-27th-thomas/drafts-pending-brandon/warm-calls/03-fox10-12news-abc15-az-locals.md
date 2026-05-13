@@ -50,9 +50,9 @@ For a follow-on segment, here is what we have available:
 - The records-request packet that AZ Law Now filed to Phoenix PD, ADOT Rail Section, City of Phoenix Streets Transportation, AZ AG Consumer Protection, and FRA Office of Railroad Safety (returns expected in ten to thirty business days)
 - A fifteen-minute walkthrough on the data with our editorial team
 
-A note for full transparency: AZ Law Now signed Sonja Celius's case on May 12. I am the Editor-in-Chief and write as the data desk. The legal work runs through Brandon Millam, J.D., Legal Editor. The records gather is dual-purpose and the editorial is independent.
+A note for full transparency. Brandon Millam, J.D. and the AZ Law Now legal team accepted Sonja Celius's case on May 12. We published a short editor's note announcing the representation and the editorial-vs-litigation wall. If a station follow-on would benefit from naming Sonja's counsel and how Brandon's team plans to approach the case, Brandon is available for an on-record interview Tuesday through Thursday at brandon@azlawnow.com. He speaks to the federal framework and the firm's approach to grade-crossing safety. He does not speak to the merits of the underlying case.
 
-The federal records are public. Free to use with credit. Link to whatever serves your viewers.
+The federal records are public. Free to use with credit. Link to whatever serves your viewers. Brendan walks the data; Brandon walks the framework.
 
 Brendan Franks
 Editor-in-Chief, AZ Law Now
