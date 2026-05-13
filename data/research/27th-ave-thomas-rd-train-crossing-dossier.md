@@ -130,9 +130,9 @@ Tag key for verification: HIGH = primary-source confirmed and reproducible, MEDI
 **The strongest chart on the cream + ink + vermillion editorial palette is a 2-bar before-vs-after comparison.**
 
 - **Bar 1 (ink):** "Pre-gate era reportable accidents at 27th Ave + Thomas Rd, 1985-May 2024" = ~70 reportable Form 6180.57 incidents combined across both crossings (32 + 38 from FRA per-crossing reports).
-- **Bar 2 (vermillion):** "Post-gate era reportable accidents at 27th Ave + Thomas Rd, June 2024-April 2026" = at least 5 reportable incidents (June 17 2024, December 15 2025 at Thomas Rd; June 6 2024 at 27th Ave; plus Sonja Celius April 25, 2026, plus August 7 2025).
+- **Bar 2 (vermillion):** "Post-gate era reportable accidents at Thomas Rd, June 2024-April 2026" = 3 reportable incidents, all at Thomas Rd (025617C): June 15, 2025; August 7, 2025; December 15, 2025. 27th Ave (025430G) has zero post-gate reportable incidents in the FRA snapshot before Sonja Celius. Sonja's April 25, 2026 strike at 27th Ave is not yet in the FRA snapshot (Form 6180.57 filing latency is approximately 30 days).
 - Footer caption: "FRA Form 6180.57 grade-crossing accident reports filed by BNSF for DOT crossings 025430G and 025617C. Active warning gates installed June 2024."
-- **Why this chart works:** it tells the structural story Mikayla flagged but didn't pull. The crossings sat passive for almost 50 years of recorded FRA history. Gates went in 22 months before Sonja was struck. The post-install bar still has incidents because gates without channelizing medians plus two adjacent crossings 50 feet apart create a "second train" / "wrong-way around the gate" failure mode (visible in the December 15, 2025 Thomas Rd narrative).
+- **Why this chart works:** the post-install bar tells the corporate-notice story. Three Form 6180.57 filings, all at Thomas Road, all post-gate. Two of them carry the same BNSF narrative phrase ("AUTO PRECEDED GATES") that identifies a recurring gate-timing failure mode. The third (December 15, 2025) explicitly names the directional-gap defect of the two-quadrant gate configuration in BNSF's own words: "THE AUTO CAME UP AGAINST THE DIRECTION OF TRAFFIC FLOW NOT HAVING GATES." Sonja Celius was struck at the twin crossing 50 feet south 131 days later.
 - **Alternative 3-bar chart:** AADT contrast across the corridor, vermillion-anchored.
   - Bar 1: 27th Ave AADT 23,301 (2022)
   - Bar 2: Thomas Rd AADT 47,797 (2022)
@@ -180,3 +180,53 @@ Tag key for verification: HIGH = primary-source confirmed and reproducible, MEDI
   - https://safetydata.fra.dot.gov/OfficeofSafety/PublicSite/Crossing/Crossing.aspx?phasetype=C&rpttype=A&txtcrossingnum=025430G
   - https://safetydata.fra.dot.gov/OfficeofSafety/PublicSite/Crossing/Crossing.aspx?phasetype=C&rpttype=A&txtcrossingnum=025617C
 - For the FRA's interactive Office of Safety query forms (https://safetydata.fra.dot.gov/officeofsafety/publicsite/crossing/crossing.aspx, https://safetydata.fra.dot.gov/officeofsafety/publicsite/crossing/Xingqryloc.aspx), users must specify state (AZ) and either county (Maricopa) or city (Phoenix) plus a street pattern; the tool then walks down to a single crossing and offers an Inventory or Accident report. The NTAD ArcGIS path is faster and gives identical underlying data.
+
+---
+
+## Corporate-Notice Update (2026-05-13, Brendan-question response)
+
+**Trigger.** Brendan asked: "Does the FRA data for DOT 025430G show any near-misses or incidents recorded after the June 2024 gates went in, but before Sonja?"
+
+**Method.** Live re-pull of both per-crossing FRA accident PDFs via curl. Saved to `data/research/fra-pulls/fra-025430G.{pdf,txt}` and `data/research/fra-pulls/fra-025617C.{pdf,txt}`. Each Form 6180.57 record extracted by inspection of the warning-code field (item 33). Code 01 = Gates. Code 01 absent = pre-gate. Code 01 present = post-gate operational.
+
+**Corrections to earlier sections of this dossier.**
+
+1. "June 6 2024 at 27th Ave" was a transcription error. The actual FRA record is **06/03/2024 at 4:31 PM** at 27th Ave (025430G), 103 degrees F. The narrative reads: "R-SWE0035-03I ON SINGLE MAIN TRACK STRUCK A SEMI TRAILER AT A HGX NOT EQUIPPED WITH GATES. DRIVER DROVE OFF." This is pre-gate.
+2. The "5 reportable incidents post-gate" claim was an overcount. The actual count is **3 reportable post-gate incidents, all at Thomas Road (025617C), zero at 27th Avenue (025430G) before Sonja**.
+3. The 06/17/2024 Thomas Rd incident is pre-gate per BNSF's own narrative ("HGX NOT EQUIPPED WITH GATES"). Gate commissioning occurred between 06/17/2024 and 06/15/2025 (warning-code field 01 absent on 6/17/2024, present on 6/15/2025).
+4. The missing record from prior dossier sections: **06/15/2025 at Thomas Rd**, "YPHX203115 PULLING ON SINGLE MAIN TRACK STRUCK AN AUTO THAT PRECEDED GATES AT A HGX. DRIVER TOOK OFF. NO DERAILMENT. NO HAZMAT RELEASE. NO INJURIES. USER'S AGE UNKNOWN." 110 degrees F, 4:55 PM, daylight.
+
+**The three post-gate Thomas Road records.** Pulled verbatim from FRA Form 6180.57 field 54 (Narrative Description).
+
+| Date | Time | Narrative (verbatim) | Casualties / damage |
+|---|---|---|---|
+| 06/15/2025 | 4:55 PM, 110 F, Day | "YPHX203115 PULLING ON SINGLE MAIN TRACK STRUCK AN AUTO THAT PRECEDED GATES AT A HGX. DRIVER TOOK OFF. NO DERAILMENT. NO HAZMAT RELEASE. NO INJURIES. USER'S AGE UNKNOWN" | 0 killed, 0 injured, $1K damage, driver fled |
+| 08/07/2025 | 3:40 PM, 115 F, Day | "YPHX203107 PULLING ON SINGLE MAIN TRACK STRUCK AN OCCUPIED AUTO AT HGX EQUIPPED WITH GATES. AUTO PRECEDED GATES. NO DERAILMENT. NO HAZMAT RELEASE. NO INJURIES." | Female age 25, single occupant, 0 killed, 0 injured, $1K damage |
+| 12/15/2025 | 2:45 AM, 55 F, Dark | "QPHXCHI114 LIGHT POWER ON SINGLE MAIN TRACK STRUCK AN OCCUPIED AUTO AT A HGX EQUIPPED WITH GATES. THE AUTO CAME UP AGAINST THE DIRECTION OF TRAFFIC FLOW NOT HAVING GATES. NO DERAILMENT. NO HAZMAT RELEASE. 1 PASSENGER INJURY." | Male driver age 28, 3 vehicle occupants, 0 killed, 1 injured, $1K damage |
+
+**The corporate-notice finding.**
+
+Two distinct structural failure modes in BNSF's own filings, both at the post-gate Thomas Road crossing, both within 14 months of the June 2024 retrofit completion:
+
+1. **Gate-timing race ("AUTO PRECEDED GATES")**, documented twice in approximately two months (06/15/2025 and 08/07/2025). BNSF identified in writing that vehicles routinely enter the crossing before the two-quadrant gate fully descends. This is the failure mode that channelizing medians and four-quadrant gates are designed to prevent under 49 CFR 222 and MUTCD Part 8.
+
+2. **Directional-gap defect ("THE AUTO CAME UP AGAINST THE DIRECTION OF TRAFFIC FLOW NOT HAVING GATES")**, documented on 12/15/2025 with one passenger injured. BNSF identified in writing that the two-quadrant gate configuration leaves a direction of approach without gate coverage. This is the failure mode that four-quadrant gates are specifically designed to address. The crossing inventory (FRA Form 6180.71, last updated 7/18/2025) confirms zero channelization devices and zero four-quadrant gates.
+
+**The chronology that follows.** 131 days after BNSF documented the directional-gap defect in writing on 12/15/2025, Sonja Celius was struck as a pedestrian at the twin crossing (27th Avenue, DOT 025430G) 50 feet south on 04/25/2026. Twenty-seventh Avenue carries the same two-quadrant gate configuration as Thomas Road.
+
+**What FRA Form 6180.57 does NOT capture.** Form 6180.57 only fires when there is contact resulting in death, injury, or reportable property damage. A train-pedestrian close call with no contact does not appear in this database. True "near-misses" require:
+
+- BNSF C3RS (Confidential Close Call Reporting System): voluntary, FRA-administered, not publicly queryable.
+- Phoenix PD calls-for-service to the corridor: ARS 39-121 records request to Phoenix Police Department.
+- BNSF dispatcher logs and engineer event recordings: FOIA-resistant from BNSF; only obtainable through litigation discovery.
+- ADOT Rail Section incident memos: ARS 39-121 request to ADOT.
+- City of Phoenix Streets Transportation incident notes: ARS 39-121 request to the city.
+
+The records-request packet at `data/outreach/records-requests/bnsf-notice-27th-thomas-records-packet.md` covers all five.
+
+**Recommended Phase 2 Writer action.** Rewrite the existing investigation MDX with the corporate-notice angle as the lede. Restructure FAQs to surface the three post-gate Thomas Rd narratives. Update the chart spec to the two-bar before-vs-after with the corrected post-gate count (three, not five). Add H3 anchors for each of the three post-gate incidents to enable journalists to deep-link.
+
+**Doctrine note.** The two-phase Researcher/Writer pattern caught the dossier date error (06/03 vs 06/06) and the missing 06/15/2025 incident. The Writer reads only the fact-bundle; the fact-bundle is built from the live FRA pull, not from prior dossier prose. If the Writer had drafted off the dossier directly, the published MDX would have carried the wrong date and missed an entire post-gate failure event. See `feedback_fra-gate-timing-via-warning-code-field.md` (TODO write) for the verification method.
+
+---
+
