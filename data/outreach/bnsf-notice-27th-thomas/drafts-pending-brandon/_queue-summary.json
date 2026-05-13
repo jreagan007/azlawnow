@@ -1,0 +1,18 @@
+{
+  "queued_at": "2026-05-13T18:43:07Z",
+  "campaign": "bnsf-notice-27th-thomas-2026-05",
+  "send_window": {
+    "open": "PENDING_BRANDON_CLEARANCE",
+    "close": "PENDING_BRANDON_CLEARANCE",
+    "rationale": "Cannot open send window until Brandon Millam J.D. clears: ER 7.1-7.5 attorney advertising disclaimer, ER 3.6 pre-trial publicity framing, ER 4.2 represented-party contact, conflict-of-interest analysis and Celius family informed consent."
+  },
+  "total_rows": 84,
+  "by_asset_segment": {
+    "27th-ave-thomas-rd-bnsf-crossing/pedestrian-safety": 1,
+    "27th-ave-thomas-rd-bnsf-crossing/general-az-news": 60,
+    "27th-ave-thomas-rd-bnsf-crossing/data-investigations": 20,
+    "27th-ave-thomas-rd-bnsf-crossing/courts-legal": 2,
+    "27th-ave-thomas-rd-bnsf-crossing/transit-infrastructure": 1
+  },
+  "next_step": "Pass the master CSV through scripts/outreach/generate-pitches.py once VOYAGE_API_KEY is provisioned. Until then, ready_to_send remains 'no'."
+}

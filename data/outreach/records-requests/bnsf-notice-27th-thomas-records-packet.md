@@ -2,7 +2,7 @@
 
 **Companion to:** `docs/strategy/bnsf-notice-27th-thomas-build-log.md` + `docs/strategy/bnsf-notice-27th-thomas-investigation-refocus.md`
 **Date:** 2026-05-13
-**Filed by:** AZ Law Now editorial team (Brendan Franks). Public records requests, not litigation discovery.
+**Filed by:** Brandon Millam, J.D., Legal Editor, AZ Law Now. Counsel of record for Sonja Celius. The records gather is dual-purpose: editorial public-records journalism and pre-suit litigation-investigation work product. Brandon signs the cover letters. Replies route to `brandon@azlawnow.com`.
 **Purpose:** capture the "near-miss" and corporate-notice records that FRA Form 6180.57 does NOT cover. These four requests, filed in parallel, should return within 10 to 30 business days under each jurisdiction's response statute.
 
 ---
@@ -36,9 +36,9 @@ I am requesting all Phoenix Police Department calls for service, dispatch record
 
 **Format:** electronic, CSV preferred for CAD; PDF acceptable for incident reports. Redact PII per ARS 39-121.01(D) (victim addresses, witness names where the records relate to ongoing investigations).
 
-**Fee waiver request:** under ARS 39-121.01(D)(2), requesting fee waiver as a member of the news media. AZ Law Now is an independent journalism organization publishing public-interest reporting under the editorial direction of Brendan Franks (Editor-in-Chief) and Brandon Millam, J.D. (Legal Editor).
+**Fee waiver request:** under ARS 39-121.01(D)(2), requesting fee waiver as a member of the news media. AZ Law Now publishes independent journalism on Arizona public safety and civil accountability. Brendan Franks is Editor-in-Chief. Brandon Millam, J.D. is Legal Editor and counsel of record for Sonja Celius in the underlying matter. This records request is filed for both editorial and pre-suit factual development purposes.
 
-**Reply to:** brendan@azlawnow.com
+**Reply to:** brandon@azlawnow.com
 
 ---
 
@@ -66,7 +66,7 @@ All records, correspondence, memoranda, technical studies, safety assessments, p
 
 **Fee waiver request:** as a member of the news media per ARS 39-121.01(D)(2).
 
-**Reply to:** brendan@azlawnow.com
+**Reply to:** brandon@azlawnow.com
 
 ---
 
@@ -95,7 +95,7 @@ All records, correspondence, memoranda, project files, design memos, engineering
 
 **Fee waiver request:** as a member of the news media per ARS 39-121.01(D)(2).
 
-**Reply to:** brendan@azlawnow.com
+**Reply to:** brandon@azlawnow.com
 
 ---
 
@@ -122,7 +122,7 @@ All consumer complaints, civil-investigative records, internal correspondence, s
 
 **Fee waiver request:** as a member of the news media per ARS 39-121.01(D)(2).
 
-**Reply to:** brendan@azlawnow.com
+**Reply to:** brandon@azlawnow.com
 
 ---
 
@@ -145,7 +145,7 @@ All consumer complaints, civil-investigative records, internal correspondence, s
 
 **Fee waiver request:** under FOIA 5 USC 552(a)(4)(A)(iii) as a representative of the news media engaged in public-interest journalism on grade-crossing safety.
 
-**Reply to:** brendan@azlawnow.com
+**Reply to:** brandon@azlawnow.com
 
 ---
 

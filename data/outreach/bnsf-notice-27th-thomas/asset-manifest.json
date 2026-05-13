@@ -1,0 +1,67 @@
+{
+  "_doc": "AZ Law Now Tier-S asset manifest for the BNSF-notice-27th-Thomas investigation. Used by scripts/outreach/queue-az-pitches.py to generate per-prospect template stubs. NO sends fire from this manifest. Pre-send gate: Brandon Millam J.D. legal-ethics clearance per docs/strategy/bnsf-notice-27th-thomas-CLIENT-HOLD.md.",
+  "campaign": "bnsf-notice-27th-thomas-2026-05",
+  "send_window": {
+    "open": "PENDING_BRANDON_CLEARANCE",
+    "close": "PENDING_BRANDON_CLEARANCE",
+    "rationale": "Cannot open send window until Brandon Millam J.D. clears: ER 7.1-7.5 attorney advertising disclaimer, ER 3.6 pre-trial publicity framing, ER 4.2 represented-party contact, conflict-of-interest analysis and Celius family informed consent."
+  },
+  "sender": {
+    "name": "Brendan Franks",
+    "email": "brendan@azlawnow.com",
+    "byline": "brendan-franks",
+    "signature_blurb": "Press inquiries answered within one business day. Methodology, raw FRA filings, and the records-request packet at the investigation URL."
+  },
+  "assets": [
+    {
+      "slug": "27th-ave-thomas-rd-bnsf-crossing",
+      "url": "https://azlawnow.com/investigations/27th-ave-thomas-rd-bnsf-crossing/",
+      "bomb_stat": "Four months before Sonja Celius was struck at 27th Avenue, BNSF told the Federal Railroad Administration in writing that vehicles were entering the twin crossing at Thomas Road from a direction that did not have gates",
+      "bomb_stat_subject_short": "BNSF documented the failure 131 days before Sonja was struck",
+      "vertical": "az-rail-safety",
+      "primary_segment": ["data-investigations", "transit-infrastructure", "pedestrian-safety", "courts-legal", "general-az-news"],
+      "chart_id": "27th-thomas-bnsf-post-gate-timeline"
+    }
+  ],
+  "press_tiers": {
+    "tier_1_72hr_exclusivity": [
+      "Arizona Republic", "Arizona Mirror", "ABC15 / KNXV", "KJZZ",
+      "12 News / KPNX", "Arizona's Family (3TV / CBS 5)", "Fox 10 / KSAZ"
+    ],
+    "tier_2_post_exclusivity": [
+      "Cronkite News / Arizona PBS", "Phoenix New Times", "Capitol Times",
+      "Arizona Luminaria", "Arizona Center for Investigative Reporting",
+      "Arizona Daily Star", "Trains.com", "Railway Age", "Streetsblog USA",
+      "ProPublica", "Bloomberg CityLab"
+    ],
+    "tier_3_newsletter_community": [
+      "Operation Lifesaver Arizona", "Disability Rights Arizona",
+      "Maricopa Association of Governments (advisory)",
+      "r/phoenix (one post, resource framing, customized title)"
+    ]
+  },
+  "struck_from_outreach": [
+    {
+      "target": "BNSF Public Affairs (Lena Kent, Western region)",
+      "reason": "ER 4.2 prohibits contact with represented parties on subject of representation absent counsel consent. All BNSF contact via formal discovery only."
+    }
+  ],
+  "custom_data_cuts_by_outlet": {
+    "Arizona Republic": "Maricopa-County-only pull of every BNSF Phoenix Subdivision Form 6180.57 record using the AUTO PRECEDED GATES or AGAINST THE DIRECTION narrative phrase, 2020-2026",
+    "ABC15 / KNXV": "Original FRA Form 6180.57 PDFs plus extracted text plus geo coordinates as CSV-ready dataset",
+    "Arizona Mirror": "AZ statewide BNSF Phoenix Subdivision incident summary plus engineering-spec comparison (two-quadrant retrofit scope vs 49 CFR 222)",
+    "ProPublica": "System-wide BNSF query for same narrative phrases across all subdivisions to test corridor-specific vs systemic",
+    "Trains.com": "Engineering-spec breakdown June 2024 retrofit scope vs 49 CFR 222 supplementary safety measures",
+    "AZ Family (Mikayla)": "Follow-on access to FRA dataset that anchors the structural finding her May 7 piece pointed at"
+  },
+  "send_cadence": {
+    "day_0_template": "journalist-study-finds-letime.j2",
+    "day_3_followup": "journalist-followup-1.j2",
+    "day_7_followup": "journalist-followup-2.j2",
+    "max_touches": 3,
+    "send_window_phoenix_time": "Tuesday-Thursday 8-9 AM MST",
+    "millionverifier_gate": true,
+    "dnc_check": true
+  },
+  "ready_to_send_default": "no"
+}
