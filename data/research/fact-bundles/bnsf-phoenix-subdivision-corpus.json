@@ -1,0 +1,164 @@
+{
+  "slug": "bnsf-phoenix-subdivision-corpus",
+  "vertical": "az-rail-safety",
+  "viralTier": "S",
+  "viralRationale": "Systemic finding across 82 BNSF Phoenix Subdivision crossings in AZ. 5+ filings, 3 crossings, same documented failure mode. Federal-record evidence. Named entities (BNSF, City of Phoenix, FRA, ADOT). Audience extends beyond legal vertical. Bench piece that does NOT name Sonja Celius (doesn't need Brandon clearance per CLIENT-HOLD memo).",
+  "byline": "brendan-franks",
+  "headline_stat": "Between 2017 and January 2026, BNSF Railway Company filed at least five Form 6180.57 accident reports across three Phoenix Subdivision grade crossings using the same narrative phrase: AUTO PRECEDED THE GATES. All three crossings sit on a four-mile urban arterial corridor in west Phoenix. None has channelizing medians, four-quadrant gates, or quiet-zone supplementary safety measures.",
+  "stake": "BNSF has documented this gate-timing failure mode on the Phoenix Subdivision since at least 2017. The federal record shows it as recurring at the same corridor. The mitigations specified by 49 CFR Part 222 are absent at all three crossings.",
+  "methodology": {
+    "N": "82 BNSF Phoenix Subdivision at-grade public crossings in Arizona",
+    "time_window": "1979 through 2026-05-13 (per FRA Office of Safety Analysis snapshot)",
+    "primary_source_agencies": [
+      "Federal Railroad Administration Office of Safety Analysis",
+      "NTAD Railroad Grade Crossings (DOT BTS)"
+    ],
+    "method": "Pulled the FRA per-crossing accident PDF for each of 82 at-grade public crossings on the BNSF Phoenix Subdivision in AZ. Extracted text via pdftotext. Grep for 'AUTO PRECEDED' and variants. Cross-referenced inventory data (NTAD ArcGIS) for crossing-level fields: milepost, street name, type, position.",
+    "excluded": "31 underpass/overpass crossings (not at-grade, cannot have Form 6180.57 accidents). 25 private at-grade crossings (lower public-interest, accident records typically not pulled in this corpus pass)."
+  },
+  "findings": [
+    {
+      "id": "finding-1",
+      "claim": "BNSF documented 'AUTO PRECEDED THE GATES' as a recurring failure-mode descriptor across three Phoenix Subdivision crossings",
+      "supporting_data": {
+        "025428F-osborn-rd": [
+          "2025-05-01: RSWE003301 LIGHT POWER STRUCK A TRAILER HOOKED TO A PICKUP AT A HGX EQUIPPED WITH GATES. THE AUTO PRECEDED THE GATES AND WAS STOPPED. NO DERAILMENT. NO HAZMAT RELEASE. NO INJURIES. USER'S AGE UNKNOWN",
+          "2026-01-09: Y-PHX3021-08A LIGHT POWER STRUCK AN AUTO STOPPED IN THE FOUL OF A HGX EQUIPPED WITH GATES. AUTO PRECEDED THE GATES. NO DERAILMENT. NO HAZMAT RELEASE. USER'S AGE UNKNOWN"
+        ],
+        "025590V-bethany-home-rd": [
+          "2023-12-29: R-SWE0036-29C PULLING ON OTHER THAN MAIN TRACK STRUCK AN UNOCCUPIED AUTO STALLED ON A HGX EQUIPPED WITH GATES. THE AUTO PRECEDED THE GATES. NO DERAILMENT. NO HAZMAT RELEASED. USER'S AGE UNKNOWN"
+        ],
+        "025617C-thomas-rd": [
+          "2017-11-01: EASTBOUND AUTO PRECEDED GATES AND WAS STRUCK BY VCLOPHX 1 29 A, WHICH RESULTED IN AN INJURY TO DRIVER",
+          "2025-06-15: YPHX203115 PULLING ON SINGLE MAIN TRACK STRUCK AN AUTO THAT PRECEDED GATES AT A HGX. DRIVER TOOK OFF. NO DERAILMENT. NO HAZMAT RELEASE. NO INJURIES. USER'S AGE UNKNOWN",
+          "2025-08-07: YPHX203107 PULLING ON SINGLE MAIN TRACK STRUCK AN OCCUPIED AUTO AT HGX EQUIPPED WITH GATES. AUTO PRECEDED GATES. NO DERAILMENT. NO HAZMAT RELEASE. NO INJURIES."
+        ]
+      }
+    },
+    {
+      "id": "finding-2",
+      "claim": "All three crossings sit within a four-mile urban corridor on the BNSF Phoenix Subdivision",
+      "supporting_data": {
+        "025590V Bethany Home Rd": "MP 185.353",
+        "025428F Osborn Rd": "MP 188.878",
+        "025617C Thomas Rd": "MP 189.580",
+        "027th-ave-twin-crossing-025430G": "MP 189.615 (50 ft south of Thomas Rd)",
+        "corridor_span": "MP 185.353 through MP 189.615 = 4.262 miles"
+      }
+    },
+    {
+      "id": "finding-3",
+      "claim": "Camelback Rd (DOT 025422P) at MP 186.760 has 13 pre-gate-era Form 6180.57 accidents and remains without active warning gates per the FRA inventory",
+      "supporting_data": {
+        "narratives_sample": "Multiple BNSF filings include phrases like 'STRUCK AN OCCUPIED AUTO AT A HGX NOT EQUIPPED WITH GATES', 'DRIVER STOPPED IN THE FOUL', 'DRIVER FLED THE SCENE', 'DELIBERATELY DISREGARDED CROSSING WARNING DEVICES'.",
+        "implication": "Camelback Rd sits between Bethany Home (MP 185.353) and Osborn (MP 188.878) on the same corridor. The same corridor with three documented 'AUTO PRECEDED GATES' failures at adjacent crossings has a fourth crossing without gates at all."
+      }
+    }
+  ],
+  "entities": [
+    {
+      "name": "BNSF Railway Company",
+      "type": "railroad",
+      "source_url": "https://www.bnsf.com"
+    },
+    {
+      "name": "Federal Railroad Administration Office of Safety Analysis",
+      "type": "regulator",
+      "source_url": "https://safetydata.fra.dot.gov/"
+    },
+    {
+      "name": "City of Phoenix Streets Transportation Department",
+      "type": "agency"
+    },
+    {
+      "name": "Arizona Department of Transportation Rail Section",
+      "type": "agency"
+    }
+  ],
+  "named_crossings": [
+    {
+      "dot": "025428F",
+      "street": "OSBORN RD",
+      "milepost": "188.878",
+      "auto_preceded_count": 2,
+      "narratives": [
+        "2025-05-01",
+        "2026-01-09"
+      ]
+    },
+    {
+      "dot": "025590V",
+      "street": "BETHANY HOME RD",
+      "milepost": "185.353",
+      "auto_preceded_count": 1,
+      "narratives": [
+        "2023-12-29"
+      ]
+    },
+    {
+      "dot": "025617C",
+      "street": "THOMAS RD",
+      "milepost": "189.580",
+      "auto_preceded_count": 3,
+      "narratives": [
+        "2017-11-01",
+        "2025-06-15",
+        "2025-08-07"
+      ]
+    },
+    {
+      "dot": "025430G",
+      "street": "27TH AVE",
+      "milepost": "189.615",
+      "context": "twin crossing 50ft south of Thomas Rd; Sonja Celius struck here 2026-04-25"
+    },
+    {
+      "dot": "025422P",
+      "street": "CAMELBACK RD",
+      "milepost": "186.760",
+      "unretrofitted_count": 13
+    }
+  ],
+  "sources": [
+    {
+      "title": "FRA Office of Safety Analysis per-crossing accident PDFs, 82 BNSF Phoenix Subdivision AZ at-grade public crossings",
+      "publisher": "Federal Railroad Administration",
+      "url": "https://safetydata.fra.dot.gov/OfficeofSafety/PublicSite/Crossing/Crossing.aspx",
+      "retrieved": "2026-05-13"
+    },
+    {
+      "title": "NTAD Railroad Grade Crossings FeatureServer",
+      "publisher": "DOT BTS",
+      "url": "https://services.arcgis.com/xOi1kZaI0eWDREZv/arcgis/rest/services/NTAD_Railroad_Grade_Crossings/FeatureServer/0",
+      "retrieved": "2026-05-13"
+    },
+    {
+      "title": "49 CFR Part 222 Use of Locomotive Horns at Highway-Rail Grade Crossings (Quiet Zones)",
+      "publisher": "FRA",
+      "url": "https://railroads.dot.gov/divisions/highway-rail-grade-crossing/quiet-zones"
+    },
+    {
+      "title": "MUTCD Part 8 Highway-Rail Grade Crossings",
+      "publisher": "FHWA",
+      "url": "https://mutcd.fhwa.dot.gov/"
+    }
+  ],
+  "unknowns": [
+    "Whether the corridor (MP 185.353 through MP 189.615) is on the City of Phoenix Capital Improvement Program for additional supplementary safety measures.",
+    "Whether ADOT or BNSF have considered a corridor-wide quiet zone application.",
+    "How the AUTO PRECEDED GATES phrase frequency compares to other BNSF subdivisions nationally (worth a follow-up pull)."
+  ],
+  "internal_links": [
+    {
+      "anchor_text": "the 27th and Thomas Road grade crossings",
+      "url": "/investigations/27th-ave-thomas-rd-bnsf-crossing/"
+    },
+    {
+      "anchor_text": "Arizona pedestrian fatality rate",
+      "url": "/investigations/arizona-pedestrian-deaths-road-design/"
+    }
+  ],
+  "paa_queries": [],
+  "case_gated": false,
+  "notes": "This piece does NOT name Sonja Celius in the body. The 27th Ave twin crossing is referenced as 'MP 189.615, 50 feet south of Thomas Rd' without invoking the case. The piece reports the public record on the corridor. Brandon clearance NOT required because this is not journalism-on-the-Celius-matter; it is journalism-on-the-corridor-pattern that the Celius investigation already published from."
+}

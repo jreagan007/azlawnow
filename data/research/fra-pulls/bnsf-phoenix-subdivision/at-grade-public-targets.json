@@ -1,0 +1,576 @@
+[
+  {
+    "CROSSING": "025314T",
+    "STREET": "DOUBLE A RANCH RD",
+    "MILEPOST": "0400.853",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025320W",
+    "STREET": "BULLOCK RD",
+    "MILEPOST": "0004.285",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025325F",
+    "STREET": "DRAKE RD",
+    "MILEPOST": "0021.331",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025327U",
+    "STREET": "USFS RD",
+    "MILEPOST": "0027.945",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025302Y",
+    "STREET": "GR CANYON BLVD",
+    "MILEPOST": "0378.147",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025303F",
+    "STREET": "7TH ST",
+    "MILEPOST": "0378.468",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025347F",
+    "STREET": "IRON SPRINGS RD",
+    "MILEPOST": "0080.233",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025356E",
+    "STREET": "OLD GRANTHAMS RD",
+    "MILEPOST": "0101.672",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025362H",
+    "STREET": "DATE CREEK RD",
+    "MILEPOST": "0116.108",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025350N",
+    "STREET": "STERLING RANCH",
+    "MILEPOST": "0081.872",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025351V",
+    "STREET": "SKULL VALLEY CONN",
+    "MILEPOST": "0083.147",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025365D",
+    "STREET": "STATE HWY",
+    "MILEPOST": "0123.062",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025371G",
+    "STREET": "VULTURE MINE RD",
+    "MILEPOST": "0137.337",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025373V",
+    "STREET": "YAVAPAI ST",
+    "MILEPOST": "0139.726",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025374C",
+    "STREET": "APACHE ST",
+    "MILEPOST": "0139.840",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025379L",
+    "STREET": "GATES RD",
+    "MILEPOST": "0150.330",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025393G",
+    "STREET": "DYSART RD",
+    "MILEPOST": "0172.605",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025382U",
+    "STREET": "CENTER ST",
+    "MILEPOST": "0157.871",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025397J",
+    "STREET": "111TH AVE",
+    "MILEPOST": "0175.786",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025354R",
+    "STREET": "STATE HWY",
+    "MILEPOST": "0086.934",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025398R",
+    "STREET": "DEL WEBB BLVD",
+    "MILEPOST": "0176.326",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025399X",
+    "STREET": "103RD AVE",
+    "MILEPOST": "0176.849",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025400P",
+    "STREET": "99TH AVE",
+    "MILEPOST": "0177.421",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025401W",
+    "STREET": "91ST AVE",
+    "MILEPOST": "0178.445",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025403K",
+    "STREET": "PEORIA AVE",
+    "MILEPOST": "0179.725",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025404S",
+    "STREET": "83RD AVE",
+    "MILEPOST": "0179.800",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025405Y",
+    "STREET": "81ST AVE",
+    "MILEPOST": "0180.104",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025408U",
+    "STREET": "75TH AVE",
+    "MILEPOST": "0181.211",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025409B",
+    "STREET": "EB OLIVE ACCESS",
+    "MILEPOST": "0181.240",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025414X",
+    "STREET": "ORANGE WOOD AVE",
+    "MILEPOST": "0183.244",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025415E",
+    "STREET": "MYRTLE AVE",
+    "MILEPOST": "0183.588",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025418A",
+    "STREET": "59TH AVE/GLENDALE",
+    "MILEPOST": "0183.970",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025422P",
+    "STREET": "CAMELBACK RD",
+    "MILEPOST": "0186.760",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025424D",
+    "STREET": "INDIAN SCHOOL RD",
+    "MILEPOST": "0188.172",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025425K",
+    "STREET": "35TH AVE",
+    "MILEPOST": "0188.239",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025428F",
+    "STREET": "OSBORN RD",
+    "MILEPOST": "0188.878",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025430G",
+    "STREET": "27TH AVE",
+    "MILEPOST": "0189.615",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025433C",
+    "STREET": "ENCANTO BLVD",
+    "MILEPOST": "0190.273",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025434J",
+    "STREET": "22ND AVE",
+    "MILEPOST": "0190.519",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025436X",
+    "STREET": "MCDOWELL RD",
+    "MILEPOST": "0190.987",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025438L",
+    "STREET": "VAN BUREN AVE",
+    "MILEPOST": "0191.990",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025439T",
+    "STREET": "MONROE ST",
+    "MILEPOST": "0192.057",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025441U",
+    "STREET": "ADAMS ST",
+    "MILEPOST": "0192.126",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025443H",
+    "STREET": "WASHINGTON ST",
+    "MILEPOST": "0192.199",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025446D",
+    "STREET": "JEFFERSON ST",
+    "MILEPOST": "0192.273",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025447K",
+    "STREET": "MADISON ST",
+    "MILEPOST": "0192.342",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025448S",
+    "STREET": "19TH AVE",
+    "MILEPOST": "0192.368",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025413R",
+    "STREET": "67TH AVE  NORTHERN AVE",
+    "MILEPOST": "0182.611",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025459E",
+    "STREET": "GRAND AVE US 60",
+    "MILEPOST": "0182.911",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025460Y",
+    "STREET": "NORTHERN AVE",
+    "MILEPOST": "0182.693",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025486B",
+    "STREET": "TOM MURRAY AVE",
+    "MILEPOST": "0186.535",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025451A",
+    "STREET": "15TH AVE",
+    "MILEPOST": "0192.951",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025452G",
+    "STREET": "9TH AVE",
+    "MILEPOST": "0193.336",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025490R",
+    "STREET": "MISSOURI AVE",
+    "MILEPOST": "0185.266",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025491X",
+    "STREET": "43RD AVE",
+    "MILEPOST": "0186.889",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025492E",
+    "STREET": "HIGHLAND AVE",
+    "MILEPOST": "0186.900",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025493L",
+    "STREET": "GLENROSA AVE",
+    "MILEPOST": "0186.447",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025494T",
+    "STREET": "TURNEY AVE",
+    "MILEPOST": "0187.526",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025509F",
+    "STREET": "CHEERY LYNN RD",
+    "MILEPOST": "0189.258",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025510A",
+    "STREET": "28TH AVENUE",
+    "MILEPOST": "0189.193",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025517X",
+    "STREET": "THOMAS RD",
+    "MILEPOST": "0189.525",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025518E",
+    "STREET": "29TH AVENUE",
+    "MILEPOST": "0189.683",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025519L",
+    "STREET": "31ST AVENUE",
+    "MILEPOST": "0189.932",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025582D",
+    "STREET": "HIGHLAND AVE",
+    "MILEPOST": "0186.740",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025487H",
+    "STREET": "PASADENA AVE",
+    "MILEPOST": "0186.372",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025488P",
+    "STREET": "COLTER ST",
+    "MILEPOST": "0186.202",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025489W",
+    "STREET": "51ST AVENUE",
+    "MILEPOST": "0185.662",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025584S",
+    "STREET": "31ST AVE",
+    "MILEPOST": "0188.908",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025617C",
+    "STREET": "THOMAS RD",
+    "MILEPOST": "0189.580",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025628P",
+    "STREET": "44TH AVENUE",
+    "MILEPOST": "0186.739",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025629W",
+    "STREET": "GRAND AV FRONTAGE",
+    "MILEPOST": "0189.461",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025630R",
+    "STREET": "GRAND AV FRONTAGE",
+    "MILEPOST": "0189.310",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025631X",
+    "STREET": "THOMPSON RANCH",
+    "MILEPOST": "0174.877",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025590V",
+    "STREET": "BETHANY HOME RD",
+    "MILEPOST": "0185.353",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025651J",
+    "STREET": "GREENWAY RD",
+    "MILEPOST": "0173.450",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025599G",
+    "STREET": "163RD AVE",
+    "MILEPOST": "0167.180",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025648B",
+    "STREET": "TURNEY AVE",
+    "MILEPOST": "0187.635",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025336T",
+    "STREET": "USFS RD",
+    "MILEPOST": "0050.317",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025597T",
+    "STREET": "203RD AVE",
+    "MILEPOST": "0160.141",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "741547N",
+    "STREET": "1ST STREET",
+    "MILEPOST": "0914.290",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025595E",
+    "STREET": "RH JOHNSON BLVD",
+    "MILEPOST": "0168.756",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  },
+  {
+    "CROSSING": "025583K",
+    "STREET": "MEEKER BLVD",
+    "MILEPOST": "0170.136",
+    "TYPEXING": "Public",
+    "POSXING": "At Grade"
+  }
+]
