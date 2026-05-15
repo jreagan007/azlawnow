@@ -30,6 +30,7 @@ STORIES = [
     "arizona-nursing-homes-billing-fraud-and-abuse",
     "grand-court-mesa-elder-abuse-hb2228",
     "arizona-school-restraint-data",
+    "bnsf-phoenix-subdivision-corpus",
 ]
 
 # Per-story, per-segment personalization hooks.
@@ -131,6 +132,18 @@ HOOKS = {
         "homeschool_parent": "Arizona schools reported 4,200+ student-restraint incidents last year. Kids with IEPs are over-represented. The data is in public ADE records, but we aggregated it at the school level for the first time.",
         "public_health_official": "Arizona schools reported 4,200+ restraint incidents last year. Students with IEPs are over-represented. The school-level data from ADE has never been aggregated and published until now.",
     },
+    "bnsf-phoenix-subdivision-corpus": {
+        "az_journalist": "BNSF wrote AUTO PRECEDED THE GATES in 5 federal Form 6180.57 filings at 3 different Phoenix Subdivision grade crossings between November 2017 and January 2026. The crossings span a 4.2-mile west Phoenix corridor. None have channelizing medians or four-quadrant gates per the FRA inventory.",
+        "national_consumer": "We pulled the FRA Office of Safety Analysis per-crossing accident PDFs for all 82 BNSF Phoenix Subdivision at-grade public crossings in Arizona. Same phrase, AUTO PRECEDED THE GATES, repeats at three of them across five separate filings. Federal record, fully public.",
+        "national_tech": "Federal-record corpus analysis: we extracted text from 82 FRA Form 6180.57 PDFs and found one phrase, AUTO PRECEDED THE GATES, at three crossings across five filings on the BNSF Phoenix Subdivision. The methodology is reproducible. All source documents are public.",
+        "community_org": "BNSF Railway Company filed the same phrase, AUTO PRECEDED THE GATES, in 5 federal accident reports at 3 west Phoenix grade crossings between 2017 and 2026. None of the three has channelizing medians per the FRA inventory. Records are public.",
+        "rail-safety": "Federal-record corpus on BNSF Phoenix Subdivision: 5 Form 6180.57 filings, 3 crossings, identical narrative phrase. The 4.2-mile corridor lacks channelizing medians, four-quadrant gates, and the supplementary safety measures specified by 49 CFR Part 222 Appendix A.",
+        "transit-infrastructure": "BNSF wrote AUTO PRECEDED THE GATES in 5 federal accident filings across 3 crossings on a 4.2-mile west Phoenix arterial corridor. The federal mitigations specified by 49 CFR 222 Appendix A weren't installed at any of the three per the most recent FRA inventory.",
+        "pedestrian-safety": "BNSF's own federal filings document the same failure phrase at 3 Phoenix grade crossings: AUTO PRECEDED THE GATES. The corridor lacks channelizing medians and four-quadrant gates per the FRA inventory revised July 2025. Public-record finding.",
+        "data-investigations": "Pulled all 82 BNSF Phoenix Subdivision per-crossing accident PDFs from FRA. Extracted text, searched for the phrase AUTO PRECEDED THE GATES. Found it at exactly three crossings, five filings, between 2017 and 2026. The methodology is reproducible from the public FRA query interface.",
+        "courts-legal": "Editorial commentary on FRA Form 6180.57 records across a 4.2-mile west Phoenix arterial corridor. The form itself isn't admissible under 49 USC 20903, but the underlying public-record facts are. Five BNSF filings, three crossings, identical narrative phrase.",
+        "general-az-news": "AZ Law Now just published a corpus pull of FRA Office of Safety Analysis records on the BNSF Phoenix Subdivision in Arizona. The same narrative phrase, AUTO PRECEDED THE GATES, appears at three crossings across five filings. Public records, federal docket.",
+    },
 }
 
 # Story -> relevant segments (drawn from content_assets.segments + extended set)
@@ -174,6 +187,11 @@ STORY_SEGMENTS = {
         "mommy_blogger", "national_consumer", "national_tech", "community_org",
         "homeschool_parent", "public_health_official",
     ],
+    "bnsf-phoenix-subdivision-corpus": [
+        "az_journalist", "national_consumer", "national_tech", "community_org",
+        "rail-safety", "transit-infrastructure", "pedestrian-safety",
+        "data-investigations", "courts-legal", "general-az-news",
+    ],
 }
 
 # Story -> relevance note for new contacts
@@ -186,6 +204,7 @@ RELEVANCE_NOTES = {
     "arizona-nursing-homes-billing-fraud-and-abuse": "52 of 142 CMS-rated AZ nursing homes are 1- or 2-star. APS substantiates under 1% of investigated abuse reports vs 29-33% nationally. Allegiant Healthcare Mesa: 33 violations.",
     "grand-court-mesa-elder-abuse-hb2228": "60% of nursing home sexual-abuse victims have dementia, 80% of perpetrators are caregivers, only 30% reach law enforcement. Grand Court Mesa arrest drove HB2228.",
     "arizona-school-restraint-data": "4,200+ student-restraint incidents in Arizona schools. Kids with IEPs are over-represented. School-level data aggregated for the first time.",
+    "bnsf-phoenix-subdivision-corpus": "Federal-record corpus on BNSF Phoenix Subdivision: 5 Form 6180.57 accident filings, 3 grade crossings, identical phrase AUTO PRECEDED THE GATES, between Nov 2017 and Jan 2026. 4.2-mile west Phoenix arterial corridor, no channelizing medians per FRA inventory. Editorial commentary on public records, NOT case-gated.",
 }
 
 
