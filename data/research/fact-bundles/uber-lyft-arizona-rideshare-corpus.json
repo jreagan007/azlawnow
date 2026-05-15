@@ -1,0 +1,232 @@
+{
+  "slug": "uber-lyft-arizona-rideshare-corpus",
+  "compiled": "2026-05-14",
+  "compiled_by": "taqtics-operator",
+  "status": "Phase 1 complete -- Tier S confirmed",
+  "hypothesis_source": "Jared Reagan, 2026-05-14 session",
+
+  "bomb_stat": {
+    "verbatim": "A federal jury in Phoenix awarded $8.5 million to a 19-year-old Arizona woman in February 2026 after finding Uber liable for her rape by a driver -- and internal evidence showed Uber's own S-RAD safety algorithm had rated her trip 0.81 out of 1 (elevated risk) before it dispatched the ride without warning her.",
+    "source_url": "https://www.prnewswire.com/news-releases/jury-finds-uber-liable-in-sexual-assault-case-involving-19yearold-passenger-awards-8-5-million-in-damages-302680927.html",
+    "source_secondary": "https://www.simmonsfirm.com/news/item/arizona-uber-sexual-assault-case-verdict/",
+    "verified": true,
+    "lift_priority": 1,
+    "note": "Dean v. Uber Technologies Inc., U.S. District Court for the District of Arizona, verdict February 7, 2026. First bellwether trial in MDL 3084. This is the strongest single number because it anchors an AZ-native verdict to a nationally watched MDL, and the S-RAD algorithm detail (0.81 out of 1 = elevated risk, still dispatched) is the structural systemic finding -- not just a driver crime."
+  },
+
+  "findings": [
+    {
+      "id": "finding-1",
+      "label": "AZ is MDL 3084 ground zero",
+      "summary": "The first bellwether trial in the federal Uber sexual assault multidistrict litigation (MDL 3084, N.D. Cal., Judge Breyer) was held in Arizona, involved an Arizona plaintiff (Jaylynn Dean, 19, Tempe ride, November 15, 2023), and returned an $8.5 million verdict on February 7, 2026. The MDL now holds 3,391 plaintiffs across 30 states (as of April 2026), making Arizona the jurisdictional center of the nation's largest rideshare sexual assault litigation.",
+      "source_url": "https://www.lawsuit-information-center.com/uber-sex-assault-lawsuit.html",
+      "source_secondary": "https://cand.uscourts.gov/judges/breyer-charles-r-crb/ubermdl/",
+      "verified": true
+    },
+    {
+      "id": "finding-2",
+      "label": "Uber documented 11,285 sexual assault reports across its own transparency reports (2017-2022)",
+      "summary": "Uber's three biennial US Safety Reports document a cumulative 11,285 reported sexual assaults on the platform from 2017 through 2022: 5,981 in 2017-2018, 3,824 in 2019-2020 (prior reports cited as 2,847 -- Uber revised methodology), and 2,717 in 2021-2022. Lyft's two safety reports cover 2017-2022 and document a combined 6,809 reports. Sealed MDL court records revealed Uber received a sexual assault or misconduct report approximately every 8 minutes on average across 2017-2022, totaling more than 400,000 reports -- a figure far beyond what the transparency reports disclose. No AZ-specific breakdowns are published by either company.",
+      "source_url": "https://helpingsurvivors.org/rideshare-sexual-assault/statistics/",
+      "source_secondary": "https://www.uber.com/newsroom/2022-us-safety-report/",
+      "sealed_source_note": "The 400,000-plus total and every-8-minutes rate derive from sealed MDL discovery documents, reported in press coverage of MDL proceedings; not independently verifiable by the Researcher from public records. Mark as HYPOTHESIS PENDING for direct citation purposes.",
+      "verified_partial": true
+    },
+    {
+      "id": "finding-3",
+      "label": "Uber's S-RAD algorithm knew the Dean trip was high-risk and dispatched anyway",
+      "summary": "At trial in Dean v. Uber, internal Uber documents showed the company's Safety Risk Assessed Dispatch (S-RAD) algorithm scored Jaylynn Dean's trip at 0.81 out of 1, indicating an elevated probability of a serious safety incident. Uber dispatched the ride without alerting Dean or adjusting the match. Uber's Chief Privacy Officer acknowledged at trial that 'the company has not done enough' to prevent assaults. The jury found Uber liable under an apparent agency theory.",
+      "source_url": "https://www.prnewswire.com/news-releases/jury-finds-uber-liable-in-sexual-assault-case-involving-19yearold-passenger-awards-8-5-million-in-damages-302680927.html",
+      "source_secondary": "https://chaffinluhana.com/firm-news/jury-finds-uber-liable-sexual-assault-case/",
+      "verified": true
+    },
+    {
+      "id": "finding-4",
+      "label": "Arizona TNC insurance framework creates a three-period coverage gap",
+      "summary": "Arizona's TNC statute (ARS 28-9551 through 28-9564, enacted 2015) establishes three insurance coverage periods. Period 0 (app off): driver's personal auto policy only, typically $25,000/$50,000/$20,000 limits. Period 1 (app on, no passenger): TNC or driver must carry $25,000/$50,000/$20,000 -- but most personal auto policies exclude commercial use, creating a gap where the TNC's contingent coverage may be the only coverage and the claimant bears the burden of proving the driver was in Period 1. Period 2/3 (passenger in vehicle or en route to pickup): mandatory $250,000 primary commercial liability + $250,000 uninsured motorist. The Period 1 gap is the structural vulnerability: a driver who crashes while logged in but without a passenger active may face a coverage dispute.",
+      "source_url": "https://law.justia.com/codes/arizona/2015/title-28/section-28-9551",
+      "source_secondary": "https://azdot.gov/mvd/services/professional-services/vehicle-hire-licensing/transportation-network-companies-tnc-1",
+      "verified": true
+    },
+    {
+      "id": "finding-5",
+      "label": "Background check architecture allows account sharing and misses older criminal records",
+      "summary": "Arizona TNC statute requires background checks excluding: conviction for serious felony or DUI in last 7 years, listing on national sex offender registry, and more than 3 moving violations or 1 major violation in last 3 years. The checks are name-based commercial checks, not fingerprint-based. A 2024 Colorado case (Mukhammadali Mukadyrov, using another driver's Lyft account) demonstrated the account-sharing vulnerability: the attacker was never background-checked. Neither Uber nor Lyft requires real-time biometric verification at pickup under Arizona law. Maricopa County Sheriff's Office investigated a 2025 case (Lemolineaux Bain, 33) where a driver fled after a 21-year-old passenger was assaulted following a night out. Separately, former Lyft driver Mohammad Al Bishawi was arrested after DNA linked him to two AZ sexual assault cases (Gilbert passenger + Phoenix massage therapist).",
+      "source_url": "https://www.azleg.gov/ars/28/09551.htm",
+      "source_secondary": "https://hoodline.com/2025/10/maricopa-county-sheriff-seeks-rideshare-driver-suspected-of-sexual-assault-in-phoenix-uber-bans-accused-individual/",
+      "source_tertiary": "https://www.fox10phoenix.com/news/former-lyft-driver-accused-sexual-abuse-after-driving-phoenix-woman-home",
+      "verified": true
+    },
+    {
+      "id": "finding-6",
+      "label": "Uber platform crash fatalities: 153 deaths in 2021-2022 nationally; ridesharing linked to 3% increase in overall traffic fatalities",
+      "summary": "Uber's 2021-2022 US Safety Report documented 127 fatal crashes resulting in 153 deaths across the US platform. A peer-reviewed study (published via NCSA/NHTSA data) found rideshare introduction increased overall US traffic fatalities by approximately 3%, equating to roughly 987 additional deaths per year nationally. No ADOT state-level data specifically isolates TNC-involved crashes in Arizona public records reviewed; AZ-specific TNC crash figures remain an open records request item.",
+      "source_url": "https://www.uber.com/newsroom/2022-us-safety-report/",
+      "source_secondary": "https://dlawgroup.com/uber-lyft-rideshare-accident-statistics-2024/",
+      "verified_partial": true,
+      "note": "AZ-specific TNC crash rate: HYPOTHESIS PENDING. Requires ADOT Crash Facts supplemental data or ARS 39-121 request for TNC-involved crash log."
+    },
+    {
+      "id": "finding-7",
+      "label": "Lyft documented 6,809 sexual assault reports across 2017-2022 in its two safety reports",
+      "summary": "Lyft's first Community Safety Report (published October 2021) documented 4,158 sexual assault reports covering 2017-2019, including 360 rape reports and 10 fatal assault cases (2017-2019). Lyft's second safety report (2024) covered 2020-2022 and reported 2,651 additional sexual assault reports. Combined: 6,809 reports over six years. The 19% decline in assault rate per ride over the 2017-2019 period was cited by Lyft as evidence of safety improvements, but critics noted the absolute numbers remained high given platform growth.",
+      "source_url": "https://www.lyft.com/blog/posts/lyfts-community-safety-report",
+      "source_secondary": "https://www.cnbc.com/2021/10/23/lyft-records-more-than-4000-sexual-assault-cases-in-safety-report.html",
+      "verified": true
+    }
+  ],
+
+  "named_entities": [
+    {
+      "name": "Uber Technologies Inc.",
+      "role": "Transportation Network Company, defendant in MDL 3084 and Dean v. Uber",
+      "regulatory_id": "AZ TNC permit holder, AZDOT Vehicle for Hire"
+    },
+    {
+      "name": "Lyft Inc.",
+      "role": "Transportation Network Company, subject of parallel sexual assault litigation",
+      "regulatory_id": "AZ TNC permit holder, AZDOT Vehicle for Hire"
+    },
+    {
+      "name": "Jaylynn Dean",
+      "role": "Named plaintiff, Dean v. Uber Technologies Inc., AZ bellwether; 19-year-old passenger, Tempe ride November 15, 2023",
+      "case": "MDL 3084 Bellwether 1, U.S. District Court for the District of Arizona"
+    },
+    {
+      "name": "Judge Charles R. Breyer",
+      "role": "Presiding judge, MDL 3084, Northern District of California",
+      "court": "U.S. District Court, N.D. Cal."
+    },
+    {
+      "name": "Maricopa County Sheriff's Office (MCSO)",
+      "role": "Investigating agency in named AZ rideshare assault cases (Lemolineaux Bain, 2025)"
+    },
+    {
+      "name": "Arizona Department of Transportation (AZDOT)",
+      "role": "Regulatory authority for TNC permits and compliance in Arizona"
+    },
+    {
+      "name": "Arizona Revised Statutes (ARS) 28-9551 through 28-9564",
+      "role": "AZ TNC statutory framework, enacted 2015",
+      "url": "https://www.azleg.gov/ars/28/09551.htm"
+    },
+    {
+      "name": "Mohammad Al Bishawi",
+      "role": "Former Lyft driver arrested in AZ; DNA linked to two sexual assault cases (Gilbert + Phoenix)"
+    },
+    {
+      "name": "Lemolineaux Bain",
+      "role": "Uber driver investigated by MCSO for sexual assault of 21-year-old passenger, 2025; fled prior to arrest"
+    },
+    {
+      "name": "Arthur S. Williams",
+      "role": "Lyft driver arrested in Buckeye, AZ, January 2025, charged with kidnapping and sexual assault of passenger"
+    }
+  ],
+
+  "cited_statutes": [
+    {
+      "citation": "ARS 28-9551",
+      "description": "Definitions: Transportation Network Company",
+      "url": "https://www.azleg.gov/ars/28/09551.htm"
+    },
+    {
+      "citation": "ARS 28-9551 through 28-9564",
+      "description": "AZ TNC statutory framework, Chapter 9.1, Title 28 Transportation, signed 2015",
+      "url": "https://law.justia.com/codes/arizona/2015/title-28/section-28-9551"
+    },
+    {
+      "citation": "ARS 28-4038",
+      "description": "Transportation network services; financial responsibility requirements",
+      "url": "https://www.azleg.gov/ars/28/04038.htm"
+    }
+  ],
+
+  "case_attached": {
+    "value": true,
+    "cases": [
+      {
+        "name": "Dean v. Uber Technologies Inc.",
+        "court": "U.S. District Court for the District of Arizona",
+        "mdl": "MDL 3084, N.D. Cal.",
+        "verdict": "$8.5 million compensatory damages",
+        "verdict_date": "2026-02-07",
+        "plaintiff_state": "Arizona",
+        "significance": "First MDL 3084 bellwether; AZ-native verdict; S-RAD algorithm evidence made public"
+      }
+    ]
+  },
+
+  "paa_queries": [
+    "what happens if an Uber driver assaults you in Arizona",
+    "can you sue Uber for a driver assault in Arizona",
+    "how does Lyft background check work in Arizona",
+    "Uber Lyft insurance coverage Arizona accident",
+    "what is Period 1 coverage gap rideshare Arizona",
+    "Arizona rideshare sexual assault lawsuit how to file",
+    "Uber safety report Arizona sexual assault statistics"
+  ],
+
+  "open_questions_for_jared": [
+    "AZ-specific TNC crash count: ADOT Crash Facts does not publish TNC-tagged crashes separately. Worth an ARS 39-121 request to AZDOT for TNC-involved crash log 2020-2025 to get an AZ crash-rate anchor.",
+    "Arizona-specific plaintiff count in MDL 3084: the public docket does not break down plaintiffs by state. An attorney of record could query CourtListener or PACER for AZ-origin filings. Worth verifying before claiming 'AZ is the epicenter' beyond the Dean case.",
+    "The 400,000-plus sealed MDL document statistic: currently attributed to press coverage of sealed proceedings. Not directly citeable from a public document. Confirm whether any unsealed MDL order cites this figure before using it in the pillar.",
+    "Lyft parallel litigation: Lyft has not had an AZ bellwether verdict; should the pillar be Uber-centric with Lyft as secondary, or true dual-company from the start?",
+    "Hub-and-spoke vs single pillar: see Phase 2 recommendation in this bundle."
+  ],
+
+  "sub_pillar_recommendation": {
+    "architecture": "hub-and-spoke",
+    "hub": {
+      "slug": "arizona-rideshare-sexual-assault-safety-uber-lyft",
+      "tier": "S",
+      "rationale": "Dean v. Uber Arizona verdict + MDL 3084 ground-zero angle + S-RAD systemic finding + AZ named cases (Bain, Al Bishawi, Williams) = four structural facts, not one. Hub covers the full TNC safety failure frame.",
+      "length_target": "2,200-2,800 words"
+    },
+    "spokes": [
+      {
+        "slug": "arizona-rideshare-insurance-coverage-gap-uber-lyft",
+        "angle": "AZ Period 0/1/2/3 insurance framework deep-dive: what happens when your Uber driver is 'logged in' but has no active ride",
+        "tier": "A",
+        "seo_intent": "navigational + informational",
+        "length_target": "1,200-1,600 words"
+      },
+      {
+        "slug": "uber-background-check-arizona-rideshare-driver-screening",
+        "angle": "What AZ TNC law requires vs. what fingerprint-check advocates want; the account-sharing loophole; why name-based checks miss older records",
+        "tier": "A",
+        "seo_intent": "informational",
+        "length_target": "1,200-1,600 words"
+      },
+      {
+        "slug": "arizona-rideshare-crash-injury-uber-lyft-who-pays",
+        "angle": "When an Uber or Lyft driver causes a crash injury in AZ: Period-dependent liability, the independent contractor defense, and how AZ courts have ruled",
+        "tier": "A",
+        "seo_intent": "informational + commercial",
+        "length_target": "1,200-1,600 words"
+      }
+    ]
+  },
+
+  "press_hook_note": "Dean v. Uber is already covered by Reuters, CNBC, and Tucson.com. The fresh angle is the S-RAD algorithm as an AZ-documented systemic finding: Uber built a tool that predicted the assault was likely and dispatched the ride anyway. That framing -- the algorithm, not just the driver -- is the Tier-S editorial wedge. Natural press fits: Arizona Republic (Robert Anglen, investigations; Stephanie Innes, consumer health), ABC15 Investigators (Melissa Blasius), KJZZ, AZ Mirror, and Cronkite News for the MDL national-local cross.",
+
+  "sources_index": [
+    "https://www.prnewswire.com/news-releases/jury-finds-uber-liable-in-sexual-assault-case-involving-19yearold-passenger-awards-8-5-million-in-damages-302680927.html",
+    "https://www.simmonsfirm.com/news/item/arizona-uber-sexual-assault-case-verdict/",
+    "https://www.lawsuit-information-center.com/uber-sex-assault-lawsuit.html",
+    "https://cand.uscourts.gov/judges/breyer-charles-r-crb/ubermdl/",
+    "https://www.uber.com/newsroom/2022-us-safety-report/",
+    "https://helpingsurvivors.org/rideshare-sexual-assault/statistics/",
+    "https://www.lyft.com/blog/posts/lyfts-community-safety-report",
+    "https://www.cnbc.com/2021/10/23/lyft-records-more-than-4000-sexual-assault-cases-in-safety-report.html",
+    "https://law.justia.com/codes/arizona/2015/title-28/section-28-9551",
+    "https://www.azleg.gov/ars/28/09551.htm",
+    "https://www.azleg.gov/ars/28/04038.htm",
+    "https://azdot.gov/mvd/services/professional-services/vehicle-hire-licensing/transportation-network-companies-tnc-1",
+    "https://hoodline.com/2025/10/maricopa-county-sheriff-seeks-rideshare-driver-suspected-of-sexual-assault-in-phoenix-uber-bans-accused-individual/",
+    "https://www.fox10phoenix.com/news/former-lyft-driver-accused-sexual-abuse-after-driving-phoenix-woman-home",
+    "https://ktar.com/arizona-news/uber-driver-sexual-assault-mcso/5766507/",
+    "https://chaffinluhana.com/firm-news/jury-finds-uber-liable-sexual-assault-case/",
+    "https://dlawgroup.com/uber-lyft-rideshare-accident-statistics-2024/"
+  ]
+}
