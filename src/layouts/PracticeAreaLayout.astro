@@ -160,8 +160,8 @@ const schemas = [
 
         <!-- CTA + microcopy -->
         <div class="pa-hero__cta">
-          <a href="/free-case-review/" class="btn btn-primary btn-lg" data-event="pa-hero-form">
-            Get my free case review &rarr;
+          <a href="/free-case-review/" class="btn btn-primary btn-lg" data-event="pa-hero-form" aria-label="Review my case">
+            Review My Case &rarr;
           </a>
           <a href={`tel:${siteConfig.phoneE164}`} class="btn btn-secondary btn-lg pa-hero__phone-btn" data-event="pa-hero-call" aria-label={`Call AZ Law Now at ${siteConfig.phoneFormatted}`}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -233,7 +233,7 @@ const schemas = [
           </div>
 
           {showMidCta && (
-            <aside class="pa-mid-cta" aria-label="Free case review">
+            <aside class="pa-mid-cta" aria-label="Case intake">
               <div class="pa-mid-cta__box">
                 <h2 class="pa-mid-cta__heading">Hurt in Arizona? Get answers today.</h2>
                 <p class="pa-mid-cta__text">
@@ -241,8 +241,8 @@ const schemas = [
                   you through what comes next. Free, no obligation, available 24/7.
                 </p>
                 <div class="pa-mid-cta__actions">
-                  <a href="/free-case-review/" class="btn btn-primary" data-event="pa-mid-form">
-                    Get my free case review &rarr;
+                  <a href="/free-case-review/" class="btn btn-primary" data-event="pa-mid-form" aria-label="Review my case">
+                    Review My Case &rarr;
                   </a>
                   <a href={`tel:${siteConfig.phoneE164}`} class="pa-mid-cta__call" data-event="pa-mid-call" aria-label={`Call ${siteConfig.phoneFormatted}`}>
                     or call {siteConfig.phoneFormatted}
