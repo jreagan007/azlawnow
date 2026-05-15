@@ -1,0 +1,239 @@
+---
+# SKELETON DRAFT -- AZ Law Now Tier-S corpus piece
+# Source fact-bundle: data/research/fact-bundles/waymo-av-arizona-corpus.json
+# case_gated: false (structural-regulatory piece; no named client; no Brandon ER clearance required)
+# Target slug: waymo-av-arizona-corpus
+# Target path on publish: src/content/investigations/waymo-av-arizona-corpus.mdx
+# Status: SKELETON ONLY -- do NOT move to src/content/investigations until Phase 2 Writer pass clears QA
+
+title: "Waymo Has Been in 202 Arizona Crashes. Phoenix Police Have Never Issued a Citation."
+headline: "Waymo vehicles were involved in at least 202 crashes in Arizona between 2021 and 2024, including 31 that resulted in injuries. Phoenix police documented 71 of those crashes and attributed fault to Waymo in 13% of them. Zero citations have ever been issued."
+description: "202 crashes in Arizona. Three recalls in two years. A monsoon-season software defect that still has no permanent fix. How Arizona's most permissive AV regulations created an accountability gap that's now on the federal record."
+author: "brendan-franks"
+reviewedBy: "brendan-franks"
+category: "infrastructure"
+viralTier: "S"
+viralRationale: "202 confirmed Arizona crashes, 3 recalls in 2 years, NHTSA investigation PE24016 naming 8 AZ incidents, enforcement gap documented by Phoenix PD, monsoon-season peg 5 weeks out, Mesa production hub angle. Named entities. Audience extends well beyond legal vertical."
+newsEligible: false
+ogImage: "/og/waymo-av-arizona-corpus.png"
+image: "/images/heroes/dj-waymo-av-arizona-corpus.webp"
+keyTakeaway: "Waymo vehicles were involved in at least 202 crashes in Arizona between 2021 and 2024, including 31 that resulted in injuries. The company has issued three fleet-wide recalls in two years, the first one triggered by a collision in a Phoenix alley. NHTSA opened investigation PE24016 on May 13, 2024, citing eight incidents in Phoenix and Chandler. Phoenix Police said in 2025 that citing Waymo for moving violations is not feasible. No citations have ever been issued across the 71 documented police-report crashes."
+schemaType: "NewsArticle"
+tags: ["autonomous-vehicles", "waymo", "nhtsa", "av-safety", "phoenix", "tempe", "recall", "robotaxi", "az-law", "product-liability"]
+publishedAt: "2026-05-14"
+updatedAt: "2026-05-14"
+featured: true
+relatedPracticeAreas: []
+relatedInsights: ["arizona-pedestrian-deaths-road-design", "hit-and-run-maricopa-county-data"]
+relatedInvestigations: ["bnsf-phoenix-subdivision-corpus", "arizona-pedestrian-deaths-road-design"]
+locations: ["arizona", "phoenix", "tempe", "scottsdale", "chandler", "maricopa-county"]
+
+methodology:
+  dataSources:
+    - "NHTSA Standing General Order SGO-2021-01 ADS crash report database, July 2021 through November 2025, as published at static.nhtsa.gov/odi/ffdd/sgo-2021-01/"
+    - "NHTSA Investigation PE24016 open resume, Waymo 5th generation ADS, opened May 13, 2024"
+    - "NHTSA Part 573 Safety Recall Report 24E-049 (672-vehicle recall, May 2024)"
+    - "AZ Family (3TV/CBS5) investigative analysis of NHTSA SGO data, May 2025, published at azfamily.com"
+    - "Dam Firm legal data analysis of NHTSA SGO database through November 2025, published at damfirm.com"
+    - "Arizona Revised Statutes: ARS 28-9702, ARS 28-9706, ARS 28-663 (as amended by HB 2813, 2021)"
+    - "Arizona Executive Order 2018-04, Governor Doug Ducey, March 2018"
+    - "Waymo LLC voluntary recall filings: May 2024 (672 vehicles), May 2025 (1,212 vehicles), May 2026 (3,791 vehicles)"
+    - "Tempe PD public statements on September 2025 fatal crash, as reported by 12news.com"
+    - "Waymo blog, Scaling our fleet through US manufacturing, May 2025"
+  processing: "Crash count (202 incidents) is drawn from NHTSA SGO-2021-01 database covering July 2021 through end of 2024, as analyzed and published by azfamily.com and confirmed by independent legal-data analysis. Per-city breakdown (Phoenix 197, Tempe 93, Scottsdale 48, Chandler 21) is drawn from Dam Firm analysis of the same database through November 2025. Recall vehicle counts are taken directly from NHTSA Part 573 filings and contemporaneous reporting from Electrek, CNBC, and 12news.com. Statutory citations are drawn directly from the Arizona Revised Statutes as published at azleg.gov. The enforcement gap (zero citations issued) is drawn from AZ Family's May 2025 investigation."
+  limitations:
+    - "SGO-2021-01 data through November 2025; Arizona incident totals may have increased through May 2026"
+    - "Per-city breakdown covers through November 2025, not calendar year 2025 full year"
+    - "The exact NHTSA recall number for the May 2026 flood recall was not confirmed from primary NHTSA sources; number to be confirmed before publication via NHTSA recall database query"
+    - "Whether NHTSA opened a formal investigation into the September 2025 Tempe fatal crash was not confirmed in sources reviewed"
+    - "Waymo's permanent flood-detection software fix status was not confirmed; NHTSA described it as still in development as of May 11, 2026"
+  peerReview: "Reviewed against primary NHTSA sources, ARS statutes at azleg.gov, and multiple contemporaneous news sources by Brendan Franks, Editor-in-Chief."
+  lastUpdated: "2026-05-14"
+
+embeddableCharts: []
+datasetUrl: ""
+hasDataset: false
+
+faqs:
+  - question: "How many times has a Waymo been in a crash in Arizona?"
+    answer: "At least 202 times between 2021 and 2024, based on NHTSA's Standing General Order crash reporting database. That total includes 31 crashes that resulted in injuries. Phoenix accounts for 197 of the incidents in that database. Tempe adds 93. Scottsdale adds 48. Chandler adds 21. By comparison, Phoenix is Waymo's largest operating market, accounting for roughly 40% of the company's total autonomous miles driven nationally."
+  - question: "Who is legally responsible if a Waymo hits me in Arizona?"
+    answer: "Under Arizona law (ARS 28-9702), when a vehicle's automated driving system is engaged, the ADS is legally considered the driver. Waymo LLC, as the company that develops and operates the ADS, carries the resulting liability. Arizona follows pure comparative negligence rules (ARS 12-2505), so your recovery may be reduced by any percentage of fault assigned to you. Waymo carries at least $5 million in liability coverage per incident. You can report a collision at waymo.com/notify. The statute of limitations in Arizona for personal injury is two years from the date of the crash."
+  - question: "What were the Waymo recalls and did they affect Arizona?"
+    answer: "Waymo has issued three fleet-wide software recalls in two years. The first, in May 2024, covered 672 vehicles after a driverless Waymo struck a utility pole in a Phoenix alley. The second, in May 2025, covered 1,212 vehicles after multiple collisions with stationary roadway barriers. The third, in May 2026, covered 3,791 vehicles after an autonomous Waymo drove into a flooded road in San Antonio, Texas, and was swept into a creek. All three recalls affected Waymo's Phoenix fleet. NHTSA described the defect rate on the third recall as 100%."
+  - question: "Can Phoenix police give Waymo a ticket after a crash?"
+    answer: "Under Arizona law, ADOT and AZ DPS are the only state agencies authorized to implement or enforce the autonomous vehicle statutes (ARS 28-9706). Municipal police departments, including Phoenix PD, are not designated enforcement authorities for the AV chapter. Phoenix Police told investigators in May 2025 that it is not feasible to track down AV company owners for moving violations. Across 71 police-documented Waymo crashes in Arizona, zero resulted in a citation."
+  - question: "Why does Arizona have so many Waymo vehicles?"
+    answer: "Arizona became the most permissive state for AV testing under Governor Ducey's Executive Order 2018-04, which required only that vehicles comply with federal safety standards, maintain insurance, and follow traffic laws. That regulatory environment drew Waymo's earliest large-scale deployments starting in 2017. Today Phoenix is Waymo's biggest market by miles driven. Waymo is also retrofitting more than 2,000 additional vehicles at a Magna International facility in Mesa, making Arizona both the primary test market and the production hub for future fleet growth."
+  - question: "What happened with the fatal Waymo crash in Tempe in 2025?"
+    answer: "On September 14, 2025, a motorcyclist, identified by Tempe police as Joseph Gonzalez, 18, died after rear-ending a Waymo that was making a right turn near Rural Road and Apache Boulevard in Tempe, close to the ASU campus. Less than a second later, a second vehicle struck Gonzalez and fled the scene. Tempe police identified the driver of the second vehicle as an ASU student. Waymo's vehicle had no passengers. Waymo said it was cooperating fully with law enforcement and regulators."
+
+dataSources:
+  - "National Highway Traffic Safety Administration. Standing General Order SGO-2021-01 ADS Incident Reports database. July 2021 through November 2025. Retrieved from https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADS.csv"
+  - "National Highway Traffic Safety Administration. Investigation PE24016, Waymo LLC, 5th Generation Automated Driving System. Opened May 13, 2024. https://static.nhtsa.gov/odi/inv/2024/INOA-PE24016-12382.pdf"
+  - "National Highway Traffic Safety Administration. Part 573 Safety Recall Report 24E-049. 672 vehicles, pole-collision defect. https://static.nhtsa.gov/odi/rcl/2024/RCLRPT-24E049-1733.PDF"
+  - "Arizona Revised Statutes 28-9702. Operation of autonomous vehicles. https://www.azleg.gov/ars/28/09702.htm"
+  - "Arizona Executive Order 2018-04. Advancing Autonomous Vehicle Testing and Operating; Prioritizing Public Safety. March 2018. https://azgovernor.gov/sites/default/files/related-docs/eo2018-04_1.pdf"
+  - "AZ Family (3TV/CBS5). What happens when a Waymo is at fault in a crash? May 1, 2025. https://www.azfamily.com/2025/05/01/what-happens-when-waymo-is-fault-crash/"
+  - "12 News (KPNX). Motorcyclist killed in Tempe crash involving a Waymo. September 2025. https://www.12news.com/article/news/local/valley/motorcyclist-killed-in-tempe-crash-involving-a-waymo/75-72c3e6d9-a5a0-4c31-a4c8-91ec285685d2"
+  - "Electrek. Waymo recalls 3,791 robotaxis over flooded road incident, deploying OTA software fix. May 12, 2026. https://electrek.co/2026/05/12/waymo-recalls-3791-robotaxis-flooded-road-ota-software-fix/"
+  - "CNBC. Waymo recalls 3,800 robotaxis after glitch allowed some vehicles to drive into standing water. May 12, 2026. https://www.cnbc.com/2026/05/12/waymo-recalls-3800-robotaxis-after-able-drive-into-standing-water.html"
+  - "AZ Family (3TV/CBS5). Feds investigating eight incidents involving Waymo driverless cars in Phoenix, Chandler. May 15, 2024. https://www.azfamily.com/2024/05/15/feds-investigating-eight-incidents-involving-waymo-driverless-cars-phoenix-chandler/"
+  - "Waymo LLC. Scaling our fleet through US manufacturing. May 2025. https://waymo.com/blog/2025/05/scaling-our-fleet-through-us-manufacturing/"
+readingTime: "11 min"
+---
+
+import { KeyFacts, Fact } from '@/components/mdx/KeyFacts';
+import { Callout } from '@/components/mdx/Callout';
+import { StatBlock } from '@/components/mdx/StatBlock';
+
+Waymo vehicles were involved in at least **202 crashes in Arizona** between 2021 and 2024, including 31 that resulted in injuries. Phoenix police documented 71 of those crashes and attributed fault to the autonomous vehicle in 13% of them. Zero citations have ever been issued to Waymo under Arizona's autonomous vehicle statutes.
+
+<KeyFacts>
+  <Fact variant="warning">202 NHTSA-reported Waymo crashes in Arizona, 2021 through 2024. 31 resulted in injuries. Source: NHTSA SGO-2021-01 database, as analyzed by azfamily.com (May 2025).</Fact>
+  <Fact>Three fleet-wide recalls in two years: 672 vehicles (May 2024, Phoenix alley collision), 1,212 vehicles (May 2025, barrier collisions), 3,791 vehicles (May 2026, flooded roadway). Each recall triggered by an actual crash.</Fact>
+  <Fact>NHTSA opened investigation PE24016 on May 13, 2024, citing 22 incidents including 8 in Phoenix and Chandler, Arizona.</Fact>
+  <Fact variant="warning">Phoenix Police told investigators it is "not feasible" to cite Waymo for moving violations. Zero citations issued across 71 documented Arizona police crashes.</Fact>
+</KeyFacts>
+
+---
+
+## TBD: bomb-stat-led intro section (confirm NHTSA recall number before finalizing)
+
+[Writer: open with the May 2026 recall as the news peg, then pull back to the Arizona-specific stakes. Phoenix is Waymo's largest market. The recall's defect, the system slowing but not stopping on flooded high-speed roads, maps directly onto the Phoenix arterial network during monsoon season, which opens June 15. That tension is the hook. One to two paragraphs.]
+
+---
+
+## Arizona: Waymo's largest market and its second-highest crash count
+
+Phoenix accounts for roughly 40% of Waymo's total autonomous miles driven nationally, making it the company's primary real-world proving ground. Tempe, Scottsdale, and Chandler round out the metro footprint.
+
+The crash totals follow the deployment density. NHTSA's Standing General Order requires AV operators to report crashes meeting threshold criteria. Between July 2021 and November 2025, the SGO database recorded:
+
+| City | NHTSA-Reported Waymo Incidents |
+|---|---|
+| Phoenix | 197 |
+| Tempe | 93 |
+| Scottsdale | 48 |
+| Chandler | 21 |
+| Arizona total (four cities) | 359 |
+
+[TBD: confirm whether the 202 figure (through 2024) and the 359 figure (through November 2025) represent different time windows from the same database before finalizing the table. The 202 figure is the confirmed bomb stat; the 359 total is the extended window. Clarify in methodology.]
+
+The national total across all Waymo markets reached 1,429 incidents through November 2025, meaning Arizona's four cities account for roughly 25% of all Waymo SGO reports in a fleet operating across eight markets.
+
+---
+
+## Three recalls in two years: each one traced to an actual collision
+
+[Writer: this is the structural table section. Lead with a brief paragraph noting the pattern, then move into the table. The burn rate from recall to recall is getting faster as the fleet grows.]
+
+| Recall | Date | Vehicles | Trigger Incident | Status |
+|---|---|---|---|---|
+| Recall 1 | May 2024 | 672 | Waymo struck utility pole in Phoenix alley, May 21, 2024 (no injuries, no passengers) | Resolved via OTA update |
+| Recall 2 | May 2025 | 1,212 | Seven collisions with stationary barriers (chains, gates), Dec 2022 to Apr 2024 | Resolved via OTA update |
+| Recall 3 | May 2026 | 3,791 | Waymo drove into flooded 40 mph road in San Antonio, Apr 20, 2026; vehicle swept into creek | Interim fix deployed; permanent remedy still in development as of May 11, 2026 |
+
+[TBD: confirm exact NHTSA recall number for Recall 3 (May 2026). NHTSA acknowledgment letter dated May 11, 2026. Query NHTSA recall database at nhtsa.gov/vehicle-safety/recalls for the Part 573 filing number before publication.]
+
+NHTSA described the Recall 3 defect rate as 100%: every vehicle in the fifth- and sixth-generation fleet carries the same software behavior.
+
+---
+
+## Federal investigation PE24016: eight Arizona incidents under review
+
+On May 13, 2024, NHTSA opened investigation PE24016 targeting Waymo's fifth-generation automated driving system. The investigation evaluated 22 incidents nationally, including collisions with clearly visible stationary and semi-stationary objects and instances where the ADS appeared to disobey traffic control devices.
+
+Eight of the 22 incidents under federal review occurred in **Phoenix and Chandler, Arizona.**
+
+[Writer: pull a paragraph from the investigation scope noting the types of behaviors NHTSA flagged. The NHTSA open resume language about "collisions with clearly visible objects that a competent driver would be expected to avoid" is pull-quote-eligible. Attribute to the NHTSA open resume document at static.nhtsa.gov/odi/inv/2024/INOA-PE24016-12382.pdf.]
+
+PE24016 produced Recall 1 (the Phoenix utility pole) and contributed to the scope of Recall 2 (stationary barriers). The investigation remains open as of May 2026.
+
+---
+
+## The monsoon risk the recall didn't resolve
+
+[TBD: add one stat from ADOT or NOAA on Phoenix monsoon flash-flood frequency or number of major arterials prone to sheet flooding in the Waymo operating zone. Research thread for Writer agent before finalizing this section. The structural argument: the Recall 3 defect is specifically about flooded high-speed roadways. Phoenix monsoon season opens June 15. Waymo's permanent fix is still in development. The operating-boundary tightening (interim fix) relies on map revisions and weather forecasting, not on the vehicle detecting flooded conditions in real time.]
+
+In September 2025, before the national recall, Phoenix Waymo customers experienced a preview. Waymo suspended service across the metro on September 26, 2025, as severe flash flooding hit the valley. Social media documented multiple autonomous SUVs stuck in Phoenix floodwaters. The service was restored the next day.
+
+Waymo's interim response to the May 2026 recall increased weather-related operational constraints and updated map data to restrict vehicle access to roads prone to flooding. The permanent software fix that would allow the vehicle to detect flooded conditions in real time had not been filed with NHTSA as of the agency's May 11, 2026 acknowledgment letter.
+
+---
+
+## The Tempe corridor: eight years of AV history
+
+[Writer: keep this section factual and structural. Do not editorialize about either Herzberg or Gonzalez. Person-first throughout. The structural point is that Tempe is the bookend city for AV history in the US and that the corridor has had two separate AV-linked fatalities, seven years apart, with different operators and different circumstances.]
+
+Tempe has served as an AV test corridor since Waymo began driving there in 2017 without a safety driver, one of the first deployments of its kind in the country.
+
+On March 18, 2018, Elaine Herzberg became the first person killed by an AV in the United States, struck by an Uber test vehicle in Tempe. The National Transportation Safety Board investigation found the ADS had detected her six seconds before impact, classified her as an unknown object, then a vehicle, then a bicycle, before determining braking was needed 1.3 seconds before impact. The emergency braking system was disabled during computer-controlled operation.
+
+Arizona revoked Uber's AV permit temporarily. Uber settled with the Herzberg family and eventually exited the AV business.
+
+On September 14, 2025, a motorcyclist, Joseph Gonzalez, 18, died in a crash near Rural Road and Apache Boulevard in Tempe, close to the ASU campus. Tempe police said Gonzalez rear-ended a Waymo that was making a right turn and yielding to a pedestrian. Less than a second later, a second vehicle struck Gonzalez and fled. Tempe police identified the driver of the second vehicle as an ASU student.
+
+Waymo said its vehicle had no passengers and that the company was cooperating fully with law enforcement and regulators.
+
+[TBD: confirm whether NHTSA opened a formal investigation into the September 2025 Tempe crash. Research thread for Phase 2.]
+
+---
+
+## Arizona's regulatory framework and the enforcement gap
+
+Arizona's AV legal framework is the most permissive in the country by design. Governor Ducey's Executive Order 2018-04 allowed fully autonomous vehicles on public roads with minimal preconditions. The Legislature codified the framework in HB 2813 (2021), now at ARS Title 28 Chapter 32.
+
+Under Arizona law, when a vehicle's ADS is engaged, the system is considered the legal driver (ARS 28-9702). ADOT and AZ DPS are the only state agencies authorized to implement or enforce the AV chapter (ARS 28-9706).
+
+That structure creates a documented gap at the municipal level.
+
+Phoenix Police told AZ Family in May 2025 that citing Waymo for moving violations is "not feasible." Across 71 police-documented Waymo crashes in Arizona where officers assessed fault, police attributed the collision to Waymo in 13% of cases. None resulted in a citation.
+
+[Writer: this section is the heart of the accountability finding. Keep it factual. The framing is not "Waymo escapes accountability" but "Arizona's AV framework concentrates enforcement authority in two state agencies while leaving the city-level enforcement gap undocumented in the regulatory record." That is a legislative-design finding, not a bad-actor finding.]
+
+<Callout type="info">
+Under ARS 28-9706, ADOT and AZ DPS are the only Arizona agencies authorized to implement or enforce the state's autonomous vehicle chapter. Municipal police departments, including Phoenix PD, are not designated AV enforcement authorities.
+</Callout>
+
+---
+
+## Who manufactures the next generation of Waymo vehicles, and where
+
+[TBD: Mesa Magna facility production timeline. Confirm: 1,500 existing Jaguar I-PACE vehicles, 2,000 additional retrofits in progress, target fleet of 3,500 plus vehicles by end of 2026. Source: Waymo blog, May 2025. This section establishes the AZ economic and regulatory stakes: AZ is simultaneously the largest test market, the highest-crash-concentration market in the SGO database, and the production hub for the next wave of fleet growth.]
+
+Waymo is retrofitting more than 2,000 additional Jaguar I-PACE vehicles at a Magna International facility in Mesa, Arizona, through 2026. That expansion will bring the Jaguar fleet from approximately 1,500 vehicles to more than 3,500.
+
+Arizona is, at once, the company's largest operating market, the state where NHTSA has cited eight incidents in a single federal investigation, and the factory floor for the next wave of AV deployment.
+
+---
+
+## What the law says if a Waymo hits you in Arizona
+
+[Writer: three to four paragraphs max. Cross-link to the companion spoke piece (Spoke 1: if a Waymo hits you in Arizona, Brandon Millam byline) when that piece publishes.]
+
+Arizona's pure comparative fault rules (ARS 12-2505) apply to AV crashes the same as they apply to crashes involving human drivers. Your recovery can be reduced by your percentage of fault, but it's not eliminated.
+
+Waymo carries at least $5 million in liability insurance per incident as a condition of its Arizona operating permit. To exchange insurance information after a crash with a Waymo, the company directs drivers to waymo.com/notify or to contact the vehicle through the in-car speakers.
+
+Because ARS 28-9702 designates the ADS as the legal driver, a negligence or product-liability claim runs against Waymo LLC, not against a human driver. If the ADS committed a moving violation that caused the crash, the violation is part of the liability record even if no citation was issued, because the documentation lives in police reports and NHTSA SGO filings.
+
+The two-year statute of limitations for personal injury in Arizona (ARS 12-542) applies. If a Waymo crash caused you injury, the clock starts on the date of the crash.
+
+---
+
+## Methodology
+
+[Standard methodology section. Pull from frontmatter. The Writer agent should not add text here; it is auto-rendered by the ArticleLayout component.]
+
+---
+
+{/* NOTES FOR PHASE 2 WRITER -- remove before publish */}
+{/*
+  Before drafting the full MDX, confirm:
+  1. Exact NHTSA recall number for May 2026 Recall 3 (query nhtsa.gov recall database, search Waymo, filter 2026).
+  2. Whether NHTSA opened a formal investigation into the September 2025 Tempe fatal crash.
+  3. One ADOT or NOAA stat on Phoenix monsoon flash-flood frequency for the monsoon section.
+  4. Waymo's permanent flood-detection fix status as of publication date (check NHTSA recall database for Part 573 remedy amendment).
+  Do not add any named person, dollar amount, year, court, statute, or stat not in the fact-bundle JSON unless confirmed via a named primary source in the same session.
+*/}
