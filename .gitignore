@@ -30,3 +30,39 @@ docs/internal/
 __pycache__/
 *.pyc
 *.pyo
+
+# AZ Law Now operations workspace (mirrors meso ops pattern, local-only)
+az-law-operations/
+
+# Runtime state and ephemeral logs
+data/outreach/*.db
+data/outreach/*.db-shm
+data/outreach/*.db-wal
+data/azlawnow-outreach.db
+data/outreach/cron.log
+data/outreach/drip-drain-*.log
+data/outreach/drip-drain-launchd.*
+data/outreach/aee-blast-*.log
+data/outreach/aee-link-acq-log-*.txt
+data/outreach/x-*.json
+data/outreach/breaking-news/
+data/outreach/posted/
+data/outreach/preview/
+data/outreach/x/
+data/social/posted-*.json
+data/social/scheduled-*.json
+*-posted.json
+*-status.json
+
+# FRA bulk-pull binary corpus (large; regenerable via az-law-operations/pipelines/fra-bulk-pull.sh)
+data/research/fra-pulls/bnsf-phoenix-subdivision/*.pdf
+data/research/fra-pulls/bnsf-phoenix-subdivision/*.txt
+
+# More runtime logs
+data/outreach/heartbeat-*.log
+data/outreach/launchd-*.log
+data/outreach/yolo-*.log
+data/outreach/engagement/
+
+# Agent memory (Claude session-local state)
+.claude/agent-memory/
