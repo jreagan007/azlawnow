@@ -21,7 +21,11 @@
     "gen:og:all": "npx tsx scripts/generate-all-og-images.ts",
     "check:og": "npx tsx scripts/og-guardrail.ts",
     "outreach:enrich": "python3 scripts/outreach/enrich-journalists.py",
-    "outreach:generate-pitches": "python3 scripts/outreach/generate-pitches.py"
+    "outreach:generate-pitches": "python3 scripts/outreach/generate-pitches.py",
+    "research:faq-paa": "npx tsx scripts/research/faq-paa-research.ts",
+    "research:faq-paa:pa": "npx tsx scripts/research/faq-paa-research.ts --pa",
+    "research:faq-patch": "npx tsx scripts/research/faq-patch-from-paa.ts",
+    "research:faq-patch:pa": "npx tsx scripts/research/faq-patch-from-paa.ts --pa"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -52,6 +56,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "dotenv": "^16.3.0",
+    "gray-matter": "^4.0.3",
     "oauth-1.0a": "^2.2.6",
     "typescript": "^5.7.3"
   }

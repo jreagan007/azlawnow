@@ -62,7 +62,7 @@
     {
       "id": "finding-5",
       "label": "The Tempe corridor is the original US AV fatality site; a second fatal incident occurred there in September 2025",
-      "claim": "On March 18, 2018, Elaine Herzberg became the first person killed by a self-driving car in US history when an Uber AV struck her at the intersection of Mill Avenue and Curry Road in Tempe. The Uber ADS had detected her six seconds before impact, classified her successively as an unknown object, a vehicle, and a bicycle before determining braking was needed, but emergency braking was disabled. Seven years later, on September 14, 2025, a motorcyclist (Joseph Gonzalez, 18) died after rear-ending a Waymo making a right turn near Rural Road and Apache Boulevard in Tempe, close to the ASU campus. A second vehicle then struck Gonzalez and fled. Tempe police identified the fleeing driver as an ASU student. The Waymo had no passengers.",
+      "claim": "On March 18, 2018, Elaine Herzberg became the first person killed by a self-driving car in US history when an Uber AV struck her at the intersection of Mill Avenue and Curry Road in Tempe. The Uber ADS had detected her six seconds before impact, classified her successively as an unknown object, a vehicle, and a bicycle before determining braking was needed, but emergency braking was disabled. Seven years later, on September 14, 2025, a motorcyclist ([name unconfirmed pending court docket verification], 18) died after rear-ending a Waymo making a right turn near Rural Road and Apache Boulevard in Tempe, close to the ASU campus. A second vehicle then struck the motorcyclist and fled. Tempe police identified the fleeing driver as an ASU student. The Waymo had no passengers.",
       "sources": [
         "https://en.wikipedia.org/wiki/Death_of_Elaine_Herzberg",
         "https://www.12news.com/article/news/local/valley/motorcyclist-killed-in-tempe-crash-involving-a-waymo/75-72c3e6d9-a5a0-4c31-a4c8-91ec285685d2",
@@ -209,7 +209,7 @@
       "city": "Tempe",
       "operator": "Waymo",
       "type": "Multi-vehicle crash (Waymo right-turning, motorcycle rear-end, fleeing third vehicle)",
-      "person_involved": "Joseph Gonzalez, 18 (motorcyclist; died of blunt force trauma)",
+      "person_involved": "[name unconfirmed pending court docket verification], 18 (motorcyclist; died of blunt force trauma)",
       "outcome": "Fatality; ASU student driver identified and apprehended; NHTSA investigation status unconfirmed",
       "source": "https://www.12news.com/article/news/local/valley/motorcyclist-killed-in-tempe-crash-involving-a-waymo/75-72c3e6d9-a5a0-4c31-a4c8-91ec285685d2"
     },
@@ -286,7 +286,7 @@
 
   "unknowns": [
     "Exact NHTSA recall number for the May 2026 Waymo flood recall not confirmed in sources reviewed (likely 26V-xxx format; NHTSA letter dated May 11, 2026 acknowledged the recall)",
-    "Whether NHTSA opened a new investigation into the September 2025 Tempe fatal crash involving Joseph Gonzalez",
+    "Whether NHTSA opened a new investigation into the September 2025 Tempe fatal crash involving [name unconfirmed pending court docket verification]",
     "Total SGO-reported Arizona incidents through current date (1,429 nationally through November 2025; AZ breakdown of 359 total across 4 cities is through November 2025)",
     "Whether Waymo's permanent flood-detection software fix has been deployed as of May 14, 2026",
     "AZ DPS enforcement actions against Waymo (separate from Phoenix PD)",
@@ -426,7 +426,7 @@
     {
       "speaker": "Waymo spokesperson",
       "quote": "Safety is our highest priority at Waymo. We are deeply saddened by this event and we are fully cooperating with law enforcement and regulators.",
-      "context": "Statement on the September 2025 Tempe fatal crash involving Joseph Gonzalez",
+      "context": "Statement on the September 2025 Tempe fatal crash involving [name unconfirmed pending court docket verification]",
       "source": "https://www.azfamily.com/2025/09/14/1-person-killed-multi-car-crash-near-asu-tempe-campus/",
       "lift_priority": 2
     }

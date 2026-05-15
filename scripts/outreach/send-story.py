@@ -51,15 +51,16 @@ FROM = f"{FROM_NAME} <{FROM_EMAIL}>"
 
 def parse_args():
     if len(sys.argv) < 2:
-        sys.stderr.write("Usage: send-story.py <story-slug> [--limit N] [--dry-run]\n")
+        sys.stderr.write("Usage: send-story.py <story-slug> [--limit N] [--dry-run] [--allow-catch-all]\n")
         sys.exit(1)
     slug = sys.argv[1]
     limit = 50
     dry_run = "--dry-run" in sys.argv
+    allow_catch_all = "--allow-catch-all" in sys.argv
     for i, a in enumerate(sys.argv):
         if a == "--limit" and i + 1 < len(sys.argv):
             limit = int(sys.argv[i + 1])
-    return slug, limit, dry_run
+    return slug, limit, dry_run, allow_catch_all
 
 
 def load_targets(slug):
@@ -242,15 +243,18 @@ def send_resend(to_email, subject, html):
 
 
 def main():
-    slug, limit, dry_run = parse_args()
+    slug, limit, dry_run, allow_catch_all = parse_args()
     targets = load_targets(slug)
-    print(f"=== story: {slug} | targets in file: {len(targets)} | dry_run: {dry_run} ===")
+    print(f"=== story: {slug} | targets in file: {len(targets)} | dry_run: {dry_run} | allow_catch_all: {allow_catch_all} ===")
 
     conn = sqlite3.connect(DB)
     conn.row_factory = sqlite3.Row
     article = load_article(conn, slug)
 
-    dnc = {r[0].lower() for r in conn.execute("SELECT email FROM do_not_contact")}
+    if allow_catch_all:
+        dnc = {r[0].lower() for r in conn.execute("SELECT email FROM do_not_contact WHERE reason != 'MV: catch_all'")}
+    else:
+        dnc = {r[0].lower() for r in conn.execute("SELECT email FROM do_not_contact")}
     already_sent = {r[0].lower() for r in conn.execute("SELECT DISTINCT to_email FROM send_log")}
 
     counts = {"locality_fail": 0, "beat_fail": 0, "hook_fail": 0, "dnc": 0, "sent_already": 0, "send_ok": 0, "send_err": 0}

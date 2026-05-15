@@ -26,11 +26,11 @@
     {
       "id": "finding-2",
       "label": "Uber documented 11,285 sexual assault reports across its own transparency reports (2017-2022)",
-      "summary": "Uber's three biennial US Safety Reports document a cumulative 11,285 reported sexual assaults on the platform from 2017 through 2022: 5,981 in 2017-2018, 3,824 in 2019-2020 (prior reports cited as 2,847 -- Uber revised methodology), and 2,717 in 2021-2022. Lyft's two safety reports cover 2017-2022 and document a combined 6,809 reports. Sealed MDL court records revealed Uber received a sexual assault or misconduct report approximately every 8 minutes on average across 2017-2022, totaling more than 400,000 reports -- a figure far beyond what the transparency reports disclose. No AZ-specific breakdowns are published by either company.",
-      "source_url": "https://helpingsurvivors.org/rideshare-sexual-assault/statistics/",
-      "source_secondary": "https://www.uber.com/newsroom/2022-us-safety-report/",
-      "sealed_source_note": "The 400,000-plus total and every-8-minutes rate derive from sealed MDL discovery documents, reported in press coverage of MDL proceedings; not independently verifiable by the Researcher from public records. Mark as HYPOTHESIS PENDING for direct citation purposes.",
-      "verified_partial": true
+      "summary": "Uber's three biennial US Safety Reports document a cumulative 11,285 reported sexual assaults on the platform from 2017 through 2022: 5,981 in 2017-2018, 3,824 in 2019-2020 (prior reports cited as 2,847 -- Uber revised methodology), and 2,717 in 2021-2022. Lyft's two safety reports cover 2017-2022 and document a combined 6,809 reports. The MDL 3084 docket lists 3,391 plaintiffs across 30 states as of April 2026. No AZ-specific breakdowns are published by either company.",
+      "source_url": "https://www.uber.com/newsroom/2022-us-safety-report/",
+      "source_secondary": "https://www.lawsuitinformationcenter.com/uber-sexual-assault-lawsuit.html",
+      "verified_partial": true,
+      "STRUCK_2026_05_15": "The 'every 8 minutes' / '400,000+' figures previously here were sourced only to a law-firm marketing page and have NO unsealed-docket citation per Perplexity verification 2026-05-15. Removed to prevent propagation. Use the 3,391 MDL plaintiffs figure (sourced) instead."
     },
     {
       "id": "finding-3",
