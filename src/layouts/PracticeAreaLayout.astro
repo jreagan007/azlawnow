@@ -16,6 +16,7 @@ import {
   generateServiceSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  getRatedOrganizationSchema,
 } from '../utils/schema';
 import type { MarkdownHeading } from 'astro';
 
@@ -102,6 +103,9 @@ const faqSchema = faqs.length > 0 ? generateFAQSchema(faqs) : null;
 
 const schemas = [
   serviceSchema,
+  // Firm's real Google rating as a review-eligible LegalService node so
+  // practice-area SERP results can render review stars.
+  getRatedOrganizationSchema(),
   breadcrumbSchema,
   ...(faqSchema ? [faqSchema] : []),
   ...(extraSchema ? [extraSchema] : []),
