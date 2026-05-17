@@ -27,7 +27,6 @@ import {
   getArticleSchema,
   generateBreadcrumbSchema,
   generateFAQSchema,
-  getRatedOrganizationSchema,
 } from '../utils/schema';
 
 interface FAQ {
@@ -148,12 +147,11 @@ const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
 
 const schemas: Array<Record<string, unknown>> = [articleSchema, breadcrumbSchema];
 
-// Legal guides carry the firm's real Google rating as a review-eligible
-// LegalService node so the SERP result can render review stars (Article
-// type alone is not review-eligible). Scoped to legal-guide only.
-if (category === 'legal-guide') {
-  schemas.push(getRatedOrganizationSchema());
-}
+// Legal guides are review-snippet eligible via the firm's real Google rating
+// merged onto the site-wide #organization node (see withAggregateRating on
+// BaseLayout below). Article type alone is not review-eligible. Scoped to
+// legal-guide only — investigations/client-guides stay unrated.
+const isReviewEligible = category === 'legal-guide';
 
 // Emit FAQPage JSON-LD only when the article actually has FAQs.
 // The ArticleFAQ component also embeds matching schema.org microdata
@@ -177,6 +175,7 @@ const disclaimer = disclaimers[category] || disclaimers['investigation'];
   description={description}
   image={ogImage || image}
   schema={schemas}
+  withAggregateRating={isReviewEligible}
 >
   <article class="article-layout">
     <!-- ============================================

@@ -32,6 +32,12 @@ interface Props {
   noindex?: boolean;
   image?: string;
   schema?: object | object[];
+  /**
+   * Merge the firm's real Google AggregateRating onto the site-wide
+   * #organization node so the page is review-snippet eligible. Set by
+   * review-eligible page types (practice areas, legal guides) only.
+   */
+  withAggregateRating?: boolean;
   /** Hide the global header (for special landing pages) */
   hideHeader?: boolean;
   /** Hide the global footer (for special landing pages) */
@@ -45,6 +51,7 @@ const {
   noindex = false,
   image,
   schema,
+  withAggregateRating = false,
   hideHeader = false,
   hideFooter = false,
 } = Astro.props;
@@ -97,7 +104,7 @@ const ogImage = image
   : generateOGImageUrl(Astro.url.pathname);
 
 // Site-wide schemas (WebSite, Organization, SiteNavigationElement)
-const siteSchemas = getSiteWideSchemas();
+const siteSchemas = getSiteWideSchemas({ withAggregateRating });
 
 // Page-specific schemas
 const pageSchemas = Array.isArray(schema) ? schema : schema ? [schema] : [];

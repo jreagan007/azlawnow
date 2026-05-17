@@ -1,5 +1,5 @@
 [build]
-  command = "npm run check:quality:strict && npm run check:sources:strict && npm run check:og && npm run build"
+  command = "npm run check:quality:strict && npm run check:sources:strict && npm run check:og && npm run build && npm run check:schema"
   publish = "dist"
 
 [build.environment]

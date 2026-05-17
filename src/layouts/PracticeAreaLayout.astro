@@ -16,7 +16,6 @@ import {
   generateServiceSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
-  getRatedOrganizationSchema,
 } from '../utils/schema';
 import type { MarkdownHeading } from 'astro';
 
@@ -103,9 +102,6 @@ const faqSchema = faqs.length > 0 ? generateFAQSchema(faqs) : null;
 
 const schemas = [
   serviceSchema,
-  // Firm's real Google rating as a review-eligible LegalService node so
-  // practice-area SERP results can render review stars.
-  getRatedOrganizationSchema(),
   breadcrumbSchema,
   ...(faqSchema ? [faqSchema] : []),
   ...(extraSchema ? [extraSchema] : []),
@@ -118,6 +114,7 @@ const schemas = [
   canonical={canonical}
   image={heroImage}
   schema={schemas}
+  withAggregateRating={true}
 >
   <!-- ============================================
        HERO — Editorial section header (warm cream)
@@ -310,7 +307,7 @@ const schemas = [
     </div>
   </div>
 
-  <!-- FAQ now rendered inside .pa-main via <ArticleFAQ> — schema.org/FAQPage microdata, data-speakable="answer", gold open-state border. -->
+  <!-- FAQ rendered inside .pa-main via <ArticleFAQ> (presentation only); FAQPage JSON-LD emitted once from this layout's schema array. data-speakable="answer", gold open-state border. -->
 
   <!-- ============================================
        RELATED RESOURCES (placeholder)

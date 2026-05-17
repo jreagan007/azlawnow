@@ -1,9 +1,14 @@
 ---
 /**
  * ArticleFAQ — inline FAQ accordion for editorial articles
- * Phase 2 (2026-04): renders faqs[] from frontmatter as <details> accordions
- * with schema.org Question/Answer microdata. The layout emits the FAQPage
- * JSON-LD separately so the microdata + JSON-LD agree.
+ * Renders faqs[] from frontmatter as <details> accordions.
+ *
+ * FAQ structured data is emitted ONCE per page, as FAQPage JSON-LD from the
+ * layout (generateFAQSchema). This component intentionally carries NO
+ * schema.org microdata: emitting both produced a duplicate FAQPage entity
+ * on every FAQ page (the "Duplicate field FAQPage" issue Google Search
+ * Console flags, which suppresses the FAQ rich result). JSON-LD is Google's
+ * recommended FAQ format; the visible accordion is presentation only.
  *
  * Renders nothing when faqs is empty so it's safe to always mount.
  */
@@ -24,8 +29,6 @@ if (!faqs || faqs.length === 0) return;
 <section
   class="article-faqs"
   aria-labelledby="article-faqs-heading"
-  itemscope
-  itemtype="https://schema.org/FAQPage"
 >
   <h2 id="article-faqs-heading" class="article-faqs__heading">
     Frequently asked questions
@@ -35,12 +38,9 @@ if (!faqs || faqs.length === 0) return;
     {faqs.map((faq, i) => (
       <details
         class="article-faqs__item"
-        itemprop="mainEntity"
-        itemscope
-        itemtype="https://schema.org/Question"
         open={i === 0}
       >
-        <summary class="article-faqs__question" itemprop="name">
+        <summary class="article-faqs__question">
           <span>{faq.question}</span>
           <svg
             class="article-faqs__chevron"
@@ -56,15 +56,9 @@ if (!faqs || faqs.length === 0) return;
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </summary>
-        <div
-          class="article-faqs__answer"
-          itemprop="acceptedAnswer"
-          itemscope
-          itemtype="https://schema.org/Answer"
-        >
+        <div class="article-faqs__answer">
           <div
             class="article-faqs__answer-text"
-            itemprop="text"
             data-speakable="answer"
             set:html={faq.answer}
           />

@@ -106,7 +106,7 @@ export function getWebSiteSchema() {
  * Organization/LegalService schema — comprehensive business info
  * Include on every page via BaseLayout
  */
-export function getOrganizationSchema() {
+export function getOrganizationSchema(opts: { withAggregateRating?: boolean } = {}) {
   const siteUrl = getSiteUrl();
   const sameAsLinks = Object.values(siteConfig.social).filter(Boolean);
 
@@ -114,6 +114,20 @@ export function getOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
     '@id': `${siteUrl}/#organization`,
+    // Review-eligible rating merged onto the single #organization node (not a
+    // second LegalService block — that trips the duplicate-@type schema
+    // guardrail). Rated page types pass withAggregateRating via BaseLayout.
+    // Numbers come from siteConfig.trustStats — keep them honest.
+    ...(opts.withAggregateRating && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: siteConfig.trustStats.googleRating,
+        reviewCount: siteConfig.trustStats.googleReviewCount,
+        ratingCount: siteConfig.trustStats.googleReviewCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }),
     name: siteConfig.legalName,
     alternateName: siteConfig.siteName,
     legalName: siteConfig.legalName,
@@ -257,10 +271,10 @@ export function getSiteNavigationSchema() {
 /**
  * Get all site-wide schemas as an array (for BaseLayout)
  */
-export function getSiteWideSchemas() {
+export function getSiteWideSchemas(opts: { withAggregateRating?: boolean } = {}) {
   return [
     getWebSiteSchema(),
-    getOrganizationSchema(),
+    getOrganizationSchema(opts),
     getSiteNavigationSchema(),
   ];
 }
@@ -398,51 +412,6 @@ export function getReviewPageSchema(
       },
       reviewBody: r.text,
     })),
-  };
-}
-
-/**
- * Lean rated LegalService node for content pages (legal guides, practice areas).
- *
- * Why this exists: review stars in organic results require an entity Google
- * deems review-eligible (LocalBusiness/LegalService) carrying aggregateRating —
- * Article is NOT eligible. GMB/Google Business Profile reviews never surface in
- * blue-link results, only in the Map Pack / Knowledge Panel. So we attach the
- * firm's REAL Google rating (siteConfig.trustStats) to a LegalService node in
- * the page graph, sharing the #organization @id so it merges with the
- * site-wide Organization rather than creating a competing entity.
- *
- * Numbers are sourced from siteConfig.trustStats — keep them honest. This is a
- * self-serving aggregateRating, which Google's policy treats inconsistently;
- * truthful counts are the defensible position if it's ever scrutinized.
- */
-export function getRatedOrganizationSchema() {
-  const siteUrl = getSiteUrl();
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'LegalService',
-    '@id': `${siteUrl}/#organization`,
-    name: siteConfig.legalName,
-    image: `${siteUrl}${siteConfig.logo}`,
-    url: siteUrl,
-    telephone: siteConfig.phoneE164,
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: siteConfig.address.street,
-      addressLocality: siteConfig.address.city,
-      addressRegion: siteConfig.address.state,
-      postalCode: siteConfig.address.zip,
-      addressCountry: siteConfig.address.country,
-    },
-    priceRange: 'Contingency representation',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: siteConfig.trustStats.googleRating,
-      reviewCount: siteConfig.trustStats.googleReviewCount,
-      ratingCount: siteConfig.trustStats.googleReviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
   };
 }
 
