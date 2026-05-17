@@ -12,6 +12,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
+import { writeSocialPost } from './lib/db-social.js';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const DROPS = path.join(ROOT, 'scripts/x-drops.json');
@@ -132,9 +133,19 @@ try {
     mentionsId = await postTweet(target.mentions, replyId);
     console.log(`✓ Mentions posted: https://x.com/i/status/${mentionsId}`);
   }
-  posted.posts.push({ id: target.id, tweet_id: tweetId, reply_id: replyId, mentions_id: mentionsId, posted_at: new Date().toISOString() });
+  const postedAt = new Date().toISOString();
+  posted.posts.push({ id: target.id, tweet_id: tweetId, reply_id: replyId, mentions_id: mentionsId, posted_at: postedAt });
   fs.mkdirSync(path.dirname(POSTED_LOG), { recursive: true });
   fs.writeFileSync(POSTED_LOG, JSON.stringify(posted, null, 2));
+  writeSocialPost({
+    platform: 'x',
+    drop_id: target.id,
+    topic: target.topic,
+    post_id: tweetId,
+    post_url: `https://x.com/i/status/${tweetId}`,
+    posted_at: postedAt,
+    raw_payload: { tweet_id: tweetId, reply_id: replyId, mentions_id: mentionsId },
+  });
 } catch (err: any) {
   console.error(`FAIL: ${err.message}`);
   process.exit(1);
