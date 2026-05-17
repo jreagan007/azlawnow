@@ -29,11 +29,14 @@ locations: ["arizona", "phoenix", "maricopa-county"]
 
 methodology:
   dataSources:
-    - "Federal Railroad Administration Office of Safety Analysis, per-crossing accident PDFs for 82 BNSF Phoenix Subdivision at-grade public crossings in Arizona, retrieved 2026-05-13"
-    - "Federal Railroad Administration Highway-Rail Grade Crossing Inventory, 138 BNSF Phoenix Subdivision crossings in Arizona, last revisions July 2025"
-    - "NTAD Railroad Grade Crossings FeatureServer, DOT Bureau of Transportation Statistics"
-    - "49 CFR Part 222 (Quiet Zones)"
-    - "Manual on Uniform Traffic Control Devices Part 8"
+    - "Federal Railroad Administration. (2026). Office of Safety Analysis: Per-crossing accident PDFs for 82 BNSF Phoenix Subdivision at-grade public crossings in Arizona. Retrieved May 13, 2026, from https://safetydata.fra.dot.gov/officeofsafety/publicsite/"
+    - "Federal Railroad Administration. (2025). Highway-Rail Grade Crossing Inventory: 138 BNSF Phoenix Subdivision crossings in Arizona (July 2025 revisions). Retrieved May 13, 2026, from https://safetydata.fra.dot.gov/officeofsafety/publicsite/crossing/crossing.aspx"
+    - "U.S. Department of Transportation, Bureau of Transportation Statistics. (n.d.). NTAD Railroad Grade Crossings FeatureServer. Retrieved May 13, 2026, from https://geodata.bts.gov/datasets/usdot::railroad-grade-crossings"
+    - "49 C.F.R. § 222 (2024). Use of locomotive horns at highway-rail grade crossings. Retrieved from https://www.ecfr.gov/current/title-49/subtitle-B/chapter-II/part-222"
+    - "Federal Highway Administration. (2023). Manual on Uniform Traffic Control Devices for Streets and Highways, Part 8: Traffic control for railroad and light rail transit grade crossings. Retrieved from https://mutcd.fhwa.dot.gov/"
+    - "49 U.S.C. § 20903 (1994). Prohibition on use of certain accident or incident reports. Retrieved from https://www.law.cornell.edu/uscode/text/49/20903"
+    - "Ariz. Rev. Stat. § 39-121 (2024). Inspection of public records; access. Retrieved from https://www.azleg.gov/ars/39/00121.htm"
+    - "5 U.S.C. § 552 (2022). Public information; agency rules, opinions, orders, records, and proceedings (Freedom of Information Act). Retrieved from https://www.law.cornell.edu/uscode/text/5/552"
   processing: "Pulled the FRA per-crossing accident PDF for each of 82 at-grade public crossings on the BNSF Phoenix Subdivision in Arizona. Extracted text via pdftotext. Searched each crossing record for the phrase AUTO PRECEDED THE GATES and the unrelated phrase AUTO PRECEDED GATES (no THE). Cross-referenced inventory metadata for crossing-level fields: milepost, street name, type, position. Excluded 31 underpass and overpass crossings that cannot have grade-crossing accidents under Form 6180.57. Excluded 25 private at-grade crossings from the corpus narrative pull."
   limitations:
     - "Form 6180.57 captures reportable accidents only (contact resulting in death, injury, or reportable property damage). True near-miss events are not in this database."
@@ -61,11 +64,14 @@ faqs:
     answer: "Not on the public record reviewed for this report. The 27th Avenue and Thomas Road retrofit completed in June 2024 was the only documented active-warning-device install on the corridor in the FRA inventory revisions through July 2025. No publicly accessible Capital Improvement Program line item or ADOT Rail Section memo has surfaced documenting a corridor-wide quiet-zone application or channelizing-median project. A formal records request under ARS 39-121 to the City of Phoenix Streets Transportation Department, ADOT Rail Section, and the Maricopa Association of Governments would surface any documented plans."
 
 dataSources:
-  - "Federal Railroad Administration. Office of Safety Analysis per-crossing accident PDFs for 82 BNSF Phoenix Subdivision at-grade public crossings in Arizona. Retrieved 2026-05-13."
-  - "Federal Railroad Administration. Highway-Rail Grade Crossing Inventory, BNSF Phoenix Subdivision, July 2025 revisions."
-  - "NTAD Railroad Grade Crossings FeatureServer. DOT Bureau of Transportation Statistics."
-  - "49 CFR Part 222. Use of Locomotive Horns at Highway-Rail Grade Crossings. Federal Railroad Administration."
-  - "Manual on Uniform Traffic Control Devices Part 8. Federal Highway Administration."
+  - "Federal Railroad Administration. (2026). Office of Safety Analysis: Per-crossing accident PDFs for 82 BNSF Phoenix Subdivision at-grade public crossings in Arizona. Retrieved May 13, 2026, from https://safetydata.fra.dot.gov/officeofsafety/publicsite/"
+  - "Federal Railroad Administration. (2025). Highway-Rail Grade Crossing Inventory, BNSF Phoenix Subdivision (July 2025 revisions). Retrieved May 13, 2026, from https://safetydata.fra.dot.gov/officeofsafety/publicsite/crossing/crossing.aspx"
+  - "U.S. Department of Transportation, Bureau of Transportation Statistics. (n.d.). NTAD Railroad Grade Crossings FeatureServer. Retrieved May 13, 2026, from https://geodata.bts.gov/datasets/usdot::railroad-grade-crossings"
+  - "49 C.F.R. § 222 (2024). Use of locomotive horns at highway-rail grade crossings. Retrieved from https://www.ecfr.gov/current/title-49/subtitle-B/chapter-II/part-222"
+  - "Federal Highway Administration. (2023). Manual on Uniform Traffic Control Devices for Streets and Highways, Part 8: Traffic control for railroad and light rail transit grade crossings. Retrieved from https://mutcd.fhwa.dot.gov/"
+  - "49 U.S.C. § 20903 (1994). Prohibition on use of certain accident or incident reports. Retrieved from https://www.law.cornell.edu/uscode/text/49/20903"
+  - "Ariz. Rev. Stat. § 39-121 (2024). Inspection of public records; access. Retrieved from https://www.azleg.gov/ars/39/00121.htm"
+  - "5 U.S.C. § 552 (2022). Public information; agency rules, opinions, orders, records, and proceedings (Freedom of Information Act). Retrieved from https://www.law.cornell.edu/uscode/text/5/552"
 readingTime: "9 min"
 ---
 
