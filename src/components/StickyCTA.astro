@@ -1,7 +1,7 @@
 ---
 /**
  * StickyCTA
- * Mobile-only sticky bottom bar with dual CTA: free case review + phone
+ * Mobile-only sticky bottom bar with dual CTA: case intake + phone
  * Appears as soon as the hero CTA scrolls past (~120px threshold)
  * Hidden on desktop (768px+)
  *
@@ -17,8 +17,9 @@ import { siteConfig } from '../data/site-config';
       href="/free-case-review/"
       class="sticky-cta-form"
       data-event="sticky-form-cta"
+      aria-label="Review my case"
     >
-      Free Case Review
+      Review My Case
     </a>
     <a
       href={`tel:${siteConfig.phoneE164}`}
