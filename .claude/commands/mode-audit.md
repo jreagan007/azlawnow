@@ -6,7 +6,7 @@ plus the Netlify build chain. Run checks in order. Fast content gates first, bui
 
 ---
 
-## Netlify Build Chain (run in this exact order before every push)
+## LOCAL pre-push sequence (run in this exact order before every push)
 
 ```bash
 npm run check:quality:strict    # 1. Content quality — hard block
@@ -14,12 +14,22 @@ npm run check:sources:strict    # 2. Source validation — hard block
 npm run check:ai-patterns       # 3. AI-pattern scan — advisory until cycle 3, then hard
 npm run check:og                # 4. OG guardrail — hard block
 npm run build                   # 5. Astro build — hard block
-npm run check:schema            # 6. Schema — non-strict until LegalService @id debt cleared
+npm run check:schema            # 6. Schema — LOCAL ONLY (needs the ../taqticscom hub)
 ```
 
+**The actual `netlify.toml` build command is ONLY:**
+`check:quality:strict && check:sources:strict && check:og && build`
+
+⚠️ **`check:schema` must NEVER be in netlify.toml.** It runs the shared hub
+guardrail at `../taqticscom/scripts/check-schema.ts`; Netlify checks out this
+repo alone, so a `check:schema` step there hard-fails every deploy (regression
+9bc6484 → fixed fa56c52). Run check:schema locally in the pre-push sequence
+above, not on Netlify. `check:ai-patterns` is also local pre-push only until
+its strict promotion is explicitly decided.
+
 **Never reorder or skip.** AI-patterns runs before build because MDX parse errors surface
-earlier. Schema runs post-build because it reads the compiled output. `check:claims` and
-`check:serp` are advisory and never in this chain.
+earlier. Schema runs post-build (local) because it reads the compiled output. `check:claims`
+and `check:serp` are advisory and never in any chain.
 
 **LegalService note:** `check:schema:strict` is blocked until the location pages and
 `/reviews/` page carry distinct `@id` values inside a proper `@graph`. Do not pass

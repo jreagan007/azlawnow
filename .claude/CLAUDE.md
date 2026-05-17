@@ -166,9 +166,16 @@ No voice-rule pre-filtering at scout or discover.
 a verifiable primary source. No "commonly known" assertions. No paraphrased statistics
 without the original source URL in `dataSources`.
 
-**check:schema:strict blocked** until the location pages and `/reviews/` page carry
-distinct `@id` values inside a proper `@graph`. Do not pass `--strict` to schema until
-that debt is resolved.
+**check:schema is LOCAL/pre-push ONLY — never in netlify.toml.** It runs the
+shared hub guardrail at `../taqticscom/scripts/check-schema.ts`, which exists
+only in the local monorepo checkout. Netlify checks out this repo alone, so
+any `check:schema` step in the Netlify build command hard-fails every deploy
+(this regression occurred in 9bc6484, fixed in fa56c52). Run it locally before
+pushing; do not wire it into the Netlify chain even after the debt below is
+resolved. **check:schema:strict** is likewise blocked until the location pages
+and `/reviews/` page carry distinct `@id` values inside a proper `@graph` — and
+when unblocked, `--strict` is promoted only in the local/pre-push gate, never
+in netlify.toml.
 
 **Statewide reach.** Office in Buckeye/Maricopa does not limit editorial scope.
 Statewide marketing. Statewide case acceptance. Phoenix, Tucson, Mesa, Flagstaff,
