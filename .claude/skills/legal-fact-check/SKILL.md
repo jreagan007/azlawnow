@@ -296,6 +296,7 @@ When an article blocks:
 4. If a `verdict-as-settlement` hit fires: correct the label and add the CourtListener docket URL to `dataSources`
 5. If a `tribal-jurisdiction-ignored` hit fires: either (a) add a dedicated paragraph addressing which sovereign law governs or (b) remove the tribal-land reference if the facts are unclear
 6. Fabrication class hits on CRITICAL classes (wrong-sol, notice-of-claim-error, wrongful-death-cap-claim, tribal-jurisdiction-ignored) must be resolved by Brandon Millam J.D. review before re-run — not self-cleared by the writer
+7. **Bump `updatedAt` (mandatory).** Any file whose body or frontmatter was changed to resolve a finding MUST have `updatedAt` set to the correction date in the same commit. `dateModified` derives from it. A correction committed with a stale `updatedAt` is an incomplete fix and must not ship. This is non-negotiable — see CLAUDE.md Project Constraints.
 
 See `scripts/legal-fact-check/README.md` for operational runbooks.
 

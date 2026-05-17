@@ -396,3 +396,4 @@ Every glossary term before push:
 | Verdict dollar amount not sourced | Attribute to "publicly reported case outcomes" or remove |
 | ADOT stat without data year | Add the ADOT report year in parentheses after the figure |
 | `check:ai-patterns` blocks on "it's worth noting" | Delete the sentence; the underlying point stands alone |
+| Any content body/frontmatter edited (esp. fact-check fix) | MANDATORY: set `updatedAt` to today in the same commit — `dateModified` derives from it; a stale `updatedAt` on a corrected file is an incomplete fix (CLAUDE.md Project Constraints) |

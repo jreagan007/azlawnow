@@ -139,6 +139,17 @@ Severity levels drive pre-publish attention. The `legal-fact-check` skill enforc
 
 ## Project Constraints
 
+**updatedAt is mandatory on every content change (NON-NEGOTIABLE).** Any time
+a published `.mdx` body or frontmatter is modified — especially a
+legal-fact-check correction, a WEAK/FAIL remediation, a statute fix, or any
+substantive edit — its `updatedAt` frontmatter MUST be set to the date of the
+edit in the same commit. Schema `dateModified` derives from `updatedAt` via
+`getArticleSchema`, so a stale `updatedAt` publishes a false freshness signal
+and understates a corrected legal claim. A fact-check fix that does not bump
+`updatedAt` is an incomplete fix. The legal-fact-check escalation path and
+every mode-audit per-collection checklist enforce this. `audit-ai-patterns.ts
+--fix` bumps it automatically; manual corrections must do it explicitly.
+
 **No Co-Authored-By trailer.** Commits from this repo hit client-facing Slack.
 Do not append any `Co-Authored-By` or Claude attribution trailer to commit messages.
 
