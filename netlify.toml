@@ -1,5 +1,10 @@
 [build]
-  command = "npm run check:quality:strict && npm run check:sources:strict && npm run check:og && npm run build && npm run check:schema"
+  # NOTE: check:schema is intentionally NOT in this chain. It runs the shared
+  # hub guardrail at ../taqticscom/scripts/check-schema.ts, which only exists
+  # in the local/monorepo checkout — Netlify checks out this repo alone, so
+  # invoking it here hard-fails every deploy. check:schema is a local/pre-push
+  # gate (see .claude/commands/mode-audit.md); do not re-add it to this command.
+  command = "npm run check:quality:strict && npm run check:sources:strict && npm run check:og && npm run build"
   publish = "dist"
 
 [build.environment]
