@@ -97,7 +97,16 @@ npm run check:claims            # human-review claim inventory
 npm run check:serp              # network-dependent; run locally before major keyword pushes
 npm run check:meta              # meta length advisory
 npm run check:programmatic      # run before new city-page or practice-area commits
+npm run check:cannibalization   # cross-collection topic+intent collision guard; :strict gate before any NEW investigation/page
 ```
+
+**Cannibalization guardrail.** Every new investigation, legal-guide,
+practice-area, or client-guide MUST pass `npm run check:cannibalization:strict`
+before commit. It flags two cross-collection pages sharing topic AND search
+intent (true cannibalization), while allowing the intentional four-way-anchor
+coverage (same topic, different intent). The 2026-05-17 sweep resolved 7 pairs;
+this gate stops new ones. Investigations target data/finding intent — never the
+legal-guide's "Arizona [Topic] Laws" informational framing.
 
 ## Universal Voice Rules (all collections)
 

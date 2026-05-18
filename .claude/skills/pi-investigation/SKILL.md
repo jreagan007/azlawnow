@@ -363,6 +363,13 @@ Internal links must resolve. Run `check:links` before commit.
 Run in this order before committing any investigation MDX:
 
 ```bash
+# 0. Cannibalization gate (MANDATORY) — the new investigation must not
+#    share topic + search intent with any existing page. Investigations
+#    target data/finding intent, never the legal-guide "Arizona [Topic]
+#    Laws" framing. This is the guardrail that stops a buried 8th pair.
+npm run check:cannibalization:strict
+npx tsx scripts/check-cannibalization.ts --file src/content/investigations/<slug>.mdx
+
 # 1. Content quality (word count, no em-dash, Flesch, active voice)
 npx tsx scripts/audit-quality.ts --slug=<slug>
 

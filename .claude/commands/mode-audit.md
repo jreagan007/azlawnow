@@ -15,6 +15,7 @@ npm run check:ai-patterns       # 3. AI-pattern scan — advisory until cycle 3,
 npm run check:og                # 4. OG guardrail — hard block
 npm run build                   # 5. Astro build — hard block
 npm run check:schema            # 6. Schema — LOCAL ONLY (needs the ../taqticscom hub)
+npm run check:cannibalization   # 7. Topic+intent collision guard (:strict before any NEW page/investigation)
 ```
 
 **The actual `netlify.toml` build command is ONLY:**

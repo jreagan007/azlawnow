@@ -24,6 +24,8 @@
     "check:serp": "npx tsx scripts/check-serp-competition.ts --client azlawnow",
     "check:programmatic": "npx tsx scripts/check-programmatic-value.ts",
     "check:programmatic:strict": "npx tsx scripts/check-programmatic-value.ts --strict",
+    "check:cannibalization": "npx tsx scripts/check-cannibalization.ts",
+    "check:cannibalization:strict": "npx tsx scripts/check-cannibalization.ts --strict",
     "check:meta": "npx tsx ../taqticscom/scripts/audit-meta.ts --suffix '| AZ Law Now'",
     "qa": "npx tsx scripts/qa-full-audit.ts",
     "qa:strict": "npx tsx scripts/qa-full-audit.ts --strict",

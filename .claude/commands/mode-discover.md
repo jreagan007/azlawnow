@@ -304,6 +304,7 @@ an investigation. Route it to the correct voice before publishing.
 
 Run in this order:
 
+- [ ] **`npm run check:cannibalization:strict` — 0 collisions (MANDATORY GATE).** A new investigation must not share topic + search intent with an existing legal-guide, practice-area, or another investigation. If it collides, retitle so it targets a distinct intent (data/finding framing for investigations: a number, a corridor, an agency action — never "Arizona [Topic] Laws", which is the legal-guide's lane). Run `npm run check:cannibalization -- --file src/content/investigations/<slug>.mdx` to scope it to the new piece. Cannibalization is how the 2026-05-17 sweep found 7 buried pairs; this gate stops the 8th.
 - [ ] `legal-fact-check` skill — 0 critical errors, 0 blocks; review all warnings
 - [ ] `az-bar-ethics-guard` skill — 0 hard violations; review all warnings
 - [ ] `npm run check:claims` — claim inventory reviewed; no unverified verdict amounts
